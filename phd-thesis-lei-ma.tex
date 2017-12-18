@@ -1,0 +1,91 @@
+% Example template for using the unmeethesis style
+% This example is for a Master's candidate in Mathematics
+% It contains examples of front matter and most sections that the
+% typical graduate student would need to include
+% By: N. Doren 02/10/00
+%     Minor mods by N. Doren 08/26/11
+
+% Use the following specification for BOTTOM page numbering:
+\documentclass[botnum, fleqn]{unmeethesis}
+                 % OR
+% Use the following specification for TOP page numbering:
+% \documentclass[fleqn]{unmeethesis}
+
+\usepackage[
+backend=biber,
+style=alphabetic,
+sorting=ynt
+]{biblatex}
+
+\addbibresource{references.bib}
+
+\begin{document}
+
+\frontmatter
+
+% Uncomment the next command if you see weird paragraph spacing:
+% That is, if you see paragraphs float with lots of white space
+% in between them:
+
+% \setlength{\parskip}{0.30cm}
+
+
+\title{An Awesome Thesis That Will Prove \\ to the Universe
+       That I Really Deserve This Honorable Degree}
+
+\author{Lei Ma}
+
+\degreesubject{Ph.D., Physics}
+
+\degree{Ph.D. \\ Physics}
+
+\documenttype{Thesis}
+
+\previousdegrees{A.A.S., University of Southern Swampland, 1988 \\
+                 M.S., Art Therapy, University of New Mexico, 1991}
+
+\date{December, \thisyear}
+
+\maketitle
+
+%\makecopyright
+%Copyright page is no longer necessary D. Murrell
+
+\include{chapters/dedication}
+\include{chapters/acknowledgments}
+
+\maketitleabstract %(required even though there's no abstract title anymore)
+
+\include{chapters/abstract}
+
+\tableofcontents
+\listoffigures
+\listoftables
+
+\include{chapters/glossary}
+
+
+\mainmatter
+
+\setcounter{chapter}{-1}  % start chapter numbering at 0
+\include{chapters/introduction}
+\include{chapters/chapter1}
+\include{chapters/chapter2}
+\include{chapters/conclusion}
+
+
+% the back matter
+% \backmatter
+
+\printbibliography
+
+%\clearpage
+%\bibliography{references}
+%\addcontentsline{toc}{chapter}{References}
+%\bibliographystyle{apalike2}
+
+
+%\bibliographystyle{AMS}
+%\bibliography{bibfile_name}
+
+\end{document}
