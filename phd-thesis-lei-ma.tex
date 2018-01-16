@@ -13,10 +13,20 @@
 
 \usepackage[
 backend=biber,
-style=alphabetic,
+% style=alphabetic,
 sorting=ynt
 ]{biblatex}
 
+\AtEveryBibitem{%
+  \clearfield{issn} % Remove issn
+  \clearfield{doi} % Remove doi
+
+  \ifentrytype{online}{}{% Remove url except for @online
+    \clearfield{url}
+  }
+}
+
+\bibliographystyle{abbrv}
 \addbibresource{references.bib}
 
 \begin{document}
