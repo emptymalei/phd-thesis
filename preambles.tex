@@ -1,0 +1,24 @@
+\usepackage{amsmath}
+
+\usepackage[
+backend=biber,
+% style=phys,
+sorting=ynt
+]{biblatex}
+
+\AtEveryBibitem{%
+  \clearfield{issn} % Remove issn
+  \clearfield{doi} % Remove doi
+
+  \ifentrytype{online}{}{% Remove url except for @online
+    \clearfield{url}
+  }
+}
+
+% \bibliographystyle{abbrv}
+\addbibresource{references.bib}
+
+% \DeclareLabelname[movie]{
+%   \field{director}
+%   \field{producer}
+% }

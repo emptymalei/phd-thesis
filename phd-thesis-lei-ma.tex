@@ -11,23 +11,7 @@
 % Use the following specification for TOP page numbering:
 % \documentclass[fleqn]{unmeethesis}
 
-\usepackage[
-backend=biber,
-% style=alphabetic,
-sorting=ynt
-]{biblatex}
-
-\AtEveryBibitem{%
-  \clearfield{issn} % Remove issn
-  \clearfield{doi} % Remove doi
-
-  \ifentrytype{online}{}{% Remove url except for @online
-    \clearfield{url}
-  }
-}
-
-\bibliographystyle{abbrv}
-\addbibresource{references.bib}
+\input{preambles.tex}
 
 \begin{document}
 
@@ -76,7 +60,7 @@ sorting=ynt
 
 \mainmatter
 
-\setcounter{chapter}{-1}  % start chapter numbering at 0
+% \setcounter{chapter}{-1}  % start chapter numbering at 0
 \include{chapters/introduction}
 \include{chapters/chapter1}
 \include{chapters/chapter2}
