@@ -17,6 +17,99 @@
 \appendix
 
 
+\chapter{\label{chap:app-sec:conventions}Conventions}
+
+
+\section{Units}
+
+
+Natural units system makes the calculations of neutrinos convenient. By definition, we set reduced Planck constant and speed of light to be 1, $\hbar = 1 = c$.
+The conversion between natural units and SI can be down by using the following relations,
+\begin{align}
+   1 \mathrm{GeV} &= 5.08 \times 10^{15} \mathrm {m^{-1}} \\
+   1 \mathrm{GeV} &= 1.8\times 10^{-27} \mathrm{kg}
+\end{align}
+To convert between different physical quantities in this thesis, I always use the following tips.
+\begin{itemize}
+    \item The energy-mass-momentum relations becomes $E^2 = p^2 + m^2c^2 = p^2 + m^2$. Thus mass $m$, momentum $\mathbf p$ and energy $E$ have the same dimension.
+    \item An example of angular momentum in quantum mechanics is $L_z = m\hbar = m$ where $m$ is a quantum number. $\hbar$ is of dimension angular momentum.
+    \item A plane wave in quantum mechanics is $\Psi = A e^{ \frac{E t - p x}{\hbar} }$. $\frac{E t - p x}{\hbar}$ should be dimensionless, which means $px$ has dimension angular momentum, which is obvious, meanwhile we notice that $E t$ also has the dimension of angular momentum. Previously we noticed momentum has the same dimension with energy, we should have time $t$ with the same dimension of length $x$. Also we can conclude that length and time have the same dimenson as $1/E$.
+\end{itemize}
+
+
+\section{Useful Conversions in Neutrino Physics}
+
+Using natural units, length = time = 1/energy, we could rescale almost all quantities in neutrino oscillations using energy, or whatever characteristic scale we have.
+
+We use two flavor vacuum oscillations between the two masses $m_1$ and $m_2$ as an example. The characteristic energy scale is the oscillation frequency $\omega_{v,21}$. The equation of motion
+\begin{align}
+   i\frac{d}{d x} \Psi = \frac{\omega_v}{2}(-\cos 2\theta_v \boldsymbol{\sigma_3} + \sin 2\theta_v \boldsymbol{\sigma_1}) \Psi,
+\end{align}
+can be rescaled using the characteristic energy scale $\omega_{v,21}$
+\begin{align}
+   i\frac{d}{d \hat x} \Psi = \frac{1}{2}(-\cos 2\theta_v \boldsymbol{\sigma_3} + \sin 2\theta_v \boldsymbol{\sigma_1})\Psi ,
+\end{align}
+where $\hat x = \omega_{v,21} x$. It is convenient for numerical calculations to convert quantities into dimensionless ones.
+
+However, we usually discuss oscillation length in SI units for a grip of the picture. To convert from natural units to SI units, we write down the conversion here. The oscillation angular frequency is given by
+\begin{align}
+   \omega_{v,21} &= \frac{\delta m^2}{2E} \nonumber\\
+   &=  \left(\frac{7.5\times 10^{-5}\mathrm{eV}^2}{2\times 1\mathrm{MeV}} \right) \left(\frac{\delta m^2}{7.5\times 10^{-5}\mathrm{eV}^2} \right) \frac{1\mathrm{MeV}}{E} \nonumber\\
+   &= 3.75\times 10^{-11}\mathrm{eV}  \left(\frac{\delta m^2}{7.5\times 10^{-5}\mathrm{eV}^2}\right) \left(\frac{1\mathrm{MeV}}{E}\right) .
+\end{align}
+On the other hand, electro-volt is related to length through the useful formula
+\begin{equation}
+   197\mathrm{MeV}\cdot \mathrm{fm} = \hbar c = 1.
+\end{equation}
+Thus we have the oscillation angular frequency written as
+\begin{align}
+   \omega_{v,21} &= 3.75\times 10^{-11}\mathrm{eV}  \frac{\delta m^2}{7.5\times 10^{-5}\mathrm{eV}^2} \frac{1\mathrm{MeV}}{E} \nonumber\\
+   &= 3.75\times 10^{-17}\mathrm{MeV}  \frac{\delta m^2}{7.5\times 10^{-5}\mathrm{eV}^2} \frac{1\mathrm{MeV}}{E}\nonumber \\
+   &= 1.90\times 10^{-4}  \mathrm{m}^{-1}  \frac{\delta m^2}{7.5\times 10^{-5}\mathrm{eV}^2} \frac{1\mathrm{MeV}}{E}.
+   \label{common-sense-eqn-omega-v-si-unit}
+\end{align}
+Similarly for $\delta m_{32}=2.4\times 10^{-3}\mathrm{eV^2}$ the frequency is
+\begin{align}
+   \omega_{v,32} =\frac{\delta m^2_{32}}{2E} = 6.3\times 10^{-3} \mathrm{m}^{-1}  \frac{\delta m^2_{32}}{2.5\times 10^{-3} \mathrm{eV}^2 } \frac{1MeV}{E}.
+\end{align}
+With the results for angular frequencies, the rescaled length $\hat x$ is restored using
+\begin{align}
+    x = \frac{\hat x}{\omega_v} &= \frac{\hat x}{  1.90\times 10^{-4}  \mathrm{m}^{-1}  \frac{\delta m^2}{7.5\times 10^{-5}\mathrm{eV}^2} \frac{1\mathrm{MeV}}{E} } \\
+    &= \frac{\hat x}{0.190} \mathrm{km} \frac{7.5\times 10^{-5}\mathrm{eV}^2}{\delta m^2}  \frac{E}{1\mathrm{MeV}}.
+\end{align}
+
+
+Another important example is the 2 flavor neutrino oscillations in constant matter background potential $\lambda_c = \sqrt{2}G_{\mathrm F} n_e$. The characteristic energy scale is $\omega_m$ which is calculated using
+\begin{equation}
+   \omega_m = \omega_v \sqrt{ \frac{\lambda_c}{\omega_v}^2 + 1 - 2 \frac{\lambda_c}{\omega_v}\cos 2\theta_v }.
+   \label{common-sense-eqn-omega-m}
+\end{equation}
+Meanwhile, the effective mixing angle $\theta_m$ is determined by
+\begin{equation}
+   \tan 2\theta_m = \frac{\sin 2\theta_v}{\cos 2\theta_v - \frac{\lambda}{\omega_v} }.
+\end{equation}
+Similar to vacuum equation of motion, we rescale the equation of motion in constant background using $\omega_m$
+\begin{equation}
+   i \frac{d}{d\hat x} \Psi = \frac{1}{2}(-\cos 2\theta_m \boldsymbol{\sigma_3} + \sin 2\theta_m \boldsymbol{\sigma_1})\Psi ,
+\end{equation}
+we find out the scaled distance
+\begin{equation}
+   \hat x = \omega_m x.
+\end{equation}
+To reverse the process and find out the actual SI unit distance after the numerical calculation, we use
+\begin{equation}
+   x = \frac{\hat x}{\omega_m}.
+   \label{common-sense-eqn-actual-distance-constant-matter}
+\end{equation}
+The procedure will be the following.
+\begin{itemize}
+    \item Calculate $\omega_v$ using Eq.~\ref{common-sense-eqn-omega-v-si-unit}.
+\item Calculate $\hat\lambda_c = \frac{\lambda_c}{\omega_v}$.
+\item Calculate $\omega_m$ using Eq.~\ref{common-sense-eqn-omega-m}.
+\item Find out the actual distance using Eq.~ \ref{common-sense-eqn-actual-distance-constant-matter}.
+\end{itemize}
+
+
 \chapter{\label{app:rabi-oscillations}Rabi Oscillations}
 
 %  trim={<left> <lower> <right> <upper>}
