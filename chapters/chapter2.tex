@@ -50,14 +50,152 @@ More generally, positron emission and electron capture are also neutrino-related
 
 \section{\label{chap:basics-section:neutrinos}Neutrinos as Fundamental Particles}
 
+Neutrinos are fundamental particles in standard model of particle physics. I summarize some of the properties that is useful in this thesis in Table~\ref{table:neutrino-properties}.
+
+\begin{table}[ht]
+\centering
+ \begin{tabular}{|c | c | c|} 
+%  \hline
+%  Property & Equation & Boson   \\ [0.5ex] 
+ \hline
+  Electric Charge & 0\\
+  \hline
+  Spin & $1/2$ \\
+\hline
+ Mass & $<2\mathrm{eV}$  \\
+ \hline
+ Interactions & Weak, Gravitation  \\
+ \hline
+ Flavors & $\nu_e$, $\nu_\mu$, $\nu_\tau$ \\ 
+ \hline
+ Chirality & Left \\
+ \hline
+ Hypercharge & $-1$ \\
+ \hline
+ 
+ \end{tabular}
+ \caption{Properties of Neutrinos~\cite{Patrignani:2016xqp}}
+\label{table:neutrino-properties}
+\end{table}
+
+
+\subsection{Neutrino Oscillations in Vacuum}
+
+Neutrinos are special particles that their flavor eigenstates are not the propagation eigenstates, which leads to neutrino flavor conversions while they propagate. Since neutrinos with different flavor interact with matter with different cross section, we need to investigate the neutrino flavor carefully. Even though only electron flavor neutrinos are produced, what we detect on Earth is different in flavor, which depends on two phenomena, neutrino vacuum oscillation and Mikheyev–Smirnov–Wolfenstein effect.
+
+
+To understand the neutrino vacuum oscillations phenomenon, we use two-flavor neutrinos scenario as an example\footnote{In most physical problem, two-flavor scenario is a good approximation. The mass splits between the three mass eigenstates are very different so that the oscillation scales differ a lot for the different mass splits. Qualitatively speaking, the two-flavor scenario captures the significant features of the corresponding mass split.}. In vacuum, propagation states are mass eigenstates. The wave function in flavor eigenstates basis is related to wave function in mass eigenstates through an unitary matrix $\mathbf U$,
+
+\begin{equation}
+\Psi_f = \mathbb{U}_{\alpha i}\Psi_{v},
+\end{equation}
+
+where $\Psi_f$ is wave function in flavor basis and $\Psi_v$ is the wave function in vacuum mass eigenstate basis. The rotation matrix is
+
+\begin{equation}
+U = \begin{pmatrix} \cos\theta_v & \sin \theta_v \\ -\sin \theta_v & \cos \theta_v \end{pmatrix}.
+\end{equation}
+
+In vacuum basis, the Hamiltonian is free propagation, which is given by
+
+\begin{equation}
+H_v^{(v)} = \begin{pmatrix} E_1 & 0 \\
+0 & E_2
+\end{pmatrix},
+\end{equation}
+
+where
+
+\begin{align}
+E_i^{(v)} & = \sqrt{m_i^2 + p_i^2 } \\
+& = p_i \sqrt{\frac{m_i^2}{p_i^2} + 1} \\
+& \approx p_i + \frac{1}{2} \frac{m_i^2}{p_i}.
+\end{align}
+
+We assume the neutrinos have almost the same momentum, which is true since their mass is small, i.e., $p_i \approx E$. To first order, the Hamiltonian becomes
+
+\begin{align*}
+H_v^{(v)} &= \frac{1}{2E} \begin{pmatrix}
+m_1^2 & 0 \\
+0 & m_2^2
+\end{pmatrix} + p \mathbb{I}\\
+& =  \frac{1}{4E} \begin{pmatrix}
+m_1^2 - m_2^2 & 0 \\
+0 & m_2^2 - m_1^2
+\end{pmatrix} \\
+&\phantom{=}+ \frac{m_2^2 + m_1^2}{4E} \begin{pmatrix}
+1 & 0 \\
+0 & 1
+\end{pmatrix} + \mathbf{I},
+\end{align*}
+
+where the identity matrices only give us an overall phase so we drop them. With the definition that $\Delta m^2 = m_2^2 - m_1^2$ The vacuum Hamiltonian in vacuum basis is simplify
+
+\begin{equation}
+H_v^{(v)} =  \frac{\Delta m^2}{4E} \begin{pmatrix}
+-1 & 0 \\
+0 & 1
+\end{pmatrix},
+\end{equation}
+
+which leads to the simple solution for the wave function in vacuum basis
+
+\begin{equation}
+\Psi_v(t)^{(v)} = \begin{pmatrix}
+c_1(0) e^{i\Delta m^2 t } \\
+c_2(0) e^{ -i\Delta m^2 t } 
+\end{pmatrix},
+\end{equation}
+
+where the initial condition is
+
+\begin{equation}
+\Psi_v(0)^{(v)} = \begin{pmatrix}
+c_1(0) \\
+c_2(0) 
+\end{pmatrix}.
+\end{equation}
+
+In flavor basis, the wave function at anytime is
+
+\begin{align}
+\Psi_f(t) &= \mathbf{U}\Psi_v(t) \\
+& = \begin{pmatrix} \cos\theta_v & \sin \theta_v \\ -\sin \theta_v & \cos \theta_v \end{pmatrix} \begin{pmatrix} c_1(0) e^{i\Delta m^2 t } \\
+c_2(0) e^{ -i\Delta m^2 t }    \end{pmatrix} .
+\end{align}
+
+As seen in the nuclear reactions in the solar core, electron neutrinos are most abundant flavor. Initial condition is assumed to be electron flavor in the calculation which leads to the survival probability of electron flavor
+
+\begin{equation}
+P(\nu_e,t) = \Psi_f(0)^\dagger \Psi_f(t) = 1-\sin^2(2\theta_v)\sin^2\left( \frac{\Delta m^2 t}{4E} \right).
+\end{equation}
+
+Since neutrinos travel with velocity approximately the speed of light, we use $L = t$ where $L$ is the distance travelled. The survival probability is
+
+\begin{equation}
+P(\nu_e,L) =  1-\sin^2(2\theta_v)\sin^2\left( \frac{\Delta m^2 L}{4E} \right).
+\end{equation}
+
+
+The important parameter is the oscillation length of the neutrino flavor conversion. Here we have the oscillation frequency $\omega = \frac{\Delta m^2}{2E}$.
+
+(Need a figure about the oscillation length here.)
+
 
 
 
 \section{\label{chap:basics-section:astro}Stars as Neutrino Factories}
 
-Astrophysical neutrino sources such as cores of stars, AGN, Gamma-ray bursts, and supernovae, reveals a lot of information about the sources. Though neutrinos are are weakly interacting particles thus rendering them hard to detect, it is an important subject to theoretically inspect neutrino productions in astrophysical processes.
+Astrophysical neutrino sources such as cores of stars, AGN, Gamma-ray bursts, and supernovae, reveals a lot of information about the sources. Though neutrinos are are weakly interacting particles rendering them hard to detect, it is an important subject to theoretically inspect neutrino productions in astrophysical processes.
 
-One of the neutrino factories is the stellar core. Numerous nuclear reactions as well thermal neutrino production produce high number density neutrinos emissions. In this section, the nuclear reactions in stars are reviewed as well as the neutrino oscillation in the stars.
+
+
+
+
+
+\subsection{Stellar Core}
+
+One of the neutrino factories is the stellar core. Numerous nuclear reactions as well thermal neutrino production produce high number density neutrinos emissions. In this section, the nuclear reactions in stars are reviewed as well as the neutrino oscillations in the stars.
 
 \begin{figure}[ht]
 \centering
@@ -168,109 +306,6 @@ which has a branching ratio of $2\times 10^{-5}\%$. As a comparison, the $\mathr
 
 
 
-\subsection{Neutrino Oscillation}
-
-
-Neutrinos are special particles that their flavor eigenstates are not the propagation eigenstates, which leads to neutrino flavor oscillations. Since neutrinos with different flavor interact with matter with different cross section, we need to investigate the neutrino flavor carefully. Even though only electron flavor neutrinos are produced, what we detect on Earth is different in flavor, which depends on two phenomena, neutrino vacuum oscillation and Mikheyev–Smirnov–Wolfenstein effect.
-
-\subsubsection{Vacuum Oscillation}
-
-To understand the neutrino vacuum oscillation phenomenon, we use two flavor neutrino as an example. In vacuum, propagation states are mass eigenstates, which is different from flavor eigenstates. The wave function in flavor eigenstates basis is related to wave function in mass eigenstates through an unitary matrix $\mathbf U$,
-
-\begin{equation}
-\Psi_f = \mathbb{U}_{\alpha i}\Psi_{v},
-\end{equation}
-
-where $\Psi_f$ is wave function in flavor basis and $\Psi_v$ is the wave function in vacuum mass eigenstate basis. The rotation matrix is
-
-\begin{equation}
-U = \begin{pmatrix} \cos\theta_v & \sin \theta_v \\ -\sin \theta_v & \cos \theta_v \end{pmatrix}.
-\end{equation}
-
-In vacuum basis, the Hamiltonian is free propagation, which is given by
-
-\begin{equation}
-H_v^{(v)} = \begin{pmatrix} E_1 & 0 \\
-0 & E_2
-\end{pmatrix},
-\end{equation}
-
-where
-
-\begin{align}
-E_i^{(v)} & = \sqrt{m_i^2 + p_i^2 } \\
-& = p_i \sqrt{\frac{m_i^2}{p_i^2} + 1} \\
-& \approx p_i + \frac{1}{2} \frac{m_i^2}{p_i}.
-\end{align}
-
-We assume the neutrinos have almost the same momentum, which is true since their mass is small, i.e., $p_i \approx E$. To first order, the Hamiltonian becomes
-
-\begin{align*}
-H_v^{(v)} &= \frac{1}{2E} \begin{pmatrix}
-m_1^2 & 0 \\
-0 & m_2^2
-\end{pmatrix} + p \mathbb{I}\\
-& =  \frac{1}{4E} \begin{pmatrix}
-m_1^2 - m_2^2 & 0 \\
-0 & m_2^2 - m_1^2
-\end{pmatrix} \\
-&\phantom{=}+ \frac{m_2^2 + m_1^2}{4E} \begin{pmatrix}
-1 & 0 \\
-0 & 1
-\end{pmatrix} + \mathbf{I},
-\end{align*}
-
-where the identity matrices only give us an overall phase so we drop them. With the definition that $\Delta m^2 = m_2^2 - m_1^2$ The vacuum Hamiltonian in vacuum basis is simplify
-
-\begin{equation}
-H_v^{(v)} =  \frac{\Delta m^2}{4E} \begin{pmatrix}
--1 & 0 \\
-0 & 1
-\end{pmatrix},
-\end{equation}
-
-which leads to the simple solution for the wave function in vacuum basis
-
-\begin{equation}
-\Psi_v(t)^{(v)} = \begin{pmatrix}
-c_1(0) e^{i\Delta m^2 t } \\
-c_2(0) e^{ -i\Delta m^2 t } 
-\end{pmatrix},
-\end{equation}
-
-where the initial condition is
-
-\begin{equation}
-\Psi_v(0)^{(v)} = \begin{pmatrix}
-c_1(0) \\
-c_2(0) 
-\end{pmatrix}.
-\end{equation}
-
-In flavor basis, the wave function at anytime is
-
-\begin{align}
-\Psi_f(t) &= \mathbf{U}\Psi_v(t) \\
-& = \begin{pmatrix} \cos\theta_v & \sin \theta_v \\ -\sin \theta_v & \cos \theta_v \end{pmatrix} \begin{pmatrix} c_1(0) e^{i\Delta m^2 t } \\
-c_2(0) e^{ -i\Delta m^2 t }    \end{pmatrix} .
-\end{align}
-
-As seen in the nuclear reactions in the solar core, electron neutrinos are most abundant flavor. Initial condition is assumed to be electron flavor in the calculation which leads to the survival probability of electron flavor
-
-\begin{equation}
-P(\nu_e,t) = \Psi_f(0)^\dagger \Psi_f(t) = 1-\sin^2(2\theta_v)\sin^2\left( \frac{\Delta m^2 t}{4E} \right).
-\end{equation}
-
-Since neutrinos travel with velocity approximately the speed of light, we use $L = t$ where $L$ is the distance travelled. The survival probability is
-
-\begin{equation}
-P(\nu_e,L) =  1-\sin^2(2\theta_v)\sin^2\left( \frac{\Delta m^2 L}{4E} \right).
-\end{equation}
-
-
-The important parameter is the oscillation length of the neutrino flavor conversion. Here we have the oscillation frequency $\omega = \frac{\Delta m^2}{2E}$.
-
-(Need a figure about the oscillation lengh here.)
 
 
 
