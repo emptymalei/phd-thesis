@@ -127,18 +127,18 @@ m_1^2 - m_2^2 & 0 \\
 \end{pmatrix} \\
 &\phantom{=}+ \frac{m_2^2 + m_1^2}{4E} \mathbf{I} + E \mathbf{I},
 \end{align*}
-where the identity matrices only give us an overall phase so we drop them. With the definition that $\Delta m^2 = m_2^2 - m_1^2$ The vacuum Hamiltonian in mass basis is simplify
+where the identity matrices only give us an overall phase so we drop them. With the definition that $\delta m^2 = m_2^2 - m_1^2$ The vacuum Hamiltonian in mass basis is simplify
 \begin{equation}
-H_v^{(v)} =  \frac{\Delta m^2}{4E} \begin{pmatrix}
+H_v^{(v)} =  \frac{\delta m^2}{4E} \begin{pmatrix}
 -1 & 0 \\
 0 & 1
-\end{pmatrix} = -\frac{\Delta m^2}{4E} \sigma_3 = -\frac{\omega_{v}}{2}\sigma_3 ,
+\end{pmatrix} = -\frac{\delta m^2}{4E} \sigma_3 = -\frac{\omega_{v}}{2}\sigma_3 ,
 \end{equation}
-which leads to the simple solution for the wave function in vacuum basis
+which leads to the simple solution for the wave function in mass basis
 \begin{equation}
 \Psi_v^{(v)}(t) = \begin{pmatrix}
-c_1(0) e^{i\Delta m^2 t } \\
-c_2(0) e^{ -i\Delta m^2 t } 
+c_1(0) e^{i \omega_v t/2 } \\
+c_2(0) e^{ -i\omega_v t/2 } 
 \end{pmatrix}.
 \end{equation}
 % where the initial condition is
@@ -151,24 +151,36 @@ c_2(0) e^{ -i\Delta m^2 t }
 In flavor basis, the wave function at anytime is related to wave function in mass basis,
 \begin{align}
 \Psi_v^{(f)}(t) &= \mathbf{U}_v\Psi_v^{(v)}(t) \\
-& = \begin{pmatrix} \cos\theta_v & \sin \theta_v \\ -\sin \theta_v & \cos \theta_v \end{pmatrix} \begin{pmatrix} c_1(0) e^{i\Delta m^2 t } \\
-c_2(0) e^{ -i\Delta m^2 t }    \end{pmatrix} .
+& = \begin{pmatrix} \cos\theta_v & \sin \theta_v \\ -\sin \theta_v & \cos \theta_v \end{pmatrix} \begin{pmatrix} c_1(0) e^{i\omega_v t/2 } \\
+c_2(0) e^{ -i\omega_v t/2 }    \end{pmatrix} .
 \end{align}
 
 In many astrophysical neutrino sources such as the solar core, electron neutrinos are most abundant. Thus initial condition is usually assumed to be electron flavor in the calculation which leads to the survival probability of electron flavor
 \begin{equation}
-P(\nu_e,t) = \Psi_v^{(f)}(0)^\dagger \Psi_v^{(f)}(t) = 1-\sin^2(2\theta_v)\sin^2\left( \frac{\Delta m^2 t}{4E} \right).
+P(\nu_e,t) = \Psi_v^{(f)}(0)^\dagger \Psi_v^{(f)}(t) = 1-\sin^2(2\theta_v)\sin^2\left( \frac{\omega_v t}{2} \right).
 \end{equation}
 Since neutrinos travel with velocity approximately the speed of light, we use $L = t$ where $L$ is the distance travelled. The survival probability is
 \begin{equation}
 P(\nu_e,L) =  1-\sin^2(2\theta_v)\sin^2\left( \frac{\omega_v}{2} L \right).
 \end{equation}
-The important parameter is the oscillation length of the neutrino flavor conversion, $1/\omega_v$. This confirms our qualitative method result Eqn.~\ref{chap:basics-section:neutrinos-eqn:qualitative-method-frequency}.
+The important parameter is the oscillation length of the neutrino flavor conversion, $1/\omega_v$. This confirms our qualitative method result Eqn.~\ref{chap:basics-section:neutrinos-eqn:qualitative-method-frequency}. This result plotted in fig.~\ref{chap:basics-section:neutrinos-fig:vacuum-2-flavor-osc}, which clearly shows the oscillatory behavior. The oscillation length is determined by characteristic energy scale $\omega_v$, while the oscillation amplitude is determined by $\sin^2(2\theta_v)$.
+
+
+As for three flavor mixing, we have two different characteristic energy scales, $\omega_{v,21}=\delta m_{21}^2/2E$ and $\omega_{v,32}=\delta m_{31}^2/2E$. Thus two oscillation periods should occur, as shown in fig.~\ref{chap:basics-section:neutrinos-fig:vacuum-3-flavor-osc}. The fast oscillations are determined by the larger characteristic energy scale, $\omega_{v,32}$, while the slow oscillations are determined by the smaller one $\omega_{v,21}$. For inverted hierarchy, the oscillation frequencies are the same as normal hierarchy since they have the same characteristic energy scales. However ever they develop different oscillation phases.
+
 
 \begin{figure}
     \centering
-    \includegraphics[width=\textwidth]{chapters/assets/basics/vacuum-oscillations-3-flavor.eps}
-    \caption{Neutrino vacuum oscillations with three flavors. Normal hierarchy is assumed.}
+    \includegraphics[width=\textwidth]{chapters/assets/basics/neutrino-vaccum-osc-2-flavor.pdf}
+    \caption{Electron flavor neutrino survival probability in vacuum oscillations in two flavors scenario. Mixing angle is determined by $\sin^2\theta_{12}=0.30$.}
+    \label{chap:basics-section:neutrinos-fig:vacuum-2-flavor-osc}
+\end{figure}
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{chapters/assets/basics/vacuum-oscillations-3-flavor.pdf}
+    \caption{Neutrino vacuum oscillations with three flavors. The solid lines represent normal hierarchy and the dashed lines represent inverted hierarchy. Mixing angles are determined by $\sin^2\theta_{12}=0.30$, $\sin^2\theta_{13}=0.023$, $\sin^2\theta_{23}=0.41$, while the mass differences are set to $\delta m_{21}^2 = 7.9\times 10^{-5}\mathrm{eV}$, $\delta m^2_{23}=2.7\times 10^{-3}\mathrm{eV}$. Energy of neutrinos is 1MeV.}
     \label{chap:basics-section:neutrinos-fig:vacuum-3-flavor-osc}
 \end{figure}
 
@@ -179,25 +191,20 @@ The important parameter is the oscillation length of the neutrino flavor convers
 Astrophysical neutrino sources such as cores of stars, AGN, Gamma-ray bursts, and supernovae, reveals a lot of information about the sources. Though neutrinos are are weakly interacting particles rendering them hard to detect, it is an important subject to theoretically inspect neutrino productions in astrophysical processes.
 
 
-
-
-
-
 \subsection{Stellar Core}
 
-One of the neutrino factories is the stellar core. Numerous nuclear reactions as well thermal neutrino production produce high number density neutrinos emissions. In this section, the nuclear reactions in stars are reviewed as well as the neutrino oscillations in the stars.
+One of the neutrino factories is the stellar core. Numerous nuclear reactions as well thermal neutrino production produce luminous neutrinos. In this section, the nuclear reactions in stars are reviewed as well as the neutrino oscillations in the stars.
 
-\begin{figure}[ht]
-\centering
-\includegraphics{chapters/assets/solar/Beta_Negative_Decay.eps}
-\caption{Feynman diagram of beta decay. The charged current weak interaction boson in this case is a $W^-$. Credit: Joel Holdsworth, licensed under public domain.}
-\label{fig:Beta_Negative_Decay}
-\end{figure}
+% \begin{figure}[ht]
+% \centering
+% \includegraphics{chapters/assets/solar/Beta_Negative_Decay.eps}
+% \caption{Feynman diagram of beta decay. The charged current weak interaction boson in this case is a $W^-$. Credit: Joel Holdsworth, licensed under public domain.}
+% \label{fig:Beta_Negative_Decay}
+% \end{figure}
 
-\subsection{Nuclear Reactions in Sun and Neutrino Flux}
+\subsection{Nuclear Reactions in Sun and Solar Neutrino Flux}
 
-pp chain and CNO cycle are the most important nuclear reactions in a star. Through different stages of its life, a star experience different nuclear reactions. Figure \ref{fig:pp_Chain_Branching} shows the dominant energy source of solar mass stars. In order to calculate the neutrino spectrum we need the neutrino production rate in each reaction and the branching ratios. The processes that emits neutrinos are the red reactions in Fig \ref{fig:pp_Chain_Branching}, which explicitly are
-
+The most important nuclear reactions in our Sun are pp chain and CNO cycle. Through different stages of its life, a star experience different nuclear reactions. Figure \ref{fig:pp_Chain_Branching} shows the dominant energy source of solar mass stars. In order to calculate the neutrino spectrum we need the neutrino production rate in each reaction and the branching ratios. The processes that emits neutrinos are the reactions in red in Fig~\ref{fig:pp_Chain_Branching}, which are~\cite{Altmann2001}
 \begin{align}
 &\mathrm{p+p\to {}^2H + e^+ +\nu_e},  & \mathrm{\leq 0.422MeV}\\
 &\mathrm{{}^7Be + e^- \to {}^7Li + \nu_e} , &\text{0.862MeV for 90\%}\\
@@ -232,44 +239,36 @@ pp chain and CNO cycle are the most important nuclear reactions in a star. Throu
         edge from parent node [right] {16.70\%  } }};
 \end{tikzpicture}
 \end{adjustbox}
-\caption{ pp chain with branching ratio\cite{Altmann2001} }
+\caption{ pp chain with branching ratio. This is a modified version of Fig.~2 in \cite{Altmann2001} by Michael Altmann et al. }
 \label{fig:pp_Chain_Branching}
 \end{figure*}
 
 
-\begin{figure}[!hbtp]
-\centering
-\includegraphics[width=\columnwidth]{chapters/assets/solar/cno_cycle.png}
-\caption{CNO cycle illustration.\cite{Adelberger2011a}}
-\label{fig:cno_cycle}
-\end{figure}
+% \begin{figure}[!hbtp]
+% \centering
+% \includegraphics[width=\columnwidth]{chapters/assets/solar/cno_cycle.png}
+% \caption{CNO cycle illustration~\cite{Adelberger2011a}.}
+% \label{fig:cno_cycle}
+% \end{figure}
 
 
-Solar neutrinos are mostly produced in pp reaction, Be electron capture and B decay, which are called pp neutrinos, Be neutrinos and B neutrinos. Even without knowledge of the detailed reactions, the conservation of lepton numbers will lead to the overall neutrino production
-
+Solar neutrinos are mostly produced in pp reaction, Be electron capture and B decay, which are called pp neutrinos, Be neutrinos and B neutrinos respectively. Even without knowledge of the detailed reactions, the conservation of lepton numbers will lead to the overall neutrino production
 \begin{equation}
 \mathrm{4p+2e^- \to {}^4He + 2\nu_e },
 \end{equation}
-
 where it is important to notice that two neutrinos are produced in each reaction. This overall reaction can either be pp chain or CNO cycle.
 
-Using this simple relation, we can estimate the neutrino flux emitted by our sun. Given the kinetic energy produced in each reaction is the difference between the initial masses and the final masses, $Q_{pp}=4m_p+2m_e-m_{He4}=26.7\mathrm{MeV}$ where the mass of neutrinos are neglected since they are small compared with every other particle. On average, each neutrino carries away $0.2\mathrm{MeV}$ energy and the rest will be mostly in the form of thermal energy $Q_\gamma=26.3\mathrm{MeV}$. Number flux of thermal photons near Earth can be calculated using the solar constant $S_0$,
-
+Using this simple relation, we can estimate the neutrino flux emitted by our sun. Given the kinetic energy produced in each reaction is the difference between the initial masses and the final masses, $Q_{pp}=4m_p+2m_e-m_{He4}=26.7\mathrm{MeV}$ where the mass of neutrinos are neglected since they are small compared with every other particle. On average, each neutrino carries away $0.2\mathrm{MeV}$ energy and the rest will be mostly in the form of thermal energy $Q_\gamma=26.3\mathrm{MeV}$~\cite{Adelberger2011a}. Number flux of thermal photons near Earth can be calculated using the solar constant $S_0$,
 \begin{equation}
 \Phi_\gamma = \frac{S_0}{Q_\gamma}.
 \end{equation}
-
 Since we know each reaction produces 2 neutrinos while producing $Q_\gamma$, which means that the number flux of neutrinos near Earth is roughly twice of the number flux of photons, i.e.,
-
 \begin{equation}
 \Phi_\nu = 2 \Phi_\gamma \approx 6\times 10^{10} \mathrm{cm^{-2}s^{-1}}.
 \end{equation}
-
-
 For such a large flux, understanding the role in stellar nuclear reaction and spectra is important.
 
 Inside our Sun, two additional reactions also produce neutrinos which are called pep and hep neutrinos.
-
 \begin{itemize}
 \item pep neutrinos are produced in 
 \begin{equation}
@@ -281,86 +280,59 @@ which is only has a branching ratio 0.4\% instead of the 99.6\% of pp reaction.
 \mathrm{ {}^3He + p \to {}^4He + e^+ \nu_e },
 \end{equation}
 which has a branching ratio of $2\times 10^{-5}\%$. As a comparison, the $\mathrm{{}^3He + {}^3He}$ has a branching ratio $85\%$ and $\mathrm{{}^3He + {}^4He}$ has a branching ratio $15\%$.
-
 \end{itemize}
 
 
 
 
+\section{Mikheyev - Smirnov - Wolfenstein Effect}
 
-
-
-
-
-
-
-
-
-
-
-
-\subsubsection{Mikheyev - Smirnov - Wolfenstein Effect}
-
-The nature of neutrino oscillation means that flavor conversion occurs as long as their propagation eigenstates are not flavor eigenstates. We expect neutrino propagation eigenstates in matter are different from flavor states in general.\cite{wolf78} Using the fact that neutral current interactions between different flavor neutrinos and matter is independent of flavor, we only include the charged current, which will produce a effective potential for electron flavor. In flavor basis, the effective potential is
-
+The nature of neutrino oscillations means that flavor conversion occurs as long as their propagation eigenstates are not flavor eigenstates. As neutrinos travel from the center of the star throughout to the surface, we expect neutrino propagation eigenstates in such matter background to be different from flavor states in general~\cite{wolf78}. Using the fact that neutral current interactions between different flavor neutrinos and matter is independent of flavor, we only include the charged current, which will produce a effective potential for electron flavor that is different for other flavors. In flavor basis, the effective potential is
 \begin{equation}
-V=\frac{\sqrt{2}G_F n_e}{2} \sigma_3,
+V=\frac{\sqrt{2}G_{\mathrm F} n_{\mathrm e} }{2} \sigma_3,
 \end{equation}
-
-where $G_F$ is Fermi constant, $n_e$ is number density of electrons. We also removed the identity in this matrix since it doesn't change our survival probability. The Hamiltonian with matter effect is the combination of vacuum oscillation and matter effect, which is, in flavor basis, explicitly,
-
+where $G_{\mathrm F}$ is Fermi constant, $n_{\mathrm e}$ is number density of electrons. We also removed the terms that is proportional to identity in this potential since it doesn't change the probability for flavors. The Hamiltonian with matter effect is the combination of vacuum oscillation and matter effect, which is, in flavor basis,
 \begin{equation}
-H_m = \frac{ \Delta m^2 }{2E}\frac{1}{2}\begin{pmatrix} -\cos 2\theta_v & \sin 2 \theta_v \\ \sin 2\theta_v & \cos 2\theta_v  \end{pmatrix} + \frac{\sqrt{2}G_F n_e}{2} \sigma_3,
+H_m = \frac{ \omega_v }{2}\begin{pmatrix} -\cos 2\theta_v & \sin 2 \theta_v \\ \sin 2\theta_v & \cos 2\theta_v  \end{pmatrix} + \frac{\sqrt{2}G_F n_e}{2} \sigma_3,
 \end{equation}
-
 where we used the result of flavor basis vacuum oscillation Hamiltonian
-
 \begin{align}
 H_v^{(f)}& = \mathbf{U} H_v^{(v)}\mathbf{U^\dagger} \\
-&= \frac{ \Delta m^2 }{2E}\frac{1}{2}\begin{pmatrix} -\cos 2\theta_v & \sin 2 \theta_v \\ \sin 2\theta_v & \cos 2\theta_v  \end{pmatrix}.
+&= \frac{ \omega_v }{2}\begin{pmatrix} -\cos 2\theta_v & \sin 2 \theta_v \\ \sin 2\theta_v & \cos 2\theta_v  \end{pmatrix}.
 \end{align}
-
-Applying Pauli matrices and $\lambda = \frac{\sqrt{2}G_F n_e}{2}$ to this total Hamiltonian, it is rewritten as
-
+Utilizing Pauli matrices and the so called matter potential $\lambda = \frac{\sqrt{2}G_F n_e}{2}$, it is rewritten as
 \begin{equation}
-H_m = \left(\frac{\lambda}{2} -\frac{ \omega }{2} \cos 2\theta_v \right) \boldsymbol{\sigma}_3  + \frac{ \omega }{2} \sin 2\theta_v \boldsymbol{\sigma}_1.
+H_m = \left(\frac{\lambda}{2} -\frac{ \omega_v }{2} \cos 2\theta_v \right) \boldsymbol{\sigma}_3  + \frac{ \omega_v }{2} \sin 2\theta_v \boldsymbol{\sigma}_1.
 \end{equation}
-
 Due to the off-diagonal terms in the Hamiltonian, the system will experience oscillations in flavor. A resonance, i.e., maximum mixing, dominates the system when the diagonal terms becomes zero,
-
 \begin{equation}
 \frac{\lambda}{2} -\frac{ \omega }{2} \cos 2\theta_v  = 0,
 \end{equation}
-
 which gives us the MSW resonance condition.
 
-The importance of matter effect to our understanding of solar neutrinos is that it modifies the oscillation, which depends on the matter profile. For a solar mass star, we have almost adiabatic evolution of the neutrinos, which means that the instantaneous eigenstates and eigenvectors of Hamiltonian is good enough for the time dependent Schr\"{o}dinger equation. 
+The importance of matter effect to our understanding of solar neutrinos is that it modifies the oscillation, depending on the matter density profile. For a solar mass star, we have almost adiabatic evolution of the neutrinos, which means that the instantaneous eigenstates and eigenvectors of Hamiltonian is good enough for the time dependent Schr\"{o}dinger equation. 
 
 
-For simplicity, we define the vacuum frequency and the hatted quantities
-
+For simplicity, we define the vacuum frequency and the 'hatted' dimensionless quantities
 \begin{align}
-\omega &= \frac{\Delta m^2}{2E} \\
-\hat\lambda & = \frac{\lambda}{\omega}.
+\hat\lambda & = \frac{\lambda}{\omega_v}.
 \end{align}
-
 The eigenstates, derived by diagonalizing the Hamiltonian, are
-
 \begin{align}
-E_1 &= \frac{\omega}{2}\sqrt{ \hat\lambda +1 -  2\hat\lambda \cos 2\theta_v }\\
-E_2 &= -\frac{\omega}{2}\sqrt{ \hat\lambda +1 -  2\hat\lambda \cos 2\theta_v }.
+E_1 &= \frac{\omega_v}{2}\sqrt{ \hat\lambda +1 -  2\hat\lambda \cos 2\theta_v }\\
+E_2 &= -\frac{\omega_v}{2}\sqrt{ \hat\lambda +1 -  2\hat\lambda \cos 2\theta_v }.
 \end{align}
 
 
 \begin{figure}
 \centering
 \includegraphics[width=\columnwidth]{chapters/assets/solar/mswEnergyLevels.jpg}
-\caption{The two energy levels in matter effect. The energy has unit $\omega/2$ while the potential has unit $\omega$.}
+\caption{The two energy levels in matter effect. The energy has unit $\omega_v/2$ while the potential has unit $\omega_v$.}
 \label{fig:mswEnergyLevels}
 \end{figure}
 
-Figure \ref{fig:mswEnergyLevels} shows the two energy levels. For very high matter density, which interact with electron neutrinos more through charged current, electron flavor is composed almost with heavy propagation eigenstate. However, as the matter density becomes lower, the heavy propagation state will be gradually transformed to the other flavors since electron flavor in vacuum is composed mostly the light mass state. The resonance, which is the closest point of energy levels, happens at density $n_e　 = 2\omega \cos(2\theta_v)/\sqrt{2}G_F$ which depends on $\omega = \Delta m^2/2E$. Neutrinos with different energies have different resonance, which will significantly reshape the neutrino spectra for different flavors. More explicitly, the conversion of flavor is shown in
-Figure \ref{fig:msw_and_density} which is taken from Smirnov.\cite{Smirnov2003} Since we are discussion adiabatic evolution, the probability of each energy eigenstates doesn't change, as the boxes of each energy eigenstates shown in Figure \ref{fig:msw_and_density} doesn't change in size. The extreme dense case shows that matter converts a lot of electron flavor to muon flavor.
+Fig.~\ref{fig:mswEnergyLevels} shows the two energy levels. For very high matter density, which interact with electron neutrinos more through charged current, electron flavor is composed almost with heavy propagation eigenstate. However, as the matter density becomes lower, the heavy propagation state will be gradually transformed to the other flavors since electron flavor in vacuum is composed mostly the light mass state. The resonance, which is the closest point of energy levels, happens at density $n_{\mathrm e} = 2\omega_v \cos(2\theta_v)/\sqrt{2}G_F$ which depends on $\omega_v$. Neutrinos with different energies have different resonance, which will significantly reshape the neutrino spectra for different flavors. More explicitly, the conversion of flavor is shown in
+Fig.~\ref{fig:msw_and_density} which is taken from Smirnov~\cite{Smirnov2003}. Since we are discussion adiabatic evolution, the probability of each energy eigenstates doesn't change, as the boxes of each energy eigenstates shown in Fig.~\ref{fig:msw_and_density} doesn't change in size. The extreme dense case shows that matter converts a lot of electron flavor to muon flavor.
 
 \begin{figure}
 \centering
@@ -370,8 +342,7 @@ Figure \ref{fig:msw_and_density} which is taken from Smirnov.\cite{Smirnov2003} 
 \end{figure}
 
 
-
-In summary, even though only electron flavor neutrinos are produced in the core of a solar mass star, the neutrino flavor conversion to the other flavors is enhanced by matter interaction, in addition to the vacuum oscillation. However, the actual neutrino flavor conversion is much more complicated than just MSW effect and almost impossible to calculate without knowing the very exact matter profile of the Sun even with the time-dependent small perturbations to the density. As an approximation, MSW transition is good enough for the solar neutrinos.\cite{Lopes2013a} In the case of the sun, the flavor conversion is calculated by Ilídio Lopes and shown in Figure \ref{fig:solar_neutrino_flavor_conversion}.\cite{Lopes2013}
+In summary, even though only electron flavor neutrinos are produced in the core of a solar mass star, the neutrino flavor conversion to the other flavors is enhanced by matter interaction, in addition to the vacuum oscillation. However, the actual neutrino flavor conversion is much more complicated than just MSW effect and almost impossible to calculate without knowing the very exact matter profile of the Sun even with the time-dependent small perturbations to the density. As an approximation, MSW transition is good enough for the solar neutrinos~\cite{Lopes2013a}. In the case of the sun, the flavor conversion is calculated by Ilídio Lopes and shown in Fig.~\ref{fig:solar_neutrino_flavor_conversion}~\cite{Lopes2013}.
 
 \begin{figure}
 \centering
