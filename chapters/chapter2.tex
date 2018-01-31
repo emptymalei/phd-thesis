@@ -178,7 +178,7 @@ which has a branching ratio of $2\times 10^{-5}\%$. As a comparison, the $\mathr
 \end{itemize}
 
 
-\subsection{Neutrino Oscillations in Vacuum}
+\section{\label{chap:basics-sec:vacuum-osc}Neutrino Oscillations in Vacuum}
 
 Neutrinos are special particles that their flavor eigenstates are not the propagation eigenstates, which leads to neutrino flavor conversions while they propagate. Since neutrinos with different flavor interact with matter with different cross section, we need to investigate the neutrino flavor carefully. Even though only electron flavor neutrinos are produced, what we detect on Earth is different in flavor, which depends on two phenomena, neutrino vacuum oscillation and Mikheyev–Smirnov–Wolfenstein effect.
 
@@ -264,8 +264,13 @@ P(\nu_e,L) =  1-\sin^2(2\theta_v)\sin^2\left( \frac{\omega_v}{2} L \right).
 \end{equation}
 The important parameter is the oscillation length of the neutrino flavor conversion, $1/\omega_v$. This confirms our qualitative method result Eqn.~\ref{chap:basics-section:neutrinos-eqn:qualitative-method-frequency}. This result plotted in fig.~\ref{chap:basics-section:neutrinos-fig:vacuum-2-flavor-osc}, which clearly shows the oscillatory behavior. The oscillation length is determined by characteristic energy scale $\omega_v$, while the oscillation amplitude is determined by $\sin^2(2\theta_v)$.
 
+Alternatively, we can find out the Hamiltonian in flavor basis first then solve the Sch\"{o}dinger equation. I will not show the steps here. However, the Hamiltonian in flavor basis is calculated for future use,
+\begin{equation}
+H_v^{(f)} = -\frac{\omega_v}{2}\cos 2\theta_v \sigma_3 + \frac{\omega_v}{2} \sin 2\theta_v \sigma_1.
+    \label{chap:basics-sec:vacuum-osc-eqn:hamiltonian-vacuum}
+\end{equation}
 
-As for three flavor mixing, we have two different characteristic energy scales, $\omega_{v,21}=\delta m_{21}^2/2E$ and $\omega_{v,32}=\delta m_{31}^2/2E$. Thus two oscillation periods should occur, as shown in fig.~\ref{chap:basics-section:neutrinos-fig:vacuum-3-flavor-osc}. The fast oscillations are determined by the larger characteristic energy scale, $\omega_{v,32}$, while the slow oscillations are determined by the smaller one $\omega_{v,21}$. For inverted hierarchy, the oscillation frequencies are the same as normal hierarchy since they have the same characteristic energy scales. However ever they develop different oscillation phases.
+As for three flavor mixing, we have two quite different characteristic energy scales, $\omega_{v,21}=\delta m_{21}^2/2E$ and $\omega_{v,32}=\delta m_{31}^2/2E$. Thus two oscillation periods should occur, as shown in fig.~\ref{chap:basics-section:neutrinos-fig:vacuum-3-flavor-osc}. The fast oscillations are determined by the larger characteristic energy scale, $\omega_{v,32}$, while the slow oscillations are determined by the smaller one $\omega_{v,21}$. For inverted hierarchy, the oscillation frequencies are the same as normal hierarchy since they have the same characteristic energy scales. However ever they develop different oscillation phases.
 
 
 \begin{figure}
@@ -287,7 +292,7 @@ As for three flavor mixing, we have two different characteristic energy scales, 
 
 
 
-\section{Mikheyev - Smirnov - Wolfenstein Effect}
+\section{\label{chap:basics-sec:msw}Mikheyev - Smirnov - Wolfenstein Effect}
 
 The nature of neutrino oscillations means that flavor conversion occurs as long as their propagation eigenstates are not flavor eigenstates. As neutrinos travel from the center of the star throughout to the surface, we expect neutrino propagation eigenstates in such matter background to be different from flavor states in general~\cite{wolf78}. Using the fact that neutral current interactions between different flavor neutrinos and matter is independent of flavor, we only include the charged current, which will produce a effective potential for electron flavor that is different for other flavors. In flavor basis, the effective potential is
 \begin{equation}
@@ -305,6 +310,7 @@ H_v^{(f)}& = \mathbf{U} H_v^{(v)}\mathbf{U^\dagger} \\
 Utilizing Pauli matrices and the so called matter potential $\lambda = \frac{\sqrt{2}G_F n_e}{2}$, it is rewritten as
 \begin{equation}
 H_m = \left(\frac{\lambda}{2} -\frac{ \omega_v }{2} \cos 2\theta_v \right) \boldsymbol{\sigma}_3  + \frac{ \omega_v }{2} \sin 2\theta_v \boldsymbol{\sigma}_1.
+\label{chap:basics-sec:msw-eqn:hamiltonian-matter-effect}
 \end{equation}
 Due to the off-diagonal terms in the Hamiltonian, the system will experience oscillations in flavor. A resonance, i.e., maximum mixing, dominates the system when the diagonal terms becomes zero,
 \begin{equation}
@@ -334,167 +340,138 @@ E_2 &= -\frac{\omega_v}{2}\sqrt{ \hat\lambda +1 -  2\hat\lambda \cos 2\theta_v }
 \end{figure}
 
 Fig.~\ref{fig:mswEnergyLevels} shows the two energy levels. For very high matter density, which interact with electron neutrinos more through charged current, electron flavor is composed almost with heavy propagation eigenstate. However, as the matter density becomes lower, the heavy propagation state will be gradually transformed to the other flavors since electron flavor in vacuum is composed mostly the light mass state. The resonance, which is the closest point of energy levels, happens at density $n_{\mathrm e} = 2\omega_v \cos(2\theta_v)/\sqrt{2}G_F$ which depends on $\omega_v$. Neutrinos with different energies have different resonance, which will significantly reshape the neutrino spectra for different flavors. 
-% More explicitly, the conversion of flavor is shown in
-% Fig.~\ref{fig:msw_and_density} which is taken from Smirnov~\cite{Smirnov2003}. Since we are discussion adiabatic evolution, the probability of each energy eigenstates doesn't change, as the boxes of each energy eigenstates shown in Fig.~\ref{fig:msw_and_density} doesn't change in size. The extreme dense case shows that matter converts a lot of electron flavor to muon flavor.
 
-% \begin{figure}
-% \centering
-% \includegraphics[width=\columnwidth]{chapters/assets/solar/msw_and_density.png}
-% \caption{Flavor mixing of large vacuum mixing angle from a dense region to vacuum. $n_e^R$ is the resonance density. Yellow bar is the resonance point. In each panel, the upper color bar is for heavier eigen-energy while the lower color bar is for the lower eigen-energy. The first panel is the case of neutrino production in a region that has much larger density than resonance density. Neutrinos are produced as electron flavor in the dense region. Through adiabatic MSW effect, the flavor converts mostly the other. The other two panels shows the case of lower matter density. Figure taken from Smirnov.\cite{Smirnov2003}}
-% \label{fig:msw_and_density}
-% \end{figure}
+One of the interesting fact about MSW effect is the MSW triangle shown in Fig.~\ref{chap:basics-sec:msw-fig:msw-triangle}. The survival probability of electron flavor neutrinos is plotted against $\log (\lambda/\omega_v)$ and $\log (\sin^2 2\theta_v)$. The low survival probability region is a triangle shape.
+\begin{figure}
+    \centering
+    \includegraphics[width=0.9\textwidth]{chapters/assets/basics/msw-triangle.png}
+    \caption{MSW triangle.}
+    \label{chap:basics-sec:msw-fig:msw-triangle}
+\end{figure}
 
 
 In summary, even though only electron flavor neutrinos are produced in the core of a solar mass star, the neutrino flavor conversion to the other flavors is enhanced by matter interaction, in addition to the vacuum oscillation. However, the actual neutrino flavor conversion is much more complicated than just MSW effect and almost impossible to calculate without knowing the very exact matter profile of the Sun even with the time-dependent small perturbations to the density. As an approximation, MSW transition is good enough for the solar neutrinos~\cite{Lopes2013a}.
-% In the case of the sun, the flavor conversion is calculated by Ilídio Lopes and shown in Fig.~\ref{fig:solar_neutrino_flavor_conversion}~\cite{Lopes2013}.
-
-% \begin{figure}
-% \centering
-% \includegraphics[width=\columnwidth]{chapters/assets/solar/solar_neutrino_flavor_conversion.png}
-% \caption{Neutrino flavor conversion of the Sun. Color meaning refer to Figure \ref{fig:solar_neutrino_spectra_flavor_conversion}.\cite{Lopes2013} }
-% \label{fig:solar_neutrino_flavor_conversion}
-% \end{figure}
-
-
-
-% \section{Solar Neutrino Spectrum}
-
-
-% The simplest model for the total neutrino flux generated due to solar nuclear reaction is simple linear superposition of solar neutrino flux from each reactions, since solar neutrinos are not dense enough to have a significant self-interaction. For the total neutrino flux $F$,
-
-% \begin{equation}
-% F(E) = \sum_i F_\alpha (E),
-% \end{equation}
-
-% where ${}_{\alpha}$ stands for flavor and $E$ is the energy of neutrinos. To generate the final solar neutrino spectra, the neutrino energy for each reaction should be examined.
-
-% \subsection{Neutrino Spectrum with Thermal and Relativistic Modifications}
-
-% For each reaction, the spectral shape of solar neutrinos are mostly spectrum inferred from lab experiments, with modifications of thermal motion and slight modifications from relativistic effect.\cite{Bahcall1991} 
-
-% In the lab experiments, we only have low energy nuclei and less dens environment, while in the solar core, the temperature is high and the density is large. The first question to ask is whether the neutrino production is modified by a thermal equilibrium environment or it is too fast that no equilibrium can not be maintained by the electromagnetic scattering. The answer is that the neutrino production is in equilibrium which ensures the equilibrium statistics of the neutrino spectra.\cite{Bahcall1991} The two quantities that is related to this problem is the characteristic time of neutrino production and the characteristic electromagnetic scattering. The time scale of electromagnetic scattering is \cite{Bahcall1991}
-
-% \begin{equation}
-% \tau_{EM} \sim 10^{-12} \mathrm{s} \left( \frac{E}{20\mathrm{keV}} \right)^{3/2}\left( \frac{150 \mathrm{g \cdot cm^{-3}} }{\rho} \right),
-% \end{equation}
-
-% where $E$ is the energy of ions which is in a bath of $p$ plasma and $\rho$ is the density of plasma. For the sun, this is of order $10^{-12}\mathrm{s}$. Meanwhile, the time scale of neutrino production $\tau_{\nu}$ is shown in table \ref{tab:neutrino_production_characteristic_time}.
-
-
-% \begin{table}[ht]
-% \centering
-% \begin{tabular}{|c|c|}
-% \hline
-%  Nuclear Reaction &  $\tau_{\nu}$ \\
-%  \hline
-% pp  & $10^{10}$ years \\
-% $\mathrm{ {}^7Be }$ & $10^{12}$ years \\
-% $\mathrm{ {}^8B }$ & $1$ second \\
-% $\mathrm{ {}^{13}N }$ & $10^3$ seconds \\
-% $\mathrm{ {}^{15}O }$ & $10^2$ seconds \\
-% $\mathrm{ {}^{17}F }$ & $10^2$ seconds\\
-% \hline
-% \end{tabular}
-% \caption{Neutrino production characteristic time. Reproduced from \cite{Bahcall1991}.}
-% \label{tab:neutrino_production_characteristic_time}
-% \end{table}
-
-% This huge difference between $\tau_{EM}$ and $\tau_{neutrino}$ keeps the thermal equilibrium of the ions that produces neutrinos.
-
-% Therefore we consider the neutrino spectra of all the reactions with thermal motions of the nuclei in a thermal bath. John Bahcall explained thermal corrections to neutrino spectra of beta decay using a simple argument that\cite{Bahcall1991}
-
-% \begin{equation}
-% F(q) dq = \int F_{lab}(q') dq' f(v_z) dv_z,
-% \end{equation}
-
-% where $v_z$ is the velocity that causes the spectrum redshift, i.e., recoil velocity, and the integral should be over $v_z$ not $q'$. $F_{lab}$ is the spectrum in lab experiments. $f(v_z)$ is the corrections due to thermal motion of the nuclei. The relation between $dq$ and $dq'$ is set up using relativistic velocity transformation
-
-% \begin{equation}
-% dq' = ( 1+ v_z ) dq.
-% \end{equation}
-
-% The final result for the spectrum is
-
-% \begin{equation}
-% F(q) = \int_{-\infty}^{v_m} d v_z (1+v_z) F_{lab}f(v_z).
-% \end{equation}
-
-% The upper limit of the integral is given by the cut off of momentum $q'_m$,
-
-% \begin{equation}
-% v_m = 1 - \frac{q}{q'_m},
-% \end{equation}
-
-% where $q'_m$ is given by the $Q$ values of the nuclear reactions. The maximum momentum is limited by the energy released in the reaction.
-
-% Since the core temperature is not high enough to make the heavy nuclei relativistic, we expand the spectrum using Taylor expansion and keep only first order,
-
-% \begin{equation}
-% F(q) = F_{lab}(q) (1 + \int_{\infty}^{v_m} f(v_z) dv_z).
-% \end{equation}
-
-% Thus the correction depends on the energy of neutrinos. The correction only plays a role when the energy of neutrino is close to endpoint energy of the beta decay. The energy of the neutrinos will be blue-shifted beyond the beta decay spectrum endpoint in lab experiments. However, the correction is as small as $10^{-6}$ of the lab spectrum in the case of solar core.\cite{Bahcall1991}
-
-% The other correction is due to the gravitational redshift. Combining the thermal correction and gravitational redshift, we get the neutrino spectrum that should be observed on the Earth. As an example, John Bahcall calculated the pp reaction spectrum, which is given in Figure \ref{fig:bahcall_pp_nu_spectrum}.
-
-
-% \begin{figure}
-% \centering
-% \includegraphics[width=\columnwidth]{chapters/assets/solar/bahcall_pp_nu_spectrum.png}
-% \caption{Comparison of pp reaction neutrino spectrum in the lab experiments and predicted solar spectrum.\cite{Bahcall1991} The correction is very small. The picture for this phenomenon is that the endpoint energy is the nuclear reaction energy released plus the thermal energy.}
-% \label{fig:bahcall_pp_nu_spectrum}
-% \end{figure}
-
-% \subsection{Solar Neutrino Spectra}
-
-
-% This overall spectra are the summation of neutrinos produced at different radius where the temperature and density are different. One of them is the fact that nuclear reactions happen at different rates when the temperature changes. Adelberger et al calculated the stellar energy contribution of pp chain and CN cycle at different temperatures.\cite{Adelberger2011a}
-
-% \begin{figure}[!hbtp]
-% \centering
-% \includegraphics[width=\columnwidth]{chapters/assets/solar/pp_chain_vs_cno.png}
-% \caption{The contribution to the luminosity by pp chain and CNO cycle as a function of temperature.\cite{Adelberger2011a} The black dot is at the solar core temperature. $L_{\odot}$ is solar luminosity. In high mass stars where the temperature is high, CN cycle is the dominant source of energy. Thus for a large mass star we expect the neutrinos from CNO cycle would have a larger flux with respect to neutrinos from pp chain.
-% }
-% \label{fig:pp_chain_vs_cno}
-% \end{figure}
-
-% Standard solar model produces a complete set of neutrino spectra from different reactions, which is shown in Figure \ref{fig:solar_neutrino_spectra_flavor_conversion}. The total neutrino spectrum we expect from the sun is the superposition of all the neutrino spectra from different reactions. From Figure \ref{fig:pp_chain_vs_cno} we expect the pp chain neutrino flux is $2\sim 3$ orders of magnitude larger than CNO cycle neutrino flux, which is checked in Figure \ref{fig:solar_neutrino_spectra_flavor_conversion}. Meanwhile, another interesting question to look into is the neutrino production at different radius. Since nuclear reaction rates depend on temperature and density, neutrino flux generated at different radius inside the Sun is very different. A calculation done by Ilídio Lopes shows that most neutrinos are produced at 0.05 radius of the Sun, which is in Figure \ref{fig:solar_neutrino_production_radius}.\cite{Lopes2013}
-
-
-
-
-
-% % \begin{figure}[!hbtp]
-% % \centering
-% % \includegraphics[width=\columnwidth]{chapters/assets/solar/neutrino_spectra.png}
-% % \caption{Neutrino spectra of the four pp chain and CNO cycle. Units are $\mathrm{cm^{-2} s^{-1} MeV^{-1}}$ for flux and $\mathrm{MeV}$ for neutrino energy.\cite{Stonehill2004}}
-% % \label{fig:neutrino_spectra}
-% % \end{figure}
-
-
-
-% \begin{figure}[!hbtp]
-% \centering
-% \includegraphics[width=\columnwidth]{chapters/assets/solar/solar_neutrino_spectra_flavor_conversion.jpg}
-% \caption{Solar neutrino spectra with flavor conversion. Solid lines are spectra without flavor conversion while the dashed lines are spectra with flavor conversion. The difference comes from the neutrino mixing. Figure taken from Ilidio Lopes.\cite{Lopes2013,Lopes2013a} The neutrino flavor conversion is calculated using MSW transition.}
-% \label{fig:solar_neutrino_spectra_flavor_conversion}
-% \end{figure}
-
-
-
-
-
-% \begin{figure}
-% \centering
-% \includegraphics[width=\columnwidth]{chapters/assets/solar/solar_neutrino_production_radius.png}
-% \caption{Solar neutrino flux at different radius. Color meaning refer to Figure \ref{fig:solar_neutrino_spectra_flavor_conversion}.}
-% \label{fig:solar_neutrino_production_radius}
-% \end{figure}
 
 
 \section{\label{chap:basics-sec:flavor-isospin-pic}Flavor Isospin Picture of Neutrino Oscillations}
 
-I explained neutrino oscillations in vacuum and the MSW effect in the previous sections. In principle, the oscillations are a consequence of the Hamiltonian in this quantum two level system. 
+I explained neutrino oscillations in vacuum and the MSW effect in the previous sections. In principle, the oscillations in two flavor scenario are a consequence of the Hamiltonian in this quantum two level system. It's known that quantum two level systems are visualized using Bloch sphere. In the realm of neutrino physics, flavor isospin was introduced for such visualizations~\cite{Duan2006b}. The Hamiltonian for neutrino oscillations in vacuum (Eqn.~\ref{chap:basics-sec:vacuum-osc-eqn:hamiltonian-vacuum}) and in matter (Eqn.~\ref{chap:basics-sec:msw-eqn:hamiltonian-matter-effect}) can be reformulated into vector forms. 
+
+We start with the vector form of Hamiltonian for vacuum oscillations. Mathematically speaking, we will cast every two by two matrix into the quaternian basis,
+\begin{equation}
+    H_v^{(f)} = - \frac{\vec{\boldsymbol{\sigma}} }{2}\cdot \vec H.
+\end{equation}
+Flavor isospin is defined as
+\begin{equation}
+    \vec s = \Psi^{\dagger} \frac{\vec{\boldsymbol{\sigma}} }{2} \Psi.
+\end{equation}
+As shown in Fig.~\ref{chap:basics-sec:flavor-isospin-pic-fig:flavor-isospin-illus}, the directions of flavor isospin tells us the flavor composite of neutrinos. In flavor isospin formalism, electron flavor survival probability is related to the third component of the flavor isospin,
+\vspace*{0pt}
+\begin{equation*}
+P = \frac{1}{2} + s_3.
+\end{equation*}
+Correspondingly, equation of motion becomes precessions around the Hamiltonian,
+\begin{equation}
+\dot{\vec s} = \vec s \times \vec H.
+\label{chap:basics-sec:flavor-isospin-pic-eqn:eom-precession}
+\end{equation}
+The precessions corresponds to periodic oscillations between flavors.
+
+\begin{figure}
+    \centering
+    \vspace*{-10pt}
+    \includegraphics[width=\textwidth]{chapters/assets/basics/flavor-isospin-illus}
+    \caption{In flavor isospin picture, flavor isospin pointing upward indicates the neutrinos are in electron flavor, while the downward direction indicates the other flavor, such as muon flavor.}
+    \label{chap:basics-sec:flavor-isospin-pic-fig:flavor-isospin-illus}
+\end{figure}
+
+We first work out the vacuum oscillations. Vacuum oscillation Hamiltonian becomes
+\begin{align*}
+&\frac{\omega_{\mathrm v} }{2}\left( - \cos 2\theta_{\mathrm v } \boldsymbol{\sigma}_3  + \sin 2\theta_{\mathrm{v}} \boldsymbol{\sigma}_1\ \right)
+\to  \cos 2\theta_{\mathrm v}\begin{pmatrix}
+0\\
+0\\
+\omega_{\mathrm v}
+\end{pmatrix} -\sin 2\theta_{\mathrm v}\begin{pmatrix}
+\omega_{\mathrm v}\\
+0\\
+0
+\end{pmatrix}
+\end{align*}
+We assume neutrinos start with electron flavor, as explained in Sec.~\ref{chap:basics-section:astro}. Following the equation of motion Eqn.~\ref{chap:basics-sec:flavor-isospin-pic-eqn:eom-precession}, neutrinos precess around vector $\vec H$ that is tilted away from the vertical axis, as shown in Fig.~\ref{chap:basics-sec:flavor-isospin-pic-fig:flavor-isospin-vac-osc}. The oscillation frequency is trivially read out from the precession equation,
+\begin{equation*}
+    \omega_{\mathrm v} = \lvert \vec H_{\mathrm v} \rvert.
+\end{equation*}
+
+
+\begin{figure}
+    \centering
+    \vspace*{-20pt}
+    \includegraphics[width=0.7\textwidth]{chapters/assets/basics/flavor-isospin-vac-osc}
+    \caption{Vacuum oscillations in flavor isospin picture. Neutrinos starting with electron flavor will follow a precession pattern around the static "Hamiltonian vector" $\vec H$, thus periodic flavor oscillations.}
+    \label{chap:basics-sec:flavor-isospin-pic-fig:flavor-isospin-vac-osc}
+\end{figure}
+
+
+MSW effect is also easily explained using flavor isospin picture. The Hamiltonian in flavor isospin picture
+\begin{align*}
+    H_m =& \frac{\omega_{\mathrm{v}}}{2}\left( - \cos 2\theta_{\mathrm{v}} \boldsymbol{\sigma_3} + \sin 2\theta_{\mathrm{v}} \boldsymbol{\sigma_1} \right)   + \frac{\lambda(x)}{2} \boldsymbol{\sigma_3} \\
+    \to &  \omega_{\mathrm v}\begin{pmatrix}
+    - \sin 2\theta_{\mathrm v} \\
+    0 \\
+    \cos 2\theta_{\mathrm v}
+    \end{pmatrix}   + \begin{pmatrix}
+    0\\
+    0\\
+    - \lambda(x)
+    \end{pmatrix}  \\
+    = &  \vec H_{\mathrm v} + \vec H_{\mathrm m}(x),
+\end{align*}
+where $\vec H_{\mathrm v}$ is vacuum contribution and $\vec H_{\mathrm m}(x)$ is the matter potential contribution. The two vectors are visualized in Fig.~\ref{chap:basics-sec:flavor-isospin-pic-fig:matter-effect-notsolarge-density}. We discussed in Sec.~\ref{chap:basics-sec:msw} the adiabatic transitions of neutrino states in varying matter density. Fig.~\ref{chap:basics-sec:flavor-isospin-pic-fig:msw-adiabatic} shows the adiabatic evolution of neutrino flavor isospin. For region of high density matter background, which provides large matter potential, the total Hamiltonian is almost pointing downward. We observe almost no flavor oscillations since flavor isospin precession is tiny. As the neutrinos moving into smaller matter density regions, the flavor isospin is approximately following the evolution of Hamiltonian. Flavor conversion happens because of the evolution of Hamiltonian, even though flavor oscillations are still tiny. In the end, neutrinos reach the region with almost no matter, where they are almost converted to one of the mass eigenstates. In fact, those neutrinos won't oscillate that much in vacuum following this initial condition.
+
+
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.5\textwidth]{chapters/assets/basics/matter-effect-notsolarge-density}
+    \caption{}
+    \label{chap:basics-sec:flavor-isospin-pic-fig:matter-effect-notsolarge-density}
+\end{figure}
+
+
+
+
+\begin{figure}[htbp]	
+	\centering
+	\begin{subfigure}[t]{0.3\textwidth}
+		\centering
+		\includegraphics[width=0.8\textwidth]{chapters/assets/basics/matter-effect-large-density}
+		\caption{High matter density}\label{chap:basics-sec:flavor-isospin-pic-fig:msw-adiabatic-large-density}
+	\end{subfigure}
+	\quad
+	\begin{subfigure}[t]{0.3\textwidth}
+		\centering
+		\includegraphics[width=0.8\textwidth]{chapters/assets/basics/matter-effect-adiabatic}
+		\caption{Medium matter density}\label{chap:basics-sec:flavor-isospin-pic-fig:msw-adiabatic-medium-density}		
+	\end{subfigure}
+	\quad
+	\begin{subfigure}[t]{0.3\textwidth}
+		\centering
+		\includegraphics[width=0.8\textwidth]{chapters/assets/basics/matter-effect-adiabatic-small-density}
+		\caption{Low matter density}\label{chap:basics-sec:flavor-isospin-pic-fig:msw-adiabatic-small-density}
+	\end{subfigure}
+	\caption{Flavor isospin picture of neutrino oscillations in matter. $\vec H_{\mathrm v}$ is the vacuum contribution to Hamiltonian, and $\vec H_{\mathrm m}$ corresponds to the matter potential.}\label{chap:basics-sec:flavor-isospin-pic-fig:msw-adiabatic}
+\end{figure}
+
+Neutrinos might experience a critical matter density, when the overall Hamiltonian is perpendicular to the upright axis. Assuming we have electron neutrinos going through such regions, they will experience maximum flavor oscillations, c.f.~Fig.~\ref{chap:basics-sec:flavor-isospin-pic-fig:msw-adiabatic-critical}.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\textwidth]{chapters/assets/basics/matter-effect-critical-density}
+    \caption{MSW resonance happens when electron neutrinos go through a critical matter density.}
+    \label{chap:basics-sec:flavor-isospin-pic-fig:msw-adiabatic-critical}
+\end{figure}
+
 
 
 
