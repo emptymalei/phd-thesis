@@ -255,14 +255,15 @@ In Rabi basis, the Schr\"{o}dinger equation becomes
 One can easily show that the transition probability between two eigenstates in Rabi basis is the same as the transition probability between two eigenstates in background matter basis, given the initial condition that the system is in low energy state.
 
 For single frequency matter profile with potential $\delta\lambda(r) = A_1\sin(k_1 r)$, we have $\eta(r) = - A_1 \cos 2\theta_{\mathrm m} \cos (k_1 r)/(2 k) $. To make connection with Rabi oscillation, we apply Jacobi-Anger expansion, which is used in Ref.~\cite{Kneller2013}, to decompose the $\exp\left( \ri z \cos\left(k_1 r \right) \right)$-like term in Hamiltonian into linear combinations of terms that is proportional to $\exp\left(\ri n k_1 r \right)$, i.e., to decompose spherical waves into plane waves. The decomposed form of Hamiltonian explicitly shows that the Hamiltonian is a summation of Rabi systems, which is
-\begin{equation*}
+\begin{equation}
     H^{(\mathrm{R})} =
     -\frac{\omega_{\mathrm{m}}}{2} \sigma_3
     -  \frac{1}{2} \sum_{n=-\infty}^\infty B_n \begin{pmatrix}
     0 &  \Phi_n e^{\ri n k_1  r} \\
      \Phi_n^* e^{ - \ri n k_1 r} & 0
     \end{pmatrix},
-\end{equation*}
+    \label{chap:matter-sec:jacobi-eqn:hamil-jacobi-expanded}
+\end{equation}
 where
 \begin{align*}
     B_n &= \tan 2\theta_{\mathrm m} n k_1 J_{n} \left( \frac{A_1}{k_1}\cos 2\theta_{\mathrm m} \right),\\
@@ -313,8 +314,6 @@ For modes with small relative detuning, they are important since they might lead
 Thus modes that has much larger oscillation wavelength are not subjected to be considered even though their relative detunings are close to zero.
 
 In principle, we can always approximate the system by including more modes with larger relative detuning while neglecting the modes with wavelength much longer than the size of physical system. However such effort doesn't simplify the calculations.
-
-
 
 
 \subsection{\label{sec:single-revisted}Single Frequency Matter Profile Revisited}
@@ -386,8 +385,34 @@ Using Jacobi-Anger expansion, we can calculate the relative detuning for each mo
 
 
 
+The rigorous solutions for each modes in Eqn.~\ref{chap:matter-sec:jacobi-eqn:hamil-jacobi-expanded} is obtained,
+\begin{equation}
+    P_{\mathrm{L}\to\mathrm{H}}^{(n)} = \frac{ \left\lvert \hat B_{n}  \right\rvert^2 }{ \left\lvert   \hat B_{n}  \right\rvert^2 + ( n \hat k - 1 )^2  } \sin^2 \left( \frac{ \hat q^{(n)} }{2} \hat x \right),
+\end{equation}
+where
+\begin{align}
+\Gamma^{(n)} &= \left\lvert \hat B_{n} \right\rvert, \quad \text{width of resonance ($n\hat k$ as parameter)} \\
+\hat q^{(n)} &= \sqrt{\left\lvert  \Gamma^{(n)} \right\rvert^2 + ( n \hat k - 1 )^2},\quad \text{frequency of oscillations}.
+\end{align}
+The impact of detuning is also verified in Fig.~\ref{chap:matter-sec:single-revisted-fig:prob-amp-jacobi-anger}. The example clearly shows the width of the resonance is dropping dramatically for larger modes in Jacobi-Anger expansion. A careful investigation shows that the resonance width is dropping exponentially as shown in Fig.~\ref{chap:matter-sec:single-revisted-fig:resonance-width-jacobi-anger-exp}.
 
 
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{chapters/assets/rabi/stimulated-probability-apmlitude-vs-k-Jacobi-Anger.pdf}
+    \caption{Probability amplitude as a function of $k/\omega_{\mathrm m}$ for each term in Jacobi-Anger expansion, with parameters $\lambda_1=0.1$,$\theta_{\mathrm m}=\pi/5$.}
+    \label{chap:matter-sec:single-revisted-fig:prob-amp-jacobi-anger}
+\end{figure}
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{chapters/assets/rabi/stimulated-probability-apmlitude-vs-k-resonance-width.pdf}
+    \caption{Resonance width as a function of mode order for each term in Jacobi-Anger expansion, with parameters $\lambda_1=0.1$,$\theta_{\mathrm m}=\pi/5$.}
+    \label{chap:matter-sec:single-revisted-fig:resonance-width-jacobi-anger-exp}
+\end{figure}
 
 
 
@@ -410,8 +435,6 @@ where $X_1$ and $X_2$ are the two periods of the matter profile or potential, $X
 \end{equation}
 where $\omega_{\mathrm{m}i}$ and $\theta_{\mathrm{m}i}$ are the energy difference and mixing angle for potential $\Lambda_1$ and $\Lambda_2$ respectively.
 
-
-
 Even though this castle wall problem is analytically solved, the resonance condition Eqn.~(\ref{eq-akhmedov-resonance-condition-castle-wall}) itself is not transparent. In this subsection, we show that such a system is closed related to Rabi oscillations. For illustration purpose, we set the profile to be equal period for the two densities so that $X_1=X_2\equiv X/2$. To show that the neutrino flavor conversions in this castle wall matter profiles is related to Rabi oscillation, we decompose the profile using Fourier series,
 \begin{equation}
 \lambda(r) = \lambda_0 + \sum_{n=1}^{\infty} \lambda_n \cos\left( k_n  r \right),
@@ -424,6 +447,7 @@ where
 k_n &= (2n-1)k_0, \\
 k_0 &= 2\pi/X.
 \end{align*}
+The decomposition is visualized in Fig.~\ref{chap:matter-sec:castlewall-fig:decompose-castlewall-fourier}.
 
 To calculate the transitions between two mass states of background matter potential $\lambda_0$, we use the background matter basis with respect to $\lambda_0$, in which the transition is zero when varying matter profile vanishes. The Hamiltonian
 \begin{equation}
@@ -439,6 +463,16 @@ determines the transitions between the two background matter states.
     \caption{The castle wall matter potential profile with $X_1=X_2=X/2$.}
     \label{fig-castlewall-profile-illustration}
 \end{figure}
+
+
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{chapters/assets/rabi/reconstruction-of-castle-wall-0point01-0point02-1-1point8}
+    \caption{Decomposition of castle wall density profile using Fourier modes.}
+    \label{chap:matter-sec:castlewall-fig:decompose-castlewall-fourier}
+\end{figure}
+
 
 \begin{figure}
         \includegraphics[width=\columnwidth]{chapters/assets/rabi/castle-wall-1}%
