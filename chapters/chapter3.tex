@@ -215,9 +215,29 @@ We choose the two modes where the first one has amplitude $A_1 = 10^{-4}\omega_{
 Even for the single frequency matter profile, there are two modes of Rabi oscillations $\pm k_1$, under the approximation that the varying $\sigma_3$ term in Hamiltonian is neglected, as mentioned in Sec.~\ref{chap:matter-sec:single}. The three examples calculated in Fig.~\ref{fig-rabiOscillationsNeutrinoCoincidence} are almost exact since the modification of relative detuning for the $k_1$ mode that we kept, due to the far off resonance mode $-k_1$ that we neglected, is tiny. The first two lines of Table.~\ref{tab-q-values-single-frequency-example} show the relative detunings of the three cases in Fig.~\ref{fig-rabiOscillationsNeutrinoCoincidence}, where $n=\pm 1$ are for the $\pm k_1$ modes in the Hamiltonian \ref{eq-hamiltonian-bg-matter-basis-single-frequency}. We observe in Fig.~\ref{fig-rabiOscillationsNeutrinoCoincidence} that the relative detuning change due to an extra $-k_1$ mode is not observable.
 
 
-% \section{\label{chap:matter-sec:constructive}Constructive Effects}
+\section{\label{chap:matter-sec:constructive}Constructive Effects}
 
-% As mentioned in the preceding section, adding a second frequency to the matter density profile can also be constructive.
+As mentioned in the preceding section, adding a second frequency to the matter density profile can also be constructive. I calculated an example with two frequencies in matter density profile, so that the Hamiltonian is
+\begin{equation*}
+    H^{(m)} = - \frac{\omega_{\mathrm m}}{2} \sigma_3 - \left(\frac{A_1}{2}\cos(k_1 r) + \frac{A_2}{2}\cos(k_2 r) \right) \sigma_1 + \left( \frac{A_1}{2}\sin(k_1 r) + \frac{A_2}{2}\sin(k_2 r) \right) \sigma_2.
+\end{equation*}
+We choose two matter profile frequencies that are off resonance and producing large relative detuning,
+% k1_0.95_k2_2.6_a1_0.025_a2_0.4
+\begin{align}
+    A_1 =& 0.025, \\
+    k_1 =& 0.95, \\
+    A_1 =& 0.4, \\
+    k_2 =& 2.6.
+\end{align}
+The oscillation amplitude for each mode being much smaller than 1. However, the combined two frequencies case produces oscillations are resonance (c.f.~Fig.~\ref{chap:matter-sec:constructive-fig:two-frequencies-constructive}), since the relative detuning for the combined two frequencies case is 0.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{chapters/assets/rabi/rabiOscillationsNeutrinoCoincidence-two-frequencies-constructive.pdf}
+    \caption{Constructive interference for two frequencies in matter density profile. The solid red line, dashed blue line, dash-dotted black line, are the transition probability for two frequencies combined, the first frequency $k_1$ only, the second frequency $k_2$ only. The amplitudes of each frequency are $A_1=0.4$, $A_2=2.6$ respectively. The grid lines are the oscillations amplitudes predicted by Rabi formula.}
+    \label{chap:matter-sec:constructive-fig:two-frequencies-constructive}
+\end{figure}
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
