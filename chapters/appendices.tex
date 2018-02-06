@@ -134,8 +134,14 @@ where
 \end{align}
 
 
+\section{Jacobi-Anger expansion}
 
-
+One of the forms of Jacobi-Anger expansion is
+\begin{equation}
+    e^{i z \cos (\Phi)} = \sum_{n=-\infty}^\infty i^n J_n(z) e^{i n\Phi}.
+    \label{eqn:jacobi-anger-expansion}
+\end{equation}
+      
 
 \section{Conversions in Neutrino Physics}
 
@@ -234,17 +240,13 @@ The procedure will be the following.
 % \end{figure*}
 %\end{widetext}
 
-\begin{figure}
-        \centering
-        \includegraphics[width=\columnwidth, trim={20cm 10cm 50cm 10cm},clip]{chapters/assets/rabi/rabi-isospin-rotating-frame}
-    \caption{Rabi oscillations in corotating frame. The red dashed vector is the flavor isospin, while the black solid vectors are the vectors of Hamiltonian. The flavor isospin vector is precessing around vector of total Hamiltonian $\mathbf{H}_3+\mathbf{H}_+$.}
-    \label{fig-rabi-isospin-rotating-frame}
-\end{figure}
+
 
 In this appendix we introduce flavor isospin \cite{Duan2006a} to Rabi oscillations and derive the transition probabilities as well as explain the resonance and width briefly.
 
 
-The Hamiltonian for Rabi oscillation is
+
+A Rabi oscillation system is shown in Fig.~\ref{chap:app-sec:rabi-oscillations-fig:rabi-diagram}. The Hamiltonian for Rabi oscillation is
 \begin{equation}
     H_{\mathrm R} = -\frac{\omega_{\mathrm R}}{2}\sigma_3 - \frac{A_{\mathrm{R}} }{2}  \left( \cos(k_{\mathrm{R}} t +\phi_{\mathrm{R}})\sigma_1  - \sin(k_{\mathrm{R}} t +\phi_{\mathrm{R}}) \sigma_2\right),
     \label{rabi-oscillation-single-perturbation}
@@ -266,6 +268,13 @@ where $\boldsymbol{\sigma}$ is the the vector of Pauli matrices, and the three v
     \end{pmatrix}.
 \end{align}
 
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.6\textwidth]{chapters/assets/app/rabi-diagram.png}
+    \caption{Schematic illustration of Rabi oscillations system.}
+    \label{chap:app-sec:rabi-oscillations-fig:rabi-diagram}
+\end{figure}
+
 The three vectors are mapped onto a Cartesian coordinate system, so that $\mathbf{H}_3$ is the vector aligned with the third axis, $\mathbf{H}_+$ is a rotating vectors in a plane perpendicular to $\mathbf{H}_3$. The wave function $\Psi=(\psi_1,\psi_2)^{\mathrm{T}}$ is also used to define the state vector $\mathbf{s}$
 \begin{align}
     \mathbf{s} =& \Psi^\dagger \frac{\boldsymbol{\sigma}}{2}\Psi \\
@@ -280,6 +289,13 @@ The third component of $\mathbf{s}$, which is denoted as $s_3$, is within range 
 \frac{\mathrm{d}}{\mathrm{d} t } \mathbf{s} = \mathbf{s} \times \mathbf{H},
 \end{equation}
 which is the precession equation. For static $\mathbf{H}$, the state vector $\mathbf{s}$ precess around $\mathbf{H}$.
+
+\begin{figure}[htbp]
+        \centering
+        \includegraphics[width=\columnwidth, trim={20cm 10cm 50cm 10cm},clip]{chapters/assets/rabi/rabi-isospin-rotating-frame}
+    \caption{Rabi oscillations in corotating frame. The red dashed vector is the flavor isospin, while the black solid vectors are the vectors of Hamiltonian. The flavor isospin vector is precessing around vector of total Hamiltonian $\mathbf{H}_3+\mathbf{H}_+$.}
+    \label{fig-rabi-isospin-rotating-frame}
+\end{figure}
 
 In a frame that corotates with $\mathbf{H}_+$, which is described in Fig.~\ref{fig-rabi-isospin-rotating-frame}, the new Hamiltonian is
 \begin{equation}
