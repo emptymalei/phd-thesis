@@ -48,7 +48,7 @@ To convert between different physical quantities in this thesis, I always use th
 \begin{itemize}
     \item The energy-mass-momentum relations becomes $E^2 = p^2 + m^2c^2 = p^2 + m^2$. Thus mass $m$, momentum $\mathbf p$ and energy $E$ have the same dimension.
     \item An example of angular momentum in quantum mechanics is $L_z = m\hbar = m$ where $m$ is a quantum number. $\hbar$ is of dimension angular momentum.
-    \item A plane wave in quantum mechanics is $\Psi = A e^{ \frac{E t - p x}{\hbar} }$. $\frac{E t - p x}{\hbar}$ should be dimensionless, which means $px$ has dimension angular momentum, which is obvious, meanwhile we notice that $E t$ also has the dimension of angular momentum. Previously we noticed momentum has the same dimension with energy, we should have time $t$ with the same dimension of length $x$. Also we can conclude that length and time have the same dimenson as $1/E$.
+    \item A plane wave in quantum mechanics is $\Psi = A e^{ \frac{E t - p x}{\hbar} }$. $\frac{E t - p x}{\hbar}$ should be dimensionless, which means $px$ has dimension angular momentum, which is obvious, meanwhile we notice that $E t$ also has the dimension of angular momentum. Previously we noticed momentum has the same dimension with energy, we should have time $t$ with the same dimension of length $x$. Also we can conclude that length and time have the same dimension as $1/E$.
 \end{itemize}
 
 
@@ -65,6 +65,16 @@ its effect on Pauli matrices are
       U^\dagger \sigma_3 U  &=\cos 2\theta \sigma_3 + \sin 2\theta \sigma_1 \\
   U^\dagger \sigma_1 U & = -\sin 2\theta \sigma_3 + \cos 2\theta \sigma_1.
 \end{align}
+
+
+\section{Lorentzian Distribution}
+
+
+Three-parameter Lorentzian function is
+\begin{equation}
+  f_{x_0,\sigma,A}(x)= \frac{1}{\pi} \frac{\sigma}{\sigma^2 + (x-x_0)^2},
+\end{equation}
+which has a width $2\gamma$.
 
 
 \section{Fourier Series}
@@ -141,7 +151,39 @@ One of the forms of Jacobi-Anger expansion is
     e^{i z \cos (\Phi)} = \sum_{n=-\infty}^\infty i^n J_n(z) e^{i n\Phi}.
     \label{eqn:jacobi-anger-expansion}
 \end{equation}
-      
+
+
+\section{Bessel Functions}
+
+A special relation of Bessel function is that
+\begin{equation}
+  J_n(n \sech \alpha) \sim \frac{ e^{n(\tanh\alpha - \alpha)} }{\sqrt{ 2\pi n \tanh \alpha } }
+\end{equation}
+for large $n$~\cite{Ploumistakis2009}. As a matter of fact, for all positive $\alpha$, we always have $\tanh \alpha - \alpha < 0$.
+
+Using this relation and defining $\sech \alpha = A \cos 2\theta_m$, which renders
+\begin{equation}
+  \alpha = 2 n \pi i + \ln \left(  \frac{ 1 \pm \sqrt{ -A^2 \cos^2 2\theta_m + 1 } }{ A\cos 2\theta_m } \right),\qquad n\in \mathrm{Integers},
+  \label{eqn-width-alpha-solved}
+\end{equation}
+where the Mathematica code to solve it is shown below,
+\begin{verbatim}
+In[1]:= Solve[Exp[z] + Exp[-z] == 2/(A Cos[2 Subscript[\[Theta], m]]), z] // FullSimplify
+\end{verbatim}
+we find out an more human readable analytical expression for the width
+\begin{equation}
+  \Gamma = \left\lvert 2 \hat k \tan 2\theta_m \frac{ e^{n ( \tanh \alpha - \alpha )} }{n_0 \sqrt{2\pi n_0 \tanh \alpha} } \right\rvert
+\end{equation}
+where $\alpha$ is solved out in \ref{eqn-width-alpha-solved}.
+For small $\alpha$, we have expansions for exponential functions and hyperbolic functions $\tanh \alpha \sim \alpha - \frac{\alpha^3}{3}$,
+\begin{equation}
+  \Gamma \asymp 2\tan 2\theta_m \frac{ e^{n \alpha^3/3} }{\sqrt{2\pi \alpha} n_0^{3/2}  }.
+\end{equation}
+However, it doesn't really help that much since $n$ is large and no expansion could be done except for significantly small $\alpha$.
+
+
+
+
 
 \section{Conversions in Neutrino Physics}
 
@@ -309,7 +351,7 @@ where
     A_{\mathrm{R}} \\ 0 \\ 　0
     \end{pmatrix}.
 \end{equation}
-The state vector $\mathbf{s}$ precess around a static vector $\mathbf{H}'_3 + \mathbf{H}'_+$ with a frequency $\Omega_{\mathrm R} = \sqrt{ \lvert A_{\mathrm{R}}\rvert^2 + (k_{\mathrm{R}} - \omega_{\mathrm R})^2 }$. A geometric analysis by projecting the state vector $\mathbf{s}$ on to the verticle axis shows that
+The state vector $\mathbf{s}$ precess around a static vector $\mathbf{H}'_3 + \mathbf{H}'_+$ with a frequency $\Omega_{\mathrm R} = \sqrt{ \lvert A_{\mathrm{R}}\rvert^2 + (k_{\mathrm{R}} - \omega_{\mathrm R})^2 }$. A geometric analysis by projecting the state vector $\mathbf{s}$ on to the vertical axis shows that
 \begin{equation}
 s_3 = \frac{1}{2} - \frac{\lvert A_{\mathrm R}\rvert ^2}{\Omega_{\mathrm R}^2}\sin^2\left(\frac{\Omega_{\mathrm R}}{2} t\right).
 \end{equation}
@@ -328,9 +370,9 @@ where
 \end{equation} is known as Rabi frequency. The detuning, which is defined by $k_{\mathrm{R}} - \omega_{\mathrm R}$, determines how off-resonance the system is, and amplitude of driving field $A_{\mathrm{R}}$ determines the resonance width,
 \begin{align}
 \text{Detuning} =&~\lvert k_{\mathrm{R}} - \omega_{\mathrm R} \rvert, \\
-\text{Resonance Width} =&~\lvert A_{\mathrm R} \rvert.
+\text{Resonance Width} =&~\lvert A_{\mathrm R} \rvert,
 \end{align}
-The transition probability oscillates with frequency $\Omega_{\mathrm R}$. However, the amplitude $A_1$ is the dominate factor for oscillation frequency when the system is close to resonance. The phase of the matter potential $\phi_{\mathrm{R}}$ has no effect on the transition probability since it only determines the initial phase of driving Hamiltonian vector $\mathbf{H}_+$. We also notice that the transition amplitude is determined by relative detuning $\RD$, which is defined as
+which is also shown in Fig.~\ref{app-fig:rabi-examples} and Fig.~\ref{app-fig:rabi-resonance-width}. The transition probability oscillates with frequency $\Omega_{\mathrm R}$. However, the amplitude $A_1$ is the dominate factor for oscillation frequency when the system is close to resonance. The phase of the matter potential $\phi_{\mathrm{R}}$ has no effect on the transition probability since it only determines the initial phase of driving Hamiltonian vector $\mathbf{H}_+$. We also notice that the transition amplitude is determined by relative detuning $\RD$, which is defined as
 \begin{equation}
     \RD = \left\lvert \frac{ k_{\mathrm R} - \omega_{\mathrm R}}{A_{\mathrm R}} \right\rvert.
 \end{equation}
@@ -364,6 +406,21 @@ P(t) = \frac{1}{1+\RD^2}\sin^2(\frac{\Omega_{\mathrm{R}}}{2}t).
 \end{equation}
 
 
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{chapters/assets/app/rabi-oscillations.png}
+    \caption{Rabi oscillations for two different incoming light frequencies. $\omega/\omega_0=1$ is the resonance condition.}
+    \label{app-fig:rabi-examples}
+\end{figure}
+
+
+
+\begin{figure}
+    \centering
+    \includegraphics{chapters/assets/app/rabi-resonance.png}
+    \caption{Rabi oscillations for two different incoming light frequencies. $\omega/\omega_0=1$ is the resonance condition.}
+    \label{app-fig:rabi-resonance-width}
+\end{figure}
 
 
 

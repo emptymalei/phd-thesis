@@ -438,7 +438,7 @@ The impact of detuning is also verified in Fig.~\ref{chap:matter-sec:single-revi
 
 \begin{figure}
     \centering
-    \includegraphics{chapters/assets/rabi/pltPertAmpPertWaveNumTransitionAmp}
+    \includegraphics[width=\textwidth]{chapters/assets/rabi/pltPertAmpPertWaveNumTransitionAmp}
     \caption{Transition probability amplitude at different perturbation amplitude and perturbation wavenumber. Larger amplitudes corresponds to larger resonance width, as another confirmation to Fig.~\ref{chap:matter-sec:single-revisted-fig:resonance-width-jacobi-anger-exp}.}
     \label{chap:matter-sec:single-revisted-fig:resonance-width-heatmap}
 \end{figure}
@@ -769,12 +769,12 @@ To answer the first question, we need to write down the solution to Schrodinger 
 % \begin{ruledtabular}
 \small
 \setlength\tabcolsep{2pt}
-\begin{tabular}{llll|llll|llll}
+\begin{tabular}{l|l|l}
  Hamiltonian &   Solution to The First Element of Wave Function \\
 \hline
-   $-\frac{\omega_m}{2}\sigma_3$ &  $\psi_1 \sim e^{i\omega_m x/2}$
-   $\frac{\delta\lambda}{2}\cos 2\theta_m \sigma_3$     &   $\psi_1 \sim e^{i\frac{A\cos 2\theta_m}{2k}\cos(kx+\phi)}$
-  $$\frac{\delta\lambda}{2}\cos 2\theta_m \sigma_3     &   $\psi_1 = C_1 e^{i\frac{A\sin 2\theta_m}{2k}\cos(kx+\phi)} + C_2 e^{-i\frac{A\sin 2\theta_m}{2k}\cos(kx+\phi)}$
+   $-\frac{\omega_m}{2}\sigma_3$ &  $\psi_1 \sim e^{i\omega_m x/2}$  \\
+   $\frac{\delta\lambda}{2}\cos 2\theta_m \sigma_3$     &   $\psi_1 \sim e^{i\frac{A\cos 2\theta_m}{2k}\cos(kx+\phi)}$ \\
+  $\frac{\delta\lambda}{2}\cos 2\theta_m \sigma_3$     &   $\psi_1 = C_1 e^{i\frac{A\sin 2\theta_m}{2k}\cos(kx+\phi)} + C_2 e^{-i\frac{A\sin 2\theta_m}{2k}\cos(kx+\phi)}$ \\
 \hline
 
 \end{tabular}
@@ -814,10 +814,10 @@ as derived in equation \ref{chap:matter-sec:deep-jacobi-subsec:single-matter-fre
 % \begin{ruledtabular}
 \small
 \setlength\tabcolsep{2pt}
-\begin{tabular}{llll|llll|llll}
+\begin{tabular}{l|l}
  Constant Matter Profile $\delta\lambda = \lambda_c$ &   Period Matter Profile $\delta\lambda=A\sin (kx+\phi)$ \\
 \hline
-   $\frac{\sin 2\theta_m}{2}\lambda_c e^{i \cos 2\theta_m \lambda_c x}$     &   $\frac{A\sin 2\theta_m}{4} \sum_{n=-\infty}^{\infty} e^{in\phi} \left( - i^n \right) \frac{2n+1}{z_k} J_n (z_k) e^{i(nk-\omega_m)x}$
+   $\frac{\sin 2\theta_m}{2}\lambda_c e^{i \cos 2\theta_m \lambda_c x}$     &   $\frac{A\sin 2\theta_m}{4} \sum_{n=-\infty}^{\infty} e^{in\phi} \left( - i^n \right) \frac{2n+1}{z_k} J_n (z_k) e^{i(nk-\omega_m)x}$ \\
 \hline
 \end{tabular}
 % \end{ruledtabular}
@@ -829,298 +829,177 @@ as derived in equation \ref{chap:matter-sec:deep-jacobi-subsec:single-matter-fre
 % .. math:: \frac{\sin 2\theta_m}{2}\lambda_c e^{i \cos 2\theta_m \lambda_c x}         .. math:: \frac{A\sin 2\theta_m}{4} \sum_{n=-\infty}^{\infty} e^{in\phi} \left( - i^n \right) \frac{2n+1}{z_k} J_n (z_k) e^{i(nk-\omega_m)x}
 % ================================================================================   ========================================================================
 
-The periodic profile comes into the exponential. Jacobi-Anger expansion (equation :eq:`jacobi-anger-expansion`) expands the periodic matter profile into infinite constant matter profiles. By comparing the two cases, we conclude that :math:`\cos 2\theta_m\lambda_c` corresponds to :math:`nk`.
+The periodic profile comes into the exponential. Jacobi-Anger expansion (Eqn.~\ref{eqn:jacobi-anger-expansion}) expands the periodic matter profile into infinite constant matter profiles. By comparing the two cases, we conclude that $\cos 2\theta_m\lambda_c$ corresponds to $nk$. The RWA approximation we used to drop fast oscillatory terms in the summation is to find the most relevant constant matter profile per se.
 
-The RWA approximation we used to drop fast oscillatory terms in the summation is to find the most relevant constant matter profile per se.
-
-The big question is which constant matter profiles are the most important ones? Mathematically, we require the phase to be almost zero, i.e. equation \ref{chap:matter-sec:deep-jacobi-subsec:single-matter-freq-eqn:single-frequency-rwa-requirement} or
-
-.. math::
+The big question is which constant matter profiles are the most important ones? Mathematically, we require the phase to be almost zero, i.e. Eqn.~\ref{chap:matter-sec:deep-jacobi-subsec:single-matter-freq-eqn:single-frequency-rwa-requirement} or
+\begin{equation}
    n_0 k - \omega_m \sim 0 ,
+\end{equation}
+where $n_0=\mathrm{Round}\left( \frac{\omega_m}{k} \right)$.
 
-where :math:`n_0=\mathrm{Round}\left( \frac{\omega_m}{k} \right)`.
 
-
-**What is the meaning of this condition in this new basis?** If we define a effective matter density out of the Jacobi-Anger expanded series, we should define it to be
-
-.. math::
-   \lambda_c' = \frac{n_0 k}{\cos 2\theta_m}.
-
+We define an effective matter density out of the Jacobi-Anger expanded series
+\begin{equation}
+   \lambda_c' = \frac{n_0 k}{\cos 2\theta_m}. 
+\end{equation}
 Then we can rewrite the RWA requirement as
-
-.. math::
-   \lambda_c' - \cos 2\theta_m \omega_m = 0.
-
-
-.. admonition:: A Reminder of MSW Resonance
-   :class: note
-
-   The MSW Hamiltonian in flavor basis is
-
-   .. math::
-      \mathbf H = \frac{\omega_v}{2}( -\cos2\theta_v \sigma_3 + \sin 2\theta_v \sigma_1 )   {\color{red} + \frac{\lambda}{2} \mathbf {\sigma_3}}  {\color{green}+ \Delta \mathbf I},
-
-   where the MSW resonance happens when all the :math:`\sigma_3` terms cancel eath other, i.e.,
-
-   .. math::
-      - \omega_v \cos 2\theta_v  + \lambda = 0.
+\begin{equation}
+   \lambda_c' - \cos 2\theta_m \omega_m = 0. 
+\end{equation}
+   
 
 
 
+\subsubsection{The Resonances}
 
-The Resonances
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. admonition:: Questions
-   :class: question
+% .. admonition:: Questions
+%   :class: question
 
-   There are several questions to be answered.
+%   There are several questions to be answered.
 
-   1. How good is the RWA approximation? What are the conditions?
-   2. What can we use for other calculations?
-   3. Multiple matter frequency?
+%   1. How good is the RWA approximation? What are the conditions?
+%   2. What can we use for other calculations?
+%   3. Multiple matter frequency?
 
 
 Now we check the Hamiltonian again to see if we could locate some physics. In the newly defined basis and using scaled quantities
-
-.. math::
+\begin{equation}
    \hat{\mathbf{H}} = \begin{pmatrix}
    0 & \hat h \\
    \hat h^* & 0
-   \end{pmatrix},
-
+   \end{pmatrix}, 
+\end{equation}
 where
-
-.. math::
-   \hat h = \frac{1}{2} \hat B_n e^{i(n \hat k - 1)\hat x},
-
+\begin{equation}
+   \hat h = \frac{1}{2} \hat B_n e^{i(n \hat k - 1)\hat x}, 
+\end{equation}
 and
+\begin{equation}
+   \hat B_n = (-i)^n \hat k \tan 2\theta_{\mathrm{m}} n J_n (\frac{\hat A}{\hat k} \cos 2\theta_{\mathrm{m}}). 
+\end{equation}
 
-.. math::
-   \hat B_n = (-i)^n \hat k \tan 2\theta_{\mathrm{m}} n J_n (\frac{\hat A}{\hat k} \cos 2\theta_{\mathrm{m}}).
-
-
-It becomes much more clearer if we plug :math:`\hat h` back into Hamiltonian. What we find is that
-
-.. math::
+It becomes much more clearer if we plug $\hat h$ back into Hamiltonian. What we find is that
+\begin{equation}
    \hat{\mathbf{H}} = \sum_{n=-\infty}^{\infty} \begin{pmatrix}
    0 & -\frac{1}{2} \hat B_n e^{i(n \hat k - 1)\hat x} \\
    -\frac{1}{2} \hat B_n^* e^{-i(n \hat k - 1)\hat x} & 0
    \end{pmatrix}.
-
+\end{equation}
 With some effort, we find that the solution to the second amplitude of the wave function is
-
-.. math::
+\begin{equation}
    \psi_2 = \frac{i}{ \hat B_n \hat W} e^{-i(n \hat k -1)\hat x}  \left\vert \hat B_n \right\vert^2 \sin\left( \frac{1}{2}(n \hat k -1 -\hat W) \hat x  \right),
-
+\end{equation}
 where
+\begin{equation}
+   \hat W = \sqrt{ (n \hat k - 1)^2 + \left\vert \hat B_n \right\vert^2 }. 
+\end{equation}
+   
 
-.. math::
-   \hat W = \sqrt{ (n \hat k - 1)^2 + \left\vert \hat B_n \right\vert^2 }.
-
-At this stage, it is quite obvious that our system is a composite Rabi oscilation system. For each specific :math:`n` term we write down the hopping probability from light state to the heavy state,
-
-.. math::
+At this stage, it is quite obvious that our system is a composite Rabi oscillation system. For each specific $n$ term we write down the hopping probability from light state to the heavy state,
+\begin{equation}
    P_{\mathrm{L}\to\mathrm{H}}^{(n)} = \frac{ \left\lvert \hat B_{n}  \right\rvert^2 }{ \left\lvert   \hat B_{n}  \right\rvert^2 + ( n \hat k - 1 )^2  } \sin^2 \left( \frac{ \hat q^{(n)} }{2} \hat x \right),
-
+\end{equation}
 where
-
-.. math::
+\begin{align}
    \Gamma^{(n)} &= \left\lvert \hat B_{n} \right\rvert, \quad \text{width of resonance ($n\hat k$ as parameter)} \\
    \hat q^{(n)} &= \sqrt{\left\lvert  \Gamma^{(n)} \right\rvert^2 + ( n \hat k - 1 )^2},\quad \text{frequency of oscillations}
+\end{align}
 
-
-
-
-
-.. admonition:: Scaled Quantities
-   :class: note
-
-   As a reminder, the scaled quantities are defined as
-
-   .. math::
+We define the scaled quantities,
+\begin{align}
       \hat x &= \omega_{\mathrm{m}} x, \\
       \hat h &= h/\omega_{\mathrm{m}}, \\
       \hat B_n &= B_n/\omega_{\mathrm{m}}, \\
       \hat k &= k/\omega_{\mathrm{m}}, \\
       \hat A &= A/\omega_{\mathrm{m}}, \\
       \hat q &= q/\omega_{\mathrm{m}} .
+\end{align}
+Just a comment. $B_n$ is used here because I actually want to use it for multi-frequency case and I just think $B_n$ is better than $F$.
 
-   Just a comment. :math:`B_n` is used here because I actually want to use it for multi-frequency case and I just think :math:`B_n` is better than :math:`F`.
 
+% .. figure:: assets/matter-stimulated/stimulated-probability-apmlitude-vs-k.svg
+%   :align: center
 
-
-.. admonition:: Rabi Oscillations
-   :class: note
-
-   The form of Hamiltonian reminds of us Rabi oscillations, whose Hamiltonian is
-
-   .. math::
-      \begin{pmatrix}
-      -\omega_0/2 & \alpha \omega_0 e^{i \omega x}\\
-      \alpha \omega_0  e^{-i k x} & \omega_0/2
-      \end{pmatrix},
-
-   where :math:`\omega_0` is the energy gap between the two energy levels and :math:`\omega` is the frequency of the incoming light. To be more specific, we explain this phenomenon using two level systems.
-
-   .. figure:: assets/single-frequency/rabi-diagram.png
-      :align: center
-
-      Rabi oscillation system
-
-   The system is prepared in low energy state. When the incoming light frequency matches the energy gap between two states, we have a resonance. Otherwise, we still have the transition from low energy state to high energy state but with a smaller transition amplitude.
-
-   .. figure:: assets/single-frequency/rabi-oscillations.png
-      :align: center
-
-      Rabi oscillations for two differen incoming light frequencies. :math:`\omega/\omega_0 =1` is the resonance condition.
-
-   What we really mean by resonance is that the transition amplitude is maximized. Or the phase inside the off-diagonal element of Hamiltonian is minimized.
-
-   What's more, we explore the transition amplitude as a function of differen incoming light frequencies.
-
-   .. figure:: assets/single-frequency/rabi-resonance.png
-      :align: center
-
-      Resonance of Rabi oscillations.
+%   Probability Amplitude as a function of :math:`k/\omega_m` within RWA, with parameters :math:`A=0.1, \theta_m=\pi/5, \phi=0`.
 
 
 
+% .. figure:: assets/matter-stimulated/stimulated-probability-apmlitude-vs-k-non-RWA.svg
+%   :align: center
+
+%   Probabiity Amplitude as a function of :math:`k/\omega_m` for each term in Jacobi-Anger expansion, with parameters :math:`A=0.1, \theta_m=\pi/5, \phi=0`.
 
 
-.. figure:: assets/matter-stimulated/stimulated-probability-apmlitude-vs-k.svg
-   :align: center
-
-   Probabiity Amplitude as a function of :math:`k/\omega_m` within RWA, with parameters :math:`A=0.1, \theta_m=\pi/5, \phi=0`.
+% To look at the resonances I define a Mathematica function to calculate the FWHM (Full Width at Half Maximum).
 
 
+% .. admonition:: Find FWHM Using Mathematica
+%   :class: hint
 
-.. figure:: assets/matter-stimulated/stimulated-probability-apmlitude-vs-k-non-RWA.svg
-   :align: center
+%   The Mathematica code::
 
-   Probabiity Amplitude as a function of :math:`k/\omega_m` for each term in Jacobi-Anger expansion, with parameters :math:`A=0.1, \theta_m=\pi/5, \phi=0`.
-
-
-To look at the resonances I define a Mathematica function to calculate the FWHM.
+%       fwhm[n_] := First@Differences[k /. {ToRules@Reduce[amplitude[k, 0.1, Pi/5, n] == 0.5 &&k > (1 - 0.5/Exp[n]/n^2)/n && k < (1 + 0.5/Exp[n]/n^2)/n, k]}]
 
 
-.. admonition:: Find FWHM Using Mathematica
-   :class: hint
+% .. figure:: assets/matter-stimulated/stimulated-probability-apmlitude-vs-k-resonance-width.svg
+%   :align: center
 
-   The Mathematica code::
+%   Width of the resonances for :math:`A=0.1, \theta_m=\pi/5, \phi=0`.
 
-      fwhm[n_] := First@Differences[k /. {ToRules@Reduce[amplitude[k, 0.1, Pi/5, n] == 0.5 &&k > (1 - 0.5/Exp[n]/n^2)/n && k < (1 + 0.5/Exp[n]/n^2)/n, k]}]
-
-
-.. figure:: assets/matter-stimulated/stimulated-probability-apmlitude-vs-k-resonance-width.svg
-   :align: center
-
-   Width of the resonances for :math:`A=0.1, \theta_m=\pi/5, \phi=0`.
+Resonance width of each order of resonance (each $n$) should be calculated analytically.
 
 
-
-How do we understand the resonance? Resonance width of each order of resonance (each n) should be calculated analytically.
-
-.. admonition:: Lorentzian Distribution
-   :class: hint
-
-   Three-parameter Lorentzian function is
-
-   .. math::
-      f_{x_0,\sigma,A}(x)= \frac{1}{\pi} \frac{\sigma}{\sigma^2 + (x-x_0)^2},
-
-   which has a width :math:`2\gamma`.
-
-To find the exact width is hopeless since we need to inverse Bessel functions. Nonethless, we can assume that the resonance is very narrow so that :math:`\left\lvert F \right\rvert^2` doesn't change a lot. With the assumption, the FWHM is found be setting the amplitude to half, which is
-
-.. math::
+To find the exact width is hopeless since we need to inverse Bessel functions. Nonetheless, we can assume that the resonance is very narrow so that $\left\lvert F \right\rvert^2$ doesn't change a lot. With the assumption, the FWHM (Full Width at Half Maximum) is found be setting the amplitude to half, which is
+\begin{equation}
    \Gamma = \left\lvert \frac{\hat F}{n_0} \right\rvert = \left\lvert \hat k \tan 2\theta_m \frac{ J_{n_0}( n_0 \hat A \cos 2\theta_m/\hat k )}{n_0} \right\rvert .
-
+\end{equation}
 To verify this result, we compare it with the width found numerically from the exact amplitude.
 
-Given this result, and equation :eq:`chap:matter-sec:deep-jacobi-subsec:single-matter-freq-eqn:eqn-12-element-and-F`, we infer that the coefficient in front of the phase term of 12 element in Hamiltonian is related to the width, while the the deviation from the exact resonance is given by :math:`\hat g=n_0 \hat k - 1`.
+Given this result, and equation \ref{chap:matter-sec:deep-jacobi-subsec:single-matter-freq-eqn:eqn-12-element-and-F}, we infer that the coefficient in front of the phase term of 12 element in Hamiltonian is related to the width, while the the deviation from the exact resonance is given by $\hat g=n_0 \hat k - 1$.
 
-.. admonition:: Guessing The Width
-   :class: note
+% .. admonition:: Guessing The Width
+%   :class: note
 
-   Given a Hamiltonian 12 element here
+%   Given a Hamiltonian 12 element here
 
-   .. math::
-      h = \frac{F}{2} e^{i(n_0 \hat k - 1) \hat x} = \frac{F}{2} e^{i \hat g \hat x},
+%   .. math::
+%       h = \frac{F}{2} e^{i(n_0 \hat k - 1) \hat x} = \frac{F}{2} e^{i \hat g \hat x},
 
-   the width of the resonance is
+  the width of the resonance is
 
-   .. _single-frequency-equation-eqn-single-frequency-width-guessing:
-
-   .. math::
-      \Gamma = \left\lvert \frac{F}{n_0} \right\rvert.
-      :label: eqn-single-frequency-width-guessing
-
-
-
-.. figure:: assets/matter-stimulated/stimulated-single-frequency-width-approximation-amp-point1.png
-   :align: center
-
-   Comparison of approximated width and numerical results for perturbation amplitude :math:`\hat A = \frac{A}{\omega_m} = 0.1`.
-
-
-.. figure:: assets/matter-stimulated/stimulated-single-frequency-width-approximation-amp-1.png
-   :align: center
-
-   Comparison of approximated width and numerical results for perturbation amplitude :math:`\hat A = \frac{A}{\omega_m} = 1`.
+ \begin{equation}
+ \Gamma = \left\lvert \frac{F}{n_0} \right\rvert.
+ \label{chap:matter-sec:deep-jacobi-eqn:single-frequency-width-guessing}
+ \end{equation}
+      
 
 
 
-.. admonition:: A Special Property of Bessel Function
-   :class: note
+% .. figure:: assets/matter-stimulated/stimulated-single-frequency-width-approximation-amp-point1.png
+%   :align: center
 
-   A special relation of Bessel function is that [Ploumistakis2009]_
-
-   .. math::
-      J_n(n \sech \alpha) \sim \frac{ e^{n(\tanh\alpha - \alpha)} }{\sqrt{ 2\pi n \tanh \alpha } }
-
-   for large :math:`n`. As a matter of fact, for all positive :math:`\alpha`, we always have :math:`\tanh \alpha - \alpha < 0`.
-
-   Using this relation and defining :math:`\sech \alpha = A \cos 2\theta_m`, which renders
-
-   .. math::
-      \alpha = 2 n \pi i + \ln \left(  \frac{ 1 \pm \sqrt{ -A^2 \cos^2 2\theta_m + 1 } }{ A\cos 2\theta_m } \right),\qquad n\in \mathrm{Integers},
-      :label: eqn-width-alpha-solved
-
-   where the Mathematica code to solve it is shown below,
-
-      In[1]:= Solve[Exp[z] + Exp[-z] == 2/(A Cos[2 Subscript[\[Theta], m]]), z] // FullSimplify
-
-   we find out an more human readabale analytical expression for the width
-
-   .. math::
-      \Gamma = \left\lvert 2 \hat k \tan 2\theta_m \frac{ e^{n ( \tanh \alpha - \alpha )} }{n_0 \sqrt{2\pi n_0 \tanh \alpha} } \right\rvert
-
-   where :math:`\alpha` is solved out in :eq:`eqn-width-alpha-solved`.
-
-   For small :math:`\alpha`, we have expansions for exponentials and hyperbolic functions :math:`\tanh \alpha \sim \alpha - \frac{\alpha^3}{3}`,
-
-   .. math::
-      \Gamma \asymp 2\tan 2\theta_m \frac{ e^{n \alpha^3/3} }{\sqrt{2\pi \alpha} n_0^{3/2}  }.
-
-   However, it doesn't really help that much since :math:`n` is large and no expansion could be done except for significantly small :math:`\alpha`.
+%   Comparison of approximated width and numerical results for perturbation amplitude :math:`\hat A = \frac{A}{\omega_m} = 0.1`.
 
 
-.. [Ploumistakis2009] I. Ploumistakis, S.D. Moustaizis, I. Tsohantjis, Towards laser based improved experimental schemes for multiphoton pair production from vacuum, Physics Letters A, Volume 373, Issue 32, 3 August 2009, Pages 2897-2900, ISSN 0375-9601, http://dx.doi.org/10.1016/j.physleta.2009.06.015.
-(http://www.sciencedirect.com/science/article/pii/S0375960109007166)
-Keywords: Pair production; Multiphoton processes; High intensity lasers
+% .. figure:: assets/matter-stimulated/stimulated-single-frequency-width-approximation-amp-1.png
+%   :align: center
+
+%   Comparison of approximated width and numerical results for perturbation amplitude :math:`\hat A = \frac{A}{\omega_m} = 1`.
 
 
 
 
-Perturbation Amplitude and Transition Probability
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-.. figure:: assets/matter-stimulated/pltPertAmpPertWaveNumTransitionAmp.svg
-   :align: center
+% Perturbation Amplitude and Transition Probability
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-   Transition probability amplitude at different perturbation amplitude and perturbation wavenumber.
+
+% .. figure:: assets/matter-stimulated/pltPertAmpPertWaveNumTransitionAmp.svg
+%   :align: center
+
+%   Transition probability amplitude at different perturbation amplitude and perturbation wavenumber.
 
 
 
@@ -1167,9 +1046,9 @@ For further simplifications of the problem, we follow a rule to sum over a line 
 
 \begin{figure}
     \centering
-    \includegraphics{chapters/assets/rabi/summation-algebra}
+    \includegraphics[width=0.8\textwidth]{chapters/assets/rabi/summation-algebra}
     \caption{Rewrite multiplication of summations into summations only.}
-    \label{chap:matter-sec:jacobi-subsec:multi-matter-freq--fig:summation-algebra}
+    \label{chap:matter-sec:jacobi-subsec:multi-matter-freq-fig:summation-algebra}
 \end{figure}
 The multiplication in Eqn.~\ref{chap:matter-sec:jacobi-subsec:multi-matter-freq-eqn:rabi-hamil-off} becomes
 \begin{align}
@@ -1205,7 +1084,7 @@ We keep only terms that are integers for each summation to satisfy the relations
 \end{align}
 so that the $x$ dependent exponential almost vanishes (obtain the largest wavelength in fact). Notice that each $n_{ij,N}$ depends on the summation index $N$.
 
-We solve each $n_{ij,N}$$,
+We solve each $n_{ij,N}$,
 \begin{align}
    n_{11,N} &\sim \mathrm{Round}\left[\frac{\omega_m - N k_2 -k_1}{k_1 - k_2} \right] \\
    n_{12,N} &\sim \mathrm{Round}\left[\frac{\omega_m - N k_2 + k_1}{k_1 - k_2}\right] \\
@@ -1245,7 +1124,7 @@ where the parenthesis part is what we would have if only one frequency is used a
 for all frequencies.
 This reminds us that each of these terms means the interference due to other frequencies. As a simple example, we demonstrate two-frequency case.
 
-The two-frequency matter perturbation system has a Hamiltonian element :math:`H_{12}`
+The two-frequency matter perturbation system has a Hamiltonian element $H_{12}$
 \begin{equation}
    h = h_1 + h_2, 
 \end{equation}
@@ -1316,7 +1195,7 @@ without any approximations.
 
 \begin{figure}
     \centering
-    \includegraphics{chapters/assets/rabi/compApproxNum.png}
+    \includegraphics[width=\textwidth]{chapters/assets/rabi/compApproxNum.png}
     \caption{Top Left: Smaller wavenumber $k_1=0.95$ is at resonance and it has smaller perturbation amplitude ($k_2=1.55$);
       Top Right: Smaller wavenumber $k_1=0.95$ is at resonance and it has larger perturbation amplitude ($k_2=1.55$);
       Bottom Left: Larger wavenumber $k_2=0.95$ is at resonance and it has smaller perturbation amplitude ($k_1=0.35$);
@@ -1327,13 +1206,13 @@ without any approximations.
 
    In realistic physical systems, it is more likely to have a matter profile so that we have the bottom left situation. In other words, RWA method breaks down in the most interesting case.
 
-\item Another choice is to add or remove one for both $n_1$ and $n_2$ for both terms in the Hamiltonian. The approach will define the order $n_{order}` first, as will be applied to the n's. As an example, adding first order to $n_1$ will include all the possible combinations of $n_1,n_1\pm 1$ for both terms without changing $n_2$. As an example, we compare the different orders of $n_1$ only with the numerical calculation without approximations in Fig.~\ref{chap:matter-sec:jacobi-subsec:multi-matter-freq-fig:stimulated-2-freq-higher-orders-approach-2}.
+\item Another choice is to add or remove one for both $n_1$ and $n_2$ for both terms in the Hamiltonian. The approach will define the order $n_{order}$ first, as will be applied to the n's. As an example, adding first order to $n_1$ will include all the possible combinations of $n_1,n_1\pm 1$ for both terms without changing $n_2$. As an example, we compare the different orders of $n_1$ only with the numerical calculation without approximations in Fig.~\ref{chap:matter-sec:jacobi-subsec:multi-matter-freq-fig:stimulated-2-freq-higher-orders-approach-2}.
 
 
 \begin{figure}
     \centering
-    \includegraphics{chapters/assets/rabi/stimulated-2-freq-higher-orders-approach-2.png}
-    \caption{Compare the different orders with the numerical calculation without approximations, where red dotted line is the numerical calculation without approximation. As we could see from the figure, including up to third order in :math:`n_1` fixes the deviation from numerical calculation (red dotted line). The wave vectors are $k_1=0.5$, $k_2=0.8$, amplitudes are $A_1=0.1 k_1^{-5/3}$, $A_2=0.1 k_2^{-5/3}$, mixing angle in background matter is $\theta_m=\pi/5$.}
+    \includegraphics[width=\textwidth]{chapters/assets/rabi/stimulated-2-freq-higher-orders-approach-2.png}
+    \caption{Compare the different orders with the numerical calculation without approximations, where red dotted line is the numerical calculation without approximation. As we could see from the figure, including up to third order in $n_1$ fixes the deviation from numerical calculation (red dotted line). The wave vectors are $k_1=0.5$, $k_2=0.8$, amplitudes are $A_1=0.1 k_1^{-5/3}$, $A_2=0.1 k_2^{-5/3}$, mixing angle in background matter is $\theta_m=\pi/5$.}
     \label{chap:matter-sec:jacobi-subsec:multi-matter-freq-fig:stimulated-2-freq-higher-orders-approach-2}
 \end{figure}
 
@@ -1378,7 +1257,7 @@ For simplicity, we define
 Notice that
 \begin{align}
    B_{n_2,n_1}(k_2,k_1, A_2, A_1) &= -(-i)^{n_1+n_2} \tan 2\theta_m n_2 k_2 J_{n_1}( \frac{A_1}{k_1}\cos 2\theta_m ) J_{n_2}( \frac{A_2}{k_2}\cos 2\theta_m ).
-\end{equation}
+\end{align}
 Using these definitions, we rewrite the Hamiltonian 12 element
 \begin{align}
    h &= h_1 + h_2 \\
@@ -1390,149 +1269,138 @@ Using these definitions, we rewrite the Hamiltonian 12 element
 where $B_2{n_1,n_2}(k_1,k_2,A_1,A_2)\equiv B_{n_1,n_2}(k_1,k_2,A_1,A_2) + B_{n_2,n_1}(k_2,k_1,A_2,A_1)$ is what we are interested in.
 
 Comparing this expression with the single frequency one which is almost the same structure if we remove the two sums, and using the result \ref{chap:matter-sec:deep-jacobi-subsec:single-matter-freq-eqn:stimulated-single-freq-trans-probability}, we can infer that the transition probability,
+\begin{equation}
+    P_{1\to 2}(x) = \frac{\lvert \hat B_2 \rvert^2}{ \lvert \hat B_2 \rvert^2 + \hat g_2^2} \sin^2\left( \frac{q_2}{2}x \right),
+\end{equation}
+where $\hat B_2=\frac{ B_2 }{\omega_m}=\frac{B_{n_1,n_2}(k_1,k_2,A_1,A_2) + B_{n_2,n_1}(k_2,k_1,A_2,A_1)}{\omega_m}$ and $\hat g_2 = \frac{g}{\omega_m} = n_1 \hat k_1 + n_2 \hat k_2 - 1$ which tells us how far from resonance and $q_2=\sqrt{ \lvert \hat B_2 \rvert^2 + \hat g^2 }$.
 
-.. math::
-   P_{1\to 2}(x) = \frac{\lvert \hat B_2 \rvert^2}{ \lvert \hat B_2 \rvert^2 + \hat g_2^2} \sin^2\left( \frac{q_2}{2}x \right),
-
-where :math:`\hat B_2=\frac{ B_2 }{\omega_m}=\frac{B_{n_1,n_2}(k_1,k_2,A_1,A_2) + B_{n_2,n_1}(k_2,k_1,A_2,A_1)}{\omega_m}` and :math:`\hat g_2 = \frac{g}{\omega_m} = n_1 \hat k_1 + n_2 \hat k_2 - 1` which tells us how far from resonance and :math:`q_2=\sqrt{ \lvert \hat B_2 \rvert^2 + \hat g^2 }`.
-
-The width then is similar to :ref:`single frequency width <single-frequency-equation-eqn-single-frequency-width-guessing>`, except that we could not define the width as a function of single variables since two wave vector are used. However, it is still reasonable to give the FWHM condition,
-
-.. math::
+The width then is similar to \ref{chap:matter-sec:deep-jacobi-eqn:single-frequency-width-guessing}, except that we could not define the width as a function of single variables since two wave vector are used. However, it is still reasonable to give the FWHM condition,
+\begin{equation}
    n_1 \hat k_1 + n_2 \hat k_2 - 1 = \pm \lvert \hat B_2 \rvert = \left\lvert \frac{B_{n_1,n_2}(k_1,k_2,A_1,A_2) + B_{n_2,n_1}(k_2,k_1,A_2,A_1)}{\omega_m} \right\rvert.
-   :label: stimulated-2-freq-width-requirement-raw
+   \label{chap:matter-sec:deep-jacobi-eqn:stimulated-2-freq-width-requirement-raw}
+\end{equation}
+For a given pair of integers $n_1,n_2$, we could find the amplitude as a function of $k_1, k_2$.
 
-For a given pair of integers :math:`n_1,n_2`, we could find the amplitude as a function of :math:`k_1, k_2`.
+A solution shows that this is correct. The solution to the second element of wave function is
+\begin{equation}
+  \psi_{b2} = i \frac{ \lvert \hat B_2\rvert^2 e^{-\frac{i}{2} \hat g_2 \hat x} }{ \hat B_2 \sqrt{\lvert \hat B_2\rvert^2 + \hat g^2} }\sin\left( \frac{\sqrt{ \lvert \hat B_2 \rvert^2 + \hat g^2 }}{2}x \right)  .
+\end{equation}
 
+It is very confusing when we write down the requirement for width \ref{chap:matter-sec:deep-jacobi-eqn:stimulated-2-freq-width-requirement-raw}, since we need to assume $\lvert \hat F_2 \rvert$ to be almost constant to arrive this result. What values of $\hat k_1,\hat k_2$ do we need to calculate $\lvert \hat F_2 \rvert$?
 
-.. admonition:: Solve The Problem
-   :class: note
-
-   A solution shows that this is correct. The solution to the second element of wave function is
-
-   .. math::
-      \psi_{b2} = i \frac{ \lvert \hat B_2\rvert^2 e^{-\frac{i}{2} \hat g_2 \hat x} }{ \hat B_2 \sqrt{\lvert \hat B_2\rvert^2 + \hat g^2} }\sin\left( \frac{\sqrt{ \lvert \hat B_2 \rvert^2 + \hat g^2 }}{2}x \right)  .
-
-
-It is very confusing when we write down the requirement for width :eq:`stimulated-2-freq-width-requirement-raw`, since we need to assume :math:`\lvert \hat F_2 \rvert` to be almost constant to arrive this result. What values of :math:`\hat k_1,\hat k_2` do we need to calculate :math:`\lvert \hat F_2 \rvert`?
-
-The idea is to find the FWHM when a point is deviating from the line. To be specific, we find the line that is the resonance using :math:`n_1 k_1 + n_2 k_2 = 1`, which is plotted as dashed red line in :numref:`diagram-of-width-2-freq`. To characterise the distance, we need a line that is perpendicular to this red dashed resonance line, which also is passing through the values of :math:`(k_10,k_2)=(k_{10},k_{20})` which is given in the system. Under this scheme, the resonance width is define as the distance from the resonance line when the amplitude reduces to half on this blue dotted perpendicular line.
+The idea is to find the FWHM when a point is deviating from the line. To be specific, we find the line that is the resonance using $n_1 k_1 + n_2 k_2 = 1$, which is plotted as dashed red line in \ref{chap:matter-sec:deep-jacobi-fig:diagram-of-width-2-freq}. To characterise the distance, we need a line that is perpendicular to this red dashed resonance line, which also is passing through the values of $(k_10,k_2)=(k_{10},k_{20})$ which is given in the system. Under this scheme, the resonance width is define as the distance from the resonance line when the amplitude reduces to half on this blue dotted perpendicular line.
 
 
-.. _diagram-of-width-2-freq:
-
-.. figure:: assets/matter-stimulated/stimulated-2-freq-width-diagram.png
-   :align: center
-
-   Diagram of Width.
+\begin{figure}
+    \centering
+    \includegraphics{chapters/assets/rabi/stimulated-2-freq-width-diagram.png}
+    \caption{Diagram of Width.}
+    \label{chap:matter-sec:deep-jacobi-fig:diagram-of-width-2-freq}
+\end{figure}
 
 In the language of algebra, we could derive the interception point of the two lines, which is
-
-.. math::
+\begin{align}
    k_{1,\mathrm{intercept}} &= \frac{n_2^2 k_{10} + n_2 k_{20} + n_1 }{n_1^2 + n_2^2}, \\
    k_{2,\mathrm{intercept}} &= \frac{n_1}{n_2}k_{1,\mathrm{intercept}} - \frac{1}{n_2},
-
-where :math:`k_{10}` and :math:`k_{20}` are the values given in the matter perturbation of the system.
+\end{align}
+where $k_{10}$ and $k_{20}$ are the values given in the matter perturbation of the system.
 
 Using this method, we can define a reasonable width for two frequency matter perturbation case,
-
-.. math::
+\begin{equation}
    \Gamma_2 = \frac{B_2(k_{1,\mathrm{intercept}},k_{2,\mathrm{intercept}})}{\sqrt{n_1^2 + n_2^2}}.
+\end{equation}
+
+% .. admonition:: Derivation of Width for 2 Frequency Matter Perturbation
+%   :class: hint
+
+%   First of all, we assume that a point :math:`(\hat k_{10},\hat k_{20})` is a displace from the line by the FWHM :math:`\hat L` in :math:`\hat k_2`, which means that, the line that is paralell to the resonance line and passing through the point :math:`(\hat k_{10},\hat k_{20})` is displaced by :math:`\hat L` in :math:`\hat k_2`,
+
+%   .. math::
+%       n_1 \hat k_1 + n_2 \hat k_2 - n_2 \hat L = 1.
+
+%   We assume the width of resonance is not large so that we could use resonance values for :math:`\hat k_1, \hat k_2`. For FWHM, we require
+
+%   .. math::
+%       n_1 k_{1,\mathrm{intercept}} + n_2 k_{2,\mathrm{intercept}} -1  - n_2 \hat L = \lvert \hat B_2(k_{1,\mathrm{intercept}},k_{2,\mathrm{intercept}}) \rvert,
+
+%   where we could apply :math:`n_1 k_{1,\mathrm{intercept}} + n_2 k_{2,\mathrm{intercept}} -1 = 0` because we assumed the width is narrow, thus
+
+%   .. math::
+%       - n_2 \hat L = \lvert \hat B_2(k_{1,\mathrm{intercept}},k_{2,\mathrm{intercept}}) \rvert.
 
 
-.. admonition:: Derivation of Width for 2 Frequency Matter Perturbation
-   :class: hint
+%   However, :math:`L` is not the actually deviation from the interception point. We could calculate the actual deviation :math:`\Gamma_2` on the blue line in figure :numref:`diagram-of-width-2-freq`, which is given by
 
-   First of all, we assume that a point :math:`(\hat k_{10},\hat k_{20})` is a displace from the line by the FWHM :math:`\hat L` in :math:`\hat k_2`, which means that, the line that is paralell to the resonance line and passing through the point :math:`(\hat k_{10},\hat k_{20})` is displaced by :math:`\hat L` in :math:`\hat k_2`,
+%   .. math::
+%       \sqrt{n_1^2 + n_2^2} \Gamma_2 = n_2 L,
 
-   .. math::
-      n_1 \hat k_1 + n_2 \hat k_2 - n_2 \hat L = 1.
+%   i.e., we find the resonance width
 
-   We assume the width of resonance is not large so that we could use resonance values for :math:`\hat k_1, \hat k_2`. For FWHM, we require
-
-   .. math::
-      n_1 k_{1,\mathrm{intercept}} + n_2 k_{2,\mathrm{intercept}} -1  - n_2 \hat L = \lvert \hat B_2(k_{1,\mathrm{intercept}},k_{2,\mathrm{intercept}}) \rvert,
-
-   where we could apply :math:`n_1 k_{1,\mathrm{intercept}} + n_2 k_{2,\mathrm{intercept}} -1 = 0` because we assumed the width is narrow, thus
-
-   .. math::
-      - n_2 \hat L = \lvert \hat B_2(k_{1,\mathrm{intercept}},k_{2,\mathrm{intercept}}) \rvert.
+%   .. math::
+%       \Gamma_2 =  \frac{B_2(k_{1,\mathrm{intercept}},k_{2,\mathrm{intercept}})}{\sqrt{n_1^2 + n_2^2}}.
 
 
-   However, :math:`L` is not the actually deviation from the interception point. We could calculate the actual deviation :math:`\Gamma_2` on the blue line in figure :numref:`diagram-of-width-2-freq`, which is given by
-
-   .. math::
-      \sqrt{n_1^2 + n_2^2} \Gamma_2 = n_2 L,
-
-   i.e., we find the resonance width
-
-   .. math::
-      \Gamma_2 =  \frac{B_2(k_{1,\mathrm{intercept}},k_{2,\mathrm{intercept}})}{\sqrt{n_1^2 + n_2^2}}.
-
-
-To apply the width in a problem, we need to calculate the distance between the given point :math:`(k_{10},k_{20})` of the system to a certain resonance line which depends on :math:`n_1,n_2,A_1,A_2,\theta_m`. This is as simple as point to line distance, which is calculated using
-
-.. math::
+To apply the width in a problem, we need to calculate the distance between the given point $(k_{10},k_{20})$ of the system to a certain resonance line which depends on $n_1,n_2,A_1,A_2,\theta_m$. This is as simple as point to line distance, which is calculated using
+\begin{equation}
    d = \frac{\lvert n_1 k_{10} + n_2 k_{20} - 1 \rvert}{\sqrt{n_1^2 + n_2^2} }.
-   :label: stimulated-2-freq-distance-0
-
-Here comes the question: **what is the requirement for a pair of** :math:`(n_1,n_2)` **to be important?**
-
-We answer this by defining a quantity that compares the distance from a certain resonance line with the width of this resonance line,
-
-.. math::
-   Q_2 = \frac{d}{\Gamma_2}.
-
+   \label{stimulated-2-freq-distance-0}
+\end{equation}
+The requirement for a pair of $(n_1,n_2)$ to be important is determined by defining a quantity that compares the distance from a certain resonance line with the width of this resonance line,
+\begin{equation}
+   Q_2 = \frac{d}{\Gamma_2}. 
+\end{equation}
+   
 
 
-.. admonition:: Caveats
-   :class: note
 
-   There are caveats when calculating the distance :math:`d` or the width :math:`\Gamma_2`.
+% .. admonition:: Caveats
+%   :class: note
 
-   The first problem is the zeros. In special cases, :math:`n_1=0` as an example, the distance :math:`d` using the equation :eq:`stimulated-2-freq-distance-0` will lead to infinities. Same thing happens to the width.
+%   There are caveats when calculating the distance :math:`d` or the width :math:`\Gamma_2`.
 
-   The solution is to treat the special cases seperately. As an result, we conclude that
+%   The first problem is the zeros. In special cases, :math:`n_1=0` as an example, the distance :math:`d` using the equation :eq:`stimulated-2-freq-distance-0` will lead to infinities. Same thing happens to the width.
 
-   .. math::
-      d=\begin{cases}
-      \frac{\lvert n_1 k_{10} + n_2 k_{20} -1 \rvert}{\sqrt{ n_1^2 + n_2 ^2 }}, & n_1\neq 0 \&\& n_2 \neq 0 \\
-      \infty , & & n_1= 0 \&\& n_2 = 0.
-      \end{cases}
-      :label: stimulated-2-freq-distance-d
+%   The solution is to treat the special cases seperately. As an result, we conclude that
 
-   The :math:`\infty` is simply a defined value which is to ensure the final values of :math:`Q_2` to be reasonable.
+%   .. math::
+%       d=\begin{cases}
+%       \frac{\lvert n_1 k_{10} + n_2 k_{20} -1 \rvert}{\sqrt{ n_1^2 + n_2 ^2 }}, & n_1\neq 0 \&\& n_2 \neq 0 \\
+%       \infty , & & n_1= 0 \&\& n_2 = 0.
+%       \end{cases}
+%       :label: stimulated-2-freq-distance-d
 
-   Meanwhile, the width can always be written as :math:`\Gamma_2 = \frac{B_2(k_{1,\mathrm{intercept}},k_{2,\mathrm{intercept}})}{\sqrt{n_1^2 + n_2^2}}.` as long as :math:`n_1\neq 0\&\& n_2\neq 0`. However, what we mean by :math:`k_{1,\mathrm{intercept}},k_{2,\mathrm{intercept}}` has special situations.
+%   The :math:`\infty` is simply a defined value which is to ensure the final values of :math:`Q_2` to be reasonable.
 
-   For :math:`n_1\neq 0\&\& n_2\neq 0`, we have the general solution
+%   Meanwhile, the width can always be written as :math:`\Gamma_2 = \frac{B_2(k_{1,\mathrm{intercept}},k_{2,\mathrm{intercept}})}{\sqrt{n_1^2 + n_2^2}}.` as long as :math:`n_1\neq 0\&\& n_2\neq 0`. However, what we mean by :math:`k_{1,\mathrm{intercept}},k_{2,\mathrm{intercept}}` has special situations.
 
-   .. math::
-      k_{1,\mathrm{intercept}} &= \frac{n_2^2 k_{10} + n_2 k_{20} + n_1 }{n_1^2 + n_2^2}, \\
-      k_{2,\mathrm{intercept}} &= \frac{n_1}{n_2}k_{1,\mathrm{intercept}} - \frac{1}{n_2}.
+%   For :math:`n_1\neq 0\&\& n_2\neq 0`, we have the general solution
 
-   For :math:`n_1=0\&\& n_2\neq 0`, we have
+%   .. math::
+%       k_{1,\mathrm{intercept}} &= \frac{n_2^2 k_{10} + n_2 k_{20} + n_1 }{n_1^2 + n_2^2}, \\
+%       k_{2,\mathrm{intercept}} &= \frac{n_1}{n_2}k_{1,\mathrm{intercept}} - \frac{1}{n_2}.
 
-   .. math::
-      k_{1,\mathrm{intercept}} &= k_{10}, \\
-      k_{2,\mathrm{intercept}} &= \frac{1}{n_2}.
+%   For :math:`n_1=0\&\& n_2\neq 0`, we have
 
-   Finally, for :math:`n_1\neq 0\&\& n_2 =0`, we need
+%   .. math::
+%       k_{1,\mathrm{intercept}} &= k_{10}, \\
+%       k_{2,\mathrm{intercept}} &= \frac{1}{n_2}.
 
-   .. math::
-      k_{1,\mathrm{intercept}} &=\frac{1}{n_1}, \\
-      k_{2,\mathrm{intercept}} &= k_{20}.
+%   Finally, for :math:`n_1\neq 0\&\& n_2 =0`, we need
 
-   As for :math:`n_1=0\&\& n_2=0`, we define the width to be zero.
+%   .. math::
+%       k_{1,\mathrm{intercept}} &=\frac{1}{n_1}, \\
+%       k_{2,\mathrm{intercept}} &= k_{20}.
 
-   One last thing,
+%   As for :math:`n_1=0\&\& n_2=0`, we define the width to be zero.
 
-   .. math::
-      Q_2 = \begin{cases}
-      \frac{d}{\Gamma_2}, & \Gamma_2\neq 0 \\
-      \infty, & \Gamma_2 = 0\&\& d\neq 0\\
-      0, & \Gamma_2=0\&\& d = 0
-      \end{cases}
+%   One last thing,
+
+%   .. math::
+%       Q_2 = \begin{cases}
+%       \frac{d}{\Gamma_2}, & \Gamma_2\neq 0 \\
+%       \infty, & \Gamma_2 = 0\&\& d\neq 0\\
+%       0, & \Gamma_2=0\&\& d = 0
+%       \end{cases}
 
 
 
