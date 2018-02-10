@@ -767,9 +767,10 @@ To answer the first question, we need to write down the solution to Schrodinger 
 \begin{table*}
 \caption{\label{chap:matter-sec:deep-jacobi-subsec:single-matter-freq-tab:decomp-hamil}}
 % \begin{ruledtabular}
-\small
+% \small
 \setlength\tabcolsep{2pt}
-\begin{tabular}{l|l|l}
+\begin{tabular}{l|l}
+\hline
  Hamiltonian &   Solution to The First Element of Wave Function \\
 \hline
    $-\frac{\omega_m}{2}\sigma_3$ &  $\psi_1 \sim e^{i\omega_m x/2}$  \\
@@ -812,9 +813,10 @@ as derived in equation \ref{chap:matter-sec:deep-jacobi-subsec:single-matter-fre
 \begin{table*}
 \caption{\label{chap:matter-sec:deep-jacobi-subsec:single-matter-freq-tab:decomp-hamil-2}}
 % \begin{ruledtabular}
-\small
+% \small
 \setlength\tabcolsep{2pt}
 \begin{tabular}{l|l}
+\hline
  Constant Matter Profile $\delta\lambda = \lambda_c$ &   Period Matter Profile $\delta\lambda=A\sin (kx+\phi)$ \\
 \hline
    $\frac{\sin 2\theta_m}{2}\lambda_c e^{i \cos 2\theta_m \lambda_c x}$     &   $\frac{A\sin 2\theta_m}{4} \sum_{n=-\infty}^{\infty} e^{in\phi} \left( - i^n \right) \frac{2n+1}{z_k} J_n (z_k) e^{i(nk-\omega_m)x}$ \\
@@ -1260,10 +1262,11 @@ Notice that
 \end{align}
 Using these definitions, we rewrite the Hamiltonian 12 element
 \begin{align}
-   h &= h_1 + h_2 \\
-   & = \frac{1}{2}\sum_{n_1=-\infty}^\infty \sum_{n_2=-\infty}^{\infty} B_{n_1,n_2}(k_1,k_2,A_1,A_2) \Phi e^{i(n_1 k_1 + n_2 k_2 - \omega_m)x} +  \frac{1}{2}\sum_{n_1=-\infty}^\infty \sum_{n_2=-\infty}^{\infty} B_{n_2,n_1}(k_2,k_1,A_2,A_1) \Phi e^{i(n_1 k_1 + n_2 k_2 - \omega_m)x} \\
-   & = \frac{1}{2}\sum_{n_1=-\infty}^\infty \sum_{n_2=-\infty}^{\infty} \left( B_{n_1,n_2}(k_1,k_2,A_1,A_2) + B_{n_2,n_1}(k_2,k_1,A_2,A_1) \right) \Phi e^{i(n_1 k_1 + n_2 k_2 - \omega_m)x}\\
-   & = \frac{1}{2}\sum_{n_1=-\infty}^\infty \sum_{n_2=-\infty}^{\infty} B_2{n_1,n_2}(k_1,k_2,A_1,A_2)\Phi e^{i(n_1 k_1 + n_2 k_2 - \omega_m)x},
+   h =& h_1 + h_2 \\
+    =& \frac{1}{2}\sum_{n_1=-\infty}^\infty \sum_{n_2=-\infty}^{\infty} B_{n_1,n_2}(k_1,k_2,A_1,A_2) \Phi e^{i(n_1 k_1 + n_2 k_2 - \omega_m)x} \nonumber\\
+   &+  \frac{1}{2}\sum_{n_1=-\infty}^\infty \sum_{n_2=-\infty}^{\infty} B_{n_2,n_1}(k_2,k_1,A_2,A_1) \Phi e^{i(n_1 k_1 + n_2 k_2 - \omega_m)x}  \nonumber\\
+    =& \frac{1}{2}\sum_{n_1=-\infty}^\infty \sum_{n_2=-\infty}^{\infty} \left( B_{n_1,n_2}(k_1,k_2,A_1,A_2) + B_{n_2,n_1}(k_2,k_1,A_2,A_1) \right) \Phi e^{i(n_1 k_1 + n_2 k_2 - \omega_m)x}  \nonumber\\
+    =& \frac{1}{2}\sum_{n_1=-\infty}^\infty \sum_{n_2=-\infty}^{\infty} B_2{n_1,n_2}(k_1,k_2,A_1,A_2)\Phi e^{i(n_1 k_1 + n_2 k_2 - \omega_m)x},
    \label{chap:matter-sec:jacobi-subsec:multi-matter-freq-eqn:2-freq-hamiltonian-12-element}
 \end{align}
 where $B_2{n_1,n_2}(k_1,k_2,A_1,A_2)\equiv B_{n_1,n_2}(k_1,k_2,A_1,A_2) + B_{n_2,n_1}(k_2,k_1,A_2,A_1)$ is what we are interested in.
