@@ -38,24 +38,26 @@ where each term is explicitly written down
    H_m =& \frac{1}{2} \sqrt{2}G_F n_e \sigma_3 \\
    H_{\nu\nu} =& \sqrt{2}G_F \int d\omega d\Omega_{\hat v'} n(\omega,\hat v')\beta(\hat v')\rho(\omega,\hat v') (1-\hat v \cdot \hat v').
 \end{align}
-I use $\eta=\pm 1$ for Normal Hierarchy and Inverted Hierarchy respectively, $\beta=1$ for neutrinos and $\beta=-1$ for antineutrinos. In other words, the vacuum frequency is $\omega_v = \eta \omega_0$. $\beta(\hat v')$ indicates whether the density matrix $\rho(\omega,\hat v')$ is for neutrinos or antineutrinos. If $\rho(\omega,\hat v')$ is for antineutrinos, $\beta(\hat v')=-1$, otherwise $\beta(\hat v')=1$. More explicitly, the neutrino-neutrino interaction Hamiltonian is
-\begin{align}
+I use $\eta=\pm 1$ for Normal Hierarchy and Inverted Hierarchy respectively, $\beta=1$ for neutrinos and $\beta=-1$ for antineutrinos. In other words, the vacuum frequency is $\omega_v = \eta \omega_0$. $\beta(\hat v')$ indicates whether the density matrix $\rho(\omega,\hat v')$ is for neutrinos or antineutrinos. If $\rho(\omega,\hat v')$ is for antineutrinos, $\beta(\hat v')=-1$, otherwise $\beta(\hat v')=1$. More explicitly, the vacuum term is
+\begin{align*}
    H_v =& \begin{cases}
    -\frac{1}{2}\eta \omega_0 \sigma_3 & \text{for neutrinos}\\
    \frac{1}{2}\eta \omega_0 \sigma_3 & \text{for antineutrinos}
-   \end{cases}\\
+   \end{cases}
+\end{align*}
+while the neutrino-neutrino interaction Hamiltonian is
+\begin{align*}
    H_{\nu\nu} =& \begin{cases}
    \sqrt{2}G_F \int d\omega d\Omega_{\hat v'} n(\omega,\hat v')\rho(\omega,\hat v') (1-\hat v \cdot \hat v') & \text{interacting with neutrinos} \\
    - \sqrt{2}G_F \int d\omega d\Omega_{\hat v'} n(\omega,\hat v')\bar\rho(\omega,\hat v') (1-\hat v \cdot \hat v') &  \text{interacting with antineutrinos}
    \end{cases}
-\end{align}
+\end{align*}
 Please note that in this notion,
 \begin{itemize}
     \item $\omega_0$ is meant to be the absolute value of the frequency, since $\eta$ takes care of the signs;
-\item The integral in $H_{\nu\nu}$ must take care of both interactions with neutrinos and anti-neutrinos, thus the density matrix is not only for neutrinos.
+\item The integral in $H_{\nu\nu}$ must take care of both interactions with neutrinos and anti-neutrinos.
 \end{itemize}
-
-For the simplicity of notions, we define some new quantities.
+For simplicity, we define some new quantities.
 \begin{itemize}
     \item We define $\lambda$ to measure the matter interactions
     \begin{equation}
@@ -63,40 +65,39 @@ For the simplicity of notions, we define some new quantities.
     \end{equation}
 \item Angle distribution of number density is defined as
 \begin{equation}
-    f(\hat v) = \frac{n(\omega,\hat v)}{n_{total}},
+    f(\hat v) = \frac{n(\omega,\hat v)}{n_{\mathrm{total}}},
 \end{equation}
    where $n_{total}$ is the total number density of neutrinos for all energies. It can also be defined for anti-neutrinos
 \begin{equation}
-      \bar f(\hat v) = \frac{n(\omega,\hat v)}{\bar n_{total}},
+      \bar f(\hat v) = \frac{\bar n(\omega,\hat v)}{\bar n_{\mathrm{total}}},
 \end{equation}
-   where $\bar n_{total}$ is the total number density of anti-neutrinos.
+where $\bar n_{\mathrm{total}}$ is the total number density of antineutrinos.
+In models where neutrinos are emitted from a line, the direction of momentum $\hat v$ depends on one angle, hence $f(\theta)$. With this definition, we know that the number density of neutrinos within an angle $[\theta, \theta + d\theta]$ can be calculated
+\begin{equation}
+      n_{\mathrm{total}} f(\theta) d\theta.
+\end{equation}
+Similarly, the the number density of antineutrinos within angle $[\theta,\theta+d\theta]$ is
+\begin{equation}
+    \bar n_{\mathrm{total}} \bar f(\theta) d\theta.
+\end{equation}
+\item An asymmetry parameter can be defined to connect the total number density of neutrinos and antineutrinos,
+\begin{equation}
+    \alpha = \frac{\bar n_{\mathrm{total}} }{n_{\mathrm{total}}}.
+\end{equation}
 
-   In fact, the direction of momentum $\hat v$ depends only on an angle for neutrinos emitted from a line, hence $f(\theta)$. With this definition, we know that the number density of neutrinos within an angle $[\theta, \theta + d\theta]$ can be calculated
-\begin{equation}
-      n_{total} f(\theta) d\theta.
-\end{equation}
-   Similarly, the the number density of antineutrinos within angle $[\theta, \theta+d\theta]$ is
-\begin{equation}
-    \bar n_{total} \bar f(\theta) d\theta.
-\end{equation}
-\item Total number density of neutrinos and anti-neutrinos are related through a asymmetry parameter
-\begin{equation}
-    \alpha = \frac{\bar n_{total} }{n_{total}}.
-\end{equation}
-      
 \end{itemize}
 
-With the three definitions we simplify the matter effect and neutrino self-interaction
+With the three definitions we simplify the neutrino self-interactions with matter effect
 \begin{align*}
    H_m =& \frac{1}{2} \lambda \sigma_3 \\
-   H_{\nu\nu} =& \sqrt{2}G_F n_{total} \int d\omega d\Omega_{\hat v'} f(\omega,\hat v)\rho(\omega,\hat v') (1-\hat v \cdot \hat v') \\
-   & - \sqrt{2}G_F \bar n_{total} \int d\omega d\Omega_{\hat v'} \bar f(\omega,\hat v)\bar\rho(\omega,\hat v') (1-\hat v \cdot \hat v') \\
+   H_{\nu\nu} =& \sqrt{2}G_F n_{\mathrm{total}} \int d\omega d\Omega_{\hat v'} f(\omega,\hat v)\rho(\omega,\hat v') (1-\hat v \cdot \hat v') \\
+   & - \sqrt{2}G_F \bar n_{\mathrm{total}} \int d\omega d\Omega_{\hat v'} \bar f(\omega,\hat v)\bar\rho(\omega,\hat v') (1-\hat v \cdot \hat v') \\
    =& \frac{1}{2}\mu \int d\omega d\Omega_{\hat v'} f(\omega, \hat v)\rho(\omega,\hat v') (1-\hat v \cdot \hat v') \\
    & - \frac{1}{2}\alpha \mu \int d\omega d\Omega_{\hat v'} \bar f(\omega, \hat v)\bar\rho(\omega,\hat v') (1-\hat v \cdot \hat v') ,
 \end{align*}
 where
 \begin{equation}
-   \mu = 2\sqrt{2} G_F n_{total}. 
+   \mu = 2\sqrt{2} G_F n_{\mathrm{total}}. 
 \end{equation}
    
 
@@ -105,9 +106,10 @@ where
 \subsection{Synchronization in Neutrino Oscillations}
 
 
-With the equation of motion, many aspects of such a system has been explored. One of the most astonishing results is that synchronization might happen when neutrino number density is high.
+With the equation of motion, many aspects of such a system has been explored, such as neutrino bulb model, line model, etc. 
+One of the most astonishing results is that synchronization might happen when neutrino number density is high.
 
-To grab a flavor of this phenomonon, I use the flavor isospin picture. Flavor isospin was explained in Sec.~\ref{chap:basics-sec:flavor-isospin-pic}. Here we explain another definition of it
+To grab the flavor of this phenomenon, I use the flavor isospin picture. Flavor isospin was explained in Sec.~\ref{chap:basics-sec:flavor-isospin-pic}. Here we explain another definition of it
 \begin{equation}
    \rho = 1 + \frac{1}{2}\vec P \cdot \vec \sigma. 
 \end{equation}
