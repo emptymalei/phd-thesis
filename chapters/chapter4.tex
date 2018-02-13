@@ -65,24 +65,24 @@ For simplicity, we define some new quantities.
     \end{equation}
 \item Angle distribution of number density is defined as
 \begin{equation}
-    f(\hat v) = \frac{n(\omega,\hat v)}{n_{\mathrm{total}}},
+    f(\hat v) = \frac{n(\omega,\hat v)}{n_{\mathrm{t}}},
 \end{equation}
    where $n_{total}$ is the total number density of neutrinos for all energies. It can also be defined for anti-neutrinos
 \begin{equation}
-      \bar f(\hat v) = \frac{\bar n(\omega,\hat v)}{\bar n_{\mathrm{total}}},
+      \bar f(\hat v) = \frac{\bar n(\omega,\hat v)}{\bar n_{\mathrm{t}}},
 \end{equation}
-where $\bar n_{\mathrm{total}}$ is the total number density of antineutrinos.
+where $\bar n_{\mathrm{t}}$ is the total number density of antineutrinos.
 In models where neutrinos are emitted from a line, the direction of momentum $\hat v$ depends on one angle, hence $f(\theta)$. With this definition, we know that the number density of neutrinos within an angle $[\theta, \theta + d\theta]$ can be calculated
 \begin{equation}
-      n_{\mathrm{total}} f(\theta) d\theta.
+      n_{\mathrm{t}} f(\theta) d\theta.
 \end{equation}
 Similarly, the the number density of antineutrinos within angle $[\theta,\theta+d\theta]$ is
 \begin{equation}
-    \bar n_{\mathrm{total}} \bar f(\theta) d\theta.
+    \bar n_{\mathrm{t}} \bar f(\theta) d\theta.
 \end{equation}
 \item An asymmetry parameter can be defined to connect the total number density of neutrinos and antineutrinos,
 \begin{equation}
-    \alpha = \frac{\bar n_{\mathrm{total}} }{n_{\mathrm{total}}}.
+    \alpha = \frac{\bar n_{\mathrm{t}} }{n_{\mathrm{t}}}.
 \end{equation}
 
 \end{itemize}
@@ -90,14 +90,14 @@ Similarly, the the number density of antineutrinos within angle $[\theta,\theta+
 With the three definitions we simplify the neutrino self-interactions with matter effect
 \begin{align*}
    H_m =& \frac{1}{2} \lambda \sigma_3 \\
-   H_{\nu\nu} =& \sqrt{2}G_F n_{\mathrm{total}} \int d\omega d\Omega_{\hat v'} f(\omega,\hat v)\rho(\omega,\hat v') (1-\hat v \cdot \hat v') \\
-   & - \sqrt{2}G_F \bar n_{\mathrm{total}} \int d\omega d\Omega_{\hat v'} \bar f(\omega,\hat v)\bar\rho(\omega,\hat v') (1-\hat v \cdot \hat v') \\
+   H_{\nu\nu} =& \sqrt{2}G_F n_{\mathrm{t}} \int d\omega d\Omega_{\hat v'} f(\omega,\hat v)\rho(\omega,\hat v') (1-\hat v \cdot \hat v') \\
+   & - \sqrt{2}G_F \bar n_{\mathrm{t}} \int d\omega d\Omega_{\hat v'} \bar f(\omega,\hat v)\bar\rho(\omega,\hat v') (1-\hat v \cdot \hat v') \\
    =& \frac{1}{2}\mu \int d\omega d\Omega_{\hat v'} f(\omega, \hat v)\rho(\omega,\hat v') (1-\hat v \cdot \hat v') \\
    & - \frac{1}{2}\alpha \mu \int d\omega d\Omega_{\hat v'} \bar f(\omega, \hat v)\bar\rho(\omega,\hat v') (1-\hat v \cdot \hat v') ,
 \end{align*}
 where
 \begin{equation}
-   \mu = 2\sqrt{2} G_F n_{\mathrm{total}}. 
+   \mu = 2\sqrt{2} G_F n_{\mathrm{t}}. 
 \end{equation}
    
 
@@ -106,8 +106,7 @@ where
 \subsection{Synchronization in Neutrino Oscillations}
 
 
-With the equation of motion, many aspects of such a system has been explored, such as neutrino bulb model, line model, etc. 
-One of the most astonishing results is that synchronization might happen when neutrino number density is high.
+With the equation of motion, many aspects of such a system has been explored, such as neutrino bulb model, line model, etc. New dynamics, such as spectral split, synchronizations, matter-neutrino resonances, have been identified~\cite{Duan2006,Malkus2014,Vaananen2015}. Synchronization is one of the most astonishing results which might happen when neutrino number density is high. In this section, I will explain how this is possible.
 
 To grab the flavor of this phenomenon, I use the flavor isospin picture. Flavor isospin was explained in Sec.~\ref{chap:basics-sec:flavor-isospin-pic}. Here we explain another definition of it
 \begin{equation}
@@ -188,18 +187,9 @@ With vacuum contribution $\vec H_{\mathrm v}$ and matter contribution $\vec H_{\
 
 \section{\label{chap:dr-sec:two-beams}Two Beams Model and Linear Stability Analysis}
 
-For nonlinear systems, linear stability analysis comes into play. I will go through the procedure and demonstrate the significance of instabilities and crossing in spectrum. For the sole purpose, I use a simple two-beam line model. The two beams model is simple mathematically, meanwhile reveals the key physics insights.
+For nonlinear systems, linear stability analysis comes into play. I will go through the procedure and demonstrate the significance of instabilities and crossing in spectrum. For the sole purpose, I use a simple two-beam line model. The two beams model is simple mathematically, meanwhile reveals the key insights.
 
-In this model, neutrinos are emitted in two different directions from a line which preserves translation symmetry on this line. The emission angles are shown in Fig.~\ref{chap:dr-sec:two-beams-fig:two-beam-line-model}.
-
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=\textwidth]{chapters/assets/dr/two-beam-line-model.png}
-    \caption{Geometry of two-beam model to be used in this section. }
-    \label{chap:dr-sec:two-beams-fig:two-beam-line-model}
-\end{figure}
-
-For convenience of notations, I define a number density distribution function
+In this model, neutrinos are emitted in two different directions from a line which preserves translation symmetry on this line. The emission angles are shown in Fig.~\ref{chap:dr-sec:two-beams-fig:two-beam-line-model}. For convenience of notations, I define a number density distribution function
 \begin{equation}
    f(\hat v,\omega)= \frac{n(\hat v,\omega)}{n_t}, 
 \end{equation}
@@ -213,6 +203,15 @@ For two dimensional systems, we can calculate the neutrinos within an angle $[\t
    n_t f(\hat v,\omega) d\theta. 
 \end{equation}
 Similarly we can define the angular distribution for antineutrinos.
+
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{chapters/assets/dr/two-beam-line-model.png}
+    \caption{Geometry of two-beam model to be used in this section. }
+    \label{chap:dr-sec:two-beams-fig:two-beam-line-model}
+\end{figure}
+
 
 
 If all the beams are neutrinos, but with different energies for the left and right beams. The distribution function for beams is delta function. In fact, each beam is just half of the total neutrino number density $n_t$.
@@ -239,16 +238,16 @@ where we have removed the trace part because it is alway time independent.
 
 
 The linearized equation of motion becomes
-\begin{align}
-   i \partial_z \begin{pmatrix}
+\small\begin{align}
+   &i \partial_z \begin{pmatrix}
    \epsilon_1 \\
    \epsilon_2
-   \end{pmatrix} =&  - i \begin{pmatrix}\cot\theta_1\partial_x & 0 \\
+   \end{pmatrix} =  - i \begin{pmatrix}\cot\theta_1\partial_x & 0 \\
    0 & \cot\theta_2 \partial_x
    \end{pmatrix} \begin{pmatrix}
    \epsilon_1 \\
    \epsilon_2
-   \end{pmatrix} \\
+   \end{pmatrix} \nonumber\\
    &+
    \frac{1}{2}\begin{pmatrix}
    (\lambda+ \mu_2 - \eta \omega_1 - \mu_2 \cos(\theta_1-\theta_2) )/\sin \theta_1 & -\mu_2 (1-\cos(\theta_1-\theta_2)) /\sin \theta_1\\
@@ -258,74 +257,13 @@ The linearized equation of motion becomes
    \epsilon_2
    \end{pmatrix},
    \label{chap:dr-sec:two-beams-eqn:line-model-two-beams-all-neutrino-linearized-eom}
-\end{align}
+\end{align}\normalsize
 where
 \begin{align*}
    \mu_1 =& \sqrt{2}G_F n_{t,1}\\
    \mu_2 =& \sqrt{2}G_F n_{t,2}. 
 \end{align*}
    
-
-We know that real symmetric matrix has only real eigenvalues, from which we infer that $\mu_1=\mu_2$ and $\theta_1=\theta_2$ removes the instability.
-For translation symmetric models, that is $\partial_x\to 0$, we have the eigenvalues
-\begin{equation*}
-   \Omega = \frac{1}{4}(A\pm B),
-\end{equation*}
-where
-\begin{align*}
-   A=& -\eta \omega_1/\sin\theta_1 - \mu_2 /\sin\theta_1 + \eta \omega_2 /\sin\theta_2 + \mu_1 \xi /\sin\theta_2 + \lambda(1/\sin\theta_1 + 1/\sin\theta_2)  \\
-   B=& \sqrt{
-      -4[(\lambda-\eta\omega_1)(\lambda +\eta\omega_2) + (\lambda (\mu_1-\mu_2) -\eta (\mu_1\omega_1 + \mu_2\omega_2) )\xi ] \sin\theta_1 \sin\theta_2 + [(\lambda + \eta\omega_2 + \mu_1\xi) \sin\theta_1 + (\lambda - \eta \omega_1 - \mu_2\xi) \sin\theta_2 ]^2
-   }/(\sin\theta_1\sin\theta_2)\\
-   \xi=&1-\cos(\theta_1-\theta_2).
-\end{align*}
-
-
-
-
-I only need to change $\mu_i\to -\bar\mu_i$ and $\omega_i\to -\bar\omega_i$, where $\bar\mu=\sqrt{2}G_F \bar n_t$, so that the equation becomes
-\begin{align*}
-  i \partial_z \begin{pmatrix}
-  \epsilon_1 \\
-  \epsilon_2
-  \end{pmatrix} =&  - i \begin{pmatrix}\cot\theta_1\partial_x & 0 \\
-  0 & \cot\theta_2 \partial_x
-  \end{pmatrix} \begin{pmatrix}
-  \epsilon_1 \\
-  \epsilon_2
-  \end{pmatrix} \\
-  &+
-  \frac{1}{2}\begin{pmatrix}
-  (\lambda-\bar\mu_2 + \eta \bar\omega_1 + \bar\mu_2 \cos(\theta_1-\theta_2) )/\sin \theta_1 & \bar\mu_2 (1-\cos(\theta_1-\theta_2)) /\sin \theta_1 \\
-  \bar\mu_1 (1- \cos(\theta_1-\theta_2))/\sin\theta_2 & (\lambda -\bar\mu_1 + \eta \bar\omega_2 +\bar\mu_1 \cos(\theta_1-\theta_2) )/\sin\theta_2
-  \end{pmatrix}\begin{pmatrix}
-  \epsilon_1 \\
-  \epsilon_2
-  \end{pmatrix}
-\end{align*}
-
-
-
-Assume that the left beam is neutrino beam and the right beam is antineutrno beam. The linearized equation of motion becomes
-\begin{align*}
-  i\partial_z \begin{pmatrix}
-  \epsilon_1 \\
-  \epsilon_2
-  \end{pmatrix} = & -i\begin{pmatrix}
-  \cot\theta_1 \partial_x & 0 \\
-  0 & \cot\theta_2 \partial_x
-  \end{pmatrix}\begin{pmatrix}
-  \epsilon_1 \\
-  \epsilon_2
-  \end{pmatrix} \\
-  &+ \frac{1}{2}\begin{pmatrix}
-  (\lambda - \bar\mu - 2\eta \omega_1 + \bar\mu \cos(\theta_1-\theta_2) )/\sin\theta_1 & \bar\mu (1-\cos(\theta_1-\theta_2))/\sin\theta_1 \\
-  -\mu(1-\cos(\theta_1-\theta_2))/\sin\theta_2 & (\lambda + \mu + \eta \omega_2 - \mu \cos(\theta_1-\theta_2) )/\sin\theta_2
-  \end{pmatrix}\begin{pmatrix}
-  \epsilon_1 \\
-  \epsilon_2
-  \end{pmatrix}
-\end{align*}
 
 
 \subsection{Left-right Symmetric Emission}
@@ -339,7 +277,7 @@ We first consider a simple case, where $\theta_1=\theta_2\equiv\theta$, $\lambda
    \omega'_i = & \lambda - \eta\omega_i.
 \end{align*}
 
-I am aware that this is not a self-consistant example since $\theta_1=\theta_2$ indicates that $\xi=0$. As we will see, no instability is present in this case. However, we keep the term $\xi$ because we need to analyze the effect of symmetry breaking. This example builds up a formalism.
+I am aware that this is not a self-consistent example since $\theta_1=\theta_2$ indicates that $\xi=0$. As we will see, no instability is present in this case. However, we keep the term $\xi$ because we need to analyze the effect of symmetry breaking. This example builds up a formalism.
 
 The equation for perturbations becomes
 \begin{equation}
@@ -347,7 +285,7 @@ The equation for perturbations becomes
    \epsilon_1 \\
    \epsilon_2
    \end{pmatrix} = \frac{1}{2\sin\theta} \begin{pmatrix}
-   \omega'_i + \mu f_2\xi & -\mu f_2 \xi \\
+   \omega'_1 + \mu f_2\xi & -\mu f_2 \xi \\
    -\mu f_1 \xi & \omega'_2 + \mu f_1 \xi
    \end{pmatrix}\begin{pmatrix}
    \epsilon_1 \\
@@ -584,6 +522,68 @@ Different energy of two beams will make sure $-\omega_1 + \omega_2\neq 0$. It ha
 
 
 
+\subsubsection{General Solutions to Line Model}
+
+
+For completeness, we solve the general line model, c.f.~Eqn.~\ref{chap:dr-sec:two-beams-eqn:line-model-two-beams-all-neutrino-linearized-eom}. We know that real symmetric matrix has only real eigenvalues, from which we infer that $\mu_1=\mu_2$ and $\theta_1=\theta_2$ removes the instability.
+For translation symmetric models, that is $\partial_x\to 0$, we have the eigenvalues
+\begin{equation*}
+   \Omega = \frac{1}{4}(A\pm B),
+\end{equation*}
+where
+\begin{align*}
+   A=& -\eta \omega_1/\sin\theta_1 - \mu_2 /\sin\theta_1 + \eta \omega_2 /\sin\theta_2 + \mu_1 \xi /\sin\theta_2 + \lambda(1/\sin\theta_1 + 1/\sin\theta_2)  \\
+   B=& \left(
+      -4[(\lambda-\eta\omega_1)(\lambda +\eta\omega_2) + (\lambda (\mu_1-\mu_2) -\eta (\mu_1\omega_1 + \mu_2\omega_2) )\xi ] \sin\theta_1 \sin\theta_2\right. \\
+      &\left.+ [(\lambda + \eta\omega_2 + \mu_1\xi) \sin\theta_1 + (\lambda - \eta \omega_1 - \mu_2\xi) \sin\theta_2 ]^2
+   \right)^{1/2}/(\sin\theta_1\sin\theta_2)\\
+   \xi=&1-\cos(\theta_1-\theta_2).
+\end{align*}
+
+
+For antineutrinos, I only need to change $\mu_i\to -\bar\mu_i$ and $\omega_i\to -\bar\omega_i$, where $\bar\mu=\sqrt{2}G_F \bar n_t$, so that the equation becomes
+\small\begin{align*}
+  &i \partial_z \begin{pmatrix}
+  \epsilon_1 \\
+  \epsilon_2
+  \end{pmatrix} =  - i \begin{pmatrix}\cot\theta_1\partial_x & 0 \\
+  0 & \cot\theta_2 \partial_x
+  \end{pmatrix} \begin{pmatrix}
+  \epsilon_1 \\
+  \epsilon_2
+  \end{pmatrix} \\
+  &+
+  \frac{1}{2}\begin{pmatrix}
+  (\lambda-\bar\mu_2 + \eta \bar\omega_1 + \bar\mu_2 \cos(\theta_1-\theta_2) )/\sin \theta_1 & \bar\mu_2 (1-\cos(\theta_1-\theta_2)) /\sin \theta_1 \\
+  \bar\mu_1 (1- \cos(\theta_1-\theta_2))/\sin\theta_2 & (\lambda -\bar\mu_1 + \eta \bar\omega_2 +\bar\mu_1 \cos(\theta_1-\theta_2) )/\sin\theta_2
+  \end{pmatrix}\begin{pmatrix}
+  \epsilon_1 \\
+  \epsilon_2
+  \end{pmatrix}
+\end{align*}\normalsize
+
+Assume that the left beam is neutrino beam and the right beam is antineutrno beam. The linearized equation of motion becomes
+\small
+\begin{align*}
+  &i\partial_z \begin{pmatrix}
+  \epsilon_1 \\
+  \epsilon_2
+  \end{pmatrix} =  -i\begin{pmatrix}
+  \cot\theta_1 \partial_x & 0 \\
+  0 & \cot\theta_2 \partial_x
+  \end{pmatrix}\begin{pmatrix}
+  \epsilon_1 \\
+  \epsilon_2
+  \end{pmatrix} \\
+  &+ \frac{1}{2}\begin{pmatrix}
+  (\lambda - \bar\mu - 2\eta \omega_1 + \bar\mu \cos(\theta_1-\theta_2) )/\sin\theta_1 & \bar\mu (1-\cos(\theta_1-\theta_2))/\sin\theta_1 \\
+  -\mu(1-\cos(\theta_1-\theta_2))/\sin\theta_2 & (\lambda + \mu + \eta \omega_2 - \mu \cos(\theta_1-\theta_2) )/\sin\theta_2
+  \end{pmatrix}\begin{pmatrix}
+  \epsilon_1 \\
+  \epsilon_2
+  \end{pmatrix}
+\end{align*}
+\normalsize
 
 
 % Numerical Calculations
@@ -639,11 +639,11 @@ Different energy of two beams will make sure $-\omega_1 + \omega_2\neq 0$. It ha
 \section{\label{chap:dr-sec:fast-mode}Fast Mode}
 
 
-In a paper by Chakraborty et al~\cite{Chakraborty2016} they found that neutrino instability can grow with a rate that is proportional to the neutrino density, which has much faster oscillation frequencies than vacuum oscillations. For such a fast growth to happen, the author considered head on colliding neutrino beams.
+In a paper by Chakraborty et al~\cite{Chakraborty2016}, they showed that neutrino flavor instabilities can grow with a rate that is proportional to the neutrino density, which has much faster oscillation frequencies than vacuum oscillations. For such a fast growth to happen, the author considered head on colliding neutrino beams. The derivation is much similar to what has been shown in the previous section.
 
 As an estimation, the frequencies of vacuum oscillation is
 \begin{align*}
-   \omega_{\mathrm v} =& \frac{\Delta m^2}{2E}\sim& 6.3\times 10^{-3} \mathrm{m}^{-1}  \frac{\Delta m^2_{32}}{2.5\times 10^{-3} \mathrm{eV}^2 } \frac{1MeV}{E} \\
+   \omega_{\mathrm v} =& \frac{\Delta m^2}{2E} \\ \sim& 6.3\times 10^{-3} \mathrm{m}^{-1}  \frac{\Delta m^2_{32}}{2.5\times 10^{-3} \mathrm{eV}^2 } \frac{1MeV}{E} \\
    \sim & 1.90\times 10^{-4}  \mathrm{m}^{-1}  \frac{\delta m^2}{7.5\times 10^{-5}\mathrm{eV}^2} \frac{1\mathrm{MeV}}{E},
 \end{align*}
 where $E$ is the neutrino energy. The corresponding oscillation wavelength is simply give by
@@ -651,14 +651,14 @@ where $E$ is the neutrino energy. The corresponding oscillation wavelength is si
    \lambda_{12} = & 2\pi/\omega_{12} \sim 1 \mathrm{km}\\
    \lambda_{32} = & 2\pi/\omega_{32} \sim 33.1 \mathrm{km}.
 \end{align*}
-The fast modes instability grows with a rate proportional to the neutrino potential $\mu=\sqrt{2}G_F n_\nu$, which is very large in dense neutrino media. A large growth rate indicates a faster flavor transformation than vacuum oscillations. In the past over simplified models have been used and this new instability didn't show up.
+The fast modes instability grows with a rate proportional to the neutrino potential $\mu=\sqrt{2}G_F n_\nu$, which is very large in dense neutrino media. A large growth rate indicates a faster flavor transformation than vacuum oscillations.
 
 
 
 
-\subsection{\label{chap:dr-sec:fast-mode-subsec:introduction}Introduction}
+% \subsection{\label{chap:dr-sec:fast-mode-subsec:introduction}Introduction}
 
-(Should talk about some very very basic backgrounds like the applications and why it is important.)
+% (Should talk about some very very basic backgrounds like the applications and why it is important.)
 
 
 
