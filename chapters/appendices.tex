@@ -547,3 +547,79 @@ so that
 
 %%%%%%%%%% MSW Revisted %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%% Bipolar %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{\label{chap:app-sec:bipolar}Bipolar Model}
+
+The nature of this section is to provide the linear stability analysis of bipolar model. Bipolar model is a model of neutrino oscillations with the presence of neutrino and antineutrinos. It is also called bimodal oscillations~\cite{Samuel1996}, which means two frequencies in the context. An example of such instability happens in a system composed of equal amounts of neutrinos and antineutrinos.
+
+% Vacuum mixing angle triggers the flavour instability.
+
+Neutrino oscillations has a small amplitude inside a SN core (suppressed by matter effects)~\cite{wolf78}, which basically pins down the flavour transformation. As the neutrinos reaches a further distance, matter effect could drop out. Neutrino self-interaction becomes more important. S. Samuel considers a system of neutrinos and antineutrinos with only vacuum and neutrino self-interactions~\cite{Samuel1996}. The neutrinos and antineutrino forms a bipolar vector in flavor isospin space. The flavor isospin of neutrinos and that of antineutrinos are coupled.
+
+% H. Duan decomposed the system into "normal modes" of the flavor isospin. The bipolar system is discussed in details in this paper. In a two beam model, the length of one of the perturbations can be described using an equation
+
+% .. math::
+%   \ddot {\tilde q_+} \approx - \eta (\eta + \mu) \tilde q_+,
+
+% where :math:`\eta=\pm 1` deterimines the hierarchy, :math:`\mu=2\sqrt{2}G_F \lvert \omega_0 \rvert^{-1} n_{\mathrm {tot}}`. We find out from the equation that normal hierarchy (NH, :math:`\eta=1`) doesn't have instabilities, but inverted hierarchy (IH, :math:`\eta=-1`) has instabilities with growth rate :math:`\sqrt{\mu-1}`, if :math:`\mu>1`.
+
+
+
+The equation of motion is
+\begin{align*}
+   i\partial_t \rho =& \left[ -\frac{\omega_v}{2} \cos2\theta \sigma_3 + \frac{\omega_v}{2}\sin 2\theta \sigma_1 - \mu \alpha \bar \rho , \rho\right] \\
+   i\partial_t \bar\rho =& \left[ \frac{\omega_v}{2} \cos2\theta \sigma_3 - \frac{\omega_v}{2}\sin 2\theta \sigma_1 + \mu \rho , \bar\rho\right].
+\end{align*}
+For the purpose of linear stability analysis, we assume that
+\begin{align*}
+   \rho =& \frac{1}{2}\begin{pmatrix}
+   1 & \epsilon \\
+   \epsilon^* & -1
+   \end{pmatrix} \\
+   \bar\rho =& \frac{1}{2}\begin{pmatrix}
+   1 & \bar\epsilon \\
+   \bar \epsilon^* & -1
+   \end{pmatrix}.
+\end{align*}
+Plug them into equation of motion and set $\theta=0$, we have the linearized ones,
+\begin{equation*}
+   i\partial_t \begin{pmatrix}
+   \epsilon \\
+   \bar\epsilon
+   \end{pmatrix} = \frac{1}{2}\begin{pmatrix}
+   -\alpha \mu - \omega_v & \alpha \mu \\
+   -\mu & \mu + \omega_v
+   \end{pmatrix}\begin{pmatrix}
+   \epsilon \\
+   \bar\epsilon
+   \end{pmatrix}.
+\end{equation*}
+To have real eigenvalues, we require
+\begin{equation*}
+   (-1+\alpha)^2 \mu^2 + 4(1+\alpha)\mu \omega_v + 4 \omega_v^2 < 0,
+\end{equation*}
+which is reduced to
+\begin{equation*}
+   \frac{ -2\omega_v (1+\alpha) - 4\sqrt{ \alpha } \lvert \omega_v \rvert  }{ (1-\alpha)^2 } < \mu < \frac{ -2\omega_v (1+\alpha) + 4\sqrt{ \alpha } \lvert \omega_v \rvert  }{ (1-\alpha)^2 }.
+\end{equation*}
+It is simplified to
+\begin{equation*}
+   \sqrt{ -2\omega_v }{ (1-\sqrt{\alpha})^2 } < \mu < \sqrt{ -2\omega_v }{ (1+\sqrt{\alpha})^2 },
+\end{equation*}
+assuming normal hierarchy, i.e., $\omega_v > 0$. We immediately notice that this can not happen.
+
+For inverted hierarchy, we have $\omega_v < 0$, so that
+\begin{equation*}
+   \sqrt{ 2\lvert\omega_v\rvert }{ (1+\sqrt{\alpha})^2 } < \mu < \sqrt{ 2\lvert\omega_v\rvert }{ (1-\sqrt{\alpha})^2 },
+\end{equation*}
+Within this region, neutrinos experience exponential growth.
+
+
+%%%%%%%%%% Bipolar %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
