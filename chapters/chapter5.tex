@@ -123,7 +123,7 @@ where $B\leq 0$.
 The only $z$ dependent term is $\cosh( 2\delta(L-z) )$, which is decreasing within $[0,L]$ and is increasing in $[L,2L]$. The slope at $z=L$ is 0. An example is plotted in Fig.~\ref{chap:halo-sec:line-sym-fig:cosh}.
 
 
-\begin{figure}
+\begin{figure}[!htbp]
     \centering
     \includegraphics[width=\textwidth]{chapters/assets/halo/cosh.pdf}
     \caption{ An example of $\cosh(2\delta(z-L))$ with $\delta=1$, and $L=5$.}
@@ -141,6 +141,37 @@ We expect the numerical calculations bare the same behavior that the instability
 \end{figure}
 
 For linear stability analysis, we usually identify real characteristic values of the linearized equation of motion. In bipolar model as explained in Sec.~\ref{chap:app-sec:bipolar}, real characteristic values of the equation of motion indicates exponential growth, while it always indicates exponential decrease in this simplified halo problem.
+
+\section{Two Beams Model with Reflection}
+
+The model is naturally extended to a two beams model including both neutrinos and antineutrinos. The configuration is exactly the same as shown in Fig.~\ref{chap:halo-sec:line-fig:line-model}.
+
+As the first step we work out the linear stability analysis. The four equations of motion are
+\begin{align}
+    i \partial_z \rho_1 = & [ H_1, \rho_1 ], \\
+    i \partial_z \rho_2 = & [ H_2, \rho_2 ], \\
+    -i \partial_z \rho_3 = & [ H_3, \rho_3 ], \\
+    -i \partial_z \rho_4 = & [ H_4, \rho_4 ],
+\end{align}
+where ${}_1$ and ${}_2$ are the quantities for two forward beams while ${}_3$ and ${}_4$ are the quantities for the corresponding backward going beams. For the purpose of this analysis we set $\theta_v = 0$. The Hamiltonians are
+\begin{align}
+    H_1 =& -\eta \omega_v \sigma_3 + g_2 \chi_- \mu_2 \rho_2 + g_2 \chi_+ R \mu_2 \rho_4 + g_1 \chi_1 R \mu_1 \rho_3, \\
+    H_2 =& \eta \omega_v \sigma_3 + g_1 \chi_- \mu_1 \rho_1 + g_2 \chi_2 R \mu_2 \rho_4 + g_1 \chi_+ R \mu_1 \rho_3, \\
+    H_3 =& -\eta \omega_v \sigma_3 + R g_2 \chi_- \mu_2 \rho_4 + g_2 \chi_+\mu_2 \rho_2 + g_1 \chi_1 \mu_1 \rho_1, \\
+    H_4 =& \eta \omega_v \sigma_3 + R g_1 \mu_1 \chi_- \rho_3 + g_1 \chi_+ \mu_1 \rho_1 + g_2 \chi_2 \mu_2 \rho_2.
+\end{align}
+
+I have defined 
+\begin{align*}
+    \chi_+ = & 1 - \cos ( \theta_1 + \theta_2 ), \\
+    \chi_- = & 1 - \cos ( \theta_1 - \theta_2 ), \\
+    \chi_1 = & 1 - \cos ( 2\theta_1 ), \\
+    \chi_2 = & 1 - \cos ( 2\theta_2 ),
+\end{align*}
+and $g_i$ represents the energy spectrum of the neutrinos and $\eta$ stands for the hierarchy.
+
+Linear stability analysis can be done using computer.
+
 
 \section{Conclusion}
 
