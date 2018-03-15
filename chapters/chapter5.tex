@@ -4,7 +4,7 @@
 \chapter{\label{chap:halo}Neutrino Halo Problem}
 
 
-One of the big questions about neutrino oscillations in supernovae is the so called halo problem. Cherry et al showed that neutrino flavor conversions are greatly affected by the back scattered neutrinos in supernovae~\cite{Cherry2012}. Neutrinos around supernovae are scattered and some of them are scattered to move almost backward. On the other hand, neutrino self-interactions is proportional to the inner product of momenta of neutrinos, which leads to the dependence on $1-\cos\theta$ where $\theta$ is the angles between momenta of two neutrinos. Most of the research has been concentrating on mostly forward scattering, with small values for $1-\cos\theta$. For back ward scattered neutrinos, the interaction potential can be much larger than the forward scattered neutrino contributions. Though the work by Sarikas et al showed that matter suppression is still significant within this region~\cite{Sarikas2012a}, it is not clear how exactly the neutrino halo alters neutrino oscillations. The halo problem itself is worth more calculations.
+One of the big questions about neutrino oscillations in supernovae is the so called halo problem. Cherry et al showed that neutrino flavor conversions are greatly affected by the back scattered neutrinos in supernovae~\cite{Cherry2012}. Neutrinos around supernovae are scattered and some of them are scattered to move almost backward. On the other hand, neutrino self-interactions is proportional to the inner product of momenta of neutrinos, which leads to the dependence on $1-\cos\theta$ where $\theta$ is the angles between momenta of two neutrinos. Most of the research has been concentrating on mostly forward scattering, with small values for $1-\cos\theta$. For back ward scattered neutrinos, the interaction potential can be much larger than the forward scattered neutrino contributions. Though the work by Sarikas et al showed that matter suppression is still significant within this region~\cite{Sarikas2012a}, it is not clear how exactly the neutrino halo alters neutrino oscillations. The halo problem itself is worth more calculations. In this chapter, I will present a relaxation method for this problem. The focus will be on the numerical method itself.
 
 
 \section{\label{chap:halo-sec:line}Line Model}
@@ -54,8 +54,8 @@ In linear regime, we define the density matrices for forward and backward beams 
 \end{align*}
 The Hamiltonian for forward and back ward beams are
 \begin{align*}
-   H_F &= H_v + \mu \rho_F \\
-   H_B &= H_v + R \mu \rho_B.
+   H_F &= H_v + R \mu \rho_B \\
+   H_B &= H_v + \mu \rho_F.
 \end{align*}
 We will investigate the instability for zero mixing angle for new instabilities. The linearized equation of motion can be simplified to
 \begin{align*}
@@ -136,11 +136,35 @@ We expect the numerical calculations bare the same behavior that the instability
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=\textwidth]{chapters/assets/halo/mu-1-reflection-0p07.pdf}
-    \caption{Absolute value of off diagonal element for $\mu=1.0$, $R=0.07$, $L=5$. The red dots are for the forward beam and the black dots are for the backward beams. The lines are indicating the predictions of linear stability analysis.}
+    \caption{Absolute value of off diagonal element for $\mu=1.0$, $R=0.07$, $L=5$, with normal hierarchy. The red dots are for the forward beam and the black dots are for the backward beams. The lines are indicating the predictions of linear stability analysis.}
     \label{chap:halo-sec:line-sym-fig:mu-1.0-reflection-0.07}
 \end{figure}
 
-For linear stability analysis, we usually identify real characteristic values of the linearized equation of motion. In bipolar model as explained in Sec.~\ref{chap:app-sec:bipolar}, real characteristic values of the equation of motion indicates exponential growth, while it always indicates exponential decrease in this simplified halo problem.
+For linear stability analysis, we usually identify real characteristic values of the linearized equation of motion. In bipolar model as explained in Sec.~\ref{chap:app-sec:bipolar}, real characteristic values of the equation of motion indicates exponential growth, while it always indicates exponential decrease in this simplified halo problem. 
+
+We expect that only normal hierarchy has an instability region which is trivial since we noticed that the backward beam is acting like antineutrino beams but with different hierarchies.
+\begin{align}
+ i \partial_t \mathbf s_F &= \mathbf s_F \times (\mathbf {H}_v +R \mu \mathbf s_B) \\
+   i\partial_t \mathbf s_B &= \mathbf s_B \times (- \mathbf H_v - \mu \mathbf s_F) .
+\end{align}
+Compare to Eq.~\ref{chap:app-sec:bipolar-eqn:flavor-isospin-eom}, we notice that 
+the reflected beam works as an antineutrino beam but the system becomes the opposite hierarchy compared to bipolar model. We find the instability regions in Fig.~\ref{chap:halo-sec:line-sym-fig:instability-regions}.
+
+
+\begin{figure}[htbp]
+    % \centering
+    \minipage{0.49\textwidth}
+    \includegraphics[width=\textwidth]{chapters/assets/halo/growth-rate-mu-refl-nh.jpg}
+    \endminipage\hfill
+    \minipage{0.49\textwidth}
+    \includegraphics[width=\textwidth]{chapters/assets/halo/growth-rate-mu-refl-ih.jpg}
+    \endminipage\hfill
+    \caption{Instability regions for normal hierarchy (left) and inverted hierarchy (right) as a function of neutrino potential $\mu$ and reflection coefficient $R$, with vacuum mixing angle set to 0.}
+    \label{chap:halo-sec:line-sym-fig:instability-regions}
+\end{figure}
+
+
+
 
 \section{Two Beams Model with Reflection}
 
@@ -170,9 +194,50 @@ I have defined
 \end{align*}
 and $g_i$ represents the energy spectrum of the neutrinos and $\eta$ stands for the hierarchy.
 
-Linear stability analysis can be done using computer.
+% Linear stability analysis can be done using computer.
+
+\section{\label{chap:halo-sec:num}Relaxation Method for Numerical Solutions}
+
+
+We choose a relaxation method scheme to solve this non-local boundary value problem numerically. To begin with, we write down the discretization scheme.
+\begin{align}
+    \rho(t+\Delta t) &= \left[  \cos( 2 h \Delta t)\rho_n -  2 u_i \rho_i u_n \right]\sigma_n \\
+    &= \left[  \cos( 2 h \Delta t) \rho_n +  2 \sin^2(h \Delta t) u'_i \rho_i u'_n \right]\sigma_n
+\end{align}
+The reason that we use fixed step size for this problem is that it's easier to calculate the neutrino self-interactions on such fixed grids. The algorithm is described as
+\begin{enumerate}
+    \item
+Calculate forward beam using 0 backward beam;
+\item
+Calculate backward beam and forward beam together using the state of beams from the previous step current counter beams;
+\item
+Repeat the previous step until the state of the beams reach equilibrium.
+\end{enumerate}
+To speed up the calculations, I also implemented OpenMP for parallel computing. The code is tested using vacuum oscillations (shown in Fig.~\ref{chap:halo-sec:num-fig:compare-vac-bipolar}) and bipolar models. The reason that we still have conversions is because of the vacuum term, which is additional to linear stability analysis. It is also proven to reach equilibrium quickly as shown in Fig.~\ref{chap:halo-sec:num-fig:relax-color}. 
+
+\begin{figure}
+    \minipage{0.49\textwidth}
+    % \includegraphics[width=\textwidth]{chapters/assets/halo/halo-mu-4-compare-vac.pdf}
+    \includegraphics[width=\textwidth]{chapters/assets/halo/halo-mu-4-r-multiple.pdf}
+    \endminipage\hfill
+    \minipage{0.49\textwidth}
+    \includegraphics[width=\textwidth]{chapters/assets/halo/halo-mu-4-compare-bipolar.pdf}
+    \endminipage\hfill
+    \caption{The left panel validates code by setting reflection to zero and approach vacuum for single forward beam. Meanwhile, we notice that for nonzero reflections, more conversion is done, which makes sense due to the similarity between $R$ and the asymmetry parameter $\alpha$ in bipolar model. The right panel validates the code by setting reflection to zero and compare with bipolar model for two beams case, where the slope matching the theoretical value $3.85$.}
+    \label{chap:halo-sec:num-fig:compare-vac-bipolar}
+\end{figure}
+
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{chapters/assets/halo/relax-color.png}
+    \caption{Relaxation method reach equilibrium after some steps. This calculation sets $\mu = 4$, $R=0.2$, and is done within range $[0,1]$.}
+    \label{chap:halo-sec:num-fig:relax-color}
+\end{figure}
+
+
+
 
 
 \section{Conclusion}
 
-Halo problem brings in more parameters to neutrino oscillations.
+Halo problem brings in more parameters to neutrino oscillations. In the spirit of numerical methods, we developed a parallelable relaxation method, using C++ and OpenMP. Both the analytical and numerical results showed that for the two realms, either single forward beam or two forward beams, we spot trivial results by drawing analogy with bipolar model, alas no new types of instabilities was found in these situations. On the other hand, reflection indeed may lead to larger conversions.
