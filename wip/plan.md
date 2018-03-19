@@ -1,5 +1,8 @@
 ## Plan of thesis
 
+- [ ] Revise Abstract
+- [ ] Add Conclusion
+
 
 ### Chapters
 

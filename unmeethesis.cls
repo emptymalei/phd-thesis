@@ -589,6 +589,39 @@
    \fi%
 }
 %::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+%  The following commands define the epigraph page
+%::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
+\newenvironment{epigraph}{%
+  %\clearpage
+  %removed extra unnecessary clearpage -D. Murrell
+  \thispagestyle{plain}
+  \if@botnum
+    % \setlength{\headsep}{-42pt}
+    % \setlength{\topmargin}{-6pt}
+  \else
+%     \setlength{\headheight}{-2pt}
+%     \setlength{\topmargin}{-666pt}
+  \fi
+ \null\vfil%
+  \begin{flushleft}
+     \if@botnum
+        \vspace{.82in} %change this if "Dedication" is too high/low
+     \else
+        \vspace{-.12in} %change this if "Dedication" is too high/low
+     \fi 
+     \Huge \bfseries Epigraph
+  \end{flushleft}
+  \itshape
+  \null\vfil%
+  \begin{flushright}}%
+{\end{flushright}\par\vfil\vfil\null% 
+   \if@twoside%
+     \clearpage%
+     \thispagestyle{plain}%
+     \mbox{}%
+   \fi%
+}
+%::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 %  The following commands define the 'singlespace' environment
 %::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 \def\singlespace{%
