@@ -23,7 +23,7 @@ We continue to use the simplified line model and build our intuitions out of it.
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{chapters/assets/halo/line-model.pdf}
-    \caption{Line model used for halo problem. Neutrinos are emitted from the bottom line and reflected at the top line.}
+    \caption{Line model used for halo problem. Neutrinos are emitted from the bottom line and reflected at the top line. Two neutrino beams are demonstrated in the figure. The beams are reflected from a surface at $z=L$.}
     \label{chap:halo-sec:line-fig:line-model}
 \end{figure}
 
@@ -126,7 +126,7 @@ The only $z$ dependent term is $\cosh( 2\delta(L-z) )$, which is decreasing with
 \begin{figure}[!htbp]
     \centering
     \includegraphics[width=\textwidth]{chapters/assets/halo/cosh.pdf}
-    \caption{ An example of $\cosh(2\delta(z-L))$ with $\delta=1$, and $L=5$.}
+    \caption{ An example of $\cosh(2\delta(z-L))$ with $\delta=1$, and $L=5$. This function always reach the minimium at $z=L$.}
     \label{chap:halo-sec:line-sym-fig:cosh}
 \end{figure}
 
@@ -159,7 +159,7 @@ the reflected beam works as an antineutrino beam but the system becomes the oppo
     \minipage{0.49\textwidth}
     \includegraphics[width=\textwidth]{chapters/assets/halo/growth-rate-mu-refl-ih.jpg}
     \endminipage\hfill
-    \caption{Instability regions for normal hierarchy (left) and inverted hierarchy (right) as a function of neutrino potential $\mu$ and reflection coefficient $R$, with vacuum mixing angle set to 0.}
+    \caption{Instability regions for normal hierarchy (left) and inverted hierarchy (right) as a function of neutrino potential $\mu$ and reflection coefficient $R$, with vacuum mixing angle set to 0. No instabilities is found in inverted hierarchy.}
     \label{chap:halo-sec:line-sym-fig:instability-regions}
 \end{figure}
 
@@ -230,7 +230,7 @@ To speed up the calculations, I also implemented OpenMP for parallel computing. 
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{chapters/assets/halo/relax-color.png}
-    \caption{Relaxation method reach equilibrium after some steps. This calculation sets $\mu = 4$, $R=0.2$, and is done within range $[0,1]$.}
+    \caption{Relaxation method reaches equilibrium after some steps. The horizontal axis is the $z$ direction while the vertical axis is the number of iteration steps. The color indicates the survival probability for electron flavor. This calculation sets $\mu = 4$, $R=0.2$, and is done within range $[0,1]$. Equilibrium is reached around step 400 and the neutrino states stays in equilibrium.}
     \label{chap:halo-sec:num-fig:relax-color}
 \end{figure}
 

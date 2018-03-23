@@ -117,7 +117,7 @@ For even function $\lambda(x)$, we have
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{chapters/assets/app/reconstruction-of-even-castle-wall-0point01-0point02-1-1point8.png}
-    \caption{Approaching an even function with Fourier series.}
+    \caption{Approaching an even function with Fourier series. The blue dash dotted line is the reconstruction of castle wall profile using 0 to 3 Fourier modes. The red dotted line is the reconstruction using 0 to 10 Fourier modes. }
     \label{app-chap:convention-sec:fourier-series-eqn:parametric-resonance-castle-wall-fourier-coeff-even}
 \end{figure}
 
@@ -168,7 +168,8 @@ Using this relation and defining $\sech \alpha = A \cos 2\theta_m$, which render
 \end{equation}
 where the Mathematica code to solve it is shown below,
 \begin{verbatim}
-In[1]:= Solve[Exp[z] + Exp[-z] == 2/(A Cos[2 Subscript[\[Theta], m]]), z] // FullSimplify
+In[1]:= Solve[Exp[z] + Exp[-z] 
+== 2/(A Cos[2 Subscript[\[Theta], m]]), z] // FullSimplify
 \end{verbatim}
 we find out an more human readable analytical expression for the width
 \begin{equation}
@@ -313,7 +314,7 @@ where $\boldsymbol{\sigma}$ is the the vector of Pauli matrices, and the three v
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.6\textwidth]{chapters/assets/app/rabi-diagram.png}
-    \caption{Schematic illustration of Rabi oscillations system.}
+    \caption{Schematic illustration of Rabi oscillations system. The two level system has two energy states at $E_1=-\frac{\omega_0}{2}$ and $E_2=\frac{\omega_0}{2}$, which indicating an energy gap of $\omega_0$. Incoming light has frequency $\omega$. Resonance happens when $\omega\sim \omega_0$.}
     \label{chap:app-sec:rabi-oscillations-fig:rabi-diagram}
 \end{figure}
 
@@ -409,7 +410,7 @@ P(t) = \frac{1}{1+\RD^2}\sin^2(\frac{\Omega_{\mathrm{R}}}{2}t).
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{chapters/assets/app/rabi-oscillations.png}
-    \caption{Rabi oscillations for two different incoming light frequencies. $\omega/\omega_0=1$ is the resonance condition.}
+    \caption{Rabi oscillations for two different incoming light frequencies. $\omega/\omega_0=1$ is the resonance condition. As for $\omega/\omega_0=0.8$,  the oscillation amplitude becomes 0.5.}
     \label{app-fig:rabi-examples}
 \end{figure}
 
@@ -418,7 +419,7 @@ P(t) = \frac{1}{1+\RD^2}\sin^2(\frac{\Omega_{\mathrm{R}}}{2}t).
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{chapters/assets/app/rabi-resonance.png}
-    \caption{Rabi oscillations for two different incoming light frequencies. $\omega/\omega_0=1$ is the resonance condition.}
+    \caption{Rabi oscillations for two different incoming light frequencies. $\omega/\omega_0=1$ is the resonance condition. The amplitude reach maximum when $\omega/\omega_0=1$. Resonance width is defined to be the width where amplitude becomes half of the maximum which is shown with blue dashed lines.}
     \label{app-fig:rabi-resonance-width}
 \end{figure}
 
