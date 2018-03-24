@@ -478,7 +478,7 @@ where
 k_n &= (2n-1)k_0, \\
 k_0 &= 2\pi/X.
 \end{align*}
-The decomposition is visualized in Fig.~\ref{chap:matter-sec:castlewall-fig:decompose-castlewall-fourier}.
+The decomposition is visualized in Fig.~\ref{app-chap:convention-sec:fourier-series-eqn:parametric-resonance-castle-wall-fourier-coeff-even}.
 
 To calculate the transitions between two mass states of background matter potential $\lambda_0$, we use the background matter basis with respect to $\lambda_0$, in which the transition is zero when varying matter profile vanishes. The Hamiltonian
 \begin{equation}
@@ -497,12 +497,12 @@ determines the transitions between the two background matter states.
 
 
 
-\begin{figure}[!htbp]
-    \centering
-    \includegraphics[width=\textwidth]{chapters/assets/rabi/reconstruction-of-castle-wall-0point01-0point02-1-1point8}
-    \caption{Decomposition of castle wall density profile using Fourier modes.}
-    \label{chap:matter-sec:castlewall-fig:decompose-castlewall-fourier}
-\end{figure}
+% \begin{figure}[!htbp]
+%     \centering
+%     \includegraphics[width=\textwidth]{chapters/assets/rabi/reconstruction-of-castle-wall-0point01-0point02-1-1point8}
+%     \caption{Decomposition of castle wall density profile using Fourier modes.}
+%     \label{chap:matter-sec:castlewall-fig:decompose-castlewall-fourier}
+% \end{figure}
 
 
 \begin{figure}[!htbp]
@@ -666,7 +666,7 @@ Thus the 12 element of the Hamiltonian is rewritten as
 The general solution to the equation of motion is
 \begin{align}
    \psi_{b1} = & C_1 e^{\frac{1}{2} i \left( n_0 k -\omega_m - \sqrt{  \lvert F \rvert^2 +  (n_0 k -\omega_m)^2 } \right)x} + C_2 e^{\frac{1}{2} i \left( n_0 k -\omega_m + \sqrt{  \lvert F \rvert^2 +  (n_0 k -\omega_m)^2 } \right)x} \\
-   \psi_{b2} = & \frac{C_1}{F^*} i \left( n_0 k - \omega_m - \sqrt{ \lvert F\rvert^2 + ( n_0 k - \omega_m )^2 } \right) e^{ -\frac{1}{2}i (n_0 k - \omega_m ) x - \frac{1}{2} i \sqrt{ \lvert F \rvert^2 + (n_0 k - \omega_m )^2 }  } \\
+   \psi_{b2} = & \frac{C_1}{F^*} i \left( n_0 k - \omega_m - \sqrt{ \lvert F\rvert^2 + ( n_0 k - \omega_m )^2 } \right) e^{ -\frac{1}{2}i (n_0 k - \omega_m ) x - \frac{1}{2} i \sqrt{ \lvert F \rvert^2 + (n_0 k - \omega_m )^2 }  } \nonumber\\
    & + \frac{C_2}{F^*} i \left( n_0 k - \omega_m + \sqrt{ \lvert F\rvert^2 + ( n_0 k - \omega_m )^2 }  \right)   e^{ -\frac{1}{2}i (n_0 k - \omega_m ) x + \frac{1}{2} i \sqrt{ \lvert F \rvert^2 + (n_0 k - \omega_m )^2 }  } .
 \end{align}
 For simplicity, we define
@@ -710,7 +710,7 @@ where $q$ is the oscillation wavenumber. Period of this oscillation is given by 
 
 Compared to the results by Kneller et al~\cite{Kneller2013}, where the transition probability is
 \begin{equation}
-    \color{red}P_{12} = \frac{\kappa_n^2}{q_n^2} \sin^2 (q_n x),
+    {\color{red}P_{12} = \frac{\kappa_n^2}{q_n^2} \sin^2 (q_n x)},
 \end{equation}
 where $\color{red}q_n^2 = k_n^2 + \kappa_n^2$ and $\color{red}2k_n = \tilde{\delta k}_{12} + n k_\star$.
 
@@ -718,7 +718,7 @@ In my notation, $k$ is the same as their $\color{red}k_\star$. After the first s
 
 The definition of $\color{red}\kappa_n$ is given by
 \begin{equation}
-    \color{red}\kappa_{ij,n} = (-i)^{n-1} \frac{n C_\star V_\star}{z_{ij}} J_n(z_{ij}) \tilde U_{ei}^* \tilde U_{ej} e^{i ( n \eta + z_{ij} \cos \eta)},
+    {\color{red}\kappa_{ij,n} = (-i)^{n-1} \frac{n C_\star V_\star}{z_{ij}} J_n(z_{ij}) \tilde U_{ei}^* \tilde U_{ej} e^{i ( n \eta + z_{ij} \cos \eta)} },
 \end{equation}
 in Kneller et al's notation and
 \begin{equation}
@@ -726,11 +726,11 @@ in Kneller et al's notation and
 \end{equation}
 So we conclude that my $\lvert F \rvert ^2$ is related to Kneller et al's $\lvert \kappa_n \rvert^2$ through
 \begin{equation}
-  \lvert F \rvert^2 = 4 \color{red} \lvert \kappa_n \rvert^2.  
+  \lvert F \rvert^2 = 4 {\color{red} \lvert \kappa_n \rvert^2}.  
 \end{equation}
 We also have
 \begin{equation}
-  q^2 = \lvert F \rvert ^2 + g^2  = 4 \color{red} q_n^2,  
+  q^2 = \lvert F \rvert ^2 + g^2  = 4 {\color{red} q_n^2},  
 \end{equation}
 i.e., ${\color{red}q_n} = \frac{ q }{2}$.
 Now we see the method we have used gives exactly the same transition probability as Kneller et al's.
@@ -765,7 +765,7 @@ There are several question to answer before we can understand the picture of the
 To answer the first question, we need to write down the solution to Schrodinger equation assuming the Hamiltonian has only one term. The results are listed below in Table~\ref{chap:matter-sec:deep-jacobi-subsec:single-matter-freq-tab:decomp-hamil}.
 
 \begin{table*}
-\caption{\label{chap:matter-sec:deep-jacobi-subsec:single-matter-freq-tab:decomp-hamil}}
+\caption{\label{chap:matter-sec:deep-jacobi-subsec:single-matter-freq-tab:decomp-hamil}Each terms in Hamiltonian and the corresponding solutions to the specific term.}
 % \begin{ruledtabular}
 % \small
 \setlength\tabcolsep{2pt}
@@ -808,16 +808,16 @@ The significance of it is to show that a constant matter profile will result in 
 \begin{equation}
    h = \frac{\sin 2\theta_m}{2} A \sin (kx+\phi) e^{2i\left( -\frac{\omega_m}{2} x + \frac{A \cos 2\theta_m}{2k} \cos (kx+\phi) \right)},
 \end{equation}
-as derived in equation \ref{chap:matter-sec:deep-jacobi-subsec:single-matter-freq-eqn:single-frequency-hamiltonian-element}. To compare with the constant matter case, we make a table of relevant terms in Hamiltonian, Table~\ref{chap:matter-sec:deep-jacobi-subsec:single-matter-freq-tab:decomp-hamil-2}.
+as derived in Eqn.~\ref{chap:matter-sec:deep-jacobi-subsec:single-matter-freq-eqn:single-frequency-hamiltonian-element}. To compare with the constant matter case, we make a table of relevant terms in Hamiltonian, Table~\ref{chap:matter-sec:deep-jacobi-subsec:single-matter-freq-tab:decomp-hamil-2}.
 
 \begin{table*}
-\caption{\label{chap:matter-sec:deep-jacobi-subsec:single-matter-freq-tab:decomp-hamil-2}}
+\caption{\label{chap:matter-sec:deep-jacobi-subsec:single-matter-freq-tab:decomp-hamil-2} Comparison of the off diagonal element of Hamiltonian for constant matter density profile and the periodic matter density profile.}
 % \begin{ruledtabular}
 % \small
 \setlength\tabcolsep{2pt}
 \begin{tabular}{l|l}
 \hline
- Constant Matter Profile $\delta\lambda = \lambda_c$ &   Period Matter Profile $\delta\lambda=A\sin (kx+\phi)$ \\
+ Constant Matter Profile $\delta\lambda = \lambda_c$ &   Periodic Matter Profile $\delta\lambda=A\sin (kx+\phi)$ \\
 \hline
    $\frac{\sin 2\theta_m}{2}\lambda_c e^{i \cos 2\theta_m \lambda_c x}$     &   $\frac{A\sin 2\theta_m}{4} \sum_{n=-\infty}^{\infty} e^{in\phi} \left( - i^n \right) \frac{2n+1}{z_k} J_n (z_k) e^{i(nk-\omega_m)x}$ \\
 \hline
