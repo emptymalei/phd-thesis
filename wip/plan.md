@@ -1,16 +1,15 @@
 ## Plan of thesis
 
-- [ ] Revise Abstract
-- [ ] Add Conclusion
+- [ ] Add Conclusion Chapter
 
 
 ### Chapters
 
 1. Background: neutrinos, related problems in astrophysics, some field theory
-2. Neutrino Oscillations in general: vacuum oscillations
-3. Neutrino oscillations in matter
-4. Neutrino oscillations in dense neutrino background
-5. Halo problem
+2. Neutrino Oscillations in vacuum
+3. Neutrino Oscillations in matter
+4. Collective Neutrino Oscillations: dispersion relation, halo problem
+5. Conclusions and Outlook
 
 
 ### MSW Effect
