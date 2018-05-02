@@ -25,8 +25,10 @@
 \section{\label{chap:app-sec:conventions-subsec:terms}Terms}
 
 \begin{itemize}
-    \item 
-    Normal hierarchy for two flavors is always defined as $m_2^2-m_1^2>0$.
+    \item
+    Normal hierarchy for two-flavor scenario is always defined as $m_2^2-m_1^2>0$, i.e., $\omega_{\mathrm v}>0$.
+    \item
+    Inverted hierarchy for two-flavor scenario is defined as $m_2^2-m_1^2<0$, i.e., $\omega_{\mathrm v}<0$.
     \item
     Solar neutrino mass splitting is $\delta m_{12}$, while atmospheric neutrino mass splitting refers to $\delta m_{23}$.
 \end{itemize}
@@ -58,7 +60,7 @@ To convert between different physical quantities in this thesis, I always use th
 
 Given a rotation
 \begin{equation}
-   U = \begin{pmatrix} \cos \theta & \sin \theta \\ -\sin\theta & \cos \theta \end{pmatrix}, 
+   U = \begin{pmatrix} \cos \theta & \sin \theta \\ -\sin\theta & \cos \theta \end{pmatrix},
 \end{equation}
 its effect on Pauli matrices are
 \begin{align}
@@ -93,9 +95,9 @@ where $\omega_0 = \frac{2\pi}{X}$. The coefficients are evaluated using the orth
 \end{align}
 For $n=0$, we have
 \begin{equation}
-   \Lambda_0 = \frac{X_1 \lambda_1 + X_2 \lambda_2}{X}. 
+   \Lambda_0 = \frac{X_1 \lambda_1 + X_2 \lambda_2}{X}.
 \end{equation}
-   
+
 
 
 
@@ -168,7 +170,7 @@ Using this relation and defining $\sech \alpha = A \cos 2\theta_m$, which render
 \end{equation}
 where the Mathematica code to solve it is shown below,
 \begin{verbatim}
-In[1]:= Solve[Exp[z] + Exp[-z] 
+In[1]:= Solve[Exp[z] + Exp[-z]
 == 2/(A Cos[2 Subscript[\[Theta], m]]), z] // FullSimplify
 \end{verbatim}
 we find out an more human readable analytical expression for the width
@@ -498,9 +500,9 @@ The Hamiltonian becomes
 \end{equation}
 which is exactly a Rabi oscillation. The resonance condition is
 \begin{equation}
-   \lambda_0 = \omega_v \cos 2\theta_v. 
+   \lambda_0 = \omega_v \cos 2\theta_v.
 \end{equation}
-   
+
 
 
 
@@ -526,7 +528,7 @@ where
 \end{equation}
 By setting the off-diagonal elements of the first term $U^\dagger H^{(f)} U$ to zero, we can derive the relation
 \begin{equation}
-   \tan 2\theta_m = \frac{\sin 2\theta_v}{\cos 2\theta_v - \lambda/\omega_v}. 
+   \tan 2\theta_m = \frac{\sin 2\theta_v}{\cos 2\theta_v - \lambda/\omega_v}.
 \end{equation}
 Furthermore, we derive the term
 \begin{equation}
@@ -543,7 +545,7 @@ so that
    & = \frac{1}{2} \frac{(\cos 2\theta_v - \lambda/\omega_v)^2}{ (\lambda/\omega_v)^2 + 1 - 2\lambda \cos 2\theta_v /\omega_v }  \frac{\sin 2\theta_v}{(\cos 2\theta_v - \lambda/\omega_v)^2} \frac{1}{\omega)v} \frac{d}{dx} \lambda(x) \\
    & = \frac{1}{2} \sin 2\theta_m \frac{1}{\omega_m} \frac{d}{dx} \lambda(x).
 \end{align}
-   
+
 
 
 %%%%%%%%%% MSW Revisted %%%%%%%%%%%%%%%%%%%%%%%%%%%%%

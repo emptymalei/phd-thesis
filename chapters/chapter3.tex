@@ -2,6 +2,9 @@
 
 \chapter{\label{chap:matter}Neutrino Flavor Conversions in Matter and Rabi Oscillations}
 
+
+Since neutrinos with different flavor interact with matter with different cross section, we need to investigate the neutrino flavor carefully. Even though only electron flavor neutrinos are produced, what we detect on Earth is different in flavor, which depends on two phenomena: neutrino vacuum oscillation and Mikheyev–Smirnov–Wolfenstein effect.
+
 \section{\label{chap:basics-section:astro}Stars as Neutrino Factories}
 
 Astrophysical neutrino sources such as cores of stars, AGN, Gamma-ray bursts, and supernovae, reveals a lot of information about the sources. Though neutrinos are are weakly interacting particles rendering them hard to detect, it is an important subject to theoretically inspect neutrino productions in astrophysical processes.
@@ -109,9 +112,11 @@ We will take a step further and interpret parametric resonance~\cite{Akhmedov200
 
 
 
-% \fbox{TODO:more about oscillation in matter}
+
 
 \section{\label{chap:basics-sec:msw}Mikheyev - Smirnov - Wolfenstein Effect}
+
+
 
 The nature of neutrino oscillations means that flavor conversion occurs as long as their propagation eigenstates are not flavor eigenstates. As neutrinos travel from the center of the star throughout to the surface, we expect neutrino propagation eigenstates in such matter background to be different from flavor states in general~\cite{wolf78}. Using the fact that neutral current interactions between different flavor neutrinos and matter is independent of flavor, we only include the charged current, which will produce a effective potential for electron flavor that is different for other flavors. In flavor basis, the effective potential is
 \begin{equation}
@@ -170,6 +175,69 @@ One of the interesting fact about MSW effect is the MSW triangle shown in Fig.~\
 
 
 In summary, even though only electron flavor neutrinos are produced in the core of a solar mass star, the neutrino flavor conversion to the other flavors is enhanced by matter interaction, in addition to the vacuum oscillation. However, the actual neutrino flavor conversion is much more complicated than just MSW effect and almost impossible to calculate without knowing the very exact matter profile of the Sun even with the time-dependent small perturbations to the density. As an approximation, MSW transition is good enough for the solar neutrinos~\cite{Lopes2013a}.
+
+\section{\label{chap:matter-sec:flavor-isospin}Flavor Isospin Picture }
+
+MSW effect is also easily explained using flavor isospin picture. The Hamiltonian in flavor isospin picture
+\begin{align*}
+    H_m =& \frac{\omega_{\mathrm{v}}}{2}\left( - \cos 2\theta_{\mathrm{v}} \boldsymbol{\sigma_3} + \sin 2\theta_{\mathrm{v}} \boldsymbol{\sigma_1} \right)   + \frac{\lambda(x)}{2} \boldsymbol{\sigma_3} \\
+    \to &  \omega_{\mathrm v}\begin{pmatrix}
+    - \sin 2\theta_{\mathrm v} \\
+    0 \\
+    \cos 2\theta_{\mathrm v}
+    \end{pmatrix}   + \begin{pmatrix}
+    0\\
+    0\\
+    - \lambda(x)
+    \end{pmatrix}  \\
+    = &  \vec H_{\mathrm v} + \vec H_{\mathrm m}(x),
+\end{align*}
+where $\vec H_{\mathrm v}$ is vacuum contribution and $\vec H_{\mathrm m}(x)$ is the matter potential contribution. The two vectors are visualized in Fig.~\ref{chap:basics-sec:flavor-isospin-pic-fig:matter-effect-notsolarge-density}. We discussed in Sec.~\ref{chap:basics-sec:msw} the adiabatic transitions of neutrino states in varying matter density. Fig.~\ref{chap:basics-sec:flavor-isospin-pic-fig:msw-adiabatic} shows the adiabatic evolution of neutrino flavor isospin. For region of high density matter background, which provides large matter potential, the total Hamiltonian is almost pointing downward. We observe almost no flavor oscillations since flavor isospin precession is tiny. As the neutrinos moving into smaller matter density regions, the flavor isospin is approximately following the evolution of Hamiltonian. Flavor conversion happens because of the evolution of Hamiltonian, even though flavor oscillations are still tiny. In the end, neutrinos reach the region with almost no matter, where they are almost converted to one of the mass eigenstates. In fact, those neutrinos won't oscillate that much in vacuum following this initial condition.
+
+
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.5\textwidth]{chapters/assets/basics/matter-effect-notsolarge-density}
+    \caption{Neutrino oscillations in flavor isospin picture, with the presence of matter potential. The flavor isospin is denoted as red dashed arrow. It starts from electron flavor. The two gray vectors stand for the Hamiltonians of vacuum $\vec H_{\mathrm v}$ and matter $\vec H_{\mathrm m}$.}
+    \label{chap:basics-sec:flavor-isospin-pic-fig:matter-effect-notsolarge-density}
+\end{figure}
+
+
+
+
+\begin{figure}[htbp]
+	\centering
+	\begin{subfigure}[t]{0.3\textwidth}
+		\centering
+		\includegraphics[width=0.8\textwidth]{chapters/assets/basics/matter-effect-large-density}
+		\caption{High matter density}\label{chap:basics-sec:flavor-isospin-pic-fig:msw-adiabatic-large-density}
+	\end{subfigure}
+	\quad
+	\begin{subfigure}[t]{0.3\textwidth}
+		\centering
+		\includegraphics[width=0.8\textwidth]{chapters/assets/basics/matter-effect-adiabatic}
+		\caption{Medium matter density}\label{chap:basics-sec:flavor-isospin-pic-fig:msw-adiabatic-medium-density}
+	\end{subfigure}
+	\quad
+	\begin{subfigure}[t]{0.3\textwidth}
+		\centering
+		\includegraphics[width=0.8\textwidth]{chapters/assets/basics/matter-effect-adiabatic-small-density}
+		\caption{Low matter density}\label{chap:basics-sec:flavor-isospin-pic-fig:msw-adiabatic-small-density}
+	\end{subfigure}
+	\caption{Flavor isospin picture of neutrino oscillations in matter. $\vec H_{\mathrm v}$ is the vacuum contribution to Hamiltonian, and $\vec H_{\mathrm m}$ corresponds to the matter potential.}\label{chap:basics-sec:flavor-isospin-pic-fig:msw-adiabatic}
+\end{figure}
+
+Neutrinos might experience a critical matter density, when the overall Hamiltonian is perpendicular to the upright axis. Assuming we have electron neutrinos going through such regions, they will experience maximum flavor oscillations, c.f.~Fig.~\ref{chap:basics-sec:flavor-isospin-pic-fig:msw-adiabatic-critical}.
+
+\begin{figure}
+    \centering
+    \includegraphics[width=0.5\textwidth]{chapters/assets/basics/matter-effect-critical-density}
+    \caption{MSW resonance happens when electron neutrinos go through a critical matter density.}
+    \label{chap:basics-sec:flavor-isospin-pic-fig:msw-adiabatic-critical}
+\end{figure}
+
+
 
 
 
@@ -1581,7 +1649,31 @@ The requirement for a pair of $(n_1,n_2)$ to be important is determined by defin
 
 \section{\label{conclusions}Conclusions}
 
-%%%% Do not repeat what has been said
+
+
+The solar neutrinos behave very differently from lab experiments since the Sun provides a high matter density lab which can not be built on the Earth. What's even more exotic, in a supernova explosion, $10^{58}$ neutrinos are released from the proto-neutron star, which is of radius $10\mathrm{km}$, in a few seconds. The huge number density of neutrinos and large density of matter both change the neutrino oscillations dramatically. The matter effect in supernova is also much more complicated than MSW for solar neutrinos since the rich distribution of matter density and high speed motion. In addition to matter effect, neutrino neutrino interaction will be very efficient because of the high neutrino number density.
+
+Apart from the emission of neutrinos from nuclear reactions of electron capture and positron emission in the solar interior, supernova environment also gives rise to Bremsstrahlung pair neutrino production, electron-positron neutrino pair production, which brings all three flavors and also anti-neutrinos into the spectra. However, even the with the presence of intensive interaction between neutrinos and the leptons and hardrons, which thermalize the neutrinos in the supernova core, the neutrino spectrum escaping from the supernova core is not completely Fermi-Dirac distribution. Nonetheless, it is possible to parametrize it using nominal Fermi-Dirac distribution,\cite{ysuzuki2004}
+\begin{equation}
+f(E)\propto \frac{E^2}{1+\exp ( E/kT - \mu )}.
+\end{equation}
+Some numerical results show that there is a deviation from this Fermi-Dirac distribution~\cite{Totani1998,Keil2003}. Meanwhile, Keil Mathias and Georg Raffelt showed that it is good enough to approximate the neutrino spectrum from supernova in Monte Carlo simulations using the so called "alpha fit",
+\begin{equation}
+f(E)\propto E^\alpha \exp\left( -(\alpha+1)\frac{E}{\langle E\rangle} \right),
+\end{equation}
+where $\langle E\rangle$ is the average energy, or the first moment of energy. The values from Monte Carlo simulations falls into the range $\alpha = 2.5\sim 5$,
+which clearly shows the spectra are pinched. It's a hint that the detection of deviation from nominal Fermi-Dirac distribution will show evidence of core-collapse information.
+
+
+% \begin{figure}
+% \centering
+% \includegraphics[width=\columnwidth]{chapters/assets/solar/neutrino_spectra_sn_simulations.png}
+% \caption{Alpha fit and nominal Fermi-Dirac fit comparison. The top panel is alpha fit results while the middle panel is from nominal Fermi-Dirac distribution fit. The broadest curve are for $\alpha=2$. The width $w=\sqrt{\langle E^2 \rangle - \langle E\rangle^2}$ decrease 10\% for each curve. The bottom panel is the ratio of the two fit functions.}
+% \label{fig:neutrino_spectra_sn_simulations}
+% \end{figure}
+
+
+Even though we understand solar neutrinos well, the neutrino oscillations of supernova explosions are not so to our complete knowledge. The flavor content is subject to the solution to the neutrino oscillations. Phenomena such as spectral split due to neutrino-neutrino interaction and matter effect reshape the neutrino spectra significantly. That being said, more research on supernova neutrinos, especially supernova neutrino oscillations is critical to understand supernova explosion mechanisms, as well as future observation of supernova neutrino data.
 
 
 In conclusion, we have provided an interpretation for neutrino flavor conversion in fluctuating matter with the help of Rabi oscillations. The work provided two different points of view that is related to Rabi oscillations.
