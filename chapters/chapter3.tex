@@ -1,29 +1,46 @@
 %!TEX root = ../dissertation.tex
 
-\chapter{\label{chap:matter}Neutrino Flavor Conversions in Matter and Rabi Oscillations}
+\chapter{\label{chap:matter}Neutrino Oscillations in Matter}
+
+In many astrophysical environments, such as stars and core-collapse supernovae, neutrinos are mostly produced in the center of the objects and propagate through dense fluctuating media. The background matter will interact with neutrinos~\footnote{The concept of matter in this thesis refers to electrons since we are discussing the flavor conversion between electron flavor and other flavors. However, it is not necessarily to be confined to be electrons. The same methods also work for other matter background such as matter background contains both electrons and muons.}. Such interactions are not necessarily the same for different flavors. In fact, the neutral current interaction between matter background and neutrinos doesn't distinguish between the flavors, as shown in Fig.~\ref{chap:matter-fig:nc}. However, the charged current interaction is specific for different flavors. For example, charged current interaction with electrons is special for electron flavor neutrinos, as shown in Fig.~\ref{chap:matter-fig:cc}. The charged current interaction is responsible for the difference between neutrino oscillations in vacuum and in matter. Even though the electron flavor neutrinos are produced in the core of stars, the flavor content detected on Earth is not only determined by the vacuum oscillations.
 
 
-Since neutrinos with different flavor interact with matter with different cross section, we need to investigate the neutrino flavor carefully. Even though only electron flavor neutrinos are produced, what we detect on Earth is different in flavor, which depends on two phenomena: neutrino vacuum oscillation and Mikheyev–Smirnov–Wolfenstein effect.
+
+
+One of the significant matter effect on neutrino flavor oscillations is the Mikheyev-Smirnov-Wolfenstein (MSW) effect~\cite{Mikheev:1986gs,wolf78,wolfensteinprd1979}, which is used to explain the deficit of electron flavor neutrino flux, as know as the solar neutrino problem~\cite{kuo1989,Petcov2002}. Later developments on the theories of matter effect revealed the parametric resonance of neutrino flavor oscillations due to fluctuations in matter density~\cite{Krastev1989,Akhmedov2000}, which is the neutrino analog of transitions between energy levels as a result of external optical stimulation. Parametric resonance is different from the MSW effect since it involves the parameters of the matter density, which is usually the period of matter density fluctuations. It has also be shown that neutrinos passing through the Earth can experience parametric resonance~\cite{Akhmedov1999, Petcov1998b}.
+
+As one of the most intense neutrino sources, supernova neutrinos experience turbulent matter density as they propagate through the explosion~\cite{Muller2015, Couch2015}, where the flavor conversion is modified by interactions with matter. Meanwhile, with neutrinos depositing energy into the shock, neutrino flavor conversion is crucial to understand the shock evolution of supernova explosion. The turbulent matter density environment for neutrino flavor conversion has been studied~\cite{Loreti1994, Friedland2006,Kneller2010}. Recently, neutrino flavor conversions in matter background in varying matter density has been researched using a Jacobi-Anger expansion by Kneller, et al.~\cite{Kneller2013,Patton2014}. They have shown that neutrinos might go through large conversions between the two energy eigenstates.
+
+\begin{figure}[htbp]
+	\begin{subfigure}[t]{0.5\textwidth}
+		\centering
+		\includegraphics[height=0.24\textheight]{chapters/assets/matter/neutral-current.png}
+		\caption{Neutral current interaction between $\nu_{\mathrm e}$, $\nu_{\mu}$, $\nu_{\tau}$, and $e^{-}$. Neutral current interaction is mediated by Z bosons.}
+    \label{chap:matter-fig:nc}
+	\end{subfigure}%
+	\begin{subfigure}[t]{0.5\textwidth}
+		\centering
+		\includegraphics[height=0.24\textheight]{chapters/assets/matter/charged-current.png}
+		\caption{Charged current interaction between $\nu_{\mathrm e}$ and $e^{-}$. Charged current interaction is mediated by W bosons.}
+    \label{chap:matter-fig:cc}
+	\end{subfigure}
+	\caption{Two important interactions---neutral current and charged current---between neutrinos and matter. They exchange different bosons.}
+    \label{chap:matter-fig:nc-cc}
+\end{figure}
+
+I will take a step further and interpret parametric resonance~\cite{Akhmedov2000, Krastev1989} as well as other matter stimulated neutrino flavor conversions~\cite{Kneller2013, Patton2014}, as a superposition of Rabi oscillations. I will also calculate the criteria for the survival of resonance due to interference effect between different Rabi oscillation modes. In Sec.~\ref{chap:matter-sec:background}, we define the formalism of neutrino flavor conversions in matter used in this chapter where the equation of motion and Hamiltonian for neutrino flavor conversion in matter are explicitly written. In Sec.~\ref{chap:matter-sec:single} we discuss how neutrino flavor conversions are related to Rabi oscillations. To begin, we discuss a system with single frequency matter density fluctuation. We will show that such a system can be reduced to Rabi oscillations if resonance occurs. In Sec.~\ref{sec:multiple} we describe the interference effect between different frequencies of Rabi oscillations and develop the criteria for significant interference between two frequencies. We show that the interference between the many frequencies fits into the criteria we proposed for interference. In Sec.~\ref{sec:jacobi} we discuss the technique of decomposing the neutrino flavor conversions into summation of Rabi oscillations, by applying a specific unitary transformation and the Jacobi-Anger expansion. As the system is exactly decomposed into multiple Rabi oscillations, we can interpret neutrino flavor oscillations in any matter density fluctuations, in principle. As an example, we solve the neutrino flavor transitions in a castle wall matter profile, which contains infinite frequencies from the aspect of Fourier series.
+
+
 
 \section{\label{chap:basics-section:astro}Stars as Neutrino Factories}
 
-Astrophysical neutrino sources such as cores of stars, AGN, Gamma-ray bursts, and supernovae, reveals a lot of information about the sources. Though neutrinos are are weakly interacting particles rendering them hard to detect, it is an important subject to theoretically inspect neutrino productions in astrophysical processes.
+Astrophysical neutrino sources such as cores of stars, AGN, Gamma-ray bursts, and supernovae, reveal a lot of information about the sources. Though neutrinos are weakly interacting particles rendering them hard to detect, it is an important subject to theoretically inspect neutrino productions in astrophysical processes.
 
+One of the neutrino factories is the stellar core. Numerous nuclear reactions as well thermal neutrino production produce luminous neutrinos. In this section, the nuclear reactions in stars are reviewed as the background of neutrino oscillations in matter.
 
-\subsection{Stellar Core}
+% \subsection{Nuclear Reactions in Sun and Solar Neutrino Flux}
 
-One of the neutrino factories is the stellar core. Numerous nuclear reactions as well thermal neutrino production produce luminous neutrinos. In this section, the nuclear reactions in stars are reviewed as well as the neutrino oscillations in the stars.
-
-% \begin{figure}[ht]
-% \centering
-% \includegraphics{chapters/assets/solar/Beta_Negative_Decay.eps}
-% \caption{Feynman diagram of beta decay. The charged current weak interaction boson in this case is a $W^-$. Credit: Joel Holdsworth, licensed under public domain.}
-% \label{fig:Beta_Negative_Decay}
-% \end{figure}
-
-\subsection{Nuclear Reactions in Sun and Solar Neutrino Flux}
-
-The most important nuclear reactions in our Sun are pp chain and CNO cycle. Through different stages of its life, a star experience different nuclear reactions. Figure \ref{fig:pp_Chain_Branching} shows the dominant energy source of solar mass stars. In order to calculate the neutrino spectrum we need the neutrino production rate in each reaction and the branching ratios. The processes that emits neutrinos are the reactions in red in Fig~\ref{fig:pp_Chain_Branching}, which are~\cite{Altmann2001}
+The most important nuclear reactions in our Sun are the pp chain and CNO cycle. Through different stages of its life, a star experiences different nuclear reactions. Fig.~\ref{fig:pp_Chain_Branching} shows the dominant energy source of one solar mass stars. In order to calculate the neutrino spectrum we need the neutrino production rate in each reaction and the branching ratios. The processes that emits neutrinos are the reactions in red in Fig~\ref{fig:pp_Chain_Branching}, which are~\cite{Altmann2001}
 \begin{align}
 &\mathrm{p+p\to {}^2H + e^+ +\nu_e},  & \mathrm{\leq 0.422MeV}\\
 &\mathrm{{}^7Be + e^- \to {}^7Li + \nu_e} , &\text{0.862MeV for 90\%}\\
@@ -77,17 +94,11 @@ Solar neutrinos are mostly produced in pp reaction, Be electron capture and B de
 \end{equation}
 where it is important to notice that two neutrinos are produced in each reaction. This overall reaction can either be pp chain or CNO cycle.
 
-Using this simple relation, we can estimate the neutrino flux emitted by our sun. Given the kinetic energy produced in each reaction is the difference between the initial masses and the final masses, $Q_{pp}=4m_p+2m_e-m_{He4}=26.7\mathrm{MeV}$ where the mass of neutrinos are neglected since they are small compared with every other particle. On average, each neutrino carries away $0.2\mathrm{MeV}$ energy and the rest will be mostly in the form of thermal energy $Q_\gamma=26.3\mathrm{MeV}$~\cite{Adelberger2011a}. Number flux of thermal photons near Earth can be calculated using the solar constant $S_0$,
+Using this simple relation, we can estimate the neutrino number flux emitted by our sun. The kinetic energy produced in each reaction is the difference between the initial masses and the final masses, $Q_{pp}=4m_p+2m_e-m_{He4}=26.7\mathrm{MeV}$ where the mass of neutrinos are neglected since they are small compared to other particles. On average, each neutrino carries away $0.2\mathrm{MeV}$ energy and the rest is in the form of thermal energy $Q_\gamma=26.3\mathrm{MeV}$~\cite{Adelberger2011a}. Energy flux density of solar photons near Earth is given by the solar constant $S_0$. Since we know that each reaction produces 2 neutrinos while producing thermal energy $Q_\gamma$, the number flux density of neutrinos near Earth is roughly
 \begin{equation}
-\Phi_\gamma = \frac{S_0}{Q_\gamma}.
+\Phi_\nu = 2 \frac{S_0}{Q_\gamma} \approx 6\times 10^{10} \mathrm{cm^{-2}s^{-1}}.
 \end{equation}
-Since we know each reaction produces 2 neutrinos while producing $Q_\gamma$, which means that the number flux of neutrinos near Earth is roughly twice of the number flux of photons, i.e.,
-\begin{equation}
-\Phi_\nu = 2 \Phi_\gamma \approx 6\times 10^{10} \mathrm{cm^{-2}s^{-1}}.
-\end{equation}
-For such a large flux, understanding the role in stellar nuclear reaction and spectra is important.
-
-Inside our Sun, two additional reactions also produce neutrinos which are called pep and hep neutrinos.
+Neutrinos are hard to detect but a large number flux density makes it possible to detect solar neutrinos~\cite{Cleveland1998,Lande2003,McDonald2013}. On the other hand, the neutrinos have a certain energy spectrum due to the composition of nuclear reactions. Inside our Sun, two additional reactions other than pp neutrinos also produce neutrinos which are called pep and hep neutrinos.
 \begin{itemize}
 \item pep neutrinos are produced in
 \begin{equation}
@@ -101,20 +112,18 @@ which is only has a branching ratio 0.4\% instead of the 99.6\% of pp reaction.
 which has a branching ratio of $2\times 10^{-5}\%$. As a comparison, the $\mathrm{{}^3He + {}^3He}$ has a branching ratio $85\%$ and $\mathrm{{}^3He + {}^4He}$ has a branching ratio $15\%$.
 \end{itemize}
 
-
-\section{\label{chap:matter-rabi-introduction}Introduction}
-
-In many astrophysical environments, such as core-collapse supernova, neutrinos propagate through dense fluctuating medium, which will interact with neutrinos and dramatically change the flavor oscillations of neutrinos. Meanwhile, neutrinos deposit energy in matter during the interaction, where the amount of energy deposited depends on the flavor of neutrinos. The significance of matter effect on neutrino flavor oscillations has been demonstrated in Mikheyev-Smirnov-Wolfenstein (MSW) effect~\cite{Mikheev:1986gs,wolf78,wolfensteinprd1979}, which is used to explain the deficit of electron flavor neutrino flux, thus solved the solar neutrino problem~\cite{Petcov2002,kuo1989}. Later developments on the theories about matter effect revealed the parametric resonance of neutrino flavor oscillations due to fluctuations in matter density~\cite{Krastev1989,Akhmedov2000}, which is the neutrino analog of transitions between energy levels as a result of external optical stimulation. Parametric resonance is different from the MSW effect since it involves the parameters of the matter density, which is usually the period of matter density fluctuations. Neutrinos passing through inside the Earth can experience parametric resonance~\cite{Akhmedov1999, Petcov1998b}.
-
-As one of the most intense neutrino sources, supernova neutrinos experience turbulent matter density as they propagate through out the explosion~\cite{Muller2015, Couch2015}, where the flavor conversion is modified by interaction with matter. Meanwhile with neutrinos depositing energy into the shock, neutrino flavor conversion is crucial to the shock evolution of supernova explosion. The turbulent matter density environment for neutrino flavor conversion has been researched~\cite{Loreti1994, Friedland2006,Kneller2010}. Recently matter stimulated neutrino flavor conversion in varying matter density has been researched using Jacobi-Anger expansion by Kneller, et al.~\cite{Kneller2013,Patton2014}. They have shown that many stimulated neutrino flavor conversions can be explained by resonances of the system.
-
-We will take a step further and interpret parametric resonance~\cite{Akhmedov2000, Krastev1989} as well as other matter stimulated neutrino flavor conversions~\cite{Kneller2013, Patton2014}, as superposition of Rabi oscillations. We also propose a criteria for the interference effect between different Rabi oscillation modes. In Sec.~\ref{chap:matter-sec:background}, we define the formalism of neutrino flavor conversions in matter used in this chapter where the equation of motion and Hamiltonian for neutrino flavor conversion in matter are explicitly written. In Sec.~\ref{chap:matter-sec:single} we discuss how neutrino flavor conversions are related to Rabi oscillations. To begin with, we discuss a system with single frequency matter density fluctuation. We will show that such a system can be reduced to Rabi oscillations if resonance occurs. In Sec.~\ref{sec:multiple} we describe the interference effect between different frequencies of Rabi oscillations and develop the criteria for significant interference between two frequencies. We show that the interference between the many frequencies fits into the criteria we proposed for interference. In Sec.~\ref{sec:jacobi} we discuss the technique of decomposing the neutrino flavor conversions into summation of Rabi oscillations, by applying a specific unitary transformation and the Jacobi-Anger expansion. As the system is exactly decomposed into multiple Rabi oscillations, we can interpret neutrino flavor oscillations in any matter density fluctuations in principle. As an example, we solve the neutrino flavor transitions in a castle wall matter profile, which is expanded using Fourier series into many frequencies.
-
-
+Another astronomical lab that we will discuss is supernova explosion. Massive stars with a mass larger than 6−8 solar masses emit a huge amount of photons. However, violent delights have violent ends. Those stars will explode violently and become core-collapse supernovae~\cite{Raffelt1996wa}. Those explosions form the most power sources of neutrinos as we know today. The neutrinos emitted from supernova explosions have energy of the order MeV~\cite{Janka2017}. Assume that the neutrino flux from a supernova explosion is $10^{50}\mathrm{ergs\cdot s^{-1}}$. I can estimate the number density of neutrinos at radius $R$ with energy $E$
+\begin{equation*}
+   n \sim  10^{17} \mathrm{cm^{-3}} \left(\frac{100\mathrm{km}}{R}\right)^2 \left(\frac{1\mathrm{MeV}}{E}\right),
+\end{equation*}
+which corresponds to number flux
+\begin{equation*}
+  \Phi = 
+\end{equation*}
 
 
 
-\section{\label{chap:basics-sec:msw}Mikheyev - Smirnov - Wolfenstein Effect}
+\section{\label{chap:basics-sec:msw}Mikheyev--Smirnov--Wolfenstein Effect}
 
 
 
