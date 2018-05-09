@@ -4,57 +4,56 @@
 
 \chapter{\label{chap:basics}Neutrino Oscillations in Vacuum}
 
-Neutrinos are special particles since their flavor eigenstates are not the propagation eigenstates, which leads to neutrino flavor conversions while they propagate. To understand the vacuum neutrino oscillations, we use the two-flavor neutrinos scenario as an example\footnote{In most physical problems, two-flavor scenario is a good approximation. The mass splits between the three mass eigenstates are very different so that the oscillation scales differ a lot for the different mass splits. Qualitatively speaking, the two-flavor scenario captures the significant features of the corresponding mass split.}.
+Because the flavor eigenstates of the neutrino are not the same as its propagation eigenstates, it can change flavor while it propagates. To understand its flavor oscillation in vacuum, I will use the two-flavor scenario as an example\footnote{In most physical problems, two-neutrino-flavor scenario is a good approximation. The mass splits between the three mass eigenstates are so different that the corresponding oscillations occur on very diferent length scales. On the right length scale, the two-flavor scenario captures the significant features of the neutrino oscillations of the corresponding mass split.}. I will also explain how to visualize neutrino oscillations using the flavor-isospin picture.
 
-Before we work out the math, I can estimate the frequency of the oscillations between flavors. With the natural units system, frequency is of dimension energy, see Appendix~\ref{chap:app-sec:conventions-subsec:units}. We also notice that the energy of the neutrino,
+Before working out the math, I can estimate the frequency of the oscillations of the neutrino between its flavors. In the natural units, frequency has the same dimension as energy (see Appendix~\ref{chap:app-sec:conventions-subsec:units}). Consider an electron neutrino with moment $p$ which is a superposition of the two mass eigenstates $\ket{\nu_i}$ ($i=1,2$) with masses $m_i$ respectively. Since the neutrino masses are small, I can Taylor expand the energy of each mass eigenstate in terms of the corresponding mass:
 \begin{align}
-E_i^{(v)} & = \sqrt{m_i^2 + p_i^2 } \\
-& = p_i \sqrt{\frac{m_i^2}{p_i^2} + 1} \\
-& \approx p_i + \frac{1}{2} \frac{m_i^2}{p_i},
+E_i^{(v)} & = \sqrt{m_i^2 + p^2 } \nonumber\\
+& = p \sqrt{\frac{m_i^2}{p^2} + 1} \nonumber\\
+& \approx p + \frac{1}{2} \frac{m_i^2}{p},
 \label{chap:basics-section:neutrinos-eqn:energy-taylor}
 \end{align}
-defines the energy scales in this problem. The reason we kept the second order in Taylor expansion is that we are interested in the difference of energies between different mass eigenstates. We assume the neutrinos have almost the same momenta, i.e., $p_1 \approx p_2$. An overall constant energy term of free particles in quantum mechanics provides a global phase to the wave function, which is not of great interest. The only energy scale in our problem should be proportional to the difference of energies between the two mass eigenstates, $\frac{\delta m^2}{2E}$, where $\delta m^2 = m_2^2-m_1^2$. The frequency of flavor oscillations should be of the order
+The constant energy term in the above equation produces a global phase to the flavor wave function which does not affect neutrino flavor oscillations. The characteristic energy scale in the problem is the difference of energies between the two mass eigenstates,
 \begin{equation}
-    \omega_{\mathrm v} \sim \frac{\delta m^2}{2E}.
+    \omega_{\mathrm v} =  \frac{m_2^2-m_1^2}{2E} = \frac{\delta m^2}{2E},
     \label{chap:basics-section:neutrinos-eqn:qualitative-method-frequency}
 \end{equation}
-We'll show that this is indeed the frequency.
+which turns out to be the vacuum oscillation frequency. Here $E=p$ is approximately the energy of the neutrino.
 
-To work out the exact solutions, we utilize the Schr\"{o}dinger equation. The wave function in flavor basis is related to wave function in mass basis through a unitary matrix $\mathbf U$,
+To work out the exact solutions, I will utilize the Schr\"{o}dinger equation. The wave function in flavor basis $\Psi^{(\ff)}$ is related to the wave function in mass basis $\Psi^{(\vv)}$ through a unitary mixing matrix $\mathbf U$,
 \begin{equation}
-\Psi^{(f)} = \mathbf{U}\Psi^{(v)},
+\Psi^{(\mathrm f)} = \mathbf{U}\Psi^{(\mathrm v)},
+\label{chap:vacuum-eqn:wavefunction}
 \end{equation}
-where $\Psi^{(f)}$ is the wave function in flavor basis and $\Psi^{(v)}$ is the wave function in vacuum mass basis. Upper index ${}^{(v)}$ or ${}^{(f)}$ is used to denote the basis. The rotation matrix is related to the vacuum mixing angle $\theta_{\mathrm v}$ is
+where the upper indice ${}^{(v)}$ and ${}^{(f)}$ are used to denote the bases. The mixing matrix can be expressed using vacuum mixing angle $\theta_{\vv}$
 \begin{equation}
-\mathbf{U} = \begin{pmatrix} \cos\theta_v & \sin \theta_v \\ -\sin \theta_v & \cos \theta_v \end{pmatrix}.
+\mathbf{U} = \begin{pmatrix} \cos\theta_\vv & \sin \theta_\vv \\ -\sin \theta_\vv & \cos \theta_\vv \end{pmatrix}.
 \end{equation}
-In vacuum mass basis, the neutrinos have a free propagation Hamiltonian, which is given by
+In vacuum mass basis, the neutrino has a free propagation Hamiltonian which is given by
 \begin{equation}
-\mathbf H^{(v)} = \begin{pmatrix} E_1 & 0 \\
+\mathbf H^{(\vv)} = \begin{pmatrix} E_1 & 0 \\
 0 & E_2
-\end{pmatrix},
+\end{pmatrix}.
 \end{equation}
-where $E_i$ is defined in Eqn.~\ref{chap:basics-section:neutrinos-eqn:energy-taylor}.
-To first order, the Hamiltonian becomes
-\begin{align*}
-\mathbf H^{(v)} &= \frac{1}{2E} \begin{pmatrix}
+To the first order, the Hamiltonian becomes
+\begin{align}
+\mathbf H^{(\vv)} &= \frac{1}{2E} \begin{pmatrix}
 m_1^2 & 0 \\
 0 & m_2^2
-\end{pmatrix} + E \mathbf{I}\\
+\end{pmatrix} + E \mathbf{I} \nonumber \\
 & =  \frac{1}{4E} \begin{pmatrix}
-m_1^2 - m_2^2 & 0 \\
-0 & m_2^2 - m_1^2
-\end{pmatrix} \\
-&\phantom{=}+ \frac{m_2^2 + m_1^2}{4E} \mathbf{I} + E \mathbf{I},
-\end{align*}
-where the identity matrices only give us an overall phase so we drop them. With the definition that $\delta m^2 = m_2^2 - m_1^2$ The vacuum Hamiltonian in mass basis is simplify
+ - \delta m^2 & 0 \\
+0 & \delta m^2
+\end{pmatrix}  + \left(\frac{m_2^2 + m_1^2}{4E}  + E \right) \mathbf{I}.
+\end{align}
+Because a multiple of the identity matrix only gives an global phase to the neutrino flavor wave function, I will neglect it from now on:
 \begin{equation}
 \mathbf H^{(v)} =  \frac{\delta m^2}{4E} \begin{pmatrix}
 -1 & 0 \\
 0 & 1
-\end{pmatrix} = -\frac{\delta m^2}{4E} \sigma_3 = -\frac{\omega_{v}}{2}\sigma_3 ,
+\end{pmatrix} = -\frac{\delta m^2}{4E} \sigma_3 = -\frac{\omega_{v}}{2}\sigma_3.
 \end{equation}
-which leads to the simple solution for the wave function in mass basis
+The Schr\"{o}dinger equation has a simple solution in mass basis,
 \begin{equation}
 \Psi^{(v)}(t) = \begin{pmatrix}
 c_1(0) e^{i \omega_v t/2 } \\
@@ -68,67 +67,70 @@ c_2(0) e^{ -i\omega_v t/2 }
 % c_2(0)
 % \end{pmatrix}.
 % \end{equation}
-In flavor basis, the wave function at anytime is related to wave function in mass basis,
+Using Eqn.~\ref{chap:vacuum-eqn:wavefunction}, I obtain the wave function at anytime is related to wave function in mass basis,
 \begin{align}
 \Psi^{(f)}(t) &= \mathbf{U}\Psi^{(v)}(t) \\
 & = \begin{pmatrix} \cos\theta_v & \sin \theta_v \\ -\sin \theta_v & \cos \theta_v \end{pmatrix} \begin{pmatrix} c_1(0) e^{i\omega_v t/2 } \\
 c_2(0) e^{ -i\omega_v t/2 }    \end{pmatrix} .
+\label{chap:vacuum-eqn:wavefuncion-time}
 \end{align}
 
-In many astrophysical neutrino sources such as the solar core, electron neutrinos are most abundant. Thus initial condition is usually assumed to be electron flavor in the calculation which leads to the survival probability of electron flavor
+Alternatively, I can also determine the Hamiltonian in flavor basis first, which is
+%then solve the Sch\"{o}dinger equation. I will not show the steps here, however, the Hamiltonian in flavor basis is presented for future use,
+\begin{equation}
+\mathbf H^{(\ff)} = U H^{(\vv)} U^\dagger = -\frac{\omega_v}{2}\cos 2\theta_v \sigma_3 + \frac{\omega_v}{2} \sin 2\theta_v \sigma_1.
+    \label{chap:basics-sec:vacuum-osc-eqn:hamiltonian-vacuum}
+\end{equation}
+By solving the Schr\"{o}dinger equation, I will obtain the same wave function as in Eqn.~\ref{chap:vacuum-eqn:wavefuncion-time}.
+
+%In many astrophysical neutrino sources such as the solar core, electron neutrinos are the most abundant. Thus the initial condition is usually assumed to be electron flavor in the calculation which leads to the survival probability of electron flavor
+The probability for an electron flavor neutrino at time $t$ is
 \begin{equation}
 P(\nu_e,t) = 1-\sin^2(2\theta_v)\sin^2\left( \frac{\omega_v t}{2} \right).
 \end{equation}
-Since neutrinos travel with velocity approximately the speed of light, we use $L = t$ where $L$ is the distance traveled. The survival probability is
+Since the neutrino travels with approximately the speed of light, the electron neutrino survival probability at distance $L$ from the source is
 \begin{equation}
-P(\nu_e,L) =  1-\sin^2(2\theta_v)\sin^2\left( \frac{\omega_v}{2} L \right).
+P(\nu_e,L) =  1-\sin^2(2\theta_\vv)\sin^2\left( \frac{\omega_\vv}{2} L \right).
 \end{equation}
-The important parameter is the oscillation length of the neutrino flavor conversion, $1/\omega_v$. This confirms our qualitative method result Eqn.~\ref{chap:basics-section:neutrinos-eqn:qualitative-method-frequency}. This result plotted in Fig.~\ref{chap:basics-section:neutrinos-fig:vacuum-2-flavor-osc} clearly shows the oscillatory behavior. The oscillation length is determined by characteristic energy scale $\omega_v$, while the oscillation amplitude is determined by $\sin^2(2\theta_v)$.
+An important parameter in vacuum oscillations is the oscillation length of the neutrino flavor conversion, $1/\omega_v$. This confirms our qualitative method result in Eqn.~\ref{chap:basics-section:neutrinos-eqn:qualitative-method-frequency}. I have plotted this result in Fig.~\ref{chap:basics-section:neutrinos-fig:vacuum-2-flavor-osc} which clearly shows the oscillatory behavior. The oscillation length is determined by the characteristic energy scale $\omega_v$, while the oscillation amplitude is determined by $\sin^2(2\theta_v)$.
 
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{chapters/assets/basics/neutrino-vaccum-osc-2-flavor.pdf}
-    \caption{Electron flavor neutrino survival probability in vacuum oscillations in two flavors scenario. Mixing angle is determined by $\sin^2\theta=0.30 \approx \sin^2 \theta_{12}$.}
+    \caption{The electron flavor neutrino survival probability in vacuum oscillations as a function of distance $L$ which is measure in terms of vacuum oscillation $\omega_\vv$. The mixing angle is given by $\sin^2\theta_\vv=0.30 \approx \sin^2 \theta_{12}$.}
     \label{chap:basics-section:neutrinos-fig:vacuum-2-flavor-osc}
 \end{figure}
 
-Alternatively, we can find out the Hamiltonian in flavor basis first then solve the Sch\"{o}dinger equation. I will not show the steps here. However, the Hamiltonian in flavor basis is calculated for future use,
-\begin{equation}
-\mathbf H^{(f)} = -\frac{\omega_v}{2}\cos 2\theta_v \sigma_3 + \frac{\omega_v}{2} \sin 2\theta_v \sigma_1.
-    \label{chap:basics-sec:vacuum-osc-eqn:hamiltonian-vacuum}
-\end{equation}
+
 
 \begin{figure}
 	\centering
 	\begin{subfigure}[t]{0.48\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{chapters/assets/basics/masses-nh}
-		\caption{Normal hierarchy. The third mass is heavier than the first two masses.}
+		\caption{Normal hierarchy: the third mass is heavier than the first two.}
     \label{chap:basics-sec:flavor-isospin-pic-fig:masses-nh}
 	\end{subfigure}
 	\quad
 	\begin{subfigure}[t]{0.48\textwidth}
 		\centering
 		\includegraphics[width=\textwidth]{chapters/assets/basics/masses-ih}
-		\caption{Inverted hierarchy. The third mass is smaller than the first two masses.}
+		\caption{Inverted hierarchy: the third mass is smaller than the first two.}
     \label{chap:basics-sec:flavor-isospin-pic-fig:masses-ih}
 	\end{subfigure}
-	\caption{Three masses of neutrinos. The difference between the first two masses is responsible for solar neutrino oscillations and the difference between the third mass and the first two is responsible for atmospheric neutrino oscillations.}
+	\caption{The order of the three neutrino masses. The difference between the first two masses is responsible for solar neutrino oscillations and the difference between the third mass and the first two is responsible for atmospheric neutrino oscillations.}
     \label{chap:basics-sec:flavor-isospin-pic-fig:masses}
 \end{figure}
 
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{chapters/assets/basics/vacuum-oscillations-3-flavor.pdf}
-    \caption{Neutrino vacuum oscillations with three flavors. The solid lines represent normal hierarchy and the dashed lines represent inverted hierarchy. Mixing angles are determined by $\sin^2\theta_{12}=0.30$, $\sin^2\theta_{13}=0.023$, $\sin^2\theta_{23}=0.41$, while the mass differences are $\delta m_{21}^2 = 7.9\times 10^{-5}\mathrm{eV}$, $\delta m^2_{23}=2.7\times 10^{-3}\mathrm{eV}$. The energy of the neutrinos is 1MeV.}
+    \caption{The probabilities for a $1MeV$ neutrino, which is in the electron flavor initially, in different flavors as functions of the distance. Neutrino vacuum oscillations with three flavors. The solid lines represent the normal hierarchy and the dashed lines represent the inverted hierarchy. The mixing angles are $\sin^2\theta_{12}=0.30$, $\sin^2\theta_{13}=0.023$, and $\sin^2\theta_{23}=0.41$, respectively, and the mass differences are $\delta m_{21}^2 = 7.9\times 10^{-5}\mathrm{eV^2}$ and $\delta m^2_{23}=2.7\times 10^{-3}\mathrm{eV^2}$.}
     \label{chap:basics-section:neutrinos-fig:vacuum-3-flavor-osc}
 \end{figure}
 
 
-
-
-
-In fact, there are three flavors and three masses of neutrinos. The mass squared are shown in Fig.~\ref{chap:basics-sec:flavor-isospin-pic-fig:masses}. We have two quite different characteristic energy scales, $\omega_{v,21}=\delta m_{21}^2/2E$ and $\omega_{v,32}=\delta m_{31}^2/2E$. As for flavor mixing, two oscillation periods should occur, as shown in fig.~\ref{chap:basics-section:neutrinos-fig:vacuum-3-flavor-osc}. The fast oscillations are determined by the larger characteristic energy scale, $\omega_{v,32}$, while the slow oscillations are determined by the smaller one $\omega_{v,21}$. For inverted hierarchy, the oscillation frequencies are the same as normal hierarchy since they have the same characteristic energy scales. However ever they develop different oscillation phases.
+In nature, there are three neutrino flavors and, correspondingly, three neutrino mass eigenstates, which are shown in Fig.~\ref{chap:basics-sec:flavor-isospin-pic-fig:masses}. Because there are two different characteristic energy scales, $\omega_{v,21}=\delta m_{21}^2/2E$ and $\omega_{v,32}=\delta m_{31}^2/2E$, two oscillation periods should occur, as shown in Fig.~\ref{chap:basics-section:neutrinos-fig:vacuum-3-flavor-osc}. The fast oscillations are determined by the larger energy scale, $\omega_{v,32}$, while the slow oscillations are determined by the smaller one $\omega_{v,21}$. For the inverted neutrino mass hierarchy (with $m_3 < m_1 < m_2$), the oscillation frequencies are the same as in the normal mass hierarchy (with $m_3>m_2>m_1$) since they have the same characteristic energy scales. However, they will develop different phases in oscillations.
 
 
 
@@ -173,7 +175,7 @@ The precession corresponds to periodic oscillations between flavors.
 \end{figure}
 
 
-For example, in vacuum oscillations, the vacuum oscillation Hamiltonian becomes
+For example, in vacuum oscillations, vacuum oscillation Hamiltonian becomes
 \begin{align*}
 &\frac{\omega_{\mathrm v} }{2}\left( - \cos 2\theta_{\mathrm v } \sigma_3  + \sin 2\theta_{\mathrm{v}} \sigma_1 \right)
 \to  \cos 2\theta_{\mathrm v}\begin{pmatrix}
