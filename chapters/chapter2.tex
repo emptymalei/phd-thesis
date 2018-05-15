@@ -6,6 +6,8 @@
 
 Because the flavor eigenstates of the neutrino are not the same as its propagation eigenstates, it can change flavor while it propagates. To understand its flavor oscillation in vacuum, I will use the two-flavor scenario as an example\footnote{In most physical problems, two-neutrino-flavor scenario is a good approximation. The mass splits between the three mass eigenstates are so different that the corresponding oscillations occur on very diferent length scales. On the right length scale, the two-flavor scenario captures the significant features of the neutrino oscillations of the corresponding mass split.}. I will also explain how to visualize neutrino oscillations using the flavor-isospin picture.
 
+\section{Wave Function Formalism}
+
 Before working out the math, I can estimate the frequency of the oscillations of the neutrino between its flavors. In the natural units, frequency has the same dimension as energy (see Appendix~\ref{chap:app-sec:conventions-subsec:units}). Consider an electron neutrino with moment $p$ which is a superposition of the two mass eigenstates $\ket{\nu_i}$ ($i=1,2$) with masses $m_i$ respectively. Since the neutrino masses are small, I can Taylor expand the energy of each mass eigenstate in terms of the corresponding mass:
 \begin{align}
 E_i^{(v)} & = \sqrt{m_i^2 + p^2 } \nonumber\\
@@ -20,35 +22,35 @@ The constant energy term in the above equation produces a global phase to the fl
 \end{equation}
 which turns out to be the vacuum oscillation frequency. Here $E=p$ is approximately the energy of the neutrino.
 
-To work out the exact solutions, I will utilize the Schr\"{o}dinger equation. The wave function in flavor basis $\Psi^{(\ff)}$ is related to the wave function in mass basis $\Psi^{(\vv)}$ through a unitary mixing matrix $\mathbf U$,
+To work out the exact solutions, I will utilize the Schr\"{o}dinger equation. The wave function in flavor basis $\Psi^{(\ff)}$ is related to the wave function in mass basis $\Psi^{(\vv)}$ through a unitary mixing matrix $\mathsf U$,
 \begin{equation}
-\Psi^{(\mathrm f)} = \mathbf{U}\Psi^{(\mathrm v)},
+\Psi^{(\mathrm f)} = \mathsf{U}\Psi^{(\vv)},
 \label{chap:vacuum-eqn:wavefunction}
 \end{equation}
 where the upper indice ${}^{(v)}$ and ${}^{(f)}$ are used to denote the bases. The mixing matrix can be expressed using vacuum mixing angle $\theta_{\vv}$
 \begin{equation}
-\mathbf{U} = \begin{pmatrix} \cos\theta_\vv & \sin \theta_\vv \\ -\sin \theta_\vv & \cos \theta_\vv \end{pmatrix}.
+\mathsf{U} = \begin{pmatrix} \cos\theta_\vv & \sin \theta_\vv \\ -\sin \theta_\vv & \cos \theta_\vv \end{pmatrix}.
 \end{equation}
 In vacuum mass basis, the neutrino has a free propagation Hamiltonian which is given by
 \begin{equation}
-\mathbf H^{(\vv)} = \begin{pmatrix} E_1 & 0 \\
+\mathsf H^{(\vv)} = \begin{pmatrix} E_1 & 0 \\
 0 & E_2
 \end{pmatrix}.
 \end{equation}
 To the first order, the Hamiltonian becomes
 \begin{align}
-\mathbf H^{(\vv)} &= \frac{1}{2E} \begin{pmatrix}
+\mathsf H^{(\vv)} &= \frac{1}{2E} \begin{pmatrix}
 m_1^2 & 0 \\
 0 & m_2^2
-\end{pmatrix} + E \mathbf{I} \nonumber \\
+\end{pmatrix} + E \mathsf{I} \nonumber \\
 & =  \frac{1}{4E} \begin{pmatrix}
  - \delta m^2 & 0 \\
 0 & \delta m^2
-\end{pmatrix}  + \left(\frac{m_2^2 + m_1^2}{4E}  + E \right) \mathbf{I}.
+\end{pmatrix}  + \left(\frac{m_2^2 + m_1^2}{4E}  + E \right) \mathsf{I}.
 \end{align}
 Because a multiple of the identity matrix only gives an global phase to the neutrino flavor wave function, I will neglect it from now on:
 \begin{equation}
-\mathbf H^{(v)} =  \frac{\delta m^2}{4E} \begin{pmatrix}
+\mathsf H^{(v)} =  \frac{\delta m^2}{4E} \begin{pmatrix}
 -1 & 0 \\
 0 & 1
 \end{pmatrix} = -\frac{\delta m^2}{4E} \sigma_3 = -\frac{\omega_{v}}{2}\sigma_3.
@@ -69,7 +71,7 @@ c_2(0) e^{ -i\omega_v t/2 }
 % \end{equation}
 Using Eqn.~\ref{chap:vacuum-eqn:wavefunction}, I obtain the wave function at anytime is related to wave function in mass basis,
 \begin{align}
-\Psi^{(f)}(t) &= \mathbf{U}\Psi^{(v)}(t) \\
+\Psi^{(f)}(t) &= \mathsf{U}\Psi^{(v)}(t) \\
 & = \begin{pmatrix} \cos\theta_v & \sin \theta_v \\ -\sin \theta_v & \cos \theta_v \end{pmatrix} \begin{pmatrix} c_1(0) e^{i\omega_v t/2 } \\
 c_2(0) e^{ -i\omega_v t/2 }    \end{pmatrix} .
 \label{chap:vacuum-eqn:wavefuncion-time}
@@ -78,7 +80,7 @@ c_2(0) e^{ -i\omega_v t/2 }    \end{pmatrix} .
 Alternatively, I can also determine the Hamiltonian in flavor basis first, which is
 %then solve the Sch\"{o}dinger equation. I will not show the steps here, however, the Hamiltonian in flavor basis is presented for future use,
 \begin{equation}
-\mathbf H^{(\ff)} = U H^{(\vv)} U^\dagger = -\frac{\omega_v}{2}\cos 2\theta_v \sigma_3 + \frac{\omega_v}{2} \sin 2\theta_v \sigma_1.
+\mathsf H^{(\ff)} = U H^{(\vv)} U^\dagger = -\frac{\omega_v}{2}\cos 2\theta_v \sigma_3 + \frac{\omega_v}{2} \sin 2\theta_v \sigma_1.
     \label{chap:basics-sec:vacuum-osc-eqn:hamiltonian-vacuum}
 \end{equation}
 By solving the Schr\"{o}dinger equation, I will obtain the same wave function as in Eqn.~\ref{chap:vacuum-eqn:wavefuncion-time}.
@@ -134,69 +136,86 @@ In nature, there are three neutrino flavors and, correspondingly, three neutrino
 
 
 
-\section{\label{chap:basics-sec:flavor-isospin-pic}Flavor Isospin Picture of Neutrino Oscillations}
+\section{\label{chap:basics-sec:flavor-isospin-pic}Flavor Isospin Formalism}
 
 
 \begin{figure}
     \centering
     \vspace*{-10pt}
     \includegraphics[width=\textwidth]{chapters/assets/basics/flavor-isospin-illus}
-    \caption{In the flavor isospin picture, a flavor isospin pointing upward indicates that the neutrinos are in electron flavor, while the downward direction indicates the other flavor, such as the muon flavor.}
+    \caption{In the flavor isospin picture, a flavor isospin pointing upward, i.e., along the third axis in flavor space, indicates that the neutrino is in the electron flavor, while the downward direction indicates the other flavor, such as the muon flavor.}
     \label{chap:basics-sec:flavor-isospin-pic-fig:flavor-isospin-illus}
 \end{figure}
 
-In principle, the oscillations in two flavor scenario are consequences of the Hamiltonian in this two-level quantum system. It is known that two-level quantum systems are visualized using the Bloch sphere. In the realm of neutrino physics, flavor isospin was introduced for such visualizations~\cite{Duan2006b}. The Hamiltonian for neutrino oscillations in vacuum (Eqn.~\ref{chap:basics-sec:vacuum-osc-eqn:hamiltonian-vacuum}) and in matter (Eqn.~\ref{chap:basics-sec:msw-eqn:hamiltonian-matter-effect}) can be reformulated into vector forms.
+The oscillations in the two flavor scenario are consequences of the Hamiltonian in this two-level quantum system. It is known that two-level quantum systems can be visualized using the Bloch sphere. In the realm of neutrino physics, the neutrino flavor isospin was introduced for such purpose~\cite{Duan2006b}. The Hamiltonian for neutrino oscillations can be reformulated into a vector form.
 
-We start with the vector form of Hamiltonian for vacuum oscillations. Mathematically speaking, we will cast every two by two matrix into the quaternian basis,
+Every two-by-two Hermitian matrix can be expanded in the quaternian basis. For example, the Hamiltonian for neutrino oscillations in vacuum can be written as
 \begin{equation}
-    H^{(f)} = - \frac{\vec{\sigma} }{2}\cdot \vec H.
+\mathsf H^{(\ff)} = - \frac{\vec{\sigma} }{2}\cdot {\vec{H}}^{(\ff)},
 \end{equation}
-Meanwhile, the state of neutrinos is represented by the flavor isospin, which is defined as
+where
 \begin{equation}
-    \vec s = \Psi^{\dagger} \frac{\vec{\sigma} }{2} \Psi.
+\sigma_1 =  \begin{pmatrix}
+0 & 1 \\
+1 & 0
+\end{pmatrix}, \sigma_2 =  \begin{pmatrix}
+0 & -\ii \\
+\ii & 0
+\end{pmatrix},  \sigma_3 =  \begin{pmatrix}
+1 & 0 \\
+0 & -1
+\end{pmatrix}
 \end{equation}
-As shown in Fig.~\ref{chap:basics-sec:flavor-isospin-pic-fig:flavor-isospin-illus}, the directions of the flavor isospin tell us the flavor content of the neutrino. We choose the direction of the third axis in flavor isospin space to point upward, so that a flavor isospin pointing upward indicates electron flavor by definition. In the flavor isospin formalism, the electron flavor survival probability is related to the third component of the flavor isospin,
+are the three Pauli matrices. I will use $\vec{}$ to denote vectors in flavor space.
+Meanwhile, the flavor quantum state of the neutrino is represented by the flavor isospin, which is defined as
+\begin{equation}
+    \vec s^{(\ff)} = {\Psi^{(\ff)}}^{\dagger} \frac{\vec{\sigma} }{2} \Psi^{(\ff)}.
+\end{equation}
+As shown in Fig.~\ref{chap:basics-sec:flavor-isospin-pic-fig:flavor-isospin-illus}, the directions of the flavor isospin in flavor space tell us the flavor content of the neutrino. A flavor isospin pointing upward in flavor space, i.e., along the direction of the third axis, denotes the electron flavor by definition. In the flavor isospin formalism, the electron flavor survival probability is
 \begin{equation*}
-P = \frac{1}{2} + s_3.
+P = \frac{1}{2} + s^{{(\ff)}}_3,
+\label{chap:basics-sec:flavor-isospin-pic-eqn:probability-flavor}
 \end{equation*}
-Correspondingly, the equation of motion becomes precession around the Hamiltonian,
+where $s^{(\ff)}_3$ is the third component of the flavor isospin.
+Correspondingly, the equation of motion for the flavor isospin describes its precession around the vector $\vec{H}^{(\ff)}$,
 \begin{equation}
-\dot{\vec s} = \vec s \times \vec H.
+\dot{\vec{s}}^{(\ff)} = {\vec{s}}^{(\ff)} \times \vec{H}^{(\ff)}.
 \label{chap:basics-sec:flavor-isospin-pic-eqn:eom-precession}
 \end{equation}
-The precession corresponds to periodic oscillations between flavors.
+This precession corresponds to periodic oscillations between the two neutrino flavors. For example, in vacuum oscillations, the Hamiltonian becomes
+\begin{align*}
+{\mathsf H}^{(f)} \to &\frac{\omega_{\mathrm v} }{2}\left( - \cos 2\theta_{\mathrm v } \sigma_3  + \sin 2\theta_{\mathrm{v}} \sigma_1 \right)
+\to  \omega_\vv\begin{pmatrix}
+ \sin \theta_\vv\\
+0\\
+\cos 2\theta_{\mathrm v}
+\end{pmatrix},
+\end{align*}
+which is a vector of length $\omega_{\mathrm v}$ and tilted away from the third axis by the angle $2\theta_{\mathrm v}$.
 
 \begin{figure}
     \centering
     \vspace*{-20pt}
     \includegraphics[width=0.6\textwidth]{chapters/assets/basics/flavor-isospin-vac-osc}
-    \caption{Vacuum oscillations in flavor isospin picture. Neutrinos starting with electron flavor will follow a precession pattern around the static "Hamiltonian vector" $\vec H$, thus periodic flavor oscillations.}
+    \caption{Vacuum oscillations in the flavor isospin picture. The flavor isospin of a neutrino starting with the electron flavor will precess around the static ``Hamiltonian vector" $\vec H$, which gives periodic flavor oscillations according to Eqn.~\ref{chap:basics-sec:flavor-isospin-pic-eqn:probability-flavor}.}
     \label{chap:basics-sec:flavor-isospin-pic-fig:flavor-isospin-vac-osc}
 \end{figure}
 
-
-For example, in vacuum oscillations, vacuum oscillation Hamiltonian becomes
-\begin{align*}
-&\frac{\omega_{\mathrm v} }{2}\left( - \cos 2\theta_{\mathrm v } \sigma_3  + \sin 2\theta_{\mathrm{v}} \sigma_1 \right)
-\to  \cos 2\theta_{\mathrm v}\begin{pmatrix}
-0\\
-0\\
-\omega_{\mathrm v}
-\end{pmatrix} -\sin 2\theta_{\mathrm v}\begin{pmatrix}
-\omega_{\mathrm v}\\
-0\\
-0
-\end{pmatrix},
-\end{align*}
-which is a vector of length $\omega_{\mathrm v}$ and tilted away from the third axis by the angle $2\theta_{\mathrm v}$. We assume neutrinos start with the electron flavor. Following the equation of motion Eqn.~\ref{chap:basics-sec:flavor-isospin-pic-eqn:eom-precession}, neutrinos precess around vector $\vec H$ that is tilted away from the vertical axis, as shown in Fig.~\ref{chap:basics-sec:flavor-isospin-pic-fig:flavor-isospin-vac-osc}. The oscillation frequency is trivially read out from the precession equation,
-\begin{equation*}
-    \omega_{\mathrm v} = \lvert \vec H_{\mathrm v} \rvert.
-\end{equation*}
+Eqn.~\ref{chap:basics-sec:flavor-isospin-pic-eqn:eom-precession} depicts the precession of the flavor isospin for a neutrino which starts with the electron flavor and propagates in vacuum. The oscillation frequency is trivially read out from Eqn.~\ref{chap:basics-sec:flavor-isospin-pic-eqn:eom-precession},
+\begin{equation}
+\omega_\vv = \lvert \vec{H}^{(\ff)} \rvert
+\end{equation}
 
 
 
 
 
-\section{Conclusion}
 
-Vacuum neutrino oscillations is easily explained and calculated. However, it conveys the message of the nature of neutrino oscillations. Neutrinos are usually produced in flavor states since they are usually produced in weak interaction. The flavor states do not remain the same during the propagation since the flavor states are not the eigenstates of the propagation Hamiltonian. An extrapolation of this idea is that neutrinos might also oscillate for a constant linear potential. The Hamiltonian would be similar to vacuum Hamiltonian but with different values. One of such situations is neutrinos propagating through a region with constant matter density, which I will explain in Chapter~\ref{chap:matter}.
+
+
+
+
+
+\section{Summary}
+
+Vacuum neutrino oscillations can be easily explained and calculated. However, it conveys the message of the nature of neutrino oscillations. Neutrinos are usually produced in flavor states through weak interactions. The neutrino does not remain in the same flavor state during its propagation because the flavor states are not the eigenstates of the propagation Hamiltonian. An extrapolation of this idea is that neutrinos might also oscillate in a uniform linear potential, the Hamiltonian of which would be similar to vacuum Hamiltonian but with different values. One of such situations is that neutrinos propagate through a region with a constant matter density, which I will explain in the next chapter.

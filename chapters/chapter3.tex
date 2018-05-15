@@ -32,158 +32,67 @@ I will take a step further and interpret parametric resonance~\cite{Akhmedov2000
 
 
 
-\section{\label{chap:basics-section:astro}Stars as Neutrino Factories}
-
-Astrophysical neutrino sources such as cores of stars, AGN, Gamma-ray bursts, and supernovae, reveal a lot of information about the sources. Though neutrinos are weakly interacting particles rendering them hard to detect, it is an important subject to theoretically inspect neutrino productions in astrophysical processes.
-
-One of the neutrino factories is the stellar core. Numerous nuclear reactions as well thermal neutrino production produce luminous neutrinos. In this section, the nuclear reactions in stars are reviewed as the background of neutrino oscillations in matter.
-
-% \subsection{Nuclear Reactions in Sun and Solar Neutrino Flux}
-
-The most important nuclear reactions in our Sun are the pp chain and CNO cycle. Through different stages of its life, a star experiences different nuclear reactions. Fig.~\ref{fig:pp_Chain_Branching} shows the dominant energy source of one solar mass stars. In order to calculate the neutrino spectrum we need the neutrino production rate in each reaction and the branching ratios. The processes that emits neutrinos are the reactions in red in Fig~\ref{fig:pp_Chain_Branching}, which are~\cite{Altmann2001}
-\begin{align}
-&\mathrm{p+p\to {}^2H + e^+ +\nu_e},  & \mathrm{\leq 0.422MeV}\\
-&\mathrm{{}^7Be + e^- \to {}^7Li + \nu_e} , &\text{0.862MeV for 90\%}\\
-&&\qquad \text{0.384MeV for 10\%} \\
-&\mathrm{{}^8B \to {}^8Be^* +e^+ +\nu_e},  & \mathrm{\leq 15 MeV}
-\end{align}
+% \section{\label{chap:basics-section:astro}Stars as Neutrino Factories}
 
 
+% In the following sections of this chapter, I will discuss neutrino oscillations in the Sun as well as in supernovae. Solar neutrinos go through a region with smoothly decreasing matter density while supernova neutrinos go through a region with turbulent matter background~\cite{Friedland2006,Borriello2014}. Neutrino oscillations within the supernova is quite different from neutrino oscillations in the Sun.
 
 
-\begin {figure*}%[!hbtp]
-\centering
-\begin{adjustbox}{width=\textwidth}
-\begin{tikzpicture}[sibling distance=15em,
-  every node/.style = {shape=rectangle,
-    draw, align=center}
-  edge from parent/.style = {draw, -latex},]]
-  \node {\color{red}$\mathrm{p+p\to {}^2H + e^+ +\nu_e}$ }
-    child { node {$\mathrm{p+{}^2H \to {}^3He + \gamma}$}
-      child { node {$\mathrm{{}^3He+{}^3He \to {}^4 He + 2p }$}
-          edge from parent node [left] {83.30\% (pp-I) } }
-      child { node {$\mathrm{{}^3He+{}^4He \to {}^7 Be + \gamma }$}
-        child { node {
-\color{red}$\mathrm{{}^7Be + e^- \to {}^7Li + \nu_e}$
-        }
-        child { node { $\mathrm{{}^7Li + p \to 2{}^4He }$} }
-        edge from parent node [left] {99.88\% (pp-II) } }
-        child { node { $\mathrm{{}^7 Be + p \to {}^8 B + \gamma}$}
-        child { node { \color{red}$\mathrm{{}^8B \to {}^8Be^* +e^+ +\nu_e}$ }
-		child { node { $\mathrm{{}^8Be^* \to 2 {}^4He }$ } }}
-        edge from parent node [right] {0.12\% (pp-III) } }
-        edge from parent node [right] {16.70\%  } }};
-\end{tikzpicture}
-\end{adjustbox}
-\caption{ pp chain with branching ratio. The branching ratios are obtained from Ref.~\cite{Altmann2001} by Michael Altmann et al. }
-\label{fig:pp_Chain_Branching}
-\end{figure*}
+\section{\label{chap:matter-sec:solar-neutrinos}Neutrino Oscillations in the Sun}
 
 
-% \begin{figure}[!hbtp]
-% \centering
-% \includegraphics[width=\columnwidth]{chapters/assets/solar/cno_cycle.png}
-% \caption{CNO cycle illustration~\cite{Adelberger2011a}.}
-% \label{fig:cno_cycle}
-% \end{figure}
-
-
-Solar neutrinos are mostly produced in pp reaction, Be electron capture and B decay, which are called pp neutrinos, Be neutrinos and B neutrinos respectively. Even without knowledge of the detailed reactions, the conservation of lepton numbers will lead to the overall neutrino production
+Flavor conversion occurs as long as their propagation eigenstates are different from their flavor eigenstates. Since the neutral current interactions between the neutrinos and the matter is independent of the flavors, as shown in Fig.~\ref{chap:matter-fig:nc}, I only include the charged current interactions in the Hamiltonian, which is an effective potential for electron flavor. In flavor basis, the effective potential is
 \begin{equation}
-\mathrm{4p+2e^- \to {}^4He + 2\nu_e },
-\end{equation}
-where it is important to notice that two neutrinos are produced in each reaction. This overall reaction can either be pp chain or CNO cycle.
-
-Using this simple relation, we can estimate the neutrino number flux emitted by our sun. The kinetic energy produced in each reaction is the difference between the initial masses and the final masses, $Q_{pp}=4m_p+2m_e-m_{He4}=26.7\mathrm{MeV}$ where the mass of neutrinos are neglected since they are small compared to other particles. On average, each neutrino carries away $0.2\mathrm{MeV}$ energy and the rest is in the form of thermal energy $Q_\gamma=26.3\mathrm{MeV}$~\cite{Adelberger2011a}. Energy flux density of solar photons near Earth is given by the solar constant $S_0$. Since we know that each reaction produces 2 neutrinos while producing thermal energy $Q_\gamma$, the number flux density of neutrinos near Earth is roughly
-\begin{equation}
-\Phi_\nu = 2 \frac{S_0}{Q_\gamma} \approx 6\times 10^{10} \mathrm{cm^{-2}s^{-1}}.
-\end{equation}
-Neutrinos are hard to detect but a large number flux density makes it possible to detect solar neutrinos~\cite{Cleveland1998,Lande2003,McDonald2013}. On the other hand, the neutrinos have a certain energy spectrum due to the composition of nuclear reactions. Inside our Sun, two additional reactions other than pp neutrinos also produce neutrinos which are called pep and hep neutrinos.
-\begin{itemize}
-\item pep neutrinos are produced in
-\begin{equation}
-\mathrm{p + e^- + p \to {}^2H +\nu_e},
-\end{equation}
-which only has a branching ratio 0.4\% instead of the 99.6\% of pp reaction.
-\item hep neutrinos are produced in
-\begin{equation}
-\mathrm{ {}^3He + p \to {}^4He + e^+ \nu_e },
-\end{equation}
-which has a branching ratio of $2\times 10^{-5}\%$. As a comparison, the $\mathrm{{}^3He + {}^3He}$ has a branching ratio $85\%$ and $\mathrm{{}^3He + {}^4He}$ has a branching ratio $15\%$.
-\end{itemize}
-
-Another astronomical lab that we will discuss is supernova explosion. Massive stars with a mass larger than 6−8 solar masses emit a huge amount of photons. However, violent delights have violent ends. Some of those stars would callapose when they run out of fuel. However, the cores will be compressed and reach nuclear density which provide initial bounce to the infalling matter of the stars. Then they will explode violently and become core-collapse supernovae~\cite{Raffelt1996wa}. Those explosions form the most power sources of neutrinos as we know today. The neutrinos emitted from supernova explosions have energy of the order MeV~\cite{Janka2017}. Assume that the neutrino flux from a supernova explosion is $10^{50}\mathrm{ergs\cdot s^{-1}}$. I can estimate the number density of neutrinos at radius $R$ with energy $E$
-\begin{equation*}
-   n \sim  10^{17} \mathrm{cm^{-3}} \left(\frac{100\mathrm{km}}{R}\right)^2 \left(\frac{1\mathrm{MeV}}{E}\right),
-\end{equation*}
-which corresponds to number flux
-\begin{equation*}
-  \Phi \sim 10^{26} \mathrm{cm^{-2} s^{-1}}\left(\frac{100\mathrm{km}}{R}\right)^2 \left(\frac{1\mathrm{MeV}}{E}\right).
-\end{equation*}
-Compared to the neutrino flux at the surface of the Sun, which is of the order $10^{15}\mathrm{cm^{-2} s^{-1}}$, supernova neutrinos is much denser.
-
-In the following sections of this chapter, I will discuss neutrino oscillations in the Sun as well as in supernovae. Solar neutrinos go through a region with smoothly decreasing matter density while supernova neutrinos go through a region with turbulent matter background~\cite{Friedland2006,Borriello2014}. Neutrino oscillations within the supernova is quite different from neutrino oscillations in the Sun.
-
-
-\section{\label{chap:matter}Neutrino Oscillations in the Sun}
-
-
-Flavor conversion occurs as long as their propagation eigenstates are different from their flavor eigenstates. As neutrinos travel from the center of the star through to the surface, we expect neutrino propagation eigenstates in such matter background to be different from flavor states in general~\cite{wolf78}. Using the fact that the neutral current interactions between the neutrinos and the matter is independent of the flavor, we only include the charged current interactions, which will produce an effective potential for electron flavor that is different from other flavors. In flavor basis, the effective potential is
-\begin{equation}
-V=\frac{\sqrt{2}G_{\mathrm F} n_{\mathrm e} }{2} \sigma_3,
+\mathsf V^{(\ff)} = \frac{\sqrt{2}G_{\mathrm F} n_{\mathrm e} }{2} \vec \sigma_3,
 \end{equation}
 where $G_{\mathrm F}$ is Fermi constant, $n_{\mathrm e}$ is number density of electrons. We also remove the terms proportional to the identity in this potential since they do not change the probability for flavors. The Hamiltonian with matter effect is the combination of vacuum oscillation and matter effect, which is, in flavor basis,
 \begin{equation}
-H_m = \frac{ \omega_v }{2}\begin{pmatrix} -\cos 2\theta_v & \sin 2 \theta_v \\ \sin 2\theta_v & \cos 2\theta_v  \end{pmatrix} + \frac{\sqrt{2}G_F n_e}{2} \sigma_3,
+\mathsf H^{(\ff)} = \frac{ \omega_\vv }{2}\begin{pmatrix} -\cos 2\theta_\vv & \sin 2 \theta_\vv \\ \sin 2\theta_\vv & \cos 2\theta_\vv  \end{pmatrix} + \frac{\sqrt{2}G_{\mathrm F} n_{\mathrm e}}{2} \sigma_3,
 \end{equation}
 where we used the result of flavor basis vacuum oscillation Hamiltonian
 \begin{align}
-H_v^{(f)}& = \mathbf{U} H_v^{(v)}\mathbf{U^\dagger} \\
-&= \frac{ \omega_v }{2}\begin{pmatrix} -\cos 2\theta_v & \sin 2 \theta_v \\ \sin 2\theta_v & \cos 2\theta_v  \end{pmatrix}.
+\mathsf H_\vv^{(\ff)}& = \mathsf{U} \mathsf H_\vv \mathsf{U}^\dagger \\
+&= \frac{ \omega_\vv }{2}\begin{pmatrix} -\cos 2\theta_\vv & \sin 2 \theta_\vv \\ \sin 2\theta_\vv & \cos 2\theta_\vv  \end{pmatrix}.
 \end{align}
 Utilizing Pauli matrices and the so called matter potential $\lambda = \frac{\sqrt{2}G_F n_e}{2}$, it is rewritten as
 \begin{equation}
-H_m = \left(\frac{\lambda}{2} -\frac{ \omega_v }{2} \cos 2\theta_v \right) \boldsymbol{\sigma}_3  + \frac{ \omega_v }{2} \sin 2\theta_v \boldsymbol{\sigma}_1.
+\mathsf H_\mm^{(\ff)} = \left(\frac{\lambda}{2} -\frac{ \omega_\vv }{2} \cos 2\theta_\vv \right) {\sigma}_3  + \frac{ \omega_\vv }{2} \sin 2\theta_\vv {\sigma}_1.
 \label{chap:basics-sec:msw-eqn:hamiltonian-matter-effect}
 \end{equation}
 Due to the off-diagonal terms in the Hamiltonian, the system will experience oscillations in flavor. A resonance, i.e., maximum mixing, dominates the system when the diagonal terms becomes zero,
 \begin{equation}
-\frac{\lambda}{2} -\frac{ \omega }{2} \cos 2\theta_v  = 0,
+\frac{\lambda}{2} -\frac{ \omega }{2} \cos 2\theta_\vv  = 0,
 \end{equation}
-which gives us the MSW resonance condition.
+which gives us the Mikheyev--Smirnov--Wolfenstein (MSW) resonance condition.
 
 
-\section{\label{chap:basics-sec:msw}Mikheyev--Smirnov--Wolfenstein Effect}
+% \section{\label{chap:basics-sec:msw}Mikheyev--Smirnov--Wolfenstein Effect}
 
+For the neutrinos produced in the Sun, they travel from the center of the Sun to the surface. The matter density is not uniform on the path of these solar neutrinos. The neutrino propagation eigenstates are different from flavor states in general~\cite{wolf78}. The importance of matter effect to our understanding of solar neutrinos is that it modifies the oscillation, depending on the matter density variation. For the Sun, the density change is not too dramatic. The neutrinos go through adiabatic evolution during the propagation, which means that the instantaneous eigenstates and eigenvectors of Hamiltonian is good enough for the time dependent Schr\"{o}dinger equation.
 
-
-
-
-The importance of matter effect to our understanding of solar neutrinos is that it modifies the oscillation, depending on the matter density profile. For a solar mass star, we have almost adiabatic evolution of the neutrinos, which means that the instantaneous eigenstates and eigenvectors of Hamiltonian is good enough for the time dependent Schr\"{o}dinger equation.
-
-
-For simplicity, we define the vacuum frequency and the 'hatted' dimensionless quantities
+For simplicity, we define the 'hatted' dimensionless matter potential using the vacuum oscillation frequency
 \begin{align}
-\hat\lambda & = \frac{\lambda}{\omega_v}.
+\hat\lambda & = \frac{\lambda}{\omega_\vv}.
 \end{align}
 The eigenstates, derived by diagonalizing the Hamiltonian, are
 \begin{align}
-E_1 &= \frac{\omega_v}{2}\sqrt{ \hat\lambda +1 -  2\hat\lambda \cos 2\theta_v }\\
-E_2 &= -\frac{\omega_v}{2}\sqrt{ \hat\lambda +1 -  2\hat\lambda \cos 2\theta_v }.
+E_1 &= \frac{\omega_\vv}{2}\sqrt{ \hat\lambda +1 -  2\hat\lambda \cos 2\theta_\vv }\\
+E_2 &= -\frac{\omega_\vv}{2}\sqrt{ \hat\lambda +1 -  2\hat\lambda \cos 2\theta_\vv }.
 \end{align}
 
 
-\begin{figure}
+\begin{figure}[htbp]
 \centering
-\includegraphics[width=0.7\columnwidth]{chapters/assets/solar/mswEnergyLevels.jpg}
-\caption{The two energy levels in matter effect. The energy has unit $\omega_v/2$ while the potential has unit $\omega_v$. $\cos2\theta=0.9$ is applied.}
+\includegraphics[width=0.7\columnwidth]{chapters/assets/matter/mswEnergyLevels}
+\caption{The two energy levels in matter effect. The potential has unit $\omega_\vv$. I have used $\sin^2\theta_\vv = 0.02 \approx \sin^2 \theta_{13}$.}
 \label{fig:mswEnergyLevels}
 \end{figure}
 
-Fig.~\ref{fig:mswEnergyLevels} shows the two energy levels. For very high matter density, which interact with electron neutrinos more through charged current, electron flavor is composed almost with heavy propagation eigenstate. However, as the matter density becomes lower, the heavy propagation state will be gradually transformed to the other flavors since electron flavor in vacuum is composed mostly the light mass state. The resonance, which is the closest point of energy levels, happens at density $n_{\mathrm e} = 2\omega_v \cos(2\theta_v)/\sqrt{2}G_F$ which depends on $\omega_v$. Neutrinos with different energies have different resonance, which will significantly reshape the neutrino spectra for different flavors.
+Fig.~\ref{fig:mswEnergyLevels} shows the two energy levels for a neutrino propagating in different matter potentials. For very high matter density, the electron flavor is almost comparable to heavy eigenstate. However, as the matter density becomes lower, the heavy propagation state will be gradually transformed to the other flavors. As the neutrinos reach the surface, the matter density is approaching vacuum. The heavy state of the neutrino is approaching electron flavor state. The resonance, which is the closest point of energy levels, happens at density $n_{\mathrm e} = 2\omega_\vv \cos(2\theta_\vv)/\sqrt{2}G_{\mathrm F}$ which depends on $\omega_\vv$. Resonances of neutrinos with different energies happens at different matter densities, which will significantly reshape the neutrino energy spectra. Even though only the electron flavor neutrinos are produced in the Sun, the neutrino flavor conversion to the other flavors is enhanced by the matter interactions, in addition to the vacuum oscillation. The exact neutrino flavor conversion is much more complicated than the MSW effect. As an approximation, the MSW transition is good enough for the solar neutrinos flavor oscillations~\cite{Lopes2013a}.
 
-One of the interesting fact about MSW effect is the MSW triangle shown in Fig.~\ref{chap:basics-sec:msw-fig:msw-triangle}. The survival probability of electron flavor neutrinos is plotted against $\log (\lambda/\omega_v)$ and $\log (\sin^2 2\theta_v)$. The low survival probability region is a triangle shape. Qualitatively speaking, large conversion happens when matter density is not too small since a sufficient central potential is required for the level crossing.
-\begin{figure}
+One of the interesting fact about MSW effect is the MSW triangle shown in Fig.~\ref{chap:basics-sec:msw-fig:msw-triangle}. The survival probability of the electron flavor neutrinos is plotted against $\log (\lambda/\omega_\vv)$ and $\log (\sin^2 2\theta_\vv)$. Qualitatively speaking, large conversion happens when matter density is not too small since a sufficient central potential is required for the level crossing. This leads to the triangle shape of the low survival probability region.
+
+\begin{figure}[htbp]
     \centering
     \includegraphics[width=0.9\textwidth]{chapters/assets/basics/msw-triangle.png}
     \caption{MSW triangle. The horizontal axis is related to the the mixing angles, and the vertical axis is related to the matter potential in the center of the Sun. The colors are the survival probabilities of electron flavor. The region of large conversions, or small survival probabilities, forms a triangle. The larger the mixing angle, the larger range of matter potential for large conversions.}
@@ -191,13 +100,23 @@ One of the interesting fact about MSW effect is the MSW triangle shown in Fig.~\
 \end{figure}
 
 
-In summary, even though only electron flavor neutrinos are produced in the core of a solar mass star, the neutrino flavor conversion to the other flavors is enhanced by matter interaction, in addition to the vacuum oscillation. However, the actual neutrino flavor conversion is much more complicated than just MSW effect and almost impossible to calculate without knowing the very exact matter profile of the Sun even with the time-dependent small perturbations to the density. As an approximation, MSW transition is good enough for the solar neutrinos~\cite{Lopes2013a}.
 
-\section{\label{chap:matter-sec:flavor-isospin}Flavor Isospin Picture }
+
+
+% \section{\label{chap:matter-sec:flavor-isospin}Flavor Isospin Formalism}
+
+
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.4\textwidth]{chapters/assets/matter/matter-effect-notsolarge-density}
+    \caption{Neutrino oscillations in flavor isospin picture, with the presence of matter potential. The flavor isospin is denoted as red dashed arrow. It starts from electron flavor. The two gray vectors stand for the Hamiltonians of vacuum $\vec H_{\mathrm v}$ and matter $\vec H_{\mathrm m}$.}
+    \label{chap:basics-sec:flavor-isospin-pic-fig:matter-effect-notsolarge-density}
+\end{figure}
 
 MSW effect is also easily explained using flavor isospin picture. The Hamiltonian in flavor isospin picture
 \begin{align*}
-    H_m =& \frac{\omega_{\mathrm{v}}}{2}\left( - \cos 2\theta_{\mathrm{v}} \boldsymbol{\sigma_3} + \sin 2\theta_{\mathrm{v}} \boldsymbol{\sigma_1} \right)   + \frac{\lambda(x)}{2} \boldsymbol{\sigma_3} \\
+    \mathsf H_\mm = & \frac{\omega_{\mathrm{v}}}{2}\left( - \cos 2\theta_{\mathrm{v}} {\sigma_3} + \sin 2\theta_{\mathrm{v}} {\sigma_1} \right)   + \frac{\lambda(x)}{2} {\sigma_3} \\
     \to &  \omega_{\mathrm v}\begin{pmatrix}
     - \sin 2\theta_{\mathrm v} \\
     0 \\
@@ -213,13 +132,6 @@ where $\vec H_{\mathrm v}$ is vacuum contribution and $\vec H_{\mathrm m}(x)$ is
 
 
 
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.5\textwidth]{chapters/assets/basics/matter-effect-notsolarge-density}
-    \caption{Neutrino oscillations in flavor isospin picture, with the presence of matter potential. The flavor isospin is denoted as red dashed arrow. It starts from electron flavor. The two gray vectors stand for the Hamiltonians of vacuum $\vec H_{\mathrm v}$ and matter $\vec H_{\mathrm m}$.}
-    \label{chap:basics-sec:flavor-isospin-pic-fig:matter-effect-notsolarge-density}
-\end{figure}
-
 
 
 
@@ -227,19 +139,19 @@ where $\vec H_{\mathrm v}$ is vacuum contribution and $\vec H_{\mathrm m}(x)$ is
 	\centering
 	\begin{subfigure}[t]{0.3\textwidth}
 		\centering
-		\includegraphics[width=0.8\textwidth]{chapters/assets/basics/matter-effect-large-density}
+		\includegraphics[width=0.8\textwidth]{chapters/assets/matter/matter-effect-large-density}
 		\caption{High matter density}\label{chap:basics-sec:flavor-isospin-pic-fig:msw-adiabatic-large-density}
 	\end{subfigure}
 	\quad
 	\begin{subfigure}[t]{0.3\textwidth}
 		\centering
-		\includegraphics[width=0.8\textwidth]{chapters/assets/basics/matter-effect-adiabatic}
+		\includegraphics[width=0.8\textwidth]{chapters/assets/matter/matter-effect-adiabatic}
 		\caption{Medium matter density}\label{chap:basics-sec:flavor-isospin-pic-fig:msw-adiabatic-medium-density}
 	\end{subfigure}
 	\quad
 	\begin{subfigure}[t]{0.3\textwidth}
 		\centering
-		\includegraphics[width=0.8\textwidth]{chapters/assets/basics/matter-effect-adiabatic-small-density}
+		\includegraphics[width=0.8\textwidth]{chapters/assets/matter/matter-effect-adiabatic-3}
 		\caption{Low matter density}\label{chap:basics-sec:flavor-isospin-pic-fig:msw-adiabatic-small-density}
 	\end{subfigure}
 	\caption{Flavor isospin picture of neutrino oscillations in matter. $\vec H_{\mathrm v}$ is the vacuum contribution to Hamiltonian, and $\vec H_{\mathrm m}$ corresponds to the matter potential.}\label{chap:basics-sec:flavor-isospin-pic-fig:msw-adiabatic}
@@ -258,7 +170,7 @@ Neutrinos might experience a critical matter density, when the overall Hamiltoni
 
 
 
-\section{\label{chap:matter-sec:background}Background and Formalism}
+\section{\label{chap:matter-sec:background}Equation of Motion for Neutrino Oscillations in Matter}
 
 % \fbox{TODO: Explain why two flavor} didn't add this because the three flavor is really very different.
 
@@ -290,7 +202,7 @@ For arbitrary matter profile, we can always interpret it as perturbations on top
 \end{equation}
 For better understanding of the transition between states as a consequence of the fluctuation of matter density, we use the background matter basis, in which the Hamiltonian is diagonalized in the absence of perturbation $\delta\lambda(r)$, so that the Hamiltonian reads
 \begin{equation}
-    H^{(\mathrm{m})} = -\frac{\omega_m}{2} \sigma_3 + \frac{1}{2} \delta\lambda(r) \cos 2\theta_{\mathrm m} \sigma_3
+    H^{(\mathrm{m})} = -\frac{\omega_\mm}{2} \sigma_3 + \frac{1}{2} \delta\lambda(r) \cos 2\theta_{\mathrm m} \sigma_3
      - \frac{1}{2} \delta\lambda(r) \sin 2\theta_{\mathrm m} \sigma_1,
     \label{eq-hamiltonian-bg-matter-basis-general}
 \end{equation}
@@ -405,7 +317,7 @@ where $N=2$ for two frequency case. To show the destruction effect, the Hamilton
 \mathbf H = \begin{pmatrix}
 0\\
 0\\
-\omega_m
+\omega_\mm
 \end{pmatrix} + \begin{pmatrix}
 A_1 \cos (k_1 r)\\
 -A_1 \sin (k_1 r)\\
@@ -753,7 +665,7 @@ determines the transitions between the two background matter states.
 
 \begin{figure}[!htbp]
         \includegraphics[width=\columnwidth]{chapters/assets/rabi/castle-wall-1}%
-    \caption{Transition probabilities for castle wall matter profile calculated numerically for $\Lambda_2-\Lambda_1=0.4 \Lambda_0$. During the calculation, the energy of neutrinos is $10\,\mathrm{MeV}$, mass-squared difference is $\delta m^2=2.6\times 10^{-3}\,\mathrm{eV^2}$, and the vacuum mixing angle chosen so that $\sin^2(2\theta_v)=0.093$. The background potential $\Lambda_0$ is chosen so that it's half the MSW resonance potential, $\Lambda_0 = \frac{1}{2}\lambda_{\mathrm{MSW}}=\frac{1}{2}\omega_{\mathrm{v}}\cos 2\theta_{\mathrm v}$, and the base frequency is set to $k_0 = 2\pi/X = \omega_{\mathrm{m}}$.
+    \caption{Transition probabilities for castle wall matter profile calculated numerically for $\Lambda_2-\Lambda_1=0.4 \Lambda_0$. During the calculation, the energy of neutrinos is $10\,\mathrm{MeV}$, mass-squared difference is $\delta m^2=2.6\times 10^{-3}\,\mathrm{eV^2}$, and the vacuum mixing angle chosen so that $\sin^2(2\theta_\vv)=0.093$. The background potential $\Lambda_0$ is chosen so that it's half the MSW resonance potential, $\Lambda_0 = \frac{1}{2}\lambda_{\mathrm{MSW}}=\frac{1}{2}\omega_{\mathrm{v}}\cos 2\theta_{\mathrm v}$, and the base frequency is set to $k_0 = 2\pi/X = \omega_{\mathrm{m}}$.
                  }
     \label{fig-akhmedovOscPlt}
 \end{figure}
@@ -819,17 +731,17 @@ As a first step, we solve single frequency matter perturbation
 
 Using the relation between $\eta$ and $\delta\lambda$, we solve out $\eta$.
 \begin{equation}
-   \eta(x) = - \frac{\omega_m}{2}x - \frac{\cos 2\theta_m}{2} \frac{A}{k} \cos (k x + \phi),
+   \eta(x) = - \frac{\omega_\mm}{2}x - \frac{\cos 2\theta_\mm}{2} \frac{A}{k} \cos (k x + \phi),
 \end{equation}
-where we have chosen $\eta(0)=-\frac{\cos 2\theta_m}{2}\frac{A}{k}\cos\phi$.
+where we have chosen $\eta(0)=-\frac{\cos 2\theta_\mm}{2}\frac{A}{k}\cos\phi$.
 The problem is to solve the equation of motion
 \begin{equation}
-   i \frac{d}{dx} \begin{pmatrix} \psi_{b1} \\ \psi_{b2} \end{pmatrix} = \frac{\sin 2\theta_m}{2}\delta\lambda(x) \begin{pmatrix} 0 &  e^{2i\eta(x)} \\   e^{-2i\eta(x)} &  0 \end{pmatrix}  \begin{pmatrix} \psi_{b1} \\ \psi_{b2} \end{pmatrix} .
+   i \frac{d}{dx} \begin{pmatrix} \psi_{b1} \\ \psi_{b2} \end{pmatrix} = \frac{\sin 2\theta_\mm}{2}\delta\lambda(x) \begin{pmatrix} 0 &  e^{2i\eta(x)} \\   e^{-2i\eta(x)} &  0 \end{pmatrix}  \begin{pmatrix} \psi_{b1} \\ \psi_{b2} \end{pmatrix} .
 \end{equation}
 We also define
 \begin{align}
-   h &= \frac{\sin 2\theta_m}{2}\delta\lambda(x)  e^{2i\eta(x)} \\
-   & = \frac{\sin 2\theta_m}{2} A \sin (kx+\phi) e^{i\left( -\omega_m x - \frac{A \cos 2\theta_m}{k} \cos (kx+\phi) \right)},
+   h &= \frac{\sin 2\theta_\mm}{2}\delta\lambda(x)  e^{2i\eta(x)} \\
+   & = \frac{\sin 2\theta_\mm}{2} A \sin (kx+\phi) e^{i\left( -\omega_\mm x - \frac{A \cos 2\theta_\mm}{k} \cos (kx+\phi) \right)},
    \label{chap:matter-sec:deep-jacobi-subsec:single-matter-freq-eqn:single-frequency-hamiltonian-element}
 \end{align}
 so that the equation of motion becomes
@@ -838,17 +750,17 @@ so that the equation of motion becomes
 \end{equation}
 We apply Jacobi-Anger expansion, c.f.~Eqn.~\ref{eqn:jacobi-anger-expansion}, to rewrite the exponential into some plane wave terms~\cite{Patton2014}.
 
-We define $z_k = \frac{A}{k} \cos 2\theta_m$, with which we expand the term
+We define $z_k = \frac{A}{k} \cos 2\theta_\mm$, with which we expand the term
 \begin{equation}
-   e^{-i\frac{\cos 2\theta_m A}{k} \cos (kx +\phi)} = \sum_{n=-\infty}^\infty i^n J_n (-z_k) e^{in (kx +\phi)} =  \sum_{n=-\infty}^\infty (-i)^n J_n (z_k) e^{in (kx +\phi)},
+   e^{-i\frac{\cos 2\theta_\mm A}{k} \cos (kx +\phi)} = \sum_{n=-\infty}^\infty i^n J_n (-z_k) e^{in (kx +\phi)} =  \sum_{n=-\infty}^\infty (-i)^n J_n (z_k) e^{in (kx +\phi)},
 \end{equation}
 where I used $J_n(-z_k) = (-1)^n J_n(z_k)$ for integer $n$.
 The expansion is plugged into the Hamiltonian elements,
 \begin{align}
-   h &= \frac{A \sin 2\theta_m \sin (kx + \phi)}{2} e^{-i\omega_m x } \sum_{n = - \infty}^\infty (-i)^n J_n(z_k) e^{i n ( kx + \phi)} \\
-   & = \frac{A\sin 2\theta_m}{4i} \left( e^{i(kx + \phi)} - e^{-i(kx+\phi)} \right) e^{-i\omega_m x } \sum_{n = - \infty}^\infty (-i)^n J_n(z_k) e^{i n ( kx + \phi)} \\
-   & = \frac{A\sin 2\theta_m}{4i} \left( \sum_{n=-\infty}^\infty e^{i(n+1)} i^n J_n (z_k) e^{i((n+1) k - \omega_m)x}  - \sum_{n'=-\infty}^\infty e^{i(n'-1)} (-i)^{n'}J_{n'}(z_k) e^{i( (n'-1)k - \omega_m)x}  \right)\\
-   & = \frac{A\sin 2\theta_m}{4} \sum_{n=-\infty}^{\infty} e^{in\phi} \left( - (-i)^n \right) \frac{2n}{z_k} J_n (z_k) e^{i(nk-\omega_m)x},
+   h &= \frac{A \sin 2\theta_\mm \sin (kx + \phi)}{2} e^{-i\omega_\mm x } \sum_{n = - \infty}^\infty (-i)^n J_n(z_k) e^{i n ( kx + \phi)} \\
+   & = \frac{A\sin 2\theta_\mm}{4i} \left( e^{i(kx + \phi)} - e^{-i(kx+\phi)} \right) e^{-i\omega_\mm x } \sum_{n = - \infty}^\infty (-i)^n J_n(z_k) e^{i n ( kx + \phi)} \\
+   & = \frac{A\sin 2\theta_\mm}{4i} \left( \sum_{n=-\infty}^\infty e^{i(n+1)} i^n J_n (z_k) e^{i((n+1) k - \omega_\mm)x}  - \sum_{n'=-\infty}^\infty e^{i(n'-1)} (-i)^{n'}J_{n'}(z_k) e^{i( (n'-1)k - \omega_\mm)x}  \right)\\
+   & = \frac{A\sin 2\theta_\mm}{4} \sum_{n=-\infty}^{\infty} e^{in\phi} \left( - (-i)^n \right) \frac{2n}{z_k} J_n (z_k) e^{i(nk-\omega_\mm)x},
 \end{align}
 where I have used
 \begin{equation}
@@ -857,17 +769,17 @@ where I have used
 
 Here comes the approximation. The most important oscillation we need is the one with largest period, which indicates the phase to be almost zero,
 \begin{align}
-   (n+1) k -\omega_m &\sim 0 \\
-   (n'-1) k -\omega_m &\sim 0.
+   (n+1) k -\omega_\mm &\sim 0 \\
+   (n'-1) k -\omega_\mm &\sim 0.
    \label{chap:matter-sec:deep-jacobi-subsec:single-matter-freq-eqn:single-frequency-rwa-requirement}
 \end{align}
 
 The two such conditions for the two summations are
 \begin{align}
-   n \equiv n_- &= \mathrm{Int}\left( \frac{\omega_m}{k} \right) - 1 \\
-   n' \equiv n_+ &= \mathrm{Int}\left( \frac{\omega_m}{k} \right) + 1 .
+   n \equiv n_- &= \mathrm{Int}\left( \frac{\omega_\mm}{k} \right) - 1 \\
+   n' \equiv n_+ &= \mathrm{Int}\left( \frac{\omega_\mm}{k} \right) + 1 .
 \end{align}
-We define $\mathrm{Int}\left( \frac{\omega_m}{k} \right) = n_0$,
+We define $\mathrm{Int}\left( \frac{\omega_\mm}{k} \right) = n_0$,
 \begin{align}
    n_- &= n_0 - 1 \\
    n_+ &= n_0 + 1 .
@@ -875,21 +787,21 @@ We define $\mathrm{Int}\left( \frac{\omega_m}{k} \right) = n_0$,
 
 The element of Hamiltonian is written as
 \begin{equation}
-   h = - \frac{A\sin 2\theta_m}{2} e^{in_0\phi} (-i)^{n_0} \frac{n_0}{z_k} J_{n_0 }(z_k) e^{i(n_0 k -\omega_m)x}.
+   h = - \frac{A\sin 2\theta_\mm}{2} e^{in_0\phi} (-i)^{n_0} \frac{n_0}{z_k} J_{n_0 }(z_k) e^{i(n_0 k -\omega_\mm)x}.
 \end{equation}
 
 To save keystrokes, we define
 \begin{equation}
-   F = - A\sin 2\theta_m e^{i n_0 \phi} (-i)^{n_0} \frac{n_0}{z_k} J_{n_0} (z_k) ,
+   F = - A\sin 2\theta_\mm e^{i n_0 \phi} (-i)^{n_0} \frac{n_0}{z_k} J_{n_0} (z_k) ,
    \label{chap:matter-sec:deep-jacobi-subsec:single-matter-freq-eqn:definition-F}
 \end{equation}
-which depends on $n_0$ and $z_k = \frac{A}{k} \cos 2\theta_m$. Notice that
+which depends on $n_0$ and $z_k = \frac{A}{k} \cos 2\theta_\mm$. Notice that
 \begin{equation}
-   \lvert F \rvert^2 = \left\lvert  k \tan 2\theta_m  n_0 J_{n_0} (z_k) \right\rvert^2 .
+   \lvert F \rvert^2 = \left\lvert  k \tan 2\theta_\mm  n_0 J_{n_0} (z_k) \right\rvert^2 .
 \end{equation}
 Thus the 12 element of the Hamiltonian is rewritten as
 \begin{equation}
-   h = \frac{1}{2}F e^{i(n_0 k -\omega_m)x}.
+   h = \frac{1}{2}F e^{i(n_0 k -\omega_\mm)x}.
    \label{chap:matter-sec:deep-jacobi-subsec:single-matter-freq-eqn:eqn-12-element-and-F}
 \end{equation}
 
@@ -915,13 +827,13 @@ Thus the 12 element of the Hamiltonian is rewritten as
 
 The general solution to the equation of motion is
 \begin{align}
-   \psi_{b1} = & C_1 e^{\frac{1}{2} i \left( n_0 k -\omega_m - \sqrt{  \lvert F \rvert^2 +  (n_0 k -\omega_m)^2 } \right)x} + C_2 e^{\frac{1}{2} i \left( n_0 k -\omega_m + \sqrt{  \lvert F \rvert^2 +  (n_0 k -\omega_m)^2 } \right)x} \\
-   \psi_{b2} = & \frac{C_1}{F^*} i \left( n_0 k - \omega_m - \sqrt{ \lvert F\rvert^2 + ( n_0 k - \omega_m )^2 } \right) e^{ -\frac{1}{2}i (n_0 k - \omega_m ) x - \frac{1}{2} i \sqrt{ \lvert F \rvert^2 + (n_0 k - \omega_m )^2 }  } \nonumber\\
-   & + \frac{C_2}{F^*} i \left( n_0 k - \omega_m + \sqrt{ \lvert F\rvert^2 + ( n_0 k - \omega_m )^2 }  \right)   e^{ -\frac{1}{2}i (n_0 k - \omega_m ) x + \frac{1}{2} i \sqrt{ \lvert F \rvert^2 + (n_0 k - \omega_m )^2 }  } .
+   \psi_{b1} = & C_1 e^{\frac{1}{2} i \left( n_0 k -\omega_\mm - \sqrt{  \lvert F \rvert^2 +  (n_0 k -\omega_\mm)^2 } \right)x} + C_2 e^{\frac{1}{2} i \left( n_0 k -\omega_\mm + \sqrt{  \lvert F \rvert^2 +  (n_0 k -\omega_\mm)^2 } \right)x} \\
+   \psi_{b2} = & \frac{C_1}{F^*} i \left( n_0 k - \omega_\mm - \sqrt{ \lvert F\rvert^2 + ( n_0 k - \omega_\mm )^2 } \right) e^{ -\frac{1}{2}i (n_0 k - \omega_\mm ) x - \frac{1}{2} i \sqrt{ \lvert F \rvert^2 + (n_0 k - \omega_\mm )^2 }  } \nonumber\\
+   & + \frac{C_2}{F^*} i \left( n_0 k - \omega_\mm + \sqrt{ \lvert F\rvert^2 + ( n_0 k - \omega_\mm )^2 }  \right)   e^{ -\frac{1}{2}i (n_0 k - \omega_\mm ) x + \frac{1}{2} i \sqrt{ \lvert F \rvert^2 + (n_0 k - \omega_\mm )^2 }  } .
 \end{align}
 For simplicity, we define
 \begin{align}
-   g &= n_0 k  - \omega_m, \\
+   g &= n_0 k  - \omega_\mm, \\
    q^2 &= \lvert F \rvert^2 + g^2.
    \label{chap:matter-sec:deep-jacobi-subsec:single-matter-freq-eqn:definition-g-q}
 \end{align}
@@ -988,15 +900,15 @@ Now we see the method we have used gives exactly the same transition probability
 
 To make the numerical calculations easier, we rewrite the result by defining the scaled variables
 \begin{align}
-   \hat x & = \omega_m x,\\
-   \hat k &= \frac{k}{\omega_m}, \\
-   \hat A & = \frac{A}{\omega_m}, \\
-   \hat g & = \frac{g}{\omega_m} = n_0 \hat k - 1,\\
-   \hat q &= \sqrt{ \lvert \hat F \rvert^2 + \hat g^2 } = \sqrt{ \lvert \hat k \tan 2\theta_m n_0 J_{n_0} (z_k) \rvert + \hat g^2 },
+   \hat x & = \omega_\mm x,\\
+   \hat k &= \frac{k}{\omega_\mm}, \\
+   \hat A & = \frac{A}{\omega_\mm}, \\
+   \hat g & = \frac{g}{\omega_\mm} = n_0 \hat k - 1,\\
+   \hat q &= \sqrt{ \lvert \hat F \rvert^2 + \hat g^2 } = \sqrt{ \lvert \hat k \tan 2\theta_\mm n_0 J_{n_0} (z_k) \rvert + \hat g^2 },
 \end{align}
-so that $n_0 = \mathrm{Round}\left( 1/\hat k\right)$, $z_k=\frac{\hat A}{\hat k} \cos 2 \theta_m$ and
+so that $n_0 = \mathrm{Round}\left( 1/\hat k\right)$, $z_k=\frac{\hat A}{\hat k} \cos 2 \theta_\mm$ and
 \begin{equation}
-   P_{1\to 2} = \frac{\left\lvert \hat k \tan 2\theta_m n_0 J_{n_0} (z_k) \right\rvert^2}{\left\lvert  \hat k \tan 2\theta_m n_0 J_{n_0} (z_k) \right\rvert^2 + \hat g ^2}\sin^2\left( \frac{ \hat q }{2} \hat x \right) .
+   P_{1\to 2} = \frac{\left\lvert \hat k \tan 2\theta_\mm n_0 J_{n_0} (z_k) \right\rvert^2}{\left\lvert  \hat k \tan 2\theta_\mm n_0 J_{n_0} (z_k) \right\rvert^2 + \hat g ^2}\sin^2\left( \frac{ \hat q }{2} \hat x \right) .
    \label{chap:matter-sec:deep-jacobi-subsec:single-matter-freq-eqn:stimulated-single-freq-trans-probability}
 \end{equation}
 
@@ -1023,9 +935,9 @@ To answer the first question, we need to write down the solution to Schrodinger 
 \hline
  Hamiltonian &   Solution to The First Element of Wave Function \\
 \hline
-   $-\frac{\omega_m}{2}\sigma_3$ &  $\psi_1 \sim e^{i\omega_m x/2}$  \\
-   $\frac{\delta\lambda}{2}\cos 2\theta_m \sigma_3$     &   $\psi_1 \sim e^{i\frac{A\cos 2\theta_m}{2k}\cos(kx+\phi)}$ \\
-  $\frac{\delta\lambda}{2}\cos 2\theta_m \sigma_3$     &   $\psi_1 = C_1 e^{i\frac{A\sin 2\theta_m}{2k}\cos(kx+\phi)} + C_2 e^{-i\frac{A\sin 2\theta_m}{2k}\cos(kx+\phi)}$ \\
+   $-\frac{\omega_\mm}{2}\sigma_3$ &  $\psi_1 \sim e^{i\omega_\mm x/2}$  \\
+   $\frac{\delta\lambda}{2}\cos 2\theta_\mm \sigma_3$     &   $\psi_1 \sim e^{i\frac{A\cos 2\theta_\mm}{2k}\cos(kx+\phi)}$ \\
+  $\frac{\delta\lambda}{2}\cos 2\theta_\mm \sigma_3$     &   $\psi_1 = C_1 e^{i\frac{A\sin 2\theta_\mm}{2k}\cos(kx+\phi)} + C_2 e^{-i\frac{A\sin 2\theta_\mm}{2k}\cos(kx+\phi)}$ \\
 \hline
 
 \end{tabular}
@@ -1037,27 +949,27 @@ To answer the first question, we need to write down the solution to Schrodinger 
 % ============================================================ =================================================================================================================================
 % Hamiltonian                                                       Solution to The First Element of Wave Function
 % ============================================================ =================================================================================================================================
-% .. math:: -\frac{\omega_m}{2}\sigma_3                           .. math:: \psi_1 \sim e^{i\omega_m x/2}
-% .. math:: \frac{\delta\lambda}{2}\cos 2\theta_m \sigma_3        .. math:: \psi_1 \sim e^{i\frac{A\cos 2\theta_m}{2k}\cos(kx+\phi)}
-% .. math:: \frac{\delta\lambda}{2}\cos 2\theta_m \sigma_3        .. math:: \psi_1 = C_1 e^{i\frac{A\sin 2\theta_m}{2k}\cos(kx+\phi)} + C_2 e^{-i\frac{A\sin 2\theta_m}{2k}\cos(kx+\phi)}
+% .. math:: -\frac{\omega_\mm}{2}\sigma_3                           .. math:: \psi_1 \sim e^{i\omega_\mm x/2}
+% .. math:: \frac{\delta\lambda}{2}\cos 2\theta_\mm \sigma_3        .. math:: \psi_1 \sim e^{i\frac{A\cos 2\theta_\mm}{2k}\cos(kx+\phi)}
+% .. math:: \frac{\delta\lambda}{2}\cos 2\theta_\mm \sigma_3        .. math:: \psi_1 = C_1 e^{i\frac{A\sin 2\theta_\mm}{2k}\cos(kx+\phi)} + C_2 e^{-i\frac{A\sin 2\theta_\mm}{2k}\cos(kx+\phi)}
 % ============================================================ =================================================================================================================================
 
 
-The unitary transformation used is to move our reference frame to a co-rotating one. $-\frac{\omega_m}{2}\sigma_3$ is indeed causing the wave function to rotate and removing this term using a transformation means we are co-rotating with it. $\frac{\delta\lambda}{2}\cos 2\theta_m \sigma_3$ causes a more complicated rotation however it is still a rotation.
+The unitary transformation used is to move our reference frame to a co-rotating one. $-\frac{\omega_\mm}{2}\sigma_3$ is indeed causing the wave function to rotate and removing this term using a transformation means we are co-rotating with it. $\frac{\delta\lambda}{2}\cos 2\theta_\mm \sigma_3$ causes a more complicated rotation however it is still a rotation.
 
 As for Jacobi-Anger expansion, it expands an oscillating matter profile to infinite constant matter potentials. To see it more clearly, we assume that $\delta\lambda= \lambda_c$ is constant. After the unitary transformation, the effective Hamiltonian is
 
 \begin{equation}
-   H' = \frac{\sin 2\theta_m}{2} \lambda_c \begin{pmatrix} 0 & e^{2i\eta(x)} \\ e^{-2i\eta(x)} & 0 \end{pmatrix},
+   H' = \frac{\sin 2\theta_\mm}{2} \lambda_c \begin{pmatrix} 0 & e^{2i\eta(x)} \\ e^{-2i\eta(x)} & 0 \end{pmatrix},
 \end{equation}
-where $\eta(x) = -\frac{\omega_m}{2}x + \frac{\cos 2\theta_m}{2}\lambda_c x$ and we have chosen $\eta(0)=0$.
+where $\eta(x) = -\frac{\omega_\mm}{2}x + \frac{\cos 2\theta_\mm}{2}\lambda_c x$ and we have chosen $\eta(0)=0$.
 The 12 element of the Hamiltonian becomes
 \begin{equation}
-   \frac{\sin 2\theta_m}{2} \lambda_c e^{2i\eta(x)} = \frac{\sin 2\theta_m}{2} \lambda_c e^{2i\left( \frac{\omega_m}{2} + \frac{\cos 2\theta_m}{2} \lambda_c \right)x} .
+   \frac{\sin 2\theta_\mm}{2} \lambda_c e^{2i\eta(x)} = \frac{\sin 2\theta_\mm}{2} \lambda_c e^{2i\left( \frac{\omega_\mm}{2} + \frac{\cos 2\theta_\mm}{2} \lambda_c \right)x} .
 \end{equation}
 The significance of it is to show that a constant matter profile will result in a simple exponential term. However, as we move on to periodic matter profile, we have a Hamiltonian element of the form
 \begin{equation}
-   h = \frac{\sin 2\theta_m}{2} A \sin (kx+\phi) e^{2i\left( -\frac{\omega_m}{2} x + \frac{A \cos 2\theta_m}{2k} \cos (kx+\phi) \right)},
+   h = \frac{\sin 2\theta_\mm}{2} A \sin (kx+\phi) e^{2i\left( -\frac{\omega_\mm}{2} x + \frac{A \cos 2\theta_\mm}{2k} \cos (kx+\phi) \right)},
 \end{equation}
 as derived in Eqn.~\ref{chap:matter-sec:deep-jacobi-subsec:single-matter-freq-eqn:single-frequency-hamiltonian-element}. To compare with the constant matter case, we make a table of relevant terms in Hamiltonian, Table~\ref{chap:matter-sec:deep-jacobi-subsec:single-matter-freq-tab:decomp-hamil-2}.
 
@@ -1070,7 +982,7 @@ as derived in Eqn.~\ref{chap:matter-sec:deep-jacobi-subsec:single-matter-freq-eq
 \hline
  Constant Matter Profile $\delta\lambda = \lambda_c$ &   Periodic Matter Profile $\delta\lambda=A\sin (kx+\phi)$ \\
 \hline
-   $\frac{\sin 2\theta_m}{2}\lambda_c e^{i \cos 2\theta_m \lambda_c x}$     &   $\frac{A\sin 2\theta_m}{4} \sum_{n=-\infty}^{\infty} e^{in\phi} \left( - i^n \right) \frac{2n+1}{z_k} J_n (z_k) e^{i(nk-\omega_m)x}$ \\
+   $\frac{\sin 2\theta_\mm}{2}\lambda_c e^{i \cos 2\theta_\mm \lambda_c x}$     &   $\frac{A\sin 2\theta_\mm}{4} \sum_{n=-\infty}^{\infty} e^{in\phi} \left( - i^n \right) \frac{2n+1}{z_k} J_n (z_k) e^{i(nk-\omega_\mm)x}$ \\
 \hline
 \end{tabular}
 % \end{ruledtabular}
@@ -1080,25 +992,25 @@ as derived in Eqn.~\ref{chap:matter-sec:deep-jacobi-subsec:single-matter-freq-eq
 % ================================================================================   ========================================================================
 % Constant Matter Profile :math:`\delta\lambda = \lambda_c`                           Period Matter Profile :math:`\delta\lambda=A\sin (kx+\phi)`
 % ================================================================================   ========================================================================
-% .. math:: \frac{\sin 2\theta_m}{2}\lambda_c e^{i \cos 2\theta_m \lambda_c x}         .. math:: \frac{A\sin 2\theta_m}{4} \sum_{n=-\infty}^{\infty} e^{in\phi} \left( - i^n \right) \frac{2n+1}{z_k} J_n (z_k) e^{i(nk-\omega_m)x}
+% .. math:: \frac{\sin 2\theta_\mm}{2}\lambda_c e^{i \cos 2\theta_\mm \lambda_c x}         .. math:: \frac{A\sin 2\theta_\mm}{4} \sum_{n=-\infty}^{\infty} e^{in\phi} \left( - i^n \right) \frac{2n+1}{z_k} J_n (z_k) e^{i(nk-\omega_\mm)x}
 % ================================================================================   ========================================================================
 
-The periodic profile comes into the exponential. Jacobi-Anger expansion (Eqn.~\ref{eqn:jacobi-anger-expansion}) expands the periodic matter profile into infinite constant matter profiles. By comparing the two cases, we conclude that $\cos 2\theta_m\lambda_c$ corresponds to $nk$. The RWA approximation we used to drop fast oscillatory terms in the summation is to find the most relevant constant matter profile per se.
+The periodic profile comes into the exponential. Jacobi-Anger expansion (Eqn.~\ref{eqn:jacobi-anger-expansion}) expands the periodic matter profile into infinite constant matter profiles. By comparing the two cases, we conclude that $\cos 2\theta_\mm\lambda_c$ corresponds to $nk$. The RWA approximation we used to drop fast oscillatory terms in the summation is to find the most relevant constant matter profile per se.
 
 The big question is which constant matter profiles are the most important ones? Mathematically, we require the phase to be almost zero, i.e. Eqn.~\ref{chap:matter-sec:deep-jacobi-subsec:single-matter-freq-eqn:single-frequency-rwa-requirement} or
 \begin{equation}
-   n_0 k - \omega_m \sim 0 ,
+   n_0 k - \omega_\mm \sim 0 ,
 \end{equation}
-where $n_0=\mathrm{Round}\left( \frac{\omega_m}{k} \right)$.
+where $n_0=\mathrm{Round}\left( \frac{\omega_\mm}{k} \right)$.
 
 
 We define an effective matter density out of the Jacobi-Anger expanded series
 \begin{equation}
-   \lambda_c' = \frac{n_0 k}{\cos 2\theta_m}.
+   \lambda_c' = \frac{n_0 k}{\cos 2\theta_\mm}.
 \end{equation}
 Then we can rewrite the RWA requirement as
 \begin{equation}
-   \lambda_c' - \cos 2\theta_m \omega_m = 0.
+   \lambda_c' - \cos 2\theta_\mm \omega_\mm = 0.
 \end{equation}
 
 
@@ -1175,14 +1087,14 @@ Just a comment. $B_n$ is used here because I actually want to use it for multi-f
 % .. figure:: assets/matter-stimulated/stimulated-probability-apmlitude-vs-k.svg
 %   :align: center
 
-%   Probability Amplitude as a function of :math:`k/\omega_m` within RWA, with parameters :math:`A=0.1, \theta_m=\pi/5, \phi=0`.
+%   Probability Amplitude as a function of :math:`k/\omega_\mm` within RWA, with parameters :math:`A=0.1, \theta_\mm=\pi/5, \phi=0`.
 
 
 
 % .. figure:: assets/matter-stimulated/stimulated-probability-apmlitude-vs-k-non-RWA.svg
 %   :align: center
 
-%   Probabiity Amplitude as a function of :math:`k/\omega_m` for each term in Jacobi-Anger expansion, with parameters :math:`A=0.1, \theta_m=\pi/5, \phi=0`.
+%   Probabiity Amplitude as a function of :math:`k/\omega_\mm` for each term in Jacobi-Anger expansion, with parameters :math:`A=0.1, \theta_\mm=\pi/5, \phi=0`.
 
 
 % To look at the resonances I define a Mathematica function to calculate the FWHM (Full Width at Half Maximum).
@@ -1199,14 +1111,14 @@ Just a comment. $B_n$ is used here because I actually want to use it for multi-f
 % .. figure:: assets/matter-stimulated/stimulated-probability-apmlitude-vs-k-resonance-width.svg
 %   :align: center
 
-%   Width of the resonances for :math:`A=0.1, \theta_m=\pi/5, \phi=0`.
+%   Width of the resonances for :math:`A=0.1, \theta_\mm=\pi/5, \phi=0`.
 
 Resonance width of each order of resonance (each $n$) should be calculated analytically.
 
 
 To find the exact width is hopeless since we need to inverse Bessel functions. Nonetheless, we can assume that the resonance is very narrow so that $\left\lvert F \right\rvert^2$ doesn't change a lot. With the assumption, the FWHM (Full Width at Half Maximum) is found be setting the amplitude to half, which is
 \begin{equation}
-   \Gamma = \left\lvert \frac{\hat F}{n_0} \right\rvert = \left\lvert \hat k \tan 2\theta_m \frac{ J_{n_0}( n_0 \hat A \cos 2\theta_m/\hat k )}{n_0} \right\rvert .
+   \Gamma = \left\lvert \frac{\hat F}{n_0} \right\rvert = \left\lvert \hat k \tan 2\theta_\mm \frac{ J_{n_0}( n_0 \hat A \cos 2\theta_\mm/\hat k )}{n_0} \right\rvert .
 \end{equation}
 To verify this result, we compare it with the width found numerically from the exact amplitude.
 
@@ -1233,13 +1145,13 @@ Given this result, and equation \ref{chap:matter-sec:deep-jacobi-subsec:single-m
 % .. figure:: assets/matter-stimulated/stimulated-single-frequency-width-approximation-amp-point1.png
 %   :align: center
 
-%   Comparison of approximated width and numerical results for perturbation amplitude :math:`\hat A = \frac{A}{\omega_m} = 0.1`.
+%   Comparison of approximated width and numerical results for perturbation amplitude :math:`\hat A = \frac{A}{\omega_\mm} = 0.1`.
 
 
 % .. figure:: assets/matter-stimulated/stimulated-single-frequency-width-approximation-amp-1.png
 %   :align: center
 
-%   Comparison of approximated width and numerical results for perturbation amplitude :math:`\hat A = \frac{A}{\omega_m} = 1`.
+%   Comparison of approximated width and numerical results for perturbation amplitude :math:`\hat A = \frac{A}{\omega_\mm} = 1`.
 
 
 
@@ -1265,7 +1177,7 @@ However, as we proceed to the more realistic matter profile, multi-frequency mat
 \end{equation}
 Applying the Rabi basis and solving for $\eta$ we conclude that
 \begin{equation}
-   \eta(x) = - \frac{\omega_m}{2}x - \frac{\cos 2\theta_m}{2} \sum_n \frac{A_n}{k_n} \cos ( k_n x+ \phi_n ).
+   \eta(x) = - \frac{\omega_\mm}{2}x - \frac{\cos 2\theta_\mm}{2} \sum_n \frac{A_n}{k_n} \cos ( k_n x+ \phi_n ).
 \end{equation}
 We formulate the Hamiltonian in Rabi basis to be the form
 \begin{equation}
@@ -1276,7 +1188,7 @@ We formulate the Hamiltonian in Rabi basis to be the form
 \end{equation}
 We write down the off diagonal element $h$ for the multi-frequency matter density profile
 \begin{equation}
-   h = \frac{\sin 2\theta_m}{2} \sum_a A_a \sin (k_a x + \phi_a) e^{-i\omega_m x}\prod_{a} \sum_{n=-\infty}^{\infty} (-i)^n J_n (z_{k_a}) e^{i n(k_a x + \phi_a) }
+   h = \frac{\sin 2\theta_\mm}{2} \sum_a A_a \sin (k_a x + \phi_a) e^{-i\omega_\mm x}\prod_{a} \sum_{n=-\infty}^{\infty} (-i)^n J_n (z_{k_a}) e^{i n(k_a x + \phi_a) }
 \end{equation}
 To demonstrate the procedure of Jacobi-Anger expansion as well as the technique to decompose the problem into simple Rabi oscillations, we adopt a two frequencies matter density scenario.
 
@@ -1287,13 +1199,13 @@ To work out the equation of motion that we could solve, we deal with two frequen
 \end{equation}
 while
 \begin{equation}
-   h = \frac{\sin 2\theta_m}{2} \sum_{a = 1}^2 A_a \sin (k_a x + \phi_a) e^{-i\omega_m x}\prod_{a=1}^2 \sum_{n=-\infty}^{\infty} (-i)^n J_n (z_{k_a}) e^{i n(k_a x + \phi_a) }.
+   h = \frac{\sin 2\theta_\mm}{2} \sum_{a = 1}^2 A_a \sin (k_a x + \phi_a) e^{-i\omega_\mm x}\prod_{a=1}^2 \sum_{n=-\infty}^{\infty} (-i)^n J_n (z_{k_a}) e^{i n(k_a x + \phi_a) }.
    \label{chap:matter-sec:jacobi-subsec:multi-matter-freq-eqn:rabi-hamil-off}
 \end{equation}
 
 A useful trick for multiplication of two summations is
 \begin{equation}
-  \sum_n a_n \sum_m b_m  = \sum_{N = -\infty}^{\infty} \sum_{m+n=N} a_n b_m = \sum_{N=-\infty}^\infty \sum_{n=-\infty}^{N} a_n b_{N-n}.
+  \sum_n a_n \sum_\mm b_\mm  = \sum_{N = -\infty}^{\infty} \sum_{m+n=N} a_n b_\mm = \sum_{N=-\infty}^\infty \sum_{n=-\infty}^{N} a_n b_{N-n}.
   \label{chap:matter-sec:jacobi-subsec:multi-matter-freq-eqn:multiplication-summation-rule}
 \end{equation}
 For further simplifications of the problem, we follow a rule to sum over a line $m+n=N$ then sum over $N$, which is illustrated in Fig.~\ref{chap:matter-sec:jacobi-subsec:multi-matter-freq-fig:summation-algebra}.
@@ -1306,9 +1218,9 @@ For further simplifications of the problem, we follow a rule to sum over a line 
 \end{figure}
 The multiplication in Eqn.~\ref{chap:matter-sec:jacobi-subsec:multi-matter-freq-eqn:rabi-hamil-off} becomes
 \begin{align}
-   h =& \frac{\sin 2\theta_m}{2} \sum_{a = 1}^2 A_a \sin (k_a x + \phi_a) e^{-i\omega_m x} \nonumber\\
+   h =& \frac{\sin 2\theta_\mm}{2} \sum_{a = 1}^2 A_a \sin (k_a x + \phi_a) e^{-i\omega_\mm x} \nonumber\\
    &\sum_{N=-\infty}^{\infty} \sum_{n=-\infty}^{N} (-i)^n J_n (z_{k_1}) e^{i n(k_1 x + \phi_1) } (-i)^{N-n} J_{N-n}(z_{k_2}) e^{i (N-n)(k_2 x + \phi_2)} \nonumber\\
-   =&\frac{\sin 2\theta_m}{2} \sum_{a = 1}^2 A_a \sin (k_a x + \phi_a) e^{-i\omega_m x} \nonumber\\
+   =&\frac{\sin 2\theta_\mm}{2} \sum_{a = 1}^2 A_a \sin (k_a x + \phi_a) e^{-i\omega_\mm x} \nonumber\\
    &\sum_{N=-\infty}^{\infty} \sum_{n=-\infty}^{N} (-i)^N J_{n}(z_{k_1}) J_{N-n}(z_{k_2}) e^{i n ((k_1-k_2)x + \phi_1 - \phi_2) + i N (k_2 x + \phi_2)}
    \label{chap:matter-sec:jacobi-subsec:multi-matter-freq-eqn:stimulated-multi-freq-hamiltonian-12-element}
 \end{align}
@@ -1323,55 +1235,55 @@ We define
 \end{equation}
 where
 \begin{align}
-   h_1 =& \frac{A_1\sin 2\theta_m}{4i}\bigg( \sum_{N=-\infty}^\infty \sum_{n=-\infty}^N (-i)^N J_n(z_{k_1}) J_{N-n}(z_{k_2}) e^{ i  \left(  (n+1) (k_1 x + \phi_1) +  (N-n)(k_2 x + \phi_2) - \omega_m x \right) } \nonumber \\
-   & \sum_{N=-\infty}^\infty \sum_{n=-\infty}^N (-i)^N J_n(z_{k_1}) J_{N-n}(z_{k_2}) e^{ i \left(  (n-1) (k_1 x + \phi_1) + (N-n)(k_2 x + \phi_2) -  \omega_m x \right) }  \bigg),
+   h_1 =& \frac{A_1\sin 2\theta_\mm}{4i}\bigg( \sum_{N=-\infty}^\infty \sum_{n=-\infty}^N (-i)^N J_n(z_{k_1}) J_{N-n}(z_{k_2}) e^{ i  \left(  (n+1) (k_1 x + \phi_1) +  (N-n)(k_2 x + \phi_2) - \omega_\mm x \right) } \nonumber \\
+   & \sum_{N=-\infty}^\infty \sum_{n=-\infty}^N (-i)^N J_n(z_{k_1}) J_{N-n}(z_{k_2}) e^{ i \left(  (n-1) (k_1 x + \phi_1) + (N-n)(k_2 x + \phi_2) -  \omega_\mm x \right) }  \bigg),
 \end{align}
 and
 \begin{align}
-   h_2=& \frac{A_2\sin 2\theta_m}{4i}\bigg( \sum_{N=-\infty}^\infty \sum_{n=-\infty}^N (-i)^N J_n(z_{k_1}) J_{N-n}(z_{k_2}) e^{ i  \left(  n (k_1 x + \phi_1) + (N-n+1)(k_2 x + \phi_2) -  \omega_m x \right) } \nonumber\\
-   & \sum_{N=-\infty}^\infty \sum_{n=-\infty}^N (-i)^N J_n(z_{k_1}) J_{N-n}(z_{k_2}) e^{ i  \left(  n (k_1 x + \phi_1) + (N-n-1)(k_2 x + \phi_2) -  \omega_m x \right) }  \bigg).
+   h_2=& \frac{A_2\sin 2\theta_\mm}{4i}\bigg( \sum_{N=-\infty}^\infty \sum_{n=-\infty}^N (-i)^N J_n(z_{k_1}) J_{N-n}(z_{k_2}) e^{ i  \left(  n (k_1 x + \phi_1) + (N-n+1)(k_2 x + \phi_2) -  \omega_\mm x \right) } \nonumber\\
+   & \sum_{N=-\infty}^\infty \sum_{n=-\infty}^N (-i)^N J_n(z_{k_1}) J_{N-n}(z_{k_2}) e^{ i  \left(  n (k_1 x + \phi_1) + (N-n-1)(k_2 x + \phi_2) -  \omega_\mm x \right) }  \bigg).
 \end{align}
 We keep only terms that are integers for each summation to satisfy the relations
 \begin{align}
-   (n_{11,N} + 1)k_1 + (N-n_{11,N}) k_2 -\omega_m &\sim 0 \\
-   (n_{12,N} - 1)k_1 + (N-n_{12,N}) k_2 -\omega_m &\sim 0 \\
-   n_{21,N}k_1 + (N-n_{21,N}+1) k_2 -\omega_m &\sim 0 \\
-   n_{22,N} k_1 + (N-n_{22,N}-1) k_2 -\omega_m &\sim 0.
+   (n_{11,N} + 1)k_1 + (N-n_{11,N}) k_2 -\omega_\mm &\sim 0 \\
+   (n_{12,N} - 1)k_1 + (N-n_{12,N}) k_2 -\omega_\mm &\sim 0 \\
+   n_{21,N}k_1 + (N-n_{21,N}+1) k_2 -\omega_\mm &\sim 0 \\
+   n_{22,N} k_1 + (N-n_{22,N}-1) k_2 -\omega_\mm &\sim 0.
 \end{align}
 so that the $x$ dependent exponential almost vanishes (obtain the largest wavelength in fact). Notice that each $n_{ij,N}$ depends on the summation index $N$.
 
 We solve each $n_{ij,N}$,
 \begin{align}
-   n_{11,N} &\sim \mathrm{Round}\left[\frac{\omega_m - N k_2 -k_1}{k_1 - k_2} \right] \\
-   n_{12,N} &\sim \mathrm{Round}\left[\frac{\omega_m - N k_2 + k_1}{k_1 - k_2}\right] \\
-   n_{21,N} &\sim \mathrm{Round}\left[\frac{\omega_m - (N + 1) k_2 }{k_1 - k_2} \right]\\
-   n_{22,N} &\sim \mathrm{Round}\left[\frac{\omega_m - (N - 1) k_2 }{k_1 - k_2} \right].
+   n_{11,N} &\sim \mathrm{Round}\left[\frac{\omega_\mm - N k_2 -k_1}{k_1 - k_2} \right] \\
+   n_{12,N} &\sim \mathrm{Round}\left[\frac{\omega_\mm - N k_2 + k_1}{k_1 - k_2}\right] \\
+   n_{21,N} &\sim \mathrm{Round}\left[\frac{\omega_\mm - (N + 1) k_2 }{k_1 - k_2} \right]\\
+   n_{22,N} &\sim \mathrm{Round}\left[\frac{\omega_\mm - (N - 1) k_2 }{k_1 - k_2} \right].
 \end{align}
 Another important constrain is that $n\leq N$, thus we have
 \begin{align}
-   N_{11} &\sim \mathrm{Round}\left[\frac{\omega_m - k_1}{k_1}\right] \\
-   N_{12} &\sim \mathrm{Round}\left[\frac{\omega_m + k_1}{k_1}\right] \\
-   N_{21} &\sim \mathrm{Round}\left[\frac{\omega_m - k_2}{k_1}\right] \\
-   N_{22} &\sim \mathrm{Round}\left[\frac{\omega_m + k_2}{k_1}\right],
+   N_{11} &\sim \mathrm{Round}\left[\frac{\omega_\mm - k_1}{k_1}\right] \\
+   N_{12} &\sim \mathrm{Round}\left[\frac{\omega_\mm + k_1}{k_1}\right] \\
+   N_{21} &\sim \mathrm{Round}\left[\frac{\omega_\mm - k_2}{k_1}\right] \\
+   N_{22} &\sim \mathrm{Round}\left[\frac{\omega_\mm + k_2}{k_1}\right],
 \end{align}
 for each summation over $N$ and we require $N\geq N_{ij}$ for each summation. We also assumed $k_1 > k_2$. In other words, $N_{ij}$ are the lower limits of the summations over $N$'s.
 
 We keep only the resonance terms for the summation over $n$'s,
 \begin{align}
-   h_1 \approx & \frac{A_1\sin 2\theta_m}{4i} \bigg( \sum_{N=N_{11}}^\infty (-i)^N J_{n_{11}} (z_{k_1}) J_{N-n_{11}}(z_{k_2}) e^{ i \left(  (n_{11}+1) (k_1 x + \phi_1) + (N-n_{11})(k_2 x + \phi_2) - \omega_m x \right) }  \nonumber \\
-   & \sum_{N=N_{12}}^\infty (-i)^N J_{n_{12}} (z_{k_1}) J_{N-n_{12}}(z_{k_2}) e^{ i \left(  (n_{12}-1) (k_1 x + \phi_1) + (N-n_{12})(k_2 x + \phi_2) - \omega_m x \right) }\bigg),
+   h_1 \approx & \frac{A_1\sin 2\theta_\mm}{4i} \bigg( \sum_{N=N_{11}}^\infty (-i)^N J_{n_{11}} (z_{k_1}) J_{N-n_{11}}(z_{k_2}) e^{ i \left(  (n_{11}+1) (k_1 x + \phi_1) + (N-n_{11})(k_2 x + \phi_2) - \omega_\mm x \right) }  \nonumber \\
+   & \sum_{N=N_{12}}^\infty (-i)^N J_{n_{12}} (z_{k_1}) J_{N-n_{12}}(z_{k_2}) e^{ i \left(  (n_{12}-1) (k_1 x + \phi_1) + (N-n_{12})(k_2 x + \phi_2) - \omega_\mm x \right) }\bigg),
 \end{align}
 and
 \begin{align}
-   h_2 \approx & \frac{A_2\sin 2\theta_m}{4i} \bigg( \sum_{N=N_{21}}^\infty (-i)^N J_{n_{21}} (z_{k_1}) J_{N-n_{21}}(z_{k_2}) e^{ i \left(  n_{21} (k_1 x + \phi_1) + (N-n_{21} + 1)(k_2 x + \phi_2) - \omega_m x \right) }  \nonumber \\
-   & \sum_{N=N_{22}}^\infty (-i)^N J_{n_{22}} (z_{k_1}) J_{N-n_{22}}(z_{k_2}) e^{ i \left(  n_{22} (k_1 x + \phi_1) + (N-n_{22}-1)(k_2 x + \phi_2) - \omega_m x \right) }\bigg) .
+   h_2 \approx & \frac{A_2\sin 2\theta_\mm}{4i} \bigg( \sum_{N=N_{21}}^\infty (-i)^N J_{n_{21}} (z_{k_1}) J_{N-n_{21}}(z_{k_2}) e^{ i \left(  n_{21} (k_1 x + \phi_1) + (N-n_{21} + 1)(k_2 x + \phi_2) - \omega_\mm x \right) }  \nonumber \\
+   & \sum_{N=N_{22}}^\infty (-i)^N J_{n_{22}} (z_{k_1}) J_{N-n_{22}}(z_{k_2}) e^{ i \left(  n_{22} (k_1 x + \phi_1) + (N-n_{22}-1)(k_2 x + \phi_2) - \omega_\mm x \right) }\bigg) .
 \end{align}
 
 One can imagine how hard it is to solve the equation of motion with this $h$. More approximations are required. We will use the approximations that Kelly Patton et al used~\cite{Patton2014}.
 
 By looking at the Hamiltonian, we can identify terms like this
 \begin{align}
-   h_a =& \left( \frac{\sin 2\theta_m}{2}  A_a \sin (k_a x + \phi_a) e^{-i\omega_m x}  \sum_{n=-\infty}^{\infty} (-i)^n J_n (z_{k_a}) e^{i n(k_a x + \phi_a) }  \right) \nonumber \\
+   h_a =& \left( \frac{\sin 2\theta_\mm}{2}  A_a \sin (k_a x + \phi_a) e^{-i\omega_\mm x}  \sum_{n=-\infty}^{\infty} (-i)^n J_n (z_{k_a}) e^{i n(k_a x + \phi_a) }  \right) \nonumber \\
    &\prod_{b\neq a} \sum_{n=-\infty}^{\infty} (-i)^n J_n (z_{k_b}) e^{i n(k_b x + \phi_b) },
 \end{align}
 where the parenthesis part is what we would have if only one frequency is used and we also have
@@ -1387,9 +1299,9 @@ The two-frequency matter perturbation system has a Hamiltonian element $H_{12}$
 \end{equation}
 where
 \begin{align}
-   h_1  =& {\color{blue}-\frac{k_1 \tan 2\theta_m}{2} \sum_{n_1=-\infty}^{\infty} (-i)^{n_1} n_1 J_{n_1} (z_{k_1}) e^{i (n_1 k_1-\omega_m)x} e^{i n_1\phi_1} }  \nonumber\\
+   h_1  =& {\color{blue}-\frac{k_1 \tan 2\theta_\mm}{2} \sum_{n_1=-\infty}^{\infty} (-i)^{n_1} n_1 J_{n_1} (z_{k_1}) e^{i (n_1 k_1-\omega_\mm)x} e^{i n_1\phi_1} }  \nonumber\\
    &{\color{red}\sum_{n_2=-\infty}^{\infty} (-i)^{n_2} J_{n_2}(z_{k_2}) e^{i(n_2k_2)x} e^{i n_2 \phi_2}  }, \\
-   h_2 =& {\color{red} - \frac{k_2\tan 2\theta_m}{2} \sum_{n_2=-\infty}^{\infty} (-i)^{n_2} n_2 J_{n_2}(z_{k_2}) e^{i(n_2k_2-\omega_m)x} e^{i n_2 \phi_2}  } \nonumber\\
+   h_2 =& {\color{red} - \frac{k_2\tan 2\theta_\mm}{2} \sum_{n_2=-\infty}^{\infty} (-i)^{n_2} n_2 J_{n_2}(z_{k_2}) e^{i(n_2k_2-\omega_\mm)x} e^{i n_2 \phi_2}  } \nonumber\\
    &{\color{blue} \sum_{n_1=-\infty}^{\infty} (-i)^{n_1} J_{n_1}(z_{k_1}) e^{in_1 k_1 x} e^{i n_1 \phi_1} }
 \end{align}
 with red color coding the second frequency and blue coding the first frequency. $h$ is symmetric under exchange of index 1, 2 since the exchange simply switches $h_1$ and $h_2$.
@@ -1399,39 +1311,39 @@ The next question to ask is which term dominates. To grasp a clue, we need to id
 
 By order, we are already thinking of a dominating term which is not true. Nonetheless, we assume RWA can be applied to the part that looks like one frequency only. In our two-frequency example, first RWA leads to
 \begin{align}
-   h_1  \approx & {\color{blue}-\frac{k_1 \tan 2\theta_m}{2} (-i)^{n_{1,0}} n_{1,0} J_{n_{1,0}} (z_{k_1}) e^{i (n_{1,0} k_1-\omega_m)x} e^{i n_{1,0}\phi_1} } \nonumber \\
+   h_1  \approx & {\color{blue}-\frac{k_1 \tan 2\theta_\mm}{2} (-i)^{n_{1,0}} n_{1,0} J_{n_{1,0}} (z_{k_1}) e^{i (n_{1,0} k_1-\omega_\mm)x} e^{i n_{1,0}\phi_1} } \nonumber \\
    &{\color{red} \sum_{n_2=-\infty}^{\infty} (-i)^{n_2} J_{n_2}(z_{k_2}) e^{i(n_2k_2)x} e^{i n_2 \phi_2}  }, \\
-   h_2  \approx & {\color{red} - \frac{k_2\tan 2\theta_m}{2} (-i)^{n_{2,0}} n_{2,0} J_{n_{2,0}}(z_{k_2}) e^{i(n_{2,0}k_2-\omega_m)x} e^{i n_{2,0} \phi_2}  } \nonumber \\
+   h_2  \approx & {\color{red} - \frac{k_2\tan 2\theta_\mm}{2} (-i)^{n_{2,0}} n_{2,0} J_{n_{2,0}}(z_{k_2}) e^{i(n_{2,0}k_2-\omega_\mm)x} e^{i n_{2,0} \phi_2}  } \nonumber \\
    &{\color{blue} \sum_{n_1=-\infty}^{\infty} (-i)^{n_1} J_{n_1}(z_{k_1}) e^{in_1 k_1 x} e^{i n_1 \phi_1} },
    \label{chap:matter-sec:jacobi-subsec:multi-matter-freq-eqn:eqn-after-first-rwa}
 \end{align}
 where
 \begin{align}
-   n_{1,0} &= \mathrm{Round}\left[  \frac{\omega_m}{k_1}  \right], \\
-   n_{2,0} &= \mathrm{Round}\left[  \frac{\omega_m}{k_2}  \right] .
+   n_{1,0} &= \mathrm{Round}\left[  \frac{\omega_\mm}{k_1}  \right], \\
+   n_{2,0} &= \mathrm{Round}\left[  \frac{\omega_\mm}{k_2}  \right] .
 \end{align}
 With this approximation, we can use RWA again by requiring
 \begin{align}
-   (n_{1,0} k_1-\omega_m + n_2 k_2)x &\sim 0, \\
-   (n_1 k_1-\omega_m + n_{2,0} k_2)x &\sim 0,
+   (n_{1,0} k_1-\omega_\mm + n_2 k_2)x &\sim 0, \\
+   (n_1 k_1-\omega_\mm + n_{2,0} k_2)x &\sim 0,
 \end{align}
 where the integer solutions are
 \begin{align}
-   n'_{2,0} &= \mathrm{Round}\left[ \frac{ n_{1,0} k_1-\omega_m }{k_2} \right], \\
-   n'_{1,0} &= \mathrm{Round}\left[ \frac{ n_{2,0} k_1-\omega_m }{k_1} \right].
+   n'_{2,0} &= \mathrm{Round}\left[ \frac{ n_{1,0} k_1-\omega_\mm }{k_2} \right], \\
+   n'_{1,0} &= \mathrm{Round}\left[ \frac{ n_{2,0} k_1-\omega_\mm }{k_1} \right].
 \end{align}
 Now we can remove all the summations using another RWA approximation. However, whether it holds is up to investigation.
 
 The final result is
 \begin{align}
-   h_1 \approx & {\color{blue}-\frac{k_1 \tan 2\theta_m}{2} (-i)^{n_{1,0}} n_{1,0} J_{n_{1,0}} (z_{k_1}) e^{i (n_{1,0} k_1-\omega_m)x} e^{i n_{1,0}\phi_1} } {\color{red} (-i)^{n'_{2,0}} J_{n'_{2,0}}(z_{k_2}) e^{i(n'_{2,0}k_2)x} e^{i n'_{2,0} \phi_2}  } \nonumber \\
-   =& -\frac{k_1 \tan 2\theta_m}{2} (-i)^{ n_{1,0}+n'_{2,0} }   e^{i (n_{1,0}\phi_1 + n'_{2,0} \phi_2)} n_{1,0} \nonumber\\
-   &J_{n_{1,0}} (z_{k_1})  J_{n'_{2,0}}(z_{k_2}) e^{i(n_{1,0} k_1-\omega_m + n'_{2,0}k_2)x}  \\
-   \equiv & \frac{F_1}{2} e^{i(n_{1,0} k_1-\omega_m + n'_{2,0}k_2)x}  , \\
-   h_2 \approx & {\color{red} - \frac{k_2\tan 2\theta_m}{2} (-i)^{n_{2,0}} n_{2,0} J_{n_{2,0}}(z_{k_2}) e^{i(n_{2,0}k_2-\omega_m)x} e^{i n_{2,0} \phi_2}  }{\color{blue} \sum_{n_1=-\infty}^{\infty} (-i)^{n_1} J_{n_1}(z_{k_1}) e^{in_1 k_1 x} e^{i n_1 \phi_1} } \nonumber \\
-   =& - \frac{k_2\tan 2\theta_m}{2} (-i)^{n_{2,0}+ n'_{1,0} }   e^{i (n_{2,0} \phi_2 + n'_{1,0} \phi_1)}  n_{2,0} \nonumber\\
-   &J_{n_{2,0}}(z_{k_2})  J_{n'_{1,0}}(z_{k_1})  e^{i(n_{2,0}k_2-\omega_m+ n'_{1,0} k_1)x} \\
-   \equiv & \frac{F_2}{2} e^{i(n_{2,0}k_2-\omega_m+ n'_{1,0} k_1)x} .
+   h_1 \approx & {\color{blue}-\frac{k_1 \tan 2\theta_\mm}{2} (-i)^{n_{1,0}} n_{1,0} J_{n_{1,0}} (z_{k_1}) e^{i (n_{1,0} k_1-\omega_\mm)x} e^{i n_{1,0}\phi_1} } {\color{red} (-i)^{n'_{2,0}} J_{n'_{2,0}}(z_{k_2}) e^{i(n'_{2,0}k_2)x} e^{i n'_{2,0} \phi_2}  } \nonumber \\
+   =& -\frac{k_1 \tan 2\theta_\mm}{2} (-i)^{ n_{1,0}+n'_{2,0} }   e^{i (n_{1,0}\phi_1 + n'_{2,0} \phi_2)} n_{1,0} \nonumber\\
+   &J_{n_{1,0}} (z_{k_1})  J_{n'_{2,0}}(z_{k_2}) e^{i(n_{1,0} k_1-\omega_\mm + n'_{2,0}k_2)x}  \\
+   \equiv & \frac{F_1}{2} e^{i(n_{1,0} k_1-\omega_\mm + n'_{2,0}k_2)x}  , \\
+   h_2 \approx & {\color{red} - \frac{k_2\tan 2\theta_\mm}{2} (-i)^{n_{2,0}} n_{2,0} J_{n_{2,0}}(z_{k_2}) e^{i(n_{2,0}k_2-\omega_\mm)x} e^{i n_{2,0} \phi_2}  }{\color{blue} \sum_{n_1=-\infty}^{\infty} (-i)^{n_1} J_{n_1}(z_{k_1}) e^{in_1 k_1 x} e^{i n_1 \phi_1} } \nonumber \\
+   =& - \frac{k_2\tan 2\theta_\mm}{2} (-i)^{n_{2,0}+ n'_{1,0} }   e^{i (n_{2,0} \phi_2 + n'_{1,0} \phi_1)}  n_{2,0} \nonumber\\
+   &J_{n_{2,0}}(z_{k_2})  J_{n'_{1,0}}(z_{k_1})  e^{i(n_{2,0}k_2-\omega_\mm+ n'_{1,0} k_1)x} \\
+   \equiv & \frac{F_2}{2} e^{i(n_{2,0}k_2-\omega_\mm+ n'_{1,0} k_1)x} .
 \end{align}
 
 
@@ -1440,17 +1352,17 @@ Lowest order only works for very special cases where on of the wave vectors is v
 We will develop a protocol to decide which order to include. The first thought of higher orders is to add more from the summation before the last RWA. However, it is highly suspicious that this is just like the one frequency case which has a very fast drop in the resonance width as we go to higher orders. This guess needs proof, numerically and analytically. When we mentioned higher orders, we actually mean higher orders in both $n_1$ and $n_2$. Notice that we can always write the 12 element of Hamiltonian as Eqn.~\ref{chap:matter-sec:jacobi-subsec:multi-matter-freq-eqn:2-freq-hamiltonian-12-element}, i.e.,
 \begin{align}
   h =& h_1 + h_2 \\
-   =& \sum_{n_1=-\infty}^\infty \sum_{n_2=-\infty}^{\infty} B_{n_1,n_2}(k_1,k_2) \Phi e^{i(n_1 k_1 + n_2 k_2 - \omega_m)x}  \nonumber \\
-  &+  \sum_{n_1=-\infty}^\infty \sum_{n_2=-\infty}^{\infty} B_{n_2,n_1}(k_2,k_1) \Phi e^{i(n_1 k_1 + n_2 k_2 - \omega_m)x} \nonumber\\
-  =& \sum_{n_1=-\infty}^\infty \sum_{n_2=-\infty}^{\infty} \left( B_{n_1,n_2}(k_1,k_2) + B_{n_2,n_1}(k_2,k_1) \right) \Phi e^{i(n_1 k_1 + n_2 k_2 - \omega_m)x},
+   =& \sum_{n_1=-\infty}^\infty \sum_{n_2=-\infty}^{\infty} B_{n_1,n_2}(k_1,k_2) \Phi e^{i(n_1 k_1 + n_2 k_2 - \omega_\mm)x}  \nonumber \\
+  &+  \sum_{n_1=-\infty}^\infty \sum_{n_2=-\infty}^{\infty} B_{n_2,n_1}(k_2,k_1) \Phi e^{i(n_1 k_1 + n_2 k_2 - \omega_\mm)x} \nonumber\\
+  =& \sum_{n_1=-\infty}^\infty \sum_{n_2=-\infty}^{\infty} \left( B_{n_1,n_2}(k_1,k_2) + B_{n_2,n_1}(k_2,k_1) \right) \Phi e^{i(n_1 k_1 + n_2 k_2 - \omega_\mm)x},
 \end{align}
 without any approximations.
 \begin{itemize}
-    \item One of the choices of adding higher orders is to use $n_1=\mathrm{Round}\left[ \frac{\omega_m}{k_1} \right]$ and $n_2=\mathrm{Round}\left[ \frac{ n_1  k_1 - \omega_m }{k_2} \right]$ as the lowest order in $h_1$ and $n_2=\mathrm{Round}\left[ \frac{\omega_m}{k_2} \right]$ and $n_1=\mathrm{Round}\left[ \frac{ n_2  k_2 - \omega_m }{k_1} \right]$ as the lowest order in $h_2$. Adding higher orders means we add or remove one from $n_1$ in $h_1$ and recalculate $n_2$, while add or remove one from $n_2$ in $h_2$ and recalculate $n_1$.
+    \item One of the choices of adding higher orders is to use $n_1=\mathrm{Round}\left[ \frac{\omega_\mm}{k_1} \right]$ and $n_2=\mathrm{Round}\left[ \frac{ n_1  k_1 - \omega_\mm }{k_2} \right]$ as the lowest order in $h_1$ and $n_2=\mathrm{Round}\left[ \frac{\omega_\mm}{k_2} \right]$ and $n_1=\mathrm{Round}\left[ \frac{ n_2  k_2 - \omega_\mm }{k_1} \right]$ as the lowest order in $h_2$. Adding higher orders means we add or remove one from $n_1$ in $h_1$ and recalculate $n_2$, while add or remove one from $n_2$ in $h_2$ and recalculate $n_1$.
 
    That is to say, we always keep the RWA condition for the last RWA process. What can be changed is the first assumption that the most important term is when only one frequency is relevant which is not always true.
 
-   As an example, we now consider $n_{i,\pm 1}=n_{i,0}\pm 1$ and $n'_{i,\pm 1} =  \mathrm{Round}\left[ \frac{ n_{j,\pm 1} k_j - \omega_m }{k_i} \right]$ with $j\neq i$, thus we replace $n_{i,0}$ with $n_{i,\pm 1}$ to get higher order corrections, c.f.~Fig.~\ref{chap:matter-sec:jacobi-subsec:multi-matter-freq-fig:compApproxNum}.
+   As an example, we now consider $n_{i,\pm 1}=n_{i,0}\pm 1$ and $n'_{i,\pm 1} =  \mathrm{Round}\left[ \frac{ n_{j,\pm 1} k_j - \omega_\mm }{k_i} \right]$ with $j\neq i$, thus we replace $n_{i,0}$ with $n_{i,\pm 1}$ to get higher order corrections, c.f.~Fig.~\ref{chap:matter-sec:jacobi-subsec:multi-matter-freq-fig:compApproxNum}.
 
 
 \begin{figure}[!htbp]
@@ -1472,14 +1384,14 @@ without any approximations.
 \begin{figure}[!htbp]
     \centering
     \includegraphics[width=\textwidth]{chapters/assets/rabi/stimulated-2-freq-higher-orders-approach-2.png}
-    \caption{Compare the different orders with the numerical calculation without approximations, where red dotted line is the numerical calculation without approximation. As we could see from the figure, including up to third order in $n_1$ fixes the deviation from numerical calculation (red dotted line). The wave vectors are $k_1=0.5$, $k_2=0.8$, amplitudes are $A_1=0.1 k_1^{-5/3}$, $A_2=0.1 k_2^{-5/3}$, mixing angle in background matter is $\theta_m=\pi/5$.}
+    \caption{Compare the different orders with the numerical calculation without approximations, where red dotted line is the numerical calculation without approximation. As we could see from the figure, including up to third order in $n_1$ fixes the deviation from numerical calculation (red dotted line). The wave vectors are $k_1=0.5$, $k_2=0.8$, amplitudes are $A_1=0.1 k_1^{-5/3}$, $A_2=0.1 k_2^{-5/3}$, mixing angle in background matter is $\theta_\mm=\pi/5$.}
     \label{chap:matter-sec:jacobi-subsec:multi-matter-freq-fig:stimulated-2-freq-higher-orders-approach-2}
 \end{figure}
 
 
 
 
-\item Now according to the complete expression of the ${}_{12}$ element of Hamiltonian Eqn.~\ref{chap:matter-sec:jacobi-subsec:multi-matter-freq-eqn:2-freq-hamiltonian-12-element}, there is no difference between $n_1$ and $n_2$. Thus whenever we talk about different orders, we should not distinguish between the two integers. However, how to define zero order is not clear to me at this point. To find out, we need to know the resonance width of each pair of integers. The insight comes from the single frequency result. The width for single frequency $\Gamma = \left\lvert \frac{\hat F}{n_0} \right\rvert = \left\lvert \hat k \tan 2\theta_m \frac{ J_{n_0}( n_0 \hat A \cos 2\theta_m/\hat k )}{n_0} \right\rvert .
+\item Now according to the complete expression of the ${}_{12}$ element of Hamiltonian Eqn.~\ref{chap:matter-sec:jacobi-subsec:multi-matter-freq-eqn:2-freq-hamiltonian-12-element}, there is no difference between $n_1$ and $n_2$. Thus whenever we talk about different orders, we should not distinguish between the two integers. However, how to define zero order is not clear to me at this point. To find out, we need to know the resonance width of each pair of integers. The insight comes from the single frequency result. The width for single frequency $\Gamma = \left\lvert \frac{\hat F}{n_0} \right\rvert = \left\lvert \hat k \tan 2\theta_\mm \frac{ J_{n_0}( n_0 \hat A \cos 2\theta_\mm/\hat k )}{n_0} \right\rvert .
 $ depends on the coefficient in front of the phase in the Hamiltonian and the integer. The task is to derive or guess the resonance width for each pair of integers $n_1, n_2$.
 
 \end{itemize}
@@ -1493,8 +1405,8 @@ $ depends on the coefficient in front of the phase in the Hamiltonian and the in
 %   Not notice that the summation in :eq:`eqn-after-first-rwa` is due to the Jacobi-Anger expansion, which is not even helpful in our next calculation. Therefore, we trace back to their original expressions, which leads to
 
 %   .. math::
-%       h_1 & \approx {\color{blue}-\frac{k_1 \tan 2\theta_m}{2} (-i)^{n_{1,0}} n_{1,0} J_{n_{1,0}} (z_{k_1}) e^{i (n_{1,0} k_1-\omega_m)x} e^{i n_{1,0}\phi_1} } {\color{red} e^{-i z_{k_2} \cos(k_2 x+\phi_2)  } }, \\
-%       h_2 & \approx {\color{red} - \frac{k_2\tan 2\theta_m}{2} (-i)^{n_{2,0}} n_{2,0} J_{n_{2,0}}(z_{k_2}) e^{i(n_{2,0}k_2-\omega_m)x} e^{i n_{2,0} \phi_2}  }{\color{blue}  e^{-i z_{k_1} \cos(k_1 x+\phi_1)  } }.
+%       h_1 & \approx {\color{blue}-\frac{k_1 \tan 2\theta_\mm}{2} (-i)^{n_{1,0}} n_{1,0} J_{n_{1,0}} (z_{k_1}) e^{i (n_{1,0} k_1-\omega_\mm)x} e^{i n_{1,0}\phi_1} } {\color{red} e^{-i z_{k_2} \cos(k_2 x+\phi_2)  } }, \\
+%       h_2 & \approx {\color{red} - \frac{k_2\tan 2\theta_\mm}{2} (-i)^{n_{2,0}} n_{2,0} J_{n_{2,0}}(z_{k_2}) e^{i(n_{2,0}k_2-\omega_\mm)x} e^{i n_{2,0} \phi_2}  }{\color{blue}  e^{-i z_{k_1} \cos(k_1 x+\phi_1)  } }.
 
 %   We then perform a numerical calculation using this Hamiltonian element and compare it with the full numerical results.
 
@@ -1506,26 +1418,26 @@ As for a more systematic treatment of the two-frequency case, we geometrize the 
 \end{equation}
 where
 \begin{align}
-   h_1 &=\sum_{n_1=-\infty}^\infty \sum_{n_2=-\infty}^{\infty}\left( -(-i)^{n_1+n_2}\frac{\tan 2\theta_m}{2} n_1 k_1 J_{n_1}(z_{k_1}) J_{n_2}(z_{k_2})  \right) e^{i(n_1\phi_1+n_2\phi_2)} e^{i(n_1 k_1 + n_2 k_2 - \omega_m)x}, \nonumber\\
-   h_2 &=\sum_{n_1=-\infty}^\infty \sum_{n_2=-\infty}^{\infty}\left( -(-i)^{n_1+n_2}\frac{\tan 2\theta_m}{2} n_2 k_2 J_{n_1}(z_{k_1}) J_{n_2}(z_{k_2})  \right) e^{i(n_1\phi_1+n_2\phi_2)} e^{i(n_1 k_1 + n_2 k_2 - \omega_m)x}. \nonumber
+   h_1 &=\sum_{n_1=-\infty}^\infty \sum_{n_2=-\infty}^{\infty}\left( -(-i)^{n_1+n_2}\frac{\tan 2\theta_\mm}{2} n_1 k_1 J_{n_1}(z_{k_1}) J_{n_2}(z_{k_2})  \right) e^{i(n_1\phi_1+n_2\phi_2)} e^{i(n_1 k_1 + n_2 k_2 - \omega_\mm)x}, \nonumber\\
+   h_2 &=\sum_{n_1=-\infty}^\infty \sum_{n_2=-\infty}^{\infty}\left( -(-i)^{n_1+n_2}\frac{\tan 2\theta_\mm}{2} n_2 k_2 J_{n_1}(z_{k_1}) J_{n_2}(z_{k_2})  \right) e^{i(n_1\phi_1+n_2\phi_2)} e^{i(n_1 k_1 + n_2 k_2 - \omega_\mm)x}. \nonumber
 \end{align}
 For simplicity, we define
 \begin{align}
-   B_{n_1,n_2}(k_1,k_2,A_1,A_2) &= -(-i)^{n_1+n_2} \tan 2\theta_m n_1 k_1 J_{n_1}(z_{k_1}) J_{n_2}(z_{k_2}) \nonumber\\
-   &= -(-i)^{n_1+n_2} \tan 2\theta_m n_1 k_1 J_{n_1}(\frac{A_1}{k_1}\cos 2\theta_m) J_{n_2}(\frac{A_2}{k_2}\cos 2\theta_m)  , \nonumber\\
+   B_{n_1,n_2}(k_1,k_2,A_1,A_2) &= -(-i)^{n_1+n_2} \tan 2\theta_\mm n_1 k_1 J_{n_1}(z_{k_1}) J_{n_2}(z_{k_2}) \nonumber\\
+   &= -(-i)^{n_1+n_2} \tan 2\theta_\mm n_1 k_1 J_{n_1}(\frac{A_1}{k_1}\cos 2\theta_\mm) J_{n_2}(\frac{A_2}{k_2}\cos 2\theta_\mm)  , \nonumber\\
    \Phi & = e^{i(n_1\phi_1+n_2\phi_2)}.\nonumber
 \end{align}
 Notice that
 \begin{align}
-   B_{n_2,n_1}(k_2,k_1, A_2, A_1) &= -(-i)^{n_1+n_2} \tan 2\theta_m n_2 k_2 J_{n_1}( \frac{A_1}{k_1}\cos 2\theta_m ) J_{n_2}( \frac{A_2}{k_2}\cos 2\theta_m ).\nonumber
+   B_{n_2,n_1}(k_2,k_1, A_2, A_1) &= -(-i)^{n_1+n_2} \tan 2\theta_\mm n_2 k_2 J_{n_1}( \frac{A_1}{k_1}\cos 2\theta_\mm ) J_{n_2}( \frac{A_2}{k_2}\cos 2\theta_\mm ).\nonumber
 \end{align}
 Using these definitions, we rewrite the Hamiltonian 12 element
 \begin{align}
    h =& h_1 + h_2 \\
-    =& \frac{1}{2}\sum_{n_1=-\infty}^\infty \sum_{n_2=-\infty}^{\infty} B_{n_1,n_2}(k_1,k_2,A_1,A_2) \Phi e^{i(n_1 k_1 + n_2 k_2 - \omega_m)x} \nonumber\\
-   &+  \frac{1}{2}\sum_{n_1=-\infty}^\infty \sum_{n_2=-\infty}^{\infty} B_{n_2,n_1}(k_2,k_1,A_2,A_1) \Phi e^{i(n_1 k_1 + n_2 k_2 - \omega_m)x}  \nonumber\\
-    =& \frac{1}{2}\sum_{n_1=-\infty}^\infty \sum_{n_2=-\infty}^{\infty} \left( B_{n_1,n_2}(k_1,k_2,A_1,A_2) + B_{n_2,n_1}(k_2,k_1,A_2,A_1) \right) \Phi e^{i(n_1 k_1 + n_2 k_2 - \omega_m)x}  \nonumber\\
-    =& \frac{1}{2}\sum_{n_1=-\infty}^\infty \sum_{n_2=-\infty}^{\infty} B_2{n_1,n_2}(k_1,k_2,A_1,A_2)\Phi e^{i(n_1 k_1 + n_2 k_2 - \omega_m)x},
+    =& \frac{1}{2}\sum_{n_1=-\infty}^\infty \sum_{n_2=-\infty}^{\infty} B_{n_1,n_2}(k_1,k_2,A_1,A_2) \Phi e^{i(n_1 k_1 + n_2 k_2 - \omega_\mm)x} \nonumber\\
+   &+  \frac{1}{2}\sum_{n_1=-\infty}^\infty \sum_{n_2=-\infty}^{\infty} B_{n_2,n_1}(k_2,k_1,A_2,A_1) \Phi e^{i(n_1 k_1 + n_2 k_2 - \omega_\mm)x}  \nonumber\\
+    =& \frac{1}{2}\sum_{n_1=-\infty}^\infty \sum_{n_2=-\infty}^{\infty} \left( B_{n_1,n_2}(k_1,k_2,A_1,A_2) + B_{n_2,n_1}(k_2,k_1,A_2,A_1) \right) \Phi e^{i(n_1 k_1 + n_2 k_2 - \omega_\mm)x}  \nonumber\\
+    =& \frac{1}{2}\sum_{n_1=-\infty}^\infty \sum_{n_2=-\infty}^{\infty} B_2{n_1,n_2}(k_1,k_2,A_1,A_2)\Phi e^{i(n_1 k_1 + n_2 k_2 - \omega_\mm)x},
    \label{chap:matter-sec:jacobi-subsec:multi-matter-freq-eqn:2-freq-hamiltonian-12-element}
 \end{align}
 where $B_2{n_1,n_2}(k_1,k_2,A_1,A_2)\equiv B_{n_1,n_2}(k_1,k_2,A_1,A_2) + B_{n_2,n_1}(k_2,k_1,A_2,A_1)$ is what we are interested in.
@@ -1534,11 +1446,11 @@ Comparing this expression with the single frequency one which is almost the same
 \begin{equation}
     P_{1\to 2}(x) = \frac{\lvert \hat B_2 \rvert^2}{ \lvert \hat B_2 \rvert^2 + \hat g_2^2} \sin^2\left( \frac{q_2}{2}x \right),
 \end{equation}
-where $\hat B_2=\frac{ B_2 }{\omega_m}=\frac{B_{n_1,n_2}(k_1,k_2,A_1,A_2) + B_{n_2,n_1}(k_2,k_1,A_2,A_1)}{\omega_m}$ and $\hat g_2 = \frac{g}{\omega_m} = n_1 \hat k_1 + n_2 \hat k_2 - 1$ which tells us how far from resonance and $q_2=\sqrt{ \lvert \hat B_2 \rvert^2 + \hat g^2 }$.
+where $\hat B_2=\frac{ B_2 }{\omega_\mm}=\frac{B_{n_1,n_2}(k_1,k_2,A_1,A_2) + B_{n_2,n_1}(k_2,k_1,A_2,A_1)}{\omega_\mm}$ and $\hat g_2 = \frac{g}{\omega_\mm} = n_1 \hat k_1 + n_2 \hat k_2 - 1$ which tells us how far from resonance and $q_2=\sqrt{ \lvert \hat B_2 \rvert^2 + \hat g^2 }$.
 
 The width then is similar to \ref{chap:matter-sec:deep-jacobi-eqn:single-frequency-width-guessing}, except that we could not define the width as a function of single variables since two wave vector are used. However, it is still reasonable to give the FWHM condition,
 \begin{equation}
-   n_1 \hat k_1 + n_2 \hat k_2 - 1 = \pm \lvert \hat B_2 \rvert = \left\lvert \frac{B_{n_1,n_2}(k_1,k_2,A_1,A_2) + B_{n_2,n_1}(k_2,k_1,A_2,A_1)}{\omega_m} \right\rvert.
+   n_1 \hat k_1 + n_2 \hat k_2 - 1 = \pm \lvert \hat B_2 \rvert = \left\lvert \frac{B_{n_1,n_2}(k_1,k_2,A_1,A_2) + B_{n_2,n_1}(k_2,k_1,A_2,A_1)}{\omega_\mm} \right\rvert.
    \label{chap:matter-sec:deep-jacobi-eqn:stimulated-2-freq-width-requirement-raw}
 \end{equation}
 For a given pair of integers $n_1,n_2$, we could find the amplitude as a function of $k_1, k_2$.
@@ -1600,7 +1512,7 @@ Using this method, we can define a reasonable width for two frequency matter per
 %       \Gamma_2 =  \frac{B_2(k_{1,\mathrm{intercept}},k_{2,\mathrm{intercept}})}{\sqrt{n_1^2 + n_2^2}}.
 
 
-To apply the width in a problem, we need to calculate the distance between the given point $(k_{10},k_{20})$ of the system to a certain resonance line which depends on $n_1,n_2,A_1,A_2,\theta_m$. This is as simple as point to line distance, which is calculated using
+To apply the width in a problem, we need to calculate the distance between the given point $(k_{10},k_{20})$ of the system to a certain resonance line which depends on $n_1,n_2,A_1,A_2,\theta_\mm$. This is as simple as point to line distance, which is calculated using
 \begin{equation}
    d = \frac{\lvert n_1 k_{10} + n_2 k_{20} - 1 \rvert}{\sqrt{n_1^2 + n_2^2} }.
    \label{stimulated-2-freq-distance-0}
