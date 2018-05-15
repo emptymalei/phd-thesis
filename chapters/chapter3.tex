@@ -1,32 +1,11 @@
 %!TEX root = ../dissertation.tex
 
-\chapter{\label{chap:matter}Neutrino Oscillations in Matter}
+\chapter{\label{chap:matter}Neutrino Oscillations in Oscillatory Matter Profile}
 
-In many astrophysical environments, such as stars and core-collapse supernovae, neutrinos are mostly produced in the center of the objects and propagate through dense fluctuating media. The background matter will interact with neutrinos~\footnote{The concept of matter in this thesis refers to electrons since we are discussing the flavor conversion between electron flavor and other flavors. However, it is not necessarily to be confined to be electrons. The same methods also work for other matter background such as matter background contains both electrons and muons.}. Such interactions are not necessarily the same for different flavors. In fact, the neutral current interaction between matter background and neutrinos doesn't distinguish between the flavors, as shown in Fig.~\ref{chap:matter-fig:nc}. However, the charged current interaction is specific for different flavors. For example, charged current interaction with electrons is special for electron flavor neutrinos, as shown in Fig.~\ref{chap:matter-fig:cc}. The charged current interaction is responsible for the difference between neutrino oscillations in vacuum and in matter. Even though the electron flavor neutrinos are produced in the core of stars, the flavor content detected on Earth is not only determined by the vacuum oscillations.
-
-
-
-
-One of the significant matter effect on neutrino flavor oscillations is the Mikheyev-Smirnov-Wolfenstein (MSW) effect~\cite{Mikheev:1986gs,wolf78,wolfensteinprd1979}, which is used to explain the deficit of electron flavor neutrino flux, as know as the solar neutrino problem~\cite{kuo1989,Petcov2002}. Later developments on the theories of matter effect revealed the parametric resonance of neutrino flavor oscillations due to fluctuations in matter density~\cite{Krastev1989,Akhmedov2000}, which is the neutrino analog of transitions between energy levels as a result of external optical stimulation. Parametric resonance is different from the MSW effect since it involves the parameters of the matter density, which is usually the period of matter density fluctuations. It has also be shown that neutrinos passing through the Earth can experience parametric resonance~\cite{Akhmedov1999, Petcov1998b}.
 
 As one of the most intense neutrino sources, supernova neutrinos experience turbulent matter density as they propagate through the explosion~\cite{Muller2015, Couch2015}, where the flavor conversion is modified by interactions with matter. Meanwhile, with neutrinos depositing energy into the shock, neutrino flavor conversion is crucial to understand the shock evolution of supernova explosion. The turbulent matter density environment for neutrino flavor conversion has been studied~\cite{Loreti1994, Friedland2006,Kneller2010}. Recently, neutrino flavor conversions in matter background in varying matter density has been researched using a Jacobi-Anger expansion by Kneller, et al.~\cite{Kneller2013,Patton2014}. They have shown that neutrinos might go through large conversions between the two energy eigenstates.
 
-\begin{figure}[htbp]
-	\begin{subfigure}[t]{0.5\textwidth}
-		\centering
-		\includegraphics[height=0.24\textheight]{chapters/assets/matter/neutral-current.png}
-		\caption{Neutral current interaction between $\nu_{\mathrm e}$, $\nu_{\mu}$, $\nu_{\tau}$, and $e^{-}$. Neutral current interaction is mediated by Z bosons.}
-    \label{chap:matter-fig:nc}
-	\end{subfigure}%
-	\begin{subfigure}[t]{0.5\textwidth}
-		\centering
-		\includegraphics[height=0.24\textheight]{chapters/assets/matter/charged-current.png}
-		\caption{Charged current interaction between $\nu_{\mathrm e}$ and $e^{-}$. Charged current interaction is mediated by W bosons.}
-    \label{chap:matter-fig:cc}
-	\end{subfigure}
-	\caption{Two important interactions---neutral current and charged current---between neutrinos and matter. They exchange different bosons.}
-    \label{chap:matter-fig:nc-cc}
-\end{figure}
+
 
 I will take a step further and interpret parametric resonance~\cite{Akhmedov2000, Krastev1989} as well as other matter stimulated neutrino flavor conversions~\cite{Kneller2013, Patton2014}, as a superposition of Rabi oscillations. I will also calculate the criteria for the survival of resonance due to interference effect between different Rabi oscillation modes. In Sec.~\ref{chap:matter-sec:background}, we define the formalism of neutrino flavor conversions in matter used in this chapter where the equation of motion and Hamiltonian for neutrino flavor conversion in matter are explicitly written. In Sec.~\ref{chap:matter-sec:single} we discuss how neutrino flavor conversions are related to Rabi oscillations. To begin, we discuss a system with single frequency matter density fluctuation. We will show that such a system can be reduced to Rabi oscillations if resonance occurs. In Sec.~\ref{sec:multiple} we describe the interference effect between different frequencies of Rabi oscillations and develop the criteria for significant interference between two frequencies. We show that the interference between the many frequencies fits into the criteria we proposed for interference. In Sec.~\ref{sec:jacobi} we discuss the technique of decomposing the neutrino flavor conversions into summation of Rabi oscillations, by applying a specific unitary transformation and the Jacobi-Anger expansion. As the system is exactly decomposed into multiple Rabi oscillations, we can interpret neutrino flavor oscillations in any matter density fluctuations, in principle. As an example, we solve the neutrino flavor transitions in a castle wall matter profile, which contains infinite frequencies from the aspect of Fourier series.
 
@@ -38,151 +17,21 @@ I will take a step further and interpret parametric resonance~\cite{Akhmedov2000
 % In the following sections of this chapter, I will discuss neutrino oscillations in the Sun as well as in supernovae. Solar neutrinos go through a region with smoothly decreasing matter density while supernova neutrinos go through a region with turbulent matter background~\cite{Friedland2006,Borriello2014}. Neutrino oscillations within the supernova is quite different from neutrino oscillations in the Sun.
 
 
-\section{\label{chap:matter-sec:solar-neutrinos}Neutrino Oscillations in the Sun}
 
 
-Flavor conversion occurs as long as their propagation eigenstates are different from their flavor eigenstates. Since the neutral current interactions between the neutrinos and the matter is independent of the flavors, as shown in Fig.~\ref{chap:matter-fig:nc}, I only include the charged current interactions in the Hamiltonian, which is an effective potential for electron flavor. In flavor basis, the effective potential is
-\begin{equation}
-\mathsf V^{(\ff)} = \frac{\sqrt{2}G_{\mathrm F} n_{\mathrm e} }{2} \vec \sigma_3,
-\end{equation}
-where $G_{\mathrm F}$ is Fermi constant, $n_{\mathrm e}$ is number density of electrons. We also remove the terms proportional to the identity in this potential since they do not change the probability for flavors. The Hamiltonian with matter effect is the combination of vacuum oscillation and matter effect, which is, in flavor basis,
-\begin{equation}
-\mathsf H^{(\ff)} = \frac{ \omega_\vv }{2}\begin{pmatrix} -\cos 2\theta_\vv & \sin 2 \theta_\vv \\ \sin 2\theta_\vv & \cos 2\theta_\vv  \end{pmatrix} + \frac{\sqrt{2}G_{\mathrm F} n_{\mathrm e}}{2} \sigma_3,
-\end{equation}
-where we used the result of flavor basis vacuum oscillation Hamiltonian
-\begin{align}
-\mathsf H_\vv^{(\ff)}& = \mathsf{U} \mathsf H_\vv \mathsf{U}^\dagger \\
-&= \frac{ \omega_\vv }{2}\begin{pmatrix} -\cos 2\theta_\vv & \sin 2 \theta_\vv \\ \sin 2\theta_\vv & \cos 2\theta_\vv  \end{pmatrix}.
-\end{align}
-Utilizing Pauli matrices and the so called matter potential $\lambda = \frac{\sqrt{2}G_F n_e}{2}$, it is rewritten as
-\begin{equation}
-\mathsf H_\mm^{(\ff)} = \left(\frac{\lambda}{2} -\frac{ \omega_\vv }{2} \cos 2\theta_\vv \right) {\sigma}_3  + \frac{ \omega_\vv }{2} \sin 2\theta_\vv {\sigma}_1.
-\label{chap:basics-sec:msw-eqn:hamiltonian-matter-effect}
-\end{equation}
-Due to the off-diagonal terms in the Hamiltonian, the system will experience oscillations in flavor. A resonance, i.e., maximum mixing, dominates the system when the diagonal terms becomes zero,
-\begin{equation}
-\frac{\lambda}{2} -\frac{ \omega }{2} \cos 2\theta_\vv  = 0,
-\end{equation}
-which gives us the Mikheyev--Smirnov--Wolfenstein (MSW) resonance condition.
-
-
-% \section{\label{chap:basics-sec:msw}Mikheyev--Smirnov--Wolfenstein Effect}
-
-For the neutrinos produced in the Sun, they travel from the center of the Sun to the surface. The matter density is not uniform on the path of these solar neutrinos. The neutrino propagation eigenstates are different from flavor states in general~\cite{wolf78}. The importance of matter effect to our understanding of solar neutrinos is that it modifies the oscillation, depending on the matter density variation. For the Sun, the density change is not too dramatic. The neutrinos go through adiabatic evolution during the propagation, which means that the instantaneous eigenstates and eigenvectors of Hamiltonian is good enough for the time dependent Schr\"{o}dinger equation.
-
-For simplicity, we define the 'hatted' dimensionless matter potential using the vacuum oscillation frequency
-\begin{align}
-\hat\lambda & = \frac{\lambda}{\omega_\vv}.
-\end{align}
-The eigenstates, derived by diagonalizing the Hamiltonian, are
-\begin{align}
-E_1 &= \frac{\omega_\vv}{2}\sqrt{ \hat\lambda +1 -  2\hat\lambda \cos 2\theta_\vv }\\
-E_2 &= -\frac{\omega_\vv}{2}\sqrt{ \hat\lambda +1 -  2\hat\lambda \cos 2\theta_\vv }.
-\end{align}
-
-
-\begin{figure}[htbp]
-\centering
-\includegraphics[width=0.7\columnwidth]{chapters/assets/matter/mswEnergyLevels}
-\caption{The two energy levels in matter effect. The potential has unit $\omega_\vv$. I have used $\sin^2\theta_\vv = 0.02 \approx \sin^2 \theta_{13}$.}
-\label{fig:mswEnergyLevels}
-\end{figure}
-
-Fig.~\ref{fig:mswEnergyLevels} shows the two energy levels for a neutrino propagating in different matter potentials. For very high matter density, the electron flavor is almost comparable to heavy eigenstate. However, as the matter density becomes lower, the heavy propagation state will be gradually transformed to the other flavors. As the neutrinos reach the surface, the matter density is approaching vacuum. The heavy state of the neutrino is approaching electron flavor state. The resonance, which is the closest point of energy levels, happens at density $n_{\mathrm e} = 2\omega_\vv \cos(2\theta_\vv)/\sqrt{2}G_{\mathrm F}$ which depends on $\omega_\vv$. Resonances of neutrinos with different energies happens at different matter densities, which will significantly reshape the neutrino energy spectra. Even though only the electron flavor neutrinos are produced in the Sun, the neutrino flavor conversion to the other flavors is enhanced by the matter interactions, in addition to the vacuum oscillation. The exact neutrino flavor conversion is much more complicated than the MSW effect. As an approximation, the MSW transition is good enough for the solar neutrinos flavor oscillations~\cite{Lopes2013a}.
-
-One of the interesting fact about MSW effect is the MSW triangle shown in Fig.~\ref{chap:basics-sec:msw-fig:msw-triangle}. The survival probability of the electron flavor neutrinos is plotted against $\log (\lambda/\omega_\vv)$ and $\log (\sin^2 2\theta_\vv)$. Qualitatively speaking, large conversion happens when matter density is not too small since a sufficient central potential is required for the level crossing. This leads to the triangle shape of the low survival probability region.
-
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.9\textwidth]{chapters/assets/basics/msw-triangle.png}
-    \caption{MSW triangle. The horizontal axis is related to the the mixing angles, and the vertical axis is related to the matter potential in the center of the Sun. The colors are the survival probabilities of electron flavor. The region of large conversions, or small survival probabilities, forms a triangle. The larger the mixing angle, the larger range of matter potential for large conversions.}
-    \label{chap:basics-sec:msw-fig:msw-triangle}
-\end{figure}
-
-
-
-
-
-% \section{\label{chap:matter-sec:flavor-isospin}Flavor Isospin Formalism}
-
-
-
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.4\textwidth]{chapters/assets/matter/matter-effect-notsolarge-density}
-    \caption{Neutrino oscillations in flavor isospin picture, with the presence of matter potential. The flavor isospin is denoted as red dashed arrow. It starts from electron flavor. The two gray vectors stand for the Hamiltonians of vacuum $\vec H_{\mathrm v}$ and matter $\vec H_{\mathrm m}$.}
-    \label{chap:basics-sec:flavor-isospin-pic-fig:matter-effect-notsolarge-density}
-\end{figure}
-
-MSW effect is also easily explained using flavor isospin picture. The Hamiltonian in flavor isospin picture
-\begin{align*}
-    \mathsf H_\mm = & \frac{\omega_{\mathrm{v}}}{2}\left( - \cos 2\theta_{\mathrm{v}} {\sigma_3} + \sin 2\theta_{\mathrm{v}} {\sigma_1} \right)   + \frac{\lambda(x)}{2} {\sigma_3} \\
-    \to &  \omega_{\mathrm v}\begin{pmatrix}
-    - \sin 2\theta_{\mathrm v} \\
-    0 \\
-    \cos 2\theta_{\mathrm v}
-    \end{pmatrix}   + \begin{pmatrix}
-    0\\
-    0\\
-    - \lambda(x)
-    \end{pmatrix}  \\
-    = &  \vec H_{\mathrm v} + \vec H_{\mathrm m}(x),
-\end{align*}
-where $\vec H_{\mathrm v}$ is vacuum contribution and $\vec H_{\mathrm m}(x)$ is the matter potential contribution. The two vectors are visualized in Fig.~\ref{chap:basics-sec:flavor-isospin-pic-fig:matter-effect-notsolarge-density}. We discussed in Sec.~\ref{chap:basics-sec:msw} the adiabatic transitions of neutrino states in varying matter density. Fig.~\ref{chap:basics-sec:flavor-isospin-pic-fig:msw-adiabatic} shows the adiabatic evolution of neutrino flavor isospin. For region of high density matter background, which provides large matter potential, the total Hamiltonian is almost pointing downward. We observe almost no flavor oscillations since flavor isospin precession is tiny. As the neutrinos moving into smaller matter density regions, the flavor isospin is approximately following the evolution of Hamiltonian. Flavor conversion happens because of the evolution of Hamiltonian, even though flavor oscillations are still tiny. In the end, neutrinos reach the region with almost no matter, where they are almost converted to one of the mass eigenstates. In fact, those neutrinos won't oscillate that much in vacuum following this initial condition.
-
-
-
-
-
-
-\begin{figure}[htbp]
-	\centering
-	\begin{subfigure}[t]{0.3\textwidth}
-		\centering
-		\includegraphics[width=0.8\textwidth]{chapters/assets/matter/matter-effect-large-density}
-		\caption{High matter density}\label{chap:basics-sec:flavor-isospin-pic-fig:msw-adiabatic-large-density}
-	\end{subfigure}
-	\quad
-	\begin{subfigure}[t]{0.3\textwidth}
-		\centering
-		\includegraphics[width=0.8\textwidth]{chapters/assets/matter/matter-effect-adiabatic}
-		\caption{Medium matter density}\label{chap:basics-sec:flavor-isospin-pic-fig:msw-adiabatic-medium-density}
-	\end{subfigure}
-	\quad
-	\begin{subfigure}[t]{0.3\textwidth}
-		\centering
-		\includegraphics[width=0.8\textwidth]{chapters/assets/matter/matter-effect-adiabatic-3}
-		\caption{Low matter density}\label{chap:basics-sec:flavor-isospin-pic-fig:msw-adiabatic-small-density}
-	\end{subfigure}
-	\caption{Flavor isospin picture of neutrino oscillations in matter. $\vec H_{\mathrm v}$ is the vacuum contribution to Hamiltonian, and $\vec H_{\mathrm m}$ corresponds to the matter potential.}\label{chap:basics-sec:flavor-isospin-pic-fig:msw-adiabatic}
-\end{figure}
-
-Neutrinos might experience a critical matter density, when the overall Hamiltonian is perpendicular to the upright axis. Assuming we have electron neutrinos going through such regions, they will experience maximum flavor oscillations, c.f.~Fig.~\ref{chap:basics-sec:flavor-isospin-pic-fig:msw-adiabatic-critical}.
-
-\begin{figure}
-    \centering
-    \includegraphics[width=0.5\textwidth]{chapters/assets/basics/matter-effect-critical-density}
-    \caption{MSW resonance happens when electron neutrinos go through a critical matter density.}
-    \label{chap:basics-sec:flavor-isospin-pic-fig:msw-adiabatic-critical}
-\end{figure}
-
-
-
-
-
-\section{\label{chap:matter-sec:background}Equation of Motion for Neutrino Oscillations in Matter}
+\section{\label{chap:matter-sec:background}Equation of Motion for Neutrino Oscillations in the Matter}
 
 % \fbox{TODO: Explain why two flavor} didn't add this because the three flavor is really very different.
 
-We consider two-flavor oscillation scenario, in which neutrinos have energy $E$ and mass-squared difference $\delta m^2$ between two mass states propagate through matter which is define by electron number density profile $n(r)$ along the path of neutrino propagation $r$.  The dynamics of neutrino flavor conversion is determined by Schr\"{o}dinger equation. In flavor basis the wave function describes the probability amplitude of different flavors. The Hamiltonian in flavor basis consists the vacuum oscillation Hamiltonian $H^{(f)}_{\mathrm v}$ and the matter term $H^{(f)}_{\mathrm{m}}$ which describes the interaction between neutrinos and matter,
+I will write down the equation of motion for neutrinos prograting through a general matter profile. I assume that the neutrinos have energy $E$ and mass-squared difference $\delta m^2$. The dynamics of neutrino flavor conversion is determined by the Schr\"{o}dinger equation. In flavor basis the wave function describes the probability amplitude of different flavors. The Hamiltonian in flavor basis consists the vacuum oscillation Hamiltonian $\mathsf H^{(\ff)}_{\mathrm v}$ and the matter term $\mathsf H^{(\ff)}_{\mathrm{m}}$ which describes the interaction between neutrinos and matter,
 \begin{align}
-    H^{(\mathrm{f})} =&  H^{(f)}_{\mathrm v} + H^{(f)}_{\mathrm m} \nonumber\\
+    \mathsf H^{(\mathrm{f})} =&  \mathsf H^{(\ff)}_{\mathrm v} + \mathsf H^{(\ff)}_{\mathrm m} \nonumber\\
     =&  \frac{1}{2} \begin{pmatrix}
     -\omega_{\mathrm{v}} \cos 2\theta_{\mathrm{v}} + \lambda(r) & \omega_{\mathrm{v}}\sin 2\theta_{\mathrm{v}} \\
    \omega_{\mathrm{v}} \sin 2\theta_{\mathrm{v}} & \omega_{\mathrm{v}} \cos 2\theta_{\mathrm{v}} - \lambda(r)
     \end{pmatrix},
 \end{align}
-where $\lambda(r)= \sqrt{2}G_{\mathrm F} n(r)$ is the potential of neutrino interaction with matter and $G_{\mathrm F}$ is the Fermi constant, $\theta_{\mathrm{v}}$ is the vacuum mixing angle, $\omega_{\mathrm{v}} = \delta m^2/2E$ is the vacuum oscillation frequency. The potential $\lambda(r)$ is called matter profile since it reflects the matter density fluctuations. For the convenience of notation, we use Pauli matrices $\sigma_i$ to rewrite the Hamiltonian, so that the Schr\"{o}dinger equation becomes,
+where $\lambda(r)= \sqrt{2}G_{\mathrm F} n(r)$ is the matter potential of neutrino interactions as defined in Eqn.~\ref{chap:basics-sec:oscillations-matter-eqn:lambda}. The potential $\lambda(r)$ is called matter profile since it reflects the matter density fluctuations. For the convenience of notation, we use Pauli matrices $\sigma_i$ to rewrite the Hamiltonian, so that the Schr\"{o}dinger equation becomes,
 \begin{equation*}
     \mathrm i\frac{\mathrm d}{\mathrm d r}\Psi(r) = \frac{1}{2} \left(
     (- \omega_{\mathrm{v}}\cos 2\theta_{\mathrm{v}} + \lambda(r) ) \sigma_3 + \omega_{\mathrm{v}}\sin 2\theta_{\mathrm{v}} \sigma_1
