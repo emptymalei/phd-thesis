@@ -2,12 +2,11 @@
 
 \chapter{\label{chap:matter}Neutrino Oscillations in Oscillatory Matter Profile}
 
+In certain regions inside a star or a supernova where convection is prominent, the matter density varies rapidly as a function of distance~\cite{Muller2015, Couch2015}. The neutrino flavor evolution in such environments is qualitatively different than that in a smooth density profile~\cite{Krastev1989, Loreti1994,Akhmedov2000, Friedland2006,Kneller2010,Kneller2013,Patton2014}. For example, the flavor conversion of the neutrino is greatly enhanced if the matter density fluctuates with certain wave numbers. This is known as parametric resonance.
 
-As one of the most intense neutrino sources, supernova neutrinos experience turbulent matter density as they propagate through the explosion~\cite{Muller2015, Couch2015}, where the flavor conversion is modified by interactions with matter. Meanwhile, with neutrinos depositing energy into the shock, neutrino flavor conversion is crucial to understand the shock evolution of supernova explosion. The turbulent matter density environment for neutrino flavor conversion has been studied~\cite{Loreti1994, Friedland2006,Kneller2010}. Recently, neutrino flavor conversions in matter background in varying matter density has been researched using a Jacobi-Anger expansion by Kneller, et al.~\cite{Kneller2013,Patton2014}. They have shown that neutrinos might go through large conversions between the two energy eigenstates.
+To understand this interesting phenonema I will first introduce the background matter basis where the equation of motion simplifies. After demonstrating the simplest example of the parametric resonance in the presence of a sinusoidal matter profile with the Rabi formula, I will explain the interference effect when there exist multiple Fourier modes in the matter profile. Then I will show how to use the Jacobi-Anger expansion to decompose an arbitrary matter profile into a infinite sum of Fourier modes and how to apply the Rabi formula in these scenarios.
 
-
-
-I will take a step further and interpret parametric resonance~\cite{Akhmedov2000, Krastev1989} as well as other matter stimulated neutrino flavor conversions~\cite{Kneller2013, Patton2014}, as a superposition of Rabi oscillations. I will also calculate the criteria for the survival of resonance due to interference effect between different Rabi oscillation modes. In Sec.~\ref{chap:matter-sec:background}, we define the formalism of neutrino flavor conversions in matter used in this chapter where the equation of motion and Hamiltonian for neutrino flavor conversion in matter are explicitly written. In Sec.~\ref{chap:matter-sec:single} we discuss how neutrino flavor conversions are related to Rabi oscillations. To begin, we discuss a system with single frequency matter density fluctuation. We will show that such a system can be reduced to Rabi oscillations if resonance occurs. In Sec.~\ref{sec:multiple} we describe the interference effect between different frequencies of Rabi oscillations and develop the criteria for significant interference between two frequencies. We show that the interference between the many frequencies fits into the criteria we proposed for interference. In Sec.~\ref{sec:jacobi} we discuss the technique of decomposing the neutrino flavor conversions into summation of Rabi oscillations, by applying a specific unitary transformation and the Jacobi-Anger expansion. As the system is exactly decomposed into multiple Rabi oscillations, we can interpret neutrino flavor oscillations in any matter density fluctuations, in principle. As an example, we solve the neutrino flavor transitions in a castle wall matter profile, which contains infinite frequencies from the aspect of Fourier series.
+In Sec.~\ref{sec:jacobi} we discuss the technique of decomposing the neutrino flavor conversions into summation of Rabi oscillations, by applying a specific unitary transformation and the Jacobi-Anger expansion. As the system is exactly decomposed into multiple Rabi oscillations, we can interpret neutrino flavor oscillations in any matter density fluctuations, in principle. As an example, we solve the neutrino flavor transitions in a castle wall matter profile, which contains infinite frequencies from the aspect of Fourier series. Finally I will discuss an algorithm to select the Fourier modes of a matter profile that have the largest impact on the flavor conversion of the neutrino.
 
 
 
@@ -19,50 +18,65 @@ I will take a step further and interpret parametric resonance~\cite{Akhmedov2000
 
 
 
-\section{\label{chap:matter-sec:background}Equation of Motion for Neutrino Oscillations in the Matter}
+\section{\label{chap:matter-sec:background}Background Matter Basis}
 
 % \fbox{TODO: Explain why two flavor} didn't add this because the three flavor is really very different.
 
-I will write down the equation of motion for neutrinos prograting through a general matter profile $\lambda(r)$ where $r$ is the trajectory of neutrinos. The Hamiltonian of neutrino oscillations is Eqn.~\ref{chap:basics-sec:msw-eqn:hamiltonian-matter-effect}. The dynamics of neutrino flavor conversion is determined by the Schr\"{o}dinger equation:
-\begin{equation*}
-    \mathrm i\frac{\mathrm d}{\mathrm d r}\Psi(r) = \frac{1}{2} \left(
-    (- \omega_{\mathrm{v}}\cos 2\theta_{\mathrm{v}} + \lambda(r) ) \sigma_3 + \omega_{\mathrm{v}}\sin 2\theta_{\mathrm{v}} \sigma_1
-    \right)
-    \Psi(r),
-\end{equation*}
-where $\Psi(r)$ is the wave function in flavor basis. For the two flavor scenario, the wave function is written as
-\begin{equation}
-	 \Psi(r) = \begin{pmatrix}
-    \psi_{\ee} \\
-    \psi_{\xx}
-	\end{pmatrix},
-\end{equation}
-where $\psi_{\ee}$ and $\psi_{\xx}$ are the amplitudes for electron flavor and the other flavor ($\mu$ flavor or $\tau$ flavor) respectively.
+% I will write down the equation of motion for neutrinos prograting through a general matter profile $\lambda(r)$ where $r$ is the trajectory of neutrinos. The Hamiltonian of neutrino oscillations is Eqn.~\ref{chap:basics-sec:msw-eqn:hamiltonian-matter-effect}. The dynamics of neutrino flavor conversion is determined by the Schr\"{o}dinger equation:
+% \begin{equation*}
+%     \mathrm i\frac{\mathrm d}{\mathrm d r}\Psi(r) = \frac{1}{2} \left(
+%     (- \omega_{\mathrm{v}}\cos 2\theta_{\mathrm{v}} + \lambda(r) ) \sigma_3 + \omega_{\mathrm{v}}\sin 2\theta_{\mathrm{v}} \sigma_1
+%     \right)
+%     \Psi(r),
+% \end{equation*}
+% where $\Psi(r)$ is the wave function in flavor basis. For the two flavor scenario, the wave function is written as
+% \begin{equation}
+% 	 \Psi(r) = \begin{pmatrix}
+%     \psi_{\ee} \\
+%     \psi_{\xx}
+% 	\end{pmatrix},
+% \end{equation}
+% where $\psi_{\ee}$ and $\psi_{\xx}$ are the amplitudes for electron flavor and the other flavor ($\mu$ flavor or $\tau$ flavor) respectively.
 
-For a general matter profile, it can always be expanded as the uniform zeroth mode and the higher modes. For the purpose of this section, I will denote the uniform zeroth mode as $\lambda_0$ and the $r$ dependent modes as $\delta \lambda(r)$, i.e.,
+For a uniform matter density $\lambda(r) = \lambda_0$, one can define a matter basis in which the Hamiltonian is diagonalized:
 \begin{equation}
-    \lambda(r) = \lambda_0 + \delta \lambda(r).
+\mathsf H^{(\mm)}  = \mathsf U^\dagger \mathsf H^{(\ff)} \mathsf U = -\frac{\omega_\mm}{2} \sigma_3,
+\end{equation}
+where
+\begin{equation}
+\mathsf U = \begin{pmatrix}
+\cos \theta_\mm & \sin \theta_\mm \\
+\sin\theta_\mm & \cos \theta_\mm
+\end{pmatrix}
+\end{equation}
+with
+\begin{equation*}
+\theta_{\mathrm{m}}= \frac{1}{2} \arctan\left(
+\frac{\sin 2\theta_{\mathrm v}}{ \cos 2\theta_{\mathrm v} - \lambda_0/\omega_{\mathrm v} } \right),
+\label{chap:matter-sec:background-eqn:thetam}
+\end{equation*}
+and
+\begin{equation}
+\omega_{\mathrm{m}} = \omega_{\mathrm{v}} \sqrt{ ( \lambda_0/\omega_{\mathrm{v}} - \cos (2\theta_{\mathrm{v}}) )^2 + \sin^2(2\theta_{\mathrm{v}}) }
+\label{chap:matter-sec:background-eqn:omegam}
+\end{equation}
+is the neutrino oscillations frequency in matter.
+
+In the rest of the chaper, I will consider profiles of the form
+\begin{equation}
+    \lambda(r) = \lambda_0 + \delta \lambda(r),
     \label{eq-general-matter-profile}
 \end{equation}
-I will constrate on the case where fluctuation $\delta \lambda(r)$ is a perturbation to the uniform matter potential.
-To get a better understanding of the transition between the different neutrino states as a consequence of the fluctuation of matter density $\delta r(r)$, I define the background matter basis, in which the Hamiltonian is diagonalized in the absence of fluctuations $\delta\lambda(r)$, so that the Hamiltonian reads
+where $\delta \lambda(r)$ describes the fluctuation of the matter density. I will use the background matter basis defined by Eqn.~\ref{chap:matter-sec:background-eqn:thetam} and Eqn.~\ref{chap:matter-sec:background-eqn:omegam}. In this basis, the Hamiltonian reads
 \begin{equation}
     \mathsf H^{(\mathrm{m})} = -\frac{\omega_\mm}{2} \sigma_3 + \frac{1}{2} \delta\lambda(r) \cos 2\theta_{\mathrm m} \sigma_3
-     - \frac{1}{2} \delta\lambda(r) \sin 2\theta_{\mathrm m} \sigma_1,
+     - \frac{1}{2} \delta\lambda(r) \sin 2\theta_{\mathrm m} \sigma_1.
     \label{eq-hamiltonian-bg-matter-basis-general}
-\end{equation}
-where $\theta_{\mathrm m}$ is the mixing angle in a uniform matter profile $\lambda_0$, which is calculated using relation
-\begin{equation*}
-\tan 2\theta_{\mathrm{m}}=\sin 2\theta_{\mathrm v}/\left( \cos 2\theta_{\mathrm v} - \lambda_0/\omega_{\mathrm v} \right)
-\end{equation*}
-with $\omega_{\mathrm v}$ denoting the vacuum oscillation frequency and $\theta_{\mathrm v}$ denoting the vacuum mixing angle. The frequency $\omega_{\mathrm m}$ is defined as
-\begin{equation}
-\omega_{\mathrm{m}} = \omega_{\mathrm{v}} \sqrt{ ( \lambda_0/\omega_{\mathrm{v}} - \cos (2\theta_{\mathrm{v}}) )^2 + \sin^2(2\theta_{\mathrm{v}}) }.
 \end{equation}
 
 In the background matter basis, the wave function describes the amplitudes of different eigenstates defined when there is only background matter density $\lambda_0$. Given the transition probability between the these eigenstates, it is trivial to calculate the flavor conversion. Since I'll concentrate on the flavor conversion due to the matter fluctuations, I'll only discuss the transition between mass states in the background matter basis.
 
-In this chapter, mixing angle is chosen so that $\sin^2(2\theta_{\mathrm v}) = 0.093$ and the mass squared difference is $\delta m^2 = 2.6\times 10^{-3}\mathrm{eV}^2$.
+All the numerical examples in this chapter are calculated with $\sin^2(2\theta_{\mathrm v}) = 0.093$ and $\delta m^2 = 2.6\times 10^{-3}\mathrm{eV}^2$.
 
 
 
