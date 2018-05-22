@@ -71,7 +71,7 @@ options:
   $PATH: '/usr/texbin:/Library/TeX/texbin:$PATH'
 files:
   dicy-instance.yaml-ParsedYAML:
-    timeStamp: 2018-05-21T22:05:02.983Z
+    timeStamp: 2018-05-22T16:09:38.503Z
     jobNames: []
     value:
       severity: info
@@ -136,21 +136,21 @@ files:
     type: LaTeX
     subType: unmeethesis
   /Users/leima/Library/Application Support/dicy/config.yaml:
-    timeStamp: 2018-05-21T22:06:54.952Z
+    timeStamp: 2018-05-22T16:09:38.557Z
     jobNames: []
     type: YAML
   x.y-Nil:
     jobNames: []
     type: Nil
   phd-thesis-lei-ma.blg:
-    timeStamp: 2018-05-21T23:11:18.810Z
+    timeStamp: 2018-05-22T17:04:00.937Z
     jobNames: []
-    hash: Z5haTx4hDM1850MwxIEbuiEy6oty9nddYRgjgQMx96w=
+    hash: te7WpywoeiTaAyZfWXfcanrnUcsEn6BXs+dSJidDYKM=
     type: BiberLog
   phd-thesis-lei-ma.log:
-    timeStamp: 2018-05-21T23:11:27.967Z
+    timeStamp: 2018-05-22T17:04:09.283Z
     jobNames: []
-    hash: UUVQ3iMzoeL/lekYzJ0F1EXq264is3DrTFSlc4uGhow=
+    hash: b0I3hAxFkDZFnaB3/HLAZ/65d3ZOBWN/zU6iAXmOTT0=
     type: LaTeXLog
     subType: XeTeX
   phd-thesis-lei-ma.fls-ParsedFileListing:
@@ -488,7 +488,7 @@ files:
       calls: []
     type: ParsedFileListing
   phd-thesis-lei-ma.log-ParsedLaTeXLog:
-    timeStamp: 2018-05-21T23:11:28.311Z
+    timeStamp: 2018-05-22T17:04:09.674Z
     jobNames: []
     value:
       messages:
@@ -2740,13 +2740,13 @@ files:
           source:
             file: chapters/chapter3.tex
             range:
-              start: 671
-              end: 671
+              start: 685
+              end: 685
           log:
             file: phd-thesis-lei-ma.log
             range:
-              start: 1116
-              end: 1118
+              start: 1119
+              end: 1121
         - severity: warning
           name: XeTeX
           category: LaTeX
@@ -2756,13 +2756,13 @@ files:
           source:
             file: chapters/chapter3.tex
             range:
-              start: 726
-              end: 726
+              start: 740
+              end: 740
           log:
             file: phd-thesis-lei-ma.log
             range:
-              start: 1125
-              end: 1126
+              start: 1128
+              end: 1129
         - severity: warning
           name: XeTeX
           category: LaTeX
@@ -2770,8 +2770,8 @@ files:
           source:
             file: chapters/chapter3.tex
             range:
-              start: 783
-              end: 783
+              start: 797
+              end: 797
           log:
             file: phd-thesis-lei-ma.log
             range:
@@ -2784,8 +2784,8 @@ files:
           source:
             file: chapters/chapter3.tex
             range:
-              start: 1030
-              end: 1030
+              start: 1044
+              end: 1044
           log:
             file: phd-thesis-lei-ma.log
             range:
@@ -2803,8 +2803,8 @@ files:
           log:
             file: phd-thesis-lei-ma.log
             range:
-              start: 1192
-              end: 1192
+              start: 1198
+              end: 1198
         - severity: info
           name: XeTeX
           category: Package atveryend
@@ -2817,8 +2817,8 @@ files:
           log:
             file: phd-thesis-lei-ma.log
             range:
-              start: 1193
-              end: 1193
+              start: 1199
+              end: 1199
         - severity: info
           name: XeTeX
           category: Package atveryend
@@ -2831,8 +2831,8 @@ files:
           log:
             file: phd-thesis-lei-ma.log
             range:
-              start: 1198
-              end: 1198
+              start: 1204
+              end: 1204
         - severity: info
           name: XeTeX
           category: Package atveryend
@@ -2845,8 +2845,8 @@ files:
           log:
             file: phd-thesis-lei-ma.log
             range:
-              start: 1199
-              end: 1199
+              start: 1205
+              end: 1205
         - severity: warning
           name: XeTeX
           category: LaTeX
@@ -2856,8 +2856,8 @@ files:
           log:
             file: phd-thesis-lei-ma.log
             range:
-              start: 1201
-              end: 1201
+              start: 1207
+              end: 1207
         - severity: warning
           name: XeTeX
           category: LaTeX
@@ -2867,8 +2867,8 @@ files:
           log:
             file: phd-thesis-lei-ma.log
             range:
-              start: 1204
-              end: 1204
+              start: 1210
+              end: 1210
         - severity: info
           name: XeTeX
           category: Package logreq
@@ -2878,15 +2878,15 @@ files:
           log:
             file: phd-thesis-lei-ma.log
             range:
-              start: 1206
-              end: 1206
+              start: 1212
+              end: 1212
       inputs: []
       outputs:
         - phd-thesis-lei-ma.pdf
       calls: []
     type: ParsedLaTeXLog
   phd-thesis-lei-ma.blg-ParsedBiberLog:
-    timeStamp: 2018-05-21T23:11:18.866Z
+    timeStamp: 2018-05-22T17:04:00.982Z
     jobNames: []
     value:
       messages:
@@ -2908,7 +2908,7 @@ files:
               end: 2
         - severity: info
           name: Biber
-          text: '=== Mon May 21, 2018, 17:11:17'
+          text: '=== Tue May 22, 2018, 11:04:00'
           log:
             file: phd-thesis-lei-ma.blg
             range:
@@ -2924,7 +2924,7 @@ files:
               end: 4
         - severity: info
           name: Biber
-          text: Found 29 citekeys in bib section 0
+          text: Found 28 citekeys in bib section 0
           log:
             file: phd-thesis-lei-ma.blg
             range:
@@ -3125,23 +3125,13 @@ files:
         - severity: warning
           name: Biber
           text: >-
-            month field 'mar' in entry 'Kneller2006' is not an integer - this
+            month field 'mar' in entry 'Totani1998' is not an integer - this
             will probably not sort properly.
           log:
             file: phd-thesis-lei-ma.blg
             range:
               start: 26
               end: 26
-        - severity: warning
-          name: Biber
-          text: >-
-            month field 'mar' in entry 'Totani1998' is not an integer - this
-            will probably not sort properly.
-          log:
-            file: phd-thesis-lei-ma.blg
-            range:
-              start: 27
-              end: 27
         - severity: info
           name: Biber
           text: >-
@@ -3150,8 +3140,8 @@ files:
           log:
             file: phd-thesis-lei-ma.blg
             range:
-              start: 28
-              end: 28
+              start: 27
+              end: 27
         - severity: info
           name: Biber
           text: >-
@@ -3160,8 +3150,8 @@ files:
           log:
             file: phd-thesis-lei-ma.blg
             range:
-              start: 29
-              end: 29
+              start: 28
+              end: 28
         - severity: info
           name: Biber
           text: >-
@@ -3170,11 +3160,19 @@ files:
           log:
             file: phd-thesis-lei-ma.blg
             range:
+              start: 29
+              end: 29
+        - severity: info
+          name: Biber
+          text: No sort tailoring available for locale 'en-US'
+          log:
+            file: phd-thesis-lei-ma.blg
+            range:
               start: 30
               end: 30
         - severity: info
           name: Biber
-          text: No sort tailoring available for locale 'en-US'
+          text: Writing 'phd-thesis-lei-ma.bbl' with encoding 'UTF-8'
           log:
             file: phd-thesis-lei-ma.blg
             range:
@@ -3182,7 +3180,7 @@ files:
               end: 31
         - severity: info
           name: Biber
-          text: Writing 'phd-thesis-lei-ma.bbl' with encoding 'UTF-8'
+          text: Output to phd-thesis-lei-ma.bbl
           log:
             file: phd-thesis-lei-ma.blg
             range:
@@ -3190,20 +3188,12 @@ files:
               end: 32
         - severity: info
           name: Biber
-          text: Output to phd-thesis-lei-ma.bbl
+          text: 'WARNINGS: 17'
           log:
             file: phd-thesis-lei-ma.blg
             range:
               start: 33
               end: 33
-        - severity: info
-          name: Biber
-          text: 'WARNINGS: 18'
-          log:
-            file: phd-thesis-lei-ma.blg
-            range:
-              start: 34
-              end: 34
       inputs:
         - phd-thesis-lei-ma.bcf
         - references.bib
@@ -3217,27 +3207,27 @@ files:
     jobNames: []
     type: DeviceIndependentFile
   phd-thesis-lei-ma.pdf:
-    timeStamp: 2018-05-21T23:11:27.900Z
+    timeStamp: 2018-05-22T17:04:09.216Z
     jobNames: []
-    hash: zan4rGckUZvzebhPgT8ZpuGFbfffR+PqMn+fCR1uvEc=
+    hash: bZ+wAw2B7mzwOgnXyvTVFlUFiEzgKR+6kKDgfCyWILg=
     type: PortableDocumentFormat
   phd-thesis-lei-ma.aux:
-    timeStamp: 2018-05-21T23:11:27.756Z
+    timeStamp: 2018-05-22T17:04:08.982Z
     jobNames: []
-    hash: sSZz1jkgm2H/5SxFlhd1gXO/KLohKilMMJXeFk6gRYM=
+    hash: MqJMWN7T4UNp/apUL8bOMmFrdQdmQ8Ul8vAWnP2h2Ag=
     type: LaTeXAuxilary
   phd-thesis-lei-ma.fls:
-    timeStamp: 2018-05-21T23:11:27.802Z
+    timeStamp: 2018-05-22T17:04:09.020Z
     jobNames: []
     hash: 2My7ElJNuiKlM1X1EP02oQfMrXUgt8yh57G6/fiXQiQ=
     type: FileListing
   phd-thesis-lei-ma.synctex.gz:
-    timeStamp: 2018-05-21T23:11:27.967Z
+    timeStamp: 2018-05-22T17:04:09.282Z
     jobNames: []
-    hash: b8HnNbYUwXMQiFwdeCKVqeEEK14GSOWnn2D1Sun0kIo=
+    hash: c5yWZP0BWsU8oYcruS95Dni/Ed6kzymT0D4qENkS4Lw=
     type: SyncTeX
   phd-thesis-lei-ma.aux-ParsedLaTeXAuxilary:
-    timeStamp: 2018-05-21T22:05:16.526Z
+    timeStamp: 2018-05-22T16:32:45.826Z
     jobNames: []
     value:
       commands:
@@ -3323,8 +3313,6 @@ files:
         - abx@aux@segm
         - abx@aux@segm
         - abx@aux@segm
-        - abx@aux@cite
-        - abx@aux@segm
         - abx@aux@segm
         - abx@aux@cite
         - abx@aux@segm
@@ -3340,7 +3328,6 @@ files:
         - abx@aux@segm
         - '@writefile'
         - abx@aux@refcontextdefaultsdone
-        - abx@aux@defaultrefcontext
         - abx@aux@defaultrefcontext
         - abx@aux@defaultrefcontext
         - abx@aux@defaultrefcontext
@@ -4047,7 +4034,7 @@ files:
     timeStamp: 2017-05-24T02:37:45.000Z
     jobNames: []
   chapters/abstract.aux:
-    timeStamp: 2018-05-21T23:11:20.779Z
+    timeStamp: 2018-05-22T17:04:02.676Z
     jobNames: []
     hash: V/++4C2KVTmEDn4zjyDYmnNxZFHmGw9jcVT2Ey7DDc4=
     type: LaTeXAuxilary
@@ -4208,7 +4195,7 @@ files:
     hash: E96o5EWnPME61i77lMO7jninuOP1DjkF/6CNDVH5k3s=
     type: PortableDocumentFormat
   chapters/chapter2.aux:
-    timeStamp: 2018-05-21T23:11:22.568Z
+    timeStamp: 2018-05-22T17:04:04.029Z
     jobNames: []
     hash: MN8GApHLVKmOogPYObTObJP/mrci1gVoIQs16x+YSes=
     type: LaTeXAuxilary
@@ -4218,17 +4205,17 @@ files:
     hash: cSpyEX4MbrXHoaNccx1ufTduUAEQJhj8Qog9GJ/hOpc=
     type: TeX
   chapters/chapter3.aux:
-    timeStamp: 2018-05-21T23:11:26.540Z
+    timeStamp: 2018-05-22T17:04:07.678Z
     jobNames: []
-    hash: Wyhm/SZI12kMEOTu8XQvGnW2fROF1TsBH2vxHey3qXE=
+    hash: NZt8w5MZvarr4br+INad0L1S9s+UVI8w3e1oEBlksSU=
     type: LaTeXAuxilary
   chapters/chapter3.tex:
-    timeStamp: 2018-05-21T23:10:24.819Z
+    timeStamp: 2018-05-22T17:03:53.408Z
     jobNames: []
-    hash: geBNHYjKIrjpMpNsVFHT7D8A/RCIwp4gsWuhC5+izHU=
+    hash: MuCYyvI3RT4d4EXdwSjOd5LaJJNil9aWvu2A8P9WUlk=
     type: TeX
   chapters/introduction.aux:
-    timeStamp: 2018-05-21T23:11:21.971Z
+    timeStamp: 2018-05-22T17:04:03.567Z
     jobNames: []
     hash: tX73crnmgZ3UhzjWo7+lLGUbpwM3fIF6tj9HG+9EEGc=
     type: LaTeXAuxilary
@@ -4238,16 +4225,16 @@ files:
     hash: uMTq3MrmY4aXQGqcrGqXtNL6x5PiM2Uok4rQKz5jlcQ=
     type: TeX
   phd-thesis-lei-ma.bbl:
-    timeStamp: 2018-05-21T23:11:18.810Z
+    timeStamp: 2018-05-22T17:04:00.936Z
     jobNames: []
-    hash: OVftzHmgxUibilHOovn+qY6q22q7T0J2Cv7c9LVVLfs=
+    hash: l+b5vWCSaKbxyRCXMsMNzSBWagoOStyFaQXZ++6FJ38=
   phd-thesis-lei-ma.out:
-    timeStamp: 2018-05-21T23:11:27.803Z
+    timeStamp: 2018-05-22T17:04:09.025Z
     jobNames: []
-    hash: rlE2tRCFWIKqzz/joAuVbIbO6TKmKyCOBNnazxQQWcY=
+    hash: +R4NZ+jsRDyAf/H2qbeN1fqb7fN5cyOSfF9GkQYJkk0=
     type: OUT
   phd-thesis-lei-ma.run.xml:
-    timeStamp: 2018-05-21T23:11:27.803Z
+    timeStamp: 2018-05-22T17:04:09.024Z
     jobNames: []
     hash: m3RtuHWwNhL+eaAIrsSsKRKsUGAl/trPX/OZw6cbbm0=
     type: XML
@@ -4266,9 +4253,9 @@ files:
     hash: tpW685s228TSgUbM5/K3CrlUqSOsoqAAekV3rLVvMuI=
     type: LaTeXClass
   phd-thesis-lei-ma.bcf:
-    timeStamp: 2018-05-21T23:11:27.799Z
+    timeStamp: 2018-05-22T17:04:09.011Z
     jobNames: []
-    hash: WgALc6jA0rHJL7EeafQcK1DaiKKKlPMqbH1GpLD1VeQ=
+    hash: CzdC5MHpcpO5+H2Dj606OX9p6hMcDOnvR+zu4UBCoZA=
     type: BiberControlFile
   chapters/abstract.aux-ParsedLaTeXAuxilary:
     timeStamp: 2018-05-21T22:05:28.585Z
@@ -4618,7 +4605,7 @@ files:
         - setcounter
     type: ParsedLaTeXAuxilary
   chapters/chapter3.aux-ParsedLaTeXAuxilary:
-    timeStamp: 2018-05-21T22:13:01.775Z
+    timeStamp: 2018-05-22T17:03:25.078Z
     jobNames: []
     value:
       commands:
@@ -4675,7 +4662,15 @@ files:
         - newlabel
         - '@writefile'
         - newlabel
+        - '@writefile'
         - newlabel
+        - newlabel
+        - newlabel
+        - '@writefile'
+        - newlabel
+        - '@writefile'
+        - newlabel
+        - '@writefile'
         - newlabel
         - '@writefile'
         - newlabel
@@ -4687,10 +4682,6 @@ files:
         - newlabel
         - '@writefile'
         - newlabel
-        - '@writefile'
-        - newlabel
-        - newlabel
-        - '@writefile'
         - newlabel
         - newlabel
         - newlabel
@@ -4709,10 +4700,10 @@ files:
         - newlabel
         - newlabel
         - newlabel
-        - '@writefile'
-        - newlabel
         - newlabel
         - '@writefile'
+        - '@writefile'
+        - newlabel
         - '@writefile'
         - newlabel
         - '@writefile'
