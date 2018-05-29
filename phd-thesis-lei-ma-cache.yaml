@@ -143,14 +143,14 @@ files:
     jobNames: []
     type: Nil
   phd-thesis-lei-ma.blg:
-    timeStamp: 2018-05-22T17:04:00.937Z
+    timeStamp: 2018-05-22T17:21:16.247Z
     jobNames: []
-    hash: te7WpywoeiTaAyZfWXfcanrnUcsEn6BXs+dSJidDYKM=
+    hash: l8iF6mLs5r2A67sWud7ZUpzqV4egCr0JsSz8G8nKE7I=
     type: BiberLog
   phd-thesis-lei-ma.log:
-    timeStamp: 2018-05-22T17:04:09.283Z
+    timeStamp: 2018-05-22T17:21:26.639Z
     jobNames: []
-    hash: b0I3hAxFkDZFnaB3/HLAZ/65d3ZOBWN/zU6iAXmOTT0=
+    hash: sG7aK/Irz67P4/FLK7ROUUlv6laXm0w2pnxUaTHCe2Q=
     type: LaTeXLog
     subType: XeTeX
   phd-thesis-lei-ma.fls-ParsedFileListing:
@@ -488,7 +488,7 @@ files:
       calls: []
     type: ParsedFileListing
   phd-thesis-lei-ma.log-ParsedLaTeXLog:
-    timeStamp: 2018-05-22T17:04:09.674Z
+    timeStamp: 2018-05-22T17:21:27.051Z
     jobNames: []
     value:
       messages:
@@ -2740,13 +2740,13 @@ files:
           source:
             file: chapters/chapter3.tex
             range:
-              start: 685
-              end: 685
+              start: 690
+              end: 690
           log:
             file: phd-thesis-lei-ma.log
             range:
-              start: 1119
-              end: 1121
+              start: 1110
+              end: 1112
         - severity: warning
           name: XeTeX
           category: LaTeX
@@ -2756,13 +2756,13 @@ files:
           source:
             file: chapters/chapter3.tex
             range:
-              start: 740
-              end: 740
+              start: 745
+              end: 745
           log:
             file: phd-thesis-lei-ma.log
             range:
-              start: 1128
-              end: 1129
+              start: 1119
+              end: 1120
         - severity: warning
           name: XeTeX
           category: LaTeX
@@ -2770,13 +2770,13 @@ files:
           source:
             file: chapters/chapter3.tex
             range:
-              start: 797
-              end: 797
+              start: 802
+              end: 802
           log:
             file: phd-thesis-lei-ma.log
             range:
-              start: 1133
-              end: 1134
+              start: 1124
+              end: 1125
         - severity: warning
           name: XeTeX
           category: LaTeX
@@ -2784,13 +2784,13 @@ files:
           source:
             file: chapters/chapter3.tex
             range:
-              start: 1044
-              end: 1044
+              start: 1049
+              end: 1049
           log:
             file: phd-thesis-lei-ma.log
             range:
-              start: 1143
-              end: 1144
+              start: 1134
+              end: 1135
         - severity: info
           name: XeTeX
           category: Package atveryend
@@ -2803,8 +2803,8 @@ files:
           log:
             file: phd-thesis-lei-ma.log
             range:
-              start: 1198
-              end: 1198
+              start: 1189
+              end: 1189
         - severity: info
           name: XeTeX
           category: Package atveryend
@@ -2817,8 +2817,8 @@ files:
           log:
             file: phd-thesis-lei-ma.log
             range:
-              start: 1199
-              end: 1199
+              start: 1190
+              end: 1190
         - severity: info
           name: XeTeX
           category: Package atveryend
@@ -2831,8 +2831,8 @@ files:
           log:
             file: phd-thesis-lei-ma.log
             range:
-              start: 1204
-              end: 1204
+              start: 1195
+              end: 1195
         - severity: info
           name: XeTeX
           category: Package atveryend
@@ -2845,8 +2845,8 @@ files:
           log:
             file: phd-thesis-lei-ma.log
             range:
-              start: 1205
-              end: 1205
+              start: 1196
+              end: 1196
         - severity: warning
           name: XeTeX
           category: LaTeX
@@ -2856,8 +2856,8 @@ files:
           log:
             file: phd-thesis-lei-ma.log
             range:
-              start: 1207
-              end: 1207
+              start: 1198
+              end: 1198
         - severity: warning
           name: XeTeX
           category: LaTeX
@@ -2867,8 +2867,8 @@ files:
           log:
             file: phd-thesis-lei-ma.log
             range:
-              start: 1210
-              end: 1210
+              start: 1201
+              end: 1201
         - severity: info
           name: XeTeX
           category: Package logreq
@@ -2878,15 +2878,15 @@ files:
           log:
             file: phd-thesis-lei-ma.log
             range:
-              start: 1212
-              end: 1212
+              start: 1203
+              end: 1203
       inputs: []
       outputs:
         - phd-thesis-lei-ma.pdf
       calls: []
     type: ParsedLaTeXLog
   phd-thesis-lei-ma.blg-ParsedBiberLog:
-    timeStamp: 2018-05-22T17:04:00.982Z
+    timeStamp: 2018-05-22T17:21:16.299Z
     jobNames: []
     value:
       messages:
@@ -2908,7 +2908,7 @@ files:
               end: 2
         - severity: info
           name: Biber
-          text: '=== Tue May 22, 2018, 11:04:00'
+          text: '=== Tue May 22, 2018, 11:21:15'
           log:
             file: phd-thesis-lei-ma.blg
             range:
@@ -3207,24 +3207,24 @@ files:
     jobNames: []
     type: DeviceIndependentFile
   phd-thesis-lei-ma.pdf:
-    timeStamp: 2018-05-22T17:04:09.216Z
+    timeStamp: 2018-05-22T17:21:26.543Z
     jobNames: []
-    hash: bZ+wAw2B7mzwOgnXyvTVFlUFiEzgKR+6kKDgfCyWILg=
+    hash: x/QUXx/cJziHEquvtfFAkqU65PQ0yuikMtkVQta4rmU=
     type: PortableDocumentFormat
   phd-thesis-lei-ma.aux:
-    timeStamp: 2018-05-22T17:04:08.982Z
+    timeStamp: 2018-05-22T17:21:26.148Z
     jobNames: []
-    hash: MqJMWN7T4UNp/apUL8bOMmFrdQdmQ8Ul8vAWnP2h2Ag=
+    hash: sWbDEPvEmIaxD6oL3Yej0WaQ+MIYRC+p20gYd4vPSRQ=
     type: LaTeXAuxilary
   phd-thesis-lei-ma.fls:
-    timeStamp: 2018-05-22T17:04:09.020Z
+    timeStamp: 2018-05-22T17:21:26.254Z
     jobNames: []
     hash: 2My7ElJNuiKlM1X1EP02oQfMrXUgt8yh57G6/fiXQiQ=
     type: FileListing
   phd-thesis-lei-ma.synctex.gz:
-    timeStamp: 2018-05-22T17:04:09.282Z
+    timeStamp: 2018-05-22T17:21:26.638Z
     jobNames: []
-    hash: c5yWZP0BWsU8oYcruS95Dni/Ed6kzymT0D4qENkS4Lw=
+    hash: C2yRZVS53h17fjJ/BzcrMiuxFkdcfmgRj69lP67ZFS4=
     type: SyncTeX
   phd-thesis-lei-ma.aux-ParsedLaTeXAuxilary:
     timeStamp: 2018-05-22T16:32:45.826Z
@@ -4034,7 +4034,7 @@ files:
     timeStamp: 2017-05-24T02:37:45.000Z
     jobNames: []
   chapters/abstract.aux:
-    timeStamp: 2018-05-22T17:04:02.676Z
+    timeStamp: 2018-05-22T17:21:18.160Z
     jobNames: []
     hash: V/++4C2KVTmEDn4zjyDYmnNxZFHmGw9jcVT2Ey7DDc4=
     type: LaTeXAuxilary
@@ -4195,7 +4195,7 @@ files:
     hash: E96o5EWnPME61i77lMO7jninuOP1DjkF/6CNDVH5k3s=
     type: PortableDocumentFormat
   chapters/chapter2.aux:
-    timeStamp: 2018-05-22T17:04:04.029Z
+    timeStamp: 2018-05-22T17:21:20.027Z
     jobNames: []
     hash: MN8GApHLVKmOogPYObTObJP/mrci1gVoIQs16x+YSes=
     type: LaTeXAuxilary
@@ -4205,17 +4205,17 @@ files:
     hash: cSpyEX4MbrXHoaNccx1ufTduUAEQJhj8Qog9GJ/hOpc=
     type: TeX
   chapters/chapter3.aux:
-    timeStamp: 2018-05-22T17:04:07.678Z
+    timeStamp: 2018-05-22T17:21:24.752Z
     jobNames: []
-    hash: NZt8w5MZvarr4br+INad0L1S9s+UVI8w3e1oEBlksSU=
+    hash: GpaEykfVd6RKFNKYqKHC/fW5ELL6eYGft/v2qNjZfJ8=
     type: LaTeXAuxilary
   chapters/chapter3.tex:
-    timeStamp: 2018-05-22T17:03:53.408Z
+    timeStamp: 2018-05-22T17:21:07.027Z
     jobNames: []
-    hash: MuCYyvI3RT4d4EXdwSjOd5LaJJNil9aWvu2A8P9WUlk=
+    hash: GyzyPSZxuiD5XPCR7wyJ+vrkdw4urAMpeI8DCAbm4KQ=
     type: TeX
   chapters/introduction.aux:
-    timeStamp: 2018-05-22T17:04:03.567Z
+    timeStamp: 2018-05-22T17:21:19.191Z
     jobNames: []
     hash: tX73crnmgZ3UhzjWo7+lLGUbpwM3fIF6tj9HG+9EEGc=
     type: LaTeXAuxilary
@@ -4225,16 +4225,16 @@ files:
     hash: uMTq3MrmY4aXQGqcrGqXtNL6x5PiM2Uok4rQKz5jlcQ=
     type: TeX
   phd-thesis-lei-ma.bbl:
-    timeStamp: 2018-05-22T17:04:00.936Z
+    timeStamp: 2018-05-22T17:21:16.247Z
     jobNames: []
     hash: l+b5vWCSaKbxyRCXMsMNzSBWagoOStyFaQXZ++6FJ38=
   phd-thesis-lei-ma.out:
-    timeStamp: 2018-05-22T17:04:09.025Z
+    timeStamp: 2018-05-22T17:21:26.258Z
     jobNames: []
-    hash: +R4NZ+jsRDyAf/H2qbeN1fqb7fN5cyOSfF9GkQYJkk0=
+    hash: SceZbsowkpi3WzhbM3k1PGgKkHDO12oEwFK6xkGLKaI=
     type: OUT
   phd-thesis-lei-ma.run.xml:
-    timeStamp: 2018-05-22T17:04:09.024Z
+    timeStamp: 2018-05-22T17:21:26.256Z
     jobNames: []
     hash: m3RtuHWwNhL+eaAIrsSsKRKsUGAl/trPX/OZw6cbbm0=
     type: XML
@@ -4253,7 +4253,7 @@ files:
     hash: tpW685s228TSgUbM5/K3CrlUqSOsoqAAekV3rLVvMuI=
     type: LaTeXClass
   phd-thesis-lei-ma.bcf:
-    timeStamp: 2018-05-22T17:04:09.011Z
+    timeStamp: 2018-05-22T17:21:26.241Z
     jobNames: []
     hash: CzdC5MHpcpO5+H2Dj606OX9p6hMcDOnvR+zu4UBCoZA=
     type: BiberControlFile

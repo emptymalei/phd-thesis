@@ -1,0 +1,49 @@
+{
+   "version": "2.0.0",
+   "tasks": [
+      {
+         "label": "PDFLaTeX",
+         "type": "shell",
+         "group": {
+            "kind": "build",
+            "isDefault": true
+         },
+         "command": "pdflatex",
+         "args": [
+            "-synctex=1",
+            "-interaction=nonstopmode",
+            "-file-line-error",
+            "*.tex"
+         ]
+      },
+      {
+         "label": "Run bibtex",
+         "type": "shell",
+         "group": {
+            "kind": "test",
+            "isDefault": true
+         },
+         "command": "bibtex",
+         "args": [
+            "-terse",
+            "*.aux"
+         ]
+      },
+      {
+         "label": "XeLaTeX",
+         "type": "shell",
+         "group": {
+            "kind": "build",
+            "isDefault": true
+         },
+         "command": "xelatex",
+         "args": [
+            "-synctex=1",
+            "-interaction=nonstopmode",
+            "-file-line-error",
+            "*.tex"
+         ],
+         "problemMatcher": []
+      }
+   ]
+}

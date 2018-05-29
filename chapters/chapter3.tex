@@ -315,6 +315,7 @@ As will be proved later, the varying $\sigma_3$ term $\frac{1}{2} \lambda_1 \cos
 \mathsf H^{(\mathrm{m})} \to & -\frac{\omega_{\mathrm m}}{2} \sigma_3  - \frac{1}{2} \lambda_1 \sin 2\theta_{\mathrm m} \cos( k_1 r ) \sigma_1\label{eq-hamiltonian-bg-matter-basis-single-frequency} \\
 \to & -\frac{\omega_{\mathrm m}}{2} \sigma_3  - \frac{1}{2} A_1 \exp (\mathrm ik_1 r) \sigma_1 \nonumber \\
 = & -\frac{\omega_{\mathrm m}}{2} \sigma_3  - \frac{1}{2} A_1 \cos ( k_1 r)  \sigma_1 + \frac{1}{2} A_1\sin(k_1 r) \sigma_2,\nonumber
+\label{chap:matter-sec:single-frequency-matter-profile-eqn:single-frequency-hamiltonian-approximation}
 \end{align}
 where I have used
 \begin{equation}
@@ -462,15 +463,39 @@ in which the varying diagonal elements in Hamiltonian can be eliminated by choos
     \eta(r) - \eta(0) =  \frac{\cos 2\theta_{\mathrm{m}}}{2} \int_0^r \delta\lambda (\tau) \dd\tau,
 \end{equation}
 which is used to simplify the Schr\"{o}dinger equation:
-\begin{equation*}
+\begin{equation}
     \ri \frac{\dd}{\dd r} \begin{pmatrix} \psi_{\mathrm r1} \\ \psi_{\mathrm r2} \end{pmatrix} = \left[ - \frac{\omega_{\mathrm m}}{2} \sigma_3 - \frac{\delta \lambda}{2} \sin 2\theta_{\mathrm m} \begin{pmatrix} 0 & e^{2\ri\eta} \\ e^{-2 \ri \eta } & 0 \end{pmatrix}\right] \begin{pmatrix} \psi_{\mathrm r1} \\ \psi_{\mathrm r2} \end{pmatrix}.
-\end{equation*}
+    \label{chap:matter-sec:jacobi-subsec:rabi-basis-eqn:eom-rabi-basis-matter}
+\end{equation}
+
+\subsection{\label{chap:matter-sec:single-revisted}Single Frequency Matter Profile and Jacobi-Anger Expansion}
+% \subsection{\label{chap:matter-sec:jacobi-subsec:jacobi}Jacobi-Anger Expansion}
 
 
-\subsection{\label{chap:matter-sec:jacobi-subsec:jacobi}Jacobi-Anger Expansion}
+For a rigorous analysis of neutrino oscillations in oscillatory matter profiles, I will need the Jacobi-Anger expansion. Jacobi-Anger expansion is used to expand exponential functions of the form $e^{\ri r \cos (\phi)}$ using the basis $e^{\ri n \phi }$,
+\begin{equation}
+e^{\ri r \cos (\phi)} = \sum_{n=-\infty}^\infty \ri^n J_n(r) e^{\ri n\phi}.
+\end{equation}
+J. Kneller and K. Patton et al. used this method to calculate the transition probabilities of neutrinos in oscillatory matter profile~\cite{Kneller2010,Kneller2013,Patton2014}. In this subsection, I will review the method of Jacobi-Anger expansion and its application to neutrino oscillations, using a different formalism. 
 
 
-For single frequency matter profile with potential $\delta\lambda(r) = A_1\sin(k_1 r)$, I have $\eta(r) = - A_1 \cos 2\theta_{\mathrm m} \cos (k_1 r)/(2 k) $. To make a connection with Rabi oscillations, I can apply Jacobi-Anger expansion, which is also used in Ref.~\cite{Kneller2013}, to decompose the $\exp\left( \ri z \cos\left(k_1 r \right) \right)$-like term in Hamiltonian into linear combinations of terms that is proportional to $\exp\left(\ri n k_1 r \right)$, i.e., to decompose spherical waves into plane waves. The decomposed form of Hamiltonian explicitly shows that the Hamiltonian is a summation of Rabi systems, which is
+
+For the purpose of this section, I will demonstrate the decomposition of single frequency matter profile with potential $\delta\lambda(r) = A_1\sin(k_1 r)$. The equation of motion has been derived and presented in Eqn.~\ref{chap:matter-sec:jacobi-subsec:rabi-basis-eqn:eom-rabi-basis-matter}. For single frequency matter profile, the Hamiltonian is 
+\begin{equation}
+    \mathsf H^{(\RR)}= \frac{\omega_\mm}{2} \sigma_3 - \frac{\sin 2\theta_\mm A_1\sin (k_1 r)}{2} \begin{pmatrix}
+        0 & e^{2\ri \eta(r)} \\
+        e^{-2\ri \eta(r)} & 0
+    \end{pmatrix},
+\end{equation}
+where $\eta(r) = - A_1 \cos 2\theta_{\mathrm m} \cos (k_1 r)/(2 k) $. The $\exp\left( \ri z \cos\left(k_1 r \right) \right)$-like term in the Hamiltonian can be decomposed into linear combinations of terms that are proportional to $\exp\left(\ri n k_1 r \right)$. The term $e^{2\ri \eta(r)}$ is
+\begin{equation}
+    \exp\left({\ri \frac{A_1 \cos 2\theta_{\mm}}{k_1} \cos (k_1 r) }\right)  =  \sum_{n=-\infty}^{\infty} (-\ri)^n J_n \left( \frac{A_1\cos 2\theta_\mm}{k_1}\right) e^{\ri n k_1 r} ,
+\end{equation}
+where I have used the relation
+\begin{equation}
+    J_n(- x) = (-1)^n J_n(x).
+\end{equation}
+With the expansion, the Hamiltonian becomes a Rabi oscillation with infinite driving frequencies,
 \begin{equation}
     \mathsf H^{(\mathrm{R})} =
     -\frac{\omega_{\mathrm{m}}}{2} \sigma_3
@@ -485,16 +510,18 @@ where
     B_n &= \tan 2\theta_{\mathrm m} n k_1 J_{n} \left( \frac{A_1}{k_1}\cos 2\theta_{\mathrm m} \right),\\
     \Phi_n &= e^{i\pi (3n/2+1)},
 \end{align}
-with $J_n$ standing for the Bessel function.
-The constant phase $\Phi_n$ doesn't play any role for the reason discussed in Appendix~\ref{chap:app-sec:rabi-oscillations}. Phase in matter potential would also go into $\Phi_n$, for which reason, phase of matter profile is not included in the current discussion. In the Hamiltonian, the first term describes the energy gap, while the second term is the summation of many driving fields. The resonance width for a given mode $n$ is $\lvert B_{n}\rvert$. It's worth mentioning that we have~\cite{Ploumistakis20092897}
+I have used
+\begin{equation}
+    J_{n-1}(x) + J_{n+1}(x) = \frac{2 n}{x} J_n(x).
+\end{equation}
+The coefficient $\Phi_n$ doesn't play any role for the reason discussed in Sec.~\ref{chap:app-sec:rabi-oscillations}. Any phases in the matter potential would also go into $\Phi_n$, hence phases of matter profile can be neglected. In the Hamiltonian, the first term describes the energy gap, while the second term is the summation of many driving fields. For each of the driving fields, the resonance width is $\lvert B_{n}\rvert$. In fact, it is straightforward to prove that the width drops very fast as a function of $n$ since the Bessel function can be approximated as
 \begin{equation}
 J_n(n \sech \alpha) \sim \frac{ e^{n(\tanh\alpha - \alpha)} }{\sqrt{ 2\pi n \tanh \alpha } }
 \end{equation}
-for large $n$. It's straightforward to prove that resonance width decreases dramatically for large $n$ thus resonance of higher order modes become insignificant.
+for large $n$~\cite{Ploumistakis20092897}. Thus the higher order modes are usually insignificant.
 
 
-
-When the system has one dominate resonance mode and without significant interference between the resonance mode and other modes, all off-resonance modes can be dropped without significantly changing the transition probabilities. However, as we have shown previously in Sec.~\ref{chap:matter-sec:multiple-matter-frequencies}, interference might happen between different modes and interferences were measured with a criteria. However, interference is not the only effect we need to consider. The following subsections will determine the important modes of the system (i.e., which $n$ to include) and explore the interference between modes hence explain the coincidence presented in the previous sections. We use dimensionless quantities which are scaled using the characteristic energy scale $\omega_{\mathrm{m}}$, e.g.,
+When the matter potential provides one dominate resonance mode and without significant interference between the resonance mode and the other modes, all off-resonance modes can be dropped without significantly changing the transition probabilities. However, as we have shown previously in Sec.~\ref{chap:app-sec:rabi-oscillations}, interference might happen between different modes and interferences were measured with a criteria. In the following subsections, I will discuss the work I have done based on this expansion. First of all, I will explain the approximations used in Eqn.~\ref{chap:matter-sec:single-frequency-matter-profile-eqn:single-frequency-hamiltonian-approximation} to simplify the Hamiltonian. Then I will explore the interferences between modes. For simplicity I will use dimensionless quantities which are scaled using the characteristic energy scale $\omega_{\mathrm{m}}$, e.g.,
 \begin{equation}
     \hat r = \omega_{\mathrm{m}}r, \qquad
     \hat k_1  = \frac{k_1}{\omega_{\mathrm{m}}},  \qquad
@@ -503,10 +530,6 @@ When the system has one dominate resonance mode and without significant interfer
 \end{equation}
 
 %Through the Rabi transformation and Jacobi-Anger expansion, the varying diagonal elements in Hamiltonian, i.e., varying $\sigma_3$ term, is transformed to a perturbing field with many different frequencies $n k_1$.
-
-
-
-
 
 
 \subsection{The Relative Detuning}
@@ -532,7 +555,7 @@ Thus modes that has much larger oscillation wavelength are not subjected to be c
 In principle, we can always approximate the system by including more modes with larger relative detuning while neglecting the modes with wavelength much longer than the size of physical system. However such effort doesn't simplify the calculations.
 
 
-\subsection{\label{sec:single-revisted}Single Frequency Matter Profile Revisited}
+\subsection{Single Frequency Profiles}
 
 Even for the single frequency matter profile, there are two modes of Rabi oscillations $\pm k_1$, under the approximation that the varying $\sigma_3$ term in Hamiltonian is neglected, as mentioned in Sec.~\ref{chap:matter-sec:single}. The three examples calculated in Fig.~\ref{fig-rabiOscillationsNeutrinoCoincidence} are almost exact since the modification of relative detuning for the $k_1$ mode that we kept, due to the far off resonance mode $-k_1$ that we neglected, is tiny. The first two lines of Table.~\ref{tab-q-values-single-frequency-example} show the relative detunings of the three cases in Fig.~\ref{fig-rabiOscillationsNeutrinoCoincidence}, where $n=\pm 1$ are for the $\pm k_1$ modes in the Hamiltonian Eqn.~\ref{eq-hamiltonian-bg-matter-basis-single-frequency}. We observe in Fig.~\ref{fig-rabiOscillationsNeutrinoCoincidence} that the relative detuning change due to an extra $-k_1$ mode is not observable.
 
