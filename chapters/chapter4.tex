@@ -1,16 +1,13 @@
 %!TEX root = ../phd-thesis-lei-ma.tex
 
-\chapter{\label{chap:dr}Collective Neutrino Oscillations}
+\chapter{\label{chap:collective}Collective Neutrino Oscillations}
 
-Neutrino oscillations in matter background is well defined linear dynamics as we discussed in the preceding chapters. However, the universe provides many other much more exciting labs for neutrino physics. One of such is early supernova explosions, where approximately $10^{58}$ neutrinos are released within seconds~\cite{Bahcall1987}. Such neutrino density would introduce new interaction terms into neutrino oscillations, the self-interaction potential $H_{\nu\nu}$ is comparable or even larger than the matter potential, depending on the region of interest in supernova explosions~\cite{Flowers1976a}. Thus self-interaction between neutrinos is not negligible. Meanwhile, unexpected rich dynamics has be proved to be present with the self-interactions~\cite{Duan2010, Duan2006}. The fact that self-interaction introduces a new characteristic energy scale, new resonances such as matter-neutrino resonance is also possible~\cite{Malkus2014, Vaananen2015, Wu2015}.
+Neutrino oscillations in the matter background has well defined linear dynamics as we discussed in the preceding chapters. However, the universe provides many other much more exciting labs for neutrino physics. One of such is supernova explosions, which release approximately $10^{58}$ neutrinos within seconds~\cite{Bahcall1987}. Such neutrino density would introduce new interaction terms into neutrino oscillations, the self-interaction potential $H_{\nu\nu}$ is comparable or even larger than the matter potential, depending on the region of interest in supernova explosions~\cite{Flowers1976a}. Thus self-interaction between neutrinos is not negligible. Meanwhile, unexpected rich dynamics has be proved to be present with the self-interactions~\cite{Duan2010, Duan2006}. The fact that self-interaction introduces a new characteristic energy scale, new resonances such as matter-neutrino resonance is also possible~\cite{Malkus2014, Vaananen2015, Wu2015}.
 
-In this chapter, I will review the fast modes in neutrino collective oscillations, and clarify the connection between fast modes and dispersion relation proposed by I. Izaguirre et al~\cite{Izaguirre2016a}.
-
-
-
-\section{\label{chap:dr-sec:collective}Collective Oscillations}
+In this chapter, I will review the neutrino collective oscillations and fast modes in neutrino collective oscillations. Then I will introduce the connection between fast modes and dispersion relations proposed by I. Izaguirre et al~\cite{Izaguirre2016a}. Finally I will show that the relation dispersion relations and fast modes is not well established.
 
 
+\section{\label{chap:collective-sec:collective}Collective Oscillations}
 
 
 
@@ -18,7 +15,7 @@ In this chapter, I will review the fast modes in neutrino collective oscillation
 
 The equation of motion for neutrino oscillations with self-interaction was first derived in \cite{Sigl1993}. For the purpose of the thesis, I will skip the quantum field theory derivations but write it down and clarify some conventions. Without much effort, we know that the equation of motion is the Liouville's equation
 \begin{equation}
-   i \frac{d}{dt}\rho = [H,\rho].
+   \ri \frac{d}{dt}\rho = [ \mathsf H,\rho].
 \end{equation}
 For the purpose of neutrino oscillations, we always assume they travel with speed of light thus
 \begin{equation}
@@ -30,29 +27,29 @@ where $r$ is the distance travelled by the neutrino. However, in general, what w
 \end{equation}
 The Hamiltonian is composed of three different terms,
 \begin{equation}
-   H = H_{\mathrm v} + H_{\mathrm m} + H_{\nu\nu},
+   \mathsf H = \mathsf H_{\mathrm v} + \mathsf H_{\mathrm m} +\mathsf  H_{\nu\nu},
 \end{equation}
 where each term is explicitly written down
 \begin{align}
-   H_v =& -\frac{1}{2}\beta\eta \omega_0 \sigma_3\\
-   H_m =& \frac{1}{2} \sqrt{2}G_F n_e \sigma_3 \\
-   H_{\nu\nu} =& \sqrt{2}G_F \int d\omega d\Omega_{\hat v'} n(\omega,\hat v')\beta(\hat v')\rho(\omega,\hat v') (1-\hat v \cdot \hat v').
+    \mathsf H_\vv =& -\frac{1}{2}\beta\eta \omega_0 \sigma_3\\
+    \mathsf H_\mm =& \frac{1}{2} \sqrt{2}G_F n_e \sigma_3 \\
+    \mathsf H_{\nu\nu} =& \sqrt{2}G_F \int d\omega d\Omega_{\hat v'} n(\omega,\hat v')\beta(\hat v')\rho(\omega,\hat v') (1-\hat v \cdot \hat v').
 \end{align}
 I use $\eta=\pm 1$ for Normal Hierarchy and Inverted Hierarchy respectively, $\beta=1$ for neutrinos and $\beta=-1$ for antineutrinos. In other words, the vacuum frequency is $\omega_v = \eta \omega_0$. $\beta(\hat v')$ indicates whether the density matrix $\rho(\omega,\hat v')$ is for neutrinos or antineutrinos. If $\rho(\omega,\hat v')$ is for antineutrinos, $\beta(\hat v')=-1$, otherwise $\beta(\hat v')=1$. More explicitly, the vacuum term is
 \begin{align*}
-   H_v =& \begin{cases}
+   \mathsf H_\vv =& \begin{cases}
    -\frac{1}{2}\eta \omega_0 \sigma_3 & \text{for neutrinos}\\
    \frac{1}{2}\eta \omega_0 \sigma_3 & \text{for antineutrinos}
    \end{cases}
 \end{align*}
 while the neutrino-neutrino interaction Hamiltonian is
 \begin{align*}
-   H_{\nu\nu} =& \begin{cases}
-   \sqrt{2}G_F \int d\omega d\Omega_{\hat v'} n(\omega,\hat v')\rho(\omega,\hat v') (1-\hat v \cdot \hat v') & \text{interacting with neutrinos} \\
-   - \sqrt{2}G_F \int d\omega d\Omega_{\hat v'} n(\omega,\hat v')\bar\rho(\omega,\hat v') (1-\hat v \cdot \hat v') &  \text{interacting with antineutrinos}
+   \mathsf H_{\nu\nu} =& \begin{cases}
+   \sqrt{2}G_{\mathrm F} \int d\omega d\Omega_{\hat v'} n(\omega,\hat v')\rho(\omega,\hat v') (1-\hat v \cdot \hat v') & \text{interacting with neutrinos} \\
+   - \sqrt{2}G_{\mathrm F} \int d\omega d\Omega_{\hat v'} n(\omega,\hat v')\bar\rho(\omega,\hat v') (1-\hat v \cdot \hat v') &  \text{interacting with antineutrinos}
    \end{cases}
 \end{align*}
-Please note that in this notion,
+Please note that in this notation,
 \begin{itemize}
     \item $\omega_0$ is meant to be the absolute value of the frequency, since $\eta$ takes care of the signs;
 \item The integral in $H_{\nu\nu}$ must take care of both interactions with neutrinos and anti-neutrinos.
@@ -61,7 +58,7 @@ For simplicity, we define some new quantities.
 \begin{itemize}
     \item We define $\lambda$ to measure the matter interactions
     \begin{equation}
-        \lambda = \sqrt{2} G_F n_e.
+        \lambda = \sqrt{2} G_{\mathrm F} n_{\mathrm e}.
     \end{equation}
 \item Angle distribution of number density is defined as
 \begin{equation}
@@ -89,15 +86,15 @@ Similarly, the the number density of antineutrinos within angle $[\theta,\theta+
 
 With the three definitions we simplify the neutrino self-interactions with matter effect
 \begin{align*}
-   H_m =& \frac{1}{2} \lambda \sigma_3 \\
-   H_{\nu\nu} =& \sqrt{2}G_F n_{\mathrm{t}} \int d\omega d\Omega_{\hat v'} f(\omega,\hat v)\rho(\omega,\hat v') (1-\hat v \cdot \hat v') \\
-   & - \sqrt{2}G_F \bar n_{\mathrm{t}} \int d\omega d\Omega_{\hat v'} \bar f(\omega,\hat v)\bar\rho(\omega,\hat v') (1-\hat v \cdot \hat v') \\
+    \mathsf H_\mm =& \frac{1}{2} \lambda \sigma_3 \\
+    \mathsf H_{\nu\nu} =& \sqrt{2}G_{\mathrm F} n_{\mathrm{t}} \int d\omega d\Omega_{\hat v'} f(\omega,\hat v)\rho(\omega,\hat v') (1-\hat v \cdot \hat v') \\
+   & - \sqrt{2}G_{\mathrm F} \bar n_{\mathrm{t}} \int d\omega d\Omega_{\hat v'} \bar f(\omega,\hat v)\bar\rho(\omega,\hat v') (1-\hat v \cdot \hat v') \\
    =& \frac{1}{2}\mu \int d\omega d\Omega_{\hat v'} f(\omega, \hat v)\rho(\omega,\hat v') (1-\hat v \cdot \hat v') \\
    & - \frac{1}{2}\alpha \mu \int d\omega d\Omega_{\hat v'} \bar f(\omega, \hat v)\bar\rho(\omega,\hat v') (1-\hat v \cdot \hat v') ,
 \end{align*}
 where
 \begin{equation}
-   \mu = 2\sqrt{2} G_F n_{\mathrm{t}}.
+   \mu = 2\sqrt{2} G_{\mathrm F} n_{\mathrm{t}}.
 \end{equation}
 
 
@@ -152,51 +149,70 @@ The reason for the negative sign is that we usually reformulate the formula for 
 
 
 With flavor isospin defined, to derive an equation for flavor isospin, we need to decompose the Hamiltonian into vectors. The vacuum and matter part is easy. It's straight forward to write down the vacuum part and matter part of Hamiltonian using three dimensional vectors in flavor isospin space,
-\begin{align*}
-   \vec H_{\mathrm v} = & \omega_{\mathrm v}\begin{pmatrix}
+\begin{equation}
+   \vec H_{\mathrm v} =  \omega_{\mathrm v}\begin{pmatrix}
    -\sin 2\theta_{\mathrm v}\\
-   0\\
+   0 \\
    \cos 2\theta_{\mathrm v}
-   \end{pmatrix}\\
-   \vec H_{\mathrm m} = & \begin{pmatrix}
+   \end{pmatrix}, \qquad
+   \vec H_{\mathrm m} = \lambda \begin{pmatrix}
    0\\
    0\\
-   -\lambda
+   - 1
    \end{pmatrix}
-\end{align*}
+\end{equation}
 But the neutrino coherent scattering term requires some simplifications. For the purpose of the physics picture, we consider isotropic and homogeneous model which leads to
 \begin{equation}
-   \sqrt{2}G_{\mathrm F} n_\nu \int d\vec p'^3 (1-\vec p \cdot \vec p') (\rho_{\vec p'} - \bar\rho_{\vec p'}) = \sqrt{2}G_{\mathrm F} n_\nu \int dE' \frac{1}{n_\nu}(\rho_{E'} - \bar\rho_{E'}).
-   \label{chap:dr-sec:collective-eqn:isotropic-homogeneous-self-interaction}
+   \vec H_{\nu\nu} = \sqrt{2}G_{\mathrm F} n_\nu \int d\vec p'^3 (1-\vec p \cdot \vec p') (\rho_{\vec p'} - \bar\rho_{\vec p'}) = \sqrt{2}G_{\mathrm F} n_\nu \int dE' \frac{1}{n_\nu}(\rho_{E'} - \bar\rho_{E'}).
+   \label{chap:collective-sec:collective-eqn:isotropic-homogeneous-self-interaction}
 \end{equation}
+The flavor isospin will precess around $\vec H_{\nu\nu}$ assuming no vacuum or matter contributions.%, as shown in Fig.~\ref{chap:collective-sec:collective-fig:self-interaction}. 
 We have to define a vector, which is an integral of polarization vector over all energies or frequencies,
 \begin{equation}
    \vec D = \int d\omega' \vec P(\omega').
 \end{equation}
-Expression \ref{chap:dr-sec:collective-eqn:isotropic-homogeneous-self-interaction} becomes $\mu \vec D$, where $\mu = \sqrt{2}G_{\mathrm F} n_\nu$.
+Eqn.~\ref{chap:collective-sec:collective-eqn:isotropic-homogeneous-self-interaction} becomes $\vec H_{\nu\nu} = \mu \vec D$, where $\mu = \sqrt{2}G_{\mathrm F} n_\nu$.
 
-For single energy or flavor isospins aligned in the same direction, this vector is in the direction of flavor isospin vector. If flavor isospins were initially prepared in completely random and uniformly distributed directions, $\vec D\sim 0$.
+% \begin{figure}[h!tbp]
+%     \centering
+%     \includegraphics[width=0.4\textwidth]{chapters/assets/matter/self-interaction}
+%     \caption{ Flavor isospin $\vec s$ precess around the Hamiltonian $\vec H_{\nu\nu}$ in flavor isospin space.}
+%     \label{chap:collective-sec:collective-fig:self-interaction}
+%  \end{figure}
+
+
+For single energy or flavor isospins aligned in the same direction, this vector is in the direction of the flavor isospin vector. If the flavor isospins are initially prepared in completely random and uniformly distributed directions, $\vec D\sim 0$.
 
 Synchronization occurs when the neutrino number density becomes large. $\vec D$ will wobble around very fast due to the precessions of flavor isospins, but almost stays in one direction. All the spins precess with the same frequency which is determined by $\mu$.
 
 With vacuum contribution $\vec H_{\mathrm v}$ and matter contribution $\vec H_{\mathrm m}$ to the Hamiltonian, we expect $\vec D$ to precess around $\vec H_{\mathrm v} + H_{\mathrm v}$, if the precession frequency of flavor isospins around $\vec D$ is much larger than the precession frequency of $\vec D$ around  $\vec H_{\mathrm v} + H_{\mathrm v}$.
 
 
+Before we work out the solutions, the oscillation scale of collective oscillations can be estimated. The characteristic energy scale for vacuum oscillations is $\omega_{\mathrm v} = \delta m^2\big/2E $, while the characteristic energy scale for collective oscillations is $\mu \sim G_{\mathrm F} (1- \hat{\boldsymbol{ v} }_1 \cdot \hat{\boldsymbol{v}}_2) n_{\nu} $. Correspondingly, the vacuum oscillation frequency is
+\begin{align*}
+ \omega_{\mathrm v} = \frac{\Delta m^2}{2E}  \sim& \frac{2\pi}{ 1  \mathrm{km} }  \left(\frac{\Delta m^2_{32}}{2.5\times 10^{-3} \mathrm{eV}^2 } \right) \left( \frac{1MeV}{E} \right) \\
+\sim & \frac{2\pi}{ 33  \mathrm{km} } \left( \frac{\Delta m_{12}^2}{7.5\times 10^{-5}\mathrm{eV}^2} \right) \left( \frac{1\mathrm{MeV}}{E} \right)
+\end{align*}
+As for collective oscillations, suppose we have neutrino flux $10^{50}\mathrm{ergs\cdot s^{-1}}$. We estimate the potential at radius $R$ to be
+\begin{equation*}
+\mu \sim  \frac{1}{0.01 km} \left(\frac{100\mathrm{km}}{R}\right)^2 \left(\frac{1\mathrm{MeV}}{E}\right),
+\end{equation*}
+which means that the collective oscillations frequencies in supernova explosions can be much smaller than vacuum oscillations.
 
 
 
-\section{\label{chap:dr-sec:two-beams}Two Beams Model and Linear Stability Analysis}
+\section{\label{chap:collective-sec:two-beams}Two Beams Model and Linear Stability Analysis}
 
 For nonlinear systems, linear stability analysis comes into play. I will go through the procedure and demonstrate the significance of instabilities and crossing in spectrum. For the sole purpose, I use a simple two-beam line model. The two beams model is simple mathematically, meanwhile reveals the key insights.
 
-In this model, neutrinos are emitted in two different directions from a line which preserves translation symmetry on this line. The emission angles are shown in Fig.~\ref{chap:dr-sec:two-beams-fig:two-beam-line-model}. For convenience of notations, I define a number density distribution function
+In this model, neutrinos are emitted in two different directions from a line which preserves translation symmetry on this line. The emission angles are shown in Fig.~\ref{chap:collective-sec:two-beams-fig:two-beam-line-model}. For convenience of notations, I define a number density distribution function
 \begin{equation}
    f(\hat v,\omega)= \frac{n(\hat v,\omega)}{n_t},
 \end{equation}
 where $n_t$ is the total number density of all neutrino emitted, $n(\hat v,\omega)$ is the number density with momentum direction $\hat v$ and energy $\omega$.
 We also define
 \begin{equation}
-   \mu = \sqrt{2}G_F n_t.
+   \mu = \sqrt{2}G_{\mathrm F} n_t.
 \end{equation}
 For two dimensional systems, we can calculate the neutrinos within an angle $[\theta,\theta+d\theta]$
 \begin{equation}
@@ -209,7 +225,7 @@ Similarly we can define the angular distribution for antineutrinos.
     \centering
     \includegraphics[width=\textwidth]{chapters/assets/dr/two-beam-line-model.png}
     \caption{Geometry of two-beam model to be used in this section. Two neutrino beams are emitted, the states of which are denoted as $\rho^L$ and $\rho^R$, with number densities $n^L$ and $n^R$ respectively. The emission angles are shown in the figure as $\theta_2$ and $\theta_1$ respectively. }
-    \label{chap:dr-sec:two-beams-fig:two-beam-line-model}
+    \label{chap:collective-sec:two-beams-fig:two-beam-line-model}
 \end{figure}
 
 
@@ -218,14 +234,14 @@ If all the beams are neutrinos, but with different energies for the left and rig
 
 The Hamiltonian is a sum of vacuum terms, matter terms, and self-interaction terms,
 \begin{equation}
-   H= H_v + H_m + H_{\nu\nu},
+   \mathsf H= \mathsf H_v + \mathsf H_m + \mathsf H_{\nu\nu},
 \end{equation}
 where
 \begin{align}
-   H_v =& - \eta \frac{1}{2}\omega \sigma_3 \\
-   H_m =& \frac{1}{2}\lambda \sigma_3\\
-   H_{\nu\nu}^L =& \frac{1}{2}\mu^R \rho^R (1-\cos(\theta_1-\theta_2))\\
-   H_{\nu\nu}^R =& \frac{1}{2}\mu^L \rho^L (1-\cos(\theta_1-\theta_2)).
+   \mathsf H_\vv =& - \eta \frac{1}{2}\omega \sigma_3 \\
+   \mathsf H_\mm =& \frac{1}{2}\lambda \sigma_3\\
+   \mathsf H_{\nu\nu}^L =& \frac{1}{2}\mu^R \rho^R (1-\cos(\theta_1-\theta_2))\\
+   \mathsf H_{\nu\nu}^R =& \frac{1}{2}\mu^L \rho^L (1-\cos(\theta_1-\theta_2)).
 \end{align}
 To linearize the equation of motion, we define the perturbed density matrix as
 \begin{equation}
@@ -239,7 +255,7 @@ where we have removed the trace part because it is alway time independent.
 
 The linearized equation of motion becomes
 \small\begin{align}
-   &i \partial_z \begin{pmatrix}
+   &\ri \partial_z \begin{pmatrix}
    \epsilon_1 \\
    \epsilon_2
    \end{pmatrix} =  - i \begin{pmatrix}\cot\theta_1\partial_x & 0 \\
@@ -256,7 +272,7 @@ The linearized equation of motion becomes
    \epsilon_1 \\
    \epsilon_2
    \end{pmatrix},
-   \label{chap:dr-sec:two-beams-eqn:line-model-two-beams-all-neutrino-linearized-eom}
+   \label{chap:collective-sec:two-beams-eqn:line-model-two-beams-all-neutrino-linearized-eom}
 \end{align}\normalsize
 where
 \begin{align*}
@@ -316,7 +332,7 @@ where
 The characteristic equation for this equation is
 \begin{equation}
    \left( ( \Omega - \hat\omega'_1 - f_2\xi )(\Omega - \hat\omega'_2-f_1\xi) - f_1 f_2 \xi^2 \right) =0,
-   \label{chap:dr-sec:two-beams-eqn:two-beam-line-characteristic-eqn-simple}
+   \label{chap:collective-sec:two-beams-eqn:two-beam-line-characteristic-eqn-simple}
 \end{equation}
 which is simplified to
 \begin{equation*}
@@ -417,7 +433,7 @@ To see the importance of angles, we can redefine some quantities
    f''_1=&\frac{f_1}{\sin\theta_2} \\
    f''_2=&\frac{f_2}{\sin\theta_1}.
 \end{align*}
-The we will reach the same characteristic equation as Eqn. \ref{chap:dr-sec:two-beams-eqn:two-beam-line-characteristic-eqn-simple}. So the angles serves as shift of energy gap and angular distribution.
+The we will reach the same characteristic equation as Eqn. \ref{chap:collective-sec:two-beams-eqn:two-beam-line-characteristic-eqn-simple}. So the angles serves as shift of energy gap and angular distribution.
 
 The region of instability changes in a convoluted way. Given angles we can always write down the expression and find out.
 \begin{itemize}
@@ -458,7 +474,7 @@ For each Fourier mode
 \end{equation*}
 where we set $\Omega=0$.
 
-First term in RHS of Eqn.~ \ref{chap:dr-sec:two-beams-eqn:line-model-two-beams-all-neutrino-linearized-eom} becomes
+First term in RHS of Eqn.~ \ref{chap:collective-sec:two-beams-eqn:line-model-two-beams-all-neutrino-linearized-eom} becomes
 \begin{equation*}
    - i \begin{pmatrix}\cot\theta_1\partial_x & 0 \\
    0 & \cot\theta_2 \partial_x
@@ -525,7 +541,7 @@ Different energy of two beams will make sure $-\omega_1 + \omega_2\neq 0$. It ha
 \subsubsection{General Solutions to Line Model}
 
 
-For completeness, we solve the general line model, c.f.~Eqn.~\ref{chap:dr-sec:two-beams-eqn:line-model-two-beams-all-neutrino-linearized-eom}. We know that real symmetric matrix has only real eigenvalues, from which we infer that $\mu_1=\mu_2$ and $\theta_1=\theta_2$ removes the instability.
+For completeness, we solve the general line model, c.f.~Eqn.~\ref{chap:collective-sec:two-beams-eqn:line-model-two-beams-all-neutrino-linearized-eom}. We know that real symmetric matrix has only real eigenvalues, from which we infer that $\mu_1=\mu_2$ and $\theta_1=\theta_2$ removes the instability.
 For translation symmetric models, that is $\partial_x\to 0$, we have the eigenvalues
 \begin{equation*}
    \Omega = \frac{1}{4}(A\pm B),
@@ -590,7 +606,7 @@ Assume that the left beam is neutrino beam and the right beam is antineutrno bea
 % ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
-% We assume the two beams have different energy, as indicated by :math:`\omega_1` and :math:`\omega_2` in Eq. \ref{chap:dr-sec:two-beams-eqn:line-model-two-beams-all-neutrino-linearized-eom}
+% We assume the two beams have different energy, as indicated by :math:`\omega_1` and :math:`\omega_2` in Eq. \ref{chap:collective-sec:two-beams-eqn:line-model-two-beams-all-neutrino-linearized-eom}
 
 
 % For numerical calcualtions, we scale quantities using :math:`\mu`.
@@ -636,7 +652,7 @@ Assume that the left beam is neutrino beam and the right beam is antineutrno bea
 
 
 
-\section{\label{chap:dr-sec:fast-mode}Fast Mode}
+\section{\label{chap:collective-sec:fast-mode}Fast Mode}
 
 
 In a paper by Chakraborty et al~\cite{Chakraborty2016}, they showed that neutrino flavor instabilities can grow with a rate that is proportional to the neutrino density, which has much faster oscillation frequencies than vacuum oscillations. For such a fast growth to happen, the author considered head on colliding neutrino beams. The derivation is much similar to what has been shown in the previous section.
@@ -656,7 +672,7 @@ The fast modes instability grows with a rate proportional to the neutrino potent
 
 
 
-% \subsection{\label{chap:dr-sec:fast-mode-subsec:introduction}Introduction}
+% \subsection{\label{chap:collective-sec:fast-mode-subsec:introduction}Introduction}
 
 % (Should talk about some very very basic backgrounds like the applications and why it is important.)
 
@@ -664,7 +680,7 @@ The fast modes instability grows with a rate proportional to the neutrino potent
 
 
 
-\subsection{\label{chap:dr-sec:fast-mode-subsec:dr}Dispersion Relation of Neutrino Flavor Conversion}
+\subsection{\label{chap:collective-sec:fast-mode-subsec:dr}Dispersion Relation of Neutrino Flavor Conversion}
 
 We consider two-flavor scenario ($\nu_{\mathrm e}$ and $\nu_{\mathrm x}$) of neutrino oscillations. We also assume that all neutrinos and antineutrinos are emitted as electron flavor. The flavor evolution of neutrino ensemble depends on flavor density matrices of neutrinos $\rho$ and antineutrinos $\bar\rho$ with energy $E$, direction of velocity $\hat{\mathbf v}$,
 \begin{equation}
@@ -743,7 +759,7 @@ The solutions to Eq. \eqref{eqn-maa} and Eq. \eqref{eqn-mza} are dispersion rela
 
 
 
-\subsection{\label{chap:dr-sec:fast-mode-subsec:instabilities-and-gaps}Instabilities and Gaps}
+\subsection{\label{chap:collective-sec:fast-mode-subsec:instabilities-and-gaps}Instabilities and Gaps}
 
 In reference \cite{Izaguirre2016a}, the authors relate gaps in dispersion relation to instabilities of neutrino oscillations. In this section, we review the idea of correspondence between gaps and instabilities first. Then we show that this relation is not a solid theory that can be generalized to all cases.
 
@@ -832,9 +848,9 @@ determines that the two different solutions are either in the region $\omega>0$ 
 
 
 
-\subsection{\label{chap:dr-sec:fast-mode-subsec:instability-to-gap}Instabilities Do Not Always Show Up as Gap}
+\subsection{\label{chap:collective-sec:fast-mode-subsec:instability-to-gap}Instabilities Do Not Always Show Up as Gap}
 
-Even though the concept of gap leads to instabilities works well for the models in \ref{chap:dr-sec:fast-mode-subsec:instabilities-and-gaps}, it can not be generalized to arbitrary number of emission angles nor to continuous spectra with crossings. As an example, we perform linear stability analysis of the three zenith angles emission configuration which is determined by a cubic function both in $\omega$ and $k$. Three solutions of $k(\omega)$ for given real $\omega(k)$  are expected. As long as real solutions disappear, complex solutions emerge, which leads to instabilities occur even without an actual gap. Rather the decrease in the number of real solutions for fixed $\omega$ or $k$ corresponds to the instabilities. As an example, we plotted dispersion relation and instabilities for three zenith angles in lower panels of Fig. \ref{fig-dr-db}. For a given value of $\omega$ such as $\omega= 0.5$, the three MAA solutions (Fig. \ref{fig-dr-db} lower left panel) of $k$ are $k=-4.6, 0.29, 1.2$. All three solutions are all real and indicate no spatial instabilities which is confirmed by calculation of instabilities shown as red blob. However, for another real $\omega = 0.2$, we find only one real solution $k=0.4$ from dispersion relation. The other solutions are complex and proven to be $k = -0.557106\pm 0.966535\mathrm i$ where the value with positive imaginary part leads to exponential growth. We conclude that instabilities doesn't require gap in dispersion relation except for two emission angles.
+Even though the concept of gap leads to instabilities works well for the models in \ref{chap:collective-sec:fast-mode-subsec:instabilities-and-gaps}, it can not be generalized to arbitrary number of emission angles nor to continuous spectra with crossings. As an example, we perform linear stability analysis of the three zenith angles emission configuration which is determined by a cubic function both in $\omega$ and $k$. Three solutions of $k(\omega)$ for given real $\omega(k)$  are expected. As long as real solutions disappear, complex solutions emerge, which leads to instabilities occur even without an actual gap. Rather the decrease in the number of real solutions for fixed $\omega$ or $k$ corresponds to the instabilities. As an example, we plotted dispersion relation and instabilities for three zenith angles in lower panels of Fig. \ref{fig-dr-db}. For a given value of $\omega$ such as $\omega= 0.5$, the three MAA solutions (Fig. \ref{fig-dr-db} lower left panel) of $k$ are $k=-4.6, 0.29, 1.2$. All three solutions are all real and indicate no spatial instabilities which is confirmed by calculation of instabilities shown as red blob. However, for another real $\omega = 0.2$, we find only one real solution $k=0.4$ from dispersion relation. The other solutions are complex and proven to be $k = -0.557106\pm 0.966535\mathrm i$ where the value with positive imaginary part leads to exponential growth. We conclude that instabilities doesn't require gap in dispersion relation except for two emission angles.
 
 
 We will prove that instabilities for continuous emission angles do not necessarily correspond to gap in dispersion relation. In the earlier works of fast modes, Sawyer analyzed a box shaped angular distribution of neutrino emission \cite{Sawyer2016}. To address the generality of our conclusion, we repeat the calculation for box spectrum with crossing.
@@ -861,7 +877,7 @@ We construct a box spectrum with value $-0.1$ within $u\in [-1,-0.3)$ and value 
 
 
 
-\section{\label{chap:dr-sec:conclusion}Conclusion}
+\section{\label{chap:collective-sec:conclusion}Conclusion}
 
 
 We have reviewed that dispersion relation gap and instabilities are the same thing for neutrino emission with two zenith angles for the quadratic nature of the problem. As for more realistic spectrum, we have proved that instabilities propagate in regions of either $\omega>0$ or $\omega<0$ and never cross $\omega=0$. Hence the dispersion relation gaps should be defined as gaps between the dispersion relation curves and the axis $\omega=0$ instead of the dispersion relation curves. We have also showed that instabilities is not necessarily shown as gap in dispersion relations for neutrino emission with more than two zenith angles and box spectrum with crossing. Through the discussions, we demonstrated that the relation between dispersion relation gaps and instabilities should be used with caution.

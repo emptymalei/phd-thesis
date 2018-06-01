@@ -755,7 +755,7 @@ determines the transitions between the two background matter states.
 \begin{figure}[!htbp]
     \centering
     \includegraphics[width=\columnwidth]{chapters/assets/rabi/castlewall-profile}
-    \caption{The castle wall matter potential profile with $X_1=X_2=X/2$.}
+    \caption{The castle wall matter potential profile with $X_1=X_2=X/2$. $\Lambda_2 =0.7\omega_{\mathrm v} \cos 2\theta_{\mathrm v} $ \\  $\Lambda_1 = 0.3\omega_{\mathrm v} \cos 2\theta_{\mathrm v}$}
     \label{fig-castlewall-profile-illustration}
 \end{figure}
 
@@ -770,7 +770,8 @@ determines the transitions between the two background matter states.
 
 
 \begin{figure}[!htbp]
-        \includegraphics[width=\columnwidth]{chapters/assets/rabi/castle-wall-1}%
+        % \includegraphics[width=\columnwidth]{chapters/assets/rabi/castle-wall-1}%
+        \includegraphics[width=\columnwidth]{chapters/assets/matter/castle-wall-with-legend}%
     \caption{Transition probabilities for castle wall matter profile calculated numerically for $\Lambda_2-\Lambda_1=0.4 \Lambda_0$. During the calculation, the energy of neutrinos is $10\,\mathrm{MeV}$, mass-squared difference is $\delta m^2=2.6\times 10^{-3}\,\mathrm{eV^2}$, and the vacuum mixing angle chosen so that $\sin^2(2\theta_\vv)=0.093$. The background potential $\Lambda_0$ is chosen so that it's half the MSW resonance potential, $\Lambda_0 = \frac{1}{2}\lambda_{\mathrm{MSW}}=\frac{1}{2}\omega_{\mathrm{v}}\cos 2\theta_{\mathrm v}$, and the base frequency is set to $k_0 = 2\pi/X = \omega_{\mathrm{m}}$.
                  }
     \label{fig-akhmedovOscPlt}
@@ -779,7 +780,7 @@ determines the transitions between the two background matter states.
 
 The base frequency $k_0$ which is determined by the total period $X$ can be arbitrary. In this example, we choose a $X$ so that the base frequency $k_0$ matches the energy gap $\omega_{\mathrm{m}}$. Even though multiple perturbation frequencies show up in Eqn.~(\ref{castle-wall-decomposed-hamiltonian}), we identify that only the first frequency $n=1$ is the resonance frequency since we are using $k_0=\omega_{\mathrm{m}}$. As an approximation, we drop all other frequencies $n>2$ regarding the fact that they are far from resonance. Thus, similar to single frequency matter profile, the varying $\sigma_3$ terms have limited effects on the transition probabilities in our case, which leads to
 \begin{align*}
-    H^{(\mathrm m)} \to & - \frac{1}{2}\omega_{\mathrm m} \sigma_3  - \frac{1}{2} \sum_{n=1}^2\lambda_n \sin 2\theta_{\mathrm m}  \cos\left( k_n r \right) \sigma_1\\
+    \mathsf H^{(\mathrm m)} \to & - \frac{1}{2}\omega_{\mathrm m} \sigma_3  - \frac{1}{2} \sum_{n=1}^2\lambda_n \sin 2\theta_{\mathrm m}  \cos\left( k_n r \right) \sigma_1\\
     \to & - \frac{1}{2}\omega_{\mathrm m} \sigma_3  - \frac{1}{2} \sum_{n=1}^2 A_n \cos ( k_n r) \sigma_1 \\
     & + \frac{1}{2} \sum_{n=1}^2A_n \sin(k_n r) \sigma_2,
 \end{align*}
