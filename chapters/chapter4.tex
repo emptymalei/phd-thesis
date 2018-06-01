@@ -2,44 +2,44 @@
 
 \chapter{\label{chap:collective}Collective Neutrino Oscillations}
 
-Neutrino oscillations in the matter background has well defined linear dynamics as we discussed in the preceding chapters. However, the universe provides many other much more exciting labs for neutrino physics. One of such is supernova explosions, which release approximately $10^{58}$ neutrinos within seconds~\cite{Bahcall1987}. Such neutrino density would introduce new interaction terms into neutrino oscillations, the self-interaction potential $H_{\nu\nu}$ is comparable or even larger than the matter potential, depending on the region of interest in supernova explosions~\cite{Flowers1976a}. Thus self-interaction between neutrinos is not negligible. Meanwhile, unexpected rich dynamics has be proved to be present with the self-interactions~\cite{Duan2010, Duan2006}. The fact that self-interaction introduces a new characteristic energy scale, new resonances such as matter-neutrino resonance is also possible~\cite{Malkus2014, Vaananen2015, Wu2015}.
+Neutrino oscillations in the matter background has well defined linear dynamics as I discussed in the preceding chapters. However, the universe provides many other much more exciting labs for neutrino physics. One of such is supernova explosions, which release approximately $10^{58}$ neutrinos within seconds~\cite{Bahcall1987}. The neutrino density in supernova explosions could be dense enough for the neutrino self-interaction potential $H_{\nu\nu}$ to be comparable or even larger than the matter potential, depending on the region of interest in supernova explosions~\cite{Flowers1976a}. Thus self-interaction between neutrinos becomes non-negligible. Meanwhile, unexpected rich dynamics has been proved to exist with the self-interactions~\cite{Duan2010, Duan2006}. The self-interactions introduce a new characteristic energy scale to neutrino oscillations, which makes it even possible to have matter-neutrino resonance~\cite{Malkus2014, Vaananen2015, Wu2015}.
 
-In this chapter, I will review the neutrino collective oscillations and fast modes in neutrino collective oscillations. Then I will introduce the connection between fast modes and dispersion relations proposed by I. Izaguirre et al~\cite{Izaguirre2016a}. Finally I will show that the relation dispersion relations and fast modes is not well established.
+In this chapter, I will review the neutrino collective oscillations and fast modes in neutrino collective oscillations. Then I will review the connection between fast modes and dispersion relations proposed by I. Izaguirre et al~\cite{Izaguirre2016a}. Finally I will show that the relation dispersion relations and fast modes is not well established.
 
 
 \section{\label{chap:collective-sec:collective}Collective Oscillations}
 
 
-
 \subsection{Equation of Motion}
 
-The equation of motion for neutrino oscillations with self-interaction was first derived in \cite{Sigl1993}. For the purpose of the thesis, I will skip the quantum field theory derivations but write it down and clarify some conventions. Without much effort, we know that the equation of motion is the Liouville's equation
+The equation of motion for neutrino oscillations with self-interaction was first derived in \cite{Sigl1993}. For the purpose of the thesis, I will skip the quantum field theory derivations but write it down and clarify some conventions. The equation of motion is the Liouville's equation
 \begin{equation}
    \ri \frac{d}{dt}\rho = [ \mathsf H,\rho].
+   \label{chap:collective-sec:collective-eqn:equation-of-motion-general}
 \end{equation}
-For the purpose of neutrino oscillations, we always assume they travel with speed of light thus
+For the purpose of vacuum neutrino oscillations, I have assumed that the neutrino travels with speed of light so that
 \begin{equation}
    \frac{d}{dt} = \frac{d}{dr},
 \end{equation}
-where $r$ is the distance travelled by the neutrino. However, in general, what we should have is
+where $r$ is the distance travelled by the neutrino. A more general approach is to rewrite the total derivative
 \begin{equation}
    \frac{d}{dt} = \partial_t + \mathbf v\cdot \boldsymbol{\nabla}.
 \end{equation}
-The Hamiltonian is composed of three different terms,
+On the right side, the Hamiltonian is composed of three different terms,
 \begin{equation}
    \mathsf H = \mathsf H_{\mathrm v} + \mathsf H_{\mathrm m} +\mathsf  H_{\nu\nu},
 \end{equation}
-where each term is explicitly written down
+where $\mathsf H_\vv$, $\mathsf H_\mm$ and $\mathsf H_{\nunu}$ represents the vacuum Hamiltonian, matter Hamiltonian, and neutrino self-interaction Hamiltonian. Each of the three terms is explicitly written down
 \begin{align}
     \mathsf H_\vv =& -\frac{1}{2}\beta\eta \omega_0 \sigma_3\\
     \mathsf H_\mm =& \frac{1}{2} \sqrt{2}G_F n_e \sigma_3 \\
     \mathsf H_{\nu\nu} =& \sqrt{2}G_F \int d\omega d\Omega_{\hat v'} n(\omega,\hat v')\beta(\hat v')\rho(\omega,\hat v') (1-\hat v \cdot \hat v').
 \end{align}
-I use $\eta=\pm 1$ for Normal Hierarchy and Inverted Hierarchy respectively, $\beta=1$ for neutrinos and $\beta=-1$ for antineutrinos. In other words, the vacuum frequency is $\omega_v = \eta \omega_0$. $\beta(\hat v')$ indicates whether the density matrix $\rho(\omega,\hat v')$ is for neutrinos or antineutrinos. If $\rho(\omega,\hat v')$ is for antineutrinos, $\beta(\hat v')=-1$, otherwise $\beta(\hat v')=1$. More explicitly, the vacuum term is
+I use $\eta=\pm 1$ for Normal Hierarchy and Inverted Hierarchy respectively. I also use $\beta=1$ for neutrinos and $\beta=-1$ for antineutrinos. In other words, the vacuum frequency is $\omega_\vv = \eta \omega_0$. $\beta(\hat v')$ indicates whether the density matrix $\rho(\omega,\hat v')$ is for neutrinos or antineutrinos. If $\beta(\hat v')=-1$, $\rho(\omega,\hat v')$ is for antineutrinos, vice versa. More explicitly, the vacuum Hamiltonian is
 \begin{align*}
    \mathsf H_\vv =& \begin{cases}
-   -\frac{1}{2}\eta \omega_0 \sigma_3 & \text{for neutrinos}\\
-   \frac{1}{2}\eta \omega_0 \sigma_3 & \text{for antineutrinos}
+   -\frac{1}{2}\eta \omega_\vv \sigma_3 & \text{for neutrinos}\\
+   \frac{1}{2}\eta \omega_\vv \sigma_3 & \text{for antineutrinos}
    \end{cases}
 \end{align*}
 while the neutrino-neutrino interaction Hamiltonian is
@@ -49,27 +49,26 @@ while the neutrino-neutrino interaction Hamiltonian is
    - \sqrt{2}G_{\mathrm F} \int d\omega d\Omega_{\hat v'} n(\omega,\hat v')\bar\rho(\omega,\hat v') (1-\hat v \cdot \hat v') &  \text{interacting with antineutrinos}
    \end{cases}
 \end{align*}
-Please note that in this notation,
+Please note that I have used the following notation.
 \begin{itemize}
-    \item $\omega_0$ is meant to be the absolute value of the frequency, since $\eta$ takes care of the signs;
-\item The integral in $H_{\nu\nu}$ must take care of both interactions with neutrinos and anti-neutrinos.
+    \item $\omega_\vv$ is the absolute value of the frequency, since $\eta$ takes care of the signs;
+    \item The integral in $\mathsf H_{\nu\nu}$ must take care of both interactions with neutrinos and anti-neutrinos.
 \end{itemize}
-For simplicity, we define some new quantities.
+I also use the following quantities in this chapter.
 \begin{itemize}
-    \item We define $\lambda$ to measure the matter interactions
+    \item $\lambda$ is the same as the previous chapter
     \begin{equation}
         \lambda = \sqrt{2} G_{\mathrm F} n_{\mathrm e}.
     \end{equation}
-\item Angle distribution of number density is defined as
+\item Angle distribution of number density is denoted as
 \begin{equation}
     f(\hat v) = \frac{n(\omega,\hat v)}{n_{\mathrm{t}}},
 \end{equation}
-   where $n_{total}$ is the total number density of neutrinos for all energies. It can also be defined for anti-neutrinos
+   where $n_{\mathrm{total}}$ is the total number density of neutrinos for all energies. It can also be defined for anti-neutrinos
 \begin{equation}
       \bar f(\hat v) = \frac{\bar n(\omega,\hat v)}{\bar n_{\mathrm{t}}},
 \end{equation}
-where $\bar n_{\mathrm{t}}$ is the total number density of antineutrinos.
-In models where neutrinos are emitted from a line, the direction of momentum $\hat v$ depends on one angle, hence $f(\theta)$. With this definition, we know that the number density of neutrinos within an angle $[\theta, \theta + d\theta]$ can be calculated
+where $\bar n_{\mathrm{t}}$ is the total number density of antineutrinos. One of the useful models is the line model, where neutrinos are emitted from a line. This model is a 2D neutrino problem. The direction of momentum $\hat v$ only depends on one angle, hence the distribution becomes $f(\theta)$. With this definition, the number density of neutrinos for some specific frequency $\omega$ within a range of angle $[\theta, \theta + d\theta]$ can be calculated using
 \begin{equation}
       n_{\mathrm{t}} f(\theta) d\theta.
 \end{equation}
@@ -103,15 +102,15 @@ where
 \subsection{Synchronization in Neutrino Oscillations}
 
 
-With the equation of motion, many aspects of such a system has been explored, such as neutrino bulb model, line model, etc. New dynamics, such as spectral split, synchronizations, matter-neutrino resonances, have been identified~\cite{Duan2006,Malkus2014,Vaananen2015}. Synchronization is one of the most astonishing results which might happen when neutrino number density is high. In this section, I will explain how this is possible.
+With the equation of motion Eqn.~\ref{chap:collective-sec:collective-eqn:equation-of-motion-general}, many aspects of such a system can be explored, such as neutrino bulb model, line model, etc. New dynamics, such as spectral split, synchronizations, matter-neutrino resonances, have been identified~\cite{Duan2006,Malkus2014,Vaananen2015}. Synchronization is one of the most surprising results which might happen when neutrino number density is large.
 
-To grab the flavor of this phenomenon, I use the flavor isospin picture. Flavor isospin was explained in Sec.~\ref{chap:basics-sec:flavor-isospin-pic}. Here we explain another definition of it
+To understand this phenomenon, I use the flavor isospin picture. Flavor isospin was explained in Sec.~\ref{chap:basics-sec:flavor-isospin-pic}. Here we explain another definition of it
 \begin{equation}
-   \rho = 1 + \frac{1}{2}\vec P \cdot \vec \sigma.
+   \rho = 1 + \vec s \cdot \vec \sigma.
 \end{equation}
 For antineutrinos, the flavor isospin is defined as
 \begin{equation}
-    \bar\rho = 1 - \frac{1}{2} \vec P \cdot \vec \sigma.
+    \bar\rho = 1 - \vec s \cdot \vec \sigma.
 \end{equation}
 The reason for the negative sign is that we usually reformulate the formula for antineutrinos and define the anti-neutrinos to have negative frequency.
 
@@ -167,9 +166,9 @@ But the neutrino coherent scattering term requires some simplifications. For the
    \label{chap:collective-sec:collective-eqn:isotropic-homogeneous-self-interaction}
 \end{equation}
 The flavor isospin will precess around $\vec H_{\nu\nu}$ assuming no vacuum or matter contributions.%, as shown in Fig.~\ref{chap:collective-sec:collective-fig:self-interaction}. 
-We have to define a vector, which is an integral of polarization vector over all energies or frequencies,
+We have to define a vector, which is an integral of flavor-isospin vector over all energies or frequencies,
 \begin{equation}
-   \vec D = \int d\omega' \vec P(\omega').
+   \vec D = \int d\omega' \vec s(\omega').
 \end{equation}
 Eqn.~\ref{chap:collective-sec:collective-eqn:isotropic-homogeneous-self-interaction} becomes $\vec H_{\nu\nu} = \mu \vec D$, where $\mu = \sqrt{2}G_{\mathrm F} n_\nu$.
 
@@ -454,7 +453,7 @@ We notice that very large matter density shift the region to very small $\mu$.
 
 However, matter effect is not always this simple. Suppose we have different matter potential for different beams, when they collide they would have built a different phase due to matter effect.
 
-The inhomogeneous matter effect has been studied in \cite{Mangano2014}. It can excite high Fourier moments of polarization vector, which makes a lot of sense because it generates fine structure in the x direction. This might be integrated into LESA effect.
+The inhomogeneous matter effect has been studied in \cite{Mangano2014}. It can excite high Fourier moments of flavor-isospin picture, which makes a lot of sense because it generates fine structure in the x direction. This might be integrated into LESA effect.
 
 
 
