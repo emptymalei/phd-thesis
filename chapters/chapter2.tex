@@ -25,7 +25,17 @@ The first term in the above equation produces a global phase to the flavor wave 
 \end{equation}
 which turns out to be the vacuum oscillation frequency. Here $E=p$ is approximately the energy of the neutrino.
 
-To work out the exact solution, I will utilize the Schr\"{o}dinger equation. The wave function in flavor basis $\Psi^{(\ff)}$ is related to the wave function in mass basis $\Psi^{(\vv)}$ through a unitary mixing matrix $\mathsf U$,
+To work out the exact solution, I will utilize the Schr\"{o}dinger equation. First of all, the flavor eigenstates are denoted as $\ket{\nu_\alpha}$ where ${}_\alpha$ can be ${}_{\mathrm{e}}$ or ${}_{\mathrm{x}}$ for the electron flavor and the other flavor. The wave function of neutrino state $\ket{\nu}$ in flavor basis, defined as
+\begin{equation}
+    \Psi^{(\ff)} = \begin{pmatrix}
+        \psi^{(\ff)}_{\mathrm e} \\
+        \psi^{(\ff)}_{\mathrm x} 
+    \end{pmatrix} = \begin{pmatrix}
+        \braket{\nu_{\mathrm e}}{\nu} \\
+        \braket{\nu_{\mathrm x}}{\nu}
+    \end{pmatrix},
+\end{equation}
+is related to the wave function in mass basis $\Psi^{(\vv)}$ through a unitary mixing matrix $\mathsf U$,
 \begin{equation}
 \Psi^{(\mathrm f)} = \mathsf{U}\Psi^{(\vv)},
 \label{chap:vacuum-eqn:wavefunction}
