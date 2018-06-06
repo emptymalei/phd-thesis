@@ -239,11 +239,12 @@ as shown in Fig.~\ref{app-fig:rabi-resonance-width}. The transition amplitude is
 
 \subsection{Interference Between the Driving Fields}
 
-In many cases, the two-level quantum system has more than one driving fields. Here I consider the Hamiltonian with two driving potentials:
-\begin{align*}
+In many cases, the two-level quantum system has more than one driving fields. I will refer to each of the driving field as a Rabi mode. Here I consider the Hamiltonian with two Rabi modes:
+\begin{align}
     \mathsf H_{\mathrm R} =& -\frac{\omega_{\mathrm R}}{2}\sigma_3 - \frac{A_{1} }{2}  \left( \cos(k_{1} t +\phi_{1})\sigma_1  - \sin(k_{1} t +\phi_{1}) \sigma_2\right) \nonumber\\
     & - \frac{A_{2} }{2}  \left( \cos(k_{2} t +\phi_{2})\sigma_1  - \sin(k_{2} t +\phi_{2}) \sigma_2\right).
-\end{align*}
+    \label{chap:matter-sec:single-frequency-eqn:hamiltonian-two-level}
+\end{align}
 I decompose it into $\vec{H}_{\mathrm R}=\vec{H}_3 + \vec{H}_{1} + \vec{H}_2$, where
 \begin{equation*}
     \vec{H}_1 =  \begin{pmatrix}
@@ -256,7 +257,7 @@ I decompose it into $\vec{H}_{\mathrm R}=\vec{H}_3 + \vec{H}_{1} + \vec{H}_2$, w
      0
       \end{pmatrix}.
 \end{equation*}
-I will assume that the first potential $\vec{H}_1$ is almost on resonance, and the second potential $\vec H_2$ is off resonance, i.e.,% $\vec H_1$ and $\vec H_2$ are two rotating vectors as a function of $r$ with frequencies $k_1$ and $k_2$ in this vector space, while $\vec H_3$ is perpendicular to $\vec H_1$ and $\vec H_2$.
+I will assume that the first Rabi mode $\vec{H}_1$ is almost on resonance, and the second one $\vec H_2$ is off resonance, i.e.,% $\vec H_1$ and $\vec H_2$ are two rotating vectors as a function of $r$ with frequencies $k_1$ and $k_2$ in this vector space, while $\vec H_3$ is perpendicular to $\vec H_1$ and $\vec H_2$.
 %The most general condition that we can drop the new perturbation $\vec{H}_2$ is to make sure $k_2$ is far from the resonance condition compared to the resonance width,
 \begin{equation}
 \RD_1 \lesssim 1 \quad \text{and} \quad
@@ -266,7 +267,7 @@ where
 \begin{equation}
 \RD_i\equiv \frac{\lvert k_i -\omega_{\mathrm R}\rvert}{\lvert A_i\rvert}
 \end{equation}
-is the relative detuning of the $i$th driving field.
+is the relative detuning of the $i$th Rabi mode.
 
 % In fact, I will derive a more stringent criteria for the significance of the second driving potential.
 % The transition amplitude between the two states becomes
@@ -301,8 +302,8 @@ is the relative detuning of the $i$th driving field.
 % 0
 % \end{pmatrix}.
 % \end{equation}
-Although the second driving field is off resonance, it can interfere with the Rabi oscillation caused by the first driving field.
-To see this effect, I will use the frame that corotates with $\vec H_2$. In the corotating frame, the two driving fields have frequencies $k_1'=k_1-k_2$ and $k_2'=0$, respectively, and $\vec H'_3 = ( 0,0, \omega_{\RR}- k_2 )^{\mathrm{T}}$. Obviously, the Hamiltonian vector in this corotating frame is similar to Eqn.~\ref{chap:matter-eqn:rabi-hamiltonian-h3-hplus} except with the replacements
+Although the second Rabi mode is off resonance, it can interfere with the Rabi oscillation caused by the first Rabi mode.
+To see this effect, I will use the frame that corotates with $\vec H_2$. In the corotating frame, the two Rabi modes have frequencies $k_1'=k_1-k_2$ and $k_2'=0$, respectively, and $\vec H'_3 = ( 0,0, \omega_{\RR}- k_2 )^{\mathrm{T}}$. Obviously, the Hamiltonian vector in this corotating frame is similar to Eqn.~\ref{chap:matter-eqn:rabi-hamiltonian-h3-hplus} except with the replacements
 \begin{equation}
     \vec H_3 \to \vec H'_3 + \vec H'_2  \quad \text{and} \quad \vec H_+ \to \vec H'_1.
 \end{equation}
@@ -325,51 +326,72 @@ where I kept only up to the first order of the Taylor series. I can calculate th
 % \begin{equation*}
 % \RD_i =  \left\lvert \frac{ k_i - \omega_{\mathrm R}}{A_i} \right \rvert.
 % \end{equation*}
-One can adjust frequency of the off-resonance driving field $k_2$ to decrease or increase $\RD$ so that the system is close to or further away from the resonance.
+One can adjust frequency of the off-resonance Rabi mode $k_2$ to decrease or increase $\RD$ so that the system is close to or further away from the resonance. The criterion for the off-resonance Rabi mode to have a significant impact on the Rabi resonance is
+\begin{equation}
+    \lvert  \frac{ A_2^2 }{2  A_1 ( k_2 - \omega_{\mathrm R})} \rvert \gtrsim 1 \quad \text{or} \quad \lvert A_2\rvert \gtrsim \sqrt{ 2 \lvert A_1 (k_1 - \omega_\RR) \rvert }
+    \label{chap:matter-sec:single-frequency-eqn:criterion-for-a2}
+\end{equation}
 % In principle, the energy gap of the first frequency can be changed to approach the resonance or escape the resonance by carefully arranging the second frequency, which is also obvious from Eqn.~(\ref{chap:matter-eq:relative-detuning-changed}). For the purpose of the section we first discuss the most important destruction effect by choosing $\RD_1 = 0$. We observe the importance of the relative detuning. For the second mode to significantly interfere with the first mode, we need a small $\RD_2$ and a large amplitude or width $A_2\gg A_1$.
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%% Rabi oscillation
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{\label{chap:matter-sec:single-frequency-matter-profile}Single Frequency Matter Profile}
+\subsection{\label{chap:matter-sec:single-frequency-matter-profile}Single-Frequency Matter Profile}
 
 
-I will examine the neutrino flavor conversions in a single frequency matter profile $\delta\lambda(r) = \lambda_1 \cos(k_1 r)$. The Hamiltonian in background matter basis becomes
+I will examine the neutrino flavor conversion in a single-frequency matter profile $\delta\lambda(r) = \lambda_1 \cos(k_1 r)$. I will assume that the perturbation is small so that $\lambda_1 \ll \omega_\mm$. The Hamiltonian in the background matter basis becomes
 \begin{equation}
 \mathsf H^{(\mm)} = - \frac{\omega_\mm}{2}\sigma_3  + \frac{1}{2} \lambda_1 \cos(k_1 r) \cos 2\theta_\mm \sigma_3 - \frac{1}{2} \lambda_1 \cos(k_1 r)\sin 2\theta_\mm \sigma_1.
-\label{eq-hamiltonian-bg-matter-basis-single-frequency}
+\label{chap:matter-sec:single-fequency-eq:hamiltonian-bg-matter-basis-single-frequency}
 \end{equation}
-As will be proved later, the varying $\sigma_3$ term $\frac{1}{2} \lambda_1 \cos(k_1 r) \cos 2\theta_\mm \sigma_3$ in the above Hamiltonian, which is the varying energy gap due to varying matter density fluctuations, has little effect on the transition probabilities when the system is not too far from resonance\footnote{For the purpose of this section, I will consider the case when $k_1$ is not far away from resonance.}. With the varying $\sigma_3$ term removed, the single frequency matter perturbation neutrino flavor conversion system will be reduced to a Rabi oscillation system. The external driving field frequency is $\pm k_1$ and the energy gap is $\omega_{\mathrm m}$. I can decompose $\cos( k_1 r )$ into two exponential functions so that we have two external driving frequencies $k_1$ and $-k_1$. By neglecting the off-resonance frequency $-k_1$, the Hamiltonian can be simplified to
+I will consider the case when $k_1$ is not far away from resonance, i.e., $k_1 \sim \omega_\mm$. As will be proven later, the oscillating $\sigma_3$ term $\frac{1}{2} \lambda_1 \cos(k_1 r) \cos 2\theta_\mm \sigma_3$ in the above Hamiltonian has little effect on the transition probabilities in this case. With the oscillating $\sigma_3$ term removed, 
 \begin{align}
-\mathsf H^{(\mathrm{m})} \to & -\frac{\omega_{\mathrm m}}{2} \sigma_3  - \frac{1}{2} \lambda_1 \sin 2\theta_{\mathrm m} \cos( k_1 r ) \sigma_1\label{eq-hamiltonian-bg-matter-basis-single-frequency} \\
-\to & -\frac{\omega_{\mathrm m}}{2} \sigma_3  - \frac{1}{2} A_1 \exp (\mathrm ik_1 r) \sigma_1 \nonumber \\
-= & -\frac{\omega_{\mathrm m}}{2} \sigma_3  - \frac{1}{2} A_1 \cos ( k_1 r)  \sigma_1 + \frac{1}{2} A_1\sin(k_1 r) \sigma_2,\nonumber
-\label{chap:matter-sec:single-frequency-matter-profile-eqn:single-frequency-hamiltonian-approximation}
+    \mathsf H^{(\mm)} &\to -\frac{\omega_{\mathrm m}}{2} \sigma_3  - \frac{1}{2} A_1 \cos ( k_1 r)  \sigma_1 + \frac{1}{2} A_1\sin(k_1 r) \sigma_2 \nonumber\\
+    &\phantom{\to} - \frac{1}{2} A_2 \cos ( k_2 r)  \sigma_1 + \frac{1}{2} A_2\sin(k_2 r) \sigma_2 
 \end{align}
-where I have used
-\begin{equation}
-A_1 = \frac{\lambda_1 \sin 2\theta_{\mathrm m} }{2}.
-\label{eq-define-a1}
-\end{equation}
+where
+\begin{align}
+    A_1 &= A_2 = \frac{\lambda_1 \sin(2\theta_\mm) }{2} ,\\
+    k_2 &= -k_1.
+\end{align}
+This is the same as the Hamiltonian $\mathsf H_{(\RR)}$ in Eqn.~\ref{chap:matter-sec:single-frequency-eqn:hamiltonian-two-level}.
+Because the second Rabi mode is off resonance and its amplitude is too small to satisfy the criterion in Eqn.~\ref{chap:matter-sec:single-frequency-eqn:criterion-for-a2}, it can be neglected and Rabi formula in Eqn.~\ref{app:rabi-system-transition-probability} can be applied with $A_\RR=A_1$, $k_\RR=k_1$, and $\omega_\RR = \omega_\mm$.
+% The external driving field frequency is $\pm k_1$ and the energy gap is $\omega_{\mathrm m}$. I can decompose $\cos( k_1 r )$ into two exponential functions so that we have two Rabi modes $k_1$ and $-k_1$. By neglecting the off-resonance frequency $-k_1$, the Hamiltonian can be simplified to
+% \begin{align}
+% \mathsf H^{(\mathrm{m})} \to & -\frac{\omega_{\mathrm m}}{2} \sigma_3  - \frac{1}{2} \lambda_1 \sin 2\theta_{\mathrm m} \cos( k_1 r ) \sigma_1\label{eq-hamiltonian-bg-matter-basis-single-frequency} \\
+% \to & -\frac{\omega_{\mathrm m}}{2} \sigma_3  - \frac{1}{2} A_1 \exp (\mathrm ik_1 r) \sigma_1 \nonumber \\
+% = & -\frac{\omega_{\mathrm m}}{2} \sigma_3  - \frac{1}{2} A_1 \cos ( k_1 r)  \sigma_1 + \frac{1}{2} A_1\sin(k_1 r) \sigma_2,\nonumber
+% \label{chap:matter-sec:single-frequency-matter-profile-eqn:single-frequency-hamiltonian-approximation}
+% \end{align}
+% where I have used
+% \begin{equation}
+% A_1 = \frac{\lambda_1 \sin 2\theta_{\mathrm m} }{2}.
+% \label{eq-define-a1}
+% \end{equation}
 
+% Now I have reduced the neutrino oscillations to Rabi oscillations. The resonance happens when the energy gap $\omega_{\mathrm m}$ is close to the external driving field frequency $k_1$, i.e., $\omega_{\mathrm m} \sim k_1$. As long as the resonance condition is satisfied, the transition probability between the two mass states should be predicted well using Rabi formula.
+%To show that this conjecture of simplifying neutrino flavor conversions to Rabi oscillations is correct, 
 
-
-Now I have reduced the neutrino oscillations to Rabi oscillations. The resonance happens when the energy gap $\omega_{\mathrm m}$ is close to the external driving field frequency $k_1$, i.e., $\omega_{\mathrm m} \sim k_1$. As long as the resonance condition is satisfied, the transition probability between the two mass states should be predicted well using Rabi formula.
-To show that this conjecture of simplifying neutrino flavor conversions to Rabi oscillations is correct, I calculated the transition probabilities of the neutrinos described by Eqn.~\ref{eq-hamiltonian-bg-matter-basis-single-frequency} numerically, and compared them with Rabi formula Eqn.~\ref{app:rabi-system-transition-probability} from the Rabi oscillations described by Eqn.~\ref{rabi-oscillation-single-perturbation}.
+I calculated the transition probability using the Hamiltonian in Eqn.~\ref{chap:matter-sec:single-fequency-eq:hamiltonian-bg-matter-basis-single-frequency} with $k_1/\omega_\mm=1$ and plotted it as black square markers in Fig.~\ref{fig-rabiOscillationsNeutrinoCoincidence}. As comparison I also plotted the transition probability obtained from the Rabi formula in Eqn.~\ref{app:rabi-system-transition-probability} as the dot-dashed curve in the same figure, which agrees with the numerical result very well. In this case, the first Rabi mode is exactly on resonance with relative detuning $\RD_1=0$. I calculated the transition probabilities for additional two cases with $k_1/\omega_\mathrm{m}=1-2\times 10^{-5}$ and $1-10^{-4}$, which have relative detunings $\RD_1 = 1$ and $5.2$, respectively. The Rabi resonance is suppressed as $\RD_1$ increases. The results obtained using the full Hamiltonian and those from the Rabi formula again agree very well. 
 
 \begin{figure}[h!tbp]
                 \includegraphics[width=\columnwidth]{chapters/assets/rabi/rabiOscillationsNeutrinoCoincidence-single-frequency}
                 %rabiOscillationsNeutrinoCoincidence}
-                \caption{Single frequency matter profile and Rabi oscillation. The markers are numerical results for the transition probabilities between two background mass eigenstates for the neutrinos with matter perturbation $A_1\sin(k_1 r)$. The dots, diamonds, and squares are for $k_1=\omega_{\mathrm m}$, $k_1=(1-2\times 10^{-5})\omega_{\mathrm m}$, and $k_1=(1-10^{-4})\omega_{\mathrm m}$ respectively. The lines are the predictions using Rabi formula. During the calculation, $\lambda_0$ is set to $0.5$ of the MSW resonance potential $\lambda_{\mathrm{MSW}}=\omega_{\mathrm{v}}\cos 2\theta_{\mathrm v}$ and mixing angle is chosen so that $\sin^2(2\theta_{\mathrm v}) = 0.093$.}
+                \caption{The transition probabilities $P_{\nu_\mathrm{L}\to\nu_\mathrm{H}}$ as functions of distance $r$ for a neutrino propagating through matter profiles $\lambda(r)=\lambda_0 + \lambda_1 \cos (k_1 r)$ with different values of $k_1$ as labeled. In all three cases, $\lambda_0$ is half of the MSW resonance potential, and $\lambda_1=10^{-3}\omega_\mm$.}
                 \label{fig-rabiOscillationsNeutrinoCoincidence}
 \end{figure}
 
-In Fig.~\ref{fig-rabiOscillationsNeutrinoCoincidence}, I have plotted the numerical results using markers as well as the prediction using Rabi formula using lines. The agreement between numerical solutions of neutrino transitions between mass states and Rabi formula will be explained more precisely in Sec.~\ref{sec:jacobi}. For now, we address the significance of relative detuning $\RD = \lvert k_1 - \omega_{\mathrm m} \rvert /\lvert A_1 \rvert$,  which is rigoriously defined in Eqn.~\ref{chap:app-sec:rabi-oscillations-eqn:relative-detuning-def}. $\RD\to 0$ indicates that the neutrino oscillation is very close to resonance, while $\RD\to \infty$ indicates that the neutrino oscillation is far away from resonance. The corresponding relative detunings in Fig.~\ref{fig-rabiOscillationsNeutrinoCoincidence} are $0$, $1.0$, and $5.2$ for $k_1=\omega_{\mathrm{m}}$, $k_1=(1-2\times 10^{-5})\omega_{\mathrm m}$, and $k_1=(1-10^{-4})\omega_{\mathrm m}$.
+% In Fig.~\ref{fig-rabiOscillationsNeutrinoCoincidence}, I have plotted the numerical results using markers as well as the prediction using Rabi formula using lines. The agreement between numerical solutions of neutrino transitions between mass states and Rabi formula will be explained more precisely in Sec.~\ref{sec:jacobi}. For now, we address the significance of relative detuning $\RD = \lvert k_1 - \omega_{\mathrm m} \rvert /\lvert A_1 \rvert$,  which is rigorously defined in Eqn.~\ref{chap:app-sec:rabi-oscillations-eqn:relative-detuning-def}. $\RD\to 0$ indicates that the neutrino oscillation is very close to resonance, while $\RD\to \infty$ indicates that the neutrino oscillation is far away from resonance. The corresponding relative detunings in Fig.~\ref{fig-rabiOscillationsNeutrinoCoincidence} are $0$, $1.0$, and $5.2$ for $k_1=\omega_{\mathrm{m}}$, $k_1=(1-2\times 10^{-5})\omega_{\mathrm m}$, and $k_1=(1-10^{-4})\omega_{\mathrm m}$.
 
 % 0, 0.516197,1.03239,5.16197
 
-For a single-frequency perturbation in the matter profile $\lambda(r) =\lambda_1 +  \lambda_1\sin(k_1 r)$, P. Krastev and A. Smirnov concluded that the parametric resonance condition is $\omega_{\mathrm{m}} \sim n k_1$, if instantaneous $\omega_{\mathrm{m,inst}}(r)$ associated with the matter profile at distance $r$ varies slowly~\cite{Krastev1989}. This condition is exactly the Rabi resonance condition when $n=1$, as such condition matches the driving field frequency to the energy split. Higher order effects are explained in Sec.~\ref{sec:single-revisted}.
+For a single-frequency perturbation in the matter profile $\lambda(r) =\Lambda_0 +  \lambda_1\sin(k_1 r)$, P. Krastev and A. Smirnov concluded that the parametric resonance condition is $\omega_{\mathrm{m}} \sim n k_1$, if
+\begin{equation}
+    \omega_{\mathrm{m,inst}}(r) = \omega_{\mathrm{v}} \sqrt{ ( \lambda(r)/\omega_{\mathrm{v}} - \cos (2\theta_{\mathrm{v}}) )^2 + \sin^2(2\theta_{\mathrm{v}}) }
+\end{equation}
+varies slowly with $r$~\cite{Krastev1989}. This condition is exactly the Rabi resonance condition when $n=1$. Higher order effects will be explained in Sec.~\ref{chap:matter-sec:single-revisted}.
 
 
 
@@ -419,7 +441,7 @@ I will drop the varying $\sigma_3$ terms for the same reason as in single freque
 The oscillation probabilities can be predicted by the Rabi formula Eqn.~\ref{app:rabi-system-transition-probability} with the new relative detuning calculated with Eqn.~\ref{app:chap:matter-eq:relative-detuning-changed}. It can be verified by comparing the numerical solution and estimation using Rabi formula. However, I am most interested in the amplitude change due to $\mathbf H_2$ mode. Relative detuning is the only variable that I need to calculate the amplitude, hence I only compare the numerical results with estimated amplitudes using $1/(1+\RD'^2)$.
 To verify the condition, I choose the first rotating perturbation to satisfy the resonance condition $k_1=\omega_{\mathrm{m}}$, the condition for the second rotating field shifting the system out of resonance is that the relative detuning becomes larger than $1$, which leads to
 \begin{equation}
-\lvert A_2 \rvert \geq \sqrt{2\omega_{\mathrm{m}} \lvert A_1 (k_2-\omega_{\mathrm m})\rvert} \equiv A_{2,\mathrm{Critical}}.
+\lvert A_2 \rvert \geq \sqrt{2 \lvert A_1 (k_2-\omega_{\mathrm m})\rvert} \equiv A_{2,\mathrm{Critical}}.
 \end{equation}
 I expect the transition amplitude to decrease as we have larger $\lvert A_2\rvert$.
 
@@ -553,7 +575,7 @@ J_n(n \sech \alpha) \sim \frac{ e^{n(\tanh\alpha - \alpha)} }{\sqrt{ 2\pi n \tan
 for large $n$~\cite{Ploumistakis20092897}. Thus the higher order modes are usually insignificant.
 
 
-When the matter potential provides one dominate resonance mode and without significant interference between the resonance mode and the other modes, all off-resonance modes can be dropped without significantly changing the transition probabilities. However, as we have shown previously in Sec.~\ref{chap:app-sec:rabi-oscillations}, interference might happen between different modes and interferences were measured with a criteria. In the following subsections, I will discuss the work I have done based on this expansion. First of all, I will explain the approximations used in Eqn.~\ref{chap:matter-sec:single-frequency-matter-profile-eqn:single-frequency-hamiltonian-approximation} to simplify the Hamiltonian. Then I will explore the interferences between modes. 
+When the matter potential provides one dominate resonance mode and without significant interference between the resonance mode and the other modes, all off-resonance modes can be dropped without significantly changing the transition probabilities. However, as we have shown previously in Sec.~\ref{chap:app-sec:rabi-oscillations}, interference might happen between different modes and interferences were measured with a criterion. In the following subsections, I will discuss the work I have done based on this expansion. First of all, I will explain the approximations used in Eqn.~\ref{chap:matter-sec:single-frequency-matter-profile-eqn:single-frequency-hamiltonian-approximation} to simplify the Hamiltonian. Then I will explore the interferences between modes. 
 % For simplicity I will use dimensionless quantities which are scaled using the characteristic energy scale $\omega_{\mathrm{m}}$, e.g.,
 % \begin{equation}
 %     \hat r = \omega_{\mathrm{m}}r, \qquad
