@@ -354,7 +354,8 @@ I will examine the neutrino flavor conversion in a single-frequency matter profi
 I will consider the case when $k_1$ is not far away from resonance, i.e., $k_1 \sim \omega_\mm$. As will be proven later, the oscillating $\sigma_3$ term $\frac{1}{2} \lambda_1 \cos(k_1 r) \cos 2\theta_\mm \sigma_3$ in the above Hamiltonian has little effect on the transition probabilities in this case. With the oscillating $\sigma_3$ term removed, 
 \begin{align}
     \mathsf H^{(\mm)} &\to -\frac{\omega_{\mathrm m}}{2} \sigma_3  - \frac{1}{2} A_1 \cos ( k_1 r)  \sigma_1 + \frac{1}{2} A_1\sin(k_1 r) \sigma_2 \nonumber\\
-    &\phantom{\to} - \frac{1}{2} A_2 \cos ( k_2 r)  \sigma_1 + \frac{1}{2} A_2\sin(k_2 r) \sigma_2 
+    &\phantom{\to} - \frac{1}{2} A_2 \cos ( k_2 r)  \sigma_1 + \frac{1}{2} A_2\sin(k_2 r) \sigma_2  
+    \label{eq-hamiltonian-bg-matter-basis-single-frequency}
 \end{align}
 where
 \begin{align}
@@ -593,41 +594,39 @@ Because the states $\ket{\nu_{r1}}$ and $\ket{\nu_{r2}}$ are related to $\ket{\n
 
 For a rigorous analysis of neutrino oscillations in oscillatory matter profiles, I will need the Jacobi-Anger expansion. Jacobi-Anger expansion is used to expand exponential functions of the form $e^{\ri r \cos (\phi)}$ using the basis $e^{\ri n \phi }$,
 \begin{equation}
-e^{\ri r \cos (\phi)} = \sum_{n=-\infty}^\infty \ri^n J_n(r) e^{\ri n\phi}.
+e^{\ri r \sin (\phi)} = \sum_{n=-\infty}^\infty  J_n(r) e^{\ri n\phi}.
 \end{equation}
 J. Kneller and K. Patton et al. used this method to calculate the transition probabilities of neutrinos in oscillatory matter profile~\cite{Kneller2010,Kneller2013,Patton2014}. In this subsection, I will review the method of Jacobi-Anger expansion and its application to neutrino oscillations, using a different formalism. 
 
 
-
-For the purpose of this section, I will demonstrate the decomposition of single frequency matter profile with potential $\delta\lambda(r) = \lambda_1\sin(k_1 r)$. The equation of motion has been derived and presented in Eqn.~\ref{chap:matter-sec:jacobi-subsec:rabi-basis-eqn:eom-rabi-basis-matter}. For single frequency matter profile, the Hamiltonian is 
+For the purpose of this section, I will demonstrate the decomposition of single frequency matter profile with potential $\delta\lambda(r) = \lambda_1\cos(k_1 r)$. The equation of motion has been derived and presented in Eqn.~\ref{chap:matter-sec:jacobi-subsec:rabi-basis-eqn:eom-rabi-basis-matter}. For single frequency matter profile, the Hamiltonian is 
 \begin{equation}
-    \mathsf H^{(\RR)}= \frac{\omega_\mm}{2} \sigma_3 - \frac{\sin 2\theta_\mm \lambda_1\sin (k_1 r)}{2} \begin{pmatrix}
+    \mathsf H^{(\RR)} = \frac{\omega_\mm}{2} \sigma_3 - \frac{\sin 2\theta_\mm \lambda_1\cos (k_1 r)}{2} \begin{pmatrix}
         0 & e^{2\ri \eta(r)} \\
         e^{-2\ri \eta(r)} & 0
     \end{pmatrix},
 \end{equation}
-where $\eta(r) = - \lambda_1 \cos 2\theta_{\mathrm m} \cos (k_1 r)/(2 k) $. The $\exp\left( \ri z \cos\left(k_1 r \right) \right)$-like term in the Hamiltonian can be decomposed into linear combinations of terms that are proportional to $\exp\left(\ri n k_1 r \right)$. The term $e^{2\ri \eta(r)}$ is
+where $\eta(r) =  \lambda_1 \sin 2\theta_{\mathrm m} \cos (k_1 r)/(2 k) $. The $\exp\left( \ri z \sin\left(k_1 r \right) \right)$-like term in the Hamiltonian can be decomposed into linear combinations of terms that are proportional to $\exp\left(\ri n k_1 r \right)$. The term $e^{2\ri \eta(r)}$ is
 \begin{equation}
-    \exp\left({\ri \frac{\lambda_1 \cos 2\theta_{\mm}}{k_1} \cos (k_1 r) }\right)  =  \sum_{n=-\infty}^{\infty} (-\ri)^n J_n \left( \frac{\lambda_1\cos 2\theta_\mm}{k_1}\right) e^{\ri n k_1 r} ,
+    \exp\left({\ri \frac{\lambda_1 \cos 2\theta_{\mm}}{k_1} \sin (k_1 r) }\right)  =  \sum_{n=-\infty}^{\infty} J_n \left( \frac{\lambda_1 \cos 2\theta_\mm}{k_1}\right) e^{\ri n k_1 r}.
 \end{equation}
-where I have used the relation
-\begin{equation}
-    J_n(- x) = (-1)^n J_n(x).
-\end{equation}
-With the expansion, the Hamiltonian becomes a Rabi oscillation with infinite driving frequencies,
+% where I have used the relation
+% \begin{equation}
+%     J_n(- x) = (-1)^n J_n(x).
+% \end{equation}
+With the expansion, the Hamiltonian becomes a Rabi oscillation system with infinite driving frequencies,
 \begin{equation}
     \mathsf H^{(\mathrm{R})} =
     -\frac{\omega_{\mathrm{m}}}{2} \sigma_3
     -  \frac{1}{2} \sum_{n=-\infty}^\infty B_n \begin{pmatrix}
-    0 &  \Phi_n e^{\ri n k_1  r} \\
-     \Phi_n^* e^{ - \ri n k_1 r} & 0
+    0 &  e^{\ri n k_1  r} \\
+     e^{ - \ri n k_1 r} & 0
     \end{pmatrix},
     \label{chap:matter-sec:jacobi-eqn:hamil-jacobi-expanded}
 \end{equation}
 where
 \begin{align}
-    B_n &= \tan 2\theta_{\mathrm m} n k_1 J_{n} \left( \frac{\lambda_1}{k_1}\cos 2\theta_{\mathrm m} \right),\\
-    \Phi_n &= e^{i\pi (3n/2+1)},
+    B_n &= \tan 2\theta_{\mathrm m} n k_1 J_{n} \left( \frac{\lambda_1}{k_1}\cos 2\theta_{\mathrm m} \right).
 \end{align}
 I have used
 \begin{equation}
@@ -635,7 +634,7 @@ I have used
     \label{eqn:bessel-function-sum-property}
 \end{equation}
 in the derivation.
-The coefficient $\Phi_n$ doesn't play any role for the reason discussed in Sec.~\ref{chap:app-sec:rabi-oscillations}. Any phases in the matter potential would also go into $\Phi_n$, hence phases of matter profile can be neglected. In the Hamiltonian, the first term describes the energy gap, while the second term is the summation of many driving fields. For each of the driving fields, the resonance width is $\lvert B_{n}\rvert$. In fact, it is straightforward to prove that the width drops very fast as a function of $n$ since the Bessel function can be approximated as
+Any phases in the matter potential would also becomes phases which doesn't play any role for the reason discussed in Sec.~\ref{chap:app-sec:rabi-oscillations}. Hence phases of matter profile can be neglected. In the Hamiltonian, the first term describes the energy gap, while the second term is the summation of many driving fields. For each of the driving fields, the resonance width is $\lvert B_{n}\rvert$. In fact, it is straightforward to prove that the width drops very fast as a function of $n$ since the Bessel function can be approximated as
 \begin{equation}
 J_n(n \sech \alpha) \sim \frac{ e^{n(\tanh\alpha - \alpha)} }{\sqrt{ 2\pi n \tanh \alpha } }
 \end{equation}
@@ -677,13 +676,13 @@ Thus modes that has much larger oscillation wavelength are not subjected to be c
 
 In Table.~\ref{tab-q-values-single-frequency-example} I calculated the relative detunings of the three cases in Fig.~\ref{fig-rabiOscillationsNeutrinoCoincidence}, where $n=\pm 1$ are for the $\pm k_1$ modes in the Hamiltonian Eqn.~\ref{eq-hamiltonian-bg-matter-basis-single-frequency}. The $\RD'_1$ is the shifted relative detuning of the first mode with $n=1$ due to other mode. It clearly shows that the first mode takes the whole system so that the approximation of neglecting the varying $\sigma_3$ terms in Hamiltonian is accurate enough. One can also show that the interference effect due to higher order modes is negligible, since they do not change the relative detuning of the most significant modes. It confirms the results I observed in Fig.~\ref{fig-rabiOscillationsNeutrinoCoincidence} that the change of the relative detuning due to the $-k_1$ mode is not observable.
 
-In Sec.~\ref{chap:matter-sec:single}, I discussed the single frequency matter potential $\lambda = \lambda_0 + \lambda_1 \sin(k_1 r)$ by removing the varying $\sigma_3$ term by arguing that this term has no effect on transition probabilities when the system is close to resonance, $k_1 \sim \omega_{\mathrm m}$. The reason is that only the first mode $n=1$ is on resonance when $k_1=\omega_{\mathrm m}$ and all other modes are far from resonance, thus
+In Sec.~\ref{chap:matter-sec:single}, I discussed the single frequency matter potential $\lambda = \lambda_0 + \lambda_1 \cos(k_1 r)$ by removing the varying $\sigma_3$ term by arguing that this term has no effect on transition probabilities when the system is close to resonance, $k_1 \sim \omega_{\mathrm m}$. The reason is that only the first mode $n=1$ is on resonance when $k_1=\omega_{\mathrm m}$ and all other modes are far from resonance, thus
 \begin{align}
 \mathsf H^{\mathrm R} \approx & -\frac{\omega_{\mathrm m}}{2}\sigma_3 - \frac{1}{2} B_1 \begin{pmatrix}
-0 & \Phi_1 e^{i k_1 r} \\
-\Phi_1^* e^{-ik_1r} & 0
+0 & e^{i k_1 r} \\
+e^{-ik_1r} & 0
 \end{pmatrix}\label{eq-single-frequency-first-mode-hamiltonian} \\
-\approx & -\frac{\omega_{\mathrm m}}{2} \sigma_3 - \frac{A_1}{2} \cos(k_1 r) \sigma_1 + \frac{A_1}{2} \sin(k_1 r) \sigma_2\nonumber,
+\approx & -\frac{\omega_{\mathrm m}}{2} \sigma_3 - \frac{A_1}{2} \cos(k_1 r) \sigma_1 + \frac{A_1}{2} \cos(k_1 r) \sigma_2\nonumber,
 \end{align}
 where $A_1$ is defined in Eqn.~(\ref{eq-define-a1}) and approximation
 \begin{equation*}
@@ -779,7 +778,7 @@ for $\lambda_1\cos(2\theta_{\mathrm m})/k_1\ll 1$ is used in the last step. Thus
 \section{\label{chap:matter-subsec:multi-frequency-revisited}Multi-frequency Matter Profile Revisited}
 
 
-For multi-frequency matter profiles $\delta \lambda(r) = \sum_n \lambda_n \sin (k_n r)$, the derivation is the same as the derivation for single frequency matter profiles but with more tedious math. The Hamiltonian in Rabi basis is
+For multi-frequency matter profiles $\delta \lambda(r) = \sum_n \lambda_n \cos (k_n r)$, the derivation is the same as the derivation for single frequency matter profiles but with more tedious math. The Hamiltonian in Rabi basis is
 \begin{equation}
     \mathsf H^{(\RR)} = -\frac{\omega_\mm}{2}\sigma_3 + \begin{pmatrix}
         0 & h\\
@@ -788,7 +787,7 @@ For multi-frequency matter profiles $\delta \lambda(r) = \sum_n \lambda_n \sin (
 \end{equation}
 where the off diagonal element $h$ is
 \begin{equation}
-    h = \frac{\sin 2\theta_\mm}{2} \sum_a \lambda_a \sin (k_a x) \prod_{a} \sum_{n=-\infty}^{\infty} (-i)^n J_n (z_{k_a}) e^{i n(k_a x) }
+    h = \frac{\sin 2\theta_\mm}{2} \sum_a \lambda_a \sin (k_a x) \prod_{a} \sum_{n=-\infty}^{\infty} J_n (z_{k_a}) e^{i n(k_a x) }
 \end{equation}
 
 % To demonstrate the procedure of Jacobi-Anger expansion as well as the technique
@@ -829,7 +828,7 @@ where the off diagonal element $h$ is
 
 Using the relations of Bessel functions in Eqn.~\ref{eqn:bessel-function-sum-property}, I can decompose $h$ into two terms
 \begin{align}
-    h =& -\sum_{n_1 = -\infty}^\infty \sum_{n_2 = -\infty}^\infty  (-\ri)^{ \sum_a n_a} \frac{\tan 2\theta_\mm}{2} \sum_a n_a k_a \\
+    h =& -\sum_{n_1 = -\infty}^\infty \sum_{n_2 = -\infty}^\infty  \frac{\tan 2\theta_\mm}{2} \sum_a n_a k_a \\
     & J_{n_1} ( \lambda_1 \cos 2\theta_\mm/k_1)  J_{n_2} ( \lambda_2 \cos 2\theta_\mm/k_2)  e^{  \ri \sum_a n_a k_a r } .
 \end{align}
 
@@ -900,7 +899,7 @@ The base frequency $k_0$ which is determined by the total period $X$ can be arbi
 \begin{align*}
     \mathsf H^{(\mathrm m)} \to & - \frac{1}{2}\omega_{\mathrm m} \sigma_3  - \frac{1}{2} \sum_{n=1}^2\lambda_n \sin 2\theta_{\mathrm m}  \cos\left( k_n r \right) \sigma_1\\
     \to & - \frac{1}{2}\omega_{\mathrm m} \sigma_3  - \frac{1}{2} \sum_{n=1}^2 A_n \cos ( k_n r) \sigma_1 \\
-    & + \frac{1}{2} \sum_{n=1}^2A_n \sin(k_n r) \sigma_2,
+    & + \frac{1}{2} \sum_{n=1}^2A_n \cos(k_n r) \sigma_2,
 \end{align*}
 where
 \begin{equation*}
