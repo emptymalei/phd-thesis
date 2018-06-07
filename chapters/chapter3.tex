@@ -4,7 +4,7 @@
 
 In certain regions inside a star or a supernova where convection is prominent, the matter density varies rapidly as a function of distance~\cite{Muller2015, Couch2015}. The neutrino flavor evolution in such environments is qualitatively different than that with a smooth density profile~\cite{Krastev1989, Loreti1994,Akhmedov2000, Friedland2006,Kneller2010,Kneller2013,Patton2014}. For example, the flavor conversion of the neutrino is greatly enhanced if the matter density fluctuates with certain wave numbers. This is known as the parametric resonance [cite smirnov].
 
-In this chapter, I will explain the parametric resonance from the perspective of Rabi oscillations. I will first review the Rabi oscillation phenomena and derive a criterion when the off-resonance Rabi mode may have a significant impact on the resonance behavior. I will then introduce the background matter basis where the equation of motion simplifies. After demonstrating the simplest example of the parametric resonance in the presence of a sinusoidal matter profile with the Rabi formula, I will explain the interference effect when there exist multiple Fourier modes in the matter profile. Then I will show how to use the Jacobi-Anger expansion to decompose an arbitrary matter profile into an infinite sum of Rabi modes and how to apply the Rabi formula in these scenarios.
+In this chapter, I will explain the parametric resonance from the perspective of Rabi oscillations. I will first review the Rabi oscillation phenomena and derive a criterion when the off-resonance Rabi mode may have a significant impact on the resonance behavior. I will then introduce the background matter basis where the equation of motion simplifies. After demonstrating the simplest example of the parametric resonance in the presence of a sinusoidal matter profile with the Rabi formula, I will explain the interference effect when there exist multiple Fourier modes in the matter profile. Finally I will show how to use the Jacobi-Anger expansion to decompose an arbitrary matter profile into an infinite sum of Rabi modes. This decomposition is similar to what J. Kneller et al. did in reference \cite{Kneller2013,Patton2014} but is achieved in a way that makes the physics much more transparent. I will also use the criterion that I have derived for the interference between two Rabi modes to show that only a finite number of Rabi modes are relevant in a real physical system.
 
 % In Sec.~\ref{sec:jacobi} we discuss the technique of decomposing the neutrino flavor conversions into summation of Rabi oscillations, by applying a specific unitary transformation and the Jacobi-Anger expansion. As the system is exactly decomposed into multiple Rabi oscillations, we can interpret neutrino flavor oscillations in any matter density fluctuations, in principle. As an example, we solve the neutrino flavor transitions in a castle wall matter profile, which contains infinite frequencies from the aspect of Fourier series. Finally I will discuss an algorithm to select the Fourier modes of a matter profile that have the largest impact on the flavor conversion of the neutrino.
 
@@ -51,14 +51,14 @@ where
     \label{chap:app-sec:rabi-eqn:h3-and-hplus}
 \end{equation}
 The vector $\vec{H}_3$ is the vector aligned with the third axis and $\vec{H}_+$ is a vector rotating in a plane perpendicular to $\vec{H}_3$ (see Fig.~\ref{chap:app-sec:rabi-fig:rabi-static-frame}). The wave function $\Psi=(\psi_1,\psi_2)^{\mathrm{T}}$ is also used to define the state vector $\vec{s}$
-\begin{align}
-    \vec{s} =& \Psi^\dagger \frac{\vec{\sigma}}{2}\Psi \\
-    =& \frac{1}{2}\begin{pmatrix}
+\begin{equation}
+    \vec{s} = \Psi^\dagger \frac{\vec{\sigma}}{2}\Psi
+    = \frac{1}{2}\begin{pmatrix}
     2\,\mathrm{Re}\,(\psi_1^* \psi_2) \\
     2\,\mathrm{Im}\,(\psi_1^*\psi_2) \\
     \lvert \psi_1 \rvert^2 - \lvert \psi_2 \rvert^2
     \end{pmatrix}
-\end{align}
+\end{equation}
 
 
 
@@ -116,31 +116,35 @@ s_3 = \frac{1}{2} - \frac{\lvert A_{\mathrm R}\rvert ^2}{\Omega_{\mathrm R}^2}\s
 \end{equation}
 Such a system has an analytical transition probability from the low energy state to the high energy state, known as the Rabi formula,
 \begin{equation}
-    P(t) = \frac{1}{2}(1- 2 s_3(t))= \frac{\left \lvert A_{\mathrm{R}} \right \rvert ^2}{ \Omega_{\mathrm R}^2 } \sin^2 \left( \frac{\Omega_{\mathrm R}}{2} t \right).
+    P(t) = \frac{1}{2}(1- 2 s_3(t))= \frac{1}{ 1 + \RD^2 } \sin^2 \left( \frac{\Omega_{\mathrm R}}{2} t \right),
     \label{app:rabi-system-transition-probability}
 \end{equation}
-The amplitude $A_\RR$ is the dominant factor of oscillation frequency when the system is close to resonance. The phase $\phi_{\mathrm{R}}$ of the driving potential in Eqn.~\ref{rabi-oscillation-single-perturbation} has no effect on the transition probability since it only determines the initial phase of driving Hamiltonian vector $\vec{H}_+$. Fig.~\ref{app-fig:rabi-examples} shows two examples of Rabi oscillations.
-
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=\textwidth]{chapters/assets/app/rabi-oscillations}
-    \caption{The transition probabilities $P$ between the energy states of a two-level quantum system when external driving fields with frequencies $k_\RR = \omega_\RR$ and $k_\RR=1.1\omega_\RR$ are applied, respectively. The amplitudes of the driving fields are $A_\RR=0.1\omega_\RR$ in both cases. }
-    \label{app-fig:rabi-examples}
-\end{figure}
-
-%Similar to the neutrino oscillations in a uniform matter profile (see Eqn.~\ref{chap:basics-sec:flavor-isospin-pic-fig:msw-adiabatic-critical}), 
-Resonance of Rabi oscillations occurs when $\vec{H}'_3=0$ in the corotating frame and $\vec{s}$ oscillates between $+1/2$ (the low energy state) and $-1/2$ (the high energy state). 
-% The detuning, which is defined by $k_{\mathrm{R}} - \omega_{\mathrm R}$, determines how off resonance the system is, and 
-The amplitude of the driving field $A_{\mathrm{R}}$ determines the resonance width,
-% \begin{align}
-% \text{Detuning} =&~\lvert k_{\mathrm{R}} - \omega_{\mathrm R} \rvert, \\
-% \text{Resonance Width} =&~\lvert A_{\mathrm R} \rvert.
-% \end{align}
-as shown in Fig.~\ref{app-fig:rabi-resonance-width}. The transition amplitude is determined by relative detuning
+where 
 \begin{equation}
     \RD = \left\lvert \frac{ k_{\mathrm R} - \omega_{\mathrm R}}{A_{\mathrm R}} \right\rvert.
     \label{chap:app-sec:rabi-oscillations-eqn:relative-detuning-def}
 \end{equation}
+is the relative detuning.
+
+%Similar to the neutrino oscillations in a uniform matter profile (see Eqn.~\ref{chap:basics-sec:flavor-isospin-pic-fig:msw-adiabatic-critical}), 
+The resonance of Rabi oscillations occurs when $\vec{H}'_3=0$ in the corotating frame and $\vec{s}$ oscillates between $+1/2$ (the low energy state) and $-1/2$ (the high energy state). The transition amplitude is determined by relative detuning $\RD$ as illustrated by two numerical examples in Fig.~\ref{app-fig:rabi-examples}. The resonance width is determined by the amplitude of the driving field $A_\RR$ as shown in Fig.~\ref{app-fig:rabi-resonance-width}.
+% The detuning, which is defined by $k_{\mathrm{R}} - \omega_{\mathrm R}$, determines how off resonance the system is, and 
+% The amplitude of the driving field $A_{\mathrm{R}}$ determines the resonance width,
+% \begin{align}
+% \text{Detuning} =&~\lvert k_{\mathrm{R}} - \omega_{\mathrm R} \rvert, \\
+% \text{Resonance Width} =&~\lvert A_{\mathrm R} \rvert.
+% \end{align}
+% as shown in Fig.~\ref{app-fig:rabi-resonance-width}.
+% The amplitude $A_\RR$ is the dominant factor of oscillation frequency when the system is close to resonance. The phase $\phi_{\mathrm{R}}$ of the driving potential in Eqn.~\ref{rabi-oscillation-single-perturbation} has no effect on the transition probability since it only determines the initial phase of driving Hamiltonian vector $\vec{H}_+$. Fig.~\ref{app-fig:rabi-examples} shows two examples of Rabi oscillations.
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{chapters/assets/app/rabi-oscillations}
+    \caption{The transition probabilities $P$ between the energy states of a two-level quantum system when external driving fields with frequencies $k_\RR = \omega_\RR$ and $k_\RR=1.1\omega_\RR$ are applied, respectively. The corresponding relative detunings are $\RD = 0$ and $\RD = 1$, respectively. The amplitudes of the driving fields are $A_\RR=0.1\omega_\RR$ in both cases. }
+    \label{app-fig:rabi-examples}
+\end{figure}
+
+
 
 \begin{figure}[htbp]
     \centering
@@ -240,7 +244,7 @@ where I kept only up to the first order of the Taylor series. I can calculate th
 % \end{equation*}
 One can adjust frequency of the off-resonance Rabi mode $k_2$ to decrease or increase $\RD$ so that the system is close to or further away from the resonance. The criterion for the off-resonance Rabi mode to have a significant impact on the Rabi resonance is
 \begin{equation}
-    \left\lvert  \frac{ A_2^2 }{2  A_1 ( k_2 - \omega_{\mathrm R})} \right\rvert \gtrsim 1 \quad \text{or} \quad \lvert A_2\rvert \gtrsim \sqrt{ 2 \lvert A_1 (k_1 - \omega_\RR) \rvert }
+    \left\lvert  \frac{ A_2^2 }{2  A_1 ( k_2 - \omega_{\mathrm R})} \right\rvert \gtrsim 1 \quad \text{or} \quad \lvert A_2\rvert \gtrsim \sqrt{ 2 \lvert A_1 (k_2 - \omega_\RR) \rvert }
     \label{chap:matter-sec:single-frequency-eqn:criterion-for-a2}
 \end{equation}
 % In principle, the energy gap of the first frequency can be changed to approach the resonance or escape the resonance by carefully arranging the second frequency, which is also obvious from Eqn.~(\ref{chap:matter-eq:relative-detuning-changed}). For the purpose of the section we first discuss the most important destruction effect by choosing $\RD_1 = 0$. We observe the importance of the relative detuning. For the second mode to significantly interfere with the first mode, we need a small $\RD_2$ and a large amplitude or width $A_2\gg A_1$.
@@ -354,8 +358,7 @@ I will consider the case when $k_1$ is not far away from resonance, i.e., $k_1 \
 \end{align}
 where
 \begin{align}
-    A_1 &= A_2 = \frac{\lambda_1 \sin(2\theta_\mm) }{2} ,\\
-    k_2 &= -k_1.
+    A_1 = A_2 = \frac{\lambda_1 \sin(2\theta_\mm) }{2} \quad \text{and} \quad k_2 = -k_1.
 \end{align}
 This is the same as the Hamiltonian $\mathsf H_{(\RR)}$ in Eqn.~\ref{chap:matter-sec:single-frequency-eqn:hamiltonian-two-level}.
 Because the second Rabi mode is off resonance and its amplitude is too small to satisfy the criterion in Eqn.~\ref{chap:matter-sec:single-frequency-eqn:criterion-for-a2}, it can be neglected and Rabi formula in Eqn.~\ref{app:rabi-system-transition-probability} can be applied with $A_\RR=A_1$, $k_\RR=k_1$, and $\omega_\RR = \omega_\mm$.
@@ -380,7 +383,7 @@ I calculated the transition probability using the Hamiltonian in Eqn.~\ref{chap:
 \begin{figure}[h!tbp]
                 \includegraphics[width=\columnwidth]{chapters/assets/rabi/rabiOscillationsNeutrinoCoincidence-single-frequency}
                 %rabiOscillationsNeutrinoCoincidence}
-                \caption{The transition probabilities $P_{\nu_\mathrm{L}\to\nu_\mathrm{H}}$ as functions of distance $r$ for a neutrino propagating through matter profiles $\lambda(r)=\lambda_0 + \lambda_1 \cos (k_1 r)$ with different values of $k_1$ as labeled. In all three cases, $\lambda_0$ is half of the MSW resonance potential, and $\lambda_1=10^{-3}\omega_\mm/(\sin(2 \theta_\mm)/2)$.}
+                \caption{The transition probabilities $P_{\nu_\mathrm{L}\to\nu_\mathrm{H}}$ as functions of distance $r$ for a neutrino propagating through matter profiles $\lambda(r)=\lambda_0 + \lambda_1 \cos (k_1 r)$ with different values of $k_1$ as labeled. The markers are for the numerical results obtained by using the Hamiltonian in Eqn.~\ref{chap:matter-sec:single-fequency-eq:hamiltonian-bg-matter-basis-single-frequency}, and the continuous curves are obtained using the Rabi formula in Eqn.~\ref{app:rabi-system-transition-probability}. In all three cases, $\lambda_0$ is half of the MSW resonance potential, and $\lambda_1/\omega_\mm=5.2\times 10^{-4}$.}
                 \label{fig-rabiOscillationsNeutrinoCoincidence}
 \end{figure}
 
@@ -388,7 +391,7 @@ I calculated the transition probability using the Hamiltonian in Eqn.~\ref{chap:
 
 % 0, 0.516197,1.03239,5.16197
 
-For a single-frequency perturbation in the matter profile $\lambda(r) =\Lambda_0 +  \lambda_1\sin(k_1 r)$, P. Krastev and A. Smirnov concluded that the parametric resonance condition is $\omega_{\mathrm{m}} \sim n k_1$, if
+For a single-frequency perturbation in the matter profile $\lambda(r) =\lambda_0 +  \lambda_1\sin(k_1 r)$, P. Krastev and A. Smirnov concluded that the parametric resonance condition is $\omega_{\mathrm{m}} \sim n k_1$, if
 \begin{equation}
     \omega_{\mathrm{m,inst}}(r) = \omega_{\mathrm{v}} \sqrt{ ( \lambda(r)/\omega_{\mathrm{v}} - \cos (2\theta_{\mathrm{v}}) )^2 + \sin^2(2\theta_{\mathrm{v}}) }
 \end{equation}
@@ -401,7 +404,9 @@ varies slowly with $r$~\cite{Krastev1989}. This condition is exactly the Rabi re
 \section{\label{chap:matter-sec:multiple-matter-frequencies}Multi-Frequency Matter Profiles}
 
 
-The approach applied to the neutrino flavor transformation with a single-frequency matter profile can also be applied to the more general cases with multi-frequency matter profiles. Even though there is only one Rabi mode that is on resonance, the presence of many off-resonance Rabi modes may interfere with the on-resonance mode and suppress or enhance the neutrino flavor conversion. As an example, I will consider a matter profile with two Fourier modes:
+The approach applied to the neutrino flavor transformation with a single-frequency matter profile can also be used in more general cases with multi-frequency matter profiles. Even though there is only one Rabi mode that is on resonance, the presence of many off-resonance Rabi modes may interfere with the on-resonance mode and suppress or enhance the neutrino flavor conversion. 
+
+I will consider a matter profile with two Fourier modes:
 \begin{equation}
     \lambda(r) = \lambda_0 + \lambda_1 \cos (k_1 r) + \lambda_2 \cos (k_2 r).
 \end{equation}
@@ -424,132 +429,165 @@ The approach applied to the neutrino flavor transformation with a single-frequen
 % \end{itemize}
 % }
 % }
-The Hamiltonian for neutrino oscillations in the background matter basis is
+The Hamiltonian for the neutrino oscillations in the background matter basis is
 \begin{align}
   \mathsf H^{(\mm)} =& - \frac{\omega_\mm}{2}\sigma_3  + \frac{1}{2} \left( \lambda_1 \cos(k_1 r) + \lambda_2 \cos(k_2 r) \right) \cos 2\theta_\mm \sigma_3 \nonumber\\
    &- \frac{1}{2} \left( \lambda_1 \cos(k_1 r) + \lambda_2 \cos(k_2 r)\right)\sin 2\theta_\mm \sigma_1.
   \label{eq-hamiltonian-bg-matter-basis-multi-frequency}
 \end{align}
-I will drop the oscillating $\sigma_3$ terms for the same reason as in single-frequency matter profile case. The Hamiltonian becomes
+I will drop the oscillating $\sigma_3$ terms for the same reason as in the single-frequency matter profile case. The Hamiltonian becomes
 \begin{equation}
-  \mathsf H^{(\mm)} = - \frac{\omega_\mm}{2}\sigma_3  - \frac{1}{2} \left( \lambda_1 \cos(k_1 r) + \lambda_2 \cos(k_2 r)\right)\sin 2\theta_\mm \sigma_1.
+  \mathsf H^{(\mm)} \to - \frac{\omega_\mm}{2}\sigma_3  - \sum_{n}\frac{A_n}{2} \cos(k_n r)  \sigma_1 + \sum_n\frac{A_n}{2} \sin(k_n r) \sigma_2.
   \label{eq-hamiltonian-bg-matter-basis-multi-frequency-drop-varying-sigma3}
 \end{equation}
-There are four Rabi modes in this Hamiltonian
+There are four Rabi modes in this Hamiltonian, $n=1+$, $1-$, $2+$, and $2-$. The amplitudes and wave numbers of the four Rabi modes are
 \begin{align}
-    A_{1+} &= \frac{\lambda_1 \sin (2\theta_\mm)}{2}, \quad k_{1+} = k_1, \\
-    A_{1-} &= \frac{\lambda_1 \sin (2\theta_\mm)}{2}, \quad k_{1-} = -k_1, \\
-    A_{2+} &= \frac{\lambda_2 \sin (2\theta_\mm)}{2}, \quad k_{2+} = k_2, \\
-    A_{2-} &= \frac{\lambda_2 \sin (2\theta_\mm)}{2}, \quad k_{2-} = -k_2.
+    A_{1\pm} &= \frac{\lambda_1 \sin (2\theta_\mm)}{2}, & k_{1\pm} &= \pm k_1, \\
+    A_{2\pm} &= \frac{\lambda_2 \sin (2\theta_\mm)}{2}, & k_{2\pm} &= \pm k_2,
 \end{align}
-The Rabi modes with negative frequencies usually have little effect on the resonances. The oscillations becomes Rabi oscillations with two Rabi modes. The oscillation probabilities can be predicted by the Rabi formula Eqn.~\ref{app:rabi-system-transition-probability} with the new relative detuning calculated with Eqn.~\ref{app:chap:matter-eq:relative-detuning-changed}. It can be verified by comparing the numerical solution and estimation using Rabi formula. The most interesting effect is the amplitude change due to other Rabi modes. Relative detuning is the only variable that I need to calculate the amplitude, hence I only compare the numerical results with estimated amplitudes using $1/(1+\RD'^2)$.
-To verify the condition, I choose the first rotating perturbation to satisfy the resonance condition $k_1=\omega_{\mathrm{m}}$, the condition for the second rotating field shifting the system out of resonance is that the relative detuning becomes larger than $1$, which leads to
-\begin{equation}
-\lvert A_2 \rvert \geq \sqrt{2 \lvert A_1 (k_2-\omega_{\mathrm m})\rvert} \equiv A_{2,\mathrm{Critical}}.
-\end{equation}
-I expect the transition amplitude to decrease as we have larger $\lvert A_2\rvert$.
+respectively.
+%The Rabi modes with negative wave numbers usually have little effect on the resonances. The oscillations becomes Rabi oscillations with two Rabi modes. The oscillation probabilities can be predicted by the Rabi formula Eqn.~\ref{app:rabi-system-transition-probability} with the new relative detuning calculated with Eqn.~\ref{app:chap:matter-eq:relative-detuning-changed}. It can be verified by comparing the numerical solution and estimation using Rabi formula. The most interesting effect is the amplitude change due to other Rabi modes. Relative detuning is the only variable that I need to calculate the amplitude, hence I only compare the numerical results with estimated amplitudes using $1/(1+\RD'^2)$.
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=\columnwidth]{chapters/assets/matter/interference-reduction-slide-with-legend}
+    \caption{The transition probabilities as functions of distance $r$ for a neutrino propagating through matter profile $\lambda(r) = \lambda_0 + \lambda_1 \cos (k_1 r) + \lambda_2 \cos (k_2 r)$ with different values of $\lambda_2$ and $k_2$ as labeled. The markers are for the numerical results obtained by using the Hamiltonian in Eqn.~\ref{eq-hamiltonian-bg-matter-basis-multi-frequency}, and the continuous curves are obtained using the Rabi formula in Eqn.~\ref{app:rabi-system-transition-probability} but with the values of the modified relative detunings $\RD'_{2+}$ in Table~\ref{table:multi-frequency-rabi-simple-relative-detuning-destruction}. In all three cases, $\lambda_0$ is half of the MSW resonance potential, $\lambda_1/\omega_\mm = 5.2\times 10^{-4}$ and $k_1/\omega_\mm = 1$.}
+    \label{fig-rabi-oscillations-energy-gap-change}
+\end{figure}
+
+The presence of the additional Fourier mode can suppress the Rabi resonance. This is illustrated in Fig.~\ref{fig-rabi-oscillations-energy-gap-change}. In this figure, I choose the $1+$ Rabi mode to be exactly on resonance with $\lambda_1/\omega_\mm=5.2\times 10^{-4}$ and $k_1/\omega_\mm=1$. The triangles represent the numerical solution for neutrino flavor transformation with $\lambda_2/\omega_\mm=0.052$ and $k_2/\omega_\mm=0.1$. One can see that the transition amplitude is suppressed due to the presence of the second Fourier mode. I used Eqn.~\ref{app:chap:matter-eq:relative-detuning-changed} to calculate the modified relative detunings by taking into account only the $1+$ mode and another Rabi mode. The values of the relative detunings are listed in Table.~\ref{table:multi-freuency-rabi-simple-relative-detuning-destruction}. I calculated the transition probability using the Rabi formula in Eqn.~\ref{rabi-app:rabi-system-transition-probability} with the relative detuning $\RD'_{2+}$ (the continuous curve in the figure, and it agrees with the numerical solution very well. I also showed two additional examples with $(\lambda_2/\omega_\mm, k_2/\omega_\mm)$ being $(0.052, 10)$ and $(0.26, 10)$, respectively. In both examples, the numerical solutions and the analytic results by using the Rabi formula have excellent agreement.
+
+% To verify the condition, I choose the first Rabi mode to satisfy the resonance condition $k_1=\omega_{\mathrm{m}}$, the condition for the second Rabi mode shifting the system out of resonance is that the relative detuning becomes larger than $1$, which leads to
+% \begin{equation}
+% \lvert A_2 \rvert \geq \sqrt{2 \lvert A_1 (k_2-\omega_{\mathrm m})\rvert} \equiv A_{2,\mathrm{Critical}}.
+% \end{equation}
+% I expect the transition amplitude to decrease as we have larger $\lvert A_2\rvert$.
 
 \begin{table}
     \centering
     % \begin{ruledtabular}
     \small
-    \setlength\tabcolsep{2pt}
-    \begin{tabular}{c | c c | cc | cc}
+    \setlength\tabcolsep{7pt}
+    \begin{tabular}{c | c | c | c | c }
     \hline
-        \multicolumn{1}{c|}{ $(\lambda_2 \sin(2\theta_\mm)/2, k_2)$ } & \multicolumn{2}{c|}{$(A_{1-}, k_{1-})$} & \multicolumn{2}{c|}{$(A_{2+}, k_{2+})$} & \multicolumn{2}{c}{$(A_{2-}, k_{2-})$} \\
     \hline
-       & $\RD$ &  Amplitude  & $\RD$ &  Amplitude   & $\RD$ &  Amplitude  \\
+        $\lambda_2/\omega_\mm$ & $k_2/\omega_\mm$  & $D'_{1-}$ & $D'_{2+}$ & $D'_{2-}$ \\
     \hline
-     $(10^{-2}\omega_\mm, 10\omega_{\mm})$ &  $2.5\times 10^{-5}$ & 1  &   0.5556 & 1   &  0.455 & 1 \\
-     $(10^{-2}\omega_\mm, 10^{-1}\omega_{\mm})$ &  $2.5\times 10^{-5}$ & 1  & 0.056 & 0.76   & 0.045 & 0.83 \\
-     $(5\times 10^{-2}\omega_\mm, 10\omega_{\mm})$ &  $2.5\times 10^{-5}$ & 1  &  1.389 & 0.34   & 1.136 & 0.44 \\
+    $0.052$ & $0.1$ & $2.5\times 10^{-5}$ & 0.56 & 0.46 \\
+    $0.052$ &  $10$ & $2.5\times 10^{-5}$ & 0.056 & 0.045  \\
+    $0.26$ & $10$ &  $2.5\times 10^{-5}$ & 1.4 & 1.1 \\
+    \hline
     \hline
     \end{tabular}
     % \end{ruledtabular}
-    \caption{\label{table:multi-frequency-rabi-simple-relative-detuning-destruction}Relative detuning and oscillation amplitude of each mode for the two-frequency matter profiles.}
+    \caption{\label{table:multi-frequency-rabi-simple-relative-detuning-destruction}The relative detunings of the Rabi resonance when only the $1+$ mode and another Rabi mode are considered.}
 \end{table}
+% \begin{table}
+%     \centering
+%     % \begin{ruledtabular}
+%     \small
+%     \setlength\tabcolsep{2pt}
+%     \begin{tabular}{c | c c | cc | cc}
+%     \hline
+%         \multicolumn{1}{c|}{ $(\lambda_2 \sin(2\theta_\mm)/2, k_2)$ } & \multicolumn{2}{c|}{$(A_{1-}, k_{1-})$} & \multicolumn{2}{c|}{$(A_{2+}, k_{2+})$} & \multicolumn{2}{c}{$(A_{2-}, k_{2-})$} \\
+%     \hline
+%        & $\RD$ &  Amplitude  & $\RD$ &  Amplitude   & $\RD$ &  Amplitude  \\
+%     \hline
+%     $(10^{-2}\omega_\mm, 10^{-1}\omega_{\mm})$ &  $2.5\times 10^{-5}$ & 1  &   0.5556 & 0.76   &  0.455 & 0.83 \\
+%     $(10^{-2}\omega_\mm, 10\omega_{\mm})$&  $2.5\times 10^{-5}$ & 1  & 0.056 &  1  & 0.045 & 1 \\
+%      $(5\times 10^{-2}\omega_\mm, 10\omega_{\mm})$ &  $2.5\times 10^{-5}$ & 1  &  1.389 & 0.34   & 1.136 & 0.44 \\
+%     \hline
+%     \end{tabular}
+%     % \end{ruledtabular}
+%     \caption{\label{table:multi-frequency-rabi-simple-relative-detuning-destruction}Relative detuning and oscillation amplitude of each mode for the two-frequency matter profiles.}
+% \end{table}
 
-\begin{figure}[!htbp]
-                \centering
-                \includegraphics[width=\columnwidth]{chapters/assets/matter/interference-reduction-slide-with-legend}
-                \caption{Reduction of transition amplitudes due to interference. The second matter profiles are $(\lambda_2\sin(2\theta_\mathrm{m})/2, k_2 )$ are labeled in the legend. The lines are the corresponding Rabi formula predictions. In all the calculations, I used $A_1=10^{-4}\omega_{\mathrm m}$, $k_1=\omega_{\mathrm m}$. During the calculations, $\Lambda_0$ is set to half of the MSW resonance potential, $\Lambda_0 = \frac{1}{2}\lambda_{\mathrm{MSW}}=\frac{1}{2}\omega_{\mathrm{v}}\cos 2\theta_{\mathrm v}$.}
-                \label{fig-rabi-oscillations-energy-gap-change}
-\end{figure}
 
 
-I choose the two Fourier modes in matter profile so that the first one leads to Rabi mode amplitude $A_1 = \lambda_1 \sin(2\theta_\mm)/2 = 10^{-4}\omega_{\mathrm{m}}$ and frequency $k_1 = \omega_{\mathrm{m}}$. With a small amplitude of the second frequency, $A_2 = \lambda_2 \sin(2\theta)/2  =10^{-4}\omega_{\mathrm{m}}$, and large frequency $k_2=10\omega_{\mathrm{m}}$, I obtain almost full resonance. 
-The relative detuning due to each mode is shown in Table~\ref{table:multi-frequency-rabi-simple-relative-detuning-destruction}
-As shown in Eqn.~\ref{app:chap:matter-eq:relative-detuning-changed}, larger $A_2$ leads to more effective destruction effect. In Fig.~\ref{fig-rabi-oscillations-energy-gap-change}, I am showing the full numerical solution of neutrino oscillations in two-frequency matter background, and the prediction of oscillations using Rabi formula, which is a good match to the numerical results. To show the importance of relative detuning, I also calculated the relative detuning for each cases in Table~\ref{table:multi-frequency-rabi-simple-relative-detuning-destruction}. The Rabi mode with $A_{2+}$ and $k_{2+}$ is always the most destructive one, which is the reason we only use this Rabi mode and the resonance mode to calculate the overall relative detuning and Rabi formula. % Notice that the width of each cases doesn't change since I kept $A_1$ fixed for each calculation, which indicates that the decreasing in transition amplitude is because of the increasing in detuning.
+% I choose the two Fourier modes in matter profile so that the first one leads to Rabi mode amplitude $A_1 = \lambda_1 \sin(2\theta_\mm)/2 = 10^{-4}\omega_{\mathrm{m}}$ and frequency $k_1 = \omega_{\mathrm{m}}$. With a small amplitude of the second frequency, $A_2 = \lambda_2 \sin(2\theta)/2  =10^{-4}\omega_{\mathrm{m}}$, and large frequency $k_2=10\omega_{\mathrm{m}}$, I obtain almost full resonance. 
+% The relative detuning due to each mode is shown in Table~\ref{table:multi-frequency-rabi-simple-relative-detuning-destruction}
+% As shown in Eqn.~\ref{app:chap:matter-eq:relative-detuning-changed}, larger $A_2$ leads to more effective destruction effect. In Fig.~\ref{fig-rabi-oscillations-energy-gap-change}, I am showing the full numerical solution of neutrino oscillations in two-frequency matter background, and the prediction of oscillations using Rabi formula, which is a good match to the numerical results. To show the importance of relative detuning, I also calculated the relative detuning for each cases in Table~\ref{table:multi-frequency-rabi-simple-relative-detuning-destruction}. The Rabi mode with $A_{2+}$ and $k_{2+}$ is always the most destructive one, which is the reason we only use this Rabi mode and the resonance mode to calculate the overall relative detuning and Rabi formula. % Notice that the width of each cases doesn't change since I kept $A_1$ fixed for each calculation, which indicates that the decreasing in transition amplitude is because of the increasing in detuning.
 
 
 
 % \subsection{\label{chap:matter-sec:constructive}Constructive Effects}
 
 
-Adding a second frequency to the matter density profile can also be constructive.
+% Adding a second frequency to the matter density profile can also be constructive.
 % I calculated an example with two frequencies in matter density profile, so that the Hamiltonian is
 % \begin{equation*}
 %     \mathsf H^{(\mm)} = - \frac{\omega_{\mathrm m}}{2} \sigma_3 - \left(\frac{A_1}{2}\cos(k_1 r) + \frac{A_2}{2}\cos(k_2 r) \right) \sigma_1 + \left( \frac{A_1}{2}\sin(k_1 r) + \frac{A_2}{2}\sin(k_2 r) \right) \sigma_2.
 % \end{equation*}
-I choose two matter profile frequencies that are off resonance and are producing large relative detunings,
+% I choose two matter profile frequencies that are off resonance and are producing large relative detunings,
 % k1_0.95_k2_2.6_a1_0.025_a2_0.4
-\begin{equation}
-    A_1 = 0.025, \qquad k_1 = 0.95, \qquad A_2 = 0.4, \qquad k_2 = 2.6.
-\end{equation}
-The oscillation amplitude for each mode being much smaller than 1. However, the system produces oscillations are resonance (c.f.~Fig.~\ref{chap:matter-sec:constructive-fig:two-frequencies-constructive}). Using the criteria in Eqn.~\ref{chap:matter-sec:single-frequency-eqn:criterion-for-a2}, I can determine that the Rabi mode with amplitude $A_{2+}=0.4$ and $k_{2+}=2.6$ is the most important one, which is combined with the one that is closest to resonance $A_{1+}$ to produce relative detuning $\RD = 10^{-15}$. This argument is consistent with the results shown in Fig.~\ref{chap:matter-sec:constructive-fig:two-frequencies-constructive}.
+% \begin{equation}
+%     A_1 = 10^{-4}, \qquad k_1 = 1-10^{-4}, \qquad A_2 = 0.02, \qquad k_2 = 3.
+% \end{equation}
+% The oscillation amplitude for each mode being much smaller than 1. However, the system produces oscillations are resonance (c.f.~Fig.~\ref{chap:matter-sec:constructive-fig:two-frequencies-constructive}). Using the criteria in Eqn.~\ref{chap:matter-sec:single-frequency-eqn:criterion-for-a2}, I can determine that the Rabi mode with amplitude $A_{2+}=0.02$ and $k_{2+}=3$ is the most important one, which is combined with the one that is closest to resonance $A_{1+}$ to produce relative detuning $\RD = 0$. This argument is consistent with the results shown in Fig.~\ref{chap:matter-sec:constructive-fig:two-frequencies-constructive}.
 
 \begin{figure}[!htbp]
     \centering
     % \includegraphics[width=\textwidth]{chapters/assets/rabi/rabiOscillationsNeutrinoCoincidence-two-frequencies-constructive.pdf}
     \includegraphics[width=\textwidth]{chapters/assets/matter/interference-enhance-slide-with-legend}
-    \caption{Constructive interference for two frequencies in matter density profile. The red solid line is the full solution of neutrino transition probability for single-frequency matter profile with $\lambda_1 \sin(2\theta_\mm)/2= 0.4\omega_\mm$ and $k_1 =0.95\omega_\mm$. The black line is the full solution for two-frequency matter profiles with an additional $\lambda_2 \sin(2\theta_\mm)/2=0.025\omega_\mm$ and $k_2=2.6\omega_\mm$. The markers are the corresponding Rabi formula predictions.}
+    \caption{The constructive interference effect for the neutrino flavor conversion with a two-frequency matter density profile as in Fig.~\ref{fig-rabi-oscillations-energy-gap-change}. The red dots represent the numerical solution in the case of a single-frequency matter profile with $\lambda_1 /\omega_\mm = 5.2\times 10^{-4}$ and $k_1/\omega_\mm = 1- 10^{-4}$. The black square markers represent the numerical solution with an additional Fourier mode with $\lambda_2/\omega_\mm=0.1$ and $k_2/\omega_\mm=3$. The black curve is obtained using the Rabi formula in Eqn.~\ref{app:rabi-system-transition-probability} with relative detuning $\RD'_{2+}=0$.}
     \label{chap:matter-sec:constructive-fig:two-frequencies-constructive}
 \end{figure}
+
+The presence of the second Fourier mode can also enhance the Rabi resonance, which is illustrated in Fig.~\ref{chap:matter-sec:constructive-fig:two-frequencies-constructive}. The two Fourier modes in this figure have amplitudes and wave numbers
+\begin{align*}
+    \lambda_1/\omega_\mm & =5.2\times 10^{-4}, & k_1/\omega_\mm &= 1- 10^{-4},\\
+    \lambda_2/\omega_\mm & =0.1, & k_2/\omega_\mm &= 3,
+\end{align*}
+respectively. The neutrino flavor conversion is never complete if only the first Fourier mode is present because the relative detunign $\RD_{1+}=1 > 0$. This is shown as the red dots in the figure. However, complete neutrino flavor conversion when both Fourier modes are present. This is because the modified relative detuning $\RD'_{2+} = 0$ when only the $1+$ and the $2+$ Rabi modes are considered. The numerical solution and the analytic prediction using the Rabi formula are plotted as the black squares and the continuous curve, respectively, which agree very well.
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%  Jacobi Anger Expansion  %%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{\label{sec:jacobi}Rabi Basis and Jacobi-Anger expansion}
+% \section{\label{sec:jacobi}Rabi Basis and Jacobi-Anger expansion}
 
 
-With the intuition of the Rabi oscillations itself as well as the interference between different modes of Rabi oscillations shown in Sec.~\ref{chap:matter-sec:multiple-matter-frequencies}, I can interpret the transition probabilities of any matter profile more precisely if the system can be exactly decomposed into multiple Rabi oscillations. Kneller et al. provided a method to achieve this goal~\cite{Kneller2013}, namely the Jacobi-Anger expansion. While they used the Jacobi-Anger expansion to calculate the neutrino oscillations in single frequency matter profiles through complicated calculation, I use a different approach that motivates us to use the Jacobi-Anger expansion and simplifies the concepts and calculations. In this section, I will first show that a better basis can be found for the interpretation of neutrino oscillations in matter. Then, I will show that the neutrino oscillations in matter can be decomposed into superpositions of Rabi oscillations by applying the Jacobi-Anger expansion.
+% With the intuition of the Rabi oscillations itself as well as the interference between different modes of Rabi oscillations shown in Sec.~\ref{chap:matter-sec:multiple-matter-frequencies}, I can interpret the transition probabilities of any matter profile more precisely if the system can be exactly decomposed into multiple Rabi oscillations. Kneller et al. provided a method to achieve this goal~\cite{Kneller2013}, namely the Jacobi-Anger expansion. While they used the Jacobi-Anger expansion to calculate the neutrino oscillations in single frequency matter profiles through complicated calculation, I use a different approach that motivates us to use the Jacobi-Anger expansion and simplifies the concepts and calculations. In this section, I will first show that a better basis can be found for the interpretation of neutrino oscillations in matter. Then, I will show that the neutrino oscillations in matter can be decomposed into superpositions of Rabi oscillations by applying the Jacobi-Anger expansion.
 
 
-\subsection{\label{chap:matter-sec:jacobi-subsec:rabi-basis}Rabi Basis}
+\section{\label{chap:matter-sec:jacobi-subsec:rabi-basis}Rabi Basis}
 
-
-For neutrino oscillations with a general matter potential (see Eqn.~\ref{eq-hamiltonian-bg-matter-basis-general}), we apply an unitary transformation
+Previously I have ignored the oscillating $\sigma_3$ terms in the Hamiltonian such as in Eqn.~\ref{chap:matter-sec:single-fequency-eq:hamiltonian-bg-matter-basis-single-frequency}. Using the Jacobi-Anger expansion, J. Kneller et al. showed that these terms result in an infinite number of resonance conditions. In the rest of the chapter, I will present a much simpler derivation of their results from the perspective of Rabi oscillations. For this purpose I will define a new basis called Rabi basis
 \begin{equation}
-    \mathsf{U} =  \begin{pmatrix} e^{-\ri \eta (r)} & 0 \\  0 & e^{\mathrm i \eta (r)}  \end{pmatrix}.
-    \label{eq-rabi-transformation}
+\begin{pmatrix} \ket{\nu_{\mathrm{r1}}}\\ \ket{\nu_{\mathrm{r2}}} \end{pmatrix} =  \mathsf{U}^\dagger \begin{pmatrix} \ket{\nu_{\mathrm{L}}} \\ \ket{\nu_{\mathrm{H}}} \end{pmatrix},
+\label{eq-rabi-basis}
 \end{equation}
-I can also define a new basis $\left(\ket{\nu_{\mathrm{r1}}},\ket{\nu_{\mathrm{r2}}}\right)^{\mathrm{T}}$, which is related to the background matter basis through $\mathsf U$:
+where 
 \begin{equation}
-    \begin{pmatrix} \ket{\nu_{\mathrm{r1}}}\\ \ket{\nu_{\mathrm{r2}}} \end{pmatrix} =  \mathsf{U}^\dagger \begin{pmatrix} \ket{\nu_{\mathrm{L}}} \\ \ket{\nu_{\mathrm{H}}} \end{pmatrix}.
-    \label{eq-rabi-basis}
+\mathsf{U} =  \begin{pmatrix} e^{-\ri \eta (r)} & 0 \\  0 & e^{\mathrm i \eta (r)}  \end{pmatrix}.
+\label{eq-rabi-transformation}
 \end{equation}
-For convenience, I name this unitary transformation in Eqn.~(\ref{eq-rabi-transformation}) Rabi transformation as well as the new basis in Eqn.~(\ref{eq-rabi-basis}) the Rabi basis. This transformation is a rotation with generator $\exp\left(-\mathrm i\frac{\sigma_3}{2}\cdot 2\eta\right)$, thus it doesn't change $\sigma_3$ terms themselves. Due to its dependence on $r$, the left side of the Schr\"{o}dinger equation obtains an extra term other than the derivative, which can be used to cancel the varying $\sigma_3$ term, i.e., $\delta\lambda(r) \cos 2\theta_{\mathrm m} \sigma_3/2$. In the flavor isospin picture, the transform brings the neutrino states into a rotating frame so that the varying energy gap due to the fluctuating matter density is exactly cancelled by rotation of the frame.
-By remove the varying $\sigma_3$ term in this way, the energy gap in the Rabi basis becomes a constant energy gap.
-Another advantage of this transformation is that the transition probability from light state to heavy state in background matter basis is easily calculated as $P_{\mathrm{L} \to
-\mathrm{H}} (x) = \lvert e^{i\eta} \psi_{\mathrm r2} (x)  \rvert^2 = \lvert \psi_{\mathrm r2} (x)  \rvert^2$. One can easily show that the transition probability between two eigenstates in the Rabi basis is the same as the transition probability between two eigenstates in background matter basis, given the initial condition that the system is in low energy state.
-
-In the Rabi basis, the Schr\"{o}dinger equation is
+The unitary transformation in Eqn.~\ref{eq-rabi-transformation} is a rotation in flavor space about the third axis.
+% with generator $\exp\left(-\mathrm i\frac{\sigma_3}{2}\cdot 2\eta\right)$,
+It commutes with $\sigma_3$ terms in the Hamiltonian, but, due to its dependence on $r$, the left side of the Schr\"{o}dinger equation obtains an extra term:
+%other than the derivative, which can be used to cancel the varying $\sigma_3$ term, i.e., $\delta\lambda(r) \cos 2\theta_{\mathrm m} \sigma_3/2$. In the flavor isospin picture, the transform brings the neutrino states into a rotating frame so that the varying energy gap due to the fluctuating matter density is exactly cancelled by rotation of the frame.
+% By remove the varying $\sigma_3$ term in this way, the energy gap in the Rabi basis becomes a constant energy gap.
+% Another advantage of this transformation is that the transition probability from light state to heavy state in background matter basis is easily calculated as $P_{\mathrm{L} \to \mathrm{H}} (x) = \lvert e^{i\eta} \psi_{\mathrm r2} (x)  \rvert^2 = \lvert \psi_{\mathrm r2} (x)  \rvert^2$. One can easily show that the transition probability between two eigenstates in the Rabi basis is the same as the transition probability between two eigenstates in background matter basis, given the initial condition that the system is in low energy state.
+% In the Rabi basis, the Schr\"{o}dinger equation is
 \begin{align*}
     &\begin{pmatrix}  \frac{\mathrm d\eta}{\mathrm dr}  & 0 \\ 0 & - \frac{\mathrm d\eta}{\mathrm d r}  \end{pmatrix} \begin{pmatrix} \psi_{\mathrm R1} \\ \psi_{\mathrm R2} \end{pmatrix} + \mathrm i \frac{\mathrm d}{\mathrm dr} \begin{pmatrix} \psi_{\mathrm R1} \\ \psi_{\mathrm R2} \end{pmatrix} \\
-    =& \left[ -\frac{\omega_{\mathrm m} }{2} \sigma_3  + \frac{\delta \lambda}{2} \cos 2\theta_{\mathrm m}  \sigma_3  - \frac{\delta \lambda}{2} \sin 2\theta_{\mathrm m} \begin{pmatrix} 0 & e^{2\mathrm i\eta} \\ e^{-2 \mathrm i\eta } & 0 \end{pmatrix}   \right] \begin{pmatrix} \psi_{\mathrm R1} \\ \psi_{\mathrm R2} \end{pmatrix},
+    =& \left[ -\frac{\omega_{\mathrm m} }{2} \sigma_3  + \frac{\delta \lambda}{2} \cos 2\theta_{\mathrm m}  \sigma_3  - \frac{\delta \lambda}{2} \sin 2\theta_{\mathrm m} \begin{pmatrix} 0 & e^{2\mathrm i\eta} \\ e^{-2 \mathrm i\eta } & 0 \end{pmatrix}   \right] \begin{pmatrix} \psi_{\mathrm R1} \\ \psi_{\mathrm R2} \end{pmatrix}.
 \end{align*}
-in which the varying diagonal elements in Hamiltonian can be eliminated by choosing $\eta(r)$ properly, i.e.,
+The oscillating $\sigma_3$ terms in Hamiltonian can be eliminated by choosing $\eta(r)$ properly, i.e.,
 \begin{equation}
-    \eta(r) - \eta(0) =  \frac{\cos 2\theta_{\mathrm{m}}}{2} \int_0^r \delta\lambda (\tau) \dd\tau,
+    \eta(r) - \eta(0) =  \frac{\cos 2\theta_{\mathrm{m}}}{2} \int_0^r \delta\lambda (\tau) \dd\tau.
 \end{equation}
-which is used to simplify the Schr\"{o}dinger equation:
+With this definition, the Schr\"{o}dinger equation simplifies:
 \begin{equation}
     \ri \frac{\dd}{\dd r} \begin{pmatrix} \psi_{\mathrm r1} \\ \psi_{\mathrm r2} \end{pmatrix} = \left[ - \frac{\omega_{\mathrm m}}{2} \sigma_3 - \frac{\delta \lambda}{2} \sin 2\theta_{\mathrm m} \begin{pmatrix} 0 & e^{2\ri\eta} \\ e^{-2 \ri \eta } & 0 \end{pmatrix}\right] \begin{pmatrix} \psi_{\mathrm r1} \\ \psi_{\mathrm r2} \end{pmatrix}.
     \label{chap:matter-sec:jacobi-subsec:rabi-basis-eqn:eom-rabi-basis-matter}
 \end{equation}
+Because the states $\ket{\nu_{r1}}$ and $\ket{\nu_{r2}}$ are related to $\ket{\nu_{\mathrm L}}$ and $\ket{ \nu_{\mathrm H} }$ by phase factors only, the transition probability between the former two states is the same as that between the latter.
 
-\subsection{\label{chap:matter-sec:single-revisted}Single Frequency Matter Profile and Jacobi-Anger Expansion}
+
+
+\section{\label{chap:matter-sec:single-revisted}Single-Frequency Matter Profile Revisited}
 % \subsection{\label{chap:matter-sec:jacobi-subsec:jacobi}Jacobi-Anger Expansion}
 
 
@@ -616,7 +654,7 @@ When the matter potential provides one dominate resonance mode and without signi
 %Through the Rabi transformation and Jacobi-Anger expansion, the varying diagonal elements in Hamiltonian, i.e., varying $\sigma_3$ term, is transformed to a perturbing field with many different frequencies $n k_1$.
 
 
-\subsection{Single Frequency Matter Profile Revisited}
+% \section{Single Frequency Matter Profile Revisited}
 
 Even for the single frequency matter profile, there are two modes of Rabi oscillations $\pm k_1$, under the approximation that the varying $\sigma_3$ term in Hamiltonian is neglected, as mentioned in Sec.~\ref{chap:app-sec:rabi-oscillations}. The three examples calculated in Fig.~\ref{fig-rabiOscillationsNeutrinoCoincidence} are almost exact since the modification of relative detuning for the $k_1$ mode that we kept, due to the far off resonance mode $-k_1$ that I neglected, is tiny. Since I have derived the interference effect in Sec.~\ref{chap:app-sec:rabi-oscillations}, the approximations can be justified quantitatively using Eqn.~\ref{app:chap:matter-eq:relative-detuning-changed}.
 
@@ -738,7 +776,7 @@ for $\lambda_1\cos(2\theta_{\mathrm m})/k_1\ll 1$ is used in the last step. Thus
 
 
 
-\subsection{\label{chap:matter-subsec:multi-frequency-revisited}Multi-frequency Matter Profile Revisited}
+\section{\label{chap:matter-subsec:multi-frequency-revisited}Multi-frequency Matter Profile Revisited}
 
 
 For multi-frequency matter profiles $\delta \lambda(r) = \sum_n \lambda_n \sin (k_n r)$, the derivation is the same as the derivation for single frequency matter profiles but with more tedious math. The Hamiltonian in Rabi basis is
