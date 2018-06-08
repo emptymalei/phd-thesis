@@ -647,6 +647,12 @@ Eqn.~\ref{chap:matter-sec:jacobi-eqn:hamil-jacobi-expanded} implies an infinite 
 \end{equation}
 However, the amplitude of the Rabi mode $A_n$ drops quickly as a function of $n$ because
 \begin{equation}
+    J_n(z) \xrightarrow{z\ll \sqrt{n+1}} \frac{ (z/2)^n }{n!} \qquad \text{if } n>0
+    % J_1\left( \frac{\lambda_1}{k_1}\cos (2\theta_{\mathrm m}) \right) \approx \frac{\lambda_1}{2k_1}\cos (2\theta_{\mathrm m})
+    \label{chap:matter-sec:single-revisit-eqn:bessel-small-arg}
+\end{equation}
+when $\lambda_1/k_1 \ll 1$. For $\lambda_1/k_1\gtrsim 1$, $A_n$ also becomes small for sufficiently large $n$ because
+\begin{equation}
     J_n(z) \xrightarrow{n\gg 1} \frac{1}{\sqrt{2\pi n}} \left( \frac{ e z }{ 2n } \right)^n.
 % J_n(n \sech \alpha) \sim \frac{ e^{n(\tanh\alpha - \alpha)} }{\sqrt{ 2\pi n \tanh \alpha } }
 \end{equation}
@@ -679,12 +685,7 @@ Any real physical system has a finite size $l$ and the Rabi modes with the oscil
 
 % In Table~\ref{tab-q-values-single-frequency-example} I calculated the relative detunings of the three cases in Fig.~\ref{fig-rabiOscillationsNeutrinoCoincidence}, where $n=\pm 1$ are for the $\pm k_1$ modes in the Hamiltonian Eqn.~\ref{eq-hamiltonian-bg-matter-basis-single-frequency}. The $\RD'_1$ is the shifted relative detuning of the first mode with $n=1$ due to other mode. It clearly shows that the first mode takes the whole system so that the approximation of neglecting the varying $\sigma_3$ terms in Hamiltonian is accurate enough. One can also show that the interference effect due to higher order modes is negligible, since they do not change the relative detuning of the most significant modes. It confirms the results I observed in Fig.~\ref{fig-rabiOscillationsNeutrinoCoincidence} that the change of the relative detuning due to the $-k_1$ mode is not observable.
 
-In Sec.~\ref{chap:matter-sec:single}, I have discussed the scenario where the $n=1$ Rabi mode is on or close to resonance and $\lambda_1/\omega_\mm \ll 1$. Using the asymptotic form of the Bessel function
-\begin{equation}
-    J_n(z) \xrightarrow{z\ll \sqrt{n+1}} \frac{ (z/2)^n }{n!} \qquad \text{if } n>0
-    % J_1\left( \frac{\lambda_1}{k_1}\cos (2\theta_{\mathrm m}) \right) \approx \frac{\lambda_1}{2k_1}\cos (2\theta_{\mathrm m})
-\end{equation}
-and identity
+In Sec.~\ref{chap:matter-sec:single}, I have discussed the scenario where the $n=1$ Rabi mode is on or close to resonance and $\lambda_1/\omega_\mm \ll 1$. Using Eqn.~\ref{chap:matter-sec:single-revisit-eqn:bessel-small-arg} and identity
 \begin{equation}
     J_{-n}(z) =(-1)^n J_{n}(z)
 \end{equation}
@@ -822,18 +823,38 @@ when another Rabi mode $n$ is present, where $\RD_n$ is the relative detuning wh
 \section{\label{chap:matter-subsec:multi-frequency-revisited}Multi-frequency Matter Profile Revisited}
 
 
-For multi-frequency matter profiles $\delta \lambda(r) = \sum_n \lambda_n \cos (k_n r)$, the derivation is the same as the derivation for single frequency matter profiles but with more tedious math. The Hamiltonian for neutrino oscillations in multi-frequency matter profile in Rabi basis is
+For a multi-frequency matter profile 
 \begin{equation}
-    \mathsf H^{(\RR)} = -\frac{\omega_\mm}{2}\sigma_3 + \begin{pmatrix}
-        0 & h\\
-        h^{*} & 0
-        \end{pmatrix},
+    \lambda(r) = \lambda_0 + \sum_a \lambda_a \cos (k_a r),
 \end{equation}
-where the off diagonal element $h$ is
+it is straightforward although tedious to show that the Hamiltonian in the Rabi basis is 
+% the derivation is the same as the derivation for single frequency matter profiles but with more tedious math. The Hamiltonian for neutrino oscillations in multi-frequency matter profile in Rabi basis is
 \begin{equation}
-    h = \frac{\sin 2\theta_\mm}{2} \sum_a \lambda_a \sin (k_a x) \prod_{a} \sum_{n=-\infty}^{\infty} J_n (z_{k_a}) e^{i n(k_a x) }
+    \mathsf H^{(\RR)} = - \frac{\omega_\mm}{2} \sigma_3 - \frac{1}{2} \sum_{ \{n_a\} } A_{ \{n_a\} } 
+    \begin{pmatrix}
+    0 &   e^{ i K_{\{n_a\}} r }\\
+    e^{ -i K_{\{n_a\}} r}  & 0 
+    \end{pmatrix},
 \end{equation}
-
+% \begin{equation}
+%     \mathsf H^{(\RR)} = -\frac{\omega_\mm}{2}\sigma_3 + \begin{pmatrix}
+%         0 & h\\
+%         h^{*} & 0
+%         \end{pmatrix},
+% \end{equation}
+where $\{n_a\}$ stands for a set of arbitrary integers each associating with a particular Fourier mode, and
+\begin{equation}
+    K_{\{n_a\}} = \sum_{a} n_a k_a
+\end{equation}
+and
+\begin{equation}
+    A_{\{n_a\}} = \tan(2\theta_\mm) K_{\{n_a\}} \prod_{a} J_{n_a} \left( \frac{\lambda_{a}}{ k_{a} } \cos(2\theta_\mm) \right).
+\end{equation}
+are the wave number and amplitude of the Rabi mode, respectively. There are potentially many Rabi modes that approximately satisfy the resonance condition
+\begin{equation}
+    K_{n_a} = \omega_\mm .
+\end{equation}
+However, according to the discussion in Sec.~\ref{chap:matter-sec:single-revisted}, the Rabi modes with large $\vert n_a\vert$s have very long oscillation wavelengths and can be ignored even if they are on resonance. The off-resonance Rabi modes with large $\vert n_a\vert$s have very small amplitudes and do not have impact on the resonance either. Therefore, only a finite number of Rabi modes need to be considered for a realistic system.
 % To demonstrate the procedure of Jacobi-Anger expansion as well as the technique
 % to decompose the problem into simple Rabi oscillations, I adopt the two frequencies
 % matter density scenario. The Hamiltonian is described in Eqn.~\ref{eq-hamiltonian-bg-matter-basis-multi-frequency}. The term $h$ becomes
@@ -870,11 +891,11 @@ where the off diagonal element $h$ is
 % \begin{equation}
 % \end{equation}
 
-Using the relations of Bessel functions in Eqn.~\ref{eqn:bessel-function-sum-property}, I can decompose $h$ into two terms
-\begin{align}
-    h =& -\sum_{n_1 = -\infty}^\infty \sum_{n_2 = -\infty}^\infty  \frac{\tan 2\theta_\mm}{2} \sum_a n_a k_a \\
-    & J_{n_1} ( \lambda_1 \cos 2\theta_\mm/k_1)  J_{n_2} ( \lambda_2 \cos 2\theta_\mm/k_2)  e^{  \ri \sum_a n_a k_a r } .
-\end{align}
+% Using the relations of Bessel functions in Eqn.~\ref{eqn:bessel-function-sum-property}, I can decompose $h$ into two terms
+% \begin{align}
+%     h =& -\sum_{n_1 = -\infty}^\infty \sum_{n_2 = -\infty}^\infty  \frac{\tan 2\theta_\mm}{2} \sum_a n_a k_a \\
+%     & J_{n_1} ( \lambda_1 \cos 2\theta_\mm/k_1)  J_{n_2} ( \lambda_2 \cos 2\theta_\mm/k_2)  e^{  \ri \sum_a n_a k_a r } .
+% \end{align}
 
 The arguments that I applied to single frequency matter profile are still valid for multi-frequency matter profiles. For completeness of this section, I will present one example of multi-frequency matter profile. One of the multi-frequency matter profiles that has been well studied is the castle wall matter profile. I can decompose the periodic castle wall matter profile into many Fourier modes and study the interference effect. The potential shown in Fig.~\ref{fig-castlewall-profile-illustration} is defined as,
 \begin{equation}
@@ -993,51 +1014,37 @@ Table~\ref{tab-q-values-each-mode} lists the first few smallest relative detunin
 
 \section{\label{conclusions}Conclusions}
 
+In this chapter, I have shown that the flavor conversion of a neutrino can be greatly enhanced when it propagates through a oscillatory matter profile when certain resonance conditions are satisfied. This derivation is done from the perspective of Rabi oscillations and is much more physically intuitive than the original derivation by J. Kneller et al. in references~\cite{Kneller2013, Patton2014}. I have shown that, although there can exist an infinite number of Rabi modes that approximately satisfy the resonance condition, only a few of them need to be considered for a real system. I have also derived a criterion when an off-resonance Rabi mode may significantly affect the resonance. Using this criterion I have shown that only a few of the infinite set of off-resonance Rabi modes may contribute to neutrino flavor conversion. Although I have assumed small perturbations on top of a constant matter profile, this approach can be applied to a matter profile with perturbations on top of a smoothly varying background density as have been done by K. Patton et al. in reference~\cite{Patton:2014lza}. This result maybe applicable to the regions in a star where the matter density fluctuates. There can also exist a turbulent matter distribution behind the shock in a core-collapse supernova where this result maybe applicable. However, the large neutrino fluxes inside a supernova core may have an even larger impact neutrino oscillations which we will consider in the next chapter.
+
+% The solar neutrinos behave very differently from lab experiments since the Sun provides a high matter density lab which can not be built on the Earth. What's even more exotic, in a supernova explosion, $10^{58}$ neutrinos are released from the proto-neutron star, which is of radius $10\mathrm{km}$, in a few seconds. The huge number density of neutrinos and large density of matter both change the neutrino oscillations dramatically. The matter effect in supernova is also much more complicated than MSW for solar neutrinos since the rich distribution of matter density and high speed motion. In addition to matter effect, neutrino neutrino interaction will be very efficient because of the high neutrino number density.
+
+% Apart from the emission of neutrinos from nuclear reactions of electron capture and positron emission in the solar interior, supernova environment also gives rise to Bremsstrahlung pair neutrino production, electron-positron neutrino pair production, which brings all three flavors and also anti-neutrinos into the spectra. However, even the with the presence of intensive interaction between neutrinos and the leptons and hardrons, which thermalize the neutrinos in the supernova core, the neutrino spectrum escaping from the supernova core is not completely Fermi-Dirac distribution. Nonetheless, it is possible to parametrize it using nominal Fermi-Dirac distribution,\cite{ysuzuki2004}
+% \begin{equation}
+% f(E)\propto \frac{E^2}{1+\exp ( E/kT - \mu )}.
+% \end{equation}
+% Some numerical results show that there is a deviation from this Fermi-Dirac distribution~\cite{Totani1998,Keil2003}. Meanwhile, Keil Mathias and Georg Raffelt showed that it is good enough to approximate the neutrino spectrum from supernova in Monte Carlo simulations using the so called "alpha fit",
+% \begin{equation}
+% f(E)\propto E^\alpha \exp\left( -(\alpha+1)\frac{E}{\langle E\rangle} \right),
+% \end{equation}
+% where $\langle E\rangle$ is the average energy, or the first moment of energy. The values from Monte Carlo simulations falls into the range $\alpha = 2.5\sim 5$,
+% which clearly shows the spectra are pinched. It's a hint that the detection of deviation from nominal Fermi-Dirac distribution will show evidence of core-collapse information.
 
 
-The solar neutrinos behave very differently from lab experiments since the Sun provides a high matter density lab which can not be built on the Earth. What's even more exotic, in a supernova explosion, $10^{58}$ neutrinos are released from the proto-neutron star, which is of radius $10\mathrm{km}$, in a few seconds. The huge number density of neutrinos and large density of matter both change the neutrino oscillations dramatically. The matter effect in supernova is also much more complicated than MSW for solar neutrinos since the rich distribution of matter density and high speed motion. In addition to matter effect, neutrino neutrino interaction will be very efficient because of the high neutrino number density.
-
-Apart from the emission of neutrinos from nuclear reactions of electron capture and positron emission in the solar interior, supernova environment also gives rise to Bremsstrahlung pair neutrino production, electron-positron neutrino pair production, which brings all three flavors and also anti-neutrinos into the spectra. However, even the with the presence of intensive interaction between neutrinos and the leptons and hardrons, which thermalize the neutrinos in the supernova core, the neutrino spectrum escaping from the supernova core is not completely Fermi-Dirac distribution. Nonetheless, it is possible to parametrize it using nominal Fermi-Dirac distribution,\cite{ysuzuki2004}
-\begin{equation}
-f(E)\propto \frac{E^2}{1+\exp ( E/kT - \mu )}.
-\end{equation}
-Some numerical results show that there is a deviation from this Fermi-Dirac distribution~\cite{Totani1998,Keil2003}. Meanwhile, Keil Mathias and Georg Raffelt showed that it is good enough to approximate the neutrino spectrum from supernova in Monte Carlo simulations using the so called "alpha fit",
-\begin{equation}
-f(E)\propto E^\alpha \exp\left( -(\alpha+1)\frac{E}{\langle E\rangle} \right),
-\end{equation}
-where $\langle E\rangle$ is the average energy, or the first moment of energy. The values from Monte Carlo simulations falls into the range $\alpha = 2.5\sim 5$,
-which clearly shows the spectra are pinched. It's a hint that the detection of deviation from nominal Fermi-Dirac distribution will show evidence of core-collapse information.
+% % \begin{figure}
+% % \centering
+% % \includegraphics[width=\columnwidth]{chapters/assets/solar/neutrino_spectra_sn_simulations.png}
+% % \caption{Alpha fit and nominal Fermi-Dirac fit comparison. The top panel is alpha fit results while the middle panel is from nominal Fermi-Dirac distribution fit. The broadest curve are for $\alpha=2$. The width $w=\sqrt{\langle E^2 \rangle - \langle E\rangle^2}$ decrease 10\% for each curve. The bottom panel is the ratio of the two fit functions.}
+% % \label{fig:neutrino_spectra_sn_simulations}
+% % \end{figure}
 
 
-% \begin{figure}
-% \centering
-% \includegraphics[width=\columnwidth]{chapters/assets/solar/neutrino_spectra_sn_simulations.png}
-% \caption{Alpha fit and nominal Fermi-Dirac fit comparison. The top panel is alpha fit results while the middle panel is from nominal Fermi-Dirac distribution fit. The broadest curve are for $\alpha=2$. The width $w=\sqrt{\langle E^2 \rangle - \langle E\rangle^2}$ decrease 10\% for each curve. The bottom panel is the ratio of the two fit functions.}
-% \label{fig:neutrino_spectra_sn_simulations}
-% \end{figure}
+% Even though we understand solar neutrinos well, the neutrino oscillations of supernova explosions are not so to our complete knowledge. The flavor content is subject to the solution to the neutrino oscillations. Phenomena such as spectral split due to neutrino-neutrino interaction and matter effect reshape the neutrino spectra significantly. That being said, more research on supernova neutrinos, especially supernova neutrino oscillations is critical to understand supernova explosion mechanisms, as well as future observation of supernova neutrino data.
 
 
-Even though we understand solar neutrinos well, the neutrino oscillations of supernova explosions are not so to our complete knowledge. The flavor content is subject to the solution to the neutrino oscillations. Phenomena such as spectral split due to neutrino-neutrino interaction and matter effect reshape the neutrino spectra significantly. That being said, more research on supernova neutrinos, especially supernova neutrino oscillations is critical to understand supernova explosion mechanisms, as well as future observation of supernova neutrino data.
+% In conclusion, we have provided an interpretation for neutrino flavor conversion in fluctuating matter with the help of Rabi oscillations. The work provided two different points of view that is related to Rabi oscillations.
 
+% The first point of view was to interpret the neutrino flavor conversions in background matter basis. In this basis, matter density fluctuations will introduced a fluctuation part to the diagonal elements of the Hamiltonian, which means that the energy gap is fluctuating if we draw analogy between this Hamiltonian and the Hamiltonian of Rabi oscillations. For neutrino flavor conversions in a single frequency matter profile, the neutrino flavor oscillations becomes large when the matter fluctuation frequency is close to the energy gap, which is the resonance condition. We anticipated that the fluctuations of energy gap have limited effects on neutrino flavor conversions under this resonance condition. Thus the matter fluctuation only works as a pure flipping field that converts neutrinos from one flavor to another.
 
-In conclusion, we have provided an interpretation for neutrino flavor conversion in fluctuating matter with the help of Rabi oscillations. The work provided two different points of view that is related to Rabi oscillations.
+% As we added more frequencies of matter density fluctuations, the neutrino flavor conversions becomes nontrivial due to the interferences between the difference matter profile frequencies. To quantify the interference between different Rabi oscillation modes, we defined relative detuning which describes how off-resonance a Rabi oscillation is. In the case of single frequency Rabi oscillations, the relative detuning becomes $0$ under the resonance condition. As a second frequency is added to the oscillations, the energy gap is shifted due to this new frequency. A measure of the interference effect is to consider the relative detuning of the first frequency which is at resonance, under the shifted energy gap. Numerical results verified this conjecture. With the interference mechanism, we revisit the single frequency matter profile neutrino oscillations.
 
-The first point of view was to interpret the neutrino flavor conversions in background matter basis. In this basis, matter density fluctuations will introduced a fluctuation part to the diagonal elements of the Hamiltonian, which means that the energy gap is fluctuating if we draw analogy between this Hamiltonian and the Hamiltonian of Rabi oscillations. For neutrino flavor conversions in a single frequency matter profile, the neutrino flavor oscillations becomes large when the matter fluctuation frequency is close to the energy gap, which is the resonance condition. We anticipated that the fluctuations of energy gap have limited effects on neutrino flavor conversions under this resonance condition. Thus the matter fluctuation only works as a pure flipping field that converts neutrinos from one flavor to another.
-
-As we added more frequencies of matter density fluctuations, the neutrino flavor conversions becomes nontrivial due to the interferences between the difference matter profile frequencies. To quantify the interference between different Rabi oscillation modes, we defined relative detuning which describes how off-resonance a Rabi oscillation is. In the case of single frequency Rabi oscillations, the relative detuning becomes $0$ under the resonance condition. As a second frequency is added to the oscillations, the energy gap is shifted due to this new frequency. A measure of the interference effect is to consider the relative detuning of the first frequency which is at resonance, under the shifted energy gap. Numerical results verified this conjecture. With the interference mechanism, we revisit the single frequency matter profile neutrino oscillations.
-
-Another view is to switch to a basis where the neutrino oscillations Hamiltonian is decomposed into infinite Rabi oscillations. Equivalently speaking, the oscillations are consequences of superposition of Rabi oscillations, which we call modes of oscillations. This view was applied to emphasis the approximations that the change of energy gap due to matter fluctuation can be neglected under resonance condition in the previous background matter basis.
-
-
-
-
-
-
-
-
-
-
-
-% \section{\label{acknowledgement}Acknowledgement}
-
-% The first author would like to thank J. Kneller and K. Patton for their help during this research. This research is supported by DOE EPSCoR grant \#DE-SC0008142.
+% Another view is to switch to a basis where the neutrino oscillations Hamiltonian is decomposed into infinite Rabi oscillations. Equivalently speaking, the oscillations are consequences of superposition of Rabi oscillations, which we call modes of oscillations. This view was applied to emphasis the approximations that the change of energy gap due to matter fluctuation can be neglected under resonance condition in the previous background matter basis.
