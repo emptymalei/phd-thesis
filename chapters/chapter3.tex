@@ -750,22 +750,27 @@ when another Rabi mode $n$ is present, where $\RD_n$ is the relative detuning wh
 \begin{table*}
 \centering
 % \begin{ruledtabular}
-\small
-\setlength\tabcolsep{6pt}
-\begin{tabular}{lccc|lccc|lccc}
+\scriptsize
+\setlength\tabcolsep{2pt}
+\begin{tabular}{r|ccc|ccc|ccc}
 \hline
+\hlin
+\multicolumn{1}{r|}{} & \multicolumn{3}{c|}{$k_1/\omega_{\mathrm m}=1$} & \multicolumn{3}{c|}{$k_1/\omega_\mm=1-2\times 10^{-5}$} & \multicolumn{3}{c}{$k_1/\omega_\mm=1-10^{-4}$} \\
 \hline
- \multicolumn{4}{c|}{$k_1/\omega_{\mathrm m}=1$} & \multicolumn{4}{c|}{$k_1/\omega_\mm=1-2\times 10^{-5}$} & \multicolumn{4}{c}{$k_1/\omega_\mm=1-10^{-4}$} \\
+   $n$ & $A_n/A_1$ & $\RD_n$  & $\Delta \RD_{(n)}$  & $A_n/A_1$ & $\RD_n$  & $\Delta \RD_{(n)}$  & $A_n/A_1$ & $\RD_n$  & $\Delta \RD_{(n)}$   \\
 \hline
-   $n$ & $A_n/A_1$ & $\RD_n$  & $\Delta \RD_{(n)}$ & $n$ & $A_n/A_1$ & $\RD_n$  & $\Delta \RD_{(n)}$ & $n$ & $A_n/A_1$ & $\RD_n$  & $\Delta \RD_{(n)}$   \\
-\hline
- 1 &	0  & - &   $3.2\times10^5$   & 1 &	1 &  -  &   $2.2\times 10^5$       & 1   &	$5.2$ &  - & $6.2\times10^4$   \\
+ -1 &	$1$  & $10^5$ &   $5\times 10^{-6}$   & 1 &	$10^{5}$ &  $5\times 10^{-6}$    &	$1$ &  $10^{5}$ & $5\times 10^{-6}$   \\
+ 2 & $4.8 \times 10^{-5}$ & $1.1 \times 10^{9}$ & $2.2\times 10^{-14}$  & $4.8 \times 10^{-5}$ & $1.1\times 10^9$ & $2.2\times 10^{-14}$ &  $4.8 \times 10^{-5}$ & $1.1\times 10^9$ & $2.2\times 10^{-14}$ \\
+ $-2$ &  $4.8 \times 10^{-5}$ & $3.2\times 10^{9}$ & $7.5\times 10^{-15}$  &  $4.8 \times 10^{-5}$ & $3.2\times 10^{9}$ & $7.5\times 10^{-15}$ &   $4.8 \times 10^{-5}$ & $3.2\times 10^{9}$ & $7.6\times 10^{-15}$ \\
 \hline
 \hline
 \end{tabular}
 % \end{ruledtabular}
 \caption{\label{table:relative-detunings-single-frequency-example}The amplitudes and the relative detunings of a few Rabi modes and their impact on the Rabi resonance for the three numerical examples shown in Fig.~\ref{fig-rabiOscillationsNeutrinoCoincidence}.}
 \end{table*}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%% Using data from Mathematica notebook: relative-detunings-in-paper.nb
+
 
 % \begin{table*}
 % \centering
@@ -980,7 +985,7 @@ if we include the second frequency $k_2$. One feature of this Fourier series exp
 \end{equation}
 which is quadratic in $n$ and inversely proportional to $\Lambda_2-\Lambda_1$. We find that all higher frequencies $k_n$ for $n>2$ have very large relative detunings. The neutrino transition probability between the two matter states is shown in Fig.~\ref{fig-akhmedovOscPlt}, where we find the system has almost full transition.
 
-A more rigorous treatment is to use Jacobi-Anger expansion and find the Rabi modes, where we find that the mode that corresponds to single frequency $k_1$ dominates and all other modes have little destruction effect on it. Quantitatively, higher orders leads to smaller width $A_{\{n_i\}}$ yet larger detuning $\sum_{n} nk_n-\omega_{\mathrm m}$, which renders a smaller effect on the resonance mode $\{1,0\}$, since the effect is evaluated as Eqn.~(\ref{chap:matter-eq:relative-detuning-changed}).
+A more rigorous treatment is to use Jacobi-Anger expansion and find the Rabi modes, where we find that the mode that corresponds to single frequency $k_1$ dominates and all other modes have little destruction effect on it. Quantitatively, higher orders leads to smaller width $A_{\{n_i\}}$ yet larger detuning $\sum_{n} nk_n-\omega_{\mathrm m}$, which renders a smaller effect on the resonance mode $\{1,0\}$, since the effect is evaluated as Eqn.~(\ref{app:chap:matter-eq:relative-detuning-changed}).
 Table~\ref{tab-q-values-each-mode} lists the first few smallest relative detunings of Fig.~\ref{fig-akhmedovOscPlt}. The second column is the relative detuning of the corresponding mode, while the third column is the relative detuning of mode $\{1,0\}$ with the energy gap shift effect of the corresponding mode.
 
 
@@ -989,25 +994,48 @@ Table~\ref{tab-q-values-each-mode} lists the first few smallest relative detunin
 % {0., 6129.81, 20432.7, 42908.7}
 % {0., 5.99981, 19.9994, 41.9987}
 
+% \begin{table}
+% \centering
+
+% % \begin{ruledtabular}
+% \begin{tabular}{lll}
+% \hline
+%  $\{n_1,n_2\}$ &  $\RD$ & $\RD'_{\{1,0\}}$   \\
+% \hline
+%  $\{1,0\}$ & $0$ &  - \\
+%  $\{-1,0\}$ & $48$ &  $1.0\times 10^{-2}$ \\
+%  $\{0,1\}$ & $1.5\times 10^2$ &  $1.1\times 10^{-3}$  \\
+%  $\{2,0\}$ & $2.4\times 10^{2}$ & $2.0\times 10^{-4}$ \\
+%  \hline
+% \end{tabular}
+% % \end{ruledtabular}
+% \caption{\label{tab-q-values-each-mode}Relative detuning of each frequency.}
+% \end{table}
+
 \begin{table}
-\centering
-
-% \begin{ruledtabular}
-\begin{tabular}{lll}
-\hline
- $\{n_1,n_2\}$ &  $\RD$ & $\RD'_{\{1,0\}}$   \\
-\hline
- $\{1,0\}$ & $0$ &  - \\
- $\{-1,0\}$ & $48$ &  $1.0\times 10^{-2}$ \\
- $\{0,1\}$ & $1.5\times 10^2$ &  $1.1\times 10^{-3}$  \\
- $\{2,0\}$ & $2.4\times 10^{2}$ & $2.0\times 10^{-4}$ \\
- \hline
-\end{tabular}
-% \end{ruledtabular}
-\caption{\label{tab-q-values-each-mode}Relative detuning of each frequency.}
+    \centering
+    % \begin{ruledtabular}
+    \setlength\tabcolsep{10pt}
+    \begin{tabular}{llll}
+    \hline
+    \hline
+     $\{n_a\}$ & $A_{\{n_a\}}/A_{\{1,0,0,\cdots\}}$  & $\RD$ & $\Delta \RD_{\{n_a\}}$  \\
+    \hline
+    $\{-2, 1, 0,\cdots\}$ & $5.4\times 10^{-4}$ & 0 &  0 \\
+    $\{-1, -1, 1,\cdots\}$ &  $4.3\times 10^{-5}$ & 0 & 0 \\
+    $\{0, 2, -1,\cdots\}$ & $2.4\times 10^{-6}$ & 0 & 0 \\
+    \hline
+     $\{-1,0, 0, \cdots\}$ & $1$ & $48$ &  $1.0\times 10^{-2}$ \\
+     $\{0,1, 0, \cdots\}$ & $0.33$ & $1.5\times 10^2$ &  $1.1\times 10^{-3}$  \\
+     $\{2,0, 0, \cdots\}$ & $1.3\times 10^{-3}$ & $2.4\times 10^{2}$ & $2.0\times 10^{-4}$ \\
+     \hline
+     \hline
+    \end{tabular}
+    % \end{ruledtabular}
+    \caption{\label{tab-q-values-each-mode}The amplitudes and relative detunings of each Rabi modes and their effect on the resonance for neutrino oscillations in castle wall matter profile.}
 \end{table}
-
-
+%%%%%%%%%%%%%%%%%%
+%%% Using data from Mathematica notebook: akhmedov-parametric-resonance.nb
 
 
 
