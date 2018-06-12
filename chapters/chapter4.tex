@@ -197,22 +197,10 @@ In the above equation I have replaced flavor isospin $\vec s$ with its projectio
 
 \section{\label{chap:collective-sec:two-beams}Two Beams Model and Linear Stability Analysis}
 
-Before we work out the solutions, the oscillation scale of collective oscillations can be estimated. The characteristic energy scale for vacuum oscillations is $\omega_{\mathrm v} = \delta m^2\big/2E $, while the characteristic energy scale for collective oscillations is $\mu \sim G_{\mathrm F} (1- \hat{\boldsymbol{ v} }_1 \cdot \hat{\boldsymbol{v}}_2) n_{\nu} $. Correspondingly, the vacuum oscillation frequency is
-\begin{align*}
- \omega_{\mathrm v} = \frac{\Delta m^2}{2E}  \sim& \frac{2\pi}{ 1  \mathrm{km} }  \left(\frac{\Delta m^2_{32}}{2.5\times 10^{-3} \mathrm{eV}^2 } \right) \left( \frac{1MeV}{E} \right) \\
-\sim & \frac{2\pi}{ 33  \mathrm{km} } \left( \frac{\Delta m_{12}^2}{7.5\times 10^{-5}\mathrm{eV}^2} \right) \left( \frac{1\mathrm{MeV}}{E} \right)
-\end{align*}
-As for collective oscillations, suppose we have neutrino flux $10^{50}\mathrm{ergs\cdot s^{-1}}$. We estimate the potential at radius $R$ to be
-\begin{equation*}
-\mu \sim  \frac{1}{0.01 km} \left(\frac{100\mathrm{km}}{R}\right)^2 \left(\frac{1\mathrm{MeV}}{E}\right),
-\end{equation*}
-which means that the collective oscillations frequencies in supernova explosions can be much smaller than vacuum oscillations.
 
+Since neutrino oscillations with self-interactions is nonlinear, linear stability analysis comes into the play. I will go through the procedure and demonstrate the significance of instabilities and crossing in spectrum as well as some other symmetries. In this section, I use a simple two-beam line model which is simple mathematically but reveals the key insights.
 
-
-For nonlinear systems, linear stability analysis comes into play. I will go through the procedure and demonstrate the significance of instabilities and crossing in spectrum. For the sole purpose, I use a simple two-beam line model. The two beams model is simple mathematically, meanwhile reveals the key insights.
-
-In this model, neutrinos are emitted in two different directions from a line which preserves translation symmetry on this line. The emission angles are shown in Fig.~\ref{chap:collective-sec:two-beams-fig:two-beam-line-model}. For convenience of notations, I define a number density distribution function
+In the two-beam line model, neutrinos or antineutrinos are emitted in two different directions from a line which preserves the translation symmetry on this line. The emission angles are defined in Fig.~\ref{chap:collective-sec:two-beams-fig:two-beam-line-model}. For convenience of notations, I define a number density distribution function
 \begin{equation}
    f(\mathbf v,\omega)= \frac{n(\mathbf v,\omega)}{n_t},
 \end{equation}
@@ -230,7 +218,7 @@ Similarly we can define the angular distribution for antineutrinos.
 
 \begin{figure}[!htbp]
     \centering
-    \includegraphics[width=\textwidth]{chapters/assets/dr/two-beam-line-model.png}
+    \includegraphics[width=\textwidth]{chapters/assets/dr/two-beam-line-model}
     \caption{Geometry of two-beam model to be used in this section. Two neutrino beams are emitted, the states of which are denoted as $\rho^L$ and $\rho^R$, with number densities $n^L$ and $n^R$ respectively. The emission angles are shown in the figure as $\theta_2$ and $\theta_1$ respectively. }
     \label{chap:collective-sec:two-beams-fig:two-beam-line-model}
 \end{figure}
@@ -292,15 +280,15 @@ where
 \subsection{Left-right Symmetric Emission}
 
 
-We first consider a simple case, where $\theta_1=\theta_2\equiv\theta$, $\lambda=0$, $\eta=1$, and homogeneous in $x$ direction. For simplicity we define
+We first consider a simple case, where $\theta_1=\pi-\theta_2\equiv\theta$, $\lambda=0$, $\eta=1$, and homogeneous in $x$ direction. For simplicity we define
 \begin{align*}
    \mu =& \sqrt{2}G_F (n_1 + n_2)\\
    \mu_i =& \mu \frac{n_i}{n_1+n_2}\equiv \mu f_i \\
-   \xi = & 1-\cos(\theta_1-\theta_2)\\
+   \xi = & 1-\cos(\theta_1-\theta_2) \\
    \omega'_i = & \lambda - \eta\omega_i.
 \end{align*}
 
-I am aware that this is not a self-consistent example since $\theta_1=\theta_2$ indicates that $\xi=0$. As we will see, no instability is present in this case. However, we keep the term $\xi$ because we need to analyze the effect of symmetry breaking. This example builds up a formalism.
+% I am aware that this is not a self-consistent example since $\theta_1=\theta_2$ indicates that $\xi=0$. As we will see, no instability is present in this case. However, we keep the term $\xi$ because we need to analyze the effect of symmetry breaking. This example builds up a formalism.
 
 The equation for perturbations becomes
 \begin{equation}
@@ -660,6 +648,17 @@ Assume that the left beam is neutrino beam and the right beam is antineutrno bea
 
 
 \section{\label{chap:collective-sec:fast-mode}Fast Mode}
+
+Before we work out the solutions, the oscillation scale of collective oscillations can be estimated. The characteristic energy scale for vacuum oscillations is $\omega_{\mathrm v} = \delta m^2\big/2E $, while the characteristic energy scale for collective oscillations is $\mu \sim G_{\mathrm F} (1- \hat{\boldsymbol{ v} }_1 \cdot \hat{\boldsymbol{v}}_2) n_{\nu} $. Correspondingly, the vacuum oscillation frequency is
+\begin{align*}
+ \omega_{\mathrm v} = \frac{\Delta m^2}{2E}  \sim& \frac{2\pi}{ 1  \mathrm{km} }  \left(\frac{\Delta m^2_{32}}{2.5\times 10^{-3} \mathrm{eV}^2 } \right) \left( \frac{1MeV}{E} \right) \\
+\sim & \frac{2\pi}{ 33  \mathrm{km} } \left( \frac{\Delta m_{12}^2}{7.5\times 10^{-5}\mathrm{eV}^2} \right) \left( \frac{1\mathrm{MeV}}{E} \right)
+\end{align*}
+As for collective oscillations, suppose we have neutrino flux $10^{50}\mathrm{ergs\cdot s^{-1}}$. We estimate the potential at radius $R$ to be
+\begin{equation*}
+\mu \sim  \frac{1}{0.01 km} \left(\frac{100\mathrm{km}}{R}\right)^2 \left(\frac{1\mathrm{MeV}}{E}\right),
+\end{equation*}
+which means that the collective oscillations frequencies in supernova explosions can be much smaller than vacuum oscillations.
 
 
 In a paper by Chakraborty et al~\cite{Chakraborty2016}, they showed that neutrino flavor instabilities can grow with a rate that is proportional to the neutrino density, which has much faster oscillation frequencies than vacuum oscillations. For such a fast growth to happen, the author considered head on colliding neutrino beams. The derivation is much similar to what has been shown in the previous section.
@@ -1105,11 +1104,11 @@ Repeat the previous step until the state of the beams reach equilibrium.
 To speed up the calculations, I also implemented OpenMP for parallel computing. The code is tested using vacuum oscillations (shown in Fig.~\ref{chap:halo-sec:num-fig:compare-vac-bipolar}) and bipolar models. The reason that we still have conversions is because of the vacuum term, which is additional to linear stability analysis. It is also proven to reach equilibrium quickly as shown in Fig.~\ref{chap:halo-sec:num-fig:relax-color}. 
 
 \begin{figure}[htbp]
-    \minipage{0.49\textwidth}
+    \minipage{\textwidth}
     % \includegraphics[width=\textwidth]{chapters/assets/halo/halo-mu-4-compare-vac.pdf}
     \includegraphics[width=\textwidth]{chapters/assets/halo/halo-mu-4-r-multiple.pdf}
     \endminipage\hfill
-    \minipage{0.49\textwidth}
+    \minipage{\textwidth}
     \includegraphics[width=\textwidth]{chapters/assets/halo/halo-mu-4-compare-bipolar.pdf}
     \endminipage\hfill
     \caption{The left panel validates code by setting reflection to zero and approach vacuum for single forward beam. Meanwhile, we notice that for nonzero reflections, more conversion is done, which makes sense due to the similarity between $R$ and the asymmetry parameter $\alpha$ in bipolar model. The right panel validates the code by setting reflection to zero and compare with bipolar model for two beams case, where the slope is matching the theoretical value $3.85$.}
