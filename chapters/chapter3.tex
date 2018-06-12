@@ -457,7 +457,7 @@ respectively.
     \label{fig-rabi-oscillations-energy-gap-change}
 \end{figure}
 
-The presence of the additional Fourier mode can suppress the Rabi resonance. This is illustrated in Fig.~\ref{fig-rabi-oscillations-energy-gap-change}. In this figure, I choose the $1+$ Rabi mode to be exactly on resonance with $\lambda_1/\omega_\mm=5.2\times 10^{-4}$ and $k_1/\omega_\mm=1$. The triangles represent the numerical solution for neutrino flavor transformation with $\lambda_2/\omega_\mm=0.052$ and $k_2/\omega_\mm=0.1$. One can see that the transition amplitude is suppressed due to the presence of the second Fourier mode. I used Eqn.~\ref{app:chap:matter-eq:relative-detuning-changed} to calculate the modified relative detunings by taking into account only the $1+$ mode and another Rabi mode. The values of the relative detunings are listed in Table~\ref{table:multi-freuency-rabi-simple-relative-detuning-destruction}. I calculated the transition probability using the Rabi formula in Eqn.~\ref{rabi-app:rabi-system-transition-probability} with the relative detuning $\RD'_{2+}$ (the continuous curve in the figure, and it agrees with the numerical solution very well. I also showed two additional examples with $(\lambda_2/\omega_\mm, k_2/\omega_\mm)$ being $(0.052, 10)$ and $(0.26, 10)$, respectively. In both examples, the numerical solutions and the analytic results by using the Rabi formula have excellent agreement.
+The presence of the additional Fourier mode can suppress the Rabi resonance. This is illustrated in Fig.~\ref{fig-rabi-oscillations-energy-gap-change}. In this figure, I choose the $1+$ Rabi mode to be exactly on resonance with $\lambda_1/\omega_\mm=5.2\times 10^{-4}$ and $k_1/\omega_\mm=1$. The triangles represent the numerical solution for neutrino flavor transformation with $\lambda_2/\omega_\mm=0.052$ and $k_2/\omega_\mm=0.1$. One can see that the transition amplitude is suppressed due to the presence of the second Fourier mode. I used Eqn.~\ref{app:chap:matter-eq:relative-detuning-changed} to calculate the modified relative detunings by taking into account only the $1+$ mode and another Rabi mode. The values of the relative detunings are listed in Table~\ref{table:multi-freuqency-rabi-simple-relative-detuning-destruction}. I calculated the transition probability using the Rabi formula in Eqn.~\ref{app:rabi-system-transition-probability} with the relative detuning $\RD'_{2+}$ (the continuous curve in the figure, and it agrees with the numerical solution very well. I also showed two additional examples with $(\lambda_2/\omega_\mm, k_2/\omega_\mm)$ being $(0.052, 10)$ and $(0.26, 10)$, respectively. In both examples, the numerical solutions and the analytic results by using the Rabi formula have excellent agreement.
 
 % To verify the condition, I choose the first Rabi mode to satisfy the resonance condition $k_1=\omega_{\mathrm{m}}$, the condition for the second Rabi mode shifting the system out of resonance is that the relative detuning becomes larger than $1$, which leads to
 % \begin{equation}
@@ -754,7 +754,7 @@ when another Rabi mode $n$ is present, where $\RD_n$ is the relative detuning wh
 \setlength\tabcolsep{2pt}
 \begin{tabular}{r|ccc|ccc|ccc}
 \hline
-\hlin
+\hline
 \multicolumn{1}{r|}{} & \multicolumn{3}{c|}{$k_1/\omega_{\mathrm m}=1$} & \multicolumn{3}{c|}{$k_1/\omega_\mm=1-2\times 10^{-5}$} & \multicolumn{3}{c}{$k_1/\omega_\mm=1-10^{-4}$} \\
 \hline
    $n$ & $A_n/A_1$ & $\RD_n$  & $\Delta \RD_{(n)}$  & $A_n/A_1$ & $\RD_n$  & $\Delta \RD_{(n)}$  & $A_n/A_1$ & $\RD_n$  & $\Delta \RD_{(n)}$   \\
@@ -832,7 +832,7 @@ For a multi-frequency matter profile
 \begin{equation}
     \lambda(r) = \lambda_0 + \sum_a \lambda_a \cos (k_a r),
 \end{equation}
-it is straightforward although tedious to show that the Hamiltonian in the Rabi basis is 
+it is straightforward although a little bit tedious to show that the Hamiltonian in the Rabi basis is 
 % the derivation is the same as the derivation for single frequency matter profiles but with more tedious math. The Hamiltonian for neutrino oscillations in multi-frequency matter profile in Rabi basis is
 \begin{equation}
     \mathsf H^{(\RR)} = - \frac{\omega_\mm}{2} \sigma_3 - \frac{1}{2} \sum_{ \{n_a\} } A_{ \{n_a\} } 
@@ -855,11 +855,11 @@ and
 \begin{equation}
     A_{\{n_a\}} = \tan(2\theta_\mm) K_{\{n_a\}} \prod_{a} J_{n_a} \left( \frac{\lambda_{a}}{ k_{a} } \cos(2\theta_\mm) \right).
 \end{equation}
-are the wave number and amplitude of the Rabi mode, respectively. There are potentially many Rabi modes that approximately satisfy the resonance condition
+are the wave number and amplitude of the Rabi mode denoted by $\{n_a\}$, respectively. There are potentially many Rabi modes that approximately satisfy the resonance condition
 \begin{equation}
-    K_{n_a} = \omega_\mm .
+    K_{\{n_a\}} = \omega_\mm .
 \end{equation}
-However, according to the discussion in Sec.~\ref{chap:matter-sec:single-revisted}, the Rabi modes with large $\vert n_a\vert$s have very long oscillation wavelengths and can be ignored even if they are on resonance. The off-resonance Rabi modes with large $\vert n_a\vert$s have very small amplitudes and do not have impact on the resonance either. Therefore, only a finite number of Rabi modes need to be considered for a realistic system.
+However, according to the discussion in Sec.~\ref{chap:matter-sec:single-revisted}, the Rabi modes with large $\vert n_a\vert$s have very long oscillation wavelengths and can be ignored even if they are on resonance. The off-resonance Rabi modes with large $\vert n_a\vert$s have very small amplitudes and do not have a significant impact on the resonance either. Therefore, only a finite number of Rabi modes need to be considered for a realistic system.
 % To demonstrate the procedure of Jacobi-Anger expansion as well as the technique
 % to decompose the problem into simple Rabi oscillations, I adopt the two frequencies
 % matter density scenario. The Hamiltonian is described in Eqn.~\ref{eq-hamiltonian-bg-matter-basis-multi-frequency}. The term $h$ becomes
@@ -902,49 +902,58 @@ However, according to the discussion in Sec.~\ref{chap:matter-sec:single-reviste
 %     & J_{n_1} ( \lambda_1 \cos 2\theta_\mm/k_1)  J_{n_2} ( \lambda_2 \cos 2\theta_\mm/k_2)  e^{  \ri \sum_a n_a k_a r } .
 % \end{align}
 
-The arguments that I applied to single frequency matter profile are still valid for multi-frequency matter profiles. For completeness of this section, I will present one example of multi-frequency matter profile. One of the multi-frequency matter profiles that has been well studied is the castle wall matter profile. I can decompose the periodic castle wall matter profile into many Fourier modes and study the interference effect. The potential shown in Fig.~\ref{fig-castlewall-profile-illustration} is defined as,
+As an example of a matter profile with multiple frequencies, I will consider the castle wall profile
+%The arguments that I applied to single frequency matter profile are still valid for multi-frequency matter profiles. For completeness of this section, I will present one example of multi-frequency matter profile. One of the multi-frequency matter profiles that has been well studied is the castle wall matter profile. I can decompose the periodic castle wall matter profile into many Fourier modes and study the interference effect. The potential shown in Fig.~\ref{fig-castlewall-profile-illustration} is defined as,
 \begin{equation}
     \lambda(r) = \begin{cases}
-\Lambda_1, &\quad -\frac{X_1}{2}+nX\le r\le \frac{X_1}{2}+nX \\
-\Lambda_2, &\quad \frac{X_1}{2}+nX\le r\le \frac{X_1}{2}+\frac{X_2}{2} +nX
+\Lambda_1 &\quad \text{if } -\frac{X_1}{2}+nX\le r\le \frac{X_1}{2}+nX, \\
+\Lambda_2 &\quad \text{otherwise}, %\frac{X_1}{2}+nX\le r\le \frac{X_1}{2}+\frac{X_2}{2} +n X,
 \end{cases}
 \label{eq-castle-wall-potential}
 \end{equation}
-where $X_1$ and $X_2$ are the two periods of the matter profile or potential, $X=X_1+X_2$, and $n$ is integer. The parametric resonance condition derived by E. Akhmedov~\cite{Akhmedov2000} is,
+where $n$ is arbitrary integer, $X$ is the period of the potential, and $\Lambda_1$, $\Lambda_2$, and $X_1$ are constants. The parametric resonance condition for the castle wall potential has been derived by E. Akhmedov~\cite{Akhmedov2000}:
 \begin{equation}
     \frac{\tan (\omega_{\mathrm m1}X_1/2)}{\tan (\omega_{\mathrm m2}X_2/2)} = - \frac{\cos 2\theta_{\mathrm m2}}{\cos 2\theta_{\mathrm m1}},
     \label{eq-akhmedov-resonance-condition-castle-wall}
 \end{equation}
-where $\omega_{\mathrm{m}i}$ and $\theta_{\mathrm{m}i}$ are the energy difference and mixing angle for potential $\Lambda_1$ and $\Lambda_2$ respectively.
-
-Even though this castle wall problem is analytically solved, the resonance condition Eqn.~(\ref{eq-akhmedov-resonance-condition-castle-wall}) itself is not transparent. In this subsection, we show that such a system is closed related to Rabi oscillations. For illustration purpose, we set the profile to be equal period for the two densities so that $X_1=X_2\equiv X/2$. To show that the neutrino flavor conversions in this castle wall matter profiles is related to Rabi oscillation, we decompose the profile using Fourier series,
+where 
 \begin{equation}
-\lambda(r) = \lambda_0 + \sum_{n=1}^{\infty} \lambda_n \cos\left( k_n  r \right),
+    \omega_{\mm i} = \omega_\vv \sqrt{ ( \Lambda_i/\omega_\vv - \cos (2\theta_\vv) )^2  + \sin^2 2\theta_\mm },
+\end{equation}
+\begin{equation}
+\theta_{\mm i} = \frac{1}{2} \arctan \left( \frac{\sin (2\theta_\vv)}{  \cos (2\theta_\vv) - \Lambda_i/\omega_\vv} \right)
+\end{equation}
+and $X_2 = X_1$. To study the parametric resonance with this particular matter profile, I will decompose the profile into a Fourier series:
+% Even though this castle wall problem is analytically solved, the resonance condition Eqn.~(\ref{eq-akhmedov-resonance-condition-castle-wall}) itself is not transparent. In this subsection, we show that such a system is closed related to Rabi oscillations. For illustration purpose, we set the profile to be equal period for the two densities so that $X_1=X_2\equiv X/2$. To show that the neutrino flavor conversions in this castle wall matter profiles is related to Rabi oscillation, we decompose the profile using Fourier series,
+\begin{equation}
+\lambda(r) = \lambda_0 + \sum_{a=1}^{\infty} \lambda_a \cos\left( k_a  r \right),
 \label{eq-castle-wall-fourier-expanded}
 \end{equation}
-where
+where I have assumed $X_1=X_2 = X/2$,
 \begin{align*}
 \lambda_0 &= (\Lambda_1 + \Lambda_2)/2, \\
-\lambda_n & = \frac{2}{(2n-1)\pi}  (-1)^n  \left( \Lambda_1 -  \Lambda_2 \right),\\
-k_n &= (2n-1)k_0, \\
-k_0 &= 2\pi/X.
+\lambda_a & = \frac{2}{(2a-1)\pi}  (-1)^a  \left( \Lambda_1 -  \Lambda_2 \right),\\
+k_a &= (2a-1)k_1, \\
+k_1 &= 2\pi/X.
 \end{align*}
-The decomposition is visualized in Fig.~\ref{app-chap:convention-sec:fourier-series-eqn:parametric-resonance-castle-wall-fourier-coeff-even}.
-
-To calculate the transitions between two mass states of background matter potential $\lambda_0$, we use the background matter basis with respect to $\lambda_0$, in which the transition is zero when varying matter profile vanishes. The Hamiltonian
-\begin{equation}
-\mathsf H^{(\mathrm m)} = - \frac{1}{2}\omega_{\mathrm m} \sigma_3  + \frac{1}{2} \sum_{n=1}^{\infty} \lambda_n \cos 2\theta_{\mathrm m} \cos\left( k_n  r \right)  \sigma_3 - \frac{1}{2} \sum_{n=1}^{\infty} \lambda_n \sin 2\theta_{\mathrm m}  \cos\left( k_n r \right) \sigma_1,
-\label{castle-wall-decomposed-hamiltonian}
-\end{equation}
-determines the transitions between the two background matter states.
+% The decomposition is visualized in Fig.~\ref{app-chap:convention-sec:fourier-series-eqn:parametric-resonance-castle-wall-fourier-coeff-even}.
+As a concrete example, I choose $\Lambda_1 = 0.3\omega_\vv \cos (2\theta_\vv)$, $\Lambda_2 = 0.7\omega_\vv \cos (2\theta_\vv)$, and $X=2\pi/\omega_\mm$. For this particular example, the Rabi mode $\{1, 0, 0, \cdots \}$ is on resonance. In Fig.~\ref{fig-akhmedovOscPlt}, I compared the numerical solution to the full equation of motion and that obtained from the Rabi formula in Eqn.~\ref{app:rabi-system-transition-probability}. They agree with each other very well.
 
 
-\begin{figure}[!htbp]
-    \centering
-    \includegraphics[width=\columnwidth]{chapters/assets/rabi/castlewall-profile}
-    \caption{The castle wall matter potential profile with $X_1=X_2=X/2$. $\Lambda_2 =0.7\omega_{\mathrm v} \cos 2\theta_{\mathrm v} $ \\  $\Lambda_1 = 0.3\omega_{\mathrm v} \cos 2\theta_{\mathrm v}$}
-    \label{fig-castlewall-profile-illustration}
-\end{figure}
+% To calculate the transitions between two mass states of background matter potential $\lambda_0$, we use the background matter basis with respect to $\lambda_0$, in which the transition is zero when varying matter profile vanishes. The Hamiltonian
+% \begin{equation}
+% \mathsf H^{(\mathrm m)} = - \frac{1}{2}\omega_{\mathrm m} \sigma_3  + \frac{1}{2} \sum_{n=1}^{\infty} \lambda_n \cos 2\theta_{\mathrm m} \cos\left( k_n  r \right)  \sigma_3 - \frac{1}{2} \sum_{n=1}^{\infty} \lambda_n \sin 2\theta_{\mathrm m}  \cos\left( k_n r \right) \sigma_1,
+% \label{castle-wall-decomposed-hamiltonian}
+% \end{equation}
+% determines the transitions between the two background matter states.
+
+
+% \begin{figure}[!htbp]
+%     \centering
+%     \includegraphics[width=\columnwidth]{chapters/assets/rabi/castlewall-profile}
+%     \caption{The castle wall matter potential profile with $X_1=X_2=X/2$. $\Lambda_2 =0.7\omega_{\mathrm v} \cos 2\theta_{\mathrm v} $ \\  $\Lambda_1 = 0.3\omega_{\mathrm v} \cos 2\theta_{\mathrm v}$}
+%     \label{fig-castlewall-profile-illustration}
+% \end{figure}
 
 
 
@@ -959,34 +968,37 @@ determines the transitions between the two background matter states.
 \begin{figure}[!htbp]
         % \includegraphics[width=\columnwidth]{chapters/assets/rabi/castle-wall-1}%
         \includegraphics[width=\columnwidth]{chapters/assets/matter/castle-wall-with-legend}%
-    \caption{Transition probabilities for castle wall matter profile calculated numerically for $\Lambda_2-\Lambda_1=0.4 \Lambda_0$. During the calculation, the energy of neutrinos is $10\,\mathrm{MeV}$, mass-squared difference is $\delta m^2=2.6\times 10^{-3}\,\mathrm{eV^2}$, and the vacuum mixing angle chosen so that $\sin^2(2\theta_\vv)=0.093$. The background potential $\Lambda_0$ is chosen so that it's half the MSW resonance potential, $\Lambda_0 = \frac{1}{2}\lambda_{\mathrm{MSW}}=\frac{1}{2}\omega_{\mathrm{v}}\cos 2\theta_{\mathrm v}$, and the base frequency is set to $k_0 = 2\pi/X = \omega_{\mathrm{m}}$.
-                 }
+    \caption{The transition probabilities of neutrino flavor conversion with a castle wall matter profile as functions of distance $r$. The period of the castle wall potential $X$ is chosen that the Rabi mode with wave number $K=1$ is on resonance.
+    %to match  base frequency . numerically for $\Lambda_2-\Lambda_1=0.4 \Lambda_0$. During the calculation, the energy of neutrinos is $10\,\mathrm{MeV}$, mass-squared difference is $\delta m^2=2.6\times 10^{-3}\,\mathrm{eV^2}$, and the vacuum mixing angle chosen so that $\sin^2(2\theta_\vv)=0.093$. The background potential $\Lambda_0$ is chosen so that it's half the MSW resonance potential, $\Lambda_0 = \frac{1}{2}\lambda_{\mathrm{MSW}}=\frac{1}{2}\omega_{\mathrm{v}}\cos 2\theta_{\mathrm v}$, and the base frequency is set to $k_0 = 2\pi/X = \omega_{\mathrm{m}}$.
+      }
     \label{fig-akhmedovOscPlt}
 \end{figure}
 
+In the above example, there are an infinite number of Rabi modes that are on resonance in addition to $\{1,0,0, \cdots\}$. In principle, one should add the amplitudes of all these resonances modes together in calculating the transition probability with the Rabi formula. However, all the Rabi modes that on resonance have very tiny amplitudes except $\{1,0,0,\cdots\}$ (see Table.~\ref{table:castle-wall-relative-detunings-some}), therefore they can be neglected in calculations. There are also an infinite number of Rabi modes that off resonance. In Table.~\ref{table:castle-wall-relative-detunings-some} I listed some of these Rabi modes with the largest amplitudes. One can see that the change to the relative detunings $\RD_{(\{n_a\})}$ of the on-resonance mode $\{1,0,0,\cdots\}$ due to the presence of the mode $\{n_a\}$ are all very small. As a result, they all have very little impact on the neutrino flavor conversion. This explains the agreement between the numerical solution and the result using the Rabi formula in Fig.~\ref{fig-akhmedovOscPlt}.
 
-The base frequency $k_0$ which is determined by the total period $X$ can be arbitrary. In this example, we choose a $X$ so that the base frequency $k_0$ matches the energy gap $\omega_{\mathrm{m}}$. Even though multiple perturbation frequencies show up in Eqn.~(\ref{castle-wall-decomposed-hamiltonian}), we identify that only the first frequency $n=1$ is the resonance frequency since we are using $k_0=\omega_{\mathrm{m}}$. As an approximation, we drop all other frequencies $n>2$ regarding the fact that they are far from resonance. Thus, similar to single frequency matter profile, the varying $\sigma_3$ terms have limited effects on the transition probabilities in our case, which leads to
-\begin{align*}
-    \mathsf H^{(\mathrm m)} \to & - \frac{1}{2}\omega_{\mathrm m} \sigma_3  - \frac{1}{2} \sum_{n=1}^2\lambda_n \sin 2\theta_{\mathrm m}  \cos\left( k_n r \right) \sigma_1\\
-    \to & - \frac{1}{2}\omega_{\mathrm m} \sigma_3  - \frac{1}{2} \sum_{n=1}^2 A_n \cos ( k_n r) \sigma_1 \\
-    & + \frac{1}{2} \sum_{n=1}^2A_n \cos(k_n r) \sigma_2,
-\end{align*}
-where
-\begin{equation*}
-A_n = \frac{\lambda_n \sin 2\theta_{\mathrm m} }{2} .
-\end{equation*}
-The relative detuning is $0$ if we have only the first mode. However, it becomes
-\begin{equation}
-\RD_1'= \frac{A_2^2}{2\lvert A_1 (\omega_{\mathrm m} - k_2) \rvert},
-\end{equation}
-if we include the second frequency $k_2$. One feature of this Fourier series expanded matter profile Eqn.~(\ref{eq-castle-wall-fourier-expanded}) is that the width of each frequency decreases as the order $n$ increases while the detuning of each frequency increases. We calculate the relative detuning for each frequency
-\begin{equation}
-\RD_n = \frac{\lvert k_n -\omega_{\mathrm m} \rvert}{ \lvert \lambda_n  \sin 2\theta_{\mathrm m}/2 \rvert } = \frac{2(n-1)(2n-1)\pi \omega_{\mathrm m}}{(\Lambda_2 - \Lambda_1)\sin 2\theta_{\mathrm m}}
-\end{equation}
-which is quadratic in $n$ and inversely proportional to $\Lambda_2-\Lambda_1$. We find that all higher frequencies $k_n$ for $n>2$ have very large relative detunings. The neutrino transition probability between the two matter states is shown in Fig.~\ref{fig-akhmedovOscPlt}, where we find the system has almost full transition.
 
-A more rigorous treatment is to use Jacobi-Anger expansion and find the Rabi modes, where we find that the mode that corresponds to single frequency $k_1$ dominates and all other modes have little destruction effect on it. Quantitatively, higher orders leads to smaller width $A_{\{n_i\}}$ yet larger detuning $\sum_{n} nk_n-\omega_{\mathrm m}$, which renders a smaller effect on the resonance mode $\{1,0\}$, since the effect is evaluated as Eqn.~(\ref{app:chap:matter-eq:relative-detuning-changed}).
-Table~\ref{tab-q-values-each-mode} lists the first few smallest relative detunings of Fig.~\ref{fig-akhmedovOscPlt}. The second column is the relative detuning of the corresponding mode, while the third column is the relative detuning of mode $\{1,0\}$ with the energy gap shift effect of the corresponding mode.
+% The base frequency $k_1$ which is determined by the total period $X$ can be arbitrary. In this example, we choose a $X$ so that the base frequency $k_0$ matches the energy gap $\omega_{\mathrm{m}}$. Even though multiple perturbation frequencies show up in Eqn.~(\ref{castle-wall-decomposed-hamiltonian}), we identify that only the first frequency $n=1$ is the resonance frequency since we are using $k_0=\omega_{\mathrm{m}}$. As an approximation, we drop all other frequencies $n>2$ regarding the fact that they are far from resonance. Thus, similar to single frequency matter profile, the varying $\sigma_3$ terms have limited effects on the transition probabilities in our case, which leads to
+% \begin{align*}
+%     \mathsf H^{(\mathrm m)} \to & - \frac{1}{2}\omega_{\mathrm m} \sigma_3  - \frac{1}{2} \sum_{n=1}^2\lambda_n \sin 2\theta_{\mathrm m}  \cos\left( k_n r \right) \sigma_1\\
+%     \to & - \frac{1}{2}\omega_{\mathrm m} \sigma_3  - \frac{1}{2} \sum_{n=1}^2 A_n \cos ( k_n r) \sigma_1 \\
+%     & + \frac{1}{2} \sum_{n=1}^2A_n \cos(k_n r) \sigma_2,
+% \end{align*}
+% where
+% \begin{equation*}
+% A_n = \frac{\lambda_n \sin 2\theta_{\mathrm m} }{2} .
+% \end{equation*}
+% The relative detuning is $0$ if we have only the first mode. However, it becomes
+% \begin{equation}
+% \RD_1'= \frac{A_2^2}{2\lvert A_1 (\omega_{\mathrm m} - k_2) \rvert},
+% \end{equation}
+% if we include the second frequency $k_2$. One feature of this Fourier series expanded matter profile Eqn.~(\ref{eq-castle-wall-fourier-expanded}) is that the width of each frequency decreases as the order $n$ increases while the detuning of each frequency increases. We calculate the relative detuning for each frequency
+% \begin{equation}
+% \RD_n = \frac{\lvert k_n -\omega_{\mathrm m} \rvert}{ \lvert \lambda_n  \sin 2\theta_{\mathrm m}/2 \rvert } = \frac{2(n-1)(2n-1)\pi \omega_{\mathrm m}}{(\Lambda_2 - \Lambda_1)\sin 2\theta_{\mathrm m}}
+% \end{equation}
+% which is quadratic in $n$ and inversely proportional to $\Lambda_2-\Lambda_1$. We find that all higher frequencies $k_n$ for $n>2$ have very large relative detunings. The neutrino transition probability between the two matter states is shown in Fig.~\ref{fig-akhmedovOscPlt}, where we find the system has almost full transition.
+
+% A more rigorous treatment is to use Jacobi-Anger expansion and find the Rabi modes, where we find that the mode that corresponds to single frequency $k_1$ dominates and all other modes have little destruction effect on it. Quantitatively, higher orders leads to smaller width $A_{\{n_i\}}$ yet larger detuning $\sum_{n} nk_n-\omega_{\mathrm m}$, which renders a smaller effect on the resonance mode $\{1,0\}$, since the effect is evaluated as Eqn.~(\ref{app:chap:matter-eq:relative-detuning-changed}).
+% Table~\ref{tab-q-values-each-mode} lists the first few smallest relative detunings of Fig.~\ref{fig-akhmedovOscPlt}. The second column is the relative detuning of the corresponding mode, while the third column is the relative detuning of mode $\{1,0\}$ with the energy gap shift effect of the corresponding mode.
 
 
 
@@ -1019,11 +1031,11 @@ Table~\ref{tab-q-values-each-mode} lists the first few smallest relative detunin
     \begin{tabular}{llll}
     \hline
     \hline
-     $\{n_a\}$ & $A_{\{n_a\}}/A_{\{1,0,0,\cdots\}}$  & $\RD$ & $\Delta \RD_{\{n_a\}}$  \\
+     $\{n_a\}$ & $A_{\{n_a\}}/A_{\{1,0,0,\cdots\}}$  & $\RD_{\{n_a\}}$ & $\Delta \RD_{(\{n_a\})}$  \\
     \hline
-    $\{-2, 1, 0,\cdots\}$ & $5.4\times 10^{-4}$ & 0 &  0 \\
-    $\{-1, -1, 1,\cdots\}$ &  $4.3\times 10^{-5}$ & 0 & 0 \\
-    $\{0, 2, -1,\cdots\}$ & $2.4\times 10^{-6}$ & 0 & 0 \\
+    $\{-2, 1, 0,\cdots\}$ & $5.4\times 10^{-4}$ & 0 &  - \\
+    $\{-1, -1, 1,\cdots\}$ &  $4.3\times 10^{-5}$ & 0 & - \\
+    $\{0, 2, -1,\cdots\}$ & $2.4\times 10^{-6}$ & 0 & - \\
     \hline
      $\{-1,0, 0, \cdots\}$ & $1$ & $48$ &  $1.0\times 10^{-2}$ \\
      $\{0,1, 0, \cdots\}$ & $0.33$ & $1.5\times 10^2$ &  $1.1\times 10^{-3}$  \\
@@ -1032,12 +1044,10 @@ Table~\ref{tab-q-values-each-mode} lists the first few smallest relative detunin
      \hline
     \end{tabular}
     % \end{ruledtabular}
-    \caption{\label{tab-q-values-each-mode}The amplitudes and relative detunings of each Rabi modes and their effect on the resonance for neutrino oscillations in castle wall matter profile.}
+    \caption{\label{table:castle-wall-relative-detunings-some}The amplitudes and relative detunings of a few Rabi modes $\{n_a\}$ and the changes to the relative detunings of the on-resonance modes due to these Rabi modes if they are off-resonance.}
 \end{table}
 %%%%%%%%%%%%%%%%%%
 %%% Using data from Mathematica notebook: akhmedov-parametric-resonance.nb
-
-
 
 
 \section{\label{conclusions}Conclusions}
