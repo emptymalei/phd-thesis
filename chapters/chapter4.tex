@@ -197,484 +197,468 @@ In the above equation I have replaced flavor isospin $\vec s$ with its projectio
 
 \section{\label{chap:collective-sec:two-beams}Two Beams Model and Linear Stability Analysis}
 
-
 Since neutrino oscillations with self-interactions is nonlinear, linear stability analysis comes into the play. I will go through the procedure and demonstrate the significance of instabilities and crossing in spectrum as well as some other symmetries. In this section, I use a simple two-beam line model which is simple mathematically but reveals the key insights.
 
-In the two-beam line model, neutrinos or antineutrinos are emitted in two different directions from a line which preserves the translation symmetry on this line. The emission angles are defined in Fig.~\ref{chap:collective-sec:two-beams-fig:two-beam-line-model}. For convenience of notations, I define a number density distribution function
-\begin{equation}
-   f(\mathbf v,\omega)= \frac{n(\mathbf v,\omega)}{n_t},
-\end{equation}
-where $n_t$ is the total number density of all neutrino emitted, $n(\mathbf v,\omega)$ is the number density with momentum direction $\mathbf v$ and energy $\omega$.
-We also define
-\begin{equation}
-   \mu = \sqrt{2}G_{\mathrm F} n_t.
-\end{equation}
-For two dimensional systems, we can calculate the neutrinos within an angle $[\theta,\theta+d\theta]$
-\begin{equation}
-   n_t f(\mathbf v,\omega) d\theta.
-\end{equation}
-Similarly we can define the angular distribution for antineutrinos.
+% Before we work out the solutions, the oscillation scale of collective oscillations can be estimated. The characteristic energy scale for vacuum oscillations is $\omega_{\mathrm v} = \delta m^2\big/2E $, while the characteristic energy scale for collective oscillations is $\mu \sim G_{\mathrm F} (1- \hat{\boldsymbol{ v} }_1 \cdot \hat{\boldsymbol{v}}_2) n_{\nu} $. Correspondingly, the vacuum oscillation frequency is
+% \begin{align*}
+%  \omega_{\mathrm v} = \frac{\Delta m^2}{2E}  \sim& \frac{2\pi}{ 1  \mathrm{km} }  \left(\frac{\Delta m^2_{32}}{2.5\times 10^{-3} \mathrm{eV}^2 } \right) \left( \frac{1MeV}{E} \right) \\
+% \sim & \frac{2\pi}{ 33  \mathrm{km} } \left( \frac{\Delta m_{12}^2}{7.5\times 10^{-5}\mathrm{eV}^2} \right) \left( \frac{1\mathrm{MeV}}{E} \right)
+% \end{align*}
+% As for collective oscillations, suppose we have neutrino flux $10^{50}\mathrm{ergs\cdot s^{-1}}$. We estimate the potential at radius $R$ to be
+% \begin{equation*}
+% \mu \sim  \frac{1}{0.01 km} \left(\frac{100\mathrm{km}}{R}\right)^2 \left(\frac{1\mathrm{MeV}}{E}\right),
+% \end{equation*}
+% which means that the collective oscillations frequencies in supernova explosions can be much smaller than vacuum oscillations.
+
+
+In the two-beam line model, neutrinos or antineutrinos are emitted in two different directions from a line which preserves the translation symmetry on this line. The beam that goes to the left contains neutrinos and that goes to the right contains antineutrinos. The emission angles are described in Fig.~\ref{chap:collective-sec:two-beams-fig:two-beam-line-model}. For simplify, I also assumed that the two beams have the same number density $n$ and no matter is involved. I also assumed the vacuum mixing angle $\theta_\vv$ to be 0 for the purpose of this section.
 
 
 \begin{figure}[!htbp]
     \centering
-    \includegraphics[width=\textwidth]{chapters/assets/dr/two-beam-line-model}
-    \caption{Geometry of two-beam model to be used in this section. Two neutrino beams are emitted, the states of which are denoted as $\rho^L$ and $\rho^R$, with number densities $n^L$ and $n^R$ respectively. The emission angles are shown in the figure as $\theta_2$ and $\theta_1$ respectively. }
+    % \includegraphics[width=\textwidth]{chapters/assets/dr/two-beam-line-model}
+    \includegraphics[width=\textwidth]{chapters/assets/collective/two-beams-model-sym}
+    \caption{The geometry of two-beam model to be used in this section. The angles left-going beam contains neutrinos and the right-going beam contains antineutrinos. The corresponding emission angles are $\theta_1$ and $\theta_2$, respectively. }
     \label{chap:collective-sec:two-beams-fig:two-beam-line-model}
 \end{figure}
 
 
-
-If all the beams are neutrinos, but with different energies for the left and right beams. The distribution function for beams is delta function. In fact, each beam is just half of the total neutrino number density $n_t$.
-
-The Hamiltonian is a sum of vacuum terms, matter terms, and self-interaction terms,
-\begin{equation}
-   \mathsf H= \mathsf H_v + \mathsf H_m + \mathsf H_{\nu\nu},
-\end{equation}
+The Hamiltonian of each beams becomes
+\begin{align}
+   \mathsf H_1 &= -\frac{1}{2} \omega_\vv \sigma_3 + \frac{1}{2} (\mu \rho_1 - \mu \rho_2), \\
+    \mathsf H_2 &= \frac{1}{2} \omega_\vv \sigma_3 + \frac{1}{2} (\mu \rho_1 - \mu \rho_2),
+\end{align}
 where
 \begin{align}
-   \mathsf H_\vv =& - \eta \frac{1}{2}\omega \sigma_3 \\
-   \mathsf H_\mm =& \frac{1}{2}\lambda \sigma_3\\
-   \mathsf H_{\nu\nu}^L =& \frac{1}{2}\mu^R \rho^R (1-\cos(\theta_1-\theta_2))\\
-   \mathsf H_{\nu\nu}^R =& \frac{1}{2}\mu^L \rho^L (1-\cos(\theta_1-\theta_2)).
+   \mu = \sqrt{2} G_{\mathrm F} \xi n
 \end{align}
-To linearize the equation of motion, we define the perturbed density matrix as
+is the neutrino self-interaction potential and
 \begin{equation}
-   \rho = \frac{1}{2}\begin{pmatrix}
-   1 & \epsilon\\
-   \epsilon^* & -1
-   \end{pmatrix},
+    \xi =  1 - \cos(\theta_1 - \theta_2) 
 \end{equation}
-where we have removed the trace part because it is alway time independent.
+is the geometric factor.
 
-
-The linearized equation of motion becomes
-\small\begin{align}
-   &\ri \partial_z \begin{pmatrix}
-   \epsilon_1 \\
-   \epsilon_2
-   \end{pmatrix} =  - i \begin{pmatrix}\cot\theta_1\partial_x & 0 \\
-   0 & \cot\theta_2 \partial_x
-   \end{pmatrix} \begin{pmatrix}
-   \epsilon_1 \\
-   \epsilon_2
-   \end{pmatrix} + \nonumber\\
-   &
-   \frac{1}{2}\begin{pmatrix}
-   (\lambda+ \mu_2 - \eta \omega_1 - \mu_2 \cos(\theta_1-\theta_2) )/\sin \theta_1 & -\mu_2 (1-\cos(\theta_1-\theta_2)) /\sin \theta_1\\
-   -\mu_1 (1- \cos(\theta_1-\theta_2))/\sin\theta_2 & (\lambda + \mu_1 - \eta \omega_2 - \mu_1 \cos(\theta_1-\theta_2) )/\sin\theta_2
-   \end{pmatrix}\begin{pmatrix}
-   \epsilon_1 \\
-   \epsilon_2
-   \end{pmatrix},
-   \label{chap:collective-sec:two-beams-eqn:line-model-two-beams-all-neutrino-linearized-eom}
-\end{align}\normalsize
-where
-\begin{align*}
-   \mu_1 =& \sqrt{2}G_F n_{t,1}\\
-   \mu_2 =& \sqrt{2}G_F n_{t,2}.
-\end{align*}
-
-
-
-\subsection{Left-right Symmetric Emission}
-
-
-We first consider a simple case, where $\theta_1=\pi-\theta_2\equiv\theta$, $\lambda=0$, $\eta=1$, and homogeneous in $x$ direction. For simplicity we define
-\begin{align*}
-   \mu =& \sqrt{2}G_F (n_1 + n_2)\\
-   \mu_i =& \mu \frac{n_i}{n_1+n_2}\equiv \mu f_i \\
-   \xi = & 1-\cos(\theta_1-\theta_2) \\
-   \omega'_i = & \lambda - \eta\omega_i.
-\end{align*}
-
-% I am aware that this is not a self-consistent example since $\theta_1=\theta_2$ indicates that $\xi=0$. As we will see, no instability is present in this case. However, we keep the term $\xi$ because we need to analyze the effect of symmetry breaking. This example builds up a formalism.
-
-The equation for perturbations becomes
+This model is numerically solved and presented in Fig.~\ref{chap:collective-sec:two-beams-fig:two-beam-line-model-numerical-solution}. The neutrinos and antineutrinos are prepared to be in almost electron flavor but with a small perturbations
 \begin{equation}
-   i\partial_z\begin{pmatrix}
-   \epsilon_1 \\
-   \epsilon_2
-   \end{pmatrix} = \frac{1}{2\sin\theta} \begin{pmatrix}
-   \omega'_1 + \mu f_2\xi & -\mu f_2 \xi \\
-   -\mu f_1 \xi & \omega'_2 + \mu f_1 \xi
-   \end{pmatrix}\begin{pmatrix}
-   \epsilon_1 \\
-   \epsilon_2
-   \end{pmatrix}.
-   \label{eqn-linearized-eom-symmetric-eg}
+    \rho_i  = \frac{1}{2} \begin{pmatrix}
+        1 & \epsilon_i \\
+        \epsilon_i & -1
+    \end{pmatrix},
+    \label{chap:collective-sec:two-beams-eqn:density-matrix-perturbed}
 \end{equation}
-Since $\mu$ is the most important energy scale in this problem, we scale all energies with it.
+where $\epsilon_i$ is a small perturbation. I have removed the trace part because it is alway time independent in our model and commutes with the Hamiltonian.
+For the numerical calculation, I have used $\epsilon_i = 10^{-3}$. In the beginning, the flavor isospin of the neutrino beam stays in the electron flavor state, i.e., in the direction of $s_3$ (see left panel of Fig.~\ref{chap:collective-sec:two-beams-fig:two-beam-line-model-numerical-solution}). It slowly deviates from the $s_3$ axes and rapidly falls down at some $z$. Then the flavor isospin comes back to its original position. The antineutrinos follow a similar pattern but is in a different direction. As shown in the right panel of  Fig.~\ref{chap:collective-sec:two-beams-fig:two-beam-line-model-numerical-solution}, the electron flavor is converted the other flavor in a way that is very different from the vacuum oscillations that I have showed in Fig.~\ref{chap:basics-section:neutrinos-fig:vacuum-2-flavor-osc}.
+
+\begin{figure}[!htbp]
+    \centering
+    \includegraphics[width=\textwidth]{chapters/assets/collective/bipolar-animie100}
+    \caption{The numerical solution to the two-beam model. The left panel shows the position of the flavor isospin of the neutrino beam and antineutrino beam. The right panel shows the electron flavor survival probabilities as a function of $z$ for both beams. The emission angles used in this calculation are $\theta_1=5\pi/6$ and $\theta_2=\pi/6$. The neutrino self-interaction potential is $\mu=5\lvert \omega_\vv\rvert$. }
+    \label{chap:collective-sec:two-beams-fig:two-beam-line-model-numerical-solution}
+\end{figure}
+
+To analytically approach this problem, I will linearize the equation of motion and solve the neutrino flavor evolution in the linear regime. I start with the perturbed density matrix in Eqn.~\ref{chap:collective-sec:two-beams-eqn:density-matrix-perturbed} and plug it into the equation of motion. The linearized equation of motion is
 \begin{equation}
-   i\partial_{\hat z}\begin{pmatrix}
-   \epsilon_1 \\
-   \epsilon_2
-   \end{pmatrix} = \frac{1}{2\sin\theta} \begin{pmatrix}
-   \hat\omega'_1 +  f_2\xi & - f_2 \xi \\
-   - f_1 \xi & \hat\omega'_2 +  f_1 \xi
-   \end{pmatrix}\begin{pmatrix}
-   \epsilon_1 \\
-   \epsilon_2
-   \end{pmatrix},
+    \ri \partial_z \begin{pmatrix}
+        \epsilon_1 \\
+        \epsilon_2
+    \end{pmatrix} = \frac{1}{2} \begin{pmatrix}
+        \mu + 2\omega_\vv & - \mu \\
+        \mu & -2 \omega_\vv - \mu
+    \end{pmatrix} \begin{pmatrix}
+        \epsilon_1 \\
+        \epsilon_2
+    \end{pmatrix}.
 \end{equation}
-where
-\begin{align*}
-   \partial_{\hat z} =& \frac{d}{\mu dz} \\
-   \hat \omega'_i =& \frac{\omega'_i}{\mu}.
-\end{align*}
-
-
-The characteristic equation for this equation is
+It can be solved by assuming a collective mode
 \begin{equation}
-   \left( ( \Omega - \hat\omega'_1 - f_2\xi )(\Omega - \hat\omega'_2-f_1\xi) - f_1 f_2 \xi^2 \right) =0,
-   \label{chap:collective-sec:two-beams-eqn:two-beam-line-characteristic-eqn-simple}
+    \begin{pmatrix}
+        \epsilon_1 (z) \\
+        \epsilon_2 (z)
+    \end{pmatrix} = \begin{pmatrix}
+        \epsilon_1 (0) \\
+        \epsilon_2 (0)
+    \end{pmatrix} e^{i K_z z},
+    \label{chap:collective-sec:two-beams-eqn:equation-of-motion-collective-mode-assumption}
 \end{equation}
-which is simplified to
-\begin{equation*}
-   (\Omega-\Omega_1)(\Omega-\Omega_2) -f_1f_2\xi^2 = 0,
-\end{equation*}
-where
-\begin{align*}
-   \Omega_1 = & \hat\omega'_1 + f_2 \xi\\
-   \Omega_2 = & \hat\omega'_2 + f_1 \xi.
-\end{align*}
-Complete the square
-\begin{equation*}
-   (\Omega - (\Omega_1 + \Omega_2)/2)^2 = \frac{1}{4}(\Omega_1-\Omega_2) + f_1f_2\xi^2.
-\end{equation*}
-The solution becomes
+where $K_z$ is the collective wave number of the neutrinos. The eigenvalues of the equation of motion gives the collective wave number
 \begin{equation}
-   \Omega = \frac{1}{2}(\Omega_1+\Omega_2)\pm\sqrt{ (\Omega_1-\Omega_2)^2/4 + f_1f_2\xi^2 }.
+    K_z = \pm \sqrt{ \omega_\vv (\omega_\vv + \mu) }.
 \end{equation}
-The condition to have positive imaginary part is
-\begin{equation*}
-   (\Omega_1-\Omega_2)^2 + 4f_1f_2\xi^2 < 0,
-\end{equation*}
-or
-\begin{equation*}
-   -2\sqrt{-f_1f_2\xi^2}<\Omega_1-\Omega_2<2\sqrt{-f_1f_2\xi^2},
-\end{equation*}
-and $f_1f_2\xi^2<0$. Recall the meaning of $f_i$,
-\begin{equation*}
-   f_i = \frac{n_i}{n_1+n_2},
-\end{equation*}
-instability requires that we have a spectrum crossing, i.e., $n_1$ and $n_2$ have different signs. Plug in the definitions of $\Omega_i$,
-\begin{equation*}
-   -2\sqrt{-f_1f_2\xi^2}< \eta(- \omega_1 + \omega_2)/\mu + (f_2 - f_1)\xi < 2\sqrt{-f_1f_2\xi^2}.
-\end{equation*}
-From this we can infer
-\begin{itemize}
-    \item $f_1f_2$ has to be negative, which means we can NOT have instabilities with only neutrinos or antineutrinos with all the symmetries we assumed. This is crossing.
-
-\item $-\omega_1+\omega_2=0$ will remove the instability. So we have to have both neutrinos and antineutrinos.
-\item $f_2-f_1$, $\eta(\omega_2-\omega_1)$, and $\mu$ set limit on each other.
-\item $\theta_1=\theta_2\equiv \theta$ removes the instability since it leads to $\xi=0$. The emission has to be asymmetric in this simple two beams model. This is trivial since equal emission angle means the beams are not colliding.
-\end{itemize}
-
-
-% .. admonition:: But why?
-%   :class: warning
-
-%   We have these conclusions. But why?
-
-%   What are the roles of
-
-%   1. :math:`f_i`,
-%   2. neutrino beam and antineutrino beam,
-%   3. hierarchy,
-%   4. neutrino number density variations,
-%   5. variations of angular distributions of neutrinos,
-%   6. variations of energy spectrum of neutrinos.
-
-
-Another way of understanding this equation is to think of it as the growth of the length of the vector $\vec v = (\epsilon_1,\epsilon_2)^T$. For an arbitrary matrix differential equation of the form
-\begin{equation*}
-  \partial_z \mathbf v = \mathbf A \mathbf v,
-\end{equation*}
-we can always decompose the matrix $\mathbf A$ into symmetric part and skew-symmetric part
-\begin{equation*}
-  \mathbf A = \frac{1}{2}(\mathbf A + \mathbf A^T) + \frac{1}{2}(\mathbf A - \mathbf A^T) \equiv \mathbf A^+ + \mathbf A^-.
-\end{equation*}
-We can identify the effect of $f_1-f_2$ but this is not particularly useful since we can not say anything about the eigenvalues of matrix $\mathbf A$ from the eigenvalues of matrix $\mathbf A^+$ and $\mathbf A^-$.
-
-
-
-\subsection{Breaking Symmetries}
-
-
-
-For a line model, the symmetries we have are
-\begin{itemize}
-    \item Time translation symmetry;
-\item Translation symmetry along the line;
-\item Energy spectrum of the beams; One of particular interest is to have different neutrino spheres for different energies which can be investigated using two beam model.
-\item Number density of left and right beams;
-\item Angle of left and right beams;
-\item With and without matter.
-\item Similar to the discussion of varying matter potential, symmetries can be broken globally, i.e., distribution as a function of spacetime coordinates.
-\end{itemize}
-
-I will discuss some of the symmetries mentioned above.
-
-
-
-\subsubsection{Emission Angle Parity Symmetry}
-
-The emission angles change the value of $\xi=1-\cos(\theta_1-\theta_2)$ as well as rescale the quantities by angle dependent factor $1/\sin\theta_i$.
-
-To see the importance of angles, we can redefine some quantities
-\begin{align*}
-   \omega''_i=& \frac{\omega'_i}{\sin\theta_i}\\
-   f''_1=&\frac{f_1}{\sin\theta_2} \\
-   f''_2=&\frac{f_2}{\sin\theta_1}.
-\end{align*}
-The we will reach the same characteristic equation as Eqn. \ref{chap:collective-sec:two-beams-eqn:two-beam-line-characteristic-eqn-simple}. So the angles serves as shift of energy gap and angular distribution.
-
-The region of instability changes in a convoluted way. Given angles we can always write down the expression and find out.
-\begin{itemize}
-    \item  The criteria of existence of instability doesn't change.
-\item  The region of instability changes.
-\end{itemize}
-
-
-\subsubsection{Matter Effect}
-
-
-Including matter will define vacuum frequencies, $\omega'_i$, which is effectively just a shift of vacuum frequencies. In the symmetric emission case, $\omega'_1-\omega'_2$ is independent of matter effect. But breaking the emission symmetry generates the degeneracy,
+When $\omega_\vv(\omega_\vv + \mu) < 0$, I obtain imaginary values for wave number $K_z$, which means that the perturbation will grow exponentially in $z$ direction. For normal hierarchy ($\omega_\vv > 0$), it requires
 \begin{equation}
-   \hat\omega''_1-\hat\omega''_2=( \lambda/\sin\theta_1 - \lambda/\sin\theta_2 + \eta(- \omega_1/\sin\theta_1 + \omega_2/\sin\theta_2) )/\mu`.
+    \mu < -\omega_\vv < 0,
+\end{equation}
+which can not happen. Thus it is not possible to have flavor instability in normal hierarchy. On the other hand, flavor instabilities can occur in inverted hierarchy ($\omega_\vv$) when
+\begin{equation}
+    \mu > \lvert \omega_\vv \rvert.
 \end{equation}
 
-We notice that very large matter density shift the region to very small $\mu$.
 
-However, matter effect is not always this simple. Suppose we have different matter potential for different beams, when they collide they would have built a different phase due to matter effect.
 
-The inhomogeneous matter effect has been studied in \cite{Mangano2014}. It can excite high Fourier moments of flavor-isospin picture, which makes a lot of sense because it generates fine structure in the x direction. This might be integrated into LESA effect.
+% The linearized equation of motion becomes
+% \small\begin{align}
+%    &\ri \partial_z \begin{pmatrix}
+%    \epsilon_1 \\
+%    \epsilon_2
+%    \end{pmatrix} =  - i \begin{pmatrix}\cot\theta_1\partial_x & 0 \\
+%    0 & \cot\theta_2 \partial_x
+%    \end{pmatrix} \begin{pmatrix}
+%    \epsilon_1 \\
+%    \epsilon_2
+%    \end{pmatrix} + \nonumber\\
+%    &
+%    \frac{1}{2}\begin{pmatrix}
+%    (\lambda+ \mu_2 - \eta \omega_1 - \mu_2 \cos(\theta_1-\theta_2) )/\sin \theta_1 & -\mu_2 (1-\cos(\theta_1-\theta_2)) /\sin \theta_1\\
+%    -\mu_1 (1- \cos(\theta_1-\theta_2))/\sin\theta_2 & (\lambda + \mu_1 - \eta \omega_2 - \mu_1 \cos(\theta_1-\theta_2) )/\sin\theta_2
+%    \end{pmatrix}\begin{pmatrix}
+%    \epsilon_1 \\
+%    \epsilon_2
+%    \end{pmatrix},
+%    \label{chap:collective-sec:two-beams-eqn:line-model-two-beams-all-neutrino-linearized-eom}
+% \end{align}\normalsize
+% where
+% \begin{align*}
+%    \mu_1 =& \sqrt{2}G_F n_{t,1}\\
+%    \mu_2 =& \sqrt{2}G_F n_{t,2}.
+% \end{align*}
+
+
+
+% \subsection{Left-right Symmetric Emission}
+
+
+% We first consider a simple case, where $\theta_1=\pi-\theta_2\equiv\theta$, $\lambda=0$, $\eta=1$, and homogeneous in $x$ direction. For simplicity we define
+% \begin{align*}
+%    \mu =& \sqrt{2}G_F (n_1 + n_2)\\
+%    \mu_i =& \mu \frac{n_i}{n_1+n_2}\equiv \mu f_i \\
+%    \xi = & 1-\cos(\theta_1-\theta_2) \\
+%    \omega'_i = & \lambda - \eta\omega_i.
+% \end{align*}
+
+% % I am aware that this is not a self-consistent example since $\theta_1=\theta_2$ indicates that $\xi=0$. As we will see, no instability is present in this case. However, we keep the term $\xi$ because we need to analyze the effect of symmetry breaking. This example builds up a formalism.
+
+% The equation for perturbations becomes
+% \begin{equation}
+%    i\partial_z\begin{pmatrix}
+%    \epsilon_1 \\
+%    \epsilon_2
+%    \end{pmatrix} = \frac{1}{2\sin\theta} \begin{pmatrix}
+%    \omega'_1 + \mu f_2\xi & -\mu f_2 \xi \\
+%    -\mu f_1 \xi & \omega'_2 + \mu f_1 \xi
+%    \end{pmatrix}\begin{pmatrix}
+%    \epsilon_1 \\
+%    \epsilon_2
+%    \end{pmatrix}.
+%    \label{eqn-linearized-eom-symmetric-eg}
+% \end{equation}
+% Since $\mu$ is the most important energy scale in this problem, we scale all energies with it.
+% \begin{equation}
+%    i\partial_{\hat z}\begin{pmatrix}
+%    \epsilon_1 \\
+%    \epsilon_2
+%    \end{pmatrix} = \frac{1}{2\sin\theta} \begin{pmatrix}
+%    \hat\omega'_1 +  f_2\xi & - f_2 \xi \\
+%    - f_1 \xi & \hat\omega'_2 +  f_1 \xi
+%    \end{pmatrix}\begin{pmatrix}
+%    \epsilon_1 \\
+%    \epsilon_2
+%    \end{pmatrix},
+% \end{equation}
+% where
+% \begin{align*}
+%    \partial_{\hat z} =& \frac{d}{\mu dz} \\
+%    \hat \omega'_i =& \frac{\omega'_i}{\mu}.
+% \end{align*}
+
+
+% The characteristic equation for this equation is
+% \begin{equation}
+%    \left( ( \Omega - \hat\omega'_1 - f_2\xi )(\Omega - \hat\omega'_2-f_1\xi) - f_1 f_2 \xi^2 \right) =0,
+%    \label{chap:collective-sec:two-beams-eqn:two-beam-line-characteristic-eqn-simple}
+% \end{equation}
+% which is simplified to
+% \begin{equation*}
+%    (\Omega-\Omega_1)(\Omega-\Omega_2) -f_1f_2\xi^2 = 0,
+% \end{equation*}
+% where
+% \begin{align*}
+%    \Omega_1 = & \hat\omega'_1 + f_2 \xi\\
+%    \Omega_2 = & \hat\omega'_2 + f_1 \xi.
+% \end{align*}
+% Complete the square
+% \begin{equation*}
+%    (\Omega - (\Omega_1 + \Omega_2)/2)^2 = \frac{1}{4}(\Omega_1-\Omega_2) + f_1f_2\xi^2.
+% \end{equation*}
+% The solution becomes
+% \begin{equation}
+%    \Omega = \frac{1}{2}(\Omega_1+\Omega_2)\pm\sqrt{ (\Omega_1-\Omega_2)^2/4 + f_1f_2\xi^2 }.
+% \end{equation}
+% The condition to have positive imaginary part is
+% \begin{equation*}
+%    (\Omega_1-\Omega_2)^2 + 4f_1f_2\xi^2 < 0,
+% \end{equation*}
+% or
+% \begin{equation*}
+%    -2\sqrt{-f_1f_2\xi^2}<\Omega_1-\Omega_2<2\sqrt{-f_1f_2\xi^2},
+% \end{equation*}
+% and $f_1f_2\xi^2<0$. Recall the meaning of $f_i$,
+% \begin{equation*}
+%    f_i = \frac{n_i}{n_1+n_2},
+% \end{equation*}
+% instability requires that we have a spectrum crossing, i.e., $n_1$ and $n_2$ have different signs. Plug in the definitions of $\Omega_i$,
+% \begin{equation*}
+%    -2\sqrt{-f_1f_2\xi^2}< \eta(- \omega_1 + \omega_2)/\mu + (f_2 - f_1)\xi < 2\sqrt{-f_1f_2\xi^2}.
+% \end{equation*}
+% From this we can infer
+% \begin{itemize}
+%     \item $f_1f_2$ has to be negative, which means we can NOT have instabilities with only neutrinos or antineutrinos with all the symmetries we assumed. This is crossing.
 
+% \item $-\omega_1+\omega_2=0$ will remove the instability. So we have to have both neutrinos and antineutrinos.
+% \item $f_2-f_1$, $\eta(\omega_2-\omega_1)$, and $\mu$ set limit on each other.
+% \item $\theta_1=\theta_2\equiv \theta$ removes the instability since it leads to $\xi=0$. The emission has to be asymmetric in this simple two beams model. This is trivial since equal emission angle means the beams are not colliding.
+% \end{itemize}
 
 
-\subsubsection{Translation Symmetry}
+% % .. admonition:: But why?
+% %   :class: warning
 
+% %   We have these conclusions. But why?
 
-Translation symmetry is better explained by introducing Fourier transform in x direction.
+% %   What are the roles of
 
-For each mode, a term that is proportional to Fourier mode index $m$. It only appears in diagonal elements, thus is effectively a shift of vacuum frequencies, thus energies of neutrinos.
+% %   1. :math:`f_i`,
+% %   2. neutrino beam and antineutrino beam,
+% %   3. hierarchy,
+% %   4. neutrino number density variations,
+% %   5. variations of angular distributions of neutrinos,
+% %   6. variations of energy spectrum of neutrinos.
 
-For each Fourier mode
-\begin{equation*}
-   \begin{pmatrix}
-   \epsilon_1 \\
-   \epsilon_2
-   \end{pmatrix} =  \mathbf Q(\Omega,k) e^{-i(\Omega t- k x)},
-\end{equation*}
-where we set $\Omega=0$.
 
-First term in RHS of Eqn.~ \ref{chap:collective-sec:two-beams-eqn:line-model-two-beams-all-neutrino-linearized-eom} becomes
-\begin{equation*}
-   - i \begin{pmatrix}\cot\theta_1\partial_x & 0 \\
-   0 & \cot\theta_2 \partial_x
-   \end{pmatrix} \begin{pmatrix}
-   \epsilon_1 \\
-   \epsilon_2
-   \end{pmatrix} = k \begin{pmatrix}\cot\theta_1 & 0 \\
-   0 & \cot\theta_2
-   \end{pmatrix} \begin{pmatrix}
-   Q_1 \\
-   Q_2
-   \end{pmatrix}.
-\end{equation*}
-We now define $\hat\omega''_i$, so that
-\begin{equation*}
-   \hat\omega''_{k,i} = \hat \omega''_i + 2\hat k\cot\theta_i,
-\end{equation*}
-where $\hat k=k/\mu$.
+% Another way of understanding this equation is to think of it as the growth of the length of the vector $\vec v = (\epsilon_1,\epsilon_2)^T$. For an arbitrary matrix differential equation of the form
+% \begin{equation*}
+%   \partial_z \mathbf v = \mathbf A \mathbf v,
+% \end{equation*}
+% we can always decompose the matrix $\mathbf A$ into symmetric part and skew-symmetric part
+% \begin{equation*}
+%   \mathbf A = \frac{1}{2}(\mathbf A + \mathbf A^T) + \frac{1}{2}(\mathbf A - \mathbf A^T) \equiv \mathbf A^+ + \mathbf A^-.
+% \end{equation*}
+% We can identify the effect of $f_1-f_2$ but this is not particularly useful since we can not say anything about the eigenvalues of matrix $\mathbf A$ from the eigenvalues of matrix $\mathbf A^+$ and $\mathbf A^-$.
 
-The $k$ term contributes to the difference between $\Omega_{k,i}\equiv \hat\omega''_{k,i}+ f''_i\xi$.
 
-We notice that instability criteria doesn't change. However, the regime of instability changes. We also know that the instability region is determined by
-\begin{equation}
-   \lvert \Delta\hat\omega''_{12} + 2\hat k (\cot \theta_1 - \cot\theta_2) + \Delta f''_{12}\xi \rvert < \sqrt{-f_1f_2\xi^2},
-\end{equation}
-where $\Delta \hat \omega''_{12} = \hat\omega''_1-\hat\omega''_2$. The instability region shift from
-\begin{equation}
-   -\sqrt{-f''_1f''_2\xi^2} -\Delta f''_{12}\xi < (\Delta\omega''_{12} + 2 k(\cot\theta_1-\cot\theta_2))/\mu < \sqrt{-f''_1f''_2\xi^2} -\Delta f''_{12}\xi
-\end{equation}
-If $\lvert \Delta\omega''_{12} + 2 k(\cot\theta_1-\cot\theta_2) \rvert$ becomes larger, the region of instability is shifted to larger $\mu$, i.e., larger number density.
 
+% \subsection{Breaking Symmetries}
+
 
 
-\subsubsection{Number Density of Emission}
+% For a line model, the symmetries we have are
+% \begin{itemize}
+%     \item Time translation symmetry;
+% \item Translation symmetry along the line;
+% \item Energy spectrum of the beams; One of particular interest is to have different neutrino spheres for different energies which can be investigated using two beam model.
+% \item Number density of left and right beams;
+% \item Angle of left and right beams;
+% \item With and without matter.
+% \item Similar to the discussion of varying matter potential, symmetries can be broken globally, i.e., distribution as a function of spacetime coordinates.
+% \end{itemize}
 
+% I will discuss some of the symmetries mentioned above.
 
-A crossing is required to have instability, i.e., $-f''_1f''_2>0$. Meanwhile the number density on the left and right have little effects on the existence of instability. It shifts the region of instability for $\mu$.
 
 
-\subsubsection{Energy of Emission}
+% \subsubsection{Emission Angle Parity Symmetry}
 
+% The emission angles change the value of $\xi=1-\cos(\theta_1-\theta_2)$ as well as rescale the quantities by angle dependent factor $1/\sin\theta_i$.
 
+% To see the importance of angles, we can redefine some quantities
+% \begin{align*}
+%    \omega''_i=& \frac{\omega'_i}{\sin\theta_i}\\
+%    f''_1=&\frac{f_1}{\sin\theta_2} \\
+%    f''_2=&\frac{f_2}{\sin\theta_1}.
+% \end{align*}
+% The we will reach the same characteristic equation as Eqn. \ref{chap:collective-sec:two-beams-eqn:two-beam-line-characteristic-eqn-simple}. So the angles serves as shift of energy gap and angular distribution.
 
-Different energy of two beams will make sure $-\omega_1 + \omega_2\neq 0$. It has no effects on the criteria but changes the $\mu$ region of instability.
+% The region of instability changes in a convoluted way. Given angles we can always write down the expression and find out.
+% \begin{itemize}
+%     \item  The criteria of existence of instability doesn't change.
+% \item  The region of instability changes.
+% \end{itemize}
 
 
-% \subsubsection{Time Translation Symmetry}
+% \subsubsection{Matter Effect}
 
 
+% Including matter will define vacuum frequencies, $\omega'_i$, which is effectively just a shift of vacuum frequencies. In the symmetric emission case, $\omega'_1-\omega'_2$ is independent of matter effect. But breaking the emission symmetry generates the degeneracy,
+% \begin{equation}
+%    \hat\omega''_1-\hat\omega''_2=( \lambda/\sin\theta_1 - \lambda/\sin\theta_2 + \eta(- \omega_1/\sin\theta_1 + \omega_2/\sin\theta_2) )/\mu`.
+% \end{equation}
 
-% .. admonition:: Time Translational Symmetry
-%   :class: warning
+% We notice that very large matter density shift the region to very small $\mu$.
 
-%   How about time translational symmetry? I need to write down the equation of motion that is related to time.
+% However, matter effect is not always this simple. Suppose we have different matter potential for different beams, when they collide they would have built a different phase due to matter effect.
 
-%   Two limits are of particular interest.
+% The inhomogeneous matter effect has been studied in \cite{Mangano2014}. It can excite high Fourier moments of flavor-isospin picture, which makes a lot of sense because it generates fine structure in the x direction. This might be integrated into LESA effect.
 
-%   1. Adiabatic limit,
-%   2. Superfast time variants.
 
 
+% \subsubsection{Translation Symmetry}
 
 
-\subsubsection{General Solutions to Line Model}
+% Translation symmetry is better explained by introducing Fourier transform in x direction.
 
+% For each mode, a term that is proportional to Fourier mode index $m$. It only appears in diagonal elements, thus is effectively a shift of vacuum frequencies, thus energies of neutrinos.
 
-For completeness, we solve the general line model, c.f.~Eqn.~\ref{chap:collective-sec:two-beams-eqn:line-model-two-beams-all-neutrino-linearized-eom}. We know that real symmetric matrix has only real eigenvalues, from which we infer that $\mu_1=\mu_2$ and $\theta_1=\theta_2$ removes the instability.
-For translation symmetric models, that is $\partial_x\to 0$, we have the eigenvalues
-\begin{equation*}
-   \Omega = \frac{1}{4}(A\pm B),
-\end{equation*}
-where
-\begin{align*}
-   A=& -\eta \omega_1/\sin\theta_1 - \mu_2 /\sin\theta_1 + \eta \omega_2 /\sin\theta_2 + \mu_1 \xi /\sin\theta_2 + \lambda(1/\sin\theta_1 + 1/\sin\theta_2)  \\
-   B=& \left(
-      -4[(\lambda-\eta\omega_1)(\lambda +\eta\omega_2) + (\lambda (\mu_1-\mu_2) -\eta (\mu_1\omega_1 + \mu_2\omega_2) )\xi ] \sin\theta_1 \sin\theta_2\right. \\
-      &\left.+ [(\lambda + \eta\omega_2 + \mu_1\xi) \sin\theta_1 + (\lambda - \eta \omega_1 - \mu_2\xi) \sin\theta_2 ]^2
-   \right)^{1/2}/(\sin\theta_1\sin\theta_2)\\
-   \xi=&1-\cos(\theta_1-\theta_2).
-\end{align*}
+% For each Fourier mode
+% \begin{equation*}
+%    \begin{pmatrix}
+%    \epsilon_1 \\
+%    \epsilon_2
+%    \end{pmatrix} =  \mathbf Q(\Omega,k) e^{-i(\Omega t- k x)},
+% \end{equation*}
+% where we set $\Omega=0$.
 
+% First term in RHS of Eqn.~ \ref{chap:collective-sec:two-beams-eqn:line-model-two-beams-all-neutrino-linearized-eom} becomes
+% \begin{equation*}
+%    - i \begin{pmatrix}\cot\theta_1\partial_x & 0 \\
+%    0 & \cot\theta_2 \partial_x
+%    \end{pmatrix} \begin{pmatrix}
+%    \epsilon_1 \\
+%    \epsilon_2
+%    \end{pmatrix} = k \begin{pmatrix}\cot\theta_1 & 0 \\
+%    0 & \cot\theta_2
+%    \end{pmatrix} \begin{pmatrix}
+%    Q_1 \\
+%    Q_2
+%    \end{pmatrix}.
+% \end{equation*}
+% We now define $\hat\omega''_i$, so that
+% \begin{equation*}
+%    \hat\omega''_{k,i} = \hat \omega''_i + 2\hat k\cot\theta_i,
+% \end{equation*}
+% where $\hat k=k/\mu$.
 
-For antineutrinos, I only need to change $\mu_i\to -\bar\mu_i$ and $\omega_i\to -\bar\omega_i$, where $\bar\mu=\sqrt{2}G_F \bar n_t$, so that the equation becomes
-\small\begin{align*}
-  &i \partial_z \begin{pmatrix}
-  \epsilon_1 \\
-  \epsilon_2
-  \end{pmatrix} =  - i \begin{pmatrix}\cot\theta_1\partial_x & 0 \\
-  0 & \cot\theta_2 \partial_x
-  \end{pmatrix} \begin{pmatrix}
-  \epsilon_1 \\
-  \epsilon_2
-  \end{pmatrix} \\
-  &+
-  \frac{1}{2}\begin{pmatrix}
-  (\lambda-\bar\mu_2 + \eta \bar\omega_1 + \bar\mu_2 \cos(\theta_1-\theta_2) )/\sin \theta_1 & \bar\mu_2 (1-\cos(\theta_1-\theta_2)) /\sin \theta_1 \\
-  \bar\mu_1 (1- \cos(\theta_1-\theta_2))/\sin\theta_2 & (\lambda -\bar\mu_1 + \eta \bar\omega_2 +\bar\mu_1 \cos(\theta_1-\theta_2) )/\sin\theta_2
-  \end{pmatrix}\begin{pmatrix}
-  \epsilon_1 \\
-  \epsilon_2
-  \end{pmatrix}
-\end{align*}\normalsize
+% The $k$ term contributes to the difference between $\Omega_{k,i}\equiv \hat\omega''_{k,i}+ f''_i\xi$.
 
-Assume that the left beam is neutrino beam and the right beam is antineutrno beam. The linearized equation of motion becomes
-\small
-\begin{align*}
-  &i\partial_z \begin{pmatrix}
-  \epsilon_1 \\
-  \epsilon_2
-  \end{pmatrix} =  -i\begin{pmatrix}
-  \cot\theta_1 \partial_x & 0 \\
-  0 & \cot\theta_2 \partial_x
-  \end{pmatrix}\begin{pmatrix}
-  \epsilon_1 \\
-  \epsilon_2
-  \end{pmatrix} \\
-  &+ \frac{1}{2}\begin{pmatrix}
-  (\lambda - \bar\mu - 2\eta \omega_1 + \bar\mu \cos(\theta_1-\theta_2) )/\sin\theta_1 & \bar\mu (1-\cos(\theta_1-\theta_2))/\sin\theta_1 \\
-  -\mu(1-\cos(\theta_1-\theta_2))/\sin\theta_2 & (\lambda + \mu + \eta \omega_2 - \mu \cos(\theta_1-\theta_2) )/\sin\theta_2
-  \end{pmatrix}\begin{pmatrix}
-  \epsilon_1 \\
-  \epsilon_2
-  \end{pmatrix}
-\end{align*}
-\normalsize
+% We notice that instability criteria doesn't change. However, the regime of instability changes. We also know that the instability region is determined by
+% \begin{equation}
+%    \lvert \Delta\hat\omega''_{12} + 2\hat k (\cot \theta_1 - \cot\theta_2) + \Delta f''_{12}\xi \rvert < \sqrt{-f_1f_2\xi^2},
+% \end{equation}
+% where $\Delta \hat \omega''_{12} = \hat\omega''_1-\hat\omega''_2$. The instability region shift from
+% \begin{equation}
+%    -\sqrt{-f''_1f''_2\xi^2} -\Delta f''_{12}\xi < (\Delta\omega''_{12} + 2 k(\cot\theta_1-\cot\theta_2))/\mu < \sqrt{-f''_1f''_2\xi^2} -\Delta f''_{12}\xi
+% \end{equation}
+% If $\lvert \Delta\omega''_{12} + 2 k(\cot\theta_1-\cot\theta_2) \rvert$ becomes larger, the region of instability is shifted to larger $\mu$, i.e., larger number density.
 
 
-% Numerical Calculations
-% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+% \subsubsection{Number Density of Emission}
 
-% We assume the two beams have different energy, as indicated by :math:`\omega_1` and :math:`\omega_2` in Eq. \ref{chap:collective-sec:two-beams-eqn:line-model-two-beams-all-neutrino-linearized-eom}
 
+% A crossing is required to have instability, i.e., $-f''_1f''_2>0$. Meanwhile the number density on the left and right have little effects on the existence of instability. It shifts the region of instability for $\mu$.
 
-% For numerical calcualtions, we scale quantities using :math:`\mu`.
 
-% With symmetric angles for the two beams, I didn't find instabilities. However, :math:`\theta_1\neq \theta_2` leads to instabilities in IH, which is consistant with our expections.
+% \subsubsection{Energy of Emission}
 
 
 
-% For NH:
+% Different energy of two beams will make sure $-\omega_1 + \omega_2\neq 0$. It has no effects on the criteria but changes the $\mu$ region of instability.
 
 
-% .. image:: assets/some-clarifications/allneutrinos/line-two-beam-eta-1-lambda-0-mu-10-alpha-0.5-theta1-pi-div-3-theta2-pi-div-6.png
-%   :width: 31%
-% .. image:: assets/some-clarifications/allneutrinos/line-two-beam-eta-1-lambda-0-mu-10-alpha-1.-theta1-pi-div-3-theta2-pi-div-6.png
-%   :width: 31%
-% .. image:: assets/some-clarifications/allneutrinos/line-two-beam-eta-1-lambda-0-mu-10-alpha-1.5-theta1-pi-div-3-theta2-pi-div-6.png
-%   :width: 31%
+% % \subsubsection{Time Translation Symmetry}
 
-% .. image:: assets/some-clarifications/allneutrinos/line-two-beam-eta-1-lambda-0-mu-10-alpha-0.5-theta1-pi-div-6-theta2-pi-div-3.png
-%   :width: 31%
-% .. image:: assets/some-clarifications/allneutrinos/line-two-beam-eta-1-lambda-0-mu-10-alpha-1.-theta1-pi-div-6-theta2-pi-div-3.png
-%   :width: 31%
-% .. image:: assets/some-clarifications/allneutrinos/line-two-beam-eta-1-lambda-0-mu-10-alpha-1.5-theta1-pi-div-6-theta2-pi-div-3.png
-%   :width: 31%
 
-% .. image:: assets/some-clarifications/allneutrinos/line-two-beam-eta-1-lambda-0-mu-10-alpha-0.5-theta1-pi-div-3-theta2-pi-div-3.png
-%   :width: 31%
-% .. image:: assets/some-clarifications/allneutrinos/line-two-beam-eta-1-lambda-0-mu-10-alpha-1.-theta1-pi-div-3-theta2-pi-div-3.png
-%   :width: 31%
-% .. image:: assets/some-clarifications/allneutrinos/line-two-beam-eta-1-lambda-0-mu-10-alpha-1.5-theta1-pi-div-3-theta2-pi-div-3.png
-%   :width: 31%
 
+% % .. admonition:: Time Translational Symmetry
+% %   :class: warning
 
+% %   How about time translational symmetry? I need to write down the equation of motion that is related to time.
 
-% Non-local Symmetry Breaking
-% -----------------------------
+% %   Two limits are of particular interest.
 
+% %   1. Adiabatic limit,
+% %   2. Superfast time variants.
 
 
 
+% For completeness, I can also write down the linearized equation of motion without translational symmetries, c.f.~Eqn.~\ref{chap:collective-sec:two-beams-eqn:line-model-two-beams-all-neutrino-linearized-eom}. I know that real symmetric matrix has only real eigenvalues, from which I infer that $\mu_1=\mu_2$ and $\theta_1=\theta_2$ removes the instability.
+% For translation symmetric models, that is $\partial_x\to 0$, I have the eigenvalues
+% \begin{equation*}
+%    \Omega = \frac{1}{4}(A\pm B),
+% \end{equation*}
+% where
+% \begin{align*}
+%    A=& -\eta \omega_1/\sin\theta_1 - \mu_2 /\sin\theta_1 + \eta \omega_2 /\sin\theta_2 + \mu_1 \xi /\sin\theta_2 + \lambda(1/\sin\theta_1 + 1/\sin\theta_2)  \\
+%    B=& \left(
+%       -4[(\lambda-\eta\omega_1)(\lambda +\eta\omega_2) + (\lambda (\mu_1-\mu_2) -\eta (\mu_1\omega_1 + \mu_2\omega_2) )\xi ] \sin\theta_1 \sin\theta_2\right. \\
+%       &\left.+ [(\lambda + \eta\omega_2 + \mu_1\xi) \sin\theta_1 + (\lambda - \eta \omega_1 - \mu_2\xi) \sin\theta_2 ]^2
+%    \right)^{1/2}/(\sin\theta_1\sin\theta_2)\\
+%    \xi=&1-\cos(\theta_1-\theta_2).
+% \end{align*}
 
 
+% For antineutrinos, I only need to change $\mu_i\to -\bar\mu_i$ and $\omega_i\to -\bar\omega_i$, where $\bar\mu=\sqrt{2}G_F \bar n_t$, so that the equation becomes
+% \small\begin{align*}
+%   &i \partial_z \begin{pmatrix}
+%   \epsilon_1 \\
+%   \epsilon_2
+%   \end{pmatrix} =  - i \begin{pmatrix}\cot\theta_1\partial_x & 0 \\
+%   0 & \cot\theta_2 \partial_x
+%   \end{pmatrix} \begin{pmatrix}
+%   \epsilon_1 \\
+%   \epsilon_2
+%   \end{pmatrix} \\
+%   &+
+%   \frac{1}{2}\begin{pmatrix}
+%   (\lambda-\bar\mu_2 + \eta \bar\omega_1 + \bar\mu_2 \cos(\theta_1-\theta_2) )/\sin \theta_1 & \bar\mu_2 (1-\cos(\theta_1-\theta_2)) /\sin \theta_1 \\
+%   \bar\mu_1 (1- \cos(\theta_1-\theta_2))/\sin\theta_2 & (\lambda -\bar\mu_1 + \eta \bar\omega_2 +\bar\mu_1 \cos(\theta_1-\theta_2) )/\sin\theta_2
+%   \end{pmatrix}\begin{pmatrix}
+%   \epsilon_1 \\
+%   \epsilon_2
+%   \end{pmatrix}
+% \end{align*}\normalsize
 
+% Assume that the left beam is neutrino beam and the right beam is antineutrno beam. The linearized equation of motion becomes
+% \small
+% \begin{align*}
+%   &i\partial_z \begin{pmatrix}
+%   \epsilon_1 \\
+%   \epsilon_2
+%   \end{pmatrix} =  -i\begin{pmatrix}
+%   \cot\theta_1 \partial_x & 0 \\
+%   0 & \cot\theta_2 \partial_x
+%   \end{pmatrix}\begin{pmatrix}
+%   \epsilon_1 \\
+%   \epsilon_2
+%   \end{pmatrix} \\
+%   &+ \frac{1}{2}\begin{pmatrix}
+%   (\lambda - \bar\mu - 2\eta \omega_1 + \bar\mu \cos(\theta_1-\theta_2) )/\sin\theta_1 & \bar\mu (1-\cos(\theta_1-\theta_2))/\sin\theta_1 \\
+%   -\mu(1-\cos(\theta_1-\theta_2))/\sin\theta_2 & (\lambda + \mu + \eta \omega_2 - \mu \cos(\theta_1-\theta_2) )/\sin\theta_2
+%   \end{pmatrix}\begin{pmatrix}
+%   \epsilon_1 \\
+%   \epsilon_2
+%   \end{pmatrix}
+% \end{align*}
+% \normalsize
 
 
-\section{\label{chap:collective-sec:fast-mode}Fast Mode}
 
-Before we work out the solutions, the oscillation scale of collective oscillations can be estimated. The characteristic energy scale for vacuum oscillations is $\omega_{\mathrm v} = \delta m^2\big/2E $, while the characteristic energy scale for collective oscillations is $\mu \sim G_{\mathrm F} (1- \hat{\boldsymbol{ v} }_1 \cdot \hat{\boldsymbol{v}}_2) n_{\nu} $. Correspondingly, the vacuum oscillation frequency is
+
+
+
+
+\section{\label{chap:collective-sec:fast-mode}Fast Mode and Dispersion Relations}
+
+
+The oscillation length scales of neutrino oscillations can be estimated by dimensional analysis. For example, the characteristic energy scale for vacuum oscillations is $\omega_{\mathrm v} = \delta m^2\big/2E $, which leads to neutrino oscillation frequency of the order
 \begin{align*}
  \omega_{\mathrm v} = \frac{\Delta m^2}{2E}  \sim& \frac{2\pi}{ 1  \mathrm{km} }  \left(\frac{\Delta m^2_{32}}{2.5\times 10^{-3} \mathrm{eV}^2 } \right) \left( \frac{1MeV}{E} \right) \\
-\sim & \frac{2\pi}{ 33  \mathrm{km} } \left( \frac{\Delta m_{12}^2}{7.5\times 10^{-5}\mathrm{eV}^2} \right) \left( \frac{1\mathrm{MeV}}{E} \right)
+\sim & \frac{2\pi}{ 33  \mathrm{km} } \left( \frac{\Delta m_{12}^2}{7.5\times 10^{-5}\mathrm{eV}^2} \right) \left( \frac{1\mathrm{MeV}}{E} \right),
 \end{align*}
-As for collective oscillations, suppose we have neutrino flux $10^{50}\mathrm{ergs\cdot s^{-1}}$. We estimate the potential at radius $R$ to be
+where $E$ is the neutrino energy.
+As for collective oscillations, suppose I have neutrino flux $10^{50}\mathrm{ergs\cdot s^{-1}}$. I can estimate the potential at radius $R$ to be
 \begin{equation*}
-\mu \sim  \frac{1}{0.01 km} \left(\frac{100\mathrm{km}}{R}\right)^2 \left(\frac{1\mathrm{MeV}}{E}\right),
+\mu \sim  \frac{1}{0.01 \mathrm{km}} \left(\frac{100\mathrm{km}}{R}\right)^2 \left(\frac{1\mathrm{MeV}}{E}\right),
 \end{equation*}
-which means that the collective oscillations frequencies in supernova explosions can be much smaller than vacuum oscillations.
-
-
-In a paper by Chakraborty et al~\cite{Chakraborty2016}, they showed that neutrino flavor instabilities can grow with a rate that is proportional to the neutrino density, which has much faster oscillation frequencies than vacuum oscillations. For such a fast growth to happen, the author considered head on colliding neutrino beams. The derivation is much similar to what has been shown in the previous section.
-
-As an estimation, the frequencies of vacuum oscillation is
-\begin{align*}
-   \omega_{\mathrm v} =& \frac{\Delta m^2}{2E} \\ \sim& 6.3\times 10^{-3} \mathrm{m}^{-1}  \frac{\Delta m^2_{32}}{2.5\times 10^{-3} \mathrm{eV}^2 } \frac{1MeV}{E} \\
-   \sim & 1.90\times 10^{-4}  \mathrm{m}^{-1}  \frac{\delta m^2}{7.5\times 10^{-5}\mathrm{eV}^2} \frac{1\mathrm{MeV}}{E},
-\end{align*}
-where $E$ is the neutrino energy. The corresponding oscillation wavelength is simply give by
-\begin{align*}
-   \lambda_{12} = & 2\pi/\omega_{12} \sim 1 \mathrm{km}\\
-   \lambda_{32} = & 2\pi/\omega_{32} \sim 33.1 \mathrm{km}.
-\end{align*}
-The fast modes instability grows with a rate proportional to the neutrino potential $\mu=\sqrt{2}G_F n_\nu$, which is very large in dense neutrino media. A large growth rate indicates a faster flavor transformation than vacuum oscillations.
-
+which means that the collective oscillations frequencies in supernova explosions can be much larger than the vacuum oscillations. The fast modes instability grows with a rate proportional to the neutrino potential $\mu=\sqrt{2}G_F n_\nu$, which is very large in dense neutrino media. In a paper by Chakraborty et al~\cite{Chakraborty2016}, they showed that neutrino oscillations in dense neutrino media can be much faster than than the vacuum oscillations.
 
 
 
@@ -686,42 +670,84 @@ The fast modes instability grows with a rate proportional to the neutrino potent
 
 
 
-\subsection{\label{chap:collective-sec:fast-mode-subsec:dr}Dispersion Relation of Neutrino Flavor Conversion}
+\section{\label{chap:collective-sec:fast-mode-subsec:dr}Dispersion Relation of Neutrino Flavor Conversion}
 
-We consider two-flavor scenario ($\nu_{\mathrm e}$ and $\nu_{\mathrm x}$) of neutrino oscillations. We also assume that all neutrinos and antineutrinos are emitted as electron flavor. The flavor evolution of neutrino ensemble depends on flavor density matrices of neutrinos $\rho$ and antineutrinos $\bar\rho$ with energy $E$, direction of velocity $\hat{\mathbf v}$,
+In this section, I will review the dispersion relations by following the paper by I. Izaguirre, G. Raffelt, and I. Tamborra~\cite{Izaguirre2016a}.
+
+I assume that all neutrinos and antineutrinos are emitted as electron flavor. The flavor evolution of neutrino ensemble depends on flavor density matrices of neutrinos $\rho$ and antineutrinos $\bar\rho$ with energy $E$, direction of velocity $\hat{\mathbf v}$,
 \begin{equation}
 \ii (\partial_t + \mathbf v\cdot \mathbf{\nabla}) \rho = \left[H, \rho_n \right],
 \label{eqn-liouville-eqn}
 \end{equation}
 where $H$ is the Hamiltonian for neutrino oscillations. In the context, Hamiltonian depends on three different contributions from vacuum oscillations $H_{\mathrm v}$, interactions with matter $H_{\mathrm m}$, and interactions with neutrinos themselves $H_{\nu\nu}$. In this work, we ignore vacuum and matter terms since the concentration is on fast neutrino oscillations, which would occur even without neutrino mass differences \cite{Chakraborty2016,Dasgupta2017}. In order to calculate the neutrino self-interaction term $H_{\nu\nu}$, the distribution of neutrinos (antineutrinos) $f_{\nu_{\mathrm e}(\bar \nu_{\mathrm e})}(\hat{\mathbf v}, E)$ and $f_{\nu_{\mathrm x}(\bar \nu_{\mathrm x})}(\hat{\mathbf v}, E)$ is required, where $E$ is the energy of neutrinos (antineutrinos). We have
 \begin{equation}
-H_{\nu\nu} = \sqrt{2} G_{\mathrm F} \iint \frac{\mathrm d \cos\theta' \mathrm d\phi'}{4\pi} v^\mu v'_\mu \int \frac{E'^2 \mathrm d E'}{2\pi^2} \left( (f_{\nu_{\mathrm e}}' - f_{\nu_{\mathrm x}}' )\rho' -  (f_{\bar\nu_{\mathrm e}}' - f_{\bar\nu_{\mathrm x}}' ) \bar\rho' \right),
+H_{\nu\nu} = \sqrt{2} G_{\mathrm F} n \iint \dd \Gamma' v^\mu v'_\mu \int \frac{E'^2 \mathrm d E'}{2\pi^2} \left( (f_{\nu_{\mathrm e}}' - f_{\nu_{\mathrm x}}' )\rho' -  (f_{\bar\nu_{\mathrm e}}' - f_{\bar\nu_{\mathrm x}}' ) \bar\rho' \right),
 \end{equation}
-where $v^\mu = ( 1, \sin\theta\cos\phi, \sin\theta\sin\phi, \cos\theta )^{\mathrm T}$ is the four velocity of (anti)neutrinos in our spherical coordinate system. Without vacuum contribution, the equation of motion for antineutrinos has the same form \cite{Duan2010}.
+where $v^\mu = ( 1, \sin\theta\cos\phi, \sin\theta\sin\phi, \cos\theta )^{\mathrm T}$ is the four velocity of (anti)neutrinos in our spherical coordinate system, and $\dd \Gamma' = \frac{\mathrm d \cos\theta' \mathrm d\phi'}{4\pi}$. Without vacuum contribution, the equation of motion for antineutrinos has the same form \cite{Duan2010}.
 
-We follow the same assumption in reference \cite{Izaguirre2016a} that the the distribution of $\nu_x$ and $\bar\nu_x$ are the same, namely $ f_{\nu_{\mathrm x}}(\hat{\mathbf v},E)  - f_{\bar\nu_{\mathrm x}}(\hat{\mathbf v},E)=0$. In addition, we have the same definition of electron lepton number (ELN) of neutrinos travelling in direction $\hat{\mathbf v}$ \cite{Izaguirre2016a},
+I follow the same assumption in reference \cite{Izaguirre2016a} that the the distribution of $\nu_x$ and $\bar\nu_x$ are the same, namely $ f_{\nu_{\mathrm x}}({\mathbf v},E)  - f_{\bar\nu_{\mathrm x}}({\mathbf v},E)=0$. In addition, I have the same definition of electron lepton number (ELN) of neutrinos travelling in direction ${\mathbf v}$ \cite{Izaguirre2016a},
 \begin{equation}
-G(\hat{\mathbf v}) =  \sqrt{2}G_{\mathrm F} \int \frac{E'^2 \mathrm d E'}{2\pi^2} ( f_{\nu_{\mathrm e}}(\cos\theta',\phi',E')  - f_{\bar\nu_{\mathrm e}}(\cos\theta',\phi',E')  ).
+G({\mathbf v}) =  \sqrt{2}G_{\mathrm F} n \int \frac{E'^2 \mathrm d E'}{2\pi^2} ( f_{\nu_{\mathrm e}}(\cos\theta',\phi',E')  - f_{\bar\nu_{\mathrm e}}(\cos\theta',\phi',E')  ).
 \end{equation}
-To perform linear stability analysis, we assume that the density matrix has the form
+To perform linear stability analysis, I assume that the density matrix has the form
 \begin{equation}
-\rho = \bar \rho = \begin{pmatrix}
+\rho = \bar \rho = \frac{1}{2} \begin{pmatrix}
 1 & \epsilon \\
-\epsilon^* & 0
+\epsilon^* & -1
 \end{pmatrix},
 \end{equation}
-where $\lvert \epsilon \rvert \ll 1$. As a result, the linearized equations of motion depends only on $G(\hat{\mathbf v})$ and $\hat{\mathbf v}$. We also assume that all neutrinos and antineutrinos undergo the same behavior in linear regime, $\epsilon = \tilde\epsilon e^{-\ii (\Omega t - \mathbf K\cdot \mathbf x)}$. Izaguirre, Raffelt, and Tamborra defined the polarization tensor \cite{Izaguirre2016a},
+where $\lvert \epsilon \rvert \ll 1$. Plug this into the equation of motion, I obtain the linearized equation of motion
+\begin{align}
+    \ri ( \partial_t + \mathbf v \cdot \boldsymbol{\nabla} ) \begin{pmatrix}
+        1 & \epsilon \\
+        \epsilon^* & -1
+        \end{pmatrix}  =  \left[ -\omega_\vv\sigma_3 + \int \dd \Gamma' G(\mathbf v') v^\mu v'_\mu  \begin{pmatrix}
+            1 & \epsilon' \\
+            \epsilon'^* & -1
+            \end{pmatrix} , \frac{1}{2}\begin{pmatrix}
+            1 & \epsilon \\
+            \epsilon^* & -1
+            \end{pmatrix}\right],
+\end{align}
+which leads to the equation for the perturbation
+\begin{equation}
+    \ri ( \partial_t + \mathbf v \cdot \boldsymbol{\nabla} ) \epsilon = v^\mu \Phi_\mu \epsilon - \int \dd \Gamma' v^\mu v'_\mu G(\mathbf v') \epsilon',
+    \label{chap:collective-sec:fast-mode-eqn:eom-continuous-general-linearized}
+\end{equation}
+where I have assumeed that all neutrinos and antineutrinos undergo the same behavior in linear regime, $\epsilon = \tilde\epsilon e^{-\ii (\Omega t - \mathbf K\cdot \mathbf x)}$. The four-potential in Eqn.~\ref{chap:collective-sec:fast-mode-eqn:eom-continuous-general-linearized}
+\begin{equation}
+    \Phi_\mu \to  \left( \int \dd \Gamma' G(\mathbf v'), \int \dd \Gamma' \mathbf v' G(\mathbf v') \right)^{\mathrm T}.
+\end{equation}
+With the equation of motion derived, I assume a collective mode 
+\begin{equation}
+\epsilon  \mathbf r = \tilde epsilon e^{- \ri (\Omega t - \mathbf K \cdot \mathbf r)},
+\end{equation}
+which is a generalization of Eqn.~\ref{chap:collective-sec:two-beams-eqn:equation-of-motion-collective-mode-assumption}. To get the equation of motion for the collective modes, I use the following substitution:
+\begin{align}
+    \epsilon & \to \tilde \epsilon, \\
+    \partial_t & \to \ri \Omega, \\
+    \boldsymbol{\nabla} & \to -\ri \mathbf K.
+\end{align}
+The equation of motion becomes
+\begin{equation}
+    v^\mu K_\mu \tilde \epsilon  = v^\mu \Phi_\mu \tilde \epsilon - \int \dd \Gamma' v^\mu v'_\mu G(\mathbf v') \tilde \epsilon',
+\end{equation}
+where $K_\mu \to (\Omega, \mathbf K)^{\mathrm T}$ is the four wave vector. I can combine $v^\mu K_\mu \tilde \epsilon$ and $v^\mu \Phi_\mu \tilde \epsilon$ by defining a new four wave vector
+\begin{equation}
+    k_\mu = K_\mu - \Phi_\mu.
+\end{equation}
+Following the convention of I. Izaguirre, I define the polarization tensor.
 \begin{equation}
 \Pi^\mu_{\phantom{\mu}\nu} = 1 + \int \frac{d\Omega}{4\pi} G(\theta,\phi) \frac{v^\mu v_\nu}{\omega- k \hat{\mathbf k}\cdot \hat{\mathbf v} },
 \end{equation}
-which defines the dispersion relation $\Pi^\mu_{\phantom{\mu}\nu} a^\nu = 0$, with $a^\nu = \int \frac{d\cos\theta' d\phi'}{4\pi} G(\hat{\mathbf v}') v^\nu \tilde\epsilon$. We find the nontrivial solutions by setting \cite{Izaguirre2016a},
+which defines the dispersion relation $\Pi^\mu_{\phantom{\mu}\nu} a^\nu = 0$, with $a^\nu = \int \frac{d\cos\theta' d\phi'}{4\pi} G(\hat{\mathbf v}') v^\nu \tilde\epsilon$. I find the nontrivial solutions by setting \cite{Izaguirre2016a},
 \begin{equation}
 \operatorname{det}\left( \Pi^\mu_{\phantom{\mu}\nu} \right) = 0.
 \label{eqn-dr-determinant-equation}
 \end{equation}
 
 
-For simplicity, we consider axial symmetric neutrino emission so that Eq. \eqref{eqn-dr-determinant-equation} becomes
+For simplicity, I consider axial symmetric neutrino emission so that Eq. \eqref{eqn-dr-determinant-equation} becomes
 \begin{align}
 &\det \left( \omega \mathrm{I} + \frac{1}{2}
 \begin{pmatrix}
@@ -739,7 +765,7 @@ where $\mathbf I$ is the rank 4 identity matrix and
 \end{equation}
 where we define $u=\cos\theta$. Eq. \eqref{eqn-det-polarization-tensor-axial} is equivalent to the result in reference \cite{Raffelt2013}. $\lvert k \rvert /\omega$ is defined as the refractive index $n$ of the flavor wave. For spectrum $G(u)$ without zero values, the forbidden region is given by $1 -  \left(\lvert k\rvert /\omega\right) u\leq 0$.
 
-The dispersion relations can be categorized into two different types by symmetries. To incorporate azimuthal symmetry, we define solutions related to the first and second element of $a^\nu$ ($\nu=1,2$) to be multi-azimuthal angle (MAA) solutions since they are the only solutions that depend on azimuthal angle $\phi$. The other solutions which are related to $\nu=0,3$ are defined to be the multi-zenith angle (MZA) solutions. The MAA solution is related to symmetry breaking in azimuthal angle only, which is determined by
+The dispersion relations can be categorized into two different types by symmetries. To incorporate azimuthal symmetry, I define solutions related to the first and second element of $a^\nu$ ($\nu=1,2$) to be multi-azimuthal angle (MAA) solutions since they are the only solutions that depend on azimuthal angle $\phi$. The other solutions which are related to $\nu=0,3$ are defined to be the multi-zenith angle (MZA) solutions. The MAA solution is related to symmetry breaking in azimuthal angle only, which is determined by
 \begin{equation}
    \omega = \frac{1}{4}(I_0 - I_2).
    \label{eqn-maa}
@@ -749,7 +775,7 @@ Similarly, the MZA solution is related to symmetry breaking in both azimuthal an
 \omega = - \frac{1}{4} \left( I_0 - I_2 \pm \sqrt{ (I_0 + I_2 - 2 I_1) (I_0 + I_2 + 2 I_1) } \right).
 \label{eqn-mza}
 \end{equation}
-We denote the solution associated with $+$ sign in Eq. \eqref{eqn-mza} as MZA+, while the solution assocated with $-$ sign as MZA-. The two solutions are connected to each other in dispersion relations. In general, it doesn't provide physical insights to distingush the two branches of solutions since they are simply two branches of the solution.
+I denote the solution associated with $+$ sign in Eq. \eqref{eqn-mza} as MZA+, while the solution assocated with $-$ sign as MZA-. The two solutions are connected to each other in dispersion relations. In general, it doesn't provide physical insights to distingush the two branches of solutions since they are simply two branches of the solution.
 
 The solutions to Eq. \eqref{eqn-maa} and Eq. \eqref{eqn-mza} are dispersion relations $D(\omega,\mathbf k)$ for a chosen direction of $\hat{\mathbf k} = \hat{\mathbf z}$ with axial symmetric neutrino emission.
 
@@ -765,16 +791,16 @@ The solutions to Eq. \eqref{eqn-maa} and Eq. \eqref{eqn-mza} are dispersion rela
 
 
 
-\subsection{\label{chap:collective-sec:fast-mode-subsec:instabilities-and-gaps}Instabilities and Gaps}
+\section{\label{chap:collective-sec:fast-mode-subsec:instabilities-and-gaps}Instabilities and Gaps}
 
-In reference \cite{Izaguirre2016a}, the authors relate gaps in dispersion relation to instabilities of neutrino oscillations. In this section, we review the idea of correspondence between gaps and instabilities first. Then we show that this relation is not a solid theory that can be generalized to all cases.
+In reference \cite{Izaguirre2016a}, the authors relate gaps in dispersion relation to instabilities of neutrino oscillations. In this section, I review the idea of correspondence betIen gaps and instabilities first. Then I show that this relation is not a solid theory that can be generalized to all cases.
 
-We continue the discussion of axial symmetric neutrino emissions but with discretized zenith angles $\theta$ thus discretized $u$. Hence the ELN is independent of azimuth angle $\phi$. For neutrino emission with $2$ zenith angles, the ELN spectrum is
+I continue the discussion of axial symmetric neutrino emissions but with discretized zenith angles $\theta$ thus discretized $u$. Hence the ELN is independent of azimuth angle $\phi$. For neutrino emission with $2$ zenith angles, the ELN spectrum is
 \begin{equation}
 G(u)= \sum_{i=1}^2 g_i \delta(u - u_i).
 \end{equation}
 
-The MAA solution becomes an equation of hypobola for $\omega$ and $k$, which has asymptotes $\omega = k u_i$ for $i=1,2$. Meanwhile, hyperbola equation has two solutions of $\omega$ ($k$) for any given real $k$ ($\omega$). The solutions are either real which indicates stable solutions or complex which indicates exponential growth or decrease in linear regime. On the other hand, non-existence of real solutions of $\omega$ ($k$) for given real $k$ ($\omega$) is equivalent to gap in dispersion relation. Thus the equivalence of gap and instabilities is guaranteed in neutrino emission with two-zenith-angle emission. The numerical calculations is normalized using the maximium value in spectrum which is a convention we follow for all discrete emission calculations. Unit for $\omega$ and $k$ can be determined once the exact spectrum is determined. Upper panels of Fig. \ref{fig-dr-db} is reproduction of left panels of Fig. 1 in reference \cite{Izaguirre2016a}. The dispersion relation is shown as black lines. The real part $\omega_{\mathrm R}$ is shown as red solid lines. $\omega_{\mathrm R} \pm \omega_{\mathrm I}$ are shown are red dashed lines, where $\omega_{\mathrm I}$ is the imaginary part of $\omega$.
+The MAA solution becomes an equation of hypobola for $\omega$ and $k$, which has asymptotes $\omega = k u_i$ for $i=1,2$. Meanwhile, hyperbola equation has two solutions of $\omega$ ($k$) for any given real $k$ ($\omega$). The solutions are either real which indicates stable solutions or complex which indicates exponential growth or decrease in linear regime. On the other hand, non-existence of real solutions of $\omega$ ($k$) for given real $k$ ($\omega$) is equivalent to gap in dispersion relation. Thus the equivalence of gap and instabilities is guaranteed in neutrino emission with two-zenith-angle emission. The numerical calculations is normalized using the maximium value in spectrum which is a convention I follow for all discrete emission calculations. Unit for $\omega$ and $k$ can be determined once the exact spectrum is determined. Upper panels of Fig. \ref{fig-dr-db} is reproduction of left panels of Fig. 1 in reference \cite{Izaguirre2016a}. The dispersion relation is shown as black lines. The real part $\omega_{\mathrm R}$ is shown as red solid lines. $\omega_{\mathrm R} \pm \omega_{\mathrm I}$ are shown are red dashed lines, where $\omega_{\mathrm I}$ is the imaginary part of $\omega$.
 
 
 
@@ -792,13 +818,13 @@ The MAA solution becomes an equation of hypobola for $\omega$ and $k$, which has
 \minipage{0.49\textwidth}
   \includegraphics[width=\linewidth]{chapters/assets/dr/spectDB3WC4DRDBMZAPltBlob.pdf}
 \endminipage\hfill
-\caption{Dispersion relation and instabilities of two zenith angles spectrum (upper panels) and three zenith angles spectrum (lower panels). The black lines are the dispersion relations and the colored dots are examples of complex $\omega$ for real $k$. The left panels are the dispersion relation and linear stability analysis of MAA solutions while the right panels are for MZA solutions.}
+\caption{Dispersion relation and instabilities of two zenith angles spectrum (upper panels) and three zenith angles spectrum (loIr panels). The black lines are the dispersion relations and the colored dots are examples of complex $\omega$ for real $k$. The left panels are the dispersion relation and linear stability analysis of MAA solutions while the right panels are for MZA solutions.}
 \label{fig-dr-db}
 \end{figure}
 
 
 
-In core collapse supernova and neutron star mergers, neutrino emission is not in discrete zenith angles. More realistic models involve continuous zenith angle ELN spectra. In the case that the smooth and continuous ELN spectrum has no crossing, gap indeed indicates instabilities, as shown in reference \cite{Izaguirre2016a}. In this section we prove that the instabilities in MAA, MZA+, or MZA- solution can only appear in either region $\omega\leq 0$ or region $\omega \geq 0$. As it suggests, the instability regions propagate only between the dispersion relation curves and the axis $\omega=0$. We reproduced the calculation in reference \cite{Izaguirre2016a} using the same Garching core-collapse supernova data set \cite{garching-ccsn-data}. The spectrum shown in the left panel of Fig. \ref{fig-garching} is polynomial fitting of the Garching 1D supernova simulation data. On the right of Fig. \ref{fig-garching}, the dispersion relation for MAA (MZA) solution is shown as red (green, blue) solid lines. Instabilities associated with MAA (MZA) solution is shown as light red (light green, light blue) blobs. The two branches of MZA solutions appear at the top half (MZA+) and lower half (MZA-). The result shows that instabilities occur either in region $\omega>0$ or region $\omega<0$ and with limits set the dispersion relation. We will prove that the instabilities appear between the dispersion relation and the axis $\omega=0$.
+In core collapse supernova and neutron star mergers, neutrino emission is not in discrete zenith angles. More realistic models involve continuous zenith angle ELN spectra. In the case that the smooth and continuous ELN spectrum has no crossing, gap indeed indicates instabilities, as shown in reference \cite{Izaguirre2016a}. In this section I prove that the instabilities in MAA, MZA+, or MZA- solution can only appear in either region $\omega\leq 0$ or region $\omega \geq 0$. As it suggests, the instability regions propagate only betIen the dispersion relation curves and the axis $\omega=0$. I reproduced the calculation in reference \cite{Izaguirre2016a} using the same Garching core-collapse supernova data set \cite{garching-ccsn-data}. The spectrum shown in the left panel of Fig. \ref{fig-garching} is polynomial fitting of the Garching 1D supernova simulation data. On the right of Fig. \ref{fig-garching}, the dispersion relation for MAA (MZA) solution is shown as red (green, blue) solid lines. Instabilities associated with MAA (MZA) solution is shown as light red (light green, light blue) blobs. The two branches of MZA solutions appear at the top half (MZA+) and lower half (MZA-). The result shows that instabilities occur either in region $\omega>0$ or region $\omega<0$ and with limits set the dispersion relation. Iwill prove that the instabilities appear between the dispersion relation and the axis $\omega=0$.
 
 
 
@@ -822,12 +848,12 @@ In core collapse supernova and neutron star mergers, neutrino emission is not in
 
 % \subsection{\label{sec-omega-to-zero}Instabilities at $\omega\to 0$}
 
-Suppose we are looking for complex solutions for given real omega as in Fig. \ref{fig-garching}, MAA solution Eq. \eqref{eqn-maa} is rewritten as a function $k(\omega/k)$. More explicitly, we have to solve the integral function to find out $k$ for real $\omega$,
+Suppose I am looking for complex solutions for given real omega as in Fig. \ref{fig-garching}, MAA solution Eq. \eqref{eqn-maa} is rewritten as a function $k(\omega/k)$. More explicitly, I have to solve the integral function to find out $k$ for real $\omega$,
 \begin{equation}
    k = \frac{1}{4} \int \mathrm du G(u) \frac{ 1 - u^2 }{ \omega/k - u }.
    \label{eqn-k-omega-relation}
 \end{equation}
-To investigate how instabilities developed around the horizental axies, we solve Eq. \eqref{eqn-k-omega-relation} in the limit $\omega\to 0$. For complex $k$, the integral can be decomposed into the principal value $\operatorname{Re}(k)$ and imaginary part $\operatorname{Im}(k)$ using Sokhotski–Plemelj theorem,
+To investigate how instabilities developed around the horizental axies, I solve Eq. \eqref{eqn-k-omega-relation} in the limit $\omega\to 0$. For complex $k$, the integral can be decomposed into the principal value $\operatorname{Re}(k)$ and imaginary part $\operatorname{Im}(k)$ using Sokhotski–Plemelj theorem,
 \begin{subequations}
 \begin{align}
 \operatorname{Re}(k) =& \frac{1}{4}\left(  \mathcal{P} \int \mathrm d u G(u) \frac{ 1 - u^2 }{ - u }  \right)\label{eqn-re-k-arbitrary-spectrum} \\
@@ -835,7 +861,7 @@ To investigate how instabilities developed around the horizental axies, we solve
 \label{eqn-im-k-arbitrary-spectrum}
 \end{align}
 \end{subequations}
-Assuming no crossing is found in sepctrum $G(u)$ at $u=0$, Eq. \eqref{eqn-im-k-arbitrary-spectrum} shows that $\omega$ must have the same sign as $G(0)$ if we find nonzero imaginary part in $k$. We conclude that instabilities can only grow either in the upper plane $\omega>0$ or lower plane $\omega<0$. What's more, the value of $k$ at limit $\omega\to 0$ can be solved out of Eq. \eqref{eqn-re-k-arbitrary-spectrum} and Eq. \eqref{eqn-im-k-arbitrary-spectrum}. For instabilities the imaginary part of $k$ tells us the growth rate is,
+Assuming no crossing is found in sepctrum $G(u)$ at $u=0$, Eq. \eqref{eqn-im-k-arbitrary-spectrum} shows that $\omega$ must have the same sign as $G(0)$ if I find nonzero imaginary part in $k$. I conclude that instabilities can only grow either in the upper plane $\omega>0$ or lower plane $\omega<0$. What's more, the value of $k$ at limit $\omega\to 0$ can be solved out of Eq. \eqref{eqn-re-k-arbitrary-spectrum} and Eq. \eqref{eqn-im-k-arbitrary-spectrum}. For instabilities the imaginary part of $k$ tells us the growth rate is,
 \begin{equation}
    \lvert \operatorname{Im}(k) \rvert  =  \frac{\pi}{4}\lvert G(0)\rvert .
 \end{equation}
@@ -856,12 +882,12 @@ determines that the two different solutions are either in the region $\omega>0$ 
 
 \subsection{\label{chap:collective-sec:fast-mode-subsec:instability-to-gap}Instabilities Do Not Always Show Up as Gap}
 
-Even though the concept of gap leads to instabilities works well for the models in \ref{chap:collective-sec:fast-mode-subsec:instabilities-and-gaps}, it can not be generalized to arbitrary number of emission angles nor to continuous spectra with crossings. As an example, we perform linear stability analysis of the three zenith angles emission configuration which is determined by a cubic function both in $\omega$ and $k$. Three solutions of $k(\omega)$ for given real $\omega(k)$  are expected. As long as real solutions disappear, complex solutions emerge, which leads to instabilities occur even without an actual gap. Rather the decrease in the number of real solutions for fixed $\omega$ or $k$ corresponds to the instabilities. As an example, we plotted dispersion relation and instabilities for three zenith angles in lower panels of Fig. \ref{fig-dr-db}. For a given value of $\omega$ such as $\omega= 0.5$, the three MAA solutions (Fig. \ref{fig-dr-db} lower left panel) of $k$ are $k=-4.6, 0.29, 1.2$. All three solutions are all real and indicate no spatial instabilities which is confirmed by calculation of instabilities shown as red blob. However, for another real $\omega = 0.2$, we find only one real solution $k=0.4$ from dispersion relation. The other solutions are complex and proven to be $k = -0.557106\pm 0.966535\mathrm i$ where the value with positive imaginary part leads to exponential growth. We conclude that instabilities doesn't require gap in dispersion relation except for two emission angles.
+Even though the concept of gap leads to instabilities works well for the models in \ref{chap:collective-sec:fast-mode-subsec:instabilities-and-gaps}, it can not be generalized to arbitrary number of emission angles nor to continuous spectra with crossings. As an example, I perform linear stability analysis of the three zenith angles emission configuration which is determined by a cubic function both in $\omega$ and $k$. Three solutions of $k(\omega)$ for given real $\omega(k)$  are expected. As long as real solutions disappear, complex solutions emerge, which leads to instabilities occur even without an actual gap. Rather the decrease in the number of real solutions for fixed $\omega$ or $k$ corresponds to the instabilities. As an example, I plotted dispersion relation and instabilities for three zenith angles in lower panels of Fig. \ref{fig-dr-db}. For a given value of $\omega$ such as $\omega= 0.5$, the three MAA solutions (Fig. \ref{fig-dr-db} lower left panel) of $k$ are $k=-4.6, 0.29, 1.2$. All three solutions are all real and indicate no spatial instabilities which is confirmed by calculation of instabilities shown as red blob. However, for another real $\omega = 0.2$, I find only one real solution $k=0.4$ from dispersion relation. The other solutions are complex and proven to be $k = -0.557106\pm 0.966535\mathrm i$ where the value with positive imaginary part leads to exponential growth. I conclude that instabilities doesn't require gap in dispersion relation except for two emission angles.
 
 
-We will prove that instabilities for continuous emission angles do not necessarily correspond to gap in dispersion relation. In the earlier works of fast modes, Sawyer analyzed a box shaped angular distribution of neutrino emission \cite{Sawyer2016}. To address the generality of our conclusion, we repeat the calculation for box spectrum with crossing.
+I will prove that instabilities for continuous emission angles do not necessarily correspond to gap in dispersion relation. In the earlier works of fast modes, Sawyer analyzed a box shaped angular distribution of neutrino emission \cite{Sawyer2016}. To address the generality of our conclusion, I repeat the calculation for box spectrum with crossing.
 
-We construct a box spectrum with value $-0.1$ within $u\in [-1,-0.3)$ and value $1$ within $[-0.3,1]$ as shown in the top left panel of Fig. \ref{fig-box-c1}. As in the discrete emission case, we normalize all quantities using the maximium value of the spectrum. With the spectrum defined, we calculate the dispersion relation and find out complex values of $k$ for real $\omega$. The result shows that the dispersion relation of both MAA solution and MZA solution contains only one curve. No gap is formed but we observe instabilities between this curve and $\omega=0$ in MAA solution as well as two unstable regions of $k$ in MZA solution, which are plotted as red lines.
+I construct a box spectrum with value $-0.1$ within $u\in [-1,-0.3)$ and value $1$ within $[-0.3,1]$ as shown in the top left panel of Fig. \ref{fig-box-c1}. As in the discrete emission case, I normalize all quantities using the maximium value of the spectrum. With the spectrum defined, I calculate the dispersion relation and find out complex values of $k$ for real $\omega$. The result shows that the dispersion relation of both MAA solution and MZA solution contains only one curve. No gap is formed but I observe instabilities between this curve and $\omega=0$ in MAA solution as well as two unstable regions of $k$ in MZA solution, which are plotted as red lines.
 
 
 \begin{figure}
@@ -897,7 +923,7 @@ One of the big questions about neutrino oscillations in supernovae is the so cal
 
 \subsection{\label{chap:halo-sec:line}Line Model}
 
-We continue to use the simplified line model and build our intuitions out of it. The halo problem is simplified to have neutrinos emitted from a line $z=0$ homogeneously, which are reflected from a certain distance $z=L$. In principle, the reflection angles doesn’t have to be Snell’s law. The scattering can be in any angle with different amplitudes. Here I am using this very simple Snell’s law just to explore the effect of halo. It's crucial to keep an eye on the simplifications in this line model.
+I continue to use the simplified line model and build our intuitions out of it. The halo problem is simplified to have neutrinos emitted from a line $z=0$ homogeneously, which are reflected from a certain distance $z=L$. In principle, the reflection angles doesn’t have to be Snell’s law. The scattering can be in any angle with different amplitudes. Here I am using this very simple Snell’s law just to explore the effect of halo. It's crucial to keep an eye on the simplifications in this line model.
 \begin{itemize}
     \item Neutrinos are emitted from a line, which is not the case in a real supernova.
     \item Neutrinos are emitted with translation symmetry on the line. Breaking the symmetry might bring in other qualitatively different results.
@@ -927,9 +953,9 @@ The algorithm that I used is relaxation method. The algorithm is meant to find t
 
 \subsection{\label{chap:halo-sec:line-sym}Neutrino Beams Only}
 
-As a first step, I calculated neutrino oscillations with only neutrino beams. Before we rush to the numerical results, I linearized the equation of motion and worked out the linear stability analysis.
+As a first step, I calculated neutrino oscillations with only neutrino beams. Before I rush to the numerical results, I linearized the equation of motion and worked out the linear stability analysis.
 
-In linear regime, we define the density matrices for forward and backward beams to be
+In linear regime, I define the density matrices for forward and backward beams to be
 \begin{align*}
    \rho_F &= \frac{1}{2} \begin{pmatrix}
    1 & \epsilon_F \\
@@ -945,7 +971,7 @@ The Hamiltonian for forward and back ward beams are
    H_F &= H_v + R \mu \rho_B \\
    H_B &= H_v + \mu \rho_F.
 \end{align*}
-We will investigate the instability for zero mixing angle for new instabilities. The linearized equation of motion can be simplified to
+I will investigate the instability for zero mixing angle for new instabilities. The linearized equation of motion can be simplified to
 \begin{align*}
    i\partial_z \begin{pmatrix}
    \epsilon_F \\
@@ -998,12 +1024,12 @@ The solution to be problem can be simplified,
    \end{pmatrix} = C_- e^{-i\Omega_- L} \left( \frac{ \sqrt{\Delta} +  2\omega_v + \mu \xi (1-R) }{\sqrt{\Delta} -  2\omega_v - \mu \xi (1-R)} V_+ e^{-i \Omega_+ (z-L)} +  V_- e^{-i \Omega_- (z-L)} \right).
 \end{equation}
 
-We are interested in the absolute values of each elements so that the overall factors can be neglected. The forward beam evolution is obtained by taking the absolute value of $\epsilon_F$,
+I am interested in the absolute values of each elements so that the overall factors can be neglected. The forward beam evolution is obtained by taking the absolute value of $\epsilon_F$,
 \begin{align*}
    \left\vert \epsilon_F \right\vert \propto & \lvert (2\omega_v +\xi\mu(1-R) +i \delta ) ( -2\omega_v + \xi\mu(1+R) + i \delta ) e^{\delta(z-L)} \\ 
    &+ ( -2\omega_v - \xi\mu(1-R) +i \delta ) ( -2\omega_v + \xi\mu(1+R) - i \delta ) e^{-\delta(z-L)} \rvert,
 \end{align*}
-in which $\sqrt{\Delta}$ is replaced by $i \delta$. We collecting terms and verify that it has the form
+in which $\sqrt{\Delta}$ is replaced by $i \delta$. I collect terms and verify that it has the form
 \begin{equation}
    \left\vert \epsilon_F \right\vert \propto A + B \cosh( 2\delta(L-z) ),
 \end{equation}
@@ -1028,15 +1054,15 @@ We expect the numerical calculations bare the same behavior that the instability
     \label{chap:halo-sec:line-sym-fig:mu-1.0-reflection-0.07}
 \end{figure}
 
-For linear stability analysis, we usually identify real characteristic values of the linearized equation of motion. In bipolar model as explained in Sec.~\ref{chap:app-sec:bipolar}, real characteristic values of the equation of motion indicates exponential growth, while it always indicates exponential decrease in this simplified halo problem. 
+For linear stability analysis, I usually identify real characteristic values of the linearized equation of motion. In bipolar model as explained in Sec.~\ref{chap:app-sec:bipolar}, real characteristic values of the equation of motion indicates exponential growth, while it always indicates exponential decrease in this simplified halo problem. 
 
-We expect that only normal hierarchy has an instability region which is trivial since we noticed that the backward beam is acting like antineutrino beams but with different hierarchies.
+I expect that only normal hierarchy has an instability region which is trivial since I noticed that the backward beam is acting like antineutrino beams but with different hierarchies.
 \begin{align}
  i \partial_t \mathbf s_F &= \mathbf s_F \times (\mathbf {H}_v +R \mu \mathbf s_B) \\
    i\partial_t \mathbf s_B &= \mathbf s_B \times (- \mathbf H_v - \mu \mathbf s_F) .
 \end{align}
-Compare to Eq.~\ref{chap:app-sec:bipolar-eqn:flavor-isospin-eom}, we notice that 
-the reflected beam works as an antineutrino beam but the system becomes the opposite hierarchy compared to bipolar model. We find the instability regions in Fig.~\ref{chap:halo-sec:line-sym-fig:instability-regions}.
+Compare to Eq.~\ref{chap:app-sec:bipolar-eqn:flavor-isospin-eom}, I notice that 
+the reflected beam works as an antineutrino beam but the system becomes the opposite hierarchy compared to bipolar model. I find the instability regions in Fig.~\ref{chap:halo-sec:line-sym-fig:instability-regions}.
 
 
 \begin{figure}[htbp]
@@ -1106,10 +1132,10 @@ To speed up the calculations, I also implemented OpenMP for parallel computing. 
 \begin{figure}[htbp]
     \minipage{\textwidth}
     % \includegraphics[width=\textwidth]{chapters/assets/halo/halo-mu-4-compare-vac.pdf}
-    \includegraphics[width=\textwidth]{chapters/assets/halo/halo-mu-4-r-multiple.pdf}
+    \includegraphics[width=0.49\textwidth]{chapters/assets/halo/halo-mu-4-r-multiple.pdf}
     \endminipage\hfill
     \minipage{\textwidth}
-    \includegraphics[width=\textwidth]{chapters/assets/halo/halo-mu-4-compare-bipolar.pdf}
+    \includegraphics[width=0.49\textwidth]{chapters/assets/halo/halo-mu-4-compare-bipolar.pdf}
     \endminipage\hfill
     \caption{The left panel validates code by setting reflection to zero and approach vacuum for single forward beam. Meanwhile, we notice that for nonzero reflections, more conversion is done, which makes sense due to the similarity between $R$ and the asymmetry parameter $\alpha$ in bipolar model. The right panel validates the code by setting reflection to zero and compare with bipolar model for two beams case, where the slope is matching the theoretical value $3.85$.}
     \label{chap:halo-sec:num-fig:compare-vac-bipolar}
