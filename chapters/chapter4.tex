@@ -1034,12 +1034,13 @@ and the $+$ and $-$ signs are for SS$+$ and SS$-$, respectively. Eqn.~\ref{chap:
 \section{\label{chap:halo}Neutrino Halo Problem}
 
 
-One of the big questions about neutrino oscillations in supernovae is the so called halo problem. Cherry et al showed that neutrino flavor conversions are greatly affected by the back scattered neutrinos in supernovae~\cite{Cherry2012}. Neutrinos around supernovae are scattered and some of them are scattered to move almost backward. On the other hand, neutrino self-interactions is proportional to the inner product of momenta of neutrinos, which leads to the dependence on $1-\cos\theta$ where $\theta$ is the angles between momenta of two neutrinos. Most of the research has been concentrating on mostly forward scattering, with small values for $1-\cos\theta$. For back ward scattered neutrinos, the interaction potential can be much larger than the forward scattered neutrino contributions. Though the work by Sarikas et al showed that matter suppression is still significant within this region~\cite{Sarikas2012a}, it is not clear how exactly the neutrino halo alters neutrino oscillations. The halo problem itself is worth more calculations. In this chapter, I will present a relaxation method for this problem. The focus will be on the numerical method itself.
+% One of the big questions about neutrino oscillations in supernovae is the so called halo problem.
+Cherry et al showed that neutrino flavor conversions are greatly affected by the back scattered neutrinos in supernovae, which is called the neutrino halo problem~\cite{Cherry2012}. Neutrinos around supernovae are scattered and some of them are scattered to move almost backward. On the other hand, neutrino self-interactions is proportional to the inner product of momenta of neutrinos, which leads to the dependence on $1-\cos\theta$ where $\theta$ is the angles between momenta of two neutrinos. Most of the research has been concentrating on mostly forward scattering, with small values for $1-\cos\theta$. For backward scattered neutrinos, the interaction potential can be much larger than the forward scattered neutrino potential. Though the work by S. Sarikas et al showed that matter suppression is still significant within this region~\cite{Sarikas2012a}, it is not clear how exactly the neutrino halo alters neutrino oscillations. The halo problem itself is worth more calculations. In this chapter, I will present a relaxation method for this problem. The focus will be on the numerical method itself.
 
 
 \subsection{\label{chap:halo-sec:line}Line Model}
 
-I continue to use the simplified line model and build our intuitions out of it. The halo problem is simplified to have neutrinos emitted from a line $z=0$ homogeneously, which are reflected from a certain distance $z=L$. In principle, the reflection angles doesn’t have to be Snell’s law. The scattering can be in any angle with different amplitudes. Here I am using this very simple Snell’s law just to explore the effect of halo. It's crucial to keep an eye on the simplifications in this line model.
+I will use the line model to build intuitions of the halo problem. The halo problem is simplified to have neutrinos emitted from a line $z=0$ homogeneously, which are reflected from a certain distance $z=L$. In general, the reflection angles doesn’t have to be Snell’s law. The scattering can be in any angle with different amplitudes. Here I am using this very simple Snell’s law just to explore the effect of halo. In summary, I use the following assumptions.
 \begin{itemize}
     \item Neutrinos are emitted from a line, which is not the case in a real supernova.
     \item Neutrinos are emitted with translation symmetry on the line. Breaking the symmetry might bring in other qualitatively different results.
@@ -1048,30 +1049,28 @@ I continue to use the simplified line model and build our intuitions out of it. 
     \item Neutrinos are homogeneously reflected at $z=L$.
 \end{itemize}
 
-
+Fig.~\ref{chap:halo-sec:line-fig:line-model} describes the above model in details. The state of the left-going beam and right-going beam are denoted as $\rho_1$ and $\rho_2$, respectively. Each beam has self-interaction potential $n_i$.
 
 \begin{figure}
     \centering
     \includegraphics[width=\textwidth]{chapters/assets/halo/halo-line-model}
-    \caption{Line model used for halo problem. Neutrinos are emitted from the bottom line and reflected at the top line. Two neutrino beams are demonstrated in the figure. The beams are reflected from a surface at $z=L$.}
+    \caption{A general line model for halo problem. The neutrinos are emitted from the bottom line and reflected at the top line. Two neutrino beams are demonstrated in the figure. The beams are reflected from a surface at $z=L$.}
     \label{chap:halo-sec:line-fig:line-model}
 \end{figure}
 
 
-The algorithm that I used is relaxation method. The algorithm is meant to find the equilibrium state of neutrino oscillations with the presence of halo.
-\begin{enumerate}
-\item Calculate forward beam using 0 backward beam;
-\item Calculate backward beam using forward beam calculated in 1;
-\item Calculate forward beam using backward beam calculated in 2;
-\item Repeat until the beams reach equilibrium.
-\end{enumerate}
-
-
 \subsection{\label{chap:halo-sec:line-sym}Neutrino Beams Only}
 
-As a first step, I calculated neutrino oscillations with only neutrino beams. Before I rush to the numerical results, I linearized the equation of motion and worked out the linear stability analysis.
+As a first step, I calculated the neutrino oscillations with neutrino beams only and propagating with $\theta_1=\theta_2=\pi/2$ (see Fig.~\ref{chap:halo-sec:line-fig:line-model-simplified}) Before I rush to the numerical results, I will linearize the equation of motion and work out the linear stability analysis for this simplified line model.
 
-In linear regime, I define the density matrices for forward and backward beams to be
+\begin{figure}
+    \centering
+    \includegraphics[width=\textwidth]{chapters/assets/halo/halo-line-model-single-beam}
+    \caption{The simplified line model similar to Fig.~\ref{chap:halo-sec:line-fig:line-model} but with neutrino beams only and $\theta_1=\theta_2=\pi/2$.}
+    \label{chap:halo-sec:line-fig:line-model-simplified}
+\end{figure}
+
+In the linear regime, I define the density matrices for forward and backward beams to be
 \begin{align*}
    \rho_F &= \frac{1}{2} \begin{pmatrix}
    1 & \epsilon_F \\
@@ -1163,6 +1162,15 @@ The only $z$ dependent term is $\cosh( 2\delta(L-z) )$, which is decreasing with
 
 We expect the numerical calculations bare the same behavior that the instability leads to no growth but decrease in flavor conversion, assuming the neutrinos start from electron flavor. The result indeed confirms it. Fig.~\ref{chap:halo-sec:line-sym-fig:mu-1.0-reflection-0.07} is an example of it.
 
+I use the relaxation method to solve this simplified halo problem. The algorithm is meant to find the equilibrium state of neutrino oscillations with the presence of halo.
+\begin{enumerate}
+\item Calculate forward beam using 0 backward beam;
+\item Calculate backward beam using forward beam calculated in 1;
+\item Calculate forward beam using backward beam calculated in 2;
+\item Repeat until the beams reach equilibrium.
+\end{enumerate}
+
+
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=\textwidth]{chapters/assets/halo/mu-1-reflection-0p07.pdf}
@@ -1184,10 +1192,10 @@ the reflected beam works as an antineutrino beam but the system becomes the oppo
 \begin{figure}[htbp]
     % \centering
     \minipage{0.49\textwidth}
-    \includegraphics[width=\textwidth]{chapters/assets/halo/growth-rate-mu-refl-nh.jpg}
+    \includegraphics[width=\textwidth]{chapters/assets/halo/growth-rate-mu-refl-nh}
     \endminipage\hfill
     \minipage{0.49\textwidth}
-    \includegraphics[width=\textwidth]{chapters/assets/halo/growth-rate-mu-refl-ih.jpg}
+    \includegraphics[width=\textwidth]{chapters/assets/halo/growth-rate-mu-refl-ih}
     \endminipage\hfill
     \caption{Instability regions for normal hierarchy (left) and inverted hierarchy (right) as a function of neutrino potential $\mu$ and reflection coefficient $R$, with vacuum mixing angle set to 0. No instabilities is found in inverted hierarchy.}
     \label{chap:halo-sec:line-sym-fig:instability-regions}
@@ -1243,19 +1251,34 @@ Calculate backward beam and forward beam together using the state of beams from 
 \item
 Repeat the previous step until the state of the beams reach equilibrium.
 \end{enumerate}
-To speed up the calculations, I also implemented OpenMP for parallel computing. The code is tested using vacuum oscillations (shown in Fig.~\ref{chap:halo-sec:num-fig:compare-vac-bipolar}) and bipolar models. The reason that we still have conversions is because of the vacuum term, which is additional to linear stability analysis. It is also proven to reach equilibrium quickly as shown in Fig.~\ref{chap:halo-sec:num-fig:relax-color}.
+To speed up the calculations, I also implemented OpenMP for parallel computing. The code is tested using vacuum oscillations (shown in Fig.~\ref{chap:halo-sec:num-fig:compare-vac-bipolar-validate}) and bipolar models. The reason that we still have conversions is because of the vacuum term, which is additional to linear stability analysis (see Fig.~\ref{chap:halo-sec:num-fig:compare-vac-bipolar-lsa}). I also proved that the neutrino oscillations reached equilibrium quickly as shown in Fig.~\ref{chap:halo-sec:num-fig:relax-color} where the neutrino flavors are indicated by colors.
+
 
 \begin{figure}[htbp]
-    \minipage{\textwidth}
-    % \includegraphics[width=\textwidth]{chapters/assets/halo/halo-mu-4-compare-vac.pdf}
     \includegraphics[width=0.49\textwidth]{chapters/assets/halo/halo-mu-4-r-multiple.pdf}
-    \endminipage\hfill
-    \minipage{\textwidth}
-    \includegraphics[width=0.49\textwidth]{chapters/assets/halo/halo-mu-4-compare-bipolar.pdf}
-    \endminipage\hfill
-    \caption{The left panel validates code by setting reflection to zero and approach vacuum for single forward beam. Meanwhile, we notice that for nonzero reflections, more conversion is done, which makes sense due to the similarity between $R$ and the asymmetry parameter $\alpha$ in bipolar model. The right panel validates the code by setting reflection to zero and compare with bipolar model for two beams case, where the slope is matching the theoretical value $3.85$.}
-    \label{chap:halo-sec:num-fig:compare-vac-bipolar}
+    \caption{The validation of the code by setting reflection to zero and approach vacuum for single forward beam. For nonzero reflections, more conversion is done, which makes sense due to the similarity between $R$ and the asymmetry parameter $\alpha$ in bipolar model.}
+    \label{chap:halo-sec:num-fig:compare-vac-bipolar-validate}
 \end{figure}
+
+
+\begin{figure}[htbp]
+    \includegraphics[width=0.49\textwidth]{chapters/assets/halo/halo-mu-4-compare-bipolar.pdf}
+    \caption{The validation of the code by setting reflection to zero and compare with bipolar model for two beams case, where the slope is matching the theoretical value $3.85$.}
+    \label{chap:halo-sec:num-fig:compare-vac-bipolar-lsa}
+\end{figure}
+
+
+% \begin{figure}[htbp]
+%     \minipage{\textwidth}
+%     % \includegraphics[width=\textwidth]{chapters/assets/halo/halo-mu-4-compare-vac.pdf}
+%     \includegraphics[width=0.49\textwidth]{chapters/assets/halo/halo-mu-4-r-multiple.pdf}
+%     \endminipage\hfill
+%     \minipage{\textwidth}
+%     \includegraphics[width=0.49\textwidth]{chapters/assets/halo/halo-mu-4-compare-bipolar.pdf}
+%     \endminipage\hfill
+%     \caption{The left panel validates code by setting reflection to zero and approach vacuum for single forward beam. Meanwhile, we notice that for nonzero reflections, more conversion is done, which makes sense due to the similarity between $R$ and the asymmetry parameter $\alpha$ in bipolar model. The right panel validates the code by setting reflection to zero and compare with bipolar model for two beams case, where the slope is matching the theoretical value $3.85$.}
+%     \label{chap:halo-sec:num-fig:compare-vac-bipolar}
+% \end{figure}
 
 \begin{figure}[htbp]
     \centering
