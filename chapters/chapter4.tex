@@ -199,7 +199,7 @@ In the above equation I have replaced flavor isospin $\vec s$ with its projectio
 
 During the synchronized flavor transformation, the whole neutrino medium behaves as if there were a single neutrino oscillates with the mean frequency $\langle \omega_\vv \rangle$ in vacuum. Under certain conditions, the neutrino self-interaction potential can cause the neutrino medium to evolve in a way completely different than the vacuum oscillations. I will illustrate this phenomenon using the two-beam neutrino model.
 
-In the two-beam model, neutrinos and antineutrinos are emitted in two different directions from a plane (which we assume to be the $x$-$y$ plane) with angles $\theta_1$ and $\theta_2$ as shown in Fig.~\ref{chap:collective-sec:two-beams-fig:two-beam-line-model}. I will assume that the neutrino emission plane is homogeneous and that the neutrino and antineutrino have the same density $n$ in the emission plane. I will also assume that the matter density vanishes everywhere in space.
+In the two-beam model, neutrinos and antineutrinos are emitted in two different directions from a plane which we assume to be the $x$-$y$ plane. I define the emission angles of the neutrino beams $\theta_1$ and $\theta_2$ inside the plane spanned by the velocity vectors of the two neutrino beams (see Fig.~\ref{chap:collective-sec:two-beams-fig:two-beam-line-model}). I will assume that the neutrino emission plane is homogeneous and that the neutrino and antineutrino have the same density $n$ in the emission plane. I will also assume that the matter density vanishes everywhere in space.
 
 
 
@@ -974,7 +974,7 @@ where $\mathcal P$ denotes the principal value of the integral. As long as $G(0)
 
 Eqn.~\ref{eqn-k-arbitrary-spectrum} can be used to determine the values of $k_{\mathrm R}$ and $k_{\mathrm I}$ in the limit of $\omega\to 0$ for the AS branch of the dispersion relations. One can apply the same method to the SS branches which gives
 \begin{align}
-&\left(4 k_{\mathrm R} - J_{-1} + J_1 \right)^2  - \left( \operatorname{Sign}(\omega k_{\mathrm I} )\pi G(0) +4 k_{\mathrm I} \right)^2 \\
+&\left(4 k_{\mathrm R} - J_{-1} + J_1 \right)^2  - \left( \operatorname{Sign}(\omega k_{\mathrm I} )\pi G(0) +4 k_{\mathrm I} \right)^2 \nonumber\\
 =& - \left( J_{-1} + J_1 \right) \pi \operatorname{Sign}(\omega k_{\mathrm I} ) G(0)
 \label{chap:collective-eqn:dr-ss-general-limit-omega-0}
 \end{align}
@@ -1031,32 +1031,142 @@ and the $+$ and $-$ signs are for SS$+$ and SS$-$, respectively. Eqn.~\ref{chap:
 
 
 
-\section{\label{chap:halo}Neutrino Halo Problem}
+\section{\label{chap:halo}Neutrino Oscillations with Reflected Fluxes}
 
+Most of the researches on supernova neutrino oscillations assumed that neutrinos are emitted from the spherical surface of a neutron star and that they are free streaming. In the real supernova environment, however, a small amount of neutrinos can be scattered back towards the neutron star. J. Cherry et al. showed that the ``neutrino halo'' formed by the scattered neutrino fluxes can change the neutrino self-interaction potential dramatically  which may have an impact on neutrino oscillations in the supernova~\cite{Cherry2012}. In the section, I describe a toy model which can be used to explore the impact of the scattered neutrino fluxes on neutrino oscillations.
 
 % One of the big questions about neutrino oscillations in supernovae is the so called halo problem.
-Cherry et al showed that neutrino flavor conversions are greatly affected by the back scattered neutrinos in supernovae, which is called the neutrino halo problem~\cite{Cherry2012}. Neutrinos around supernovae are scattered and some of them are scattered to move almost backward. On the other hand, neutrino self-interactions is proportional to the inner product of momenta of neutrinos, which leads to the dependence on $1-\cos\theta$ where $\theta$ is the angles between momenta of two neutrinos. Most of the research has been concentrating on mostly forward scattering, with small values for $1-\cos\theta$. For backward scattered neutrinos, the interaction potential can be much larger than the forward scattered neutrino potential. Though the work by S. Sarikas et al showed that matter suppression is still significant within this region~\cite{Sarikas2012a}, it is not clear how exactly the neutrino halo alters neutrino oscillations. The halo problem itself is worth more calculations. In this chapter, I will present a relaxation method for this problem. The focus will be on the numerical method itself.
+% J. Cherry et al showed that neutrino flavor conversions are greatly affected by the back scattered neutrinos in supernovae, which is called the neutrino halo problem~\cite{Cherry2012}. Neutrinos around supernovae are scattered and some of them are scattered to move almost backward. On the other hand, neutrino self-interactions is proportional to the inner product of momenta of neutrinos, which leads to the dependence on $1-\cos\theta$ where $\theta$ is the angles between momenta of two neutrinos. Most of the research has been concentrating on mostly forward scattering, with small values for $1-\cos\theta$. For backward scattered neutrinos, the interaction potential can be much larger than the forward scattered neutrino potential. Though the work by S. Sarikas et al showed that matter suppression is still significant within this region~\cite{Sarikas2012a}, it is not clear how exactly the neutrino halo alters neutrino oscillations. The halo problem itself is worth more calculations. In this chapter, I will present a relaxation method for this problem. The focus will be on the numerical method itself.
 
 
-\subsection{\label{chap:halo-sec:line}Line Model}
+\subsection{Two-Beam Model with Reflection}
 
-I will use the line model to build intuitions of the halo problem. The halo problem is simplified to have neutrinos emitted from a line $z=0$ homogeneously, which are reflected from a certain distance $z=L$. In general, the reflection angles doesn’t have to be Snell’s law. The scattering can be in any angle with different amplitudes. Here I am using this very simple Snell’s law just to explore the effect of halo. In summary, I use the following assumptions.
-\begin{itemize}
-    \item Neutrinos are emitted from a line, which is not the case in a real supernova.
-    \item Neutrinos are emitted with translation symmetry on the line. Breaking the symmetry might bring in other qualitatively different results.
-    \item Neutrinos are reflected from a certain surface $z=L$, which is different from reality where neutrinos are scattered everywhere.
-    \item Neutrinos are reflected according to Snell's law.
-    \item Neutrinos are homogeneously reflected at $z=L$.
-\end{itemize}
+I will consider the two-beam model depicted in Fig.~\ref{chap:collective-sec:two-beams-fig:two-beam-line-model} but with a ``neutrino mirror'' at $z=L$ that partially reflect the neutrino beams backward without changing their flavor content. The equations of motion for neutrino oscillations in this model are
+\begin{align}
+    \ri \partial_z \rho_1 = & [ \mathsf H_1, \rho_1 ], \\
+    \ri \partial_z \rho_2 = & [ \mathsf H_2, \rho_2 ], \\
+    -\ri \partial_z \rho_3 = & [ \mathsf H_3, \rho_3 ], \\
+    -\ri \partial_z \rho_4 = & [ \mathsf H_4, \rho_4 ],
+\end{align}
+where beams 1 and 2 contains neutrinos and antineutrinos, beams 3 and 4 are relfected fluxes of 1 and 2. The Hamiltonians in the vacuum mass basis are 
+\begin{align}
+    \mathsf H_1 =& -\eta \omega_\vv \sigma_3 + \mu( -\alpha \chi_-  \rho_2 - \alpha \chi_+ R \rho_4 + \chi_1 R  \rho_3), \\
+    \mathsf H_2 =& \eta \omega_\vv \sigma_3 + \mu( \chi_- \rho_1 -\alpha \chi_2 R  \rho_4 + \chi_+ R  \rho_3), \\
+    \mathsf H_3 =& -\eta \omega_\vv \sigma_3 + \mu( -\alpha R  \chi_-  \rho_4 -\alpha \chi_+ \rho_2 + \chi_1  \rho_1), \\
+    \mathsf H_4 =& \eta \omega_\vv \sigma_3 + \mu( R   \chi_- \rho_3 + \chi_+  \rho_1 -\alpha \chi_2  \rho_2),
+\end{align}
+where $\mu=\sqrt{2}G_{\mathrm F}n_1$ with $n_1$ being the number flux of beam 1, $\alpha=n_2/n_1$, $R$ is the reflection coefficient of the neutrino mirror, and 
+\begin{align*}
+    \chi_+ = & 1 - \cos ( \theta_1 + \theta_2 ), \\
+    \chi_- = & 1 - \cos ( \theta_1 - \theta_2 ), \\
+    \chi_1 = & 1 - \cos ( 2\theta_1 ), \\
+    \chi_2 = & 1 - \cos ( 2\theta_2 ).
+\end{align*}
 
-Fig.~\ref{chap:halo-sec:line-fig:line-model} describes the above model in details. The state of the left-going beam and right-going beam are denoted as $\rho_1$ and $\rho_2$, respectively. Each beam has self-interaction potential $n_i$.
 
-\begin{figure}
+
+
+\subsection{\label{chap:halo-sec:num}Relaxation Method}
+
+
+
+I developed a relaxation method to solve the two-beam model with reflection numerically. For the purpose of illustrating the algorithm, I denote the Hamiltonian using its components in flavor isospin space:
+\begin{equation}
+\mathsf H = -\frac{H_i}{2}\sigma_i.
+\end{equation}
+At time $t$, the evolution operator $\mathsf U_t(\Delta t)$ becomes
+\begin{equation}
+    \mathsf U_t(\Delta t) = \begin{pmatrix}
+        \cos\left( \frac{H \Delta t}{2} \right) + \ri \frac{H_3}{H} \sin \left( \frac{H \Delta t}{2} \right) &  i \frac{H_1 - \ri H_2}{H} \sin \left( \frac{H \Delta t}{2} \right)  \\
+        - i \frac{ H_1 -\ri H_2}{H} \sin \left( \frac{H \Delta t}{2} \right) & \cos\left( \frac{H \Delta t}{2} \right) - \ri \frac{H_3}{H} \sin \left( \frac{H \Delta t}{2} \right)
+    \end{pmatrix}
+\end{equation}
+where
+\begin{equation}
+    H = \sqrt{ H_1^2 + H_2^2 + H_3^2 }
+\end{equation} 
+is the length of the Hamiltonian in flavor isospin space. The evolution operator can also be expanded using Pauli matrices
+\begin{align}
+    U_t(\Delta t) = \cos \left( \frac{H \Delta t}{2} \right) \mathsf I + \ri \left( \frac{H_1}{H}  \sigma_1 + \frac{H_2}{H} \sigma_2 + \frac{H_3}{H} \sigma_3 \right) \sin \left( \frac{H \Delta t}{2} \right) 
+    % \cos \left( \frac{H \Delta t}{2} \right) \mathsf I + \ri \frac{H_1}{H} \sin \left( \frac{H \Delta t}{2} \right) \sigma_1 + \ri \frac{H_2}{H} \sin \left( \frac{H \Delta t}{2} \right) \sigma_2 + \ri \frac{H_3}{H} \sin \left( \frac{H \Delta t}{2} \right) \sigma_3
+    % & \equiv -\frac{1}{2} \left( U_0 \mathsf I + U_1 \sigma_1 + U_2 \sigma_2 + U_3 \sigma_3 \right).
+\end{align}
+Then I calculate the density matrix at time $t+\Delta t$
+\begin{align}
+    \rho ( t + \Delta t ) &= U_t (\Delta t) \rho(t)U_t^\dagger (\Delta t) \\
+    & = \frac{1}{4} \left[  \cos( h \Delta t) \rho_n - \frac{2}{H^2} \sin^2 \left( \frac{H \Delta t}{2} \right)  H_i \rho_i H_n  \right] \sigma_n.
+\end{align}
+Using this discretization scheme, I can calculate the state of neutrinos at time $t+\Delta t$ using the state at time $t$. For the calculations, I have used fixed step size $\Delta t$ for this problem and $z=c t$ as the variables. The algorithm is described as
+\begin{enumerate}
+    \item
+Calculate the state of the forward beam using null backward beam;
+\item
+Calculate the backward beam and forward beam together using the state of beams from the previous step current counter beams;
+\item
+Repeat the previous step until the state of the beams reach equilibrium.
+\end{enumerate}
+To speed up the calculations, I have implemented OpenMP for parallel computing. The code is tested using vacuum oscillations (see Fig.~\ref{chap:halo-sec:num-fig:compare-vac-bipolar-validate}) and bipolar models. The reason that we still have conversions is because of the vacuum term, which is additional to linear stability analysis (see Fig.~\ref{chap:halo-sec:num-fig:compare-vac-bipolar-lsa}). I also proved that the neutrino oscillations reached equilibrium quickly as shown in Fig.~\ref{chap:halo-sec:num-fig:relax-color} where the neutrino flavors are indicated by colors.
+
+
+\begin{figure}[htbp]
     \centering
-    \includegraphics[width=\textwidth]{chapters/assets/halo/halo-line-model}
-    \caption{A general line model for halo problem. The neutrinos are emitted from the bottom line and reflected at the top line. Two neutrino beams are demonstrated in the figure. The beams are reflected from a surface at $z=L$.}
-    \label{chap:halo-sec:line-fig:line-model}
+    \includegraphics[width=\textwidth]{chapters/assets/halo/halo-mu-4-r-multiple.pdf}
+    \caption{The validation of the code by setting reflection to zero and approach vacuum for single forward beam. For nonzero reflections, more conversion is done, which makes sense due to the similarity between $R$ and the asymmetry parameter $\alpha$ in bipolar model.}
+    \label{chap:halo-sec:num-fig:compare-vac-bipolar-validate}
 \end{figure}
+
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\textwidth]{chapters/assets/halo/halo-mu-4-compare-bipolar.pdf}
+    \caption{The validation of the code by setting reflection to zero and compare with bipolar model for two beams case, where the slope is matching the theoretical value $3.85$.}
+    \label{chap:halo-sec:num-fig:compare-vac-bipolar-lsa}
+\end{figure}
+
+
+% \begin{figure}[htbp]
+%     \minipage{\textwidth}
+%     % \includegraphics[width=\textwidth]{chapters/assets/halo/halo-mu-4-compare-vac.pdf}
+%     \includegraphics[width=0.49\textwidth]{chapters/assets/halo/halo-mu-4-r-multiple.pdf}
+%     \endminipage\hfill
+%     \minipage{\textwidth}
+%     \includegraphics[width=0.49\textwidth]{chapters/assets/halo/halo-mu-4-compare-bipolar.pdf}
+%     \endminipage\hfill
+%     \caption{The left panel validates code by setting reflection to zero and approach vacuum for single forward beam. Meanwhile, we notice that for nonzero reflections, more conversion is done, which makes sense due to the similarity between $R$ and the asymmetry parameter $\alpha$ in bipolar model. The right panel validates the code by setting reflection to zero and compare with bipolar model for two beams case, where the slope is matching the theoretical value $3.85$.}
+%     \label{chap:halo-sec:num-fig:compare-vac-bipolar}
+% \end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=0.8\textwidth]{chapters/assets/halo/relax-color.png}
+    \caption{Relaxation method reaches equilibrium after some steps. The horizontal axis is the $z$ direction while the vertical axis is the number of iteration steps. The color indicates the survival probability for electron flavor. This calculation sets $\mu = 4$, $R=0.2$, and is done within range $[0,1]$. Equilibrium is reached around step 400 and the neutrino states stays in equilibrium.}
+    \label{chap:halo-sec:num-fig:relax-color}
+\end{figure}
+
+
+
+
+% \subsection{\label{chap:halo-sec:line}Line Model}
+
+% I will use the line model to build intuitions of the halo problem. The halo problem is simplified to have neutrinos emitted from a line $z=0$ homogeneously, which are reflected from a certain distance $z=L$. In general, the reflection angles doesn’t have to be Snell’s law. The scattering can be in any angle with different amplitudes. Here I am using this very simple Snell’s law just to explore the effect of halo. In summary, I use the following assumptions.
+% \begin{itemize}
+%     \item Neutrinos are emitted from a line, which is not the case in a real supernova.
+%     \item Neutrinos are emitted with translation symmetry on the line. Breaking the symmetry might bring in other qualitatively different results.
+%     \item Neutrinos are reflected from a certain surface $z=L$, which is different from reality where neutrinos are scattered everywhere.
+%     \item Neutrinos are reflected according to Snell's law.
+%     \item Neutrinos are homogeneously reflected at $z=L$.
+% \end{itemize}
+
+% Fig.~\ref{chap:halo-sec:line-fig:line-model} describes the above model in details. The state of the left-going beam and right-going beam are denoted as $\rho_1$ and $\rho_2$, respectively. The forward beams have neutrino number densities $n_i$ while the reflected beams have neutrino number densities $R n_i$.
+
+% \begin{figure}
+%     \centering
+%     \includegraphics[width=\textwidth]{chapters/assets/halo/halo-line-model}
+%     \caption{A general line model for the halo problem. The neutrinos are emitted from the bottom surface $z=0$ and reflected at the top surface $z=L$. Two neutrino beams are demonstrated in the figure.}
+%     \label{chap:halo-sec:line-fig:line-model}
+% \end{figure}
+
+
 
 
 \subsection{\label{chap:halo-sec:line-sym}Neutrino Beams Only}
@@ -1077,14 +1187,14 @@ In the linear regime, I define the density matrices for forward and backward bea
    \epsilon_B^* & -1
    \end{pmatrix} \\
    \rho_B &= \frac{1}{2} \begin{pmatrix}
-   1 & \epsilon_B \\
+   1 & \epsilon_B \\-
    \epsilon_B^* & -1
    \end{pmatrix}.
 \end{align*}
 The Hamiltonian for forward and back ward beams are
 \begin{align*}
-   H_F &= H_v + R \mu \rho_B \\
-   H_B &= H_v + \mu \rho_F.
+   \mathsf H_F &= \mathsf H_v + R \mu \rho_B \\
+   \mathsf H_B &= \mathsf H_v + \mu \rho_F.
 \end{align*}
 I will investigate the instability for zero mixing angle for new instabilities. The linearized equation of motion can be simplified to
 \begin{align*}
@@ -1092,8 +1202,8 @@ I will investigate the instability for zero mixing angle for new instabilities. 
    \epsilon_F \\
    \epsilon_B
    \end{pmatrix} = \begin{pmatrix}
-   -\omega_v + R \xi \mu & - R \xi \mu \\
-   \xi \mu & \omega_v - \xi \mu
+   -\omega_v + R \mu & - R  \mu \\
+   \mu & \omega_v -  \mu
    \end{pmatrix} \begin{pmatrix}
    \epsilon_F \\
    \epsilon_B
@@ -1101,21 +1211,21 @@ I will investigate the instability for zero mixing angle for new instabilities. 
 \end{align*}
 This equation can be easily solved. The eigenvalues are
 \begin{align*}
-   \Omega_+ &= \frac{1}{2} ( (R-1)\xi\mu + \sqrt{\Delta} ) \\
-   \Omega_- &= \frac{1}{2} ( (R-1)\xi\mu - \sqrt{\Delta} ),
+   \Omega_+ &= \frac{1}{2} ( (R-1)\mu + \sqrt{\Delta} ) \\
+   \Omega_- &= \frac{1}{2} ( (R-1)\mu - \sqrt{\Delta} ),
 \end{align*}
 where
 \begin{equation}
-   \Delta = (1-R)^2 \mu^2 \xi^2 - 4\mu\xi \omega_v (1+R) + 4\omega_v^2.
+   \Delta = (1-R)^2 \mu^2  - 4\mu\xi \omega_v (1+R) + 4\omega_v^2.
 \end{equation}
 The corresponding eigenvectors are
 \begin{align*}
    V_+ &=\begin{pmatrix}
-   \frac{ -2\omega_v + \xi \mu (1+R) + \sqrt{\Delta} }{2\xi\mu} \\
+   \frac{ -2\omega_v +  \mu (1+R) + \sqrt{\Delta} }{2\mu} \\
    1
    \end{pmatrix} \\
    V_- &=\begin{pmatrix}
-   \frac{ -2\omega_v + \xi \mu (1+R) - \sqrt{\Delta} }{2\xi\mu} \\
+   \frac{ -2\omega_v +  \mu (1+R) - \sqrt{\Delta} }{2\mu} \\
    1
    \end{pmatrix}.
 \end{align*}
@@ -1129,33 +1239,37 @@ The general solution to the equation is
 
 The special property about this reflection problem is that the density matrices for the forward and backward beams should be the same at the reflection point, say $z=L$. With such a simple relation, we can find the relations between $C_\pm$ by setting $\epsilon_F(L)=\epsilon_B(L)$,
 \begin{equation}
-   \frac{C_+}{C_-} = e^{-i(\Omega_- -\Omega_+)L} \frac{ \sqrt{\Delta} +  2\omega_v + \mu \xi (1-R) }{\sqrt{\Delta} -  2\omega_v - \mu \xi (1-R)}.
+   \frac{C_+}{C_-} = e^{-i(\Omega_- -\Omega_+)L} \frac{ \sqrt{\Delta} +  2\omega_v + \mu \xi (1-R) }{\sqrt{\Delta} -  2\omega_v - \mu (1-R)}.
 \end{equation}
-The solution to be problem can be simplified,
+The solution to the problem can be simplified,
 \begin{equation}
    \begin{pmatrix}
    \epsilon_F(z) \\
    \epsilon_B(z)
-   \end{pmatrix} = C_- e^{-i\Omega_- L} \left( \frac{ \sqrt{\Delta} +  2\omega_v + \mu \xi (1-R) }{\sqrt{\Delta} -  2\omega_v - \mu \xi (1-R)} V_+ e^{-i \Omega_+ (z-L)} +  V_- e^{-i \Omega_- (z-L)} \right).
+   \end{pmatrix} = C_- e^{-i\Omega_- L} \left( \frac{ \sqrt{\Delta} +  2\omega_v + \mu  (1-R) }{\sqrt{\Delta} -  2\omega_v - \mu (1-R)} V_+ e^{-i \Omega_+ (z-L)} +  V_- e^{-i \Omega_- (z-L)} \right).
 \end{equation}
 
-I am interested in the absolute values of each elements so that the overall factors can be neglected. The forward beam evolution is obtained by taking the absolute value of $\epsilon_F$,
+I am interested in exponential growth when $\Delta < 0$. The perturbation squared for the forward beam evolution is
 \begin{align*}
-   \left\vert \epsilon_F \right\vert \propto & \lvert (2\omega_v +\xi\mu(1-R) +i \delta ) ( -2\omega_v + \xi\mu(1+R) + i \delta ) e^{\delta(z-L)} \\
-   &+ ( -2\omega_v - \xi\mu(1-R) +i \delta ) ( -2\omega_v + \xi\mu(1+R) - i \delta ) e^{-\delta(z-L)} \rvert,
+   \left\vert \epsilon_F \right\vert^2 \propto & \lvert (2\omega_v + \mu(1-R) +i \delta ) ( -2\omega_v + \mu(1+R) + i \delta ) e^{\delta(z-L)} \\
+   &+ ( -2\omega_v - \mu(1-R) +i \delta ) ( -2\omega_v + \mu(1+R) - i \delta ) e^{-\delta(z-L)} \rvert^2,
 \end{align*}
 in which $\sqrt{\Delta}$ is replaced by $i \delta$. I collect terms and verify that it has the form
 \begin{equation}
    \left\vert \epsilon_F \right\vert \propto A + B \cosh( 2\delta(L-z) ),
 \end{equation}
-where $B\leq 0$.
-The only $z$ dependent term is $\cosh( 2\delta(L-z) )$, which is decreasing within $[0,L]$ and is increasing in $[L,2L]$. The slope at $z=L$ is 0. An example is plotted in Fig.~\ref{chap:halo-sec:line-sym-fig:cosh}.
+where
+\begin{align}
+    A &= 8 \mu^2 (\mu - R - 2 \omega )^2 + 8 \mu^2 \Delta  \\
+    B &= 8 \mu^2 (\mu - R - 2 \omega )^2 - 8 \mu^2 \Delta 
+\end{align}
+The only $z$ dependent term is $\cosh( 2\delta(L-z) )$, which is decreasing within $[0,L]$. The slope at $z=L$ is 0. An example is plotted in Fig.~\ref{chap:halo-sec:line-sym-fig:cosh}.
 
 
 \begin{figure}[!htbp]
     \centering
     \includegraphics[width=\textwidth]{chapters/assets/halo/cosh.pdf}
-    \caption{ An example of $\cosh(2\delta(z-L))$ with $\delta=1$, and $L=5$. This function always reach the minimum at $z=L$.}
+    \caption{ $\cosh(2\delta(z-L))$ with $\delta=1$ as a function of $z/L$. This function always reach the minimum at $z=L$.}
     \label{chap:halo-sec:line-sym-fig:cosh}
 \end{figure}
 
@@ -1173,8 +1287,9 @@ I use the relaxation method to solve this simplified halo problem. The algorithm
 
 \begin{figure}[htbp]
     \centering
-    \includegraphics[width=\textwidth]{chapters/assets/halo/mu-1-reflection-0p07.pdf}
-    \caption{Absolute value of off diagonal element for $\mu=1.0$, $R=0.07$, $L=5$, with normal hierarchy. The red dots are for the forward beam and the black dots are for the backward beams. The lines are indicating the predictions of linear stability analysis.}
+    % \includegraphics[width=\textwidth]{chapters/assets/halo/mu-1-reflection-0p07.pdf}
+    \includegraphics[width=\textwidth]{chapters/assets/halo/thesis-mu-1-refl-0p07}
+    \caption{Absolute value of the perturbation for $\mu=1.0$, $R=0.07$, $L=5$, with normal hierarchy. The red dots are for the forward beam and the black dots are for the backward beams. The lines are the predictions from linear stability analysis.}
     \label{chap:halo-sec:line-sym-fig:mu-1.0-reflection-0.07}
 \end{figure}
 
@@ -1202,90 +1317,6 @@ the reflected beam works as an antineutrino beam but the system becomes the oppo
 \end{figure}
 
 
-
-
-\subsection{Two Beams Model with Reflection}
-
-The model is naturally extended to a two beams model including both neutrinos and antineutrinos. The configuration is exactly the same as shown in Fig.~\ref{chap:halo-sec:line-fig:line-model}.
-
-As the first step we work out the linear stability analysis. The four equations of motion are
-\begin{align}
-    i \partial_z \rho_1 = & [ H_1, \rho_1 ], \\
-    i \partial_z \rho_2 = & [ H_2, \rho_2 ], \\
-    -i \partial_z \rho_3 = & [ H_3, \rho_3 ], \\
-    -i \partial_z \rho_4 = & [ H_4, \rho_4 ],
-\end{align}
-where ${}_1$ and ${}_2$ are the quantities for two forward beams while ${}_3$ and ${}_4$ are the quantities for the corresponding backward going beams. For the purpose of this analysis we set $\theta_v = 0$. The Hamiltonians are
-\begin{align}
-    H_1 =& -\eta \omega_v \sigma_3 + g_2 \chi_- \mu_2 \rho_2 + g_2 \chi_+ R \mu_2 \rho_4 + g_1 \chi_1 R \mu_1 \rho_3, \\
-    H_2 =& \eta \omega_v \sigma_3 + g_1 \chi_- \mu_1 \rho_1 + g_2 \chi_2 R \mu_2 \rho_4 + g_1 \chi_+ R \mu_1 \rho_3, \\
-    H_3 =& -\eta \omega_v \sigma_3 + R g_2 \chi_- \mu_2 \rho_4 + g_2 \chi_+\mu_2 \rho_2 + g_1 \chi_1 \mu_1 \rho_1, \\
-    H_4 =& \eta \omega_v \sigma_3 + R g_1 \mu_1 \chi_- \rho_3 + g_1 \chi_+ \mu_1 \rho_1 + g_2 \chi_2 \mu_2 \rho_2.
-\end{align}
-
-I have defined
-\begin{align*}
-    \chi_+ = & 1 - \cos ( \theta_1 + \theta_2 ), \\
-    \chi_- = & 1 - \cos ( \theta_1 - \theta_2 ), \\
-    \chi_1 = & 1 - \cos ( 2\theta_1 ), \\
-    \chi_2 = & 1 - \cos ( 2\theta_2 ),
-\end{align*}
-and $g_i$ represents the energy spectrum of the neutrinos and $\eta$ stands for the hierarchy.
-
-% Linear stability analysis can be done using computer.
-
-\section{\label{chap:halo-sec:num}Relaxation Method for Neutrino Halo Problem}
-
-
-We choose a relaxation method scheme to solve this non-local boundary value problem numerically. To begin with, we write down the discretization scheme.
-\begin{align}
-    \rho(t+\Delta t) &= \left[  \cos( 2 h \Delta t)\rho_n -  2 u_i \rho_i u_n \right]\sigma_n \\
-    &= \left[  \cos( 2 h \Delta t) \rho_n +  2 \sin^2(h \Delta t) u'_i \rho_i u'_n \right]\sigma_n
-\end{align}
-The reason that we use fixed step size for this problem is that it's easier to calculate the neutrino self-interactions on such fixed grids. The algorithm is described as
-\begin{enumerate}
-    \item
-Calculate forward beam using 0 backward beam;
-\item
-Calculate backward beam and forward beam together using the state of beams from the previous step current counter beams;
-\item
-Repeat the previous step until the state of the beams reach equilibrium.
-\end{enumerate}
-To speed up the calculations, I also implemented OpenMP for parallel computing. The code is tested using vacuum oscillations (shown in Fig.~\ref{chap:halo-sec:num-fig:compare-vac-bipolar-validate}) and bipolar models. The reason that we still have conversions is because of the vacuum term, which is additional to linear stability analysis (see Fig.~\ref{chap:halo-sec:num-fig:compare-vac-bipolar-lsa}). I also proved that the neutrino oscillations reached equilibrium quickly as shown in Fig.~\ref{chap:halo-sec:num-fig:relax-color} where the neutrino flavors are indicated by colors.
-
-
-\begin{figure}[htbp]
-    \includegraphics[width=0.49\textwidth]{chapters/assets/halo/halo-mu-4-r-multiple.pdf}
-    \caption{The validation of the code by setting reflection to zero and approach vacuum for single forward beam. For nonzero reflections, more conversion is done, which makes sense due to the similarity between $R$ and the asymmetry parameter $\alpha$ in bipolar model.}
-    \label{chap:halo-sec:num-fig:compare-vac-bipolar-validate}
-\end{figure}
-
-
-\begin{figure}[htbp]
-    \includegraphics[width=0.49\textwidth]{chapters/assets/halo/halo-mu-4-compare-bipolar.pdf}
-    \caption{The validation of the code by setting reflection to zero and compare with bipolar model for two beams case, where the slope is matching the theoretical value $3.85$.}
-    \label{chap:halo-sec:num-fig:compare-vac-bipolar-lsa}
-\end{figure}
-
-
-% \begin{figure}[htbp]
-%     \minipage{\textwidth}
-%     % \includegraphics[width=\textwidth]{chapters/assets/halo/halo-mu-4-compare-vac.pdf}
-%     \includegraphics[width=0.49\textwidth]{chapters/assets/halo/halo-mu-4-r-multiple.pdf}
-%     \endminipage\hfill
-%     \minipage{\textwidth}
-%     \includegraphics[width=0.49\textwidth]{chapters/assets/halo/halo-mu-4-compare-bipolar.pdf}
-%     \endminipage\hfill
-%     \caption{The left panel validates code by setting reflection to zero and approach vacuum for single forward beam. Meanwhile, we notice that for nonzero reflections, more conversion is done, which makes sense due to the similarity between $R$ and the asymmetry parameter $\alpha$ in bipolar model. The right panel validates the code by setting reflection to zero and compare with bipolar model for two beams case, where the slope is matching the theoretical value $3.85$.}
-%     \label{chap:halo-sec:num-fig:compare-vac-bipolar}
-% \end{figure}
-
-\begin{figure}[htbp]
-    \centering
-    \includegraphics[width=0.8\textwidth]{chapters/assets/halo/relax-color.png}
-    \caption{Relaxation method reaches equilibrium after some steps. The horizontal axis is the $z$ direction while the vertical axis is the number of iteration steps. The color indicates the survival probability for electron flavor. This calculation sets $\mu = 4$, $R=0.2$, and is done within range $[0,1]$. Equilibrium is reached around step 400 and the neutrino states stays in equilibrium.}
-    \label{chap:halo-sec:num-fig:relax-color}
-\end{figure}
 
 
 
