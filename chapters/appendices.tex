@@ -125,14 +125,14 @@ For even function $\lambda(x)$, we have
       \lambda(x) = \frac{1}{2}a_0 + \sum_{n=1}^\infty a_n \cos (n 2\pi x/X).
 \end{equation}
 
-\begin{figure}
-    \centering
-    \includegraphics[width=\textwidth]{chapters/assets/app/reconstruction-of-even-castle-wall-0point01-0point02-1-1point8.png}
-    \caption{Approaching an even function with Fourier series. The blue dash dotted line is the reconstruction of castle wall profile using 0 to 3 Fourier modes. The red dotted line is the reconstruction using 0 to 10 Fourier modes. }
-    \label{app-chap:convention-sec:fourier-series-eqn:parametric-resonance-castle-wall-fourier-coeff-even}
-\end{figure}
+% \begin{figure}
+%     \centering
+%     \includegraphics[width=\textwidth]{chapters/assets/app/reconstruction-of-even-castle-wall-0point01-0point02-1-1point8.png}
+%     \caption{Approaching an even function with Fourier series. The blue dash dotted line is the reconstruction of castle wall profile using 0 to 3 Fourier modes. The red dotted line is the reconstruction using 0 to 10 Fourier modes. }
+%     \label{app-chap:convention-sec:fourier-series-eqn:parametric-resonance-castle-wall-fourier-coeff-even}
+% \end{figure}
 
-We shift the castle wall profile and make it always even, as shown in Fig.~\ref{app-chap:convention-sec:fourier-series-eqn:parametric-resonance-castle-wall-fourier-coeff-even}, so that
+We shift the castle wall profile and make it always even so that
 \begin{equation}
    \lambda(x) = \begin{cases} \lambda_2 , &\quad -\frac{X_2}{2}-\frac{X_1}{2}\le x\le -\frac{X_1}{2} \\
    \lambda_1, &\quad -\frac{X_1}{2}\le x\le \frac{X_1}{2} \\
@@ -203,11 +203,11 @@ Using natural units, length = time = 1/energy, we could rescale almost all quant
 
 We use two flavor vacuum oscillations between the two masses $m_1$ and $m_2$ as an example. The characteristic energy scale is the oscillation frequency $\omega_{v,21}$. The equation of motion
 \begin{align}
-   i\frac{d}{d x} \Psi = \frac{\omega_v}{2}(-\cos 2\theta_v \boldsymbol{\sigma_3} + \sin 2\theta_v \boldsymbol{\sigma_1}) \Psi,
+   i\frac{d}{d x} \Psi = \frac{\omega_\vv}{2}(-\cos 2\theta_\vv \boldsymbol{\sigma_3} + \sin 2\theta_\vv \boldsymbol{\sigma_1}) \Psi,
 \end{align}
 can be rescaled using the characteristic energy scale $\omega_{v,21}$
 \begin{align}
-   i\frac{d}{d \hat x} \Psi = \frac{1}{2}(-\cos 2\theta_v \boldsymbol{\sigma_3} + \sin 2\theta_v \boldsymbol{\sigma_1})\Psi ,
+   i\frac{d}{d \hat x} \Psi = \frac{1}{2}(-\cos 2\theta_\vv \boldsymbol{\sigma_3} + \sin 2\theta_\vv \boldsymbol{\sigma_1})\Psi ,
 \end{align}
 where $\hat x = \omega_{v,21} x$. It is convenient for numerical calculations to convert quantities into dimensionless ones.
 
@@ -234,19 +234,19 @@ Similarly for $\delta m_{32}=2.4\times 10^{-3}\mathrm{eV^2}$ the frequency is
 \end{align}
 With the results for angular frequencies, the rescaled length $\hat x$ is restored using
 \begin{align}
-    x = \frac{\hat x}{\omega_v} &= \frac{\hat x}{  1.90\times 10^{-4}  \mathrm{m}^{-1}  \frac{\delta m^2}{7.5\times 10^{-5}\mathrm{eV}^2} \frac{1\mathrm{MeV}}{E} } \\
+    x = \frac{\hat x}{\omega_\vv} &= \frac{\hat x}{  1.90\times 10^{-4}  \mathrm{m}^{-1}  \frac{\delta m^2}{7.5\times 10^{-5}\mathrm{eV}^2} \frac{1\mathrm{MeV}}{E} } \\
     &= \frac{\hat x}{0.190} \mathrm{km} \frac{7.5\times 10^{-5}\mathrm{eV}^2}{\delta m^2}  \frac{E}{1\mathrm{MeV}}.
 \end{align}
 
 
 Another important example is the 2 flavor neutrino oscillations in constant matter background potential $\lambda_c = \sqrt{2}G_{\mathrm F} n_e$. The characteristic energy scale is $\omega_m$ which is calculated using
 \begin{equation}
-   \omega_m = \omega_v \sqrt{ \frac{\lambda_c}{\omega_v}^2 + 1 - 2 \frac{\lambda_c}{\omega_v}\cos 2\theta_v }.
+   \omega_m = \omega_\vv \sqrt{ \frac{\lambda_c}{\omega_\vv}^2 + 1 - 2 \frac{\lambda_c}{\omega_\vv}\cos 2\theta_\vv }.
    \label{common-sense-eqn-omega-m}
 \end{equation}
 Meanwhile, the effective mixing angle $\theta_m$ is determined by
 \begin{equation}
-   \tan 2\theta_m = \frac{\sin 2\theta_v}{\cos 2\theta_v - \frac{\lambda}{\omega_v} }.
+   \tan 2\theta_m = \frac{\sin 2\theta_\vv}{\cos 2\theta_\vv - \frac{\lambda}{\omega_\vv} }.
 \end{equation}
 Similar to vacuum equation of motion, we rescale the equation of motion in constant background using $\omega_m$
 \begin{equation}
@@ -263,8 +263,8 @@ To reverse the process and find out the actual SI unit distance after the numeri
 \end{equation}
 The procedure will be the following.
 \begin{itemize}
-    \item Calculate $\omega_v$ using Eq.~\ref{common-sense-eqn-omega-v-si-unit}.
-\item Calculate $\hat\lambda_c = \frac{\lambda_c}{\omega_v}$.
+    \item Calculate $\omega_\vv$ using Eq.~\ref{common-sense-eqn-omega-v-si-unit}.
+\item Calculate $\hat\lambda_c = \frac{\lambda_c}{\omega_\vv}$.
 \item Calculate $\omega_m$ using Eq.~\ref{common-sense-eqn-omega-m}.
 \item Find out the actual distance using Eq.~ \ref{common-sense-eqn-actual-distance-constant-matter}.
 \end{itemize}
@@ -277,7 +277,7 @@ The procedure will be the following.
 %%%%%%%%%%%% MSW Revisted %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\chapter{\label{app:msw-revisited}MSW Effect Revisited}
+\chapter{\label{app:matter-effect}Neutrino Interaction with Matter}
 
 
 
@@ -286,13 +286,13 @@ The procedure will be the following.
 
 \section{Flavor Basis}
 
-In terms of formalism, vacuum oscillations is already a Rabi oscillation at resonance with oscillation width $\omega_v \sin 2\theta_v$. As derived, neutrino oscillations in matter are determined by Hamiltonian in flavor basis
+In terms of formalism, vacuum oscillations is already a Rabi oscillation at resonance with oscillation width $\omega_\vv \sin 2\theta_\vv$. As derived, neutrino oscillations in matter are determined by Hamiltonian in flavor basis
 \begin{equation}
-      H^{(f)} = \left(- \frac{1}{2} \omega_v \cos 2\theta_v +\frac{1}{2}\lambda(x)  \right)\sigma_3 + \frac{1}{2} \omega_v \sin 2\theta_v \sigma_1,
+      H^{(\ff)} = \left(- \frac{1}{2} \omega_\vv \cos 2\theta_\vv +\frac{1}{2}\lambda(x)  \right)\sigma_3 + \frac{1}{2} \omega_\vv \sin 2\theta_\vv \sigma_1,
 \end{equation}
 with the Schr\"{o}ding equation
 \begin{equation}
-    i \partial_x \Psi^{(f)} = H^{(f)} \Psi^{(f)}.
+    i \partial_x \Psi^{(\ff)} = H^{(\ff)} \Psi^{(\ff)}.
 \end{equation}
 To make connections to Rabi oscillations, we would like to remove the changing $\sigma_3$ terms, using a transformation
 \begin{equation}
@@ -304,7 +304,7 @@ which transform the flavor basis to another basis
 \end{equation}
 The Schrodinger equation can be written into this new basis
 \begin{equation}
-    i \partial_x (T \Psi^{(r)}) = H^{(f)} T\Psi^{(r)},
+    i \partial_x (T \Psi^{(r)}) = H^{(\ff)} T\Psi^{(r)},
 \end{equation}
 which is simplified to
 \begin{equation}
@@ -312,7 +312,7 @@ which is simplified to
 \end{equation}
 where
 \begin{equation}
- H^{(r)} = - \frac{1}{2}\omega_v \cos 2\theta_v \sigma_3 + \frac{1}{2} \omega_v \sin 2\theta_v \begin{pmatrix}
+ H^{(r)} = - \frac{1}{2}\omega_\vv \cos 2\theta_\vv \sigma_3 + \frac{1}{2} \omega_\vv \sin 2\theta_\vv \begin{pmatrix}
    0 & e^{2i\eta(x)} \\
    e^{-2i\eta(x)} & 0 \\
    \end{pmatrix},
@@ -323,7 +323,7 @@ in which we remove the varying component of $\sigma_3$ elements using
 \end{equation}
 The final Hamiltonian would have some form
 \begin{equation}
-     H^{(r)} = - \frac{1}{2}\omega_v \cos 2\theta_v \sigma_3 + \frac{1}{2} \omega_v \sin 2\theta_v \begin{pmatrix}
+     H^{(r)} = - \frac{1}{2}\omega_\vv \cos 2\theta_\vv \sigma_3 + \frac{1}{2} \omega_\vv \sin 2\theta_\vv \begin{pmatrix}
    0 & e^{i\int_0^x \lambda(\tau)d\tau + 2i\eta(0)} \\
    e^{-i\int_0^x \lambda(\tau)d\tau - 2i\eta(0)} & 0 \\
    \end{pmatrix},
@@ -338,14 +338,14 @@ As for constant matter profile, $\lambda(x) = \lambda_0$, we have
 \end{equation}
 The Hamiltonian becomes
 \begin{equation}
-     H^{(r)} = - \frac{1}{2}\omega_v \cos 2\theta_v \sigma_3 + \frac{1}{2} \omega_v \sin 2\theta_v \begin{pmatrix}
+     H^{(r)} = - \frac{1}{2}\omega_\vv \cos 2\theta_\vv \sigma_3 + \frac{1}{2} \omega_\vv \sin 2\theta_\vv \begin{pmatrix}
    0 & e^{i\lambda_0 x} \\
    e^{-i\lambda_0 x} & 0 \\
    \end{pmatrix},
 \end{equation}
 which is exactly a Rabi oscillation. The resonance condition is
 \begin{equation}
-   \lambda_0 = \omega_v \cos 2\theta_v.
+   \lambda_0 = \omega_\vv \cos 2\theta_v.
 \end{equation}
 
 
@@ -357,7 +357,7 @@ which is exactly a Rabi oscillation. The resonance condition is
 
 Neutrino oscillations can be calculated in instantaneous matter basis, where the Schr\"{o}dinger equation is transformed to instantaneous matter basis by applying a rotation $U$,
 \begin{equation}
-    i \partial_x \left(  U\Psi^{(m)} \right)= H^{(f)} U\Psi^{(m)},
+    i \partial_x \left(  U\Psi^{(\mm)} \right)= H^{(\ff)} U\Psi^{(\mm)},
 \end{equation}
 where
 \begin{equation}
@@ -365,15 +365,15 @@ where
 \end{equation}
 With some simple algebra, we can write the system into
 \begin{equation}
-    i \partial _x \Psi^{(m)} = H^{(m)}\Psi^{(m)} ,
+    i \partial _x \Psi^{(\mm)} = H^{(\mm)}\Psi^{(\mm)} ,
 \end{equation}
 where
 \begin{equation}
-    H^{(m)} = U^\dagger H^{(f)} U - i U^\dagger \partial_x U.
+    H^{(\mm)} = U^\dagger H^{(\ff)} U - i U^\dagger \partial_x U.
 \end{equation}
-By setting the off-diagonal elements of the first term $U^\dagger H^{(f)} U$ to zero, we can derive the relation
+By setting the off-diagonal elements of the first term $U^\dagger H^{(\ff)} U$ to zero, we can derive the relation
 \begin{equation}
-   \tan 2\theta_m = \frac{\sin 2\theta_v}{\cos 2\theta_v - \lambda/\omega_v}.
+   \tan 2\theta_m = \frac{\sin 2\theta_\vv}{\cos 2\theta_\vv - \lambda/\omega_\vv}.
 \end{equation}
 Furthermore, we derive the term
 \begin{equation}
@@ -386,8 +386,8 @@ We can calculate $\dot\theta_m$ by taking the derivative of $\tan 2\theta_m$,
 so that
 \begin{align}
     \dot\theta_m &= \frac{1}{2} \cos^2 (2\theta_m) \frac{d}{dx} \tan 2\theta_m \\
-   & = \frac{1}{2} \frac{(\cos 2\theta_v - \lambda/\omega_v)^2}{ (\lambda/\omega_v)^2 + 1 - 2\lambda \cos 2\theta_v /\omega_v } \frac{d}{dx} \frac{\sin 2\theta_v}{\cos 2\theta_v - \lambda/\omega_v} \\
-   & = \frac{1}{2} \frac{(\cos 2\theta_v - \lambda/\omega_v)^2}{ (\lambda/\omega_v)^2 + 1 - 2\lambda \cos 2\theta_v /\omega_v }  \frac{\sin 2\theta_v}{(\cos 2\theta_v - \lambda/\omega_v)^2} \frac{1}{\omega)v} \frac{d}{dx} \lambda(x) \\
+   & = \frac{1}{2} \frac{(\cos 2\theta_\vv - \lambda/\omega_v)^2}{ (\lambda/\omega_v)^2 + 1 - 2\lambda \cos 2\theta_\vv /\omega_\vv } \frac{d}{dx} \frac{\sin 2\theta_\vv}{\cos 2\theta_\vv - \lambda/\omega_\vv} \\
+   & = \frac{1}{2} \frac{(\cos 2\theta_\vv - \lambda/\omega_v)^2}{ (\lambda/\omega_v)^2 + 1 - 2\lambda \cos 2\theta_\vv /\omega_\vv }  \frac{\sin 2\theta_\vv}{(\cos 2\theta_\vv - \lambda/\omega_v)^2} \frac{1}{\omega)v} \frac{d}{dx} \lambda(x) \\
    & = \frac{1}{2} \sin 2\theta_m \frac{1}{\omega_m} \frac{d}{dx} \lambda(x).
 \end{align}
 
@@ -398,6 +398,8 @@ so that
 
 
 
+
+\chapter{\label{app:self-interaction}Neutrino Self-interactions}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%% Bipolar %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -421,8 +423,8 @@ Neutrino oscillations has a small amplitude inside a SN core (suppressed by matt
 
 The equation of motion is
 \begin{align*}
-   i\partial_t \rho =& \left[ -\frac{\omega_v}{2} \cos2\theta \sigma_3 + \frac{\omega_v}{2}\sin 2\theta \sigma_1 - \mu \alpha \bar \rho , \rho\right] \\
-   i\partial_t \bar\rho =& \left[ \frac{\omega_v}{2} \cos2\theta \sigma_3 - \frac{\omega_v}{2}\sin 2\theta \sigma_1 + \mu \rho , \bar\rho\right].
+   i\partial_t \rho =& \left[ -\frac{\omega_\vv}{2} \cos2\theta \sigma_3 + \frac{\omega_\vv}{2}\sin 2\theta \sigma_1 - \mu \alpha \bar \rho , \rho\right] \\
+   i\partial_t \bar\rho =& \left[ \frac{\omega_\vv}{2} \cos2\theta \sigma_3 - \frac{\omega_\vv}{2}\sin 2\theta \sigma_1 + \mu \rho , \bar\rho\right].
 \end{align*}
 For the purpose of linear stability analysis, we assume that
 \begin{align*}
@@ -441,7 +443,7 @@ Plug them into equation of motion and set $\theta=0$, we have the linearized one
    \epsilon \\
    \bar\epsilon
    \end{pmatrix} = \frac{1}{2}\begin{pmatrix}
-   -\alpha \mu - \omega_v & \alpha \mu \\
+   -\alpha \mu - \omega_\vv & \alpha \mu \\
    -\mu & \mu + \omega_v
    \end{pmatrix}\begin{pmatrix}
    \epsilon \\
@@ -450,19 +452,19 @@ Plug them into equation of motion and set $\theta=0$, we have the linearized one
 \end{equation*}
 To have real eigenvalues, we require
 \begin{equation*}
-   (-1+\alpha)^2 \mu^2 + 4(1+\alpha)\mu \omega_v + 4 \omega_v^2 < 0,
+   (-1+\alpha)^2 \mu^2 + 4(1+\alpha)\mu \omega_\vv + 4 \omega_v^2 < 0,
 \end{equation*}
 which is reduced to
 \begin{equation*}
-   \frac{ -2\omega_v (1+\alpha) - 4\sqrt{ \alpha } \lvert \omega_v \rvert  }{ (1-\alpha)^2 } < \mu < \frac{ -2\omega_v (1+\alpha) + 4\sqrt{ \alpha } \lvert \omega_v \rvert  }{ (1-\alpha)^2 }.
+   \frac{ -2\omega_\vv (1+\alpha) - 4\sqrt{ \alpha } \lvert \omega_\vv \rvert  }{ (1-\alpha)^2 } < \mu < \frac{ -2\omega_\vv (1+\alpha) + 4\sqrt{ \alpha } \lvert \omega_\vv \rvert  }{ (1-\alpha)^2 }.
 \end{equation*}
 It is simplified to
 \begin{equation*}
-   \sqrt{ -2\omega_v }{ (1-\sqrt{\alpha})^2 } < \mu < \sqrt{ -2\omega_v }{ (1+\sqrt{\alpha})^2 },
+   \sqrt{ -2\omega_\vv }{ (1-\sqrt{\alpha})^2 } < \mu < \sqrt{ -2\omega_\vv }{ (1+\sqrt{\alpha})^2 },
 \end{equation*}
-assuming normal hierarchy, i.e., $\omega_v > 0$. We immediately notice that this can not happen.
+assuming normal hierarchy, i.e., $\omega_\vv > 0$. We immediately notice that this can not happen.
 
-For inverted hierarchy, we have $\omega_v < 0$, so that
+For inverted hierarchy, we have $\omega_\vv < 0$, so that
 \begin{equation*}
    \sqrt{ 2\lvert\omega_v\rvert }{ (1+\sqrt{\alpha})^2 } < \mu < \sqrt{ 2\lvert\omega_v\rvert }{ (1-\sqrt{\alpha})^2 },
 \end{equation*}
@@ -470,8 +472,8 @@ Within this region, neutrinos experience exponential growth.
 
 For completeness, we also write down the formalism in flavor isospin picture.
 \begin{align}
-    i\partial_t \mathbf s &= \mathbf s \times ( \eta \mathbf H_v + \alpha \mu \bar{\mathbf s} )\\
-    i\partial_t \bar{\mathbf s} &= \bar{\mathbf s} \times ( \eta \mathbf H_v + \mu \mathbf s ),
+    i\partial_t \vec s &= \vec s \times ( \eta \vec H_\vv + \alpha \mu \bar{\vec s} )\\
+    i\partial_t \bar{\vec s} &= \bar{\vec s} \times ( \eta \vec H_\vv + \mu \vec s ),
     \label{chap:app-sec:bipolar-eqn:flavor-isospin-eom}
 \end{align}
 where $\eta$ is the hierarchy, and $\alpha$ is the ratio of neutrino number density and antineutrino number density.
