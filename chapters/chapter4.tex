@@ -256,6 +256,7 @@ To gain a deeper understanding of the collective oscillation phenomenon, I will 
         \epsilon_1 \\
         \epsilon_2
     \end{pmatrix}.
+    \label{chap:collective-sec:bipolar-linearized-eom}
 \end{equation}
 This equation has two normal modes with corresponds to the collective modes of neutrino oscillations:
 \begin{equation}
@@ -911,7 +912,7 @@ For this model, there exist complex solutions of $k(\omega)$ even though there i
 \end{figure}
 
 
-The conjecture between the flavor instablities and DR gaps does not work for the models with continuous ELN distribution $G(u)$ either. In Fig.~\ref{fig-box-c1} I show the dispersion relations for a step-like distribution
+The conjecture between the flavor instabilities and DR gaps does not work for the models with continuous ELN distribution $G(u)$ either. In Fig.~\ref{fig-box-c1} I show the dispersion relations for a step-like distribution
 \begin{equation}
 G(u) = \begin{cases}
 -0.1 &  \text{if } -1 < u < -0.3, \\
@@ -1041,14 +1042,14 @@ Most of the researches on supernova neutrino oscillations assumed that neutrinos
 
 \subsection{Two-Beam Model with Reflection}
 
-I will consider the two-beam model depicted in Fig.~\ref{chap:collective-sec:two-beams-fig:two-beam-line-model} but with a ``neutrino mirror'' at $z=L$ that partially reflect the neutrino beams backward without changing their flavor content. The equations of motion for neutrino oscillations in this model are
+I will consider the two-beam model depicted in Fig.~\ref{chap:collective-sec:two-beams-fig:two-beam-line-model} but with a ``neutrino mirror'' at $z=L$ that partially reflects the neutrino beams backward without changing their flavor content. The equations of motion for neutrino oscillations in this model are
 \begin{align}
-    \ri \partial_z \rho_1 = & [ \mathsf H_1, \rho_1 ], \\
-    \ri \partial_z \rho_2 = & [ \mathsf H_2, \rho_2 ], \\
-    -\ri \partial_z \rho_3 = & [ \mathsf H_3, \rho_3 ], \\
-    -\ri \partial_z \rho_4 = & [ \mathsf H_4, \rho_4 ],
+    \ri \sin\theta_1 \partial_z \rho_1 = & [ \mathsf H_1, \rho_1 ], \\
+    \ri \sin\theta_2 \partial_z \rho_2 = & [ \mathsf H_2, \rho_2 ], \\
+    -\ri \sin\theta_3  \partial_z \rho_3 = & [ \mathsf H_3, \rho_3 ], \\
+    -\ri \sin\theta_4 \partial_z \rho_4 = & [ \mathsf H_4, \rho_4 ],
 \end{align}
-where beams 1 and 2 contains neutrinos and antineutrinos, beams 3 and 4 are relfected fluxes of 1 and 2. The Hamiltonians in the vacuum mass basis are 
+where beams 1 and 2 contain neutrinos and antineutrinos, beams 3 and 4 are the reflected fluxes of 1 and 2, respectively, with $\theta_3=\theta_1$ and $\theta_4=\theta_2$. The Hamiltonians in the vacuum mass basis are 
 \begin{align}
     \mathsf H_1 =& -\eta \omega_\vv \sigma_3 + \mu( -\alpha \chi_-  \rho_2 - \alpha \chi_+ R \rho_4 + \chi_1 R  \rho_3), \\
     \mathsf H_2 =& \eta \omega_\vv \sigma_3 + \mu( \chi_- \rho_1 -\alpha \chi_2 R  \rho_4 + \chi_+ R  \rho_3), \\
@@ -1070,33 +1071,34 @@ where $\mu=\sqrt{2}G_{\mathrm F}n_1$ with $n_1$ being the number flux of beam 1,
 
 
 
-I developed a relaxation method to solve the two-beam model with reflection numerically. For the purpose of illustrating the algorithm, I denote the Hamiltonian using its components in flavor isospin space:
+I developed a relaxation method to solve the two-beam model with reflection numerically. For the purpose of illustrating the algorithm, I denote the Hamiltonian using its components in flavor space:
 \begin{equation}
-\mathsf H = -\frac{H_i}{2}\sigma_i.
+\mathsf H = -\sum_i \frac{H_i}{2}\sigma_i.
 \end{equation}
-At time $t$, the evolution operator $\mathsf U_t(\Delta t)$ becomes
-\begin{equation}
-    \mathsf U_t(\Delta t) = \begin{pmatrix}
-        \cos\left( \frac{H \Delta t}{2} \right) + \ri \frac{H_3}{H} \sin \left( \frac{H \Delta t}{2} \right) &  i \frac{H_1 - \ri H_2}{H} \sin \left( \frac{H \Delta t}{2} \right)  \\
-        - i \frac{ H_1 -\ri H_2}{H} \sin \left( \frac{H \Delta t}{2} \right) & \cos\left( \frac{H \Delta t}{2} \right) - \ri \frac{H_3}{H} \sin \left( \frac{H \Delta t}{2} \right)
-    \end{pmatrix}
-\end{equation}
-where
-\begin{equation}
-    H = \sqrt{ H_1^2 + H_2^2 + H_3^2 }
-\end{equation} 
-is the length of the Hamiltonian in flavor isospin space. The evolution operator can also be expanded using Pauli matrices
+At position $z$, the evolution operator $\mathsf U(\Delta l,z)$ is
+% \begin{equation}
+%     \mathsf U(t+\Delta t, t) = \begin{pmatrix}
+%         \cos\left( \frac{H \Delta t}{2} \right) + \ri \frac{H_3}{H} \sin \left( \frac{H \Delta t}{2} \right) &  \ri \frac{H_1 - \ri H_2}{H} \sin \left( \frac{H \Delta t}{2} \right)  \\
+%         - \ri \frac{ H_1 -\ri H_2}{H} \sin \left( \frac{H \Delta t}{2} \right) & \cos\left( \frac{H \Delta t}{2} \right) - \ri \frac{H_3}{H} \sin \left( \frac{H \Delta t}{2} \right)
+%     \end{pmatrix}
+% \end{equation}
+% is the length of the Hamiltonian in flavor space. The evolution operator can also be expanded using the Pauli matrices
 \begin{align}
-    U_t(\Delta t) = \cos \left( \frac{H \Delta t}{2} \right) \mathsf I + \ri \left( \frac{H_1}{H}  \sigma_1 + \frac{H_2}{H} \sigma_2 + \frac{H_3}{H} \sigma_3 \right) \sin \left( \frac{H \Delta t}{2} \right) 
+    U(\Delta l, z) = \cos \left( \frac{H \Delta l}{2} \right) \mathsf I + \ri \left( \frac{H_1}{H}  \sigma_1 + \frac{H_2}{H} \sigma_2 + \frac{H_3}{H} \sigma_3 \right) \sin \left( \frac{H \Delta l}{2} \right) 
     % \cos \left( \frac{H \Delta t}{2} \right) \mathsf I + \ri \frac{H_1}{H} \sin \left( \frac{H \Delta t}{2} \right) \sigma_1 + \ri \frac{H_2}{H} \sin \left( \frac{H \Delta t}{2} \right) \sigma_2 + \ri \frac{H_3}{H} \sin \left( \frac{H \Delta t}{2} \right) \sigma_3
     % & \equiv -\frac{1}{2} \left( U_0 \mathsf I + U_1 \sigma_1 + U_2 \sigma_2 + U_3 \sigma_3 \right).
 \end{align}
-Then I calculate the density matrix at time $t+\Delta t$
+where $\Delta l$ is the propagation distance along the neutrino trajectory, and
+\begin{equation}
+    H = \sqrt{ H_1^2 + H_2^2 + H_3^2 }.
+\end{equation} 
+Then I calculate the density matrix at the new position $z'$ as
 \begin{align}
-    \rho ( t + \Delta t ) &= U_t (\Delta t) \rho(t)U_t^\dagger (\Delta t) \\
-    & = \frac{1}{4} \left[  \cos( h \Delta t) \rho_n - \frac{2}{H^2} \sin^2 \left( \frac{H \Delta t}{2} \right)  H_i \rho_i H_n  \right] \sigma_n.
+    \rho ( z' ) &= \mathscr F ( \mathsf H(z), \rho(z), \Delta l ) \\
+     &= \mathsf U (\Delta l, z) \rho(t)U^\dagger (\Delta l, z) \\
+    & = \frac{1}{4} \sum_j \left[  \cos( H \Delta l) \rho_j - \frac{2}{H^2} \sin^2 \left( \frac{H \Delta l}{2} \right)  \sum_i H_i \rho_i H_j  \right] \sigma_j.
 \end{align}
-Using this discretization scheme, I can calculate the state of neutrinos at time $t+\Delta t$ using the state at time $t$. For the calculations, I have used fixed step size $\Delta t$ for this problem and $z=c t$ as the variables. The algorithm is described as
+I discretize the $z$ axis into $N$ bins with $\Delta z = L/N$ and $z_n=n \Delta z$ ($n=0,1,\cdots, N$). I use the evolution operator $U_a(z+\Delta z, z)$ and the following iteration algorithm until I achieve numerical convergence.
 % \begin{algorithm}
 %     \caption{Relation method for neutrino oscillations with reflections.}\label{alg:rela}
 %     \begin{algorithmic}[1]
@@ -1111,16 +1113,29 @@ Using this discretization scheme, I can calculate the state of neutrinos at time
 %     \EndProcedure
 %     \end{algorithmic}
 % \end{algorithm}
-\begin{algorithm}[H]
-    \KwData{The neutrino states at $z=0$}
-    \KwResult{Relax the neutrino oscillations to equilibrium}
-    Calculate the state of the forward beam using null backward beam\;
-    \While{ neutrino states not close enought to the previous step }{
-        calculate the backward beam and forward beam together using the state of beams from the previous iteration.
-    }
-    % \caption{Relation method for neutrino oscillations with reflections.}
-\end{algorithm}
-To speed up the calculations, I have implemented OpenMP for parallel computing. 
+% \begin{algorithm}[H]
+%     % \KwData{The neutrino states at $z=0$}
+%     \KwResult{Relax the neutrino oscillations to equilibrium}
+%     Calculate the state of the forward beam using null backward beam\;
+%     \While{ neutrino states not close enought to the previous step }{
+%         calculate the backward beam and forward beam together using the state of beams from the previous iteration.
+%     }
+%     % \caption{Relation method for neutrino oscillations with reflections.}
+% \end{algorithm}
+\begin{verbatim}
+for all a, n: # a -> beam index; n -> position index
+    rho^0_a (z_n) = 0
+for all a:
+    rho^0_a (a_0) = [ [ 1, epsilon_a ], [ epsilon_a^*, 0 ] ]
+j = 0 # j -> iteration index
+do:
+    for a = 1, 2 and n < N:
+        rho_a^{j+1} (z_{n+1}) = F( H^{j}_a (z_n), rho_a^j(z_n), \Delta z/\sin \theta_a )
+    for a = 3, 4 and n > 0:
+        rho_a^{j+1} (z_{n-1}) = F( -H^{j}_a (z_n), rho_a^j(z_n), \Delta z/\sin \theta_a )
+while \vert rho^{j+1} - rho^{j} \vert > error tolerance
+\end{verbatim}
+To speed up the calculations, I have parallelized the above algorithm with OpenMP.
 
 % \begin{enumerate}
 %     \item
@@ -1189,112 +1204,110 @@ To speed up the calculations, I have implemented OpenMP for parallel computing.
 
 
 
-\subsection{\label{chap:halo-sec:line-sym}Neutrino Beams Only}
+\subsection{\label{chap:halo-sec:line-sym}Validation of the Relaxation Method with the Single-Beam Model}
 
+
+As a check to the relaxation algorithm discussed in the previous subsection, I apply it to the single-beam model with reflection, i.e., $\theta_1=\pi/2$ and $\alpha=0$. As the first step of the validation of the numerical code, I compare the numerical and analytical results for the vacuum oscillations case with $R=0$ and the normal neutrino mass hierarchy. The results are shown in Fig.~\ref{chap:halo-sec:num-fig:compare-vac-validate}.
 
 \begin{figure}[htbp]
     \centering
     % \includegraphics[width=\textwidth]{chapters/assets/halo/halo-mu-4-r-multiple.pdf}
     \includegraphics[width=\textwidth]{chapters/assets/halo/validate-using-vacuum-r-0-mu-1}
-    \caption{The validation of the code by setting reflection to zero and approach vacuum for single forward beam. For nonzero reflections, more conversion is done, which makes sense due to the similarity between $R$ and the asymmetry parameter $\alpha$ in bipolar model.}
+    \caption{The validation of the numerical code for the single-beam model with $R=0$ and $L=1/\omega_\vv$. The markers and the continuous curves represent the numerical and analytical results, respectively. }
     \label{chap:halo-sec:num-fig:compare-vac-validate}
 \end{figure}
+% \begin{figure}
+%     \centering
+%     \includegraphics[width=\textwidth]{chapters/assets/halo/halo-line-model-single-beam}
+%     \caption{The single-neutrino-beam line model with $\theta=\pi/2$. The neutrinos are emitted from $z=0$ and reflected at $z=L$.}
+%     \label{chap:halo-sec:line-fig:line-model-simplified}
+% \end{figure}
 
-
-As a first example, I calculated the neutrino oscillations with single neutrino beam only and propagating with emission angle $\theta=\pi/2$ (see Fig.~\ref{chap:halo-sec:line-fig:line-model-simplified}). Before I solving the numerical results, I will linearize the equation of motion and work out the solution for this single-beam line model.
-
-\begin{figure}
-    \centering
-    \includegraphics[width=\textwidth]{chapters/assets/halo/halo-line-model-single-beam}
-    \caption{The single-neutrino-beam line model with $\theta=\pi/2$. The neutrinos are emitted from $z=0$ and reflected at $z=L$.}
-    \label{chap:halo-sec:line-fig:line-model-simplified}
-\end{figure}
-
-In the linear regime, I define the density matrices for forward and backward beams to be
-\begin{align*}
-   \rho_{\mathrm F} &= \frac{1}{2} \begin{pmatrix}
-   1 & \epsilon_{\mathrm F} \\
-   \epsilon_{\mathrm F}^* & -1
-   \end{pmatrix} \\
-   \rho_{\mathrm B} &= \frac{1}{2} \begin{pmatrix}
-   1 & \epsilon_{\mathrm B} \\-
-   \epsilon_{\mathrm B}^* & -1
-   \end{pmatrix}.
-\end{align*}
-The Hamiltonian for forward and back ward beams are
-\begin{align*}
-   \mathsf H_{\mathrm F} &= \mathsf H_\vv + R \mu \rho_{\mathrm B} \\
-   \mathsf H_{\mathrm B} &= \mathsf H_\vv + \mu \rho_{\mathrm F}.
-\end{align*}
-I will investigate the instability for zero mixing angle for new instabilities. The linearized equation of motion can be simplified to
+To further validate the numerical code, I apply the linearized flavor stability analysis to the single-beam model and compare it with numerical results. The equation of motion in the linearized regime is
+% \begin{align*}
+%    \rho_{\mathrm F} &= \frac{1}{2} \begin{pmatrix}
+%    1 & \epsilon_{\mathrm F} \\
+%    \epsilon_{\mathrm F}^* & -1
+%    \end{pmatrix} \\
+%    \rho_{\mathrm B} &= \frac{1}{2} \begin{pmatrix}
+%    1 & \epsilon_{\mathrm B} \\-
+%    \epsilon_{\mathrm B}^* & -1
+%    \end{pmatrix},
+% \end{align*}
+% The Hamiltonian for forward and back ward beams are
+% \begin{align*}
+%    \mathsf H_{\mathrm F} &= \mathsf H_\vv + R \mu' \rho_{\mathrm B} \\
+%    \mathsf H_{\mathrm B} &= \mathsf H_\vv + \mu' \rho_{\mathrm F}.
+% \end{align*}
+% I will investigate the instability for zero mixing angle for new instabilities. The linearized equation of motion can be simplified to
 \begin{align*}
    i\partial_z \begin{pmatrix}
    \epsilon_{\mathrm F} \\
    \epsilon_{\mathrm B}
    \end{pmatrix} = \begin{pmatrix}
-   -\omega_\vv + R \mu & - R  \mu \\
-   \mu & \omega_\vv -  \mu
+   -\eta\omega_\vv + R \mu' & - R  \mu' \\
+   \mu' & \eta\omega_\vv -  \mu'
    \end{pmatrix} \begin{pmatrix}
    \epsilon_{\mathrm F} \\
    \epsilon_{\mathrm B}
-   \end{pmatrix}.
+   \end{pmatrix},
+   \label{chap:collective-sec:halo-eqn:linearized-eom-single-beam-model}
 \end{align*}
-This equation can be easily solved. The eigenvalues are
-\begin{align*}
-   \Omega_+ &= \frac{1}{2} ( (R-1)\mu + \sqrt{\Delta} ) \\
-   \Omega_- &= \frac{1}{2} ( (R-1)\mu - \sqrt{\Delta} ),
-\end{align*}
+where $\mu'= \mu \xi_1 = 2\mu$, and $\epsilon_\FF$ and $\epsilon_\BB$ are the off-diagonal elements of $\rho_1$ and $\rho_3$, respectively.
+This equation can be easily solved. The neutrino gas has two collective modes with oscillation frequencies
+\begin{align}
+   \Omega_\pm &= \frac{1}{2} [ (R-1)\mu' \pm \sqrt{\Delta} ],
+\end{align}
 where
 \begin{equation}
-   \Delta = (1-R)^2 \mu^2  - 4\mu\xi \omega_\vv (1+R) + 4\omega_\vv^2.
+   \Delta = (1-R)^2 \mu'^2  - 4\mu' \eta\omega_\vv (1+R) + 4\omega_\vv^2.
 \end{equation}
 The corresponding eigenvectors are
-\begin{align*}
-   V_+ &=\begin{pmatrix}
-   \frac{ -2\omega_\vv +  \mu (1+R) + \sqrt{\Delta} }{2\mu} \\
-   1
-   \end{pmatrix} \\
-   V_- &=\begin{pmatrix}
-   \frac{ -2\omega_\vv +  \mu (1+R) - \sqrt{\Delta} }{2\mu} \\
-   1
+\begin{align}
+   V_\pm &= \frac{1}{2\mu'}\begin{pmatrix}
+   { -2\eta\omega_\vv +  \mu' (1+R) \pm \sqrt{\Delta} } \\
+   2\mu'
    \end{pmatrix}.
-\end{align*}
-The general solution to the equation is
+\end{align}
+The general solution to the equation of motion is
 \begin{equation*}
    \begin{pmatrix}
    \epsilon_{\mathrm F}(z) \\
    \epsilon_{\mathrm B}(z)
-   \end{pmatrix} = C_+ V_+ e^{-i \Omega_+ z} +  C_- V_- e^{-i \Omega_- z}.
+   \end{pmatrix} = C_+ V_+ e^{-i \Omega_+ z} +  C_- V_- e^{-i \Omega_- z},
 \end{equation*}
-
-The special property about this reflection problem is that the density matrices for the forward and backward beams should be the same at the reflection point, say $z=L$. With such a simple relation, we can find the relations between $C_\pm$ by setting $\epsilon_F(L)=\epsilon_B(L)$,
+where $C_\pm$ are constants. Using the fact that $\epsilon_F(L)=\epsilon_B(L)$, I obtain
 \begin{equation}
-   \frac{C_+}{C_-} = e^{-i(\Omega_- -\Omega_+)L} \frac{ \sqrt{\Delta} +  2\omega_v + \mu \xi (1-R) }{\sqrt{\Delta} -  2\omega_v - \mu (1-R)}.
+   \frac{C_+}{C_-} = e^{-i(\Omega_- -\Omega_+)L} \frac{ \sqrt{\Delta} +  2\eta\omega_\vv + \mu' \ (1-R) }{\sqrt{\Delta} -  2\eta\omega_\vv - \mu' (1-R)}.
 \end{equation}
 The solution to the problem can be simplified,
 \begin{equation}
    \begin{pmatrix}
    \epsilon_{\mathrm F}(z) \\
    \epsilon_{\mathrm B}(z)
-   \end{pmatrix} = C_- e^{-i\Omega_- L} \left( \frac{ \sqrt{\Delta} +  2\omega_\vv + \mu  (1-R) }{\sqrt{\Delta} -  2\omega_\vv - \mu (1-R)} V_+ e^{-i \Omega_+ (z-L)} +  V_- e^{-i \Omega_- (z-L)} \right).
+   \end{pmatrix} = C_- e^{-i\Omega_- L} \left( \frac{ \sqrt{\Delta} +  2\eta\omega_\vv + \mu'  (1-R) }{\sqrt{\Delta} -  2\eta\omega_\vv - \mu' (1-R)} V_+ e^{-i \Omega_+ (z-L)} +  V_- e^{-i \Omega_- (z-L)} \right).
 \end{equation}
 
-I am interested in exponential growth when $\Delta < 0$. The perturbation squared for the forward beam evolution is
-\begin{align*}
-   \left\vert \epsilon_{\mathrm F} \right\vert^2 \propto & \lvert (2\omega_\vv + \mu(1-R) +i \delta ) ( -2\omega_\vv + \mu(1+R) + i \delta ) e^{\delta(z-L)} \\
-   &+ ( -2\omega_\vv - \mu(1-R) +i \delta ) ( -2\omega_\vv + \mu(1+R) - i \delta ) e^{-\delta(z-L)} \rvert^2,
-\end{align*}
-in which $\sqrt{\Delta}$ is replaced by $i \delta$. I collect terms and verify that it has the form
+Because $\Delta < 0$ when there exist flavor instabilities in the neutrino gas, I define $i\delta = \sqrt{\Delta}$. Therefore,
+\begin{align}
+   \left\vert \epsilon_{\mathrm F} \right\vert \propto & \lvert (2\eta\omega_\vv + \mu'(1-R) +i \delta ) ( -2\eta\omega_\vv + \mu'(1+R) + i \delta ) e^{\delta(z-L)} \nonumber\\
+   &+ ( -2\eta\omega_\vv - \mu'(1-R) +i \delta ) ( -2\eta\omega_\vv + \mu'(1+R) - i \delta ) e^{-\delta(z-L)} \rvert,
+   \label{chap:collective-sec:halo-eqn:linearized-eom-solution}
+\end{align}
+which can be simplified as
 \begin{equation}
-   \left\vert \epsilon_{\mathrm F} \right\vert \propto A + B \cosh( 2\delta(L-z) ),
+   \left\vert \epsilon_{\mathrm F} \right\vert \propto A + B \cosh( 2\delta(L-z) )
    \label{chap:collective-sec:halo-eqn:single-beam-linearized-solution}
 \end{equation}
-where
+with
 \begin{align}
-    A &= 8 \mu^2 (\mu - R - 2 \omega )^2 + 8 \mu^2 \Delta  \\
-    B &= 8 \mu^2 (\mu - R - 2 \omega )^2 - 8 \mu^2 \Delta 
+    A &= 8 \mu'^2 (\mu' - R - 2 \eta\omega_\vv )^2 + 8 \mu'^2 \Delta, \\
+    B &= 8 \mu'^2 (\mu' - R - 2 \eta\omega_\vv )^2 - 8 \mu'^2 \Delta .
 \end{align}
-The only $z$ dependent term is $\cosh( 2\delta(L-z) )$, which is decreasing within $[0,L]$. The slope at $z=L$ is 0. 
+The only $z$ dependent term in Eqn.~\ref{chap:collective-sec:halo-eqn:single-beam-linearized-solution} is $\cosh( 2\delta(L-z) )$, which decreases within $[0,L]$. In addition,
+\begin{equation}
+    \left. \frac{\dd \epsilon_\FF}{\dd z} \right \vert_{z=L} = \left. \frac{\dd \epsilon_\BB}{\dd z} \right \vert_{z=L} = 0.
+\end{equation}
 %An example is plotted in Fig.~\ref{chap:halo-sec:line-sym-fig:cosh}.
 
 
@@ -1315,17 +1328,20 @@ For small values of $\epsilon_{\FF}$ and $\epsilon_\BB$, the solution from the l
     \centering
     % \includegraphics[width=\textwidth]{chapters/assets/halo/mu-1-reflection-0p07.pdf}
     \includegraphics[width=\textwidth]{chapters/assets/halo/thesis-mu-1-refl-0p07}
-    \caption{Absolute value of the perturbation for $\mu=1.0$, $R=0.07$, $L=5$, with normal hierarchy. The red dots are for the forward beam and the black dots are for the backward beams. The lines are the predictions from linear stability analysis.}
+    \caption{The magnitudes of the off-diagonal elements of the density matrices of the forward and reflected neutrino beams as functions of distance $z$, respectively. The markers are the numerical results for the single-beam model with $\mu'= 1.0$, $R=0.07$, $L=5/\omega_\vv$, and the normal hierarchy. The continuous curves are the analytical results obtained from Eqn.~\ref{chap:collective-sec:halo-eqn:linearized-eom-solution}. [Change forward markers to squares, remove legends]}
     \label{chap:halo-sec:line-sym-fig:mu-1.0-reflection-0.07}
 \end{figure}
 
+In Fig.~\ref{chap:halo-sec:line-sym-fig:mu-1.0-reflection-0.07}, I compare the numerical results obtained from the relaxation algorithm with the analytical results in Eqn.~\ref{chap:collective-sec:halo-eqn:linearized-eom-solution} for the single-beam model with $\mu'= 1.0$, $R=0.07$, $L=5/\omega_\vv$, and the normal hierarchy. The good agreement between these results shows that the numerical code works as expected.
 
-As for linear stability analysis, I will draw an analogy between this model and the bipolar model and write down the equation of motion in flavor isospin space,
-\begin{align}
- i \partial_t \vec s_{\mathrm F} &= \vec s_{\mathrm F} \times (\vec {H}_\vv +R \mu \vec s_{\mathrm B}) \\
-   i\partial_t \vec s_{\mathrm B} &= \vec s_{\mathrm B} \times (- \vec H_\vv - \mu \vec s_{\mathrm F}) .
-\end{align}
-Using the result of bipolar model, I expect that only normal hierarchy has an instability region which is trivial since I noticed that the backward beam is acting like antineutrino beams but with different hierarchies. I find the instability regions in Fig.~\ref{chap:halo-sec:line-sym-fig:instability-regions}.
+Comparing Eqn.~\ref{chap:collective-sec:bipolar-linearized-eom} and Eqn.~\ref{chap:collective-sec:halo-eqn:linearized-eom-single-beam-model}, one sees that the single-beam model with reflection is equivalent to the two-beam model without reflection with the reflected neutrino beam playing the role of the antineutrino beam, $R\to \alpha$, $\eta \to -\eta$, and $\mu' \to \mu$. Therefore, there exist flavor instabilities in the single-model with reflection for the normal mass hierarchy as shown in Fig.~\ref{chap:halo-sec:line-sym-fig:instability-regions}.
+
+% As for linear stability analysis, I will draw an analogy between this model and the bipolar model and write down the equation of motion in flavor isospin space,
+% \begin{align}
+%  i \partial_t \vec s_{\mathrm F} &= \vec s_{\mathrm F} \times (\vec {H}_\vv +R \mu' \vec s_{\mathrm B}) \\
+%    i\partial_t \vec s_{\mathrm B} &= \vec s_{\mathrm B} \times (- \vec H_\vv - \mu' \vec s_{\mathrm F}) .
+% \end{align}
+% Using the result of bipolar model, I expect that only normal hierarchy has an instability region which is trivial since I noticed that the backward beam is acting like antineutrino beams but with different hierarchies. I find the instability regions in Fig.~\ref{chap:halo-sec:line-sym-fig:instability-regions}.
 
 
 \begin{figure}[htbp]
@@ -1336,7 +1352,7 @@ Using the result of bipolar model, I expect that only normal hierarchy has an in
     \minipage{0.49\textwidth}
     \includegraphics[width=\textwidth]{chapters/assets/halo/growth-rate-mu-refl-ih}
     \endminipage\hfill
-    \caption{Instability regions for normal hierarchy (left) and inverted hierarchy (right) as a function of neutrino potential $\mu$ and reflection coefficient $R$, with vacuum mixing angle set to 0. No instabilities is found in inverted hierarchy.}
+    \caption{Instability regions for the normal hierarchy (left) and the inverted hierarchy (right) in the single-beam model with reflection. The color represents the magnitude of the imaginary component of the collective frequency.}
     \label{chap:halo-sec:line-sym-fig:instability-regions}
 \end{figure}
 
@@ -1358,10 +1374,11 @@ Using the result of bipolar model, I expect that only normal hierarchy has an in
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\section{\label{chap:collective-sec:conclusion}Conclusion}
+\section{\label{chap:collective-sec:conclusion}Summaries}
+
+A dense neutrino medium can oscillate collectively because of the neutrino self-interaction potential. When the neutrino flavor conversion probabilities are small, one can apply the linearized flavor stability analysis to find out the regimes where neutrino oscillations begin to develop. I. Izaguirre et al. proposed that the flavor instabilities of a neutrino medium are associated with ``gaps'' between the real dispersion relation curves of the collective modes. In this chapter, I have shown that this association is not valid in general. In particular, I showed that flavor instabilities can exist in three-beam models and in models with continuous but crossed ELN distributions even without any gap in the real dispersion relation curves. 
+
+I proposed a toy model with two neutrino beams to explore neutrino oscillations with scattered fluxes such as in the supernova model with a neutrino halo. I have developed a relaxation method and a numerical code based on this method to solve the this model, and I have validated the numerical code in the scenario where only the neutrino beam and its reflected beam exist.
 
 
-The dispersion relations can be extracted from the linearized form of the equation of motion for collective neutrino oscillations. The dispersion relation becomes quadratic for neutrino emission with two zenith angles. Thus two solutions should be found for $\omega$ and $k$. The dispersion relations are hyperbolas and the gaps between the lines corresponds to instabilities. However, this correspondence doesn't hold for neutrinos emitted from more zenith angles. For more realistic spectrum, I have proved that instabilities propagate in regions of either $\omega>0$ or $\omega<0$ and never cross $\omega=0$. Hence the dispersion relation gaps should be defined as gaps between the dispersion relation curves and the axis $\omega=0$ instead of the dispersion relation curves. I have also showed that instabilities is not necessarily shown as gap in dispersion relations for neutrino emission with more than two zenith angles and box spectrum with crossing. Through the discussions, I demonstrated that the relation between dispersion relation gaps and instabilities should be used with caution.
-
-
-The second problem discussed in this chapter is the so called halo problem, which brings in more complexities to the neutrino oscillations. In the spirit of numerical methods, I developed a parallelable relaxation method, using C++ and OpenMP. The code is validated using vacuum oscillations and solution to the linearized equation of motion. Both the analytical and numerical results showed that for the single-beam line model is the same as the bipolar model. Thus I can perform linear stability analysis and find out the unstable regions. The reflection indeed may enhance the flavor conversions but I did not find new types of instability using the simple model. Future work should be done to explore the effect of symmetry breaking and multiple emission beams.
+% In the spirit of numerical methods, I developed a parallelable relaxation method, using C++ and OpenMP. The code is validated using vacuum oscillations and solution to the linearized equation of motion. Both the analytical and numerical results showed that for the single-beam line model is the same as the bipolar model. Thus I can perform linear stability analysis and find out the unstable regions. The reflection indeed may enhance the flavor conversions but I did not find new types of instability using the simple model. Future work should be done to explore the effect of symmetry breaking and multiple emission beams.
