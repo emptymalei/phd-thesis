@@ -473,7 +473,8 @@
   \setlength{\textheight}{648pt}
   \setlength{\textwidth}{427.5pt}
   \if@botnum
-      \setlength{\topmargin}{-6pt}
+      \setlength{\topmargin}{-30pt}
+      % adjust margins @ OctoMiao
   \else
       \setlength{\topmargin}{-4pt}
   \fi
