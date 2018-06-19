@@ -4,14 +4,16 @@
 
 \chapter{\label{chap:basics}General Principles of Neutrino Oscillations}
 
-Because the flavor eigenstates of the neutrino are not the same as its propagation eigenstates, it can change flavor while it propagates.
+Since the flavor eigenstates of the neutrino are not the same as its propagation eigenstates, it can change flavor while it propagates.
 In this chapter, I will use the two-flavor scheme to explain neutrino oscillations in some simple scenarios.\footnote{In most physical problems, the two-flavor scheme is a good approximation to the phenomena of neutrino oscillations. The mass splits between the three mass eigenstates are so different that the corresponding oscillations occur on very different length scales. On the right length scale, the two-flavor scheme captures the prominent features of the neutrino oscillations of the corresponding mass split.}
 I will first discuss neutrino oscillations in vacuum. After explaining the general principles of neutrino oscillations in matter, I will show how the solar neutrino problem can be explained by neutrino oscillations. Finally, I will demonstrate the flavor isospin picture which can be used to visualize neutrino oscillations.
 
 
 \section{\label{chap:basics-sec:vacuum-oscillations}Vacuum Oscillations}
 
-Before working out the math, I can estimate the frequency of the oscillations of the neutrino between its flavors. In the natural units, frequency has the same dimension as energy (see Appendix~\ref{chap:app-sec:conventions-subsec:units}). Consider an electron neutrino with momentum $p$ which is a superposition of the two mass eigenstates $\ket{\nu_i}$ ($i=1,2$) with masses $m_i$, respectively. Since the neutrino masses are small, I can Taylor expand the energy of each mass eigenstate in terms of the corresponding mass:
+Before working out the math, I can estimate the frequency of the oscillations of the neutrino between its flavors. In the natural units, frequency has the same dimension as energy. 
+% (see Appendix~\ref{chap:app-sec:conventions-subsec:units}). 
+Consider an electron neutrino with momentum $p$ which is a superposition of the two mass eigenstates $\ket{\nu_i}$ ($i=1,2$) with masses $m_i$, respectively. Since the neutrino masses are small, I can Taylor expand the energy of each mass eigenstate in terms of the corresponding mass:
 \begin{align}
 E_i & = \sqrt{m_i^2 + p^2 } \nonumber\\
 & = p \sqrt{\frac{m_i^2}{p^2} + 1} \nonumber\\
@@ -61,7 +63,7 @@ m_1^2 & 0 \\
 0 & \delta m^2
 \end{pmatrix}  + \left(\frac{m_2^2 + m_1^2}{4E}  + E \right) \mathsf{I}.
 \end{align}
-Because a multiple of the identity matrix $\mathsf{I}$ only gives an global phase to the neutrino flavor wave function, I will neglect it from now on, and the vacuum Hamiltonian simplifies to
+Because a multiple of the identity matrix $\mathsf{I}$ only gives a global phase to the neutrino flavor wave function, I will neglect it from now on, and the vacuum Hamiltonian simplifies to
 \begin{equation}
 \mathsf H^{(\vv)} =  \frac{\delta m^2}{4E} \begin{pmatrix}
 -1 & 0 \\
@@ -82,7 +84,7 @@ where
 \end{pmatrix}
 \end{align}
 are the three Pauli matrices.
-The Schr\"{o}dinger equation has the following simple solution in mass basis:
+The Schr\"{o}dinger equation has the following simple solution in the mass basis:
 \begin{equation}
 \Psi^{(\vv)}(t) = \begin{pmatrix}
 c_1(0) e^{i \omega_\vv t/2 } \\
@@ -96,7 +98,7 @@ c_2(0) e^{ -i\omega_\vv t/2 }
 % c_2(0)
 % \end{pmatrix}.
 % \end{equation}
-Using Eqn.~\ref{chap:vacuum-eqn:wavefunction}, I obtain the wave function in flavor basis,
+Using Eqn.~\ref{chap:vacuum-eqn:wavefunction}, I obtain the wave function in the flavor basis,
 \begin{align}
 \Psi^{(\ff)}(t) &= \mathsf{U}\Psi^{(\vv)}(t) \\
 & = \begin{pmatrix} \cos\theta_\vv & \sin \theta_\vv \\ -\sin \theta_\vv & \cos \theta_\vv \end{pmatrix} \begin{pmatrix} c_1(0) e^{i\omega_\vv t/2 } \\
