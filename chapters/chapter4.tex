@@ -7,7 +7,7 @@ Neutrino oscillations in the matter background have well defined linear dynamics
 One of such examples is the (core-collapse) supernova explosion which releases approximately $10^{58}$ neutrinos within seconds~\cite{Bahcall1987}. The neutrino density inside a supernova can be so large that that the neutrino self-interaction potential $H_{\nu\nu}$ to be comparable to or even larger than the matter potential in certain regions~\cite{Flowers1976a}. It has been shown that the self-interaction between the neutrinos can cause the neutrino medium to oscillate collectively~\cite{Duan2010, Duan2006}. The neutrino self-interaction also introduces a new characteristic energy scale which is proportional to the neutrino number density. As a result it is possible that neutrinos can oscillate on distance scales much shorter than the vacuum neutrino oscillation wavelength~\cite{Sawyer2016,Chakraborty2016}.
 %~\cite{Malkus2014, Vaananen2015, Wu2015}.
 
-In this chapter, I will first review some of the general features of collective neutrino oscillations and introduce the method of linearized flavor stability analysis. I will then discuss the dispersion relation of the collective modes of neutrino oscillations and show that it may or may not be related to the flavor stability of neutrino gas. Finally, I will demonstrate an preliminary study of a toy model which can be used to understand the neutrino oscillations in the presence of the neutrino halo~\cite{Sarikas2012a,Cherry2012}.
+In this chapter, I will first review some of the general features of collective neutrino oscillations and introduce the method of linearized flavor stability analysis. I will then discuss the dispersion relations of the collective modes of neutrino oscillations and show that it may or may not be related to the flavor stability of neutrino gas. Finally, I will demonstrate a preliminary study of a toy model which can be used to understand the neutrino oscillations in the presence of the neutrino halo~\cite{Sarikas2012a,Cherry2012}.
 % review the neutrino collective oscillations and fast modes in neutrino collective oscillations. I will also review the connection between fast modes and dispersion relations proposed by I. Izaguirre et al~\cite{Izaguirre2016a}. Then I will show that the relation dispersion relations and fast modes is not well established. In the last few sections, I will discuss the neutrino halo problem, where scattering of neutrinos is considered.
 
 
@@ -18,16 +18,16 @@ In this chapter, I will first review some of the general features of collective 
 % \section{\label{chap:collective-sec:collective}Collective Oscillations}
 \section{Equation of Motion}
 
-The equation of motion for neutrino oscillations with self-interaction is\cite{Sigl1993}
+The equation of motion for neutrino oscillations with self-interaction is~\cite{Sigl1993}
 \begin{equation}
-   \ri \frac{d}{dt}\rho = [ \mathsf H,\rho],
+   \ri \frac{\dd}{\dd t}\rho = [ \mathsf H,\rho],
    \label{chap:collective-sec:collective-eqn:equation-of-motion-general}
 \end{equation}
 where the total derivative is
 \begin{equation}
-   \frac{d}{dt} = \partial_t + \mathbf v\cdot \boldsymbol{\nabla},
+   \frac{\dd}{\dd t} = \partial_t + \mathbf v\cdot \boldsymbol{\nabla},
 \end{equation}
-and the Hamiltonian Hamiltonian is composed of three different terms:
+and the Hamiltonian is composed of three different terms:
 \begin{equation}
    \mathsf H = \mathsf H_{\mathrm v} + \mathsf H_{\mathrm m} +\mathsf  H_{\nu\nu}.
 \end{equation}
@@ -49,7 +49,7 @@ and the matter potential is
 \end{equation}
 where $\eta = +1$ for the normal neutrino mass hierarchy and $-1$ for the inverted neutrino mass hierarchy, $\omega_\vv$ is the vacuum oscillation frequency of the neutrino or antineutrino, and $n_{\mathrm e}$ is the net electron number density. The neutrino self-interaction is more complicated and can be written as
 \begin{equation}
-    \mathsf H_{\nu\nu} = \sqrt{2}G_{\mathrm F} \int dE' d\Omega_{\mathbf v'} \left[ n(E',\mathbf v')\rho(E',\mathbf v') - \bar n(E',\mathbf v')\bar\rho(E',\mathbf v') \right] (1-\mathbf v \cdot \mathbf v'),
+    \mathsf H_{\nu\nu} = \sqrt{2}G_{\mathrm F} \int \dd E' \dd\Omega_{\mathbf v'} \left[ n(E',\mathbf v')\rho(E',\mathbf v') - \bar n(E',\mathbf v')\bar\rho(E',\mathbf v') \right] (1-\mathbf v \cdot \mathbf v'),
     \label{chap:collective-sec:collective-eqn:equation-of-motion-self-interaction}
 \end{equation}
 where $n(E,\mathbf v)$ and $\rho(E, \mathbf v)$ are the number density and the flavor density matrix of the neutrino with energy $E$ and velocity $\mathbf v$, and $\bar n(E, \mathbf v)$ and $\bar \rho(E,\mathbf v)$ are the corresponding quantities of the antineutrino.
@@ -120,7 +120,7 @@ where $n(E,\mathbf v)$ and $\rho(E, \mathbf v)$ are the number density and the f
 %    \mu = 2\sqrt{2} G_{\mathrm F} n_{\mathrm{t}}.
 % \end{equation}
 
-The presence of the neutrino self-interaction potential make the equation of motion \ref{chap:collective-sec:collective-eqn:equation-of-motion-general} nonlinear, and many interesting phenomenon arise because of it. For example, a dense neutrino medium can experience synchronized oscillation during which all the neutrinos and antineutrinos oscillate with the same frequency~\cite{Pastor2002,Hannestad2006,Raffelt2008,Duan2010}. To see this, I will consider an isotropic and homogeneous neutrino gas and use the flavor isospin picture discussed in Sec.~\ref{chap:basics-sec:flavor-isospin-pic}. The flavor isospin of the neutrino is defined by
+The presence of the neutrino self-interaction potential makes the equation of motion \ref{chap:collective-sec:collective-eqn:equation-of-motion-general} nonlinear, and many interesting phenomena arise because of it. For example, a dense neutrino medium can experience synchronized oscillations during which all the neutrinos and antineutrinos oscillate with the same frequency~\cite{Pastor2002,Hannestad2006,Raffelt2008,Duan2010}. To see this, I will consider an isotropic and homogeneous neutrino gas and use the flavor isospin picture discussed in Sec.~\ref{chap:basics-sec:flavor-isospin-pic}. The flavor isospin of the neutrino is defined by
 % With the equation of motion Eqn.~\eqref{chap:collective-sec:collective-eqn:equation-of-motion-general}, many aspects of such a system can be explored, such as neutrino bulb model, line model, etc. New dynamics, such as spectral split, synchronizations, matter-neutrino resonances, have been identified~\cite{Duan2006,Malkus2014,Vaananen2015}. Synchronization is one of the most surprising results which might happen when neutrino number density is large.
 \begin{equation}
    \rho = \frac{1}{2} + \vec s \cdot \vec \sigma.
@@ -145,25 +145,25 @@ where
 \end{equation}
 and
 \begin{equation}
-\vec H_{\nu\nu} = \sqrt{2}G_{\mathrm F} \int d E' n(E') \vec s(E').
+\vec H_{\nu\nu} = \sqrt{2}G_{\mathrm F} \int \dd E' n(E') \vec s(E').
 \end{equation}
 Here for simplicity I have assumed $n_{\mathrm e}=0$ and $\bar n=0$. When the neutrino density is very large, $\vec H_{\nu\nu}$ dominates over $\vec H_\vv$ in Eqn.~\eqref{chap:collective-eqn:flavor-isospin-eom}, and $\vec s_\vv$ precesses about $\vec H_{\nu\nu}$ rapidly. Meanwhile, the total flavor isospin
 \begin{equation}
-    \vec S = \int d E' f(E') \vec s(E')
+    \vec S = \int \dd E' f(E') \vec s(E')
 \end{equation}
-precesses about $\vec H_\vv$ slowly with a mean oscillation frequency $\langle omega_\vv \rangle$, where
+precesses about $\vec H_\vv$ slowly with a mean oscillation frequency $\langle \omega_\vv \rangle$, where
 \begin{equation}
-    f(E) = \frac{ n(E) }{ \int dE' n(E') }
+    f(E) = \frac{ n(E) }{ \int \dd E' n(E') }
 \end{equation}
 is the energy distribution of the neutrino. To see this, one can multiply Eqn.~\eqref{chap:collective-eqn:flavor-isospin-eom} by $f(E)$ and integrate over $E$ which gives
 \begin{align}
-    \dot{\vec S} &= \int dE f(E)\vec s(E) \times \omega_\vv \vec B \\
-    &\to \int dE f(E) \left[ \frac{\vec s(E) \cdot \vec S}{ \lvert \vec S \rvert^2 } \vec S \right] \times \omega_\vv \vec B \\
+    \dot{\vec S} &= \int \dd E f(E)\vec s(E) \times \omega_\vv \vec B \\
+    &\to \int \dd E f(E) \left[ \frac{\vec s(E) \cdot \vec S}{ \lvert \vec S \rvert^2 } \vec S \right] \times \omega_\vv \vec B \\
     &= \langle \omega_\vv \rangle \vec S \times \vec B,
 \end{align}
 where
 \begin{equation}
-    \langle \omega_\vv \rangle  = \int dE f(E) \left[ \frac{\vec s(E) \cdot \vec S}{ \lvert \vec S \rvert^2 } \right] \omega_\vv.
+    \langle \omega_\vv \rangle  = \int \dd E f(E) \left[ \frac{\vec s(E) \cdot \vec S}{ \lvert \vec S \rvert^2 } \right] \omega_\vv.
 \end{equation}
 In the above equation I have replaced flavor isospin $\vec s$ with its projection along the direction of $\vec S$ because its precession about $\vec S$ is much faster than the precession of $\vec S$ about $\vec B$.
 
@@ -197,7 +197,7 @@ In the above equation I have replaced flavor isospin $\vec s$ with its projectio
 
 \section{\label{chap:collective-sec:two-beams}Two-Beam Model and Flavor Instability}
 
-During the synchronized flavor transformation, the whole neutrino medium behaves as if there were a single neutrino oscillates with the mean frequency $\langle \omega_\vv \rangle$ in vacuum. Under certain conditions, the neutrino self-interaction potential can cause the neutrino medium to evolve in a way completely different than the vacuum oscillations. I will illustrate this phenomenon using the two-beam neutrino model.
+During the synchronized flavor transformation, the whole neutrino medium behaves as if there was a single neutrino oscillating with the mean frequency $\langle \omega_\vv \rangle$ in vacuum. Under certain conditions, the neutrino self-interaction potential can cause the neutrino medium to evolve in a way completely different than the vacuum oscillations. I will illustrate this phenomenon using the two-beam neutrino model.
 
 In the two-beam model, neutrinos and antineutrinos are emitted in two different directions from a plane which we assume to be the $x$-$y$ plane. I define the emission angles of the neutrino beams $\theta_1$ and $\theta_2$ inside the plane spanned by the velocity vectors of the two neutrino beams (see Fig.~\ref{chap:collective-sec:two-beams-fig:two-beam-line-model}). I will assume that the neutrino emission plane is homogeneous and that the neutrino and antineutrino have the same density $n$ in the emission plane. I will also assume that the matter density vanishes everywhere in space.
 
@@ -222,7 +222,7 @@ where $\omega_1 = \eta\omega_\vv$ for the neutrino beam and $\omega_2=-\eta\omeg
 \end{align}
 is the neutrino self-interaction potential.
 
-I will assume that the neutrinos and antineutrino are emitted in the pure electron flavor at $z=0$. I will also assume the vacuum mixing angle $\theta_\vv \ll 1$. Therefore, the flavor density matrix of the $i$th neutrino beam in the vacuum basis at $z=0$,
+I will assume that the neutrino and antineutrino are emitted in the pure electron flavor at $z=0$. I will also assume the vacuum mixing angle $\theta_\vv \ll 1$. Therefore, the flavor density matrix of the $i$th neutrino beam in the vacuum basis at $z=0$ is
 \begin{equation}
     \rho_i (z=0)  \approx  \begin{pmatrix}
         1 & \epsilon_i (0) \\
@@ -235,7 +235,7 @@ where
     \epsilon_i(0) = \sin (2\theta_\vv) \ll 1.
 \end{equation}
 
-I solve the two-beam model numerically with $\epsilon_i = 10^{-3}$ and $\eta=-1$. The solution is shown in Fig.~\ref{chap:collective-sec:two-beams-fig:two-beam-line-model-numerical-solution}. When $\omega_\vv z \ll 1$, the flavor isospin of the neutrino stays in the electron flavor state, i.e., in the direction of third axis $\vec e_3$ in the flavor isospin space (see the left panel of Fig.~\ref{chap:collective-sec:two-beams-fig:two-beam-line-model-numerical-solution}). Accordingly, the electron flavor survival probability $P_{\nu_\ee}\approx 1$ at small $z$ but falls down rapidly at a certain value of $z$ (see the right panel of Fig.~\ref{chap:collective-sec:two-beams-fig:two-beam-line-model-numerical-solution}). Then both the flavor isospin and $P_{\nu_\ee}$ come back to their original positions until they fall down again. The flavor isospin of the antineutrino follows a similar pattern but is in a different direction. This flavor transformation phenomenon is clearly different from the vacuum oscillation shown in Fig.~\ref{chap:basics-section:neutrinos-fig:vacuum-2-flavor-osc}.
+I solve the two-beam model numerically with $\epsilon_i = 10^{-3}$ and $\eta=-1$. The solution is shown in Fig.~\ref{chap:collective-sec:two-beams-fig:two-beam-line-model-numerical-solution}. When $\omega_\vv z \ll 1$, the flavor isospin of the neutrino stays in the electron flavor state, i.e., in the direction of third axis $\vec e_3$ in the flavor isospin space (see the left panel of Fig.~\ref{chap:collective-sec:two-beams-fig:two-beam-line-model-numerical-solution}). Accordingly, the electron flavor survival probability $P_{\nu_\ee}\approx 1$ at small $z$ but falls down rapidly at a certain value of $z$ (see the right panel of Fig.~\ref{chap:collective-sec:two-beams-fig:two-beam-line-model-numerical-solution}). Then both the flavor isospin and $P_{\nu_\ee}$ come back to their original positions until they fall down again. The flavor isospin of the antineutrino follows a similar pattern but is in a different direction. This flavor transformation phenomenon is clearly different from the vacuum oscillations shown in Fig.~\ref{chap:basics-section:neutrinos-fig:vacuum-2-flavor-osc}.
 
 \begin{figure}[!htbp]
     \centering
@@ -258,7 +258,7 @@ To gain a deeper understanding of the collective oscillation phenomenon, I will 
     \end{pmatrix}.
     \label{chap:collective-sec:bipolar-linearized-eom}
 \end{equation}
-This equation has two normal modes with corresponds to the collective modes of neutrino oscillations:
+This equation has two normal modes which corresponds to the collective modes of neutrino oscillations:
 \begin{equation}
     \begin{pmatrix}
         \epsilon_1 (z) \\
@@ -655,12 +655,12 @@ are the wavenumbers of the corresponding modes. For the normal mass hierarchy, $
 
 % \subsection{\label{chap:collective-sec:fast-mode-subsec:dr}Dispersion Relation of Neutrino Flavor Conversion}
 
-In the two-beam model, I have assumed the neutrino flavor density matrix $\rho(z)$ depends on $z$ only. For the neutrino medium in a real physical environment, $\rho(t,\mathbf r)$ is a function of both time $t$ and spatial coordinates $\mathbf r$. The collective mode $a$ of neutrino oscillations takes the form
+In the two-beam model, I have assumed the neutrino flavor density matrix $\rho(z)$ depends on $z$ only. For the neutrino medium in a real physical environment, $\rho(t,\mathbf r)$ is a function of both time $t$ and spatial coordinate $\mathbf r$. The collective mode $a$ of neutrino oscillations takes the form
 \begin{equation}
     \epsilon_i(t,\mathbf r) = Q_{i}^{(a)} e^{\ri (\Omega^{(a)} t - \mathbf K^{(a)} \cdot \mathbf r) }
     \label{chap:collective-sec:dispersion-relation-eqn:collective-mode-epsilon}
 \end{equation}
-where index $i$ denotes the species and the propagation direction of the neutrino, and $\Omega_a$ and $\mathbf K_a$ are the oscillation frequency and wave vector of the corresponding collective mode, respectively.  In this section, I will review the dispersion relations between $\Omega_a$ and $\mathbf K_a$ discussed by I. Izaguirre, G. Raffelt, and I. Tamborra in reference \cite{Izaguirre2016a}.
+where index $i$ denotes the species and the propagation direction of the neutrino, and $\Omega_a$ and $\mathbf K_a$ are the oscillation frequency and wavevector of the corresponding collective mode, respectively.  In this section, I will review the dispersion relations between $\Omega_a$ and $\mathbf K_a$ discussed by I. Izaguirre, G. Raffelt, and I. Tamborra in reference \cite{Izaguirre2016a}.
 
 The equation of motion for the flavor transformation of a dense neutrino medium in flavor basis is
 \begin{equation}
@@ -691,14 +691,14 @@ In the supernova, the fluxes of non-electron-flavor neutrinos are approximately 
 \begin{equation}
 G({\mathbf v}) =  \sqrt{2}G_{\mathrm F} \int \frac{E'^2 \mathrm d E'}{2\pi^2} ( n_{\nu_{\mathrm e}}(\cos\theta',\phi',E')  - n_{\bar\nu_{\mathrm e}}(\cos\theta',\phi',E')  ).
 \end{equation}
-I will perform the linear stability analysis as in Sec.~\ref{chap:collective-sec:two-beams}. For this purpose, I will assume the density matrices of the neutrinos and antineutrinos have the form
+I will perform the linear stability analysis as in Sec.~\ref{chap:collective-sec:two-beams}. For this purpose, I will assume the density matrices of the neutrino and antineutrino have the form
 \begin{equation}
 \rho_{\mathbf v} (t,\mathbf r)   = \bar \rho_{\mathbf v}  (t,\mathbf r)  = \begin{pmatrix}
 1 & \epsilon_{\mathbf v}(t,\mathbf r) \\
 \epsilon^*_{\mathbf v}(t,\mathbf r) & 0
 \end{pmatrix},
 \end{equation}
-where $\lvert \epsilon \rvert \ll 1$. Plugging this into the equation of motion, I obtain the linearized equation of motion
+where $\lvert \epsilon_{\mathbf v}(t,\mathbf r) \rvert \ll 1$. Plugging this into the equation of motion, I obtain the linearized equation of motion
 % \begin{align}
 %     \ri ( \partial_t + \mathbf v \cdot \boldsymbol{\nabla} ) \begin{pmatrix}
 %         1 & \epsilon \\
@@ -735,7 +735,7 @@ where
         \mathbf K - \boldsymbol{\Phi}
     \end{pmatrix}.
 \end{equation}
-From Eqn.~\eqref{chap:collective-sec:dispersion-relation-eqn:eom-general-collective-modes-form} I obtain the formal solution
+From Eqn.~\eqref{chap:collective-sec:dispersion-relation-eqn:eom-general-collective-modes-form} I have the formal solution
 \begin{equation}
     Q_{\mathbf v} = - \frac{ v^\mu a_\mu }{ v^\alpha k_\alpha},
     \label{chap:collective-sec:dispersion-relations-eqn:q-expression-collective-mode}
@@ -754,9 +754,10 @@ where
 \end{equation}
 The dispersion relation between $\omega$ and $\mathbf k$ is obtained by solving the characteristic equation~\cite{Izaguirre2016a}
 \begin{equation}
-\operatorname{det}\left( \Pi^\mu_{\phantom{\mu}\nu} \right) = 0.
+\operatorname{det}\left( \Pi^\mu_{\phantom{\mu}\nu} \right) = 0
 \label{eqn-dr-determinant-equation}
 \end{equation}
+since we are looking for non-trivial solutions of $a^\nu$.
 
 
 
@@ -866,7 +867,7 @@ The observation of the result of the two-angle model leads I. Izaguirre et al. t
    \minipage{0.49\textwidth}
    \includegraphics[width=\linewidth]{chapters/assets/dr/spectGarchingDRLSAPltBlob.pdf}
    \endminipage\hfill
-   \caption{The SS$+$ (green), SS$-$ (blue) and AS (red) of the dispersion relations (right panel) for a net electron flavor neutrino density distribution $n_{\nu_{\ee}}(u) -n_{\bar\nu_\ee}(u)$ obtained from a Garching 1D supernova simulation (left panel). The thick solid curves represent the dispersion relations when both $\omega$ and $k$ are real. The dashed curves represent $k_{\mathrm R}(\omega)$ in the DR gap of $\omega$, and the thin solid curves (bouding the shaded regions) are $k_{\mathrm R}(\omega)\pm k_{\mathrm I}(\omega)$.}
+   \caption{The SS$+$ (green), SS$-$ (blue) and AS (red) of the dispersion relations (right panel) for a net electron flavor neutrino density distribution $n_{\nu_{\ee}}(u) -n_{\bar\nu_\ee}(u)$ obtained from a Garching 1D supernova simulation (left panel). The thick solid curves represent the dispersion relations when both $\omega$ and $k$ are real. The dashed curves represent $k_{\mathrm R}(\omega)$ in the DR gap of $\omega$, and the thin solid curves (bounding the shaded regions) are $k_{\mathrm R}(\omega)\pm k_{\mathrm I}(\omega)$.}
    \label{fig-garching}
 \end{figure}
 
@@ -880,13 +881,13 @@ The observation of the result of the two-angle model leads I. Izaguirre et al. t
 
 \subsection{\label{chap:collective-sec:fast-mode-subsec:instability-to-gap}Refutation of the Conjecture}
 
-The association of the flavor instability in space, i.e., $k_{\mathrm I}(\omega)\neq 0$, with a DR gap in $\omega$ seems fortuituous for the two-angle model. As I explained previously, for the two-angle model, the characteristic equations are quadratic equation of $k$ for any given $\omega$. Therefore there always exists a pair of complex solutions between the DR gap in $\omega$. This is not the case when the neutrinos are emitted with more than two zenith angles.
+The association of the flavor instability in space, i.e., $k_{\mathrm I}(\omega)\neq 0$, with a DR gap in $\omega$ seems fortuitous for the two-angle model. As I explained previously, for the two-angle model, the characteristic equations are quadratic equation of $k$ for any given $\omega$. Therefore there always exists a pair of complex solutions between the DR gap in $\omega$. This is not the case when the neutrinos are emitted with more than two zenith angles.
 
 In Fig.~\ref{fig-dr-db-3}, I show the dispersion relations of a three-angle model with ELN
 \begin{align}
     G(u) = 0.5\mu \delta(u+0.1) + \mu \delta(u - 0.4) + \mu \delta(u-0.6).
 \end{align}
-For this model, there exist complex solutions of $k(\omega)$ even though there is no DR gap in $\omega$. This is because the characteristic equations are cubic equations of $k$ for given $\omega$ which admit three solutions. In certain ranges of $\omega$ there is only one real solution of $k(\omega)$. The other two solutions must be complex which indicates flavor instablities in space.
+For this model, there exist complex solutions of $k(\omega)$ even though there is no DR gap in $\omega$. This is because the characteristic equations are cubic equations of $k$ for given $\omega$ which admit three solutions. In certain ranges of $\omega$ there is only one real solution of $k(\omega)$. The other two solutions must be complex which indicates flavor instabilities in space.
 
 
 % Even though the DR gap of the  to instabilities works well for the models in \ref{chap:collective-sec:fast-mode-subsec:instabilities-and-gaps}, it can not be generalized to arbitrary number of emission angles nor to continuous spectra with crossings. As an example, I perform linear stability analysis of the three zenith angles emission configuration which is determined by a cubic function both in $\omega$ and $k$. Three solutions of $k(\omega)$ for given real $\omega(k)$  are expected. As long as real solutions disappear, complex solutions emerge, which leads to instabilities occur even without an actual gap. Rather the decrease in the number of real solutions for fixed $\omega$ or $k$ corresponds to the instabilities. As an example, I plotted in the lower panels of Fig.~\ref{fig-dr-db} the dispersion relations and instabilities for three zenith angles
@@ -971,7 +972,7 @@ k_{\mathrm I} =&  \frac{\pi}{4}G(0) \operatorname{Sign}\left( \omega \right) \op
 \end{align}
 \label{eqn-k-arbitrary-spectrum}
 \end{subequations}
-where $\mathcal P$ denotes the principal value of the integral. As long as $G(0)\neq 0$, $\omega$ must have the same sign as $G(0)$ which implies that $k(\omega)$ exists only on one side of the vicinity of $\omega=0$. For the two scenarios depicted in Fig.~\ref{fig-garching} and Fig.~\ref{fig-box-c1}, $G(0)>0$ and $k(\omega)$ exist only in the upper half plane of $\omega$. This shows that, at least near $\omega =0$, the abscence of a DR $\omega(k)$, i.e., a ``gap'' in $\omega$, is not always associated with the flavor instabilities in space.
+where $\mathcal P$ denotes the principal value of the integral. As long as $G(0)\neq 0$, $\omega$ must have the same sign as $G(0)$ which implies that $k(\omega)$ exists only on one side of the vicinity of $\omega=0$. For the two scenarios depicted in Fig.~\ref{fig-garching} and Fig.~\ref{fig-box-c1}, $G(0)>0$ and $k(\omega)$ exist only in the upper half plane of $\omega$. This shows that, at least near $\omega =0$, the absence of a DR $\omega(k)$, i.e., a ``gap'' in $\omega$, is not always associated with the flavor instabilities in space.
 
 Eqn.~\eqref{eqn-k-arbitrary-spectrum} can be used to determine the values of $k_{\mathrm R}$ and $k_{\mathrm I}$ in the limit of $\omega\to 0$ for the AS branch of the dispersion relations. One can apply the same method to the SS branches which gives
 \begin{align}

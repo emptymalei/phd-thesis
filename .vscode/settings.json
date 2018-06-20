@@ -36,6 +36,7 @@
       "nonlocally",
       "nucleosynthesis",
       "parallelable",
+      "parallelized",
       "plemelj",
       "quaternion",
       "rabi",
@@ -48,6 +49,7 @@
       "tamborra",
       "wavenumber",
       "wavenumbers",
+      "wavevector",
       "wolfenstein"
    ]
 }
