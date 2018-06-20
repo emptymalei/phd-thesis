@@ -774,7 +774,7 @@ since we are looking for non-trivial solutions of $a^\nu$.
 
 \section{\label{chap:collective-sec:fast-mode-subsec:instabilities-and-gaps}Flavor Instabilities and Dispersion-Relation Gaps}
 
-One can find the flavor instabilities of a neutrino medium by solving the dispersion relation (DR) between $\omega$ and $\mathbf k$ from Eqn.~\eqref{eqn-dr-determinant-equation}. A negative imaginary component of $\omega$ indicates a flavor instability in time, and a positive imaginary component of $\mathbf k \cdot \hat{\mathbf z}$ indicates a flavor instability in the $+z$ direction. I. Izaguirre et al. conjectured that the flavor instabilities exist in the gaps between the real branches of the dispersion relations~\cite{Izaguirre2016a}. In this section I will first explain this conjecture. Then I will show that this conjecture is actually incorrect.
+One can find the flavor instabilities of a neutrino medium by solving the dispersion relations (DR) between $\omega$ and $\mathbf k$ from Eqn.~\eqref{eqn-dr-determinant-equation}. A negative imaginary component of $\omega$ indicates a flavor instability in time, and a positive imaginary component of $\mathbf k \cdot \hat{\mathbf z}$ indicates a flavor instability in the $+z$ direction. I. Izaguirre et al. conjectured that the flavor instabilities exist in the gaps between the real branches of the dispersion relations~\cite{Izaguirre2016a}. In this section I will first explain this conjecture. Then I will show that this conjecture is actually incorrect.
 
 
 \subsection{Conjecture of the Relation between Flavor Instabilities and DR Gaps}
@@ -792,7 +792,7 @@ I will consider a model with neutrinos emitted symmetrically about the $z$ axis.
 \end{align}
 where $\mathsf I$ is the rank-4 identity matrix and
 \begin{equation}
-   I_m =\int_{-1}^{1} d u G(u) \frac{u^m}{1 -  u/v_{\mathrm{ph}} }.
+   I_m =\int_{-1}^{1} \dd u G(u) \frac{u^m}{1 -  u/v_{\mathrm{ph}} }.
 \end{equation}
 where $u=\cos\theta$, and $\vph=\omega/k$. Here I have assumed $\mathbf k = k \hat{\mathbf z}$. %For spectrum $G(u)$ without zero values, the forbidden region is given by $1 -  \left(\lvert k\rvert /\omega\right) u\leq 0$.
 Eqn.~\eqref{eqn-det-polarization-tensor-axial} is satisfied if
@@ -819,8 +819,8 @@ To illustrate the conjecture by I. Izaguirre et al., I will consider the two-ang
 \begin{equation}
 G(u)= \mu \sum_{i=1,2} g_i \delta(u - u_i),
 \end{equation}
-where $\mu = \sqrt{2}G_{\mathrm F} n$ is proportional to the neutrino number density $n$, $g_i$ are real numbers, and $u_i=\cos \theta_i$ ($i=1,2$). For any real $k$, the characteristic equations \eqref{eqn-mza} and \eqref{eqn-maa} are both quadratic equations of $\omega$ with two solutions.
-In Fig.~\ref{fig-dr-db} I show the SS and AS of the dispersion relations $\omega(k)$ with $u_1=-0.6$, $u_2=0.6$ and $g_1=g_2=1$. In either case, both solutions $\omega(k)$ to the characteristic equations are real. However, there exist gaps between the DR curves $\omega(k)$ where there is no real solution $k(\omega)$ to the characteristic equations. Because the characteristic equations are also quadratic equations of $k$ for any given real value of $\omega$, a pair of complex solutions $k (\omega) = k_{\mathrm R} (\omega) \pm \ri k_{\mathrm I}(\omega)$ exist in the DR gap of $\omega$ (see Fig.~\ref{fig-dr-db}).
+where $\mu = \sqrt{2}G_{\mathrm F} n$ is proportional to the neutrino number density $n$, $g_i$ are real numbers, and $u_i=\cos \theta_i$ ($i=1,2$). For any real $k$, the characteristic equations \eqref{eqn-mza} and \eqref{eqn-maa} are both quadratic equations of $\omega$ with two solutions
+In Fig.~\ref{fig-dr-db}, I show the SS and AS of the dispersion relations $\omega(k)$ with $u_1=-0.6$, $u_2=0.6$ and $g_1=g_2=1$. In either case, both solutions $\omega(k)$ to the characteristic equations are real. However, there exist gaps between the DR curves $\omega(k)$ where there is no real solution $k(\omega)$ to the characteristic equations. Because the characteristic equations are also quadratic equations of $k$ for any given real value of $\omega$, a pair of complex solutions $k (\omega) = k_{\mathrm R} (\omega) \pm \ri k_{\mathrm I}(\omega)$ exist in the DR gap of $\omega$ (see Fig.~\ref{fig-dr-db}).
 
 The observation of the result of the two-angle model leads I. Izaguirre et al. to conjecture that the flavor instabilities are associated with the DR gaps. They also studied the dispersion relations using a continuous ELN distribution from a 1D supernova simulation\footnote{The data is from the Garching Core-Collapse Supernova Archive at \url{http://wwwmpa.mpa-garching.mpg.de/ccsnarchive/archive.html} } which are reproduced in Fig.~\ref{fig-garching}.
 
@@ -989,7 +989,7 @@ where
 \begin{equation}
 J_{n} = \mathcal P \int G(u)u^n \mathrm du,
 \end{equation}
-and the $+$ and $-$ signs are for SS$+$ and SS$-$, respectively. Eqn.~\eqref{chap:collective-eqn:dr-ss-general-limit-omega-0} and Eqn.~\eqref{chap:collective-eqn:dr-ss-general-limit-omega-0-ya} show that $k(\omega)$ exist on both sides of the vicinity of $\omega=0$ but may be different for SS$+$ and SS$-$.
+and the $+$ and $-$ signs are for SS$+$ and SS$-$, respectively. Eqn.~\eqref{chap:collective-eqn:dr-ss-general-limit-omega-0} and Eqn.~\eqref{chap:collective-eqn:dr-ss-general-limit-omega-0-ya} show that $k(\omega)$ exists on both sides of the vicinity of $\omega=0$ but may be different for SS$+$ and SS$-$.
 
 
 % In the case that the smooth and continuous ELN spectrum doesn't go through $0$ values (no crossing), the gap in dispersion relations indeed indicates instabilities, as shown in reference \cite{Izaguirre2016a}. I can prove that the instabilities in non-AS, AS+, or AS- solution can only appear in either region $\omega\leq 0$ or region $\omega \geq 0$. As it suggests, the instability regions propagate only between the dispersion relation curves and the axis $\omega=0$. Suppose I am looking for complex solutions for given real omega as in Fig. \ref{fig-garching}, AS solution Eq. \eqref{eqn-maa} is rewritten as a function $k(\omega/k)$. More explicitly, I have to solve the integral function to find out $k$ for real $\omega$,
@@ -1057,7 +1057,7 @@ where beams 1 and 2 contain neutrinos and antineutrinos, beams 3 and 4 are the r
     \mathsf H_3 =& -\eta \omega_\vv \sigma_3 + \mu( -\alpha R  \chi_-  \rho_4 -\alpha \chi_+ \rho_2 + \chi_1  \rho_1), \\
     \mathsf H_4 =& \eta \omega_\vv \sigma_3 + \mu( R   \chi_- \rho_3 + \chi_+  \rho_1 -\alpha \chi_2  \rho_2),
 \end{align}
-where $\mu=\sqrt{2}G_{\mathrm F}n_1$ with $n_1$ being the number flux of beam 1, $\alpha=n_2/n_1$, $R$ is the reflection coefficient of the neutrino mirror, and 
+where $\mu=\sqrt{2}G_{\mathrm F}n_1$ with $n_1$ being the number flux of beam 1, $\alpha=n_2/n_1$, $R$ is the reflection coefficient of the ``neutrino mirror'', and 
 \begin{align*}
     \chi_+ = & 1 - \cos ( \theta_1 + \theta_2 ), \\
     \chi_- = & 1 - \cos ( \theta_1 - \theta_2 ), \\
@@ -1115,6 +1115,7 @@ I discretize the $z$ axis into $N$ bins with $\Delta z = L/N$ and $z_n=n \Delta 
 %     \end{algorithmic}
 % \end{algorithm}
 % \begin{algorithm}[H]
+%       \(\rho\)
 %     % \KwData{The neutrino states at $z=0$}
 %     \KwResult{Relax the neutrino oscillations to equilibrium}
 %     Calculate the state of the forward beam using null backward beam\;
@@ -1123,20 +1124,22 @@ I discretize the $z$ axis into $N$ bins with $\Delta z = L/N$ and $z_n=n \Delta 
 %     }
 %     % \caption{Relation method for neutrino oscillations with reflections.}
 % \end{algorithm}
-\begin{verbatim}
-for all a, n: # a -> beam index; n -> position index
-    rho^0_a (z_n) = 0
+\begin{lstlisting}[mathescape]
+for all a, n: #a -> beam index; n -> position index
+    $\rho^0_a$ ($z_n$) = 0
 for all a:
-    rho^0_a (a_0) = [ [ 1, epsilon_a ], [ epsilon_a^*, 0 ] ]
-j = 0 # j -> iteration index
+    $\rho^0_a$ ($a_0$) = [ [ 1, $\epsilon_a$ ], [ $\epsilon_a^*$, 0 ] ]
+j = 0 #j -> iteration index
 do:
     for a = 1, 2 and n < N:
-        rho_a^{j+1} (z_{n+1}) = F( H^{j}_a (z_n), rho_a^j(z_n), \Delta z/\sin \theta_a )
+        $\rho_a^{j+1}$ ($z_{n+1}$) = $\mathscr{F}$( $H^{j}_a$ ($z_n$), $\rho_a^j$($z_n$), $\Delta z/\sin \theta_a$ )
     for a = 3, 4 and n > 0:
-        rho_a^{j+1} (z_{n-1}) = F( -H^{j}_a (z_n), rho_a^j(z_n), \Delta z/\sin \theta_a )
-while \vert rho^{j+1} - rho^{j} \vert > error tolerance
-\end{verbatim}
+        $\rho_a^{j+1}$ ($z_{n-1}$) = $\mathscr{F}$( $-H^{j}_a$ ($z_n$), $\rho_a^j$($z_n$), $\Delta z/\sin \theta_a$ )
+while $\vert \rho^{j+1} - rho^{j} \vert$ > error tolerance
+\end{lstlisting}
 To speed up the calculations, I have parallelized the above algorithm with OpenMP.
+
+
 
 % \begin{enumerate}
 %     \item
@@ -1277,7 +1280,7 @@ The general solution to the equation of motion is
    \epsilon_{\mathrm B}(z)
    \end{pmatrix} = C_+ V_+ e^{-i \Omega_+ z} +  C_- V_- e^{-i \Omega_- z},
 \end{equation*}
-where $C_\pm$ are constants. Using the fact that $\epsilon_F(L)=\epsilon_B(L)$, I obtain
+where $C_\pm$ are constants. Using the fact that $\epsilon_F(L)=\epsilon_B(L)$ due to the ``neutrino mirror'', I obtain
 \begin{equation}
    \frac{C_+}{C_-} = e^{-i(\Omega_- -\Omega_+)L} \frac{ \sqrt{\Delta} +  2\eta\omega_\vv + \mu' \ (1-R) }{\sqrt{\Delta} -  2\eta\omega_\vv - \mu' (1-R)}.
 \end{equation}
@@ -1289,7 +1292,7 @@ The solution to the problem can be simplified,
    \end{pmatrix} = C_- e^{-i\Omega_- L} \left( \frac{ \sqrt{\Delta} +  2\eta\omega_\vv + \mu'  (1-R) }{\sqrt{\Delta} -  2\eta\omega_\vv - \mu' (1-R)} V_+ e^{-i \Omega_+ (z-L)} +  V_- e^{-i \Omega_- (z-L)} \right).
 \end{equation}
 
-Because $\Delta < 0$ when there exist flavor instabilities in the neutrino gas, I define $i\delta = \sqrt{\Delta}$. Therefore,
+Since $\Delta < 0$ when there exist flavor instabilities in the neutrino gas, I define $i\delta = \sqrt{\Delta}$. Therefore,
 \begin{align}
    \left\vert \epsilon_{\mathrm F} \right\vert \propto & \lvert (2\eta\omega_\vv + \mu'(1-R) +i \delta ) ( -2\eta\omega_\vv + \mu'(1+R) + i \delta ) e^{\delta(z-L)} \nonumber\\
    &+ ( -2\eta\omega_\vv - \mu'(1-R) +i \delta ) ( -2\eta\omega_\vv + \mu'(1+R) - i \delta ) e^{-\delta(z-L)} \rvert,
@@ -1319,12 +1322,6 @@ The only $z$ dependent term in Eqn.~\eqref{chap:collective-sec:halo-eqn:single-b
 %     \label{chap:halo-sec:line-sym-fig:cosh}
 % \end{figure}
 
-
-
-For small values of $\epsilon_{\FF}$ and $\epsilon_\BB$, the solution from the linearized equation should represent the numerical calculations faithfully. In Fig.~\ref{chap:halo-sec:line-sym-fig:mu-1.0-reflection-0.07}, I plotted the numerical result (dots) as well as the result from Eqn.~\eqref{chap:collective-sec:halo-eqn:single-beam-linearized-solution} (lines). It clearly shows that the linearized solution is a great match to the numerical result. This is also a method to validate of the code.
-
-
-
 \begin{figure}[htbp]
     \centering
     % \includegraphics[width=\textwidth]{chapters/assets/halo/mu-1-reflection-0p07.pdf}
@@ -1333,17 +1330,14 @@ For small values of $\epsilon_{\FF}$ and $\epsilon_\BB$, the solution from the l
     \label{chap:halo-sec:line-sym-fig:mu-1.0-reflection-0.07}
 \end{figure}
 
+
+For small values of $\epsilon_{\FF}$ and $\epsilon_\BB$, the solution from the linearized equation should represent the numerical calculations faithfully. In Fig.~\ref{chap:halo-sec:line-sym-fig:mu-1.0-reflection-0.07}, I plotted the numerical result (dots) as well as the result from Eqn.~\eqref{chap:collective-sec:halo-eqn:single-beam-linearized-solution} (lines). It clearly shows that the linearized solution is a great match to the numerical result. This is also a method to validate the code.
+
+
+
+
+
 In Fig.~\ref{chap:halo-sec:line-sym-fig:mu-1.0-reflection-0.07}, I compare the numerical results obtained from the relaxation algorithm with the analytical results in Eqn.~\eqref{chap:collective-sec:halo-eqn:linearized-eom-solution} for the single-beam model with $\mu'= 1.0$, $R=0.07$, $L=5/\omega_\vv$, and the normal hierarchy. The good agreement between these results shows that the numerical code works as expected.
-
-Comparing Eqn.~\eqref{chap:collective-sec:bipolar-linearized-eom} and Eqn.~\eqref{chap:collective-sec:halo-eqn:linearized-eom-single-beam-model}, one sees that the single-beam model with reflection is equivalent to the two-beam model without reflection with the reflected neutrino beam playing the role of the antineutrino beam, $R\to \alpha$, $\eta \to -\eta$, and $\mu' \to \mu$. Therefore, there exist flavor instabilities in the single-model with reflection for the normal mass hierarchy as shown in Fig.~\ref{chap:halo-sec:line-sym-fig:instability-regions}.
-
-% As for linear stability analysis, I will draw an analogy between this model and the bipolar model and write down the equation of motion in flavor isospin space,
-% \begin{align}
-%  i \partial_t \vec s_{\mathrm F} &= \vec s_{\mathrm F} \times (\vec {H}_\vv +R \mu' \vec s_{\mathrm B}) \\
-%    i\partial_t \vec s_{\mathrm B} &= \vec s_{\mathrm B} \times (- \vec H_\vv - \mu' \vec s_{\mathrm F}) .
-% \end{align}
-% Using the result of bipolar model, I expect that only normal hierarchy has an instability region which is trivial since I noticed that the backward beam is acting like antineutrino beams but with different hierarchies. I find the instability regions in Fig.~\ref{chap:halo-sec:line-sym-fig:instability-regions}.
-
 
 \begin{figure}[htbp]
     % \centering
@@ -1356,6 +1350,18 @@ Comparing Eqn.~\eqref{chap:collective-sec:bipolar-linearized-eom} and Eqn.~\eqre
     \caption{Instability regions for the normal hierarchy (left) and the inverted hierarchy (right) in the single-beam model with reflection. The color represents the magnitude of the imaginary component of the collective frequency.}
     \label{chap:halo-sec:line-sym-fig:instability-regions}
 \end{figure}
+
+
+Comparing Eqn.~\eqref{chap:collective-sec:bipolar-linearized-eom} and Eqn.~\eqref{chap:collective-sec:halo-eqn:linearized-eom-single-beam-model}, one sees that the single-beam model with reflection is equivalent to the two-beam model without reflection with the reflected neutrino beam playing the role of the antineutrino beam, $R\to \alpha$, $\eta \to -\eta$, and $\mu' \to \mu$. Therefore, there exist flavor instabilities in the single-model with reflection for the normal mass hierarchy as shown in Fig.~\ref{chap:halo-sec:line-sym-fig:instability-regions}.
+
+% As for linear stability analysis, I will draw an analogy between this model and the bipolar model and write down the equation of motion in flavor isospin space,
+% \begin{align}
+%  i \partial_t \vec s_{\mathrm F} &= \vec s_{\mathrm F} \times (\vec {H}_\vv +R \mu' \vec s_{\mathrm B}) \\
+%    i\partial_t \vec s_{\mathrm B} &= \vec s_{\mathrm B} \times (- \vec H_\vv - \mu' \vec s_{\mathrm F}) .
+% \end{align}
+% Using the result of bipolar model, I expect that only normal hierarchy has an instability region which is trivial since I noticed that the backward beam is acting like antineutrino beams but with different hierarchies. I find the instability regions in Fig.~\ref{chap:halo-sec:line-sym-fig:instability-regions}.
+
+
 
 
 
@@ -1379,7 +1385,7 @@ Comparing Eqn.~\eqref{chap:collective-sec:bipolar-linearized-eom} and Eqn.~\eqre
 
 A dense neutrino medium can oscillate collectively because of the neutrino self-interaction potential. When the neutrino flavor conversion probabilities are small, one can apply the linearized flavor stability analysis to find out the regimes where neutrino oscillations begin to develop. I. Izaguirre et al. proposed that the flavor instabilities of a neutrino medium are associated with ``gaps'' between the real dispersion relation curves of the collective modes. In this chapter, I have shown that this association is not valid in general. In particular, I showed that flavor instabilities can exist in three-beam models and in models with continuous but crossed ELN distributions even without any gap in the real dispersion relation curves. 
 
-I proposed a toy model with two neutrino beams to explore neutrino oscillations with scattered fluxes such as in the supernova model with a neutrino halo. I have developed a relaxation method and a numerical code based on this method to solve the this model, and I have validated the numerical code in the scenario where only the neutrino beam and its reflected beam exist.
+I proposed a toy model with two neutrino beams to explore neutrino oscillations with scattered fluxes such as in the supernova model with a neutrino halo. I have developed a relaxation method and a numerical code based on this method to solve the this model, and I have validated the numerical code in the scenario where only the neutrino beam and its reflected beam exist. The code can be accessed at \url{https://github.com/NeuPhysics/neutrino-halo-problem}.
 
 
 % In the spirit of numerical methods, I developed a parallelable relaxation method, using C++ and OpenMP. The code is validated using vacuum oscillations and solution to the linearized equation of motion. Both the analytical and numerical results showed that for the single-beam line model is the same as the bipolar model. Thus I can perform linear stability analysis and find out the unstable regions. The reflection indeed may enhance the flavor conversions but I did not find new types of instability using the simple model. Future work should be done to explore the effect of symmetry breaking and multiple emission beams.

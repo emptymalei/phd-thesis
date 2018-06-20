@@ -105,11 +105,20 @@ sorting=ynt
 \newcommand{\RR}{\mathrm R}
 \newcommand{\dd}{\mathrm d}
 \newcommand{\FF}{\mathrm F}
-\newcommand{\BB}{\mathrm F}
+\newcommand{\BB}{\mathrm B}
 
 \newcommand{\vph}{v_{\mathrm{ph}}}
 
-\usepackage[]{algorithm2e}
+
+% Use alltt instead of verbatim for math mode inside verbatim
+% \usepackage{alltt}
+\usepackage{listings}% http://ctan.org/pkg/listings
+\lstset{
+  basicstyle=\ttfamily,
+  mathescape
+}
+% \usepackage[]{algorithm2e}
+% \usepackage{program}
 % \usepackage{algorithm}
 % \usepackage[noend]{algpseudocode}
 
