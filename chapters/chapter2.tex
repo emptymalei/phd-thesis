@@ -5,14 +5,14 @@
 \chapter{\label{chap:basics}General Principles of Neutrino Oscillations}
 
 Since the flavor eigenstates of the neutrino are not the same as its propagation eigenstates, it can change flavor while it propagates.
-In this chapter, I will use the two-flavor scheme to explain neutrino oscillations in some simple scenarios.\footnote{In most physical problems, the two-flavor scheme is a good approximation to the phenomena of neutrino oscillations. The mass splits between the three mass eigenstates are so different that the corresponding oscillations occur on very different length scales. On the right length scale, the two-flavor scheme captures the prominent features of the neutrino oscillations of the corresponding mass split.}
+In this chapter, I will use the two-flavor scheme to explain neutrino oscillations in some simple scenarios.\footnote{In most physical problems, the two-flavor scheme is a good approximation to the phenomena of neutrino oscillations. The two mass splitings between the three mass eigenstates are so different that the corresponding oscillations occur on very different length scales. On a given length scale, the two-flavor scheme captures the prominent features of the neutrino oscillations of the corresponding mass spliting.}
 I will first discuss neutrino oscillations in vacuum. After explaining the general principles of neutrino oscillations in matter, I will show how the solar neutrino problem can be explained by neutrino oscillations. Finally, I will demonstrate the flavor isospin picture which can be used to visualize neutrino oscillations.
 
 
 \section{\label{chap:basics-sec:vacuum-oscillations}Vacuum Oscillations}
 
-Before working out the math, I can estimate the frequency of the oscillations of the neutrino between its flavors. In the natural units, frequency has the same dimension as energy. 
-% (see Appendix~\ref{chap:app-sec:conventions-subsec:units}). 
+Before carrying out the calculations, I can estimate the frequency of the oscillations of the neutrino between its flavors. In the natural units, frequency has the same dimension as energy.
+% (see Appendix~\ref{chap:app-sec:conventions-subsec:units}).
 Consider an electron neutrino with momentum $p$ which is a superposition of the two mass eigenstates $\ket{\nu_i}$ ($i=1,2$) with masses $m_i$, respectively. Since the neutrino masses are small, I can Taylor expand the energy of each mass eigenstate in terms of the corresponding mass:
 \begin{align}
 E_i & = \sqrt{m_i^2 + p^2 } \nonumber\\
@@ -22,7 +22,7 @@ E_i & = \sqrt{m_i^2 + p^2 } \nonumber\\
 \end{align}
 The first term in the above equation produces a global phase to the flavor wave function of the neutrino which does not affect neutrino flavor oscillations. The characteristic energy scale in the problem is the difference between the energies of the two mass eigenstates,
 \begin{equation}
-    \omega_{\mathrm v} =  \frac{m_2^2-m_1^2}{2E} = \frac{\delta m^2}{2E},
+    \omega_{\mathrm v} = E_2-E_1 =  \frac{m_2^2-m_1^2}{2E} = \frac{\delta m^2}{2E},
     \label{chap:basics-section:neutrinos-eqn:qualitative-method-frequency}
 \end{equation}
 which turns out to be the vacuum oscillation frequency. Here $E=p$ is approximately the energy of the neutrino.
@@ -31,22 +31,22 @@ To work out the exact solution, I will utilize the Schr\"{o}dinger equation. Fir
 \begin{equation}
     \Psi^{(\ff)} = \begin{pmatrix}
         \psi^{(\ff)}_{\mathrm e} \\
-        \psi^{(\ff)}_{\mathrm x} 
+        \psi^{(\ff)}_{\mathrm x}
     \end{pmatrix} = \begin{pmatrix}
         \braket{\nu_{\mathrm e}}{\nu} \\
         \braket{\nu_{\mathrm x}}{\nu}
     \end{pmatrix},
 \end{equation}
-is related to the wave function in mass basis $\Psi^{(\vv)}$ through a unitary mixing matrix $\mathsf U$,
+is related to the wave function in the vacuum mass basis $\Psi^{(\vv)}$ through a unitary mixing matrix $\mathsf U$,
 \begin{equation}
 \Psi^{(\mathrm f)} = \mathsf{U}\Psi^{(\vv)},
 \label{chap:vacuum-eqn:wavefunction}
 \end{equation}
-where the upper indices ${}^{(\vv)}$ and ${}^{(\ff)}$ are used to denote the corresponding bases. The mixing matrix can be expressed using the vacuum mixing angle $\theta_{\vv}$,
+where the upper indices ${}^{(\vv)}$ and ${}^{(\ff)}$ are used to denote the corresponding bases. The mixing matrix can be expressed using the vacuum mixing angle $\theta_{\vv}$:
 \begin{equation}
 \mathsf{U} = \begin{pmatrix} \cos\theta_\vv & \sin \theta_\vv \\ -\sin \theta_\vv & \cos \theta_\vv \end{pmatrix}.
 \end{equation}
-In vacuum mass basis, the neutrino has a free propagation Hamiltonian
+In the vacuum mass basis, the neutrino has a free propagation Hamiltonian
 \begin{equation}
 \mathsf H^{(\vv)} = \begin{pmatrix} E_1 & 0 \\
 0 & E_2
@@ -63,9 +63,9 @@ m_1^2 & 0 \\
 0 & \delta m^2
 \end{pmatrix}  + \left(\frac{m_2^2 + m_1^2}{4E}  + E \right) \mathsf{I}.
 \end{align}
-Because a multiple of the identity matrix $\mathsf{I}$ only gives a global phase to the neutrino flavor wave function, I will neglect it from now on, and the vacuum Hamiltonian simplifies to
+Because a multiple of the identity matrix $\mathsf{I}$ gives only a global phase to the neutrino flavor wave function, I will neglect it from now on, and the vacuum Hamiltonian simplifies to
 \begin{equation}
-\mathsf H^{(\vv)} =  \frac{\delta m^2}{4E} \begin{pmatrix}
+\mathsf H^{(\vv)} \to  \frac{\delta m^2}{4E} \begin{pmatrix}
 -1 & 0 \\
 0 & 1
 \end{pmatrix} = -\frac{\delta m^2}{4E} \sigma_3 = -\frac{\omega_{\vv}}{2}\sigma_3,
@@ -124,7 +124,7 @@ P(r) =  1-\sin^2(2\theta_\vv)\sin^2\left( \frac{\omega_\vv}{2} r \right).
 \label{chap:basics-eqn:vacuum-electron-probability}
 \end{equation}
 %An important parameter in vacuum oscillations is the oscillation length of the neutrino flavor conversion which is $1/\omega_\vv$.This confirms our qualitative method result in Eqn.~\eqref{chap:basics-section:neutrinos-eqn:qualitative-method-frequency}.
-I plot the above result in Fig.~\ref{chap:basics-section:neutrinos-fig:vacuum-2-flavor-osc} which clearly shows the oscillatory behavior. The oscillation length is determined by the characteristic energy scale $\omega_\vv$, which confirms our qualitative method result in Eqn.~\eqref{chap:basics-section:neutrinos-eqn:qualitative-method-frequency}. The oscillation amplitude is determined by $\sin^2(2\theta_\vv)$.
+I plot the above result in Fig.~\ref{chap:basics-section:neutrinos-fig:vacuum-2-flavor-osc} which clearly shows the oscillatory behavior. The oscillation length is determined by the characteristic energy scale $\omega_\vv$, which confirms our estimation in Eqn.~\eqref{chap:basics-section:neutrinos-eqn:qualitative-method-frequency}. The oscillation amplitude is determined by $\sin^2(2\theta_\vv)$.
 
 \begin{figure}[htp]
     \centering
@@ -162,7 +162,7 @@ I plot the above result in Fig.~\ref{chap:basics-section:neutrinos-fig:vacuum-2-
 \end{figure}
 
 
-In nature, there are three neutrino flavors and, correspondingly, three neutrino mass eigenstates, which are shown in Fig.~\ref{chap:basics-sec:flavor-isospin-pic-fig:masses}. Because there are two different characteristic energy scales, $\omega_{\vv,21}=\delta m_{21}^2/2E$ and $\omega_{\vv,32}=\delta m_{31}^2/2E$, two oscillation periods should occur, as shown in Fig.~\ref{chap:basics-section:neutrinos-fig:vacuum-3-flavor-osc}. The fast oscillations are determined by the larger energy scale, $\omega_{\vv,32}$, while the slow oscillations are determined by the smaller one $\omega_{\vv,21}$. For the inverted neutrino mass hierarchy (with $m_3 < m_1 < m_2$), the oscillation frequencies are the same as in the normal mass hierarchy (with $m_3>m_2>m_1$) since they have the same characteristic energy scales. However, they will develop different phases during oscillations.
+In nature, there are three neutrino flavors and, correspondingly, three neutrino mass eigenstates as shown in Fig.~\ref{chap:basics-sec:flavor-isospin-pic-fig:masses}. Because there are two different characteristic energy scales, $\omega_{\vv,21}=\delta m_{21}^2/2E$ and $\omega_{\vv,32}=\delta m_{31}^2/2E$, two oscillation periods should occur, as shown in Fig.~\ref{chap:basics-section:neutrinos-fig:vacuum-3-flavor-osc}. The fast oscillations are determined by the larger energy scale, $\omega_{\vv,32}$, while the slow oscillations are determined by the smaller one $\omega_{\vv,21}$. For the inverted neutrino mass hierarchy (with $m_3 < m_1 < m_2$), the oscillation frequencies are the same as in the normal mass hierarchy (with $m_3>m_2>m_1$) since they have the same characteristic energy scales. However, they will develop different phases during oscillations.
 
 \clearpage
 
@@ -191,7 +191,7 @@ In nature, there are three neutrino flavors and, correspondingly, three neutrino
     \label{chap:matter-fig:nc-cc}
 \end{figure}
 
-In many astrophysical environments, such as stars and core-collapse supernovae, neutrinos are mostly produced at the center of the object and propagate through the dense matter envelope. Although this matter envelope is essentially transparent to neutrinos, the refractive indices of the neutrinos in matter are different than those in vacuum.\footnote{The word ``matter" in this dissertation refers to ordinary matter composed of electrons, positrons, nucleons and nuclei. We assume that the temperature and density of the environment are not high enough to produce muons and tau particles. We will discuss the effect of dense neutrino medium in Chapter~\ref{chap:collective}.} Because the neutral current weak interaction does not distinguish between neutrino flavors (see Fig.~\ref{chap:matter-fig:nc}), it has no impact on neutrino oscillations, and I will ignore it from now on. Meanwhile, the electrons and positrons in matter will cause electron flavor neutrinos to have refractive indices different than neutrinos with other flavors through the charged current weak interaction (see Fig.~\ref{chap:matter-fig:cc}).
+In many astrophysical environments such as stars and core-collapse supernovae, neutrinos are mostly produced at the center of the environments and propagate through the dense matter envelope. Although this matter envelope is essentially transparent to neutrinos, the refractive indices of the neutrinos in matter are different than those in vacuum.\footnote{The word ``matter" in this dissertation refers to ordinary matter composed of electrons, positrons, nucleons and nuclei. I assume that the temperature and density of the environment are not high enough to produce muons and tau particles. I will discuss the effect of the dense neutrino medium in Chapter~\ref{chap:collective}.} Because the neutral current weak interaction does not distinguish between neutrino flavors (see Fig.~\ref{chap:matter-fig:nc}), it has no impact on neutrino oscillations, and I will ignore it from now on. Meanwhile, the electrons and positrons in matter will cause electron flavor neutrinos to have refractive indices different than the neutrinos of other flavors through the charged current weak interaction (see Fig.~\ref{chap:matter-fig:cc}).
 % One of the significant matter effect on neutrino flavor oscillations is the Mikheyev-Smirnov-Wolfenstein (MSW) effect~\cite{Mikheev:1986gs,wolf78,wolfensteinprd1979}, which is used to explain the deficit of electron flavor neutrino flux, as know as the solar neutrino problem~\cite{kuo1989,Petcov2002}. Later developments on the theories of matter effect revealed the parametric resonance of neutrino flavor oscillations due to fluctuations in matter density~\cite{Krastev1989,Akhmedov2000}, which is the neutrino analog of transitions between energy levels as a result of external optical stimulation. Parametric resonance is different from the MSW effect since it involves the parameters of the matter density, which is usually the period of matter density fluctuations. It has also be shown that neutrinos passing through the Earth can experience parametric resonance~\cite{Akhmedov1999, Petcov1998b}.
 %Flavor conversion occurs as long as their propagation eigenstates are different from their flavor eigenstates. Since the neutral current interactions between the neutrinos and the matter is independent of the flavors, as shown in Fig.~\ref{chap:matter-fig:nc}, I only include the charged current interactions in the Hamiltonian, which is an effective potential for electron flavor.
 This leads to an effective potential
@@ -199,7 +199,7 @@ This leads to an effective potential
 \mathsf V^{(\ff)} = \frac{\sqrt{2}G_{\mathrm F} n_{\mathrm e} }{2}  \sigma_3,
 \label{chap:basics-sec:oscillations-matter-eqn:effective-pot}
 \end{equation}
-where $G_{\mathrm F}$ is Fermi constant and $n_{\mathrm e}$ is net number density of the electron. As usual, I have ignored the trace terms in the above equation.
+where $G_{\mathrm F}=1.17\times 10^{-5}\mathrm{GeV^{-2}}$ is Fermi constant and $n_{\mathrm e}$ is net number density of the electron. As usual, I have ignored the trace terms in the above expression.
 
 The Hamiltonian with the matter effect is the combination of Eqn.~\eqref{chap:basics-sec:vacuum-osc-eqn:hamiltonian-vacuum} and Eqn.~\eqref{chap:basics-sec:oscillations-matter-eqn:effective-pot}:
 % \begin{equation}
@@ -219,7 +219,7 @@ where
   \lambda = \sqrt{2}G_{\mathrm F} n_{\mathrm e}.
   \label{chap:basics-sec:oscillations-matter-eqn:lambda}
 \end{equation}
-Due to the off-diagonal terms in $\mathsf H^{(\ff)}$, the neutrino will experience oscillations in flavor. A resonance with the maximum flavor mixing occurs when the diagonal terms of $\mathsf H^{(\ff)}$ vanish,
+Due to the off-diagonal terms in $\mathsf H^{(\ff)}$, the neutrino will experience oscillations in flavor. A resonance with the maximum flavor mixing occurs when the diagonal terms of $\mathsf H^{(\ff)}$ vanish, i.e.,
 \begin{equation}
 \frac{\lambda}{2} -\frac{ \omega }{2} \cos 2\theta_\vv  = 0,
 \label{chap:basics-eqn:msw-resonance}
@@ -243,7 +243,7 @@ Because the density change inside the Sun is not dramatic, the flavor quantum st
 \label{fig:mswEnergyLevels}
 \end{figure}
 
-The values of the instantaneous eigenstates of the Hamiltonian, known as the heavy and light states, are
+The values of the instantaneous eigenstates of the Hamiltonian, known as the ``Heavy'' and ``Light'' states, are
 \begin{align}
 \varepsilon_{\mathrm H} &= \frac{\omega_\vv}{2}\sqrt{ \hat\lambda +1 -  2\hat\lambda \cos 2\theta_\vv }, \\
 \varepsilon_{\mathrm L} &= -\frac{\omega_\vv}{2}\sqrt{ \hat\lambda +1 -  2\hat\lambda \cos 2\theta_\vv },
@@ -302,47 +302,49 @@ For a very high matter density, the heavy state of the neutrino $\ket{\nu_{\math
 
 The Hamiltonian for two-flavor neutrino oscillations describes a two-level quantum system. It is known that two-level quantum systems can be visualized using the Bloch sphere. In the realm of neutrino physics, the neutrino flavor isospin was introduced for such purpose~\cite{Duan2006b}.
 
+
 Every two-by-two Hermitian matrix can be expanded in the quaternion basis. For example, the Hamiltonian for neutrino oscillations in vacuum (in the flavor basis) can be written as
 \begin{equation}
 \mathsf H^{(\ff)} = - \frac{\vec{\sigma} }{2}\cdot {\vec{H}},
 \end{equation}
 where
-\begin{align*}
+\begin{align}
 {\vec H} =  \omega_\vv\begin{pmatrix}
  \sin \theta_\vv\\
 0\\
 \cos 2\theta_{\mathrm v}
 \end{pmatrix},
-\end{align*}
-which is a vector of length $\omega_{\mathrm v}$ and tilted away from the third axis by the angle $2\theta_{\mathrm v}$.
+\end{align}
+which is a vector of length $\omega_{\mathrm v}$ and tilted away from the third axis by angle $2\theta_{\mathrm v}$.
 Throughout the dissertation, I will use ``$\vec{\phantom{x~}}$" to denote a vector in flavor space.
-The flavor quantum state of the neutrino is represented by the flavor isospin, which is defined as
+The flavor quantum state of the neutrino is represented by its flavor isospin which is defined as
 \begin{equation}
     \vec s = {\Psi^{(\ff)}}^{\dagger} \frac{\vec{\sigma} }{2} \Psi^{(\ff)}.
 \end{equation}
-As shown in Fig.~\ref{chap:basics-sec:flavor-isospin-pic-fig:flavor-isospin-illus}, the direction of the flavor isospin in flavor space shows the flavor content of the neutrino. A flavor isospin pointing upward in flavor space, i.e., along the direction of the third axis, denotes the electron flavor by definition.
+As shown in Fig.~\ref{chap:basics-sec:flavor-isospin-pic-fig:flavor-isospin-illus}, the direction of the flavor isospin in flavor space shows the flavor content of the neutrino. A flavor isospin pointing ``upward'' in flavor space, i.e., along the direction of the third axis, denotes the electron flavor by definition.
 Correspondingly, the equation of motion for the flavor isospin describes its precession around the vector $\vec{H}$,
 \begin{equation}
 \dot{\vec{s}} = {\vec{s}} \times \vec{H},
 \label{chap:basics-sec:flavor-isospin-pic-eqn:eom-precession}
 \end{equation}
-where $\dot{\phantom{s}}$ indicates the time derivative. 
+where $\dot{\phantom{s}}$ indicates the time derivative.
 In the flavor isospin formalism, the electron flavor survival probability is
-\begin{equation*}
+\begin{equation}
 P = \frac{1}{2} + s_3,
 \label{chap:basics-sec:flavor-isospin-pic-eqn:probability-flavor}
-\end{equation*}
+\end{equation}
 where $s_3$ is the third component of the flavor isospin.
-Therefore, the precession of the flavor isospin corresponds to a periodic oscillation between the two neutrino flavors (see Fig.~\ref{chap:basics-sec:flavor-isospin-pic-fig:flavor-isospin-vac-osc}).
 \begin{figure}[htbp]
     \centering
-    \vspace*{-20pt}
+    % \vspace*{-20pt}
     \includegraphics[width=0.6\textwidth]{chapters/assets/basics/flavor-isospin-vac-osc}
-    \caption{Vacuum oscillations in the flavor isospin picture. The flavor isospin of a neutrino starting with the electron flavor will precess around the static ``Hamiltonian vector" $\vec H$, which gives a periodic flavor oscillation according to Eqn.~\eqref{chap:basics-sec:flavor-isospin-pic-eqn:probability-flavor}.}
+    \caption{Vacuum oscillations in the flavor isospin picture. The flavor isospin of a neutrino starting with the electron flavor precesses around the static ``Hamiltonian vecto
+    r" $\vec H$, which gives a periodic flavor oscillation according to Eqn.~\eqref{chap:basics-eqn:vacuum-electron-probability}.}
     \label{chap:basics-sec:flavor-isospin-pic-fig:flavor-isospin-vac-osc}
 \end{figure}
+Therefore, the precession of the flavor isospin corresponds to a periodic oscillation between the two neutrino flavors (see Fig.~\ref{chap:basics-sec:flavor-isospin-pic-fig:flavor-isospin-vac-osc}).
 %Eqn.~\eqref{chap:basics-sec:flavor-isospin-pic-eqn:eom-precession} depicts the precession of the flavor isospin for a neutrino which starts with the electron flavor and propagates in vacuum.
-The oscillation frequency is trivially read out from Eqn.~\eqref{chap:basics-sec:flavor-isospin-pic-eqn:eom-precession},
+The oscillation frequency can be trivially read out from Eqn.~\eqref{chap:basics-sec:flavor-isospin-pic-eqn:eom-precession}:
 \begin{equation}
 \omega_\vv = \lvert \vec{H} \rvert.
 \end{equation}
@@ -353,12 +355,12 @@ The oscillation frequency is trivially read out from Eqn.~\eqref{chap:basics-sec
 \begin{figure}[htbp]
     \centering
     \includegraphics[width=0.4\textwidth]{chapters/assets/matter/matter-effect-notsolarge-density}
-    \caption{Neutrino oscillations in flavor isospin picture, with the presence of matter potential. The flavor isospin is denoted as red dashed arrow. It starts from electron flavor. The two gray vectors stand for the Hamiltonians of vacuum $\vec H_{\mathrm v}$ and matter $\vec H_{\mathrm m}$.}
+    \caption{Neutrino oscillations in flavor isospin picture with the presence of matter potential. The flavor isospin is denoted as red-dashed arrow. The two gray vectors stand for the vacuum Hamiltonians $\vec H_{\mathrm v}$ and matter potential $\vec H_{\mathrm m}$.}
     \label{chap:basics-sec:flavor-isospin-pic-fig:matter-effect-notsolarge-density}
 \end{figure}
 
 The MSW effect can also be easily explained using the flavor isospin picture. The Hamiltonian for the neutrino flavor evolution in the presence of dense matter is
-\begin{align*}
+\begin{align}
     &\mathsf H^{(\ff)} =  \frac{\omega_{\mathrm{v}}}{2}\left( - \cos 2\theta_{\mathrm{v}} {\sigma_3} + \sin 2\theta_{\mathrm{v}} {\sigma_1} \right)   + \frac{\lambda(x)}{2} {\sigma_3} \\
     \Rightarrow &\vec H =  \vec H_{\mathrm v} + \vec H_{\mathrm m}(x)
      = \omega_{\mathrm v}\begin{pmatrix}
@@ -370,19 +372,19 @@ The MSW effect can also be easily explained using the flavor isospin picture. Th
     0\\
     - \lambda(x)
     \end{pmatrix}  ,
-\end{align*}
-where $\vec H_{\mathrm v}$ is the vacuum contribution, and $\vec H_{\mathrm m}(x)$ is the matter potential contribution. The precession motion of the flavor isospin of the neutrino in the presence of dense matter is visualized in Fig.~\ref{chap:basics-sec:flavor-isospin-pic-fig:matter-effect-notsolarge-density}. The MSW resonance condition in Eqn.~\eqref{chap:basics-eqn:msw-resonance} corresponds to the scenario that the overall ``Hamiltonian vector" $\vec H$ is perpendicular to the third axis in flavor space. In this case, the flavor isospin rotates in the plane spanned by the second and third axes which gives maximum flavor oscillations (see~Fig.~\ref{chap:basics-sec:flavor-isospin-pic-fig:msw-adiabatic-critical}).
+\end{align}
+where $\vec H_{\mathrm v}$ is the vacuum Hamiltonian, and $\vec H_{\mathrm m}(x)$ is the matter potential. The precession motion of the flavor isospin of the neutrino in the presence of dense matter is visualized in Fig.~\ref{chap:basics-sec:flavor-isospin-pic-fig:matter-effect-notsolarge-density}. The MSW resonance condition in Eqn.~\eqref{chap:basics-eqn:msw-resonance} corresponds to the scenario that the overall ``Hamiltonian vector" $\vec H$ is perpendicular to the third axis in flavor space. In this case, the flavor isospin rotates in the plane spanned by the second and third axes which gives maximum flavor oscillations (see~Fig.~\ref{chap:basics-sec:flavor-isospin-pic-fig:msw-adiabatic-critical}).
 
 \begin{figure}[h!t]
     \centering
     \includegraphics[width=0.4\textwidth]{chapters/assets/basics/matter-effect-critical-density}
-    \caption{MSW resonance happens when electron neutrinos go through a critical matter density.}
+    \caption{MSW resonance occurs when Eqn.~\eqref{chap:basics-eqn:msw-resonance} is satisfied.}
     \label{chap:basics-sec:flavor-isospin-pic-fig:msw-adiabatic-critical}
 \end{figure}
 
 
-The adiabatic flavor evolution of the neutrino in varying matter density that was discussed in Sec.~\ref{chap:matter-sec:solar-neutrinos} can also be easily understood by the flavor-isospin picture.
-In the region where the matter density is high, the total ``Hamiltonian vector" $\vec H$ points downward. Therefore, a neutrino produced in the electron flavor will experience very little oscillations because its flavor isospin $\vec s$ is almost anti-parallel to $\vec H$ (see Fig.~\ref{chap:basics-sec:flavor-isospin-pic-fig:msw-adiabatic-large-density}). If the matter density along the propagation trajectory of the neutrino decreases slowly, the $\vec s$ will stay almost anti-parallel to $\vec H$ as $\vec H$ rotates (see Fig.~\ref{chap:basics-sec:flavor-isospin-pic-fig:msw-adiabatic-medium-density}).
+The adiabatic flavor evolution of the neutrino in a varying matter density profile discussed in Sec.~\ref{chap:matter-sec:solar-neutrinos} can also be easily understood in the flavor-isospin picture.
+In the region where the matter density is high, the total ``Hamiltonian vector" $\vec H$ points ``downward'' in flavor space. Therefore, a neutrino produced in the electron flavor will experience very little oscillations because its flavor isospin $\vec s$ is almost anti-parallel to $\vec H$ (see Fig.~\ref{chap:basics-sec:flavor-isospin-pic-fig:msw-adiabatic-large-density}). If the matter density along the propagation trajectory of the neutrino decreases slowly, $\vec s$ will stay almost anti-parallel to $\vec H$ as $\vec H$ rotates (see Fig.~\ref{chap:basics-sec:flavor-isospin-pic-fig:msw-adiabatic-medium-density}).
 When the neutrino reaches the region with very low matter density, its flavor isospin becomes almost anti-parallel to $\vec H_{\vv}$, which implies that the neutrino is in $\ket{\nu_2}$ (see Fig.~\ref{chap:basics-sec:flavor-isospin-pic-fig:msw-adiabatic}).
 
 
@@ -394,20 +396,20 @@ When the neutrino reaches the region with very low matter density, its flavor is
 		\centering
 		\includegraphics[width=0.8\textwidth]{chapters/assets/matter/matter-effect-large-density}
 		\caption{High matter density}\label{chap:basics-sec:flavor-isospin-pic-fig:msw-adiabatic-large-density}
-	\end{subfigure}
-	\quad
+	\end{subfigure}%
 	\begin{subfigure}[t]{0.3\textwidth}
 		\centering
 		\includegraphics[width=0.8\textwidth]{chapters/assets/matter/matter-effect-adiabatic}
 		\caption{Medium matter density}\label{chap:basics-sec:flavor-isospin-pic-fig:msw-adiabatic-medium-density}
-	\end{subfigure}
-	\quad
+	\end{subfigure}%
 	\begin{subfigure}[t]{0.3\textwidth}
 		\centering
+    \vspace*{-3.93in}
 		\includegraphics[width=0.8\textwidth]{chapters/assets/matter/matter-effect-adiabatic-3}
+    \vspace*{-0.05in}
 		\caption{Low matter density}\label{chap:basics-sec:flavor-isospin-pic-fig:msw-adiabatic-small-density}
 	\end{subfigure}
-	\caption{Flavor isospin picture of neutrino oscillations in matter. $\vec H_{\mathrm v}$ is the vacuum contribution to Hamiltonian, and $\vec H_{\mathrm m}$ corresponds to the matter potential.}\label{chap:basics-sec:flavor-isospin-pic-fig:msw-adiabatic}
+	\caption{Flavor isospin picture of neutrino oscillations in matter. $\vec H_{\mathrm v}$ is the vacuum Hamiltonian, and $\vec H_{\mathrm m}$ is the matter potential.}\label{chap:basics-sec:flavor-isospin-pic-fig:msw-adiabatic}
 \end{figure}
 
 
@@ -417,5 +419,5 @@ When the neutrino reaches the region with very low matter density, its flavor is
 
 \section{Summary}
 
-Neutrino oscillations in vacuum and in matter with a smooth profile have been explained. The neutrino oscillations phenomenon reveals a secret of the nature of the neutrino, i.e., its flavor states are not the same as the propagation eigenstates of the Hamiltonian.
+Neutrino oscillations in vacuum and in matter with a smooth profile have been explained. The neutrino oscillation phenomenon reveals a secret of the nature of the neutrino, i.e., its flavor states are not the same as the mass eigenstates of the Hamiltonian.
 As a result, a neutrino produced in the pure flavor state through weak interaction will not remain in the same flavor state as it propagates, but oscillates between different flavors. The problem of neutrino oscillations in an environment with rapidly varying matter densities is significantly more difficult than that in a smooth profile. This will be discussed in the next chapter.

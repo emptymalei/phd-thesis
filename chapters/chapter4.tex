@@ -195,7 +195,7 @@ In the above equation I have replaced flavor isospin $\vec s$ with its projectio
 
 
 
-\section{\label{chap:collective-sec:two-beams}Two-Beam Model and Flavor Instability}
+\section{\label{chap:collective-sec:two-beams}Two-Beam Model and Flavor Instabilities}
 
 During the synchronized flavor transformation, the whole neutrino medium behaves as if there was a single neutrino oscillating with the mean frequency $\langle \omega_\vv \rangle$ in vacuum. Under certain conditions, the neutrino self-interaction potential can cause the neutrino medium to evolve in a way completely different than the vacuum oscillations. I will illustrate this phenomenon using the two-beam neutrino model.
 
@@ -1050,14 +1050,14 @@ I will consider the two-beam model depicted in Fig.~\ref{chap:collective-sec:two
     -\ri \sin\theta_3  \partial_z \rho_3 = & [ \mathsf H_3, \rho_3 ], \\
     -\ri \sin\theta_4 \partial_z \rho_4 = & [ \mathsf H_4, \rho_4 ],
 \end{align}
-where beams 1 and 2 contain neutrinos and antineutrinos, beams 3 and 4 are the reflected fluxes of 1 and 2, respectively, with $\theta_3=\theta_1$ and $\theta_4=\theta_2$. The Hamiltonians in the vacuum mass basis are 
+where beams 1 and 2 contain neutrinos and antineutrinos, beams 3 and 4 are the reflected fluxes of 1 and 2, respectively, with $\theta_3=\theta_1$ and $\theta_4=\theta_2$. The Hamiltonians in the vacuum mass basis are
 \begin{align}
     \mathsf H_1 =& -\eta \omega_\vv \sigma_3 + \mu( -\alpha \chi_-  \rho_2 - \alpha \chi_+ R \rho_4 + \chi_1 R  \rho_3), \\
     \mathsf H_2 =& \eta \omega_\vv \sigma_3 + \mu( \chi_- \rho_1 -\alpha \chi_2 R  \rho_4 + \chi_+ R  \rho_3), \\
     \mathsf H_3 =& -\eta \omega_\vv \sigma_3 + \mu( -\alpha R  \chi_-  \rho_4 -\alpha \chi_+ \rho_2 + \chi_1  \rho_1), \\
     \mathsf H_4 =& \eta \omega_\vv \sigma_3 + \mu( R   \chi_- \rho_3 + \chi_+  \rho_1 -\alpha \chi_2  \rho_2),
 \end{align}
-where $\mu=\sqrt{2}G_{\mathrm F}n_1$ with $n_1$ being the number flux of beam 1, $\alpha=n_2/n_1$, $R$ is the reflection coefficient of the ``neutrino mirror'', and 
+where $\mu=\sqrt{2}G_{\mathrm F}n_1$ with $n_1$ being the number flux of beam 1, $\alpha=n_2/n_1$, $R$ is the reflection coefficient of the ``neutrino mirror'', and
 \begin{align*}
     \chi_+ = & 1 - \cos ( \theta_1 + \theta_2 ), \\
     \chi_- = & 1 - \cos ( \theta_1 - \theta_2 ), \\
@@ -1085,14 +1085,14 @@ At position $z$, the evolution operator $\mathsf U(\Delta l,z)$ is
 % \end{equation}
 % is the length of the Hamiltonian in flavor space. The evolution operator can also be expanded using the Pauli matrices
 \begin{align}
-    U(\Delta l, z) = \cos \left( \frac{H \Delta l}{2} \right) \mathsf I + \ri \left( \frac{H_1}{H}  \sigma_1 + \frac{H_2}{H} \sigma_2 + \frac{H_3}{H} \sigma_3 \right) \sin \left( \frac{H \Delta l}{2} \right) 
+    U(\Delta l, z) = \cos \left( \frac{H \Delta l}{2} \right) \mathsf I + \ri \left( \frac{H_1}{H}  \sigma_1 + \frac{H_2}{H} \sigma_2 + \frac{H_3}{H} \sigma_3 \right) \sin \left( \frac{H \Delta l}{2} \right)
     % \cos \left( \frac{H \Delta t}{2} \right) \mathsf I + \ri \frac{H_1}{H} \sin \left( \frac{H \Delta t}{2} \right) \sigma_1 + \ri \frac{H_2}{H} \sin \left( \frac{H \Delta t}{2} \right) \sigma_2 + \ri \frac{H_3}{H} \sin \left( \frac{H \Delta t}{2} \right) \sigma_3
     % & \equiv -\frac{1}{2} \left( U_0 \mathsf I + U_1 \sigma_1 + U_2 \sigma_2 + U_3 \sigma_3 \right).
 \end{align}
 where $\Delta l$ is the propagation distance along the neutrino trajectory, and
 \begin{equation}
     H = \sqrt{ H_1^2 + H_2^2 + H_3^2 }.
-\end{equation} 
+\end{equation}
 Then I calculate the density matrix at the new position $z'$ as
 \begin{align}
     \rho ( z' ) &= \mathscr F ( \mathsf H(z), \rho(z), \Delta l ) \\
@@ -1152,7 +1152,7 @@ To speed up the calculations, I have parallelized the above algorithm with OpenM
 
 % In Fig.~\ref{chap:halo-sec:num-fig:compare-vac-bipolar-validate}, I plotted the neutrino oscillations for several different different reflection coefficients $R=0, 0.1, 0.2$. The forward beam for $R=0$ should be the same as vacuum oscillations which is shown in gray
 
-% and bipolar models. The reason that we still have conversions is because of the vacuum term, which is additional to linear stability analysis (see Fig.~\ref{chap:halo-sec:num-fig:compare-vac-bipolar-lsa}). 
+% and bipolar models. The reason that we still have conversions is because of the vacuum term, which is additional to linear stability analysis (see Fig.~\ref{chap:halo-sec:num-fig:compare-vac-bipolar-lsa}).
 %I also proved that the neutrino oscillations reached equilibrium quickly as shown in Fig.~\ref{chap:halo-sec:num-fig:relax-color} where the neutrino flavors are indicated by colors.
 
 
@@ -1208,7 +1208,7 @@ To speed up the calculations, I have parallelized the above algorithm with OpenM
 
 
 
-\subsection{\label{chap:halo-sec:line-sym}Validation of the Relaxation Method with the Single-Beam Model}
+\subsection{\label{chap:halo-sec:line-sym}Validation of the Relaxation Method with Relected Single-Neutrino-Beam}
 
 
 As a check to the relaxation algorithm discussed in the previous subsection, I apply it to the single-beam model with reflection, i.e., $\theta_1=\pi/2$ and $\alpha=0$. As the first step of the validation of the numerical code, I compare the numerical and analytical results for the vacuum oscillations case with $R=0$ and the normal neutrino mass hierarchy. The results are shown in Fig.~\ref{chap:halo-sec:num-fig:compare-vac-validate}.
@@ -1383,7 +1383,7 @@ Comparing Eqn.~\eqref{chap:collective-sec:bipolar-linearized-eom} and Eqn.~\eqre
 
 \section{\label{chap:collective-sec:conclusion}Summary}
 
-A dense neutrino medium can oscillate collectively because of the neutrino self-interaction potential. When the neutrino flavor conversion probabilities are small, one can apply the linearized flavor stability analysis to find out the regimes where neutrino oscillations begin to develop. I. Izaguirre et al. proposed that the flavor instabilities of a neutrino medium are associated with ``gaps'' between the real dispersion relation curves of the collective modes. In this chapter, I have shown that this association is not valid in general. In particular, I showed that flavor instabilities can exist in three-beam models and in models with continuous but crossed ELN distributions even without any gap in the real dispersion relation curves. 
+A dense neutrino medium can oscillate collectively because of the neutrino self-interaction potential. When the neutrino flavor conversion probabilities are small, one can apply the linearized flavor stability analysis to find out the regimes where neutrino oscillations begin to develop. I. Izaguirre et al. proposed that the flavor instabilities of a neutrino medium are associated with ``gaps'' between the real dispersion relation curves of the collective modes. In this chapter, I have shown that this association is not valid in general. In particular, I showed that flavor instabilities can exist in three-beam models and in models with continuous but crossed ELN distributions even without any gap in the real dispersion relation curves.
 
 I proposed a toy model with two neutrino beams to explore neutrino oscillations with scattered fluxes such as in the supernova model with a neutrino halo. I have developed a relaxation method and a numerical code based on this method to solve the this model, and I have validated the numerical code in the scenario where only the neutrino beam and its reflected beam exist. The code can be accessed at \url{https://github.com/NeuPhysics/neutrino-halo-problem}.
 
