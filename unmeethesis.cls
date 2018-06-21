@@ -1,22 +1,22 @@
-%% 
-%% This is file `unmeethesis.cls', generated 
+%%
+%% This is file `unmeethesis.cls', generated
 %% on <1995/10/31> with the jwhhacks utility (v3.2zzz).
-%% 
+%%
 %% The original source files were:
-%% 
-%% unmeethesis.dtx 
-%% 
-%% 
-%% This is a generated file. 
-%% 
-%% Copyright 1995 by James W. Howse IV. All rights reserved. 
-%% Modified with permission by Neall E. Doren, January 27, 2000. 
+%%
+%% unmeethesis.dtx
+%%
+%%
+%% This is a generated file.
+%%
+%% Copyright 1995 by James W. Howse IV. All rights reserved.
+%% Modified with permission by Neall E. Doren, January 27, 2000.
 %% Further mods as per D. Bader, EECE, by N. Doren, March 07, 2000.
-%% 
-%% This file is distributed in the hope that it will be useful, 
-%% but WITHOUT ANY WARRANTY; without even the implied warranty of 
-%% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. 
-%% 
+%%
+%% This file is distributed in the hope that it will be useful,
+%% but WITHOUT ANY WARRANTY; without even the implied warranty of
+%% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+%%
 %% This file is a modified form of the standard book format book.cls.  It is
 %% based on book.cls version 1.3g dated 1995/06/26.
 %% Modification history:
@@ -26,9 +26,9 @@
 %%             Removed Abstract title page.
 %%             Removed 'final' mode (ignored if used)
 %%             Minor margin changes.                    N. Doren
-%% The names of the source files used are shown above. 
-%% 
-%% 
+%% The names of the source files used are shown above.
+%%
+%%
 %% \CharacterTable
 %%  {Upper-case    \A\B\C\D\E\F\G\H\I\J\K\L\M\N\O\P\Q\R\S\T\U\V\W\X\Y\Z
 %%   Lower-case    \a\b\c\d\e\f\g\h\i\j\k\l\m\n\o\p\q\r\s\t\u\v\w\x\y\z
@@ -46,7 +46,7 @@
 %%   Right brace   \}     Tilde         \~}
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{unmeethesis}
-              [1995/10/31 
+              [1995/10/31
  UNM EECE dissertation class-mod 03/27/02]
 \newcommand\@ptsize{}
 \newif\if@restonecol
@@ -54,7 +54,7 @@
 \newif\if@openbib
 \newif\if@draft
 %::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-%  Added an 'if' to check whether the 'draft' or 'final' option is 
+%  Added an 'if' to check whether the 'draft' or 'final' option is
 %  selected
 %::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 \newif\if@draft
@@ -72,7 +72,7 @@
    {\setlength\paperheight {250mm}%
     \setlength\paperwidth  {176mm}}
 \DeclareOption{letterpaper}
-   {\setlength\paperheight {10.92in}%
+   {\setlength\paperheight {11in}%
     \setlength\paperwidth  {8.5in}}
 \DeclareOption{legalpaper}
    {\setlength\paperheight {14in}%
@@ -122,7 +122,7 @@
   \RequirePackage{color}
 \fi
 %::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-%  Changed the input file from {bk1\@ptsize.clo} since the bk??.clo 
+%  Changed the input file from {bk1\@ptsize.clo} since the bk??.clo
 %  files only support two-sided formatting
 %::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 \input{unm1\@ptsize.clo}
@@ -157,9 +157,9 @@
 %  2)  Removed the \MakeUppercase command from the 'tableofcontents',
 %      'listoffigures', and 'listoftables' commands and from the
 %      'thebibliography', and 'theindex' environments.
-%  3)  Due to Graduate Studies requirements the frontmatter and the 
+%  3)  Due to Graduate Studies requirements the frontmatter and the
 %      mainmatter have different headings.  Specifically, the frontmatter
-%      has the page numbers at the bottom center of the page, and the 
+%      has the page numbers at the bottom center of the page, and the
 %      mainmatter has the page numbers at the top right corner of the page.
 %::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 \if@twoside
@@ -317,7 +317,7 @@
 % \fb@outputpage
 % This is a modification of the version of \@outputpage copied from the file
 % latex.ltx, stored in /usr/local/texmf/lib/tex/latex/misc.
-        
+
 \def\fb@outputpage{%
   \let \protect \noexpand
   \shipout \vbox{%
@@ -422,11 +422,11 @@
   \degreesubject{Ph.D., Electrical Engineering}
 \def\documenttype#1{\gdef\@documenttype{#1}}
   \documenttype{Dissertation}
-\def\schoolname#1{\gdef\@schoolname{#1}} 
+\def\schoolname#1{\gdef\@schoolname{#1}}
   \schoolname{University of New Mexico}
-\def\schooladdress#1{\gdef\@schooladdress{#1}} 
+\def\schooladdress#1{\gdef\@schooladdress{#1}}
   \schooladdress{Albuquerque, New Mexico}
-\def\degreetext#1{\gdef\@degreetext{#1}} 
+\def\degreetext#1{\gdef\@degreetext{#1}}
   \degreetext{Submitted in Partial Fulfillment of the \\
     Requirements for the Degree of}
 
@@ -478,7 +478,7 @@
   \else
       \setlength{\topmargin}{-4pt}
   \fi
- 
+
   \setlength{\headheight}{21pt}
   \setlength{\headsep}{9pt}
   \if@botnum
@@ -525,7 +525,7 @@
 %  \if@twoside\begin{titlepage} \setcounter{page}{0}\mbox{} \end{titlepage}\fi
 \let\maketitle\relax}%
 
-%\newcount\@Signatures 
+%\newcount\@Signatures
 %\def\Signatures#1{\global\@Signatures=#1\relax}
 %  \Signatures{3} % number of signature lines
 \renewcommand\baselinestretch{1.45}
@@ -576,13 +576,14 @@
         \vspace{.82in} %change this if "Dedication" is too high/low
      \else
         \vspace{-.12in} %change this if "Dedication" is too high/low
-     \fi 
-     \Huge \bfseries Dedication
+     \fi
+     % \centering \Huge \bfseries DEDICATION%Dedication
+     \centering \large \bfseries DEDICATION%Dedication
   \end{flushleft}
   \itshape
   \null\vfil%
   \begin{flushright}}%
-{\end{flushright}\par\vfil\vfil\null% 
+{\end{flushright}\par\vfil\vfil\null%
    \if@twoside%
      \clearpage%
      \thispagestyle{plain}%
@@ -609,13 +610,13 @@
         \vspace{.82in} %change this if "Dedication" is too high/low
      \else
         \vspace{-.12in} %change this if "Dedication" is too high/low
-     \fi 
-     \Huge \bfseries Epigraph
+     \fi
+     \centering\large \bfseries EPIGRAPH%Epigraph
   \end{flushleft}
   \itshape
   \null\vfil%
   \begin{flushright}}%
-{\end{flushright}\par\vfil\vfil\null% 
+{\end{flushright}\par\vfil\vfil\null%
    \if@twoside%
      \clearpage%
      \thispagestyle{plain}%
@@ -625,16 +626,16 @@
 %::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 %  The following commands define the 'singlespace' environment
 %::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-\def\singlespace{%
-%  \vskip\parskip%
-%  \vskip\baselineskip%
-  \def\baselinestretch{1}%
-  \ifx\@currsize\normalsize\@normalsize\else\@currsize\fi%
-%  \vskip-\parskip%
-%  \vskip-\baselineskip%
-}
-
-\def\endsinglespace{\null}%\par
+% \def\singlespace{%
+% %  \vskip\parskip%
+% %  \vskip\baselineskip%
+%   \def\baselinestretch{1}%
+%   \ifx\@currsize\normalsize\@normalsize\else\@currsize\fi%
+% %  \vskip-\parskip%
+% %  \vskip-\baselineskip%
+% }
+%
+% \def\endsinglespace{\null}%\par
 %::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 %  The following commands define the acknowledgments page
 %::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -650,10 +651,10 @@
   \null\vfil%
   \begin{flushleft}%
     \vspace{+0.84in}
-    \Huge \bfseries \acknowledgname
+    \centering\large \bfseries \acknowledgname
     \@endparpenalty\@M
   \end{flushleft}}%
-{\endsinglespace\vfil\vfil\null  
+{\endsinglespace\vfil\vfil\null
    \if@twoside%
      \clearpage%
      \thispagestyle{plain}%
@@ -810,7 +811,7 @@
               \fi}
 \newcommand\chapter{\if@openright\cleardoublepage\else\clearpage\fi
 %::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-%  Modified from \thispagestyle{plain} in order to conform to 
+%  Modified from \thispagestyle{plain} in order to conform to
 %  specifications in the dissertation submission guidelines.
 %::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
                     \thispagestyle{plain}%
@@ -840,7 +841,7 @@
 %::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 %\setlength{\textheight}{-11pt}
 %\begin{flushright}
-%  \raisebox{0in}{\thepage} 
+%  \raisebox{0in}{\thepage}
 %\end{flushright}
   \vspace*{46\p@}%
   {\parindent \z@ \raggedright \normalfont
@@ -1021,7 +1022,7 @@
 \newcommand\@dotsep{4.5}
 \setcounter{tocdepth}{2}
 \newcommand\tableofcontents{%
-    \chapter*{\contentsname
+    \chapter*{\large\centering\MakeUppercase{\contentsname}
         \@mkboth{%
            \contentsname}{\contentsname}}%
         \thispagestyle{plain}
@@ -1063,7 +1064,7 @@
 \newcommand*\l@paragraph{\@dottedtocline{4}{10em}{5em}}
 \newcommand*\l@subparagraph{\@dottedtocline{5}{12em}{6em}}
 \newcommand\listoffigures{%
-    \chapter*{\listfigurename
+    \chapter*{\large\centering\MakeUppercase{\listfigurename}
                       \addcontentsline{toc}{chapter}{List of Figures}%
       \@mkboth{\listfigurename}%
               {\listfigurename}}%
@@ -1072,7 +1073,7 @@
     }
 \newcommand*\l@figure{\@dottedtocline{2}{1.5em}{2.8em}}
 \newcommand\listoftables{%
-    \chapter*{\listtablename
+    \chapter*{\large\centering\MakeUppercase{\listtablename}
                       \addcontentsline{toc}{chapter}{List of Tables}%
       \@mkboth{%
           \listtablename}{\listtablename}}%
@@ -1154,7 +1155,7 @@
     \parindent 1em%
     \noindent
     \hb@xt@1.8em{\hss\@makefnmark}#1\endsinglespace}
-\newcommand\contentsname{Contents}
+\newcommand\contentsname{Table of Contents}
 \newcommand\listfigurename{List of Figures}
 \newcommand\listtablename{List of Tables}
 \newcommand\bibname{References}
@@ -1167,10 +1168,10 @@
 %::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 %  Defined new commands \abstractname, \acknowledgname and \glossaryname.
 %::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
-\newcommand\abstractname{Abstract}
-\newcommand\acknowledgname{Acknowledgments}
-\newcommand\glossaryname{Glossary}
-\newcommand\symbolsname{Symbols}
+\newcommand\abstractname{ABSTRACT}
+\newcommand\acknowledgname{ACKNOWLEDGMENTS}
+\newcommand\glossaryname{GLOSSARY}
+\newcommand\symbolsname{SYMBOLS}
 %::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 %  Modified \today to return just the month and year.
 %::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -1188,5 +1189,5 @@
 \pagenumbering{arabic}
 \onecolumn
 \endinput
-%% 
+%%
 %% End of file `unmeethesis.cls'.
