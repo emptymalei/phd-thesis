@@ -150,6 +150,9 @@
 \setcounter{dbltopnumber}{2}
 \renewcommand\dbltopfraction{.7}
 \renewcommand\dblfloatpagefraction{.5}
+
+\renewcommand\large{\@setfontsize\large{13}{17.8}}
+\renewcommand\Large{\@setfontsize\Large{14}{18.7}}
 %::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 %  Made the following changes to the default headings.
 %
@@ -843,11 +846,12 @@
 %\begin{flushright}
 %  \raisebox{0in}{\thepage}
 %\end{flushright}
-  \vspace*{46\p@}%
+  % \vspace*{46\p@}%
   {\parindent \z@ \raggedright \normalfont
     \ifnum \c@secnumdepth >\m@ne
       \if@mainmatter
-        \huge\bfseries \@chapapp{} \thechapter
+        % \huge\bfseries \@chapapp{} \thechapter
+        \centering\Large\bfseries \@chapapp{} \thechapter
         \par\nobreak
 %::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 %  Changed spacing from 20pt to 15pt
@@ -856,7 +860,8 @@
       \fi
     \fi
     \interlinepenalty\@M
-    \Huge \bfseries #1\par\nobreak
+    % \Huge \bfseries #1\par\nobreak
+    \Large \bfseries #1\par\nobreak
 %::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 %  Changed spacing from 40pt to 35pt
 %::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
@@ -875,11 +880,13 @@
 \newcommand\section{\@startsection {section}{1}{\z@}%
                                    {-3.5ex \@plus -1ex \@minus -.2ex}%
                                    {2.3ex \@plus.2ex}%
-                                   {\normalfont\Large\bfseries}}
+                                   % {\normalfont\Large\bfseries}}
+                                   {\normalfont\large\bfseries}}
 \newcommand\subsection{\@startsection{subsection}{2}{\z@}%
                                      {-3.25ex\@plus -1ex \@minus -.2ex}%
                                      {1.5ex \@plus .2ex}%
-                                     {\normalfont\large\bfseries}}
+                                     % {\normalfont\large\bfseries}}
+                                     {\normalfont\normalsize\bfseries}}
 \newcommand\subsubsection{\@startsection{subsubsection}{3}{\z@}%
                                      {-3.25ex\@plus -1ex \@minus -.2ex}%
                                      {1.5ex \@plus .2ex}%
