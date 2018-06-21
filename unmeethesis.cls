@@ -1084,7 +1084,7 @@
 \newdimen\bibindent
 \bibindent=1.5em
 \newenvironment{thebibliography}[1]
-     {\chapter*{\bibname
+     {\chapter*{\large\centering\MakeUppercase{\bibname}
         \@mkboth{\bibname}{\bibname}}%
                       \addcontentsline{toc}{chapter}{References}%
       \list{\@biblabel{\@arabic\c@enumiv}}%
