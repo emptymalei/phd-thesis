@@ -111,7 +111,7 @@
 \ExecuteOptions{letterpaper,12pt,oneside,draft,nobox,openright}
 \ProcessOptions
    \if@botnum
-      \setlength\paperheight {10.7in}%
+      \setlength\paperheight {11in}%
    \fi
 %::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::
 %  In order to generate the red box around the title pages, the 'color'
@@ -578,7 +578,7 @@
         \vspace{-.12in} %change this if "Dedication" is too high/low
      \fi
      % \centering \Huge \bfseries DEDICATION%Dedication
-     \centering \large \bfseries DEDICATION%Dedication
+     \centering \Large \bfseries DEDICATION%Dedication
   \end{flushleft}
   \itshape
   \null\vfil%
@@ -611,7 +611,7 @@
      \else
         \vspace{-.12in} %change this if "Dedication" is too high/low
      \fi
-     \centering\large \bfseries EPIGRAPH%Epigraph
+     \centering\Large \bfseries EPIGRAPH%Epigraph
   \end{flushleft}
   \itshape
   \null\vfil%
@@ -651,7 +651,7 @@
   \null\vfil%
   \begin{flushleft}%
     \vspace{+0.84in}
-    \centering\large \bfseries \acknowledgname
+    \centering\Large \bfseries \acknowledgname
     \@endparpenalty\@M
   \end{flushleft}}%
 {\endsinglespace\vfil\vfil\null
@@ -1022,7 +1022,7 @@
 \newcommand\@dotsep{4.5}
 \setcounter{tocdepth}{2}
 \newcommand\tableofcontents{%
-    \chapter*{\large\centering\MakeUppercase{\contentsname}
+    \chapter*{\Large\centering\MakeUppercase{\contentsname}
         \@mkboth{%
            \contentsname}{\contentsname}}%
         \thispagestyle{plain}
@@ -1064,7 +1064,7 @@
 \newcommand*\l@paragraph{\@dottedtocline{4}{10em}{5em}}
 \newcommand*\l@subparagraph{\@dottedtocline{5}{12em}{6em}}
 \newcommand\listoffigures{%
-    \chapter*{\large\centering\MakeUppercase{\listfigurename}
+    \chapter*{\Large\centering\MakeUppercase{\listfigurename}
                       \addcontentsline{toc}{chapter}{List of Figures}%
       \@mkboth{\listfigurename}%
               {\listfigurename}}%
@@ -1073,7 +1073,7 @@
     }
 \newcommand*\l@figure{\@dottedtocline{2}{1.5em}{2.8em}}
 \newcommand\listoftables{%
-    \chapter*{\large\centering\MakeUppercase{\listtablename}
+    \chapter*{\Large\centering\MakeUppercase{\listtablename}
                       \addcontentsline{toc}{chapter}{List of Tables}%
       \@mkboth{%
           \listtablename}{\listtablename}}%
@@ -1084,7 +1084,7 @@
 \newdimen\bibindent
 \bibindent=1.5em
 \newenvironment{thebibliography}[1]
-     {\chapter*{\large\centering\MakeUppercase{\bibname}
+     {\chapter*{\Large\centering\MakeUppercase{\bibname}
         \@mkboth{\bibname}{\bibname}}%
                       \addcontentsline{toc}{chapter}{References}%
       \list{\@biblabel{\@arabic\c@enumiv}}%

@@ -1,4 +1,4 @@
 ## Format
 
 - [x] lettersize paper
-- [ ] left/right margin 1.5inches. top bottom 1inch
+- [ ] left margin 1.5inches. right top bottom 1inch
