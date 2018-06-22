@@ -87,7 +87,7 @@ The vector $\vec{H}_3$ is the vector aligned with the third axis and $\vec{H}_+$
 \end{figure}
 
 
-The third component of $\vec{s}$, which is denoted as $s_3$, is within range $[-1/2,1/2]$. The two limits, $s_3=-1/2$ and $s_3=1/2$ stand for the high energy state and the low energy state of the two-level system, respectively. If the two-level system has equal probabilities to be in the high energy state and the low energy state, one has $s_3=0$. The equation of motion of $\vec s$ is the same as Eqn.~\eqref{chap:basics-sec:flavor-isospin-pic-eqn:eom-precession} and describes the precession of $\vec s$.
+The third component of $\vec{s}$, which is denoted as $s_3$, is within the range $[-1/2,1/2]$. The two limits, $s_3=-1/2$ and $s_3=1/2$ stand for the high energy state and the low energy state of the two-level system, respectively. If the two-level system has equal probabilities to be in the high energy state and the low energy state, one has $s_3=0$. The equation of motion of $\vec s$ is the same as Eqn.~\eqref{chap:basics-sec:flavor-isospin-pic-eqn:eom-precession} and describes the precession of $\vec s$.
 %I need a better frame to understand the evolution of the state vector $\vec s$.
 
 % \begin{figure}[htbp]
@@ -161,7 +161,7 @@ The resonance of Rabi oscillations occurs when $\vec{H}'_3=0$ in the corotating 
 
 % \subsection{Interference Between the Driving Fields}
 
-In many cases, the two-level quantum system has more than one driving fields. I will refer to each of the driving field as a Rabi mode. Here I consider the Hamiltonian with two Rabi modes:
+In many cases, the two-level quantum system has more than one driving field. I will refer to each of the driving fields as a Rabi mode. Here I consider the Hamiltonian with two Rabi modes:
 \begin{align}
     % \mathsf H_{\mathrm R} =& -\frac{\omega_{\mathrm R}}{2}\sigma_3 - \frac{A_{1} }{2}  \left( \cos(k_{1} t +\phi_{1})\sigma_1  - \sin(k_{1} t +\phi_{1}) \sigma_2\right) \nonumber\\
     % & - \frac{A_{2} }{2}  \left( \cos(k_{2} t +\phi_{2})\sigma_1  - \sin(k_{2} t +\phi_{2}) \sigma_2\right).
@@ -398,7 +398,7 @@ Because the second Rabi mode is off resonance and its amplitude is too small to 
 % Now I have reduced the neutrino oscillations to Rabi oscillations. The resonance happens when the energy gap $\omega_{\mathrm m}$ is close to the external driving field frequency $k_1$, i.e., $\omega_{\mathrm m} \sim k_1$. As long as the resonance condition is satisfied, the transition probability between the two mass states should be predicted well using Rabi formula.
 %To show that this conjecture of simplifying neutrino flavor conversions to Rabi oscillations is correct,
 
-I calculated the transition probability using the Hamiltonian in Eqn.~\eqref{chap:matter-sec:single-fequency-eq:hamiltonian-bg-matter-basis-single-frequency} with $k_1/\omega_\mm=1$ and plotted it as black square markers in Fig.~\ref{fig-rabiOscillationsNeutrinoCoincidence}. As comparison I also plotted the transition probability obtained from the Rabi formula in Eqn.~\eqref{app:rabi-system-transition-probability} as the dot-dashed curve in the same figure, which agrees with the numerical result very well. In this case, the first Rabi mode is exactly on resonance with relative detuning $\RD_1=0$. I calculated the transition probabilities for additional two cases with $k_1/\omega_\mathrm{m}=1-2\times 10^{-5}$ and $1-10^{-4}$, which have relative detunings $\RD_1 = 1$ and $5.2$, respectively. The Rabi resonance is suppressed as $\RD_1$ increases. The results obtained using the full Hamiltonian and those from the Rabi formula again agree very well.
+I calculated the transition probability using the Hamiltonian in Eqn.~\eqref{chap:matter-sec:single-fequency-eq:hamiltonian-bg-matter-basis-single-frequency} with $k_1/\omega_\mm=1$ and plotted it as black square markers in Fig.~\ref{fig-rabiOscillationsNeutrinoCoincidence}. For comparison I also plotted the transition probability obtained from the Rabi formula in Eqn.~\eqref{app:rabi-system-transition-probability} as the dot-dashed curve in the same figure, which agrees with the numerical result very well. In this case, the first Rabi mode is exactly on resonance with relative detuning $\RD_1=0$. I calculated the transition probabilities for additional two cases with $k_1/\omega_\mathrm{m}=1-2\times 10^{-5}$ and $1-10^{-4}$, which have relative detunings $\RD_1 = 1$ and $5.2$, respectively. The Rabi resonance is suppressed as $\RD_1$ increases. The results obtained using the full Hamiltonian and those from the Rabi formula again agree very well.
 
 \begin{figure}[h!tbp]
                 \includegraphics[width=\columnwidth]{chapters/assets/rabi/rabiOscillationsNeutrinoCoincidence-single-frequency}
@@ -636,7 +636,7 @@ the term $e^{2\ri \eta(r)}$ becomes
 \begin{equation}
     \exp\left({\ri \frac{\lambda_1 \cos 2\theta_{\mm}}{k_1} \sin (k_1 r) }\right)  =  \sum_{n=-\infty}^{\infty} J_n \left( \frac{\lambda_1 \cos 2\theta_\mm}{k_1}\right) e^{\ri n k_1 r}.
 \end{equation}
-where $J_n(z)$ is the Bessel function of the first kind of order $n$. The Hamiltonian becomes a Rabi oscillation system with a infinite number of Rabi modes:
+where $J_n(z)$ is the Bessel function of the first kind of order $n$. The Hamiltonian becomes a Rabi oscillation system with an infinite number of Rabi modes:
 \begin{equation}
     \mathsf H^{(\mathrm{R})} =
     -\frac{\omega_{\mathrm{m}}}{2} \sigma_3
@@ -993,7 +993,7 @@ As a concrete example, I choose $\Lambda_1 = 0.3\omega_\vv \cos (2\theta_\vv)$, 
     \label{fig-akhmedovOscPlt}
 \end{figure}
 
-In the above example, there are an infinite number of Rabi modes that are on resonance in addition to $\{1,0,0, \cdots\}$. In principle, one should add the amplitudes of all these resonances modes together in calculating the transition probability with the Rabi formula. However, all the Rabi modes that on resonance have very tiny amplitudes except $\{1,0,0,\cdots\}$ (see Table.~\ref{table:castle-wall-relative-detunings-some}). Therefore, they can be neglected in calculations. There are also an infinite number of Rabi modes that are off resonance. In Table.~\ref{table:castle-wall-relative-detunings-some} I listed some of these Rabi modes with the largest amplitudes. One can see that the change to the relative detunings $\RD_{(\{n_a\})}$ of the on-resonance mode $\{1,0,0,\cdots\}$ due to the presence of the mode $\{n_a\}$ are all very small. As a result, they all have very little impact on the neutrino flavor conversion. This explains the agreement between the numerical solution and the result using the Rabi formula in Fig.~\ref{fig-akhmedovOscPlt}.
+In the above example, there are an infinite number of Rabi modes that are on resonance in addition to $\{1,0,0, \cdots\}$. In principle, one should add the amplitudes of all these resonances modes together in calculating the transition probability with the Rabi formula. However, all the Rabi modes that are on resonance have very tiny amplitudes except $\{1,0,0,\cdots\}$ (see Table.~\ref{table:castle-wall-relative-detunings-some}). Therefore, they can be neglected in calculations. There are also an infinite number of Rabi modes that are off resonance. In Table.~\ref{table:castle-wall-relative-detunings-some} I listed some of these Rabi modes with the largest amplitudes. One can see that the change to the relative detunings $\RD_{(\{n_a\})}$ of the on-resonance mode $\{1,0,0,\cdots\}$ due to the presence of the mode $\{n_a\}$ are all very small. As a result, they all have very little impact on the neutrino flavor conversion. This explains the agreement between the numerical solution and the result using the Rabi formula in Fig.~\ref{fig-akhmedovOscPlt}.
 
 
 % The base frequency $k_1$ which is determined by the total period $X$ can be arbitrary. In this example, we choose a $X$ so that the base frequency $k_0$ matches the energy gap $\omega_{\mathrm{m}}$. Even though multiple perturbation frequencies show up in Eqn.~(\ref{castle-wall-decomposed-hamiltonian}), we identify that only the first frequency $n=1$ is the resonance frequency since we are using $k_0=\omega_{\mathrm{m}}$. As an approximation, we drop all other frequencies $n>2$ regarding the fact that they are far from resonance. Thus, similar to single frequency matter profile, the varying $\sigma_3$ terms have limited effects on the transition probabilities in our case, which leads to
